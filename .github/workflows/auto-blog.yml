@@ -19,7 +19,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      NODE_VERSION: '22'
       AWS_REGION: 'us-east-1'
       S3_BUCKET: 'www.jmfcontabilidade.com.br'
       CLOUDFRONT_DISTRIBUTION_ID: 'E3Q5M4A0VOV8MY'
@@ -35,7 +34,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ env.NODE_VERSION }}
+          node-version: 22
           cache: 'npm'
 
       - name: Install dependencies
