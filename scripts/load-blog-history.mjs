@@ -7,11 +7,12 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const BLOG_DIR = path.resolve(__dirname, '../src/content/blog');
+const BLOG_DIR = 'C:/Users/Administrator/Desktop/site-jmf-astro/src/content/blog';
 
-function extractFrontmatter(content) {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+function extractFrontmatter(content, file) {
+  // Remove BOM if present
+  const cleanContent = content.replace(/^﻿/, '');
+  const match = cleanContent.match(/^---\n([\s\S]*?)\n---/);
   if (!match) return null;
 
   const fm = match[1];
@@ -41,7 +42,7 @@ function loadBlogHistory() {
   for (const file of files) {
     const fullPath = path.join(BLOG_DIR, file);
     const content = fs.readFileSync(fullPath, 'utf-8');
-    const fm = extractFrontmatter(content);
+    const fm = extractFrontmatter(content, file);
 
     if (fm) {
       posts.push({
@@ -82,9 +83,8 @@ function loadBlogHistory() {
   console.log(`Autores detectados: ${output.authors}`);
 }
 
-main().catch(e => {
-  console.error('Error loading blog history:', e);
-  process.exit(1);
-});
+function main() {
+  loadBlogHistory();
+}
 
 main();
