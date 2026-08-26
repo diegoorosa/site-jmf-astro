@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     env:
-      NODE_VERSION: '20'
+      NODE_VERSION: '22'
       AWS_REGION: 'us-east-1'
       S3_BUCKET: 'www.jmfcontabilidade.com.br'
       CLOUDFRONT_DISTRIBUTION_ID: 'E3Q5M4A0VOV8MY'
