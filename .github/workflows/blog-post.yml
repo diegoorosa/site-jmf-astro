@@ -8,7 +8,7 @@ on:
         required: false
         type: string
   schedule:
-    # Exemplo: 14:33 BRT = 17:33 UTC (ajuste o dia conforme a necessidade)
+    # 17:33 UTC equivale a 14:33 (Horário de Brasília)
     - cron: '33 17 27 8 *'
 
 permissions:
