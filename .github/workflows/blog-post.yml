@@ -37,9 +37,6 @@ jobs:
           node-version: 22
           cache: 'npm'
 
-      - name: Verify Node version
-        run: echo "Node: \$(node --version)"
-
       - name: Install dependencies
         run: npm install
 
