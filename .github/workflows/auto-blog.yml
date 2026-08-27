@@ -127,4 +127,3 @@ jobs:
             git commit -m "chore: auto-post blog $(date +%F)"
             git push
             echo "✅ Commit + push realizado"
-          fi
