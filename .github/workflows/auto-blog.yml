@@ -2,7 +2,7 @@ name: Auto Blog Post
 
 on:
   schedule:
-    - cron: '0 9 * * 1,4'  # Segundas e quintas, 09:00 UTC (06:00 Brasília)
+    - cron: '0 9 * * 1,4'
   workflow_dispatch:
     inputs:
       force_topic:
@@ -43,7 +43,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Load existing blog posts (avoid duplicates)
+      - name: Load existing blog posts
         id: blog-history
         run: |
           node scripts/load-blog-history.mjs
@@ -113,7 +113,7 @@ jobs:
           curl -sS -X POST "$GMB_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}" \
-            && echo "✅ GMB webhook enviado" || echo "⚠️ GMB webhook falhou"
+            && echo "GMB webhook enviado" || echo "GMB webhook falhou"
 
       - name: Commit and push new post
         if: success()
@@ -126,4 +126,4 @@ jobs:
           else
             git commit -m "chore: auto-post blog $(date +%F)"
             git push
-            echo "✅ Commit + push realizado"
+            echo "Commit + push realizado"
