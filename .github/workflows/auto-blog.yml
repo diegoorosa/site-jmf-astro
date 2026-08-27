@@ -1,0 +1,129 @@
+name: Auto Blog Post
+
+on:
+  schedule:
+    - cron: '0 9 * * 1,4'
+  workflow_dispatch:
+    inputs:
+      force_topic:
+        description: 'Tema forçado (opcional)'
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  generate-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      AWS_REGION: 'sa-east-1'
+      S3_BUCKET: 'www.jmfcontabilidade.com.br'
+      CLOUDFRONT_DISTRIBUTION_ID: 'E3Q5M4A0VOV8MY'
+      SITE_URL: 'https://www.jmfcontabilidade.com.br'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Verify Node version
+        run: echo "Node: $(node --version)"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Load existing blog posts
+        id: blog-history
+        run: |
+          node scripts/load-blog-history.mjs
+
+      - name: Generate blog post via Gemini
+        id: generate-post
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          EXISTING_TOPICS: ${{ steps.blog-history.outputs.topics }}
+          FORCED_TOPIC: ${{ github.event.inputs.force_topic }}
+        run: |
+          node scripts/generate-post.mjs
+
+      - name: Convert images to WebP
+        run: |
+          node scripts/convert-images.mjs
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Deploy assets (images, CSS, JS) - long cache
+        run: |
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET }}/ \
+            --delete \
+            --exclude "*.html" \
+            --exclude "sitemap.xml" \
+            --exclude "robots.txt" \
+            --exclude "llms.txt" \
+            --exclude "llms-full.txt" \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Deploy HTMLs - no cache
+        run: |
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET }}/ \
+            --exclude "*" \
+            --include "*.html" \
+            --cache-control "no-cache, no-store, must-revalidate"
+
+      - name: Deploy SEO files - no cache
+        run: |
+          aws s3 cp dist/sitemap.xml s3://${{ env.S3_BUCKET }}/sitemap.xml --cache-control "no-cache"
+          aws s3 cp dist/llms.txt s3://${{ env.S3_BUCKET }}/llms.txt --cache-control "no-cache"
+          aws s3 cp dist/llms-full.txt s3://${{ env.S3_BUCKET }}/llms-full.txt --cache-control "no-cache"
+
+      - name: CloudFront Invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
+
+      - name: Post to Google Meu Negócio via n8n webhook
+        if: success()
+        env:
+          GMB_WEBHOOK_URL: ${{ secrets.GMB_WEBHOOK_URL }}
+          POST_TITLE: ${{ steps.generate-post.outputs.title }}
+          POST_SUMMARY: ${{ steps.generate-post.outputs.summary }}
+          POST_URL: ${{ steps.generate-post.outputs.url }}
+          POST_IMAGE: ${{ steps.generate-post.outputs.image }}
+        run: |
+          curl -sS -X POST "$GMB_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}" \
+            && echo "GMB webhook enviado" || echo "GMB webhook falhou"
+
+      - name: Commit and push new post
+        if: success()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/blog/*.md public/assets/images/*.webp
+          if git diff --staged --quiet; then
+            echo "Nenhuma mudança para commit"
+          else
+            git commit -m "chore: auto-post blog $(date +%F)"
+            git push
+            echo "Commit + push realizado"
