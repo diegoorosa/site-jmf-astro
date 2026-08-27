@@ -1,4 +1,4 @@
-name: Blog Auto Post v2
+name: Blog Auto Post
 
 on:
   workflow_dispatch:
@@ -8,7 +8,8 @@ on:
         required: false
         type: string
   schedule:
-    - cron: '5 14 * * 4'
+    # Exemplo: 14:33 BRT = 17:33 UTC (ajuste o dia conforme a necessidade)
+    - cron: '33 17 27 8 *'
 
 permissions:
   contents: write
@@ -45,8 +46,7 @@ jobs:
 
       - name: Load existing blog posts
         id: blog-history
-        run: |
-          node scripts/load-blog-history.mjs
+        run: node scripts/load-blog-history.mjs
 
       - name: Generate blog post via Gemini
         id: generate-post
@@ -54,12 +54,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           EXISTING_TOPICS: ${{ steps.blog-history.outputs.topics }}
           FORCED_TOPIC: ${{ github.event.inputs.force_topic }}
-        run: |
-          node scripts/generate-post.mjs
+        run: node scripts/generate-post.mjs
 
       - name: Convert images to WebP
-        run: |
-          node scripts/convert-images.mjs
+        run: node scripts/convert-images.mjs
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
@@ -127,3 +125,4 @@ jobs:
             git commit -m "chore: auto-post blog $(date +%F)"
             git push
             echo "Commit + push realizado"
+          fi
