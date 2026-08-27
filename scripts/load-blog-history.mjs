@@ -7,7 +7,9 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const BLOG_DIR = 'C:/Users/Administrator/Desktop/site-jmf-astro/src/content/blog';
+const BLOG_DIR = process.env.GITHUB_WORKSPACE
+  ? `${process.env.GITHUB_WORKSPACE}/src/content/blog`
+  : 'src/content/blog';
 
 function extractFrontmatter(content, file) {
   // Remove BOM if present
@@ -70,14 +72,15 @@ function loadBlogHistory() {
     recent_posts: recentPosts.length
   };
 
-  // Write to GitHub Actions output
-  process.env.GITHUB_OUTPUT = JSON.stringify({
-    topics: output.topics,
-    slugs: output.slugs,
-    authors: output.authors,
-    total_posts: output.total_posts,
-    recent_posts: output.recent_posts
-  });
+  // Write to GitHub Actions output file
+  const githubOutput = process.env.GITHUB_OUTPUT;
+  if (githubOutput) {
+    fs.appendFileSync(githubOutput, `topics<<EOF\n${output.topics}\nEOF\n`);
+    fs.appendFileSync(githubOutput, `slugs=${output.slugs}\n`);
+    fs.appendFileSync(githubOutput, `authors=${output.authors}\n`);
+    fs.appendFileSync(githubOutput, `total_posts=${output.total_posts}\n`);
+    fs.appendFileSync(githubOutput, `recent_posts=${output.recent_posts}\n`);
+  }
 
   console.log(`📚 Loaded ${posts.length} blog posts (${output.recent_posts} recent for context)`);
   console.log(`Autores detectados: ${output.authors}`);

@@ -213,15 +213,14 @@ async function main() {
   const postImage = `https://www.jmfcontabilidade.com.br${image}`;
 
   // Exportar para GitHub Actions outputs
-  const outputs = [
-    `title=${title}`,
-    `summary=${description}`,
-    `url=${postUrl}`,
-    `image=${postImage}`,
-    `slug=${slug}`
-  ].join('\n');
-
-  fs.appendFileSync(process.env.GITHUB_OUTPUT, outputs + '\n');
+  const githubOutput = process.env.GITHUB_OUTPUT;
+  if (githubOutput) {
+    fs.appendFileSync(githubOutput, `title<<EOF\n${title}\nEOF\n`);
+    fs.appendFileSync(githubOutput, `summary<<EOF\n${description}\nEOF\n`);
+    fs.appendFileSync(githubOutput, `url=${postUrl}\n`);
+    fs.appendFileSync(githubOutput, `image=${postImage}\n`);
+    fs.appendFileSync(githubOutput, `slug=${slug}\n`);
+  }
 
   console.log(`📝 Título: ${title}`);
   console.log(`🔗 URL: ${postUrl}`);
