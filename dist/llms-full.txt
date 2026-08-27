@@ -1,0 +1,487 @@
+# JMF Contabilidade — Conteúdo Completo
+
+> Escritório de contabilidade em Blumenau, Santa Catarina, Brasil.
+> Fundado em 1989. Especializado em contabilidade gerencial, planejamento tributário e abertura de empresas.
+> CRC SC-002550/O | CNPJ: 81.335.895/0001-17
+> 152 avaliações Google com nota 5.0 | 35+ anos de mercado
+> Última atualização: 2026-06-21
+
+---
+
+## Sobre a JMF Contabilidade
+
+A JMF Contabilidade é um escritório de contabilidade em Blumenau/SC fundado em 1989. A equipe é liderada por Joel Rosa (fundador, CRC SC-007091/O, 55+ anos de carreira contábil), Fabricio Rosa (sócio-administrador, CRC SC-029833/O) e Diego Rosa (sócio-administrador, CRC SC-035810/O).
+
+O escritório atende empresas de pequeno e médio porte em Blumenau e Santa Catarina, oferecendo serviços completos de contabilidade gerencial, fiscal, tributária e departamento pessoal. A JMF se diferencia por unir experiência tradicional (35+ anos) com tecnologia moderna: utilizam inteligência artificial (Claude AI, Gemini), automação (n8n, Make) e infraestrutura AWS para entregar serviços contábeis com previsibilidade e segurança.
+
+**Diferenciais:**
+- Rotina mensal padronizada com prazos fixos de fechamento
+- Relatórios gerenciais claros (DRE, balanço, fluxo de caixa)
+- Atendimento consultivo, não apenas burocrático
+- Transição organizada na troca de contador (5-10 dias úteis)
+- Infraestrutura AWS com backup automático 2x ao dia e anti-ransomware
+
+---
+
+## Contabilidade para Empresas
+
+**URL:** https://www.jmfcontabilidade.com.br/contabilidade-para-empresas
+
+A JMF oferece contabilidade completa para empresas em Blumenau/SC nos três regimes tributários: Simples Nacional, Lucro Presumido e Lucro Real.
+
+**O que está incluído:**
+- Fechamento contábil mensal com balancete, DRE e balanço patrimonial
+- Apuração mensal de tributos (DAS, PIS, COFINS, IRPJ, CSLL, ISS)
+- Escrituração fiscal e contábil (SPED, ECD, ECF)
+- Obrigações acessórias: DCTF, DEFIS, DASN-SIMEI, EFD-Reinf
+- Folha de pagamento completa (eSocial, FGTS, GFIP, guias trabalhistas)
+- Relatórios gerenciais mensais para tomada de decisão
+- Calendário de obrigações personalizado
+- Simulação anual comparativa entre regimes tributários
+
+**Regimes atendidos:**
+- **Simples Nacional:** Cálculo do DAS por anexo, fator R, sublimites de ISS/ICMS. Acompanhamento do limite de R$ 4,8 milhões com planejamento de transição.
+- **Lucro Presumido:** Apuração trimestral de IRPJ e CSLL com margem de presunção correta por atividade. PIS e COFINS mensais.
+- **Lucro Real:** Estruturação por LALUR e LACS, controle de adições, exclusões e compensação de prejuízos fiscais.
+
+---
+
+## Contabilidade para Empresas em Indaial/SC
+
+**URL:** https://www.jmfcontabilidade.com.br/contabilidade-em-indaidal
+
+Contabilidade completa para empresas em Indaial/SC: Simples Nacional, Lucro Presumido e Lucro Real. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.
+
+Indaial é um dos municípios industriais mais dinâmicos do Médio Vale do Itajaí, com polo têxtil forte e indústrias de metalurgia e plásticos. A JMF atende empresas de Indaial remotamente, com o mesmo rigor de um atendimento presencial.
+
+**Particularidades tributárias de Indaial:**
+- ISS municipal: alíquota mínima de 2% para serviços
+- ICMS estadual: alíquotas internas variam por produto (7%, 12%, 17% ou 18%)
+- PRODEC e TTD: programas estaduais de incentivo fiscal (Lei 489/1997 de SC)
+- Simples Nacional: maioria das empresas de pequeno porte, com Fator R definindo Anexo III ou V
+
+---
+
+## Contabilidade para Empresas em Gaspar/SC
+
+**URL:** https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar
+
+Contabilidade completa para empresas em Gaspar/SC: Simples Nacional, Lucro Presumido e Lucro Real. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.
+
+Gaspar é uma cidade industrial do Médio Vale do Itajaí, com tradição em metalurgia, plásticos e manufatura. A JMF atende empresas industriais de Gaspar com foco em eficiência operacional: controle de ICMS próprio, rateio de custos de produção e compliance trabalhista.
+
+**Particularidades para indústrias de Gaspar:**
+- ICMS complexo: crédito, débito, substituição tributária, ZFM e operações interestaduais
+- Custos de produção: rateio de matérias-primas, mão de obra indireta e depreciação
+- PRODEC e TTD: programas estaduais de incentivo para indústrias de base
+- Folha de pagamento: quadro maior, mais categorias de colaboradores
+
+---
+
+## Abertura de Empresa em Blumenau
+
+**URL:** https://www.jmfcontabilidade.com.br/abertura-de-empresa
+
+Abertura de empresa completa em Blumenau/SC em até 10 dias úteis. A JMF cuida de todo o processo burocrático.
+
+**Processo:**
+1. Consulta inicial gratuita (WhatsApp, telefone ou presencial)
+2. Análise de viabilidade: CNAE ideal, regime tributário (Simples Nacional, Lucro Presumido ou MEI)
+3. Simulação comparativa de carga tributária entre regimes
+4. Coleta de documentos: RG, CPF, comprovante de residência, comprovante de endereço do estabelecimento (e mesmos documentos de cada sócio)
+5. Registro na JUCESC, obtenção do CNPJ na Receita Federal
+6. Inscrição estadual na Sefaz-SC, inscrição municipal na Prefeitura de Blumenau
+7. Solicitação do alvará de funcionamento
+
+**Custos:** Incluem taxas JUCESC, alvará, inscrições municipais e estaduais — valores atualizados para 2026.
+
+**Diferencial:** Simulador com inteligência artificial que calcula a viabilidade antes mesmo de abrir a empresa, comparando regimes tributários com base no faturamento estimado e atividade.
+
+---
+
+## Gestão Contábil
+
+**URL:** https://www.jmfcontabilidade.com.br/gestao-contabil
+
+Serviços de gestão contábil em Blumenau/SC incluindo:
+- Escrituração contábil completa (livro diário, livro razão, balancetes)
+- Elaboração de Demonstrações Contábeis (balanço patrimonial, DRE, DFC)
+- ECD e ECF entregues dentro do prazo legal
+- Balancete mensal entregue até o dia 15 do mês seguinte
+- Conciliação bancária e de contas a pagar/receber
+- Análise de indicadores financeiros para gestão
+
+---
+
+## Gestão Fiscal e Tributária
+
+**URL:** https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria
+
+Serviços fiscais e tributários em Blumenau/SC:
+- Apuração de todos os tributos federais, estaduais e municipais
+- Emissão e entrega de obrigações acessórias: DAS, PGDAS, DCTF, SPED Fiscal, EFD-Reinf
+- Planejamento tributário preventivo para redução legal de impostos
+- Acompanhamento de mudanças na legislação (reforma tributária 2026-2027)
+- Cálculo do Fator R para empresas do Simples Nacional
+- Simulação comparativa anual entre regimes tributários
+- Política de não pagamento de multas por atraso — todas as obrigações são entregues no prazo
+
+---
+
+## Gestão Pessoal / Departamento Pessoal
+
+**URL:** https://www.jmfcontabilidade.com.br/gestao-pessoal
+
+Departamento pessoal completo em Blumenau/SC:
+- Folha de pagamento mensal (salários, horas extras, comissões, benefícios)
+- Cálculo de encargos trabalhistas (INSS, FGTS, IRRF)
+- eSocial completo (eventos periódicos, não periódicos e SST)
+- Admissão de funcionários (exames, registro em carteira, contrato de trabalho)
+- Rescisão contratual (cálculo de verbas rescisórias, homologação)
+- Férias e 13º salário
+- GFIP/SEFIP e DCTFWeb
+- CAGED, RAIS (quando aplicável)
+- Gestão de benefícios (vale-transporte, vale-alimentação, plano de saúde)
+
+---
+
+## Consultoria e Planejamento Tributário
+
+**URL:** https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario
+
+Planejamento tributário em Blumenau/SC para redução legal de impostos:
+- Análise comparativa entre Simples Nacional, Lucro Presumido e Lucro Real
+- Cálculo do Fator R (Anexo III 6% vs Anexo V 15,5%)
+- Simulação de carga tributária para empresas em crescimento
+- Planejamento para empresas próximas ao limite de R$ 4,8 milhões
+- Estruturação de pró-labore e distribuição de lucros (isento de IR)
+- Holding familiar: análise de viabilidade para pequenos empresários
+- Revisão tributária periódica para identificar oportunidades de economia
+- Acompanhamento da reforma tributária (split payment, IBS, CBS)
+
+---
+
+## Imposto de Renda (IRPF 2026)
+
+**URL:** https://www.jmfcontabilidade.com.br/imposto-de-renda
+
+Declaração de Imposto de Renda Pessoa Física em Blumenau/SC:
+- Elaboração da declaração completa (modelo completo ou simplificado)
+- Análise comparativa para identificar maior restituição ou menor imposto
+- Utilização de todas as deduções legais (despesas médicas, educação, previdência, dependentes)
+- Livro-caixa para profissionais liberais
+- Carnê-Leão mensal para rendimentos de pessoa física ou exterior
+- Regularização de pendências na Receita Federal
+- Acompanhamento em casos de malha fina
+- Atendimento presencial em Blumenau ou online
+
+---
+
+## Contabilidade para Pessoa Física
+
+**URL:** https://www.jmfcontabilidade.com.br/contabilidade-para-pessoa-fisica
+
+Atendimento a profissionais liberais, autônomos e pessoas físicas em Blumenau/SC:
+- Declaração de IRPF com análise de deduções
+- Carnê-Leão mensal
+- Análise de viabilidade de abertura de pessoa jurídica (economia de 35-40% para IR para 10% como PJ)
+- Atendimento especializado para médicos, advogados, engenheiros, consultores
+- Regularização de pendências fiscais
+
+---
+
+## Regimes Tributários
+
+**URL:** https://www.jmfcontabilidade.com.br/regimes-tributarios
+
+Guia completo comparando os três regimes tributários brasileiros em 2026:
+
+**Simples Nacional:**
+- Unificação de 8 tributos em uma única guia (DAS)
+- Alíquotas de 4% a 33% dependendo do anexo e faixa de faturamento
+- 5 anexos: Comércio (I), Indústria (II), Serviços (III, IV, V)
+- Limite anual: R$ 4,8 milhões
+- Fator R determina Anexo III (6%) ou Anexo V (15,5%) para serviços
+- Multa automática para DAS pago após dia 20 (nova regra 2026)
+- Reforma tributária 2027: impacto no B2B, split payment
+
+**Lucro Presumido:**
+- Faturamento anual de R$ 4,8 milhões a R$ 78 milhões
+- Presunção de lucro: 8% (comércio/indústria), 32% (serviços), 16% (transportes)
+- IRPJ: 15% sobre lucro presumido + 10% adicional sobre excedente de R$ 20 mil/mês
+- CSLL: 9% sobre a base presumida
+- PIS: 0,65% e COFINS: 3% sobre faturamento (regime cumulativo)
+
+**Lucro Real:**
+- Obrigatório para faturamento acima de R$ 78 milhões ou setores específicos
+- Apuração com base no lucro contábil real, ajustado por adições e exclusões (LALUR)
+- PIS: 1,65% e COFINS: 4% sobre faturamento (regime não cumulativo, com créditos)
+- Mais complexo, mas pode resultar em menor carga para empresas com margens baixas
+
+---
+
+## Como Abrir Empresa em Blumenau — Guia 2026
+
+**URL:** https://www.jmfcontabilidade.com.br/como-abrir-empresa-em-blumenau
+
+Guia completo com passo a passo para abrir empresa em Blumenau/SC:
+
+**Documentos necessários:** RG, CPF, comprovante de residência, certidão de casamento (se aplicável), contrato social (elaborado pela JMF), comprovante de endereço comercial.
+
+**Órgãos envolvidos:** JUCESC (registro), Receita Federal (CNPJ), Sefaz-SC (inscrição estadual), Prefeitura de Blumenau (inscrição municipal + alvará).
+
+**Custos médios 2026:** Taxa JUCESC (~R$ 300-500), alvará de funcionamento (~R$ 200-400), taxas municipais e estaduais adicionais.
+
+**Prazos:** 5-10 dias úteis para empresa completamente regularizada.
+
+**Escolha do CNAE:** Essencial para determinar regime tributário, anexo do Simples Nacional, alíquotas e obrigações acessórias.
+
+---
+
+## Reforma Tributária 2026 (Hub)
+
+**URL:** https://www.jmfcontabilidade.com.br/reforma-tributaria
+
+Hub completo sobre a Reforma Tributária: substituição de PIS/COFINS/IPI/ICMS/ISS pelo IBS e CBS, cronograma de transição 2026-2033, Split Payment, impacto B2B para empresas do Simples Nacional a partir de 2027 e decisão sobre regime híbrido até setembro de 2026.
+
+---
+
+## Simples Nacional 2026 (Hub)
+
+**URL:** https://www.jmfcontabilidade.com.br/simples-nacional
+
+Hub completo sobre o Simples Nacional: tabelas dos 5 anexos com alíquotas e parcelas a deduzir, Fator R (Anexo III 6% vs Anexo V 15,5%), limite de R$ 4,8 milhões, multa automática no dia 21 e alerta sobre o impacto da Reforma Tributária a partir de 2027.
+
+---
+
+## Retirada de Sócios (Hub)
+
+**URL:** https://www.jmfcontabilidade.com.br/retirada-de-socios
+
+Hub completo sobre pró-labore, distribuição de lucros e holding familiar: INSS de 11% sobre pró-labore, isenção de IR até R$ 5.000/mês (Lei 15.270/2025), distribuição de lucros isenta de IR (art. 10, Lei 9.249/95) com escrituração contábil regular, nova tributação de 10% sobre dividendos acima de R$ 50.000/mês e quando uma holding familiar vale a pena.
+
+---
+
+## Migrar de MEI para LTDA (Serviço)
+
+**URL:** https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda
+
+Serviço de migração de MEI para LTDA em Blumenau/SC: sinais de quando migrar (faturamento próximo de R$ 81.000/ano, necessidade de sócios, proteção patrimonial), custos (taxa JUCESC, alvará, inscrições), processo de 5 a 15 dias úteis, simulação tributária comparativa antes da migração.
+
+---
+
+## Ferramentas Gratuitas
+
+### Simulador de Regime Tributário 2026
+**URL:** https://www.jmfcontabilidade.com.br/simulador-regime-tributario
+Compare Simples Nacional e Lucro Presumido. Informe faturamento anual, atividade principal (CNAE), folha de salários mensal. Resultado imediato com economia estimada em R$. Sem cadastro.
+
+### Calculadora do Fator R
+**URL:** https://www.jmfcontabilidade.com.br/calculadora-fator-r
+Calcule o Fator R para empresas do Simples Nacional. Informe receita bruta total e folha de salários (pró-labore + INSS + FGTS) dos últimos 12 meses. Resultado: Anexo III (alíquota a partir de 6%) ou Anexo V (alíquota a partir de 15,5%). Base legal: Resolução CGSN 140/2018.
+
+### Calendário Fiscal 2026
+**URL:** https://www.jmfcontabilidade.com.br/calendario-fiscal-2026
+Calendário completo com datas de vencimento de todas as obrigações fiscais de 2026: DAS Simples Nacional, FGTS, DEFIS, DASN-SIMEI, ECD, ECF, IRPF, DCTF, SPED, EFD-Reinf. Datas ajustadas para feriados nacionais e municipais (Blumenau).
+
+---
+
+## Segurança e Proteção de Dados
+
+**URL:** https://www.jmfcontabilidade.com.br/seguranca-dos-dados
+
+A JMF adota 5 camadas de segurança para proteção dos dados dos clientes:
+- Infraestrutura AWS (Amazon Web Services) com servidores na América do Sul
+- Backup automático 2 vezes ao dia
+- Sistema anti-ransomware com monitoramento 24/7
+- LGPD: acesso restrito, logs de acesso e consentimento documentado
+- Criptografia AES256 em todos os dados armazenados em S3
+- Certificado SSL/TLS com HSTS preload
+
+**Parceiros tecnológicos:** AWS (infraestrutura), SCI Sistemas Contábeis (software contábil), Claude AI e Gemini (inteligência artificial), n8n e Make (automação de processos), Trello (gestão de tarefas).
+
+---
+
+## Sobre a Equipe
+
+**URL:** https://www.jmfcontabilidade.com.br/sobre
+
+- **Joel Rosa** — Fundador. CRC SC-007091/O. Bacharel em Ciências Contábeis pela FURB (1987). Técnico em Contabilidade desde 1971. Mais de 55 anos de experiência.
+- **Fabricio Rosa** — Sócio-Administrador. CRC SC-029833/O.
+- **Diego Rosa** — Sócio-Administrador. CRC SC-035810/O.
+- Escritório registrado no CRC SC sob nº SC-002550/O.
+
+---
+
+## Contato
+
+- **Endereço:** Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro, Blumenau/SC, CEP 89010-060
+- **Telefone/WhatsApp:** (47) 3326-5123
+- **Email:** contato@jmfcontabilidade.com.br
+- **Horário:** Segunda a Sexta, 08h às 18h
+- **Redes Sociais:**
+  - Facebook: /jmfcontabilidadebnu
+  - Instagram: @jmf.contabilidade
+  - LinkedIn: /company/jmf-contabilidade
+  - Twitter: @jmfcontab
+
+---
+
+## FAQ (Perguntas Frequentes)
+
+### Como funciona a troca de contador?
+A troca começa com um diagnóstico gratuito pelo WhatsApp ou telefone: levantamento do regime tributário atual, meses em aberto, obrigações pendentes (SPED, ECD, DEFIS, DASN) e parcelamentos ou pendências na Receita Federal ou Sefaz. Com esse mapeamento, é apresentado um cronograma de transição. A JMF contata o contador anterior para solicitar arquivos e documentação. Em paralelo, configuram a empresa nos sistemas e criam o calendário de obrigações. O processo leva de 5 a 10 dias úteis para estar 100% operacional. Durante a transição, as obrigações acessórias continuam sendo entregues sem interrupção.
+
+### Vocês atendem Simples Nacional e Lucro Presumido?
+Sim, a JMF atende empresas em Simples Nacional (cálculo do DAS por anexo, fator R, sublimites), Lucro Presumido (IRPJ e CSLL trimestrais, PIS e COFINS mensais) e Lucro Real (apuração por LALUR e LACS). Em todos os regimes, realizam simulação comparativa anual para garantir a menor carga tributária possível.
+
+### Como funciona o envio de documentos?
+No início de cada mês, o cliente recebe uma solicitação organizada com a lista de documentos necessários (extratos bancários, notas fiscais, comprovantes de despesas, informações de folha). O prazo para envio é até o dia 5 do mês seguinte. Tudo pode ser enviado por email, WhatsApp ou sistema de gestão. Após o recebimento, a equipe realiza as conferências, apura os impostos e envia o resumo do mês com valor dos tributos e guias para pagamento.
+
+### Quero abrir empresa. O que preciso?
+Uma conversa inicial por WhatsApp, telefone ou presencial. A JMF mapeia o CNAE ideal, analisa o enquadramento tributário e apresenta simulação comparativa. Depois, o cliente envia RG, CPF, comprovante de residência e comprovante de endereço comercial (mais documentos de cada sócio). A JMF cuida de JUCESC, CNPJ, Sefaz-SC, Prefeitura de Blumenau e alvará. Processo em 5-10 dias úteis.
+
+### Vocês atendem pessoa física e Imposto de Renda?
+Sim, a JMF atende pessoas físicas, profissionais liberais e autônomos. Para IRPF, elaboram declaração completa (modelo completo ou simplificado) com análise comparativa para maior restituição ou menor imposto. Utilizam todas as deduções legais. Para profissionais liberais, oferecem análise de viabilidade de abertura de PJ — economia potencial de 35-40% (IR PF) para menos de 10% (PJ Simples Nacional).
+
+---
+
+## Clientes e Parceiros
+
+A JMF atende empresas de diversos setores em Blumenau e Santa Catarina, incluindo construtoras, incorporadoras, restaurantes, hotéis e pousadas, comércio varejista, prestadores de serviço, profissionais liberais (médicos, advogados, engenheiros, arquitetos, consultores) e indústrias.
+
+Nota: 5.0 em 152 avaliações no Google.
+
+---
+
+## Artigos do Blog (2026)
+
+### eSocial 2026: o que mudou e o que esperar
+**URL:** https://www.jmfcontabilidade.com.br/blog/esocial-2026-o-que-mudou-e-o-que-esperar
+Mudanças no eSocial em 2026: novos eventos de SST (Segurança e Saúde do Trabalhador), multas automáticas por atraso na entrega, leiaute S-1.3, obrigatoriedade para novos grupos, simplificação de tabelas e integração com DCTFWeb. Prazos e consequências para empresas que não se adequarem.
+
+### MEI 2026: guia completo do Microempreendedor Individual
+**URL:** https://www.jmfcontabilidade.com.br/blog/mei-2026-guia-completo-microempreendedor-individual
+Guia completo sobre MEI em 2026: limite de faturamento (R$ 81.000,00), atividades permitidas, DAS mensal, obrigações (PGMEI, declaração anual), direitos (INSS, auxílio-doença, aposentadoria), quando desenquadrar e como migrar para ME ou LTDA.
+
+### IRPF 2026: como declarar o Imposto de Renda
+**URL:** https://www.jmfcontabilidade.com.br/blog/irpf-2026-como-declarar-imposto-de-renda
+Guia completo do IRPF 2026: prazos, faixas de tributação (isento até R$ 2.259,20, alíquotas de 7,5% a 27,5%), deduções (R$ 2.275,08 por dependente, despesas médicas sem limite, educação até R$ 3.561,50), como declarar investimentos, bens, imóveis, criptomoedas.
+
+### Lucro Presumido vs Lucro Real
+**URL:** https://www.jmfcontabilidade.com.br/blog/lucro-presumido-vs-lucro-real
+Comparação completa: Lucro Presumido (presunção de 8% a 32%, cumulativo de PIS/COFINS) vs Lucro Real (não cumulativo com créditos, apuração real via LALUR). Critérios de escolha, margens de lucro, setores beneficiados por cada regime, casos em que o Lucro Real compensa mesmo com faturamento abaixo de R$ 78 milhões.
+
+### Desoneração da Folha 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao
+Reoneração gradual da folha de pagamento em 2026: setores que perdem a desoneração, alíquotas progressivas (2025 a 2028), impacto no custo trabalhista para empresas dos 17 setores beneficiados anteriormente, planejamento financeiro necessário.
+
+### Nota Fiscal de Serviços: como emitir corretamente
+**URL:** https://www.jmfcontabilidade.com.br/blog/nota-fiscal-de-servicos-como-emitir-corretamente
+Guia prático de emissão de NFS-e: quando emitir, regimes de tributação, alíquotas de ISS (2% a 5% em Blumenau), dados obrigatórios na nota, retenção de impostos na fonte, declaração mensal, multas por não emissão.
+
+### Planejamento Tributário: como pagar menos imposto legalmente
+**URL:** https://www.jmfcontabilidade.com.br/blog/planejamento-tributario-como-pagar-menos-imposto-legalmente
+Estratégias legais de redução de impostos: escolha do regime tributário, distribuição de lucros (isenta de IR), pró-labore vs dividendos, fator R, holding familiar, aproveitamento de créditos fiscais, reestruturação societária, planejamento sucessório.
+
+### Contabilidade Gerencial: use números para decidir
+**URL:** https://www.jmfcontabilidade.com.br/blog/contabilidade-gerencial-use-numeros-para-decidir
+Guia de contabilidade gerencial para empresários: KPIs essenciais (margem bruta, margem líquida, EBITDA, ponto de equilíbrio), DRE gerencial, fluxo de caixa projetado, análise de indicadores, diferença entre contabilidade fiscal e gerencial.
+
+### Fluxo de Caixa: guia para empresários
+**URL:** https://www.jmfcontabilidade.com.br/blog/fluxo-de-caixa-guia-para-empresarios
+Guia prático de gestão de fluxo de caixa: estrutura (entradas, saídas, saldo operacional), projeção, ciclo financeiro, capital de giro, diferença entre lucro e caixa, ferramentas de gestão, indicadores de saúde financeira.
+
+### Como Regularizar Empresa com Débitos na Receita Federal
+**URL:** https://www.jmfcontabilidade.com.br/blog/como-regularizar-empresa-com-debitos-na-receita-federal
+Passo a passo para regularização: levantamento de débitos (PGFN, Receita Federal, Sefaz), parcelamentos ordinário e especial (PERT, transação tributária), certidão negativa, consequências da inadimplência, recuperação de créditos.
+
+### CNAE: como escolher o certo
+**URL:** https://www.jmfcontabilidade.com.br/blog/cnae-como-escolher-o-certo-e-por-que-errar-sai-caro
+Guia sobre CNAE: estrutura da classificação (seções, divisões, classes), como escolher o CNAE correto para a atividade, consequências de erro (tributação incorreta, multas, impossibilidade de emitir NF-e), CNAEs secundários.
+
+### Separar Pessoa Física de Jurídica
+**URL:** https://www.jmfcontabilidade.com.br/blog/separar-pessoa-fisica-de-juridica-o-erro-que-mata-pequenos-negocios
+Por que separar PF de PJ é essencial: riscos de confusão patrimonial, desconsideração da personalidade jurídica, pró-labore, distribuição de lucros, contas bancárias separadas, impactos no IRPF e IRPJ.
+
+### Troca de Contador: quando vale e como fazer sem susto
+**URL:** https://www.jmfcontabilidade.com.br/blog/troca-de-contador-quando-vale-e-como-fazer-sem-susto
+Sinais de que está na hora de trocar de contador: atrasos recorrentes, falta de comunicação, multas por obrigações perdidas, ausência de planejamento tributário. Processo de transição organizado em 5-10 dias pela JMF.
+
+### Quanto Custa um Contador
+**URL:** https://www.jmfcontabilidade.com.br/blog/quanto-custa-um-contador-o-que-voce-deveria-estar-pagando
+Guia de preços de contabilidade no Brasil: faixas de honorários por porte de empresa (MEI R$ 50-150/mês, ME R$ 300-800/mês, EPP R$ 800-2.500/mês), o que está incluído no valor, serviços que geram custos adicionais.
+
+### MEI Estourou o Faturamento: o que fazer agora
+**URL:** https://www.jmfcontabilidade.com.br/blog/mei-estourou-o-faturamento-o-que-fazer-agora
+O que acontece quando o MEI ultrapassa R$ 81.000,00 de faturamento: desenquadramento automático, retroação ou não, regime de transição, migração para ME Simples Nacional, cálculo de impostos após o desenquadramento.
+
+### Migrar de MEI para LTDA: guia completo 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/migrar-de-mei-para-ltda-guia-completo-2026
+Passo a passo da migração de MEI para LTDA: quando migrar, processo (baixa do MEI + abertura da LTDA, ou transformação), documentos, custos, mudança na tributação, obrigações acessórias adicionais, contratação de contador.
+
+### Distribuição de Lucros 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto
+Como funciona a distribuição de lucros: isenção de IR na distribuição (art. 10 Lei 9.249/95), diferença entre lucro contábil e distribuível, pró-labore (tributado) vs lucros (isentos), limite de isenção, escrituração contábil necessária, planejamento para otimização.
+
+### Holding Familiar: vale a pena para pequenos empresários
+**URL:** https://www.jmfcontabilidade.com.br/blog/holding-familiar-vale-a-pena-para-pequenos-empresarios
+Análise de viabilidade de holding familiar: o que é, tipos (patrimonial, profissional, mista), custos de criação, economia em ITCMD, planejamento sucessório, casos em que compensa para pequenos empresários.
+
+### ISS em Blumenau
+**URL:** https://www.jmfcontabilidade.com.br/blog/iss-em-blumenau-aliquotas-por-servico-e-como-calcular
+Guia do ISS em Blumenau/SC: lista de serviços (Lei Complementar 116/2003 + Lei Municipal), alíquotas (2% a 5%), retenção na fonte, obrigações acessórias, regime especial para construção civil, Simples Nacional e ISS.
+
+### Abertura de Empresa em Santa Catarina 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/abertura-de-empresa-em-santa-catarina-passo-a-passo-2026
+Passo a passo completo para abrir empresa em Santa Catarina em 2026: registro na JUCESC (integração com Redesim), obtenção de CNPJ, inscrição estadual (SEF/SC), inscrição municipal, alvará de funcionamento, certificado digital.
+
+### Quanto Custa Abrir Empresa em Blumenau 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026
+Detalhamento de custos: taxa JUCESC, taxa de fiscalização municipal, alvará de funcionamento, certificado digital (A1 ou A3), honorários de contabilidade, custo total estimado para 2026.
+
+### Contabilidade para Profissionais Liberais
+**URL:** https://www.jmfcontabilidade.com.br/blog/contabilidade-para-profissionais-liberais-o-que-voce-precisa-saber
+Guia para médicos, advogados, engenheiros, arquitetos, dentistas e consultores: tributação como PF vs PJ, economia fiscal (35-40% PF → 6-15% PJ Simples Nacional), livro-caixa, Carnê-Leão, Fator R, ISS.
+
+### Split Payment Reforma Tributária
+**URL:** https://www.jmfcontabilidade.com.br/blog/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa
+O que é o split payment no novo sistema tributário brasileiro: pagamento fracionado no momento da transação, cobrança do IBS e CBS na fonte, impacto no fluxo de caixa das empresas, obrigações tecnológicas, créditos e compensações.
+
+### Reforma Tributária 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/reforma-tributaria-2026
+Resumo completo da reforma tributária brasileira: IBS e CBS (impostos sobre valor agregado), IVA dual, split payment, período de transição (2027-2032), impactos por setor, alíquotas de referência, não cumulatividade plena, cashback para famílias de baixa renda.
+
+### Simples Nacional 2026: tabelas e limites
+**URL:** https://www.jmfcontabilidade.com.br/blog/simples-nacional-2026-tabelas-e-limites
+Tabelas completas do Simples Nacional 2026: limites por faixa (até R$ 4,8 milhões), anexos com alíquotas (I: 4%-11,2% comércio, II: 4%-11,2% indústria, III: 6%-21% serviços, IV: 4%-12% serviços, V: 15,5%-30,5% serviços), Fator R, sublimites (ISS de 2% a 5%, ICMS de 1,5% a 3,95%), multa automática para DAS pago após dia 20.
+
+### Pró-labore e Dividendos 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/pro-labore-e-dividendos-2026
+Guia sobre pró-labore e dividendos em 2026: diferenças tributárias, INSS sobre pró-labore (11%), IRRF na fonte (tabela progressiva), dividendos isentos de IR (art. 10 Lei 9.249/95), proporção ideal, escrituração contábil obrigatória para distribuição.
+
+### Fator R Simples Nacional: como calcular
+**URL:** https://www.jmfcontabilidade.com.br/blog/fator-r-simples-nacional-como-calcular
+Guia completo do Fator R: o que é, fórmula (folha de salários / receita bruta × 12 meses), como calcular passo a passo, Anexo III (alíquota a partir de 6%) vs Anexo V (alíquota a partir de 15,5%), Resolução CGSN 140/2018, planejamento para reduzir o Fator R.
+
+### DAS do Simples Nacional Atrasado: Multas, Juros e Como Regularizar em 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/das-atrasado-simples-nacional-como-regularizar
+A partir de 2026, a multa por atraso no DAS é aplicada automaticamente no dia 21, sem notificação da Receita Federal. Valores da multa, juros SELIC, risco de exclusão do Simples Nacional por inadimplência e opções de parcelamento para regularizar.
+
+### Certificado Digital A1 vs A3: Qual Escolher para Sua Empresa em 2026
+**URL:** https://www.jmfcontabilidade.com.br/blog/certificado-digital-a1-vs-a3-qual-escolher
+Certificado digital obrigatório para eSocial, emissão de NF-e e acesso ao e-CAC. Diferenças entre A1 (arquivo digital, validade 1 ano, mais prático) e A3 (cartão/token físico, validade até 5 anos, mais seguro), custos e como escolher o mais adequado para cada tipo de empresa.
+
+### Incentivos Fiscais em Blumenau: O Que Sua Empresa Pode Usar Para Pagar Menos Imposto
+**URL:** https://www.jmfcontabilidade.com.br/blog/incentivos-fiscais-blumenau-pagar-menos-imposto
+Incentivos fiscais reais para empresas de Blumenau/SC: redução de alíquota de ISS prevista em lei municipal (piso de 2%), isenção/redução de ITBI e os programas estaduais PRODEC, Pró-Emprego e TTD 489 (diferimento e crédito de ICMS) para indústrias com projetos de investimento.
+
+---
+
+## Páginas Institucionais
+
+- **Sobre:** https://www.jmfcontabilidade.com.br/sobre
+- **Fale Conosco:** https://www.jmfcontabilidade.com.br/fale-conosco
+- **Trabalhe Conosco:** https://www.jmfcontabilidade.com.br/trabalhe-conosco
+- **Política de Privacidade:** https://www.jmfcontabilidade.com.br/politica-de-privacidade
+- **Segurança dos Dados:** https://www.jmfcontabilidade.com.br/seguranca-dos-dados
