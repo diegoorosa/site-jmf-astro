@@ -5,29 +5,106 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Gestão Pessoal / Departamento Pessoal",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/gestao-pessoal#localbusiness",
+  "name": "JMF Contabilidade – Gestão Pessoal / Departamento Pessoal",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/gestao-pessoal",
+  "description": "Departamento pessoal em Blumenau/SC: folha de pagamento, eSocial, admissões, rescisões e FGTS no prazo. Sem passivo trabalhista. JMF Contabilidade.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Gestão Pessoal / Departamento Pessoal",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
     { "@type": "Question", "name": "Qual a importância de uma gestão pessoal para a minha empresa?", "acceptedAnswer": { "@type": "Answer", "text": "A gestão de pessoas é fundamental para motivar colaboradores e garantir conformidade legal com a CLT, FGTS e eSocial. O custo médio de um processo trabalhista no Brasil supera R$ 30 mil — prejuízo evitável com gestão pessoal correta desde o início." } },
-    { "@type": "Question", "name": "Quais são as atividades que a gestão pessoal vai realizar?", "acceptedAnswer": { "@type": "Answer", "text": "Na admissão: registro no eSocial, contrato, exame admissional. Na gestão mensal: folha com horas extras, comissões, recolhimento FGTS, INSS. Obrigações: CAGED, RAIS, DIRF. Nas rescisões: aviso prévio, saldo de salário, férias proporcionais, 13º, FGTS com multa 40% e homologação." } },
+    { "@type": "Question", "name": "Quais são as atividades que a gestão pessoal vai realizar?", "acceptedAnswer": { "@type": "Answer", "text": "Na admissão: registro no eSocial (S-1200), contrato, exame admissional. Na gestão mensal: folha com horas extras, comissões, recolhimento FGTS, INSS. Obrigações: eSocial (eventos S-1210/S-2299), RAIS, DIRF (substituída pelo eSocial). Nas rescisões: aviso prévio, saldo de salário, férias proporcionais, 13º, FGTS com multa 40% e homologação." } },
     { "@type": "Question", "name": "Quais são as vantagens da gestão pessoal na minha empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Redução do risco trabalhista, previsibilidade de custos, conformidade com eSocial, agilidade nas rotinas de RH e proteção jurídica. Departamento pessoal correto é a principal prova em caso de disputa trabalhista." } },
     { "@type": "Question", "name": "Como posso ter o auxílio da JMF Contabilidade?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp (47) 3326-5123 com resposta no mesmo dia útil. Atendimento presencial (Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau) ou por videoconferência. Empresas com passivo trabalhista recebem orientação para proceder da forma mais segura possível." } },
     { "@type": "Question", "name": "Fazem departamento pessoal de empresas de Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF Contabilidade presta gestão de departamento pessoal para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com admissões, folha e obrigações do eSocial tratadas digitalmente." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title="Gestão Pessoal e Departamento Pessoal em Blumenau | JMF Contabilidade"
+  title="Gestão Pessoal e Departamento Pessoal em Blumenau"
   description="Departamento pessoal em Blumenau/SC: folha de pagamento, eSocial, admissões, rescisões e FGTS no prazo. Sem passivo trabalhista. JMF Contabilidade."
   canonical="https://www.jmfcontabilidade.com.br/gestao-pessoal"
   ogUrl="https://www.jmfcontabilidade.com.br/gestao-pessoal"
@@ -38,7 +115,7 @@ const schema = [serviceSchema, faqSchema];
 
   <HeroInterno
     title="Gestão Pessoal para Empresas em Blumenau/SC"
-    subtitle="Folha de pagamento, eSocial, admissões e rescisões — tudo correto, sem riscos trabalhistas, com a tranquilidade de uma equipe especializada."
+    subtitle="Folha de pagamento, eSocial, admissões e rescisões — tudo..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -53,7 +130,7 @@ const schema = [serviceSchema, faqSchema];
   <!-- Atualizado em -->
   <div class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-2 text-right">
-      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
     </div>
   </div>
 
@@ -67,7 +144,7 @@ const schema = [serviceSchema, faqSchema];
             Com a gestão pessoal da JMF, sua empresa terá um departamento pessoal eficiente, em conformidade com a CLT, o eSocial e todas as obrigações trabalhistas e previdenciárias.
           </p>
           <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Nossa equipe especializada cuida de todas as rotinas: folha de pagamento, FGTS, INSS, admissões, rescisões, CAGED, RAIS e muito mais — para que você foque no crescimento do negócio.
+            Nossa equipe especializada cuida de todas as rotinas: folha de pagamento, FGTS, INSS, admissões, rescisões, eSocial (S-1200/S-1210/S-2299), RAIS e muito mais — para que você foque no crescimento do negócio.
           </p>
           <div class="flex flex-wrap gap-3">
             <a href={WA} target="_blank" rel="noopener"
@@ -192,7 +269,7 @@ const schema = [serviceSchema, faqSchema];
             <details class="accordion-item">
               <summary class="accordion-summary">Quais são as atividades que a gestão pessoal vai realizar?</summary>
               <div class="accordion-body">
-                <p>O departamento pessoal da JMF realiza um ciclo completo de atividades. Na admissão: registro no eSocial, elaboração do contrato, exame admissional. Na gestão mensal: cálculo da folha com horas extras, adicionais, comissões; recolhimento do FGTS; contribuições previdenciárias do INSS. Nas obrigações acessórias: CAGED, RAIS, DIRF. Nas rescisões: cálculo correto do aviso prévio, saldo de salário, férias proporcionais, 13º proporcional, FGTS com multa de 40% e homologação sindical quando exigida. Cada detalhe calculado errado pode se tornar uma ação trabalhista cara. A JMF garante precisão em cada etapa.</p>
+                <p>O departamento pessoal da JMF realiza um ciclo completo de atividades. Na admissão: registro no eSocial, elaboração do contrato, exame admissional. Na gestão mensal: cálculo da folha com horas extras, adicionais, comissões; recolhimento do FGTS; contribuições previdenciárias do INSS. Nas obrigações acessórias: eSocial (S-1210/S-2299), RAIS, DIRF (substituída pelo eSocial). Nas rescisões: cálculo correto do aviso prévio, saldo de salário, férias proporcionais, 13º proporcional, FGTS com multa de 40% e homologação sindical quando exigida. Cada detalhe calculado errado pode se tornar uma ação trabalhista cara. A JMF garante precisão em cada etapa.</p>
               </div>
             </details>
             <details class="accordion-item">
