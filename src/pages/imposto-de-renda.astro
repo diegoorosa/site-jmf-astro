@@ -9,7 +9,7 @@ const serviceSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "Service",
   "name": "Imposto de Renda Pessoa Física",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+  "provider": { "@id": "https://www.jmfcontabilidade.com.br/#organization" },
   "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
 });
 const faqSchema = JSON.stringify({
@@ -27,8 +27,8 @@ const schema = [serviceSchema, faqSchema];
 ---
 
 <Layout
-  title="Perdeu o Prazo do IRPF 2026? Declare em Atraso em Blumenau | JMF Contabilidade"
-  description="O prazo da declaração de IRPF 2026 (ano-base 2025) encerrou em 29/05. Quem não declarou está sujeito a multa e precisa regularizar. A JMF Contabilidade em Blumenau/SC ajuda você a declarar em atraso com segurança."
+  title="Perdeu o Prazo do IRPF 2026? Declare em Atraso em Blumenau"
+  description="O prazo da declaração de IRPF 2026 (ano-base 2025) encerrou em 29/05. Quem não declarou está sujeito a multa e precisa regularizar."
   canonical="https://www.jmfcontabilidade.com.br/imposto-de-renda"
   ogUrl="https://www.jmfcontabilidade.com.br/imposto-de-renda"
   schema={schema}
@@ -37,8 +37,8 @@ const schema = [serviceSchema, faqSchema];
 >
 
   <HeroInterno
-    title="Declarou em Atraso o Imposto de Renda? A JMF Regulariza Sua Situação em Blumenau"
-    subtitle="O prazo da declaração 2026 (ano-base 2025) encerrou em 29 de maio. Quem ainda não declarou já está sujeito a multa — mas quanto antes regularizar, menor o valor a pagar. Fale com quem entende do assunto."
+    title="Declarou em Atraso o Imposto de Renda? A JMF Regulariza..."
+    subtitle="O prazo da declaração 2026 (ano-base 2025) encerrou em 29..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -161,7 +161,7 @@ const schema = [serviceSchema, faqSchema];
           <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Confira quais são os documentos<br/><span class="pp3-grad">exigidos para declarar o IRPF!</span></h2>
 
           <div class="mb-6">
-            <h5 class="font-bold text-[#1e40af] mb-3">DADOS PESSOAIS:</h5>
+            <h4 class="font-bold text-[#1e40af] mb-3">DADOS PESSOAIS:</h4>
             <ul class="text-gray-600 space-y-1 text-sm leading-relaxed">
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>CPF, RG, título de eleitor e certidão de nascimento</li>
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Nome, CPF e data de nascimento de dependentes, cônjuge e alimentandos</li>
@@ -170,7 +170,7 @@ const schema = [serviceSchema, faqSchema];
           </div>
 
           <div class="mb-6">
-            <h5 class="font-bold text-[#1e40af] mb-3">RENDIMENTOS:</h5>
+            <h4 class="font-bold text-[#1e40af] mb-3">RENDIMENTOS:</h4>
             <ul class="text-gray-600 space-y-1 text-sm leading-relaxed">
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Informes de rendimentos de salários, aposentadoria, pensão, aluguéis</li>
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Informes de rendimentos de contas bancárias, investimentos e aplicações</li>
@@ -178,7 +178,7 @@ const schema = [serviceSchema, faqSchema];
           </div>
 
           <div class="mb-6">
-            <h5 class="font-bold text-[#1e40af] mb-3">BENS E DIREITOS:</h5>
+            <h4 class="font-bold text-[#1e40af] mb-3">BENS E DIREITOS:</h4>
             <ul class="text-gray-600 space-y-1 text-sm leading-relaxed">
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Documentos que comprovem a compra e venda de bens e direitos em 2025</li>
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Cópia da matrícula do imóvel e/ou escritura de compra e venda e boleto do IPTU</li>
@@ -187,7 +187,7 @@ const schema = [serviceSchema, faqSchema];
           </div>
 
           <div>
-            <h5 class="font-bold text-[#1e40af] mb-3">DESPESAS DEDUTÍVEIS:</h5>
+            <h4 class="font-bold text-[#1e40af] mb-3">DESPESAS DEDUTÍVEIS:</h4>
             <ul class="text-gray-600 space-y-1 text-sm leading-relaxed">
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Recibos ou informes de rendimentos de plano ou seguro de saúde</li>
               <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i>Recibos e notas fiscais de despesas médicas, odontológicas e de ensino</li>

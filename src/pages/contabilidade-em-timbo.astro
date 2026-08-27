@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Timb%C3%B3.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-timbo#localbusiness",
+  "name": "JMF Contabilidade – Timbó",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-timbo",
+  "description": "Contabilidade para empresas em Timbó/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para o polo industrial do Alto Vale.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Timbó",
+    "addressRegion": "SC",
+    "postalCode": "89120-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.8236,
+    "longitude": -49.2717
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Timbó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Atendemos empresas de Timbó/SC 100% digital. Timbó fica a 35km de Blumenau (40 min), no Alto Vale do Itajaí. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais impostos para indústria em Timbó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Timbó tem forte vocação industrial (metalurgia, plásticos, móveis). Indústrias seguem ICMS estadual (SEFAL) e ISS municipal 2% para serviços industriais. Regime ideal costuma ser Lucro Presumido ou Real para aproveitar créditos de ICMS. Simulamos o melhor para você."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Timbó tem incentivos fiscais para indústria?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Timbó participa do PRODEC e TTD (Lei 489/1997 de SC). Indústrias de base (metalurgia, plásticos, madeira) podem obter redução significativa de ICMS. A JMF assessora a adesão e manutenção dos benefícios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como é o atendimento remoto para Timbó?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 35km (40 min). Resposta no mesmo dia útil. Rotina mensal: docs até dia 5, fechamento até dia 15, guias até dia 20."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Timbó/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Timbó/SC: Simples Nacional ou Lucro Presumido. Polo industrial do Alto Vale. Atendimento digital, 35km de Blumenau."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-timbo"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-timbo"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para indústrias e comércios em Timbó"
+    subtitle="Polo industrial do Alto Vale do Itajaí. Metalurgia, plásticos, móveis e serviços — atendimento digital, 35km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Timbó" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Timbó:<br/><span class="pp3-grad">para o polo industrial do Alto Vale</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Timbó é referência industrial no Alto Vale do Itajaí, com destaque para metalurgia, plásticos, moveleira e indústria têxtil. Empresas industriais exigem contabilidade especializada: apuração de ICMS próprio e ST, controle de custos de produção, rateio de overhead, compliance ambiental e trabalhista complexo.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende indústrias e comércios de Timbó com foco em eficiência operacional e planejamento tributário preventivo. Atendimento 100% digital, com a estrutura de um escritório de 35+ anos em Blumenau (a apenas 35km / 40 min).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Industrial</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escrituração fiscal completa, apuração ICMS próprio/ST, DIFAL, créditos de ICMS, obrigações acessórias (SPED Fiscal, EFD, DCTF). Tudo no prazo, sem multas.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Custos de Produção</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Rateio de matérias-primas, mão de obra indireta, depreciação, overhead industrial. Apuração de CMV por produto/linha. DRE setorial para precificação assertiva.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário Industrial</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Lucro Presumido vs Real, aproveitamento de créditos ICMS, incentivos PRODEC/TTD, exclusão de ICMS da base PIS/COFINS (tese julgada STF). Economia real.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Compliance Trabalhista</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Folha industrial, eSocial, PPRA/PCMSO, horas extras, insalubridade, periculosidade, PLR. Integração com ERP da indústria. Segurança jurídica total.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Timbó industrial:<br/><span class="pp3-grad">particularidades tributárias</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Timbó concentra indústrias que lidam com complexidade tributária elevada:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ICMS complexo:</strong> indústrias de Timbó operam com crédito, débito, ST, DIFAL interestadual, ZFM. Erros de apuração geram autos de infração elevados.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Incentivos PRODEC/TTD:</strong> redução de ICMS para indústrias beneficiadas. Exige contabilidade preparada para demonstrar cumprimento de contrapartidas (investimento, emprego).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Lucro Presumido industrial:</strong> base de presunção 8% (indústria) vs 32% (comércio/serviços). Margens acima de 8% podem tornar o Lucro Presumido menos vantajoso — avaliamos caso a caso.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Exclusão ICMS base PIS/COFINS:</strong> tese firmada no STF (RE 574.706). Indústrias de Timbó podem recuperar valores pagos a maior nos últimos 5 anos.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Indústria metalúrgica em Timbó com faturamento R$ 12M/ano no Simples Nacional (Anexo V) paga ~33% de alíquota efetiva. No Lucro Presumido com incentivo PRODEC, alíquota efetiva pode cair para ~11%. Diferença: > R$ 2.5M/ano. A JMF faz a simulação completa.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Timbó</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Documentos e guias digitais. Relatórios gerenciais mensais.
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 35km (40 min pela BR-470). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
+        </p>
+        <p>
+          <strong>Rotina industrial:</strong> Recebimento docs até dia 5, apuração ICMS até dia 10, fechamento completo até dia 15, guias e relatórios até dia 20.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Simulação tributária industrial gratuita.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

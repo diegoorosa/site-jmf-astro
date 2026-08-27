@@ -1,6 +1,6 @@
 ---
-title: "Novos Impostos na Nota Fiscal: O Que a Sua Empresa Precisa Saber Agora"
-description: "A Reforma Tributária entrou em fase de testes na NF-e e NFC-e com os novos campos de IBS e CBS. Entenda a alíquota simbólica de 1%, quem é obrigado a preencher em 2026, a dispensa do Simples Nacional e a suspensão temporária da rejeição automática."
+title: "Novos Impostos na Nota Fiscal: O Que a Sua Empresa..."
+description: "A Reforma Tributária entrou em fase de testes na NF-e e NFC-e com os novos campos de IBS e CBS."
 pubDate: 2026-08-12
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-novos-impostos-nota-fiscal-ibs-cbs.jpg"

@@ -1,5 +1,5 @@
 ---
-title: "Lucro Presumido ou Lucro Real: Qual é Melhor para Sua Empresa?"
+title: "Lucro Presumido ou Lucro Real: Qual é Melhor para Sua..."
 description: "Entenda as diferenças entre Lucro Presumido e Lucro Real, quando cada regime é obrigatório e como calcular qual gera menos imposto para o seu negócio."
 pubDate: 2026-04-09
 author: "Fabricio Rosa, CRC SC-029833/O"
@@ -9,7 +9,7 @@ imageAlt: "Profissional comparando documentos — Lucro Presumido vs Lucro Real"
 
 A escolha entre Lucro Presumido e Lucro Real é uma das decisões tributárias mais impactantes que uma empresa pode tomar — e ela precisa ser feita com base em números, não em achismo. Feita corretamente, pode representar uma diferença de centenas de milhares de reais em impostos pagos ao longo do ano.
 
-Neste artigo, explicamos como cada regime funciona, quando cada um é obrigatório e como identificar qual é mais vantajoso para o seu caso — lembrando que, para empresas com faturamento até R$ 4,8 milhões, o [Simples Nacional](/simples-nacional-2026-tabelas-e-limites) também deve ser considerado, e o [Fator R](/blog/fator-r-simples-nacional-como-calcular) pode mudar bastante essa comparação para empresas de serviços. Para uma análise mais aprofundada, veja nosso guia de [planejamento tributário](/planejamento-tributario-como-pagar-menos-imposto-legalmente).
+Neste artigo, explicamos como cada regime funciona, quando cada um é obrigatório e como identificar qual é mais vantajoso para o seu caso — lembrando que, para empresas com faturamento até R$ 4,8 milhões, o [Simples Nacional](/blog/simples-nacional-2026-tabelas-e-limites) também deve ser considerado, e o [Fator R](/blog/fator-r-simples-nacional-como-calcular) pode mudar bastante essa comparação para empresas de serviços. Para uma análise mais aprofundada, veja nosso guia de [planejamento tributário](/blog/planejamento-tributario-como-pagar-menos-imposto-legalmente).
 
 ## O que é o Lucro Presumido?
 
@@ -95,7 +95,7 @@ Não existe uma fórmula universal. A decisão depende de:
 3. Perspectiva de resultado para o próximo ano
 4. Capacidade de manter escrituração contábil completa (Lucro Real exige mais controles)
 
-A escolha deve ser feita anualmente, antes de janeiro, e é **irrevogável durante o ano-calendário**. A JMF Contabilidade realiza simulações comparativas gratuitas para clientes novos — conheça nosso serviço de [consultoria e planejamento tributário](/consultoria-e-planejamento-tributario), veja o [comparativo completo dos regimes tributários](/regimes-tributarios), nosso [guia completo sobre o Simples Nacional](/simples-nacional) ou leia nosso artigo sobre [planejamento tributário](/planejamento-tributario-como-pagar-menos-imposto-legalmente). [Entre em contato antes de tomar sua decisão →](/fale-conosco)
+A escolha deve ser feita anualmente, antes de janeiro, e é **irrevogável durante o ano-calendário**. A JMF Contabilidade realiza simulações comparativas gratuitas para clientes novos — conheça nosso serviço de [consultoria e planejamento tributário](/consultoria-e-planejamento-tributario), veja o [comparativo completo dos regimes tributários](/regimes-tributarios), nosso [guia completo sobre o Simples Nacional](/simples-nacional) ou leia nosso artigo sobre [planejamento tributário](/blog/planejamento-tributario-como-pagar-menos-imposto-legalmente). [Entre em contato antes de tomar sua decisão →](/fale-conosco)
 
 ## Perguntas frequentes
 

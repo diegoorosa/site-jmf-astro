@@ -1,6 +1,6 @@
 ---
 title: "ISS em Blumenau: Alíquotas por Serviço e Como Calcular"
-description: "O ISS em Blumenau varia de 2% a 5% dependendo da atividade. Saiba quais são as alíquotas para os principais serviços, quando recolher e como evitar erros comuns."
+description: "O ISS em Blumenau varia de 2% a 5% dependendo da atividade. Saiba quais são as alíquotas para os principais serviços, quando recolher e como evitar..."
 pubDate: 2026-05-07
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-iss-blumenau.jpg"

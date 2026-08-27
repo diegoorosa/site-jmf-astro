@@ -7,14 +7,16 @@ interface Props {
 }
 const { title, subtitle, breadcrumb, ctas = [] } = Astro.props;
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const siteOrigin = 'https://www.jmfcontabilidade.com.br';
+const breadcrumbForSchema = breadcrumb.filter((item, index) => item.href || index === breadcrumb.length - 1);
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumb.map((item, i) => ({
+  "itemListElement": breadcrumbForSchema.map((item, i) => ({
     "@type": "ListItem",
     "position": i + 1,
     "name": item.label,
-    ...(item.href ? { "item": item.href } : {})
+    ...(item.href ? { "item": new URL(item.href, siteOrigin).href } : {})
   }))
 });
 ---

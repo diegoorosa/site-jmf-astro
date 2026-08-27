@@ -1,6 +1,6 @@
 ---
-title: "Nota Fiscal de Serviços: Como Emitir Corretamente e Evitar Problemas com o Fisco"
-description: "NFS-e, ISSQN, alíquota, tomador, prestador, retenção na fonte — entenda tudo o que envolve a emissão de nota fiscal de serviços e não deixe dinheiro ou conformidade na mesa."
+title: "Nota Fiscal de Serviços: Como Emitir Corretamente e..."
+description: "NFS-e, ISSQN, alíquota, tomador, prestador, retenção na fonte — entenda tudo o que envolve a emissão de nota fiscal de serviços e não deixe dinheiro ou..."
 pubDate: 2026-03-05
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-nota-fiscal-servicos.jpg"

@@ -4,19 +4,107 @@ import HeroInterno from '../components/HeroInterno.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20o%20Simples%20Nacional%20e%20quero%20orienta%C3%A7%C3%A3o.";
-const schema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "CollectionPage",
-  "name": "Simples Nacional 2026: Tabelas, Fator R e Regime Tributário",
-  "description": "Hub completo sobre o Simples Nacional: tabelas de alíquotas, Fator R, limites, quando mudar de regime e como reduzir a carga tributária legalmente.",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/simples-nacional#localbusiness",
+  "name": "JMF Contabilidade – Simples Nacional 2026",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
   "url": "https://www.jmfcontabilidade.com.br/simples-nacional",
-  "publisher": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" }
+  "description": "Hub completo sobre o Simples Nacional: tabelas de alíquotas, Fator R, limites, quando mudar de regime e como reduzir a carga tributária legalmente.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Simples Nacional e Regime Tributário",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Quem pode optar pelo Simples Nacional?", "acceptedAnswer": { "@type": "Answer", "text": "Microempresas (ME, faturamento anual até R$ 360.000) e Empresas de Pequeno Porte (EPP, até R$ 4,8 milhões/ano) podem optar. O MEI tem regras e limite próprios (R$ 81.000/ano). Empresas que já estão no Lucro Presumido ou Real podem migrar com o plano de transição adequado." } },
+    { "@type": "Question", "name": "Como funciona o cálculo do DAS no Simples Nacional?", "acceptedAnswer": { "@type": "Answer", "text": "O DAS (Documento de Arrecadação do Simples Nacional) é calculado por faixa de faturamento: (RBT12 × Alíquota nominal − Parcela a deduzir) ÷ RBT12. As alíquotas variam de 6% a 33% para Anexo III (serviços) e 15,5% a 30,5% para Anexo V. O cálculo considera o faturamento dos últimos 12 meses e o total de pró-labore e salários (Fator R)." } },
+    { "@type": "Question", "name": "Qual o prazo para pagar o DAS e o que acontece se atrasar?", "acceptedAnswer": { "@type": "Answer", "text": "O DAS normalmente vence no dia 20 do mês subsequente ao período de apuração. Em caso de atraso, a recomendação é consultar o PGDAS-D e emitir uma guia atualizada, verificando a situação do débito antes de decidir entre quitação ou parcelamento." } },
+    { "@type": "Question", "name": "Como migrar do Simples Nacional para Lucro Presumido ou Real?", "acceptedAnswer": { "@type": "Answer", "text": "A migração requer planejamento: o prazo de opção costuma ser em janeiro ou julho. A JMF realiza simulação comparativa com seus números reais para definir o regime mais vantajoso. A saída do Simples pode gerar efeitos sobre créditos PIS/COFINS e o momento da migração impacta o Fator R do próximo ano." } },
+    { "@type": "Question", "name": "Como regularizar DAS em atraso?", "acceptedAnswer": { "@type": "Answer", "text": "Consulte a apuração e emita a guia atualizada pelo canal oficial. Para débitos declarados no PGDAS-D, o parcelamento pode ser uma alternativa conforme a situação da empresa e as condições apresentadas no serviço oficial." } }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title="Simples Nacional 2026: Tabelas, Fator R e Regime Tributário | JMF"
-  description="Tudo sobre o Simples Nacional em 2026: tabelas de alíquotas, Fator R, limites de faturamento, quando mudar de regime e como pagar menos imposto."
+  title="Simples Nacional: Tabelas, Fator R e Regime Tributário | JMF"
+  description="Entenda Simples Nacional, tabelas, Fator R, limites, DAS em atraso e como avaliar o regime tributário com dados da sua empresa."
   canonical="https://www.jmfcontabilidade.com.br/simples-nacional"
   ogUrl="https://www.jmfcontabilidade.com.br/simples-nacional"
   schema={schema}
@@ -25,8 +113,8 @@ const schema = JSON.stringify({
 >
 
   <HeroInterno
-    title="Simples Nacional 2026"
-    subtitle="O regime tributário mais escolhido por pequenas e médias empresas no Brasil. Entenda tabelas, Fator R e quando vale a pena mudar de regime."
+    title="Simples Nacional"
+    subtitle="Tabelas, Fator R, limites e os pontos que sua empresa precisa conferir antes de decidir."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Simples Nacional" }
@@ -41,7 +129,7 @@ const schema = JSON.stringify({
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <p class="text-gray-600 text-lg leading-relaxed mb-6">
-        O <strong>Simples Nacional</strong> é o regime tributário mais popular do Brasil, reunindo oito tributos em uma única guia de pagamento (DAS). Em 2026, as tabelas de alíquotas não mudaram em relação a 2025, mas há novidades importantes: multa automática para DAS pago após o dia 21 e o impacto da reforma tributária para empresas B2B a partir de 2027.
+        O <strong>Simples Nacional</strong> é um regime tributário voltado a micro e pequenas empresas, com pagamento por meio do DAS. Para decidir se ele faz sentido, não basta olhar a alíquota inicial: atividade, faturamento, folha, Fator R, obrigações e momento da empresa mudam a análise.
       </p>
       <p class="text-gray-600 text-lg leading-relaxed mb-6">
         Este hub reúne todos os artigos da JMF sobre o Simples Nacional e regime tributário para ajudar você a tomar a melhor decisão para o seu negócio.
@@ -72,7 +160,9 @@ const schema = JSON.stringify({
       </p>
 
       <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">Tabelas dos anexos (alíquotas 2026)</h3>
-      <p class="text-gray-600 leading-relaxed mb-4">A alíquota efetiva é calculada por: <code class="bg-gray-100 px-2 py-1 rounded text-sm">(RBT12 × Alíquota nominal − Parcela a deduzir) ÷ RBT12</code>, onde RBT12 é o faturamento bruto acumulado nos últimos 12 meses.</p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        A alíquota efetiva é calculada por: <code class="bg-gray-100 px-2 py-1 rounded text-sm">(RBT12 × Alíquota nominal − Parcela a deduzir) ÷ RBT12</code>, onde RBT12 é o faturamento bruto acumulado nos últimos 12 meses.
+      </p>
 
       <h4 class="font-bold text-[#0f172a] mt-6 mb-2">Anexo III — Serviços (com Fator R)</h4>
       <div class="overflow-x-auto mb-6">
@@ -105,14 +195,14 @@ const schema = JSON.stringify({
       </div>
       <p class="text-gray-500 text-sm mb-6">Os Anexos I (comércio), II (indústria) e IV (serviços com INSS patronal separado) seguem tabelas próprias — veja o <a href="/blog/simples-nacional-2026-tabelas-e-limites" class="text-[#1e40af] hover:underline font-semibold">artigo completo com todas as faixas</a>.</p>
 
-      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">Fator R: a alavanca que corta a alíquota em mais de 60%</h3>
+      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">Fator R: quando a folha muda o anexo aplicável</h3>
       <p class="text-gray-600 leading-relaxed mb-4">
-        Se o total de pró-labore e salários dos sócios nos últimos 12 meses for igual ou superior a <strong>28% do faturamento</strong> do mesmo período, a empresa de serviços migra automaticamente do Anexo V para o Anexo III — na 1ª faixa, isso significa sair de 15,5% para 6,0% de alíquota efetiva. Exemplo real: uma consultoria que fatura R$ 15.000/mês com pró-labore de R$ 5.000/mês (33,3% do faturamento, acima de 28%) paga um DAS de ~R$ 900/mês no Anexo III, contra ~R$ 2.325/mês no Anexo V sem o Fator R — uma diferença de mais de R$ 17.000 por ano. Use a <a href="/calculadora-fator-r" class="text-[#1e40af] hover:underline font-semibold">Calculadora do Fator R</a> para simular o seu caso.
+        Para atividades sujeitas ao Fator R, a relação entre folha e faturamento dos últimos 12 meses pode influenciar o anexo aplicável. A referência de 28% é importante, mas o efeito depende da atividade, da faixa de receita e dos dados efetivos da empresa. Use a <a href="/calculadora-fator-r" class="text-[#1e40af] hover:underline font-semibold">Calculadora do Fator R</a> como estimativa inicial e valide a conclusão antes de optar ou alterar uma rotina.
       </p>
 
-      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">Duas novidades para ficar atento em 2026 e 2027</h3>
+      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">DAS em atraso e mudanças de regime: pontos de atenção</h3>
       <p class="text-gray-600 leading-relaxed mb-4">
-        Desde 2026, a multa por atraso no DAS passa a ser aplicada <strong>automaticamente no dia 21</strong> do mês seguinte — antes, o lançamento exigia processo manual. E a partir de 2027, com a <a href="/reforma-tributaria" class="text-[#1e40af] hover:underline font-semibold">Reforma Tributária</a> em vigor plena, empresas do Simples que vendem para outras empresas (B2B) podem perder competitividade pelo crédito tributário limitado do IBS/CBS — vale avaliar com o contador, até setembro de 2026, se compensa aderir ao regime híbrido.
+        Se o DAS venceu, confira a apuração e emita uma guia atualizada pelo canal oficial antes de tomar qualquer decisão. Veja o nosso [guia para DAS do Simples Nacional atrasado](/blog/das-atrasado-simples-nacional-como-regularizar) para organizar o procedimento. Mudanças tributárias também devem ser acompanhadas com dados da operação, especialmente em empresas que vendem para outras empresas ou avaliam troca de regime.
       </p>
     </div>
   </section>
@@ -130,7 +220,7 @@ const schema = JSON.stringify({
             </div>
             <div>
               <h3 class="font-bold text-[#0f172a] text-lg group-hover:text-[#1e40af] mb-1">Simples Nacional 2026: Tabelas, Limites e Tudo Que Você Precisa Saber</h3>
-              <p class="text-gray-500 text-sm leading-relaxed">Tabelas completas dos 5 anexos, alíquotas nominais, parcelas a deduzir, multa automática no dia 21 e alerta para 2027.</p>
+              <p class="text-gray-500 text-sm leading-relaxed">Tabelas dos anexos, alíquotas nominais, parcelas a deduzir e pontos de atenção para análise do regime.</p>
               <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm mt-2 group-hover:gap-2 transition-all">Ler artigo <i class="bi bi-arrow-right"></i></span>
             </div>
           </div>

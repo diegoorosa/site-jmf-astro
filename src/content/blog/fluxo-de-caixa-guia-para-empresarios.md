@@ -1,6 +1,6 @@
 ---
-title: "Fluxo de Caixa: O Guia Prático para Empresários que Não Querem Surpresas"
-description: "Empresa lucrativa pode quebrar por falta de caixa. Entenda como montar, interpretar e usar o fluxo de caixa para antecipar crises e tomar decisões com segurança."
+title: "Fluxo de Caixa: O Guia Prático para Empresários que Não..."
+description: "Empresa lucrativa pode quebrar por falta de caixa. Entenda como montar, interpretar e usar o fluxo de caixa para antecipar crises e tomar decisões com..."
 pubDate: 2026-01-22
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-fluxo-de-caixa.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Controle financeiro e fluxo de caixa empresarial"
 
 Uma das frases mais comuns entre empresários em dificuldade é: "mas minha empresa vende bem — como pode estar sem dinheiro?" A resposta quase sempre está no fluxo de caixa mal gerenciado. **Lucro é diferente de caixa**, e confundir os dois é o erro que quebra empresas saudáveis.
 
-Neste guia, explicamos como o fluxo de caixa funciona, como montá-lo e como usá-lo para antecipar problemas antes que se tornem crises. Para uma visão mais ampla de como usar os números do seu negócio, veja também nosso guia de [contabilidade gerencial](/contabilidade-gerencial-use-numeros-para-decidir).
+Neste guia, explicamos como o fluxo de caixa funciona, como montá-lo e como usá-lo para antecipar problemas antes que se tornem crises. Para uma visão mais ampla de como usar os números do seu negócio, veja também nosso guia de [contabilidade gerencial](/blog/contabilidade-gerencial-use-numeros-para-decidir).
 
 ## Por que lucro e caixa são coisas diferentes?
 

@@ -1,13 +1,13 @@
 ---
-title: "Fator R no Simples Nacional: O Que É, Como Calcular e Por Que Pode Reduzir Seu Imposto"
-description: "O Fator R determina se sua empresa paga 6% (Anexo III) ou 15,5% (Anexo V) no Simples Nacional. Entenda a fórmula exata, veja um exemplo prático e calcule agora gratuitamente."
+title: "Fator R no Simples Nacional: O Que É, Como Calcular e Por..."
+description: "O Fator R determina se sua empresa paga 6% (Anexo III) ou 15,5% (Anexo V) no Simples Nacional."
 pubDate: 2026-06-15
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-fator-r-folha-pagamento.jpg"
 imageAlt: "Contando valores da folha de pagamento — cálculo do Fator R no Simples Nacional"
 ---
 
-Para empresas de serviços no [Simples Nacional](/simples-nacional-2026-tabelas-e-limites), um único número pode significar a diferença entre pagar **6% ou 15,5% de imposto** sobre o faturamento. Esse número é o **Fator R** — e a maioria dos empresários ainda não o monitora mensalmente. Se sua empresa fatura acima do limite do Simples, veja também a comparação entre [Lucro Presumido e Lucro Real](/lucro-presumido-vs-lucro-real).
+Para empresas de serviços no [Simples Nacional](/blog/simples-nacional-2026-tabelas-e-limites), um único número pode significar a diferença entre pagar **6% ou 15,5% de imposto** sobre o faturamento. Esse número é o **Fator R** — e a maioria dos empresários ainda não o monitora mensalmente. Se sua empresa fatura acima do limite do Simples, veja também a comparação entre [Lucro Presumido e Lucro Real](/blog/lucro-presumido-vs-lucro-real).
 
 Se você presta serviços e está no Simples Nacional, este artigo pode ser o mais importante que você vai ler sobre tributos este ano.
 
@@ -147,7 +147,7 @@ Sim — a partir de 2027, com a entrada em vigor do IBS e da CBS, o Simples Naci
 
 Até lá, o Fator R continua sendo a principal alavanca de redução tributária legal para empresas de serviços no Simples. Use-o enquanto vigora.
 
-> **Quer uma análise completa do regime tributário da sua empresa?** A JMF Contabilidade oferece [consultoria e planejamento tributário](/consultoria-e-planejamento-tributario) e pode identificar se o Simples Nacional ainda é o melhor regime para você — ou se é hora de migrar para o [Lucro Presumido](/lucro-presumido-vs-lucro-real). Veja também nosso [guia completo sobre o Simples Nacional](/simples-nacional). [Fale com nossa equipe →](/fale-conosco)
+> **Quer uma análise completa do regime tributário da sua empresa?** A JMF Contabilidade oferece [consultoria e planejamento tributário](/consultoria-e-planejamento-tributario) e pode identificar se o Simples Nacional ainda é o melhor regime para você — ou se é hora de migrar para o [Lucro Presumido](/blog/lucro-presumido-vs-lucro-real). Veja também nosso [guia completo sobre o Simples Nacional](/simples-nacional). [Fale com nossa equipe →](/fale-conosco)
 
 ---
 

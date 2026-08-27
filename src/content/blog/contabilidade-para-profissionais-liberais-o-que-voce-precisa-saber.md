@@ -1,6 +1,6 @@
 ---
-title: "Contabilidade para Profissionais Liberais: O Que Você Precisa Saber"
-description: "Médico, advogado, engenheiro, psicólogo, arquiteto — profissionais liberais têm particularidades tributárias que a maioria não conhece. Entenda o que muda para quem tem formação e trabalha por conta própria."
+title: "Contabilidade para Profissionais Liberais: O Que Você..."
+description: "Médico, advogado, engenheiro, psicólogo, arquiteto — profissionais liberais têm particularidades tributárias que a maioria não conhece."
 pubDate: 2026-06-05
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-profissionais-liberais.jpg"
@@ -11,7 +11,7 @@ Médico com consultório próprio. Advogado com escritório solo. Arquiteto aut�
 
 Profissional liberal não é sinônimo de pessoa física autônoma. Pode ser — e muitas vezes deveria ser — uma empresa bem estruturada, com regime tributário correto e remuneração eficiente para o sócio.
 
-## Pessoa Física ou Pessoa Jurídica? — [saiba por que misturar as finanças é um erro](/separar-pessoa-fisica-de-juridica-o-erro-que-mata-pequenos-negocios)
+## Pessoa Física ou Pessoa Jurídica? — [saiba por que misturar as finanças é um erro](/blog/separar-pessoa-fisica-de-juridica-o-erro-que-mata-pequenos-negocios)
 
 Essa é a primeira decisão — e a mais impactante.
 

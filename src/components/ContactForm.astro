@@ -5,6 +5,7 @@ interface Props {
   phoneRequired?: boolean;
 }
 const { phoneName = "phone", phoneLabel = "WhatsApp", phoneRequired = false } = Astro.props;
+const sourcePage = Astro.url.pathname;
 ---
 
 <form
@@ -19,10 +20,13 @@ const { phoneName = "phone", phoneLabel = "WhatsApp", phoneRequired = false } = 
       .finally(() => { loading = false; });
   "
 >
-  <div x-show="sent" x-transition class="mb-4 p-4 bg-green-100 text-green-800 rounded-lg border border-green-200">
-    Obrigado pela mensagem! Entraremos em contato em breve.
+  <input type="hidden" name="source_page" value={sourcePage} />
+  <input type="hidden" name="_subject" value="Novo contato pelo site JMF" />
+
+  <div x-show="sent" x-transition x-cloak role="status" aria-live="polite" class="mb-4 p-4 bg-green-100 text-green-800 rounded-lg border border-green-200">
+    Mensagem recebida. Nossa equipe retornará pelo contato informado.
   </div>
-  <div x-show="error" x-transition class="mb-4 p-4 bg-red-100 text-red-800 rounded-lg border border-red-200">
+  <div x-show="error" x-transition x-cloak role="alert" class="mb-4 p-4 bg-red-100 text-red-800 rounded-lg border border-red-200">
     Erro ao enviar. Tente novamente ou entre em contato pelo WhatsApp.
   </div>
 
@@ -40,6 +44,18 @@ const { phoneName = "phone", phoneLabel = "WhatsApp", phoneRequired = false } = 
     <label for="cf-email" class="sr-only">E-mail</label>
     <input id="cf-email" type="email" name="email" placeholder="E-mail" required class="form-field" />
   </div>
+  <div class="mb-4">
+    <label for="cf-subject" class="sr-only">Como podemos ajudar?</label>
+    <select id="cf-subject" name="subject" required class="form-field bg-white">
+      <option value="" disabled selected>Como podemos ajudar?</option>
+      <option value="Abertura de empresa">Quero abrir uma empresa</option>
+      <option value="Troca de contador">Quero trocar de contador</option>
+      <option value="Regularização ou DAS">Preciso regularizar uma pendência</option>
+      <option value="Planejamento tributário">Quero revisar impostos ou regime tributário</option>
+      <option value="Contabilidade para empresa">Procuro contabilidade para minha empresa</option>
+      <option value="Outro assunto">Outro assunto</option>
+    </select>
+  </div>
   <div class="mb-6">
     <label for="cf-message" class="sr-only">Sua mensagem</label>
     <textarea id="cf-message" name="message" placeholder="Digite sua mensagem aqui..." rows={5} class="form-field resize-y min-h-[120px]"></textarea>
@@ -49,7 +65,7 @@ const { phoneName = "phone", phoneLabel = "WhatsApp", phoneRequired = false } = 
     :disabled="loading"
     class="w-full py-3.5 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors disabled:opacity-60"
   >
-    <span x-show="!loading"><i class="bi bi-send mr-2"></i>Enviar Mensagem</span>
+    <span x-show="!loading"><i class="bi bi-send mr-2"></i>Solicitar orientação</span>
     <span x-show="loading">Enviando...</span>
   </button>
 </form>

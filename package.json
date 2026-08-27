@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.3",
     "@fontsource/fraunces": "^5.2.9",
     "@fontsource/inter": "^5.2.8",
     "@google/generative-ai": "^0.24.1",
@@ -23,7 +24,9 @@
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
+    "glob": "^13.0.6",
     "playwright": "^1.61.0",
+    "sharp": "^0.35.3",
     "vite": "^7.3.5"
   }
 }

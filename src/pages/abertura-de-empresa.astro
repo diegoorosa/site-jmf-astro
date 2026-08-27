@@ -5,14 +5,89 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20abrir%20minha%20empresa%20em%20Blumenau%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20da%20JMF.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Abertura de Empresa em Blumenau/SC",
-  "description": "Processo completo de abertura de empresa em Blumenau/SC em até 10 dias úteis: planejamento, contrato social, JUCESC, CNPJ, inscrições e alvará.",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/abertura-de-empresa#localbusiness",
+  "name": "JMF Contabilidade – Abertura de Empresa Blumenau",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/abertura-de-empresa",
+  "description": "Abertura de empresa em Blumenau/SC com a JMF: CNPJ, JUCESC, alvará e inscrição municipal em até 10 dias úteis. Atendimento digital para todo o Médio Vale.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Abertura de Empresa",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -25,12 +100,13 @@ const faqSchema = JSON.stringify({
     { "@type": "Question", "name": "Posso abrir minha empresa sem alugar uma sala comercial?", "acceptedAnswer": { "@type": "Answer", "text": "Sim! Para prestadores de serviço e negócios digitais, você não precisa arcar com os custos de um aluguel tradicional. A JMF possui parcerias com coworkings e escritórios virtuais em Blumenau para fornecer o seu Endereço Fiscal, garantindo a regularização do seu CNPJ e alvará de forma rápida e 100% legal." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
   title="Abertura de Empresa em Blumenau/SC | JMF Contabilidade"
-  description="Abra sua empresa em Blumenau/SC com a JMF: CNPJ, JUCESC, alvará e inscrição municipal em até 10 dias úteis. Orientação tributária gratuita antes de começar."
+  description="Abra sua empresa em Blumenau/SC com a JMF: CNPJ, JUCESC, alvará e inscrição municipal em até 10 dias úteis."
   canonical="https://www.jmfcontabilidade.com.br/abertura-de-empresa"
   ogUrl="https://www.jmfcontabilidade.com.br/abertura-de-empresa"
   schema={schema}
@@ -40,7 +116,7 @@ const schema = [serviceSchema, faqSchema];
 
   <HeroInterno
     title="Abertura de Empresa em Blumenau/SC"
-    subtitle="Do primeiro contato até a emissão da primeira nota fiscal em até 10 dias úteis. Nossa equipe resolve todos os trâmites sem burocracia, sem precisar ir a nenhuma repartição."
+    subtitle="Do primeiro contato até a emissão da primeira nota fiscal..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -121,6 +197,7 @@ const schema = [serviceSchema, faqSchema];
           </div>
         </div>
         <p class="text-gray-600 text-sm text-center">Veja também nosso post com a <a href="/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026" class="text-[#1e40af] hover:underline font-semibold">lista completa de custos e taxas para abrir empresa em Blumenau em 2026</a>. Para um orçamento exato com base na sua atividade, <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] hover:underline font-semibold">fale conosco pelo WhatsApp</a>.</p>
+<p class="text-sm text-center mt-4"><a href="/abertura-empresa-sc" class="text-[#1e40af] hover:underline font-semibold">→ Abrir empresa em outras cidades de Santa Catarina (fora do Médio Vale)</a></p>
       </div>
     </div>
   </section>

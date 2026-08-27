@@ -140,7 +140,7 @@ Departamento pessoal completo em Blumenau/SC:
 - Rescisão contratual (cálculo de verbas rescisórias, homologação)
 - Férias e 13º salário
 - GFIP/SEFIP e DCTFWeb
-- CAGED, RAIS (quando aplicável)
+- eSocial (S-1210/S-2299), RAIS (quando aplicável)
 - Gestão de benefícios (vale-transporte, vale-alimentação, plano de saúde)
 
 ---

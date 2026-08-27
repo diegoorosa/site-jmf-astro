@@ -1,5 +1,5 @@
 ---
-title: "Regimes Tributários em Blumenau: Resumo Rápido Para Escolher o Melhor"
+title: "Regimes Tributários em Blumenau: Resumo Rápido Para..."
 description: "Comparativo rápido de Simples Nacional, Lucro Presumido e Lucro Real para empresas em Blumenau em 2026. Tabelas, limites e quando cada um vale a pena."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"

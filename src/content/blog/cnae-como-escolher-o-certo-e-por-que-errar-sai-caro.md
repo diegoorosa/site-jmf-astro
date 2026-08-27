@@ -1,13 +1,13 @@
 ---
 title: "CNAE: Como Escolher o Certo e Por Que Errar Sai Caro"
-description: "O CNAE define seu regime tributário, a alíquota do ISS e até suas obrigações trabalhistas. Escolher errado pode custar caro — entenda como acertar na primeira vez."
+description: "O CNAE define seu regime tributário, a alíquota do ISS e até suas obrigações trabalhistas."
 pubDate: 2026-01-15
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-cnae-escolher.jpg"
 imageAlt: "Documentos e planilhas de classificação empresarial"
 ---
 
-Na hora de abrir uma empresa ([veja o passo a passo](/abertura-de-empresa-em-santa-catarina-passo-a-passo-2026)), existe uma decisão que muitos empresários tomam sem saber o peso que ela carrega: a escolha do CNAE. Um código de quatro números que define, na prática, quanto imposto você vai pagar, que alíquota de ISS incide sobre seus serviços e quais obrigações trabalhistas sua empresa terá.
+Na hora de abrir uma empresa ([veja o passo a passo](/blog/abertura-de-empresa-em-santa-catarina-passo-a-passo-2026)), existe uma decisão que muitos empresários tomam sem saber o peso que ela carrega: a escolha do CNAE. Um código de quatro números que define, na prática, quanto imposto você vai pagar, que alíquota de ISS incide sobre seus serviços e quais obrigações trabalhistas sua empresa terá.
 
 Errar aqui não é só uma questão burocrática. É dinheiro perdido — ou pago a mais — mês após mês.
 

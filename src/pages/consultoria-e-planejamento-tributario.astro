@@ -5,13 +5,89 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Consultoria e Planejamento Tributário",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario#localbusiness",
+  "name": "JMF Contabilidade – Consultoria e Planejamento Tributário",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario",
+  "description": "Planejamento tributário em Blumenau/SC: reduza impostos legalmente com Simples Nacional, Lucro Presumido ou Lucro Real.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Consultoria e Planejamento Tributário",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -23,12 +99,13 @@ const faqSchema = JSON.stringify({
     { "@type": "Question", "name": "A consultoria atende empresas de Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF presta consultoria e planejamento tributário para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com reuniões por videoconferência sempre que o cliente preferir não se deslocar até o escritório." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title="Consultoria e Planejamento Tributário em Blumenau | JMF Contabilidade"
-  description="Planejamento tributário em Blumenau/SC: reduza impostos legalmente com Simples Nacional, Lucro Presumido ou Lucro Real. Análise gratuita e personalizada pela JMF."
+  title="Consultoria e Planejamento Tributário em Blumenau"
+  description="Planejamento tributário em Blumenau/SC: reduza impostos legalmente com Simples Nacional, Lucro Presumido ou Lucro Real."
   canonical="https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario"
   ogUrl="https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario"
   schema={schema}
@@ -37,8 +114,8 @@ const schema = [serviceSchema, faqSchema];
 >
 
   <HeroInterno
-    title="Planejamento Tributário em Blumenau para Reduzir sua Carga Fiscal"
-    subtitle="Nós verificamos os procedimentos fiscais, regimes de tributação, documentos e demais processos, buscando encontrar oportunidades de economia e a proteção da empresa."
+    title="Planejamento Tributário em Blumenau para Reduzir sua..."
+    subtitle="Nós verificamos os procedimentos fiscais, regimes de..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -53,7 +130,7 @@ const schema = [serviceSchema, faqSchema];
   <!-- Atualizado em -->
   <div class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-2 text-right">
-      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
     </div>
   </div>
 

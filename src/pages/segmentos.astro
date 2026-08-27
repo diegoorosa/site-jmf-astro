@@ -1,0 +1,468 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20empresa%20no%20segmento%20de%20[SEU%20SEGMENTO]%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20tribut%C3%A1ria%20especializada.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/segmentos#localbusiness",
+  "name": "JMF Contabilidade – Contabilidade Especializada por Segmento",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/segmentos",
+  "description": "Contabilidade especializada para diferentes segmentos de negócios em Blumenau/SC. Equipe com expertise em varejo, indústria, serviços, construção, saúde, tecnologia e mais. Planejamento tributário personalizado conforme as especificidades do seu segmento.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Contabilidade por Segmento de Negócio",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Varejo e Comércio" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Indústria e Manufatura" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Prestação de Serviços" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Construção e Imobiliário" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Saúde e Bem-Estar" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escritório-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Por que eu preciso de contabilidade especializada para o meu segmento de negócio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Cada segmento de negócio possui especificidades tributárias, obrigações acessórias e oportunidades de economia fiscal únicas. A contabilidade genérica pode deixar de aproveitar benefícios específicos do seu setor ou até aplicar regras incorretamente. Nossa equipe possui expertise em diversos segmentos e entende as particularidades de cada um, garantindo conformidade total e maximização de benefícios fiscais disponíveis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais segmentos de negócio a JMF Contabilidade atende com especialização?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Atendemos com especialização os seguintes segmentos: Varejo e Comércio, Indústria e Manufatura, Prestação de Serviços, Construção e Imobiliário, Saúde e Bem-Estar, Tecnologia e Startups, Agronegócio, Transporte e Logística, Entretenimento e Lazer, e Instituições de Ensino. Cada segmento possui uma equipe dedicada com conhecimento aprofundado das leis específicas, obrigações acessórias e oportunidades de planejamento tributário."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como a contabilidade especializada pode reduzir meus impostos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A contabilidade especializada identifica oportunidades de economia fiscal específicas do seu segmento, como: incentivos fiscais setoriais, regimes tributários diferenciados, deduções permitidas por legislação setorial, e estratégias de planejamento tributário que respeitam as particularidades do seu negócio. Por exemplo: indústrias podem se beneficiar de créditos de ICMS, empresas de tecnologia podem aproveitar leis de inovação, e o segmento de saúde possui regras específicas para faturamento e tributação de serviços médicos."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Qual a diferença entre contabilidade genérica e contabilidade especializada por segmento?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A contabilidade genérica aplica as regras tributárias de forma padronizada, sem considerar as especificidades de cada setor. Já a contabilidade especializada por segmento entende profundamente as leis específicas do seu segmento de negócio, incluindo: legislação setorial, incentivos fiscais específicos, obrigações acessórias particulares, e oportunidades de planejamento tributário que só existem dentro daquele contexto. Isso resulta em maior conformidade, menor risco fiscal e melhor aproveitamento de benefícios disponíveis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como faço para saber se minha empresa se encaixa em algum segmento específico para contabilidade especializada?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nossa equipe realiza uma análise gratuita do seu CNAE (Classificação Nacional de Atividades Econômicas) e da descrição detalhada das suas atividades para determinar em qual segmento sua empresa se encaixa melhor. Com base nessa análise, indicamos se há necessidade de abordagem especializada e quais seriam os benefícios específicos para o seu caso. Este serviço é oferecido gratuitamente durante a consulta inicial."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade Especializada por Segmento de Negócio | JMF Contabilidade"
+  description="Contabilidade especializada para diferentes segmentos de negócios em Blumenau/SC. Equipe com expertise em varejo, indústria, serviços, construção, saúde, tecnologia e mais."
+  canonical="https://www.jmfcontabilidade.com.br/segmentos"
+  ogUrl="https://www.jmfcontabilidade.com.br/segmentos"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade Especializada por Segmento"
+    subtitle="Expertise contábil tailored para o seu tipo de negócio..."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Soluções" },
+      { label: "Contabilidade por Segmento" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA.replace('[SEU SEGMENTO]', 'seu segmento'), variant: "cta" },
+      { label: "Ver como funciona", href: "#como-funciona", variant: "outline" }
+    ]}
+  />
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-6">
+            Contabilidade que entende o seu<br/><span class="pp3-grad">negócio como ninguém</span>
+          </h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            Cada segmento de negócio possui suas próprias regras tributárias, obrigações acessórias e oportunidades de economia fiscal. Na JMF Contabilidade, nossa equipe especializada compreende profundamente as especificidades do seu segmento, garantindo conformidade total e identificando estratégias de redução de custos que outros contadores genéricos simplesmente não veem.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            Com mais de 35 anos de experiência atendendo diversos setores em Blumenau e Santa Catarina, desenvolvemos metodologias específicas para cada segmento, combinando conhecimento técnico profundo com tecnologia moderna para entregar resultados superiores.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+              class="px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+              Falar no WhatsApp
+            </a>
+            <a href="#formulario"
+              class="px-6 py-3 border-2 border-[#1e40af] text-[#1e40af] font-semibold rounded-lg hover:bg-[#dbeafe] transition-colors">
+              Prefiro formulário
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-5/12">
+          <img src="/assets/images/segmentos-1-1036x691.webp" alt="Contabilidade Especializada por Segmento JMF"
+            width="1036" height="691" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como Funciona -->
+  <section id="como-funciona" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">
+          Como funciona a<br/><span class="pp3-grad">contabilidade por segmento</span>
+        </h2>
+        <p class="text-gray-600 text-lg">Processo especializado para máximo resultado no seu segmento</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">1</div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Análise do Segmento</h4>
+          <p class="text-gray-600 text-sm">
+            Analisamos seu CNAE, descrição detalhada das atividades e características específicas do seu negócio para identificar o segmento exato e suas particularidades tributárias.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">2</div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Planejamento Tributário Personalizado</h4>
+          <p class="text-gray-600 text-sm">
+            Desenvolvemos estratégias de planejamento tributário específicas para o seu segmento, aproveitando incentivos setoriais, regimes diferenciados e oportunidades únicas de economia fiscal.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">3</div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Especialistas do Seu Segmento</h4>
+          <p class="text-gray-600 text-sm">
+            Nossa equipe possui especialistas dedicados a cada segmento de negócio, com conhecimento atualizado das leis específicas, obrigações acessórias e tendências do setor.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">4</div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Obrigações Acessórias Específicas</h4>
+          <p class="text-gray-600 text-sm">
+            Cumprimos rigorosamente todas as obrigações acessórias específicas do seu segmento, evitando multas e garantindo total conformidade com as exigências setoriais.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">5</div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Relatórios Gerenciais Segmentais</h4>
+          <p class="text-gray-600 text-sm">
+            Fornecemos relatórios gerenciais personalizados para o seu segmento, com indicadores chave de performance (KPIs) relevantes para o seu tipo de negócio e benchmarking com empresas similares.
+          </p>
+        </div>
+        <div class="bg-white rounded-xl p-6 shadow-sm border-2 border-[#1e40af]">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4"><i class="bi bi-check-lg"></i></div>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Resultado Otimizado</h4>
+          <p class="text-gray-600 text-sm">
+            Sua empresa terá uma contabilidade que não apenas cumpre todas as obrigações, mas que entende profundamente o seu negócio e contribui ativamente para seu crescimento e lucratividade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossos Segmentos de Especialização -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-8 text-center">
+        Nossas Especializações por<br/><span class="pp3-grad">Segmento de Negócio</span>
+      </h2>
+      <p class="text-gray-600 text-lg text-center mb-12">
+        Expertise contábil desenvolvida especificamente para cada tipo de atividade econômica
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Varejo e Comércio -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-shop"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Varejo e Comércio</h3>
+          <p class="text-gray-600 text-sm">
+            Expertise em legislação do ICMS, substituição tributária, crédito de ICMS, obrigações do SPED Fiscal e EFD-Contribuições, além de estratégias específicas para lojas físicas e e-commerce.
+          </p>
+        </div>
+
+        <!-- Indústria e Manufatura -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-buildings"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Indústria e Manufatura</h3>
+          <p class="text-gray-600 text-sm">
+            Domínio em apuração de custos de produção, rateamento, créditos de ICMS, benefícios fiscais para indústrias (PRODEC, etc.), controle de estoque e obrigações acessórias industriais específicas.
+          </p>
+        </div>
+
+        <!-- Prestação de Serviços -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-people"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Prestação de Serviços</h3>
+          <p class="text-gray-600 text-sm">
+            Especialização em ISS municipal, alíquotas por serviço, notas fiscais de serviço eletrônicas, controle de carga horária e estratégias específicas para consultorias, escritórios e agências.
+          </p>
+        </div>
+
+        <!-- Construção e Imobiliário -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-house-door"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Construção e Imobiliário</h3>
+          <p class="text-gray-600 text-sm">
+            Conhecimento profundo em CUBO, regulamentação da construção civil, especificidades do ISS para construtoras, controle de obras, e obrigações acessórias do setor imobiliário e da construção.
+          </p>
+        </div>
+
+        <!-- Saúde e Bem-Estar -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-heart-pulse"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Saúde e Bem-Estar</h3>
+          <p class="text-gray-600 text-sm">
+            Expertise em tributação de serviços médicos, cooperativas de trabalho, legislação específica para clínicas, consultórios e serviços de saúde, além de obrigações da ANVISA quando aplicável.
+          </p>
+        </div>
+
+        <!-- Tecnologia e Startups -->
+        <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+            <i class="bi bi-laptop"></i>
+          </div>
+          <h3 class="font-bold text-[#0f172a] mb-3">Tecnologia e Startups</h3>
+          <p class="text-gray-600 text-sm">
+            Especialização em leis de incentivo à inovação, tratamento de propriedade intelectual, estratégias para empresas de tecnologia, startups e empresas de software, incluindo aspectos de investimento e rodadas de financiamento.
+          </p>
+        </div>
+      </div>
+
+      <div class="text-center mt-8">
+        <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+          class="inline-block px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+          Quero especialização para o meu segmento
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios da Especialização -->
+  <section class="py-16 bg-[#f8fafc]">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-8 text-center">
+        Benefícios da<br/><span class="pp3-grad">contabilidade especializada</span>
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Conformidade Total</h3>
+          <p class="text-gray-600">
+            Eliminação de riscos fiscais através do cumprimento rigoroso de todas as obrigações específicas do seu segmento, evitando multas, autuações e problemas com as autoridades tributárias.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Economia Fiscal Real</h3>
+          <p class="text-gray-600">
+            Aproveitamento máximo de incentivos fiscais setoriais, regimes tributários diferenciados e estratégias de planejamento específicas que reduzem legalmente sua carga tributária.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Tomada de Decisão Melhor</h3>
+          <p class="text-gray-600">
+            Relatórios gerenciais e indicadores específicos do seu segmento que fornecem insights valiosos para decisões estratégicas de crescimento, investimento e expansão do negócio.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Planejamento Estratégico</h3>
+          <p class="text-gray-600">
+            Visão avançada das implicações tributárias de decisões de negócio, incluindo expansão, novos produtos, mudanças de estrutura e planejamento sucessório específico do seu segmento.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Redução de Trabalhos</h3>
+          <p class="text-gray-600">
+            Processos mais eficientes devido ao conhecimento prévio das especificidades do seu segmento, reduzindo tempo gasto em pesquisas e adaptações genéricas que não se aplicam ao seu caso.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-xl p-6">
+          <h3 class="font-bold text-[#0f172a] mb-4">Vantagem Competitiva</h3>
+          <p class="text-gray-600">
+            Posicionamento estratégico frente a concorrentes que utilizam contabilidade genérica, permitindo que você aproveite oportunidades que outros simplesmente não enxergam ou não sabem como estruturar corretamente.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 bg-[#0f172a]">
+    <div class="container mx-auto px-4 text-center max-w-2xl">
+      <h2 class="text-2xl font-bold text-white mb-3">
+        Seu segmento merece<br/><span class="pp3-grad-light">contabilidade que entende</span>
+      </h2>
+      <p class="text-white/70 mb-6">
+        Na JMF Contabilidade, cada segmento de negócio tem uma equipe especializada que conhece profundamente suas especificidades tributárias, obrigações acessórias e oportunidades de economia fiscal.
+      </p>
+      <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25d366] hover:bg-[#22c55e] text-white font-bold rounded-xl transition-colors shadow-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67-.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
+        Fale com um Especialista
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - Contabilidade por Segmento"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Perguntas frequentes sobre<br />
+            <span class="pp3-grad">contabilidade especializada por segmento</span>
+          </h2>
+          <div class="space-y-3">
+            {/* FAQ items will be populated from the schema above */}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade, você encontrou o lugar certo. Entre em contato e marque uma consulta sem custo.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

@@ -1,6 +1,6 @@
 ---
-title: "Separar Pessoa Física de Jurídica: O Erro Que Mata Pequenos Negócios"
-description: "Misturar as finanças pessoais com as da empresa é um dos erros mais comuns e mais caros para quem empreende. Entenda por que isso acontece e como corrigir antes que seja tarde."
+title: "Separar Pessoa Física de Jurídica: O Erro Que Mata..."
+description: "Misturar as finanças pessoais com as da empresa é um dos erros mais comuns e mais caros para quem empreende."
 pubDate: 2026-01-29
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-separar-pf-pj.jpg"
@@ -20,7 +20,7 @@ Separar significa, na prática:
 - A empresa tem conta bancária própria, exclusiva para movimentação do negócio
 - Todo pagamento de despesa da empresa sai da conta da empresa
 - Todo pagamento pessoal sai da sua conta pessoal
-- Você se remunera formalmente — via [pró-labore](/pro-labore-e-dividendos-2026) e/ou distribuição de lucros
+- Você se remunera formalmente — via [pró-labore](/blog/pro-labore-e-dividendos-2026) e/ou distribuição de lucros
 - Receitas da empresa entram na conta da empresa, não no seu bolso direto
 
 ## Por Que Isso É Tão Importante

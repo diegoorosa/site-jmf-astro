@@ -7,24 +7,64 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20usei%20a%20Calculadora
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": ["WebApplication", "Service"],
   "name": "Calculadora do Fator R — Simples Nacional 2026",
   "description": "Calcule o Fator R da sua empresa e descubra se você está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional. Ferramenta gratuita baseada na Resolução CGSN 140/2018.",
   "url": "https://www.jmfcontabilidade.com.br/calculadora-fator-r",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "description": "Acesso gratuito à calculadora online de Fator R para empresas do Simples Nacional",
+    "url": "https://www.jmfcontabilidade.com.br/calculadora-fator-r"
+  },
   "provider": {
     "@type": "Organization",
     "name": "JMF Contabilidade",
-    "@id": "https://www.jmfcontabilidade.com.br/#organization"
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "logo": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.webp",
+    "sameAs": [
+      "https://wa.me/554733265123",
+      "https://www.instagram.com/jmfcontabilidade"
+    ]
+  },
+  "areaServed": {
+    "@type": "GeoShape",
+    "addressCountry": "BR",
+    "addressRegion": "SC",
+    "addressLocality": "Blumenau",
+    "description": "Brasil — foco em Santa Catarina e região Sul"
+  },
+  "serviceType": "Calculadora tributária online para Fator R (Simples Nacional)",
+  "category": "FinanceApplication",
+  "featureList": [
+    "Cálculo automático do Fator R baseado em faturamento, pró-labore e salários",
+    "Identificação automática do Anexo (III ou V) conforme CGSN 140/2018",
+    "Cálculo da alíquota efetiva e DAS mensal estimado",
+    "Comparação entre Anexo III e Anexo V com economia potencial",
+    "Barra visual de progresso do Fator R com limite de 28%",
+    "Diagnóstico personalizado com sugestão de ajuste de pró-labore",
+    "Tabelas atualizadas 2026 das alíquotas do Simples Nacional"
+  ],
+  "hasOutput": {
+    "@type": "PropertyValue",
+    "name": "Resultado do Fator R",
+    "description": "Percentual do Fator R, Anexo aplicável, alíquota efetiva, DAS mensal e economia anual"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.jmfcontabilidade.com.br/calculadora-fator-r"
   }
 });
 ---
 
 <Layout
-  title="Calculadora do Fator R — Simples Nacional 2026 | JMF Contabilidade Blumenau"
-  description="Calcule o Fator R da sua empresa e descubra se você está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional. Ferramenta gratuita com resultado imediato."
+  title="Calculadora do Fator R — Simples Nacional 2026"
+  description="Calcule o Fator R da sua empresa e descubra se você está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional."
   canonical="https://www.jmfcontabilidade.com.br/calculadora-fator-r"
   ogUrl="https://www.jmfcontabilidade.com.br/calculadora-fator-r"
   schema={schema}
@@ -34,7 +74,7 @@ const schema = JSON.stringify({
 
   <HeroInterno
     title="Calculadora do Fator R"
-    subtitle="Descubra se sua empresa está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional — e quanto você pode economizar ajustando a folha de pagamento."
+    subtitle="Descubra se sua empresa está no Anexo III (6%) ou Anexo V..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Ferramentas" },

@@ -1,6 +1,6 @@
 ---
 title: "MEI Estourou o Faturamento: O Que Fazer Antes Que Seja Tarde"
-description: "Ultrapassar o limite de R$ 81 mil como MEI não é o fim do mundo — mas exige ação rápida. Entenda o que acontece, os prazos e o que fazer para não pagar mais imposto do que deve."
+description: "Ultrapassar o limite de R$ 81 mil como MEI não é o fim do mundo — mas exige ação rápida."
 pubDate: 2026-03-12
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-mei-faturamento-estourou.jpg"
@@ -97,7 +97,15 @@ Se você está se aproximando do limite:
 2. Avalie se vai ultrapassar e em quanto
 3. Comece a planejar a transição antes que seja uma urgência
 
-O MEI foi ótimo para começar. Mas quando o negócio cresce além do limite, a estrutura precisa crescer junto. [Veja o guia completo para migrar de MEI para LTDA](/migrar-de-mei-para-ltda-guia-completo-2026). Fazer essa transição bem feita é o que separa quem cresce de forma sustentável de quem cresce e depois tem surpresas desagradáveis com o fisco.
+O MEI foi ótimo para começar. Mas quando o negócio cresce além do limite, a estrutura precisa crescer junto. 
+
+- [Guia completo: Migrar de MEI para LTDA](/blog/migrar-de-mei-para-ltda-guia-completo-2026)
+- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda)
+- [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026)
+- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026)
+- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026)
+
+Fazer essa transição bem feita é o que separa quem cresce de forma sustentável de quem cresce e depois tem surpresas desagradáveis com o fisco.
 
 ## Perguntas frequentes
 

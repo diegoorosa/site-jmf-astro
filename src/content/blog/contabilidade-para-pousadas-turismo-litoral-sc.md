@@ -1,6 +1,6 @@
 ---
-title: "Contabilidade para Pousadas e Turismo no Litoral de SC: Sazonalidade e Tributos"
-description: "Pousadas no litoral de SC: sazonalidade, Cadastur obrigatório, contratação temporária e gestão de caixa. JMF atende hospedagem em todo o litoral catarinense."
+title: "Contabilidade para Pousadas e Turismo no Litoral de SC:..."
+description: "Pousadas no litoral de SC: sazonalidade, Cadastur obrigatório, contratação temporária e gestão de caixa."
 pubDate: 2026-06-18
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-contabilidade-pousadas-turismo-litoral-sc.jpg"

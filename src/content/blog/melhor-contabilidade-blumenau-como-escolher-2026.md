@@ -1,6 +1,6 @@
 ---
 title: "Melhor Contabilidade em Blumenau: Como Escolher em 2026"
-description: "Como escolher a melhor contabilidade em Blumenau/SC em 2026. Critérios essenciais: CRC, experiência, tecnologia, atendimento e transparência. Guia completo com perguntas para fazer antes de contratar."
+description: "Como escolher a melhor contabilidade em Blumenau/SC em 2026. Critérios essenciais: CRC, experiência, tecnologia, atendimento e transparência."
 pubDate: 2026-06-29
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-contabilidade-blumenau-2026.jpg"

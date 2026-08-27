@@ -5,14 +5,86 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Gaspar.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Contabilidade para Empresas em Gaspar/SC",
-  "description": "Contabilidade completa para empresas em Gaspar/SC: Simples Nacional, Lucro Presumido e Lucro Real. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Gaspar" }, { "@type": "State", "name": "Santa Catarina" }]
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar#localbusiness",
+  "name": "JMF Contabilidade – Gaspar, SC",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar",
+  "description": "Contabilidade para empresas em Gaspar/SC: Simples Nacional ou Lucro Presumido. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.93389,
+    "longitude": -48.95583
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Ilhota" },
+    { "@type": "City", "name": "Brusque" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Contabilidade em Gaspar",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -23,12 +95,13 @@ const faqSchema = JSON.stringify({
     { "@type": "Question", "name": "Posso contratar a JMF sem ir ao escritório em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Todo o atendimento contábil pode ser feito remotamente via WhatsApp, e-mail e videoconferência. Para reuniões presenciais, Blumenau fica a apenas 12km de Gaspar." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title="Contabilidade para Empresas em Gaspar/SC | JMF Contabilidade"
-  description="Contabilidade para empresas em Gaspar/SC: Simples Nacional, Lucro Presumido, Lucro Real. Fechamento mensal no prazo. Atendimento digital para o Médio Vale."
+  title="Contabilidade Gaspar/SC | JMF Contabilidade | Indústrias"
+  description="Contabilidade para indústrias e comércios em Gaspar/SC: Simples Nacional ou Lucro Presumido. Fechamento mensal no prazo."
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar"
   schema={schema}
@@ -36,134 +109,134 @@ const schema = [serviceSchema, faqSchema];
   bodyClass="pp3"
 >
 
-  <HeroInterno
-    title="Contabilidade para empresas em Gaspar com previsibilidade e fechamento mensal."
-    subtitle="Atendimento digital completo para indústrias e comércios do Médio Vale do Itajaí. Rotina organizada, impostos sob controle e relatórios claros."
-    breadcrumb={[
-      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
-      { label: "Áreas de Atuação" },
-      { label: "Contabilidade em Gaspar" }
-    ]}
-    ctas={[
-      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
-      { label: "Ver serviços", href: "#servicos", variant: "outline" }
-    ]}
-  />
+<HeroInterno
+  title="Contabilidade para indústrias em Gaspar com eficiência"
+  subtitle="Atendimento digital completo para indústrias de metalurgia, plásticos e manufatura do Médio Vale. Fechamento mensal, ICMS e planejamento tributário."
+  breadcrumb={[
+    { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+    { label: "Áreas de Atuação" },
+    { label: "Contabilidade em Gaspar" }
+  ]}
+  ctas={[
+    { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+    { label: "Ver serviços", href: "#servicos", variant: "outline" }
+  ]}
+/>
 
-  <section id="servicos" class="py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Gaspar:<br/><span class="pp3-grad">para indústrias que precisam de eficiência</span></h2>
+<section id="servicos" class="py-16 md:py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Gaspar:<br/><span class="pp3-grad">para indústrias que precisam de eficiência</span></h2>
 
-      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-        Gaspar é uma cidade industrial do Médio Vale do Itajaí, com tradição em metalurgia, plásticos e manufatura. Empresas industriais têm necessidades contábeis mais complexas: controle de estoque, apuração de ICMS próprio, rateio de custos de produção e compliance trabalhista — tudo isso exige um contador que entende o setor.
-      </p>
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+      Gaspar é uma cidade industrial do Médio Vale do Itajaí, com tradição em metalurgia, plásticos e manufatura. Empresas industriais têm necessidades contábeis mais complexas: controle de estoque, apuração de ICMS próprio, rateio de custos de produção e compliance trabalhista — tudo isso exige um contador que entende o setor.
+    </p>
 
-      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-        A JMF Contabilidade atende empresas de Gaspar com foco em eficiência operacional. Fechamento mensal completo, planejamento tributário preventivo e relatórios gerenciais que ajudam a tomar decisão com base em dados reais.
-      </p>
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+      A JMF Contabilidade atende empresas de Gaspar com foco em eficiência operacional. Fechamento mensal completo, planejamento tributário preventivo e relatórios gerenciais que ajudam a tomar decisão com base em dados reais.
+    </p>
 
-      <div class="grid md:grid-cols-2 gap-6 mt-12">
-        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Escrituração fiscal, apuração de impostos, guias de recolhimento e obrigações acessórias — tudo no prazo. Para indústrias, inclui controle de ICMS próprio e monofásico.
-          </p>
-        </div>
-
-        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário Industrial</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Regime tributário otimizado para indústrias: Lucro Presumido vs. Lucro Real, aproveitamento de créditos de ICMS, incentivos estaduais (PRODEC, TTD).
-          </p>
-        </div>
-
-        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Custos de Produção</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Rateio de custos de produção, controle de estoque contábil, apuração de CMV (Custo da Mercadoria Vendida) e DRE setorial para cada linha de produto.
-          </p>
-        </div>
-
-        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Compliance Trabalhista</h3>
-          <p class="text-slate-600 leading-relaxed">
-            Folha de pagamento, eSocial, obrigações patronais, pro-labore de sócios. Para indústrias com quadro maior, integração com sistemas de gestão (ERP).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 bg-slate-50">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Gaspar e o perfil<br/><span class="pp3-grad">industrial do Médio Vale</span></h2>
-
-      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-        Gaspar faz parte do corredor industrial do Médio Vale do Itajaí, ao lado de Blumenau, Indaial, Pomerode e Timbó. O município tem vocação para indústrias de base — metalurgia, plásticos, madeira processada — e uma base de pequenos e médios produtores que dependem de contabilidade eficiente para se manterem competitivos.
-      </p>
-
-      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-        Para empresas industriais de Gaspar, os principais desafios contábeis são:
-      </p>
-
-      <ul class="space-y-4 text-slate-600 text-lg">
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>ICMS complexo:</strong> indústrias lidam com crédito, débito, substituição tributária, ZFM e operações interestaduais — erros de apuração geram multas pesadas.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Custo de produção:</strong> rateio correto de matérias-primas, mão de obra indireta e depreciação de máquinas é essencial para precificação.</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Folha de pagamento:</strong> indústrias têm quadro maior, mais categorias de colaboradores e mais obrigações (eSocial, FGTS, INSS patronal).</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Incentivos fiscais:</strong> o PRODEC e o TTD de SC podem reduzir a carga tributária, mas exigem planejamento prévio e documentação correta.</span>
-        </li>
-      </ul>
-
-      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
-        <p class="text-slate-700 font-medium">
-          <strong class="text-blue-700">Dado real:</strong> empresas industriais no Simples Nacional pagam pelo Anexo V (alíquota até 33%), enquanto no Lucro Presumido podem pagar alíquota efetiva de 11,33% a 14,5%. A escolha errada do regime pode custar dezenas de milhares de reais por ano.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 md:py-24">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento para Gaspar</span></h2>
-
-      <div class="space-y-6 text-lg text-slate-600">
-        <p>
-          <strong>1. Primeiro contato:</strong> WhatsApp (47) 3326-5123 ou formulário no site. Levantamento inicial sem custo — analisamos sua situação fiscal e propomos o melhor caminho.
-        </p>
-        <p>
-          <strong>2. Diagnóstico:</strong> revisão de obrigações pendentes, regime tributário atual, documentos fiscais e situação cadastral. Para indústrias, inclui análise de ICMS e créditos pendentes.
-        </p>
-        <p>
-          <strong>3. Implantação:</strong> organização da rotina contábil, cadastro em sistemas, definição de prazos de entrega e envio de documentos mensais.
-        </p>
-        <p>
-          <strong>4. Rotina mensal:</strong> fechamento, apuração, guias de recolhimento, obrigações acessórias e relatórios gerenciais — tudo no prazo, com comunicação clara.
+    <div class="grid md:grid-cols-2 gap-6 mt-12">
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Escrituração fiscal, apuração de impostos, guias de recolhimento e obrigações acessórias — tudo no prazo. Para indústrias, inclui controle de ICMS próprio e monofásico.
         </p>
       </div>
 
-      <p class="mt-8 text-lg text-slate-600 leading-relaxed">
-        Gaspar fica a apenas 12km de Blumenau. Para assuntos que exigem presença física, o atendimento presencial no escritório é facilmente acessível. Para o dia a dia, tudo é resolvido digitalmente — sem perda de tempo no trânsito do vale.
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário Industrial</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Regime tributário otimizado para indústrias: Lucro Presumido, aproveitamento de créditos de ICMS, incentivos estaduais (PRODEC, TTD).
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Custos de Produção</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Rateio de custos de produção, controle de estoque contábil, apuração de CMV (Custo da Mercadoria Vendida) e DRE setorial para cada linha de produto.
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Compliance Trabalhista</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Folha de pagamento, eSocial, obrigações patronais, pro-labore de sócios. Para indústrias com quadro maior, integração com sistemas de gestão (ERP).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Gaspar e o perfil<br/><span class="pp3-grad">industrial do Médio Vale</span></h2>
+
+    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+      Gaspar faz parte do corredor industrial do Médio Vale do Itajaí, ao lado de Blumenau, Indaial, Pomerode e Timbó. O município tem vocação para indústrias de base — metalurgia, plásticos, madeira processada — e uma base de pequenos e médios produtores que dependem de contabilidade eficiente para se manterem competitivos.
+    </p>
+
+    <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+      Para empresas industriais de Gaspar, os principais desafios contábeis são:
+    </p>
+
+    <ul class="space-y-4 text-slate-600 text-lg">
+      <li class="flex items-start gap-3">
+        <span class="text-blue-700 font-bold mt-1">•</span>
+        <span><strong>ICMS complexo:</strong> indústrias lidam com crédito, débito, substituição tributária, ZFM e operações interestaduais — erros de apuração geram multas pesadas.</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-blue-700 font-bold mt-1">•</span>
+        <span><strong>Custo de produção:</strong> rateio correto de matérias-primas, mão de obra indireta e depreciação de máquinas é essencial para precificação.</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-blue-700 font-bold mt-1">•</span>
+        <span><strong>Folha de pagamento:</strong> indústrias têm quadro maior, mais categorias de colaboradores e mais obrigações (eSocial, FGTS, INSS patronal).</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="text-blue-700 font-bold mt-1">•</span>
+        <span><strong>Incentivos fiscais:</strong> o PRODEC e o TTD de SC podem reduzir a carga tributária, mas exigem planejamento prévio e documentação correta.</span>
+      </li>
+    </ul>
+
+    <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+      <p class="text-slate-700 font-medium">
+        <strong class="text-blue-700">Dado real:</strong> empresas industriais no Simples Nacional pagam pelo Anexo V (alíquota até 33%), enquanto no Lucro Presumido podem pagar alíquota efetiva de 11,33% a 14,5%. A escolha errada do regime pode custar dezenas de milhares de reais por ano.
       </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
-    <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
-      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo.</p>
-      <ContactForm />
+<section class="py-16 md:py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento para Gaspar</span></h2>
+
+    <div class="space-y-6 text-lg text-slate-600">
+      <p>
+        <strong>1. Primeiro contato:</strong> WhatsApp (47) 3326-5123 ou formulário no site. Levantamento inicial sem custo — analisamos sua situação fiscal e propomos o melhor caminho.
+      </p>
+      <p>
+        <strong>2. Diagnóstico:</strong> revisão de obrigações pendentes, regime tributário atual, documentos fiscais e situação cadastral. Para indústrias, inclui análise de ICMS e créditos pendentes.
+      </p>
+      <p>
+        <strong>3. Implantação:</strong> organização da rotina contábil, cadastro em sistemas, definição de prazos de entrega e envio de documentos mensais.
+      </p>
+      <p>
+        <strong>4. Rotina mensal:</strong> fechamento, apuração, guias de recolhimento, obrigações acessórias e relatórios gerenciais — tudo no prazo, com comunicação clara.
+      </p>
     </div>
-  </section>
+
+    <p class="mt-8 text-lg text-slate-600 leading-relaxed">
+      Gaspar fica a apenas 12km de Blumenau. Para assuntos que exigem presença física, o atendimento presencial no escritório é facilmente acessível. Para o dia a dia, tudo é resolvido digitalmente — sem perda de tempo no trânsito do vale.
+    </p>
+  </div>
+</section>
+
+<section id="formulario" class="py-16 md:py-24 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+    <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo.</p>
+    <ContactForm />
+  </div>
+</section>
 
 </Layout>

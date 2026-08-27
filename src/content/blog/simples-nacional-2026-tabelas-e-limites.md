@@ -1,6 +1,6 @@
 ---
-title: "Simples Nacional 2026: Tabelas, Limites e Tudo Que Você Precisa Saber"
-description: "As alíquotas do Simples Nacional 2026 não mudaram, mas há novidades importantes: multa automática no dia 21, impacto da reforma tributária em 2027 e o Fator R que pode cortar sua carga tributária em mais de 60%."
+title: "Simples Nacional 2026: Tabelas, Limites e Tudo Que Você..."
+description: "As alíquotas do Simples Nacional 2026 não mudaram, mas há novidades importantes: multa automática no dia 21, impacto da reforma tributária em 2027 e o..."
 pubDate: 2026-06-12
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-simples-nacional-2026.jpg"

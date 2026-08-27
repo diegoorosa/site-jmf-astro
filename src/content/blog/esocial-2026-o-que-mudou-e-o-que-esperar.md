@@ -1,6 +1,6 @@
 ---
-title: "eSocial 2026: O Que Mudou, Novos Eventos e Como Manter Sua Empresa em Dia"
-description: "O eSocial S-1.3 está em vigor para todos os grupos. Entenda as mudanças da Nota Técnica 06/2026, os novos campos obrigatórios, o fim da DIRF e o que sua empresa precisa fazer agora."
+title: "eSocial 2026: O Que Mudou, Novos Eventos e Como Manter..."
+description: "O eSocial S-1.3 está em vigor para todos os grupos. Entenda as mudanças da Nota Técnica 06/2026, os novos campos obrigatórios, o fim da DIRF e o que sua..."
 pubDate: 2026-05-28
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-esocial-2026.jpg"

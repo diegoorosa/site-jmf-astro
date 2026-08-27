@@ -1,6 +1,6 @@
 ---
-title: "Desoneração da Folha em 2026: O Que Muda com a Reoneração Gradual"
-description: "A desoneração da folha está em extinção gradual até 2028. Em 2026, empresas beneficiadas passam a recolher CPRB a 60% da alíquota original mais 10% adicional sobre a folha. Veja o impacto e o que fazer."
+title: "Desoneração da Folha em 2026: O Que Muda com a Reoneração..."
+description: "A desoneração da folha está em extinção gradual até 2028. Em 2026, empresas beneficiadas passam a recolher CPRB a 60% da alíquota original mais 10%..."
 pubDate: 2026-03-19
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-desoneracao-folha-pagamento.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Cálculo de encargos sobre folha de pagamento — desoneração 2026"
 
 A **desoneração da folha de pagamento** foi um dos maiores benefícios fiscais para determinados setores industriais e de serviços no Brasil. Criada para estimular a geração de empregos, ela permitiu que empresas substituíssem a contribuição previdenciária patronal de 20% sobre a folha por uma alíquota menor calculada sobre a receita bruta — a CPRB (Contribuição Previdenciária sobre a Receita Bruta).
 
-Agora, a Lei n° 14.973/2024 colocou esse benefício em extinção gradual. Entenda o que muda em 2026 e como isso impacta o custo da sua folha de pagamento. Essa mudança está inserida no contexto mais amplo da [Reforma Tributária](/reforma-tributaria-2026), que está reestruturando todo o sistema fiscal brasileiro.
+Agora, a Lei n° 14.973/2024 colocou esse benefício em extinção gradual. Entenda o que muda em 2026 e como isso impacta o custo da sua folha de pagamento. Essa mudança está inserida no contexto mais amplo da [Reforma Tributária](/blog/reforma-tributaria-2026), que está reestruturando todo o sistema fiscal brasileiro.
 
 ## O que era a desoneração da folha?
 
@@ -71,7 +71,7 @@ A CPRB e o adicional sobre folha são apurados em campos distintos na DCTF e na 
 
 Empresas do Simples Nacional não estão sujeitas à CPRB nem ao sistema de desoneração — o INSS patronal já está incluído no DAS, com exceção do Anexo IV. A reoneração gradual afeta apenas empresas tributadas pelo Lucro Real, Lucro Presumido ou pelo regime normal do Lucro Arbitrado.
 
-Para PMEs no Simples, a mudança relevante em 2026 é o Fator R e a nova estrutura da [reforma tributária](/reforma-tributaria-2026) — não a reoneração.
+Para PMEs no Simples, a mudança relevante em 2026 é o Fator R e a nova estrutura da [reforma tributária](/blog/reforma-tributaria-2026) — não a reoneração.
 
 ## Perguntas frequentes
 
@@ -87,7 +87,7 @@ Pouco no dia a dia operacional — a apuração da CPRB e do adicional sobre a f
 **Existe alguma forma de antecipar o planejamento para 2028, quando a desoneração acaba de vez?**
 Sim — o ideal é simular o custo da folha já considerando a CPP integral de 20% a partir de 2028 no planejamento orçamentário de médio prazo, em vez de ser surpreendido pelo aumento de custo quando a transição terminar.
 
-> **Impacto na sua folha de pagamento?** A JMF Contabilidade oferece [gestão de departamento pessoal](/gestao-pessoal) e [consultoria tributária](/consultoria-e-planejamento-tributario) para ajudar sua empresa a planejar o impacto da reoneração gradual até 2028. Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria) e leia também sobre o [Split Payment](/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa). [Fale com nossa equipe →](/fale-conosco)
+> **Impacto na sua folha de pagamento?** A JMF Contabilidade oferece [gestão de departamento pessoal](/gestao-pessoal) e [consultoria tributária](/consultoria-e-planejamento-tributario) para ajudar sua empresa a planejar o impacto da reoneração gradual até 2028. Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria) e leia também sobre o [Split Payment](/blog/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa). [Fale com nossa equipe →](/fale-conosco)
 
 ---
 

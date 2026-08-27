@@ -15,14 +15,16 @@ interface Props {
 }
 
 const { eyebrow, title, titleHi, subtitle, breadcrumb, ctas = [] } = Astro.props;
+const siteOrigin = 'https://www.jmfcontabilidade.com.br';
+const breadcrumbForSchema = breadcrumb.filter((item, index) => item.href || index === breadcrumb.length - 1);
 const breadcrumbSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumb.map((item, i) => ({
+  "itemListElement": breadcrumbForSchema.map((item, i) => ({
     "@type": "ListItem",
     "position": i + 1,
     "name": item.label,
-    ...(item.href ? { "item": item.href } : {})
+    ...(item.href ? { "item": new URL(item.href, siteOrigin).href } : {})
   }))
 });
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Contabilidade para Empresas de Tecnologia em Blumenau: O Que Muda na Prática"
-description: "Empresas de TI e software em Blumenau têm obrigações específicas: ISS, Fator R, anexos do Simples e incentivos fiscais municipais. Guia completo para tech companies em Blumenau/SC."
+title: "Contabilidade para Empresas de Tecnologia em Blumenau: O..."
+description: "Empresas de TI e software em Blumenau têm obrigações específicas: ISS, Fator R, anexos do Simples e incentivos fiscais municipais."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-contabilidade-tecnologia-blumenau.jpg"

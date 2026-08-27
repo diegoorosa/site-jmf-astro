@@ -1,5 +1,5 @@
 ---
-title: "Contador em Gaspar/SC: Como Escolher o Escritório Certo em 2026"
+title: "Contador em Gaspar/SC: Como Escolher o Escritório Certo em"
 description: "Guia prático para escolher contador em Gaspar/SC. Perfil industrial, metalurgia, plásticos, o que verificar e como evitar armadilhas na escolha."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"

@@ -42,8 +42,10 @@ const schema = JSON.stringify([
       { "@type": "City", "name": "Brusque" },
       { "@type": "City", "name": "Itajaí" },
       { "@type": "City", "name": "Balneário Camboriú" },
-      { "@type": "State", "name": "Santa Catarina" }
+      { "@type": "State", "name": "Santa Catarina" },
+      { "@type": "GeoCircle", "geoMidpoint": { "@type": "GeoCoordinates", "latitude": -26.92016, "longitude": -49.06705 }, "geoRadius": "30000" }
     ],
+    "hasMap": "https://www.google.com/maps/place/JMF+Contabilidade/@-26.92016,-49.06705,17z/",
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "Serviços de Contabilidade",
@@ -95,22 +97,23 @@ const schema = JSON.stringify([
     "@type": "FAQPage",
     "mainEntity": [
       { "@type": "Question", "name": "Qual o prazo para abrir uma empresa em Blumenau com a JMF Contabilidade?", "acceptedAnswer": { "@type": "Answer", "text": "Em 2026 o prazo médio é de 3 a 7 dias úteis, dependendo da documentação, da viabilidade na prefeitura e do tipo de atividade. Com CNPJ alfanumérico e sistemas integrados, a JMF cuida de todo o processo." } },
-      { "@type": "Question", "name": "Quanto custa um contador em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Os honorários variam conforme a estrutura da empresa, o volume mensal de escrituração e a quantidade de funcionários. A JMF oferece pacotes transparentes e sem mensalidade escondida — pedemos uma reunião gratuita para montar o plano ideal." } },
+      { "@type": "Question", "name": "Quanto custa um contador em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Os honorários variam conforme a estrutura da empresa, o volume mensal de escrituração e a quantidade de funcionários. A JMF oferece pacotes transparentes e sem mensalidade escondida — podemos marcar uma reunião gratuita para montar o plano ideal." } },
       { "@type": "Question", "name": "A JMF Contabilidade atende empresas de qualquer segmento?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos mais de 80 segmentos, incluindo clínicas médicas e odontológicas, obra e construção civil, restaurantes, pousadas, indústrias, despensa, suporte e serviços de tecnologia. Nosso time se especializa nos setores de cada cliente." } },
-      { "@type": "Question", "name": "Como contratar a JMF Contabilidade em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Basta enviar uma mensagem pelo WhatsApp, preencher o contatar no site ou ligar para (47) 3326-5123. Hacemos uma avaliação gratuita e montamos uma validação personalizada." } },
-      { "@type": "Question", "name": "A JMF Contabilidade cuida do imposto de renda de pessoa física?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, além da contabilidade empresarial, a JMF também presta serviços de consultoria para declaração de IRPF 2026 (pessoa física) para sócios, casais com custos médicos abusivos e clientes que precisam revisar saldos anteriores." } }
+      { "@type": "Question", "name": "Como contratar a JMF Contabilidade em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Basta enviar uma mensagem pelo WhatsApp, preencher o formulário no site ou ligar para (47) 3326-5123. Fazemos uma avaliação gratuita e montamos uma orientação personalizada." } },
+      { "@type": "Question", "name": "A JMF Contabilidade cuida do imposto de renda de pessoa física?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, além da contabilidade empresarial, a JMF também presta serviços de consultoria para declaração de IRPF 2026 (pessoa física) para sócios, casais e clientes que precisam revisar saldos anteriores omissos." } }
     ]
   }
 ]);
 
-const pageTitle = "JMF Contabilidade Blumenau | 35+ Anos | +150 Avaliações 5★";
-const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de experiência e mais de 150 avaliações 5★ no Google. Simples Nacional, IRPF, abertura de empresa e planejamento tributário. Lidera com IA e suporte humano. Diagnóstico gratuito pelo WhatsApp.";
+const pageTitle = "Contabilidade em Blumenau | JMF Contabilidade 35+ Anos";
+const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de contador, Simples Nacional, gestão fiscal e planejamento tributário. Atendimento presencial e digital.";
 ---
 
 <Layout title={pageTitle} description={pageDesc} bodyClass="jmf-p2-page"
   canonical="https://www.jmfcontabilidade.com.br/"
   ogUrl="https://www.jmfcontabilidade.com.br/"
   schema={schema}
+  speakable={false}
 >
   <slot name="head">
   </slot>
@@ -174,9 +177,9 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           </div>
         </div>
 
-        <h3 class="text-2xl text-white tracking-tight mb-3" style="font-family:'Fraunces',serif;font-weight:500">
+        <div class="text-2xl text-white tracking-tight mb-3" style="font-family:'Fraunces',serif;font-weight:500" role="heading" aria-level="2">
           Espere! Antes de ir<span class="text-cyan-300">...</span>
-        </h3>
+        </div>
         <p class="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xs mx-auto">
           Fale com um especialista da JMF agora. Sem compromisso, sem burocracia — resposta no mesmo dia útil.
         </p>
@@ -220,21 +223,21 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
 
     <div class="jmf-hero-p2-grid">
       <div class="jmf-hero-p2-copy" data-reveal>
-        <span class="jmf-eyebrow">35+ Anos de Mercado em Blumenau</span>
+        <span class="jmf-eyebrow">Contabilidade em Blumenau desde 1989</span>
         <h1 class="jmf-hero-p2-title">
           Contabilidade que simplifica<br/>
           <span class="jmf-hero-p2-grad">o caminho do seu negócio</span>
         </h1>
-        <p class="jmf-hero-p2-lead">
-          Na JMF, você encontra método, prazos claros e orientação objetiva - sem burocracia, sem surpresas no fim do mês.
+  <p class="jmf-hero-p2-lead">
+          Para abrir uma empresa, trocar de contador ou organizar a rotina fiscal, você encontra método, prazos claros e orientação objetiva em Blumenau e região — sem burocracia e sem surpresas no fim do mês.
         </p>
         <div class="jmf-hero-p2-actions">
           <a href={WA} target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-cyan jmf-ring">
             <svg class="jmf-p2-wa-ico" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
-            Fale com um Especialista
+            Entender meu cenário
           </a>
           <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-ghost">
-            Simular abertura de empresa
+            Simular minha abertura
           </a>
         </div>
         <div class="jmf-hero-p2-rating">
@@ -242,6 +245,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           <span class="jmf-hero-p2-stars">★★★★★</span>
           <span class="jmf-hero-p2-rs">+150 avaliações no Google</span>
         </div>
+        <p class="jmf-hero-p2-response"><i class="bi bi-clock-history"></i> Diagnóstico inicial sem compromisso · resposta em até 24h úteis</p>
       </div>
 
       <div class="jmf-hero-p2-dash" data-hero-dash>
@@ -338,7 +342,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           <span class="jmf-cred-label">Avaliações 5.0 no Google</span>
         </div>
         <div class="jmf-cred-item" data-count-up>
-          <span class="jmf-cred-num">+<span class="num" data-to="6">0</span></span>
+          <span class="jmf-cred-num">+<span class="num" data-to="8">0</span></span>
           <span class="jmf-cred-label">Cidades atendidas</span>
         </div>
         <div class="jmf-cred-item" data-count-up>
@@ -348,6 +352,50 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
       </div>
     </div>
   </section>
+
+  <!-- POR ONDE COMEÇAR: jornada por necessidade -->
+  <section class="jmf-path-sec" id="por-onde-comecar">
+    <div class="jmf-path-inner">
+      <div class="jmf-path-head">
+        <span class="jmf-eyebrow-paper on-light">Por onde começar</span>
+        <h2 class="jmf-path-title">Qual é o seu próximo passo?</h2>
+        <p class="jmf-path-lead">Comece pelo momento em que sua empresa está. A primeira conversa serve para organizar o cenário e indicar o próximo passo.</p>
+      </div>
+
+      <div class="jmf-path-grid">
+        <a class="jmf-path-card" href="/abertura-de-empresa">
+          <span class="jmf-path-number">01</span>
+          <span class="jmf-path-icon"><i class="bi bi-rocket-takeoff"></i></span>
+          <h3>Estou abrindo uma empresa</h3>
+          <p>Defina tipo de empresa, CNAE e regime tributário com clareza antes de colocar o negócio em operação.</p>
+          <span class="jmf-path-link">Planejar minha abertura <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="jmf-path-card" href="/fale-conosco?assunto=troca-de-contador">
+          <span class="jmf-path-number">02</span>
+          <span class="jmf-path-icon"><i class="bi bi-arrow-left-right"></i></span>
+          <h3>Quero trocar de contador</h3>
+          <p>Entenda obrigações, documentos e pendências da situação atual antes de fazer a transição.</p>
+          <span class="jmf-path-link">Avaliar minha transição <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="jmf-path-card" href="/imposto-de-renda">
+          <span class="jmf-path-number">03</span>
+          <span class="jmf-path-icon"><i class="bi bi-file-earmark-text"></i></span>
+          <h3>Preciso regularizar ou declarar</h3>
+          <p>Organize Imposto de Renda e pendências com conferência, prioridade e orientação próxima.</p>
+          <span class="jmf-path-link">Organizar minha situação <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+
+      <div class="jmf-path-local-note">
+        <i class="bi bi-geo-alt"></i>
+        <span><strong>No Centro de Blumenau.</strong> Atendimento presencial quando necessário e rotina digital para empresas de todo o Vale do Itajaí.</span>
+        <a href="/contabilidade-em-blumenau">Ver contabilidade em Blumenau <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
   <!-- NOSSAS SOLUÇÕES P2 -->
   <section class="jmf-sol-sec" id="solucoes">
     <div class="jmf-sol-grid-bg" aria-hidden="true"></div>
@@ -358,7 +406,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           Tudo que sua empresa precisa,
           <span class="jmf-sol-title-grad">em um só lugar</span>
         </h2>
-        <p class="jmf-sol-lead">Da abertura ao fechamento mensal — cada serviço com método, prazo e responsável claro.</p>
+        <p class="jmf-sol-lead">Da abertura ao fechamento mensal, serviços conectados para manter sua operação em ordem e apoiar decisões melhores.</p>
       </div>
 
       <div class="jmf-sol-cards">
@@ -411,7 +459,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           Rotina mensal com
           <span class="jmf-func-title-grad">previsibilidade</span>
         </h2>
-        <p class="jmf-func-lead">Você sabe o que acontece, quando acontece e o que recebe. Sem improviso.</p>
+        <p class="jmf-func-lead">Você entende o que acontece no mês, o que precisa enviar e quais decisões merecem atenção. Sem improviso.</p>
       </div>
 
       <div class="jmf-func-grid">
@@ -457,7 +505,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
 
       <div class="jmf-func-cta">
         <a href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="jmf-func-btn">
-          Quero uma contabilidade sem surpresas
+          Quero entender a rotina da minha empresa
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
@@ -473,7 +521,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           Calcule, simule e decida
           <span class="jmf-tools-title-grad">com clareza</span>
         </h2>
-        <p class="jmf-tools-lead">Ferramentas práticas para entender sua situação tributária antes de qualquer conversa.</p>
+        <p class="jmf-tools-lead">Use as ferramentas para entender seu cenário. Depois, se fizer sentido, valide os detalhes com quem conhece sua operação.</p>
       </div>
 
       <div class="jmf-tools-grid">
@@ -503,7 +551,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
             <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Gratuito</span>
           </div>
           <h3 class="jmf-tool-title">Simulador de Regime Tributário</h3>
-          <p class="jmf-tool-desc">Compare Simples Nacional e Lucro Presumido. Veja qual regime paga menos.</p>
+          <p class="jmf-tool-desc">Compare cenários de Simples Nacional e Lucro Presumido para entender o que merece ser validado.</p>
           <span class="jmf-tool-cta">Simular agora <i class="bi bi-arrow-right"></i></span>
         </a>
       </div>
@@ -565,19 +613,20 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           <div class="jmf-ia-tag"><span class="jmf-ia-dot"></span>IA ativa · análise em tempo real</div>
         </div>
         <div class="jmf-ia-grid-right">
-          <span class="jmf-eyebrow-paper">Nova Ferramenta</span>
+          <span class="jmf-eyebrow-paper">Simulador gratuito</span>
           <h2 class="jmf-ia-title">
             Não comece no
             <span class="jmf-ia-title-grad">escuro</span>
           </h2>
           <p class="jmf-ia-lead">
-            Pensando em abrir um negócio? Nossa ferramenta com inteligência artificial analisa seu projeto e revela o melhor tipo de empresa, custos e impostos para você começar com segurança e economia.
+            Pensando em abrir um negócio? O simulador organiza seu cenário inicial e compara possibilidades de empresa, custos e impostos para você conversar com um especialista com mais clareza.
           </p>
           <div class="jmf-ia-cta">
             <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-cyan jmf-ring" style="animation:jmfGlowPulse 3.5s ease-in-out infinite;">
-              Acessar o Simulador Gratuito <span class="arrow">→</span>
+              Simular meu cenário <span class="arrow">→</span>
             </a>
           </div>
+          <p class="jmf-ia-note"><i class="bi bi-info-circle"></i> Resultado orientativo: a análise depende dos dados informados e deve ser validada por um profissional.</p>
         </div>
       </div>
     </div>
@@ -672,8 +721,17 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
           <i class="bi bi-arrow-right"></i>
         </a>
       </div>
+
+      <div class="jmf-rev-cities">
+        <svg class="jmf-rev-cities-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        <span>Atendemos <strong>Blumenau, Indaial, Gaspar, Pomerode, Timbó, Itajaí, Balneário Camboriú, Porto Belo, Bombas, Bombinhas</strong> e toda a região do Vale do Itajaí e Litoral Catarinense.</span>
+      </div>
     </div>
   </section>
+
   <!-- PARCEIROS P2 -->
   <section class="jmf-par-sec" id="parceiros">
     <div class="jmf-par-bg" aria-hidden="true"></div>
@@ -897,7 +955,7 @@ const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de ex
         <span class="jmf-cta-title-grad">parceria de verdade</span>
       </h2>
       <p class="jmf-cta-lead">
-        Agende uma conversa sem compromisso. A JMF está pronta para entender seu negócio, apresentar um plano claro e mostrar como podemos simplificar sua contabilidade.
+          Agende uma conversa sem compromisso. A JMF entende sua situação, apresenta um plano claro e indica o próximo passo — sem empurrar uma solução pronta.
       </p>
       <div class="jmf-cta-row">
         <a class="jmf-cta-primary" href={WA} target="_blank" rel="noopener noreferrer">

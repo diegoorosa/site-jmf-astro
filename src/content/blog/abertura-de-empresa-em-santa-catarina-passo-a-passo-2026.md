@@ -1,6 +1,6 @@
 ---
 title: "Abertura de Empresa em Santa Catarina: Passo a Passo 2026"
-description: "Abrir empresa em Santa Catarina ficou mais rápido com o sistema integrado REGIN. Veja o passo a passo completo, documentos necessários, custos e prazos reais para 2026."
+description: "Abrir empresa em Santa Catarina ficou mais rápido com o sistema integrado REGIN. Veja o passo a passo completo, documentos necessários, custos e prazos..."
 pubDate: 2026-05-21
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-abertura-empresa-sc-2026.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Caneta assinando documentos de abertura de empresa"
 
 Santa Catarina é um dos estados com melhor ambiente regulatório para abertura de empresas no Brasil. O sistema integrado REGIN (Registro de Empresas e Negócios) conecta a Junta Comercial (JUCESC), a Receita Federal, a Secretaria de Estado da Fazenda (SEF/SC) e as prefeituras — o que elimina parte burocrática que em outros estados ainda exige filas e papel.
 
-Mas "mais rápido" não significa "sem processo". Este guia cobre o que você precisa saber para abrir empresa em SC em 2026, com os prazos e custos reais. Veja também o detalhamento de [custos para abrir empresa em Blumenau](/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026).
+Mas "mais rápido" não significa "sem processo". Este guia cobre o que você precisa saber para abrir empresa em SC em 2026, com os prazos e custos reais. Veja também o detalhamento de [custos para abrir empresa em Blumenau](/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026).
 
 ## Antes de Começar: O Que Definir
 
@@ -120,7 +120,7 @@ A conta PJ é o ponto de partida para separar as finanças pessoais das da empre
 
 Para atividades que exigem licenças específicas (sanitária, ambiental, AVCB), o prazo pode se estender para 30 a 60 dias.
 
-## Custos Totais de Abertura em Blumenau (2026) — [veja o detalhamento completo dos custos](/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026)
+## Custos Totais de Abertura em Blumenau (2026) — [veja o detalhamento completo dos custos](/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026)
 
 | Item | Custo Estimado |
 |---|---|

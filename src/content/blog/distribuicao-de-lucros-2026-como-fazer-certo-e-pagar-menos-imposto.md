@@ -1,6 +1,6 @@
 ---
-title: "Distribuição de Lucros em 2026: Como Fazer Certo e Pagar Menos Imposto"
-description: "Distribuição de lucros é isenta de IR para o sócio — mas só quando feita corretamente. Entenda as regras, os limites e como usar esse instrumento para reduzir a carga tributária legalmente."
+title: "Distribuição de Lucros em 2026: Como Fazer Certo e Pagar..."
+description: "Distribuição de lucros é isenta de IR para o sócio — mas só quando feita corretamente."
 pubDate: 2026-04-16
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-distribuicao-lucros-2026.jpg"
@@ -15,7 +15,7 @@ Mas há um porém — e ele é importante: a isenção só vale quando a distrib
 
 Distribuição de lucros é a transferência do resultado positivo da empresa para os sócios, proporcional à participação de cada um no capital social (salvo regra diferente no contrato social).
 
-É diferente do [pró-labore](/pro-labore-e-dividendos-2026), que é a remuneração pelo trabalho do sócio na empresa. O pró-labore é despesa da empresa, sofre desconto de INSS e entra na declaração de IR do sócio como rendimento tributável. A distribuição de lucros, por sua vez, sai do lucro apurado — após impostos — e é isenta de IR para o beneficiário.
+É diferente do [pró-labore](/blog/pro-labore-e-dividendos-2026), que é a remuneração pelo trabalho do sócio na empresa. O pró-labore é despesa da empresa, sofre desconto de INSS e entra na declaração de IR do sócio como rendimento tributável. A distribuição de lucros, por sua vez, sai do lucro apurado — após impostos — e é isenta de IR para o beneficiário.
 
 ## A Isenção do IR Está Prevista em Lei
 
@@ -110,7 +110,7 @@ Não é exigida pela legislação do Simples para fins fiscais básicos, mas é 
 Sim, lucros acumulados de exercícios anteriores (registrados como "Lucros Acumulados" ou em reserva no patrimônio líquido) podem ser distribuídos posteriormente, seguindo as mesmas regras de isenção, desde que devidamente registrados na contabilidade da época em que foram apurados.
 
 **Holding pode ser uma forma de organizar melhor a distribuição de lucros?**
-Em alguns casos sim, especialmente quando há múltiplos sócios, mais de uma empresa operacional, ou necessidade de planejamento sucessório — [veja quando uma holding familiar vale a pena](/holding-familiar-vale-a-pena-para-pequenos-empresarios).
+Em alguns casos sim, especialmente quando há múltiplos sócios, mais de uma empresa operacional, ou necessidade de planejamento sucessório — [veja quando uma holding familiar vale a pena](/blog/holding-familiar-vale-a-pena-para-pequenos-empresarios).
 
 **É melhor distribuir lucro mensalmente ou de uma vez no fim do ano?**
 Não há diferença tributária entre as duas opções — o que importa é que o lucro esteja efetivamente apurado (por balanço/balancete) no momento da distribuição. Muitas empresas preferem distribuir mensalmente por antecipação de lucro, com ajuste no balanço de fechamento anual, para dar mais previsibilidade de caixa aos sócios.

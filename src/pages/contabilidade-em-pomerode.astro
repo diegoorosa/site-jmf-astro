@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Pomerode.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode#localbusiness",
+  "name": "JMF Contabilidade – Pomerode",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode",
+  "description": "Contabilidade para empresas em Pomerode/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital completo para a cidade mais alemã do Brasil.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Pomerode",
+    "addressRegion": "SC",
+    "postalCode": "89107-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.7406,
+    "longitude": -49.1769
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Pomerode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. A JMF atende empresas de Pomerode/SC 100% digitalmente. Pomerode fica a 25km de Blumenau (30 min), no Médio Vale do Itajaí. O fechamento mensal, envio de documentos e comunicação são feitos via WhatsApp, e-mail e portal do cliente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais são os impostos para empresa em Pomerode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Empresas em Pomerode seguem a legislação estadual de SC (ICMS via SEFAL) e municipal para ISS (alíquota mínima 2%). O regime tributário define a composição. Muitas empresas de turismo e comércio em Pomerode se enquadram no Simples Nacional. Consulte-nos para simular."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Pomerode tem incentivos para turismo e comércio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pomerode, como cidade turística (mais alemã do Brasil), tem vocação para comércio, gastronomia, hospedagem e eventos. O município pode oferecer incentivos locais, além dos estaduais (PRODEC, TTD). Empresas de turismo no Simples Nacional pagam pelo Anexo III ou V conforme Fator R."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o atendimento remoto para Pomerode?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, e-mail, portal do cliente e videoconferência. Documentos enviados digitalmente, guias no portal, relatórios mensais por e-mail. Para assuntos presenciais, Blumenau fica a 30 min. Resposta no mesmo dia útil."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Pomerode/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Pomerode/SC: Simples Nacional, Lucro Presumido, abertura de empresa."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Pomerode"
+    subtitle="Atendimento digital completo para a cidade mais alemã do Brasil. Comércio, turismo, indústria e serviços — 25km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Pomerode" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Pomerode:<br/><span class="pp3-grad">para empresas do turismo, comércio e indústria</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Pomerode, conhecida como a "cidade mais alemã do Brasil", tem economia forte no turismo, comércio, gastronomia, hospedagem e eventos — além de indústrias moveleiras, têxteis e metalúrgicas. Empresas da região precisam de contabilidade que entenda a sazonalidade do turismo, o ISS municipal e os incentivos para o setor.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de Pomerode 100% digitalmente, com a mesma qualidade do atendimento presencial em Blumenau (a apenas 25km / 30 min). Fechamento mensal, planejamento tributário e obrigações acessórias — tudo no prazo, sem você sair da empresa.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escrituração fiscal, apuração de impostos, guias e obrigações acessórias no prazo. Para comércio e turismo: controle de estoque, emissão de NFC-e/NF-e, apuração de ISS e ICMS.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Regime ideal para sua atividade: Simples Nacional (Anexo III vs V via Fator R), Lucro Presumido para comércio com margem alta, incentivos estaduais para turismo.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura de Empresa</h3>
+          <p class="text-slate-600 leading-relaxed">
+            CNPJ, JUCESC, alvará, inscrições em até 10 dias úteis. Orientação para escolha do CNAE ideal e regime tributário desde o início — evite pagar imposto a mais.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Gestão de Pessoal</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Folha, eSocial, férias, 13º, rescisões. Para turismo e gastronomia: controle de horas extras, banco de horas, adicionais noturnos e de insalubridade.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Particularidades de<br/><span class="pp3-grad">Pomerode</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Pomerode tem características únicas que afetam o planejamento tributário:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Turismo sazonal:</strong> alta temporada (outubro-janeiro, festas alemãs) impacta faturamento e folha. O Fator R no Simples Nacional deve ser monitorado mensalmente para evitar migração Anexo III → V.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISS municipal:</strong> alíquota mínima 2% para serviços. Hotéis, restaurantes, agências de turismo e eventos devem observar a legislação municipal de ISS fixo vs. variável.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Comércio varejista:</strong> ICMS-ST em produtos específicos, NFC-e obrigatória, controle de estoque para apuração correta do CMV.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Incentivos estaduais:</strong> PRODEC e TTD (Lei 489/1997) podem beneficiar indústrias moveleiras e de transformação em Pomerode.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dica:</strong> Empresas de turismo em Pomerode com faturamento sazonal devem planejar o pró-labore e a folha de pagamento para manter o Fator R ≥ 28% o ano todo — garantindo Anexo III (6%) no Simples Nacional. A JMF faz esse acompanhamento mensal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Pomerode</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Documentos via app/portal, guias e relatórios digitais.
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 25km (30 min pela BR-470). Sede no Centro de Blumenau: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú.
+        </p>
+        <p>
+          <strong>Rotina mensal:</strong> Recebimento de documentos até dia 5, fechamento até dia 15, guias e relatórios até dia 20. Comunicação clara, sem surpresas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Diagnóstico gratuito.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

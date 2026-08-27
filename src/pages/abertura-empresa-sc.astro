@@ -1,0 +1,315 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20abrir%20empresa%20em%20Santa%20Catarina.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/abertura-empresa-sc#localbusiness",
+  "name": "JMF Contabilidade – Abertura de Empresa em Santa Catarina",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/abertura-empresa-sc",
+  "description": "Abertura de empresa em Santa Catarina: CNPJ em 3 a 7 dias, viabilidade, alvará e inscrição estadual. Atendemos Blumenau, Indaial, Gaspar, Balneário Camboriú, Florianópolis e todo o estado.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "State", "name": "Santa Catarina" },
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Florianópolis" },
+    { "@type": "City", "name": "Joinville" },
+    { "@type": "City", "name": "Balneário Camboriú" },
+    { "@type": "City", "name": "Itajaí" },
+    { "@type": "City", "name": "Chapecó" },
+    { "@type": "City", "name": "Criciúma" },
+    { "@type": "City", "name": "Jaraguá do Sul" },
+    { "@type": "City", "name": "Lages" },
+    { "@type": "City", "name": "Brusque" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "City", "name": "Pomerode" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Abertura de Empresa em SC",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Viabilidade e Consulta Prévia" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contrato Social e Registro na JUCESC" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CNPJ e Inscrição Estadual" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Alvará de Funcionamento" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Certificado Digital" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planejamento Tributário Inicial" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Quanto tempo leva para abrir empresa em Santa Catarina?", "acceptedAnswer": { "@type": "Answer", "text": "Com CNPJ alfanumérico e sistemas integrados (JUCESC, SEF/SC, Prefeituras via Portal Empresa Fácil), o prazo médio é de 3 a 7 dias úteis após a entrega da documentação completa. Cidades com sistema 100% digital (Blumenau, Florianópolis, Joinville) podem ser mais rápidas." } },
+    { "@type": "Question", "name": "Quais documentos preciso para abrir empresa em SC?", "acceptedAnswer": { "@type": "Answer", "text": "Documentos básicos: RG e CPF dos sócios, comprovante de endereço residencial dos sócios, comprovante de endereço comercial (IPTU ou contrato de locação), definição de CNAE(s), capital social e natureza jurídica. Para atividades reguladas, podem ser necessários documentos adicionais (ex: ART para engenharia, CRF para farmácia)." } },
+    { "@type": "Question", "name": "Preciso morar em Santa Catarina para abrir empresa lá?", "acceptedAnswer": { "@type": "Answer", "text": "Não. O sócio não precisa residir em SC. O endereço comercial (sede) deve estar no estado, mas o processo pode ser feito 100% remotamente via Portal Empresa Fácil e sistemas da JUCESC. A JMF cuida de tudo digitalmente." } },
+    { "@type": "Question", "name": "Qual o custo para abrir empresa em Santa Catarina?", "acceptedAnswer": { "@type": "Answer", "text": "Custos aproximados 2026: taxas JUCESC (R$ 150–300), taxas de alvará municipal (variam por cidade e atividade, R$ 120–1.200), certificado digital A1 (R$ 180–250/ano), honorários contábeis. A JMF oferece pacote completo com transparência total — solicite orçamento sem compromisso." } },
+    { "@type": "Question", "name": "Quais regimes tributários posso escolher em SC?", "acceptedAnswer": { "@type": "Answer", "text": "Simples Nacional (até R$ 4,8mi/ano), Lucro Presumido, Lucro Real. A escolha depende do faturamento, atividade (CNAE), folha de pagamento (Fator R) e planejamento tributário. SC tem incentivos estaduais (PRODEC, TTD) que podem beneficiar indústrias no Lucro Presumido." } },
+    { "@type": "Question", "name": "Como funciona a abertura de empresa 100% digital em SC?", "acceptedAnswer": { "@type": "Answer", "text": "1) Assinatura digital do contrato social via certificado digital ou gov.br; 2) Registro na JUCESC via sistema integrado; 3) CNPJ automático na Receita Federal; 4) Inscrição Estadual via SEF/SC; 5) Alvará via Portal Empresa Fácil da prefeitura. A JMF opera todo o fluxo remotamente." } }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Abrir Empresa em SC 2026"
+  description="Abertura de empresa em Santa Catarina: CNPJ em 3 a 7 dias, viabilidade, alvará, inscrição estadual. Atendimento 100% digital para todo o estado."
+  canonical="https://www.jmfcontabilidade.com.br/abertura-empresa-sc"
+  ogUrl="https://www.jmfcontabilidade.com.br/abertura-empresa-sc"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+<HeroInterno
+  title="Abra sua empresa em Santa Catarina sem burocracia"
+  subtitle="CNPJ em 3 a 7 dias úteis. Viabilidade, contrato social, alvará e inscrição estadual — tudo digital. Atendemos Blumenau, Florianópolis, Joinville, Balneário Camboriú e todo o estado."
+  breadcrumb={[
+    { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+    { label: "Serviços" },
+    { label: "Abertura de Empresa" }
+  ]}
+  ctas={[
+    { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+    { label: "Simular Regime Tributário", href: "/simulador-regime-tributario", variant: "outline" }
+  ]}
+/>
+
+<section id="processo" class="py-16 md:py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona a<br/><span class="pp3-grad">abertura de empresa em SC</span></h2>
+
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+      Santa Catarina tem um dos processos de abertura mais digitalizados do Brasil. Com o CNPJ alfanumérico (desde 2023) e a integração entre JUCESC, SEF/SC e prefeituras via Portal Empresa Fácil, a JMF Contabilidade entrega seu CNPJ ativo em até 7 dias úteis — sem você sair de casa.
+    </p>
+
+    <div class="space-y-6">
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-xl">1</div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Viabilidade e Consulta Prévia</h3>
+          <p class="text-slate-600">Consultamos zoneamento, CNAE permitido e restrições no endereço escolhido. Evitamos retrabalho e taxas desnecessárias.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-xl">2</div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Contrato Social e Registro na JUCESC</h3>
+          <p class="text-slate-600">Elaboramos o contrato social personalizado para sua atividade e registramos na Junta Comercial de SC (JUCESC) via sistema integrado.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-xl">3</div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">CNPJ e Inscrição Estadual</h3>
+          <p class="text-slate-600">CNPJ emitido automaticamente pela Receita Federal. Inscrição Estadual na SEF/SC para empresas que emitem NF-e/NFC-e (comércio, indústria).</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-xl">4</div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Alvará de Funcionamento</h3>
+          <p class="text-slate-600">Solicitamos o alvará no Portal Empresa Fácil da prefeitura correspondente. Acompanhamos até a liberação e entrega do documento digital.</p>
+        </div>
+      </div>
+
+      <div class="flex gap-4">
+        <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center text-cyan-700 font-bold text-xl">5</div>
+        <div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2">Certificado Digital e Início das Atividades</h3>
+          <p class="text-slate-600">Emissão de certificado digital A1 (e-CNPJ) para assinar documentos e emitir notas. Sua empresa pronta para operar.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Cidades que atendemos<br/><span class="pp3-grad">em Santa Catarina</span></h2>
+
+    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+      A JMF Contabilidade tem sede em Blumenau e atende empresas em todo o estado de Santa Catarina de forma 100% digital. Principais municípios:
+    </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Blumenau</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Florianópolis</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Joinville</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Balneário Camboriú</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Itajaí</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Chapecó</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Criciúma</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Jaraguá do Sul</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Lages</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Brusque</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Indaial</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Gaspar</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Timbó</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Pomerode</span>
+      <span class="px-4 py-2 bg-white rounded-lg border border-slate-200 text-center font-medium">Demais cidades</span>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 md:py-24">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="mb-8 p-4 bg-cyan-50 border border-cyan-200 rounded-xl">
+      <p class="text-cyan-800 text-sm font-medium">
+        <i class="bi bi-info-circle"></i>
+        <strong>Foco em Blumenau e Vale do Itajaí?</strong>
+        Veja nossa página dedicada:
+        <a href="/abertura-de-empresa" class="underline hover:text-cyan-600 ml-2">Abertura de Empresa em Blumenau e Médio Vale</a> — atendimento presencial e especializado na região.
+      </p>
+    </div>
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Particularidades de<br/><span class="pp3-grad">Santa Catarina</span></h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">CNPJ Alfanumérico</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Desde 2023, SC adota o CNPJ alfanumérico (14 caracteres), eliminando a necessidade de viabilidade numérica prévia. Isso acelera o registro na JUCESC.
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Portal Empresa Fácil</h3>
+        <p class="text-slate-600 leading-relaxed">
+          A maioria dos municípios catarinenses (incluindo Blumenau, Florianópolis, Joinville, Itajaí, Balneário Camboriú) usa o sistema estadual unificado para alvará e licenciamento.
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Incentivos Fiscais Estaduais</h3>
+        <p class="text-slate-600 leading-relaxed">
+          PRODEC (diferimento de ICMS), TTD 489/1997 (benefícios para novos empreendimentos industriais), e regimes especiais por município. Podem reduzir significativamente a carga tributária.
+        </p>
+      </div>
+
+      <div class="bg-white border-2 border-slate-200 rounded-xl p-6">
+        <h3 class="text-xl font-bold text-slate-900 mb-3">ISS Municipal</h3>
+        <p class="text-slate-600 leading-relaxed">
+          Alíquotas variam por município (2% a 5%). Blumenau: 2% a 5% conforme atividade. Florianópolis: 2% a 5%. Importante definir o endereço fiscal estrategicamente para serviços.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-8 p-6 bg-cyan-50 border border-cyan-200 rounded-xl">
+      <h4 class="font-semibold text-cyan-800 mb-3 flex items-center gap-2"><i class="bi bi-lightning-charge"></i> Planejamento tributário incluso na abertura</h4>
+      <p class="text-cyan-700 mb-4">Não abra no regime errado. A diferença entre Simples Nacional (Anexo III vs V) e Lucro Presumido pode ser de dezenas de milhares de reais/ano. A JMF simula o melhor regime ANTES de abrir.</p>
+      <a href="/simulador-regime-tributario" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-cyan-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-cyan-700 transition">
+        <i class="bi bi-calculator"></i> Simular meu regime ideal
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-16 bg-slate-50">
+  <div class="max-w-4xl mx-auto px-6">
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Documentos necessários<br/><span class="pp3-grad">checklist completo</span></h2>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <h3 class="font-semibold text-slate-900 mb-4">Sócios (pessoa física)</h3>
+        <ul class="space-y-2 text-slate-600">
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> RG e CPF (ou CNH)</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Comprovante de residência atual (últimos 90 dias)</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Certidão de casamento (se casado)</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Certificado digital A1 ou conta gov.br nível prata/ouro</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <h3 class="font-semibold text-slate-900 mb-4">Empresa</h3>
+        <ul class="space-y-2 text-slate-600">
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Endereço comercial (IPTU ou contrato de locação + autorização)</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Definição de CNAE(s) principal e secundários</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Capital social e forma de integralização</li>
+          <li class="flex items-center gap-2"><i class="bi bi-check text-cyan-500"></i> Natureza jurídica (LTDA, SLU, EI, etc.)</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="mt-6 text-slate-600"><strong>Atividades reguladas</strong> (engenharia, saúde, farmácia, contabilidade, advocacia, transporte, alimentos) exigem documentos adicionais: ART, CRF, CRM, OAB, licenças específicas. A JMF orienta caso a caso.</p>
+  </div>
+</section>
+
+<section id="formulario" class="py-16 md:py-24 bg-[#0B1220]">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Vamos abrir sua empresa em <span class="pp3-grad">Santa Catarina</span>?</h2>
+    <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Diagnóstico de viabilidade grátis. Simulação de regime tributário inclusa. Resposta no mesmo dia útil.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={WA} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-cyan-600 transition">
+        <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+      </a>
+      <a href="/simulador-regime-tributario" class="inline-flex items-center justify-center gap-2 border border-cyan-500 text-cyan-400 px-6 py-3 rounded-lg font-medium hover:bg-cyan-500/10 transition">
+        <i class="bi bi-calculator"></i> Simular Regime
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>

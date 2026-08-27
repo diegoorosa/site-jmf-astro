@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Porto%20Belo.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo#localbusiness",
+  "name": "JMF Contabilidade – Porto Belo",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo",
+  "description": "Contabilidade para empresas em Porto Belo/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para comércio, turismo e construção civil na Costa Esmeralda. 65km de Blumenau.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Porto Belo",
+    "addressRegion": "SC",
+    "postalCode": "88210-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.1625,
+    "longitude": -48.5386
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Porto Belo" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Porto Belo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Atendemos empresas de Porto Belo/SC 100% digital. Porto Belo fica a 65km de Blumenau (1h15), na Costa Esmeralda. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais impostos para comércio e turismo em Porto Belo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porto Belo tem economia forte em turismo (praias, hospedagem, gastronomia), comércio varejista e construção civil. Empresas de turismo e comércio no Simples Nacional (Anexo III ou V via Fator R), ISS municipal 2% mínimo para serviços. Indústrias/construção: Lucro Presumido ou Real. Simulamos o regime ideal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Porto Belo tem incentivos para turismo e construção?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Porto Belo integra a Costa Esmeralda com forte apelo turístico. O município pode oferecer incentivos locais além dos estaduais (PRODEC, TTD). Empresas de hospedagem, alimentação e eventos se beneficiam de regimes especiais. Construção civil: regime especial de tributação (RET) ou Lucro Presumido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o atendimento remoto para Porto Belo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 65km (1h15 pela BR-101). Resposta no mesmo dia útil. Rotina mensal padrão: docs até dia 5, fechamento até dia 15, guias até dia 20."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Porto Belo/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Porto Belo/SC: turismo, comércio, construção civil.  Simples Nacional, Lucro Presumido."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Porto Belo"
+    subtitle="Costa Esmeralda: turismo, comércio e construção civil. Atendimento digital, 65km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Porto Belo" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Porto Belo:<br/><span class="pp3-grad">turismo, comércio e construção na Costa Esmeralda</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Porto Belo, na Costa Esmeralda, tem economia dinâmica baseada no turismo de praias (Praia do Perequê, Centro), comércio varejista, gastronomia, hospedagem e forte setor de construção civil e imobiliário. Empresas da região lidam com sazonalidade turística, ISS municipal, regimes especiais de construção e tributação de imóveis.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de Porto Belo com expertise em tributação do turismo, comércio e construção civil. Atendimento 100% digital, estrutura de 35+ anos em Blumenau (65km / 1h15).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Turismo e Hospitalidade</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Hotéis, pousadas, restaurantes, bares, agências de turismo: Simples Nacional (Fator R), ISS 2%+, sazonalidade de folha, controle de estoque, NFC-e/NF-e, regime especial de eventos.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Comércio Varejista</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Lojas, mercados, farmácias: ICMS-ST, NFC-e obrigatória, controle de CMV, inventário, DIFAL interestadual, substituição tributária em produtos específicos.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Construção Civil e Imobiliário</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Construtoras, incorporadoras, imobiliárias: RET (Regime Especial de Tributação 1% a 4%), Lucro Presumido (8% base), patrimônio de afetação, INSS obra (1% a 2%), ISS obra.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escrituração fiscal, SPED, ECD/ECF, DCTF, PER/DCOMP, obrigações municipais (ISS), retenções na fonte (IR, CSLL, PIS, COFINS, INSS). Tudo no prazo, sem multas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Porto Belo — Turismo e Construção:<br/><span class="pp3-grad">particularidades tributárias</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Porto Belo concentra setores com regras tributárias específicas:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Turismo sazonal e Fator R:</strong> alta temporada (dez-mar) eleva faturamento e folha. Monitorar Fator R ≥ 28% para manter Anexo III (6%) no Simples Nacional — evita salto para Anexo V (15,5%).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Construção civil — RET vs Presumido:</strong> RET (Lei 12.024/2009): 1% a 4% sobre receita (Patrimônio de Afetação). Lucro Presumido: base 8% (construção) + ISS. A JMF atende apenas Simples Nacional ou Lucro Presumido; para Lucro Real indicamos parceiro. Escolha impacta caixa e margem.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISS municipal — obra e serviços:</strong> obra (2% a 5% sobre valor do serviço), serviços de arquitetura/engenharia (2% a 5%). Porto Belo tem legislação própria para ISS fixo vs variável.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Incentivos estaduais:</strong> PRODEC/TTD podem beneficiar indústrias de base e construção em Porto Belo. Turismo: isenções/ reduções específicas.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Construtora em Porto Belo com receita R$ 8M/ano: RET (4%) = R$ 320k impostos federais + ISS (2-5%). Lucro Presumido (8% base IRPJ/CSLL + 3,65% PIS/COFINS) = ~R$ 280k federais + ISS. Diferença depende do custo da obra e créditos. A JMF simula cenário a cenário.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Porto Belo</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Especialistas em construção (RET, patrimônio de afetação) e turismo (Fator R, sazonalidade).
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 65km (1h15 pela BR-101). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
+        </p>
+        <p>
+          <strong>Rotina mensal:</strong> Recebimento docs até dia 5, fechamento até dia 15, guias e relatórios até dia 20. Controle de obra: medições, retenções, CNDs.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Simulação RET vs Presumido vs Real gratuita para construção.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

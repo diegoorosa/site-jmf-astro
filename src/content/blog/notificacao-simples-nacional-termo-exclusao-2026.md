@@ -1,6 +1,6 @@
 ---
-title: "Notificação do Simples Nacional em 2026: Recebeu o Termo de Exclusão? Saiba Como Agir"
-description: "No 2º semestre, a Receita Federal e a PGFN intensificam os Termos de Exclusão do Simples Nacional para empresas com débitos. Entenda o prazo do DTE-SN, as alternativas de regularização e o impacto do desenquadramento sumário para 1º de janeiro."
+title: "Notificação do Simples Nacional em 2026: Recebeu o Termo..."
+description: "No 2º semestre, a Receita Federal e a PGFN intensificam os Termos de Exclusão do Simples Nacional para empresas com débitos."
 pubDate: 2026-08-04
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-notificacao-simples-nacional-exclusao.jpg"

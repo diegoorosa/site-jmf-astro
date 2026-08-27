@@ -1,6 +1,6 @@
 ---
-title: "Por que agosto é o mês decisivo para o Planejamento Tributário de 2027?"
-description: "Deixar o planejamento para janeiro é um erro caro. Em agosto já temos histórico consolidado de faturamento, impacto real da folha no Fator R e projeção segura até dezembro. Avalie agora e evite desenquadramento do Simples em 2027."
+title: "Por que agosto é o mês decisivo para o Planejamento..."
+description: "Deixar o planejamento para janeiro é um erro caro. Em agosto já temos histórico consolidado de faturamento, impacto real da folha no Fator R e projeção..."
 pubDate: 2026-07-25
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-planejamento-tributario-2027.jpg"

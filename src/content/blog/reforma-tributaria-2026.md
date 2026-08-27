@@ -1,6 +1,6 @@
 ---
 title: "Reforma Tributária 2026: O Que Muda para Sua Empresa Agora"
-description: "Entenda o cronograma de transição, o que muda em 2026 para cada regime tributário e qual é a decisão crítica que empresas do Simples Nacional precisam tomar até setembro de 2026."
+description: "Entenda o cronograma de transição, o que muda em 2026 para cada regime tributário e qual é a decisão crítica que empresas do Simples Nacional precisam..."
 pubDate: 2026-06-12
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-reforma-tributaria-2026.jpg"
@@ -70,7 +70,7 @@ A Resolução CGSN 186/2026 também definiu uma janela de desistência: quem opt
 3. **Agende uma conversa com seu contador antes de setembro/2026** para decidir sobre o regime híbrido.
 4. **Não tome decisões precipitadas**: a transição é gradual e há tempo para planejamento.
 
-A JMF Contabilidade já está acompanhando de perto todos os desdobramentos da reforma e orientando nossos clientes em cada etapa. Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria), conheça nosso serviço de [gestão fiscal e tributária](/gestao-fiscal-e-tributaria), leia também sobre [Split Payment](/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa) e [Desoneração da Folha](/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao), ou [entre em contato com nossa equipe](/fale-conosco).
+A JMF Contabilidade já está acompanhando de perto todos os desdobramentos da reforma e orientando nossos clientes em cada etapa. Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria), conheça nosso serviço de [gestão fiscal e tributária](/gestao-fiscal-e-tributaria), leia também sobre [Split Payment](/blog/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa) e [Desoneração da Folha](/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao), ou [entre em contato com nossa equipe](/fale-conosco).
 
 ## Perguntas frequentes
 

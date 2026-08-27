@@ -1,6 +1,6 @@
 ---
 title: "MEI 2026: Guia Completo para o Microempreendedor Individual"
-description: "Tudo sobre o MEI em 2026: valor do DAS atualizado (R$ 82,05 a R$ 87,05), limite de faturamento, prazo da DASN-SIMEI, quando ter funcionário e quando é hora de 'se graduar' para ME."
+description: "Tudo sobre o MEI em 2026: valor do DAS atualizado (R$ 82,05 a R$ 87,05), limite de faturamento, prazo da DASN-SIMEI, quando ter funcionário e quando é..."
 pubDate: 2026-05-14
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-mei-2026-guia.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Microempreendedor individual trabalhando — MEI 2026"
 
 O MEI (Microempreendedor Individual) é o regime tributário mais acessível do Brasil — e continua sendo a porta de entrada para a formalização de milhões de trabalhadores autônomos. Em 2026, os valores do DAS foram reajustados com base no novo salário mínimo, e há datas importantes que todo MEI precisa conhecer.
 
-> **Ultrapassou o limite?** Veja o que fazer quando o [faturamento estoura o limite do MEI](/mei-estourou-o-faturamento-o-que-fazer-agora) e como [migrar de MEI para LTDA](/migrar-de-mei-para-ltda-guia-completo-2026) sem problemas.
+> **Ultrapassou o limite?** Veja o que fazer quando o [faturamento estoura o limite do MEI](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) e como [migrar de MEI para LTDA](/blog/migrar-de-mei-para-ltda-guia-completo-2026) sem problemas.
 
 Neste guia, reunimos tudo o que você precisa saber sobre o MEI em 2026.
 
@@ -31,7 +31,7 @@ Este limite não é corrigido desde 2019 e existe pressão política para reajus
 
 **Atenção às regras de ultrapassagem:**
 - Faturou até **R$ 97.200** (até 20% acima): continua MEI até 31/12, migra para ME em janeiro do ano seguinte
-- Faturou **acima de R$ 97.200** (mais de 20% acima): desenquadramento retroativo a 1° de janeiro do mesmo ano — [veja o que fazer nessa situação](/mei-estourou-o-faturamento-o-que-fazer-agora) — com recolhimento de todos os tributos como ME desde o início do ano
+- Faturou **acima de R$ 97.200** (mais de 20% acima): desenquadramento retroativo a 1° de janeiro do mesmo ano — [veja o que fazer nessa situação](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) — com recolhimento de todos os tributos como ME desde o início do ano
 
 ## Valor do DAS em 2026
 
@@ -89,7 +89,7 @@ A migração para **Microempresa (ME)** no Simples Nacional exige:
 - Escolha do regime tributário (Simples, Lucro Presumido)
 - Abertura de nova conta PJ
 
-**Planeje a migração com antecedência:** ao migrar, o novo CNPJ precisa se enquadrar no Simples em janeiro. [Veja o guia completo para migrar de MEI para LTDA](/migrar-de-mei-para-ltda-guia-completo-2026). Uma migração desordenada no meio do ano pode resultar em tributação pelo Lucro Presumido por toda a segunda metade.
+**Planeje a migração com antecedência:** ao migrar, o novo CNPJ precisa se enquadrar no Simples em janeiro. [Veja o guia completo para migrar de MEI para LTDA](/blog/migrar-de-mei-para-ltda-guia-completo-2026). Uma migração desordenada no meio do ano pode resultar em tributação pelo Lucro Presumido por toda a segunda metade.
 
 ## Benefícios previdenciários do MEI
 

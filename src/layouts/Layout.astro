@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
 import MobileCtaBar from '../components/MobileCtaBar.astro';
 import Reveal from '../components/Reveal.astro';
+import { schema1 } from '../schema.js-snippet.js';
 
 interface Props {
   title: string;
@@ -28,11 +29,121 @@ const {
   bodyClass = '',
   heroInterno = false,
   noindex = false,
+  speakable = true, // Enable Speakable markup for voice/AI citation
 } = Astro.props;
 
-const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
----
+const siteOrigin = 'https://www.jmfcontabilidade.com.br';
+const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+const resolvedCanonical = canonical ?? `${siteOrigin}${currentPath}`;
 
+// Define default schema (schema1) to be used when no schema prop is provided
+const defaultSchema = [JSON.stringify(schema1)];
+
+const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : defaultSchema;
+
+// SpeakableSpecification schema for voice search / AI citation readiness
+function getSpeakableSchema(canonicalUrl?: string) {
+  if (!speakable || !canonicalUrl) return null;
+
+  const url = new URL(canonicalUrl);
+  const path = url.pathname;
+
+  // Only add speakable to key content pages (not tools, blog index, etc.)
+  const speakablePaths = [
+    '/', // Homepage
+    '/sobre',
+    '/abertura-de-empresa',
+    '/consultoria-e-planejamento-tributario',
+    '/gestao-fiscal-e-tributaria',
+    '/gestao-pessoal',
+    '/seguranca-dos-dados',
+    '/contabilidade-em-blumenau',
+    '/contabilidade-em-indaial',
+    '/contabilidade-em-gaspar',
+    '/contabilidade-em-pomerode',
+    '/contabilidade-em-timbo',
+    '/contabilidade-em-itajai',
+    '/contabilidade-em-balneario-camboriu',
+    '/contabilidade-em-porto-belo',
+    '/contabilidade-em-bombas',
+    '/contabilidade-em-bombinhas',
+    '/contabilidade-em-florianopolis',
+    '/como-abrir-empresa-em-blumenau',
+    '/transformar-mei-em-ltda',
+    '/segmentos',
+    '/regimes-tributarios',
+    '/simples-nacional',
+  ];
+
+  // Check if path matches a speakable page (exact or with trailing slash)
+  const isSpeakable = speakablePaths.some(p =>
+    path === p || path === p + '/' || path === p.replace(/\/$/, '')
+  );
+
+  if (!isSpeakable) return null;
+
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "speakable": {
+      "@type": "SpeakableSpecification",
+      "cssSelector": [
+        "main h1",
+        "main h2",
+        "main p",
+        "section#servicos h2",
+        "section#servicos h3",
+        "section#servicos p"
+      ]
+    }
+  });
+}
+
+const speakableSchema = getSpeakableSchema(resolvedCanonical);
+if (speakableSchema) {
+  schemas.push(speakableSchema);
+}
+
+// Auto-detect OG image based on canonical URL
+function getOgImage(canonicalUrl?: string, explicitOgImage?: string) {
+  if (explicitOgImage) return explicitOgImage;
+
+  const baseUrl = siteOrigin;
+  const ogMap: Record<string, string> = {
+    '/': '/assets/images/og/home-og.webp',
+    '/abertura-de-empresa': '/assets/images/og/abertura-de-empresa-og.webp',
+    '/calculadora-fator-r': '/assets/images/og/calculadora-fator-r-og.webp',
+    '/calendario-fiscal-2026': '/assets/images/og/calendario-fiscal-og.webp',
+    '/simulador-regime-tributario': '/assets/images/og/simulador-regime-og.webp',
+    '/consultoria-e-planejamento-tributario': '/assets/images/og/consultoria-e-planejamento-tributario-og.webp',
+    '/gestao-fiscal-e-tributaria': '/assets/images/og/gestao-fiscal-e-tributaria-og.webp',
+    '/gestao-pessoal': '/assets/images/og/gestao-pessoal-og.webp',
+    '/blog/': '/assets/images/og/blog-og.webp',
+    '/contabilidade-em-pomerode': '/assets/images/og/contabilidade-em-pomerode-og.webp',
+    '/contabilidade-em-timbo': '/assets/images/og/contabilidade-em-timbo-og.webp',
+    '/contabilidade-em-itajai': '/assets/images/og/contabilidade-em-itajai-og.webp',
+    '/contabilidade-em-porto-belo': '/assets/images/og/contabilidade-em-porto-belo-og.webp',
+    '/contabilidade-em-bombas': '/assets/images/og/contabilidade-em-bombas-og.webp',
+    '/contabilidade-em-bombinhas': '/assets/images/og/contabilidade-em-bombinhas-og.webp',
+    '/contabilidade-em-balneario-camboriu': '/assets/images/og/contabilidade-em-balneario-camboriu-og.webp',
+    '/contabilidade-em-florianopolis': '/assets/images/og/contabilidade-em-florianopolis-og.webp',
+  };
+
+  if (!canonicalUrl) return `${baseUrl}/assets/images/JMF-Logo-Open-Graph.webp`;
+
+  // Extract path from canonical URL
+  const url = new URL(canonicalUrl);
+  const path = url.pathname === '' ? '/' : url.pathname;
+
+  // Match exact path or with trailing slash
+  const ogPath = ogMap[path] || ogMap[path.replace(/\/$/, '')] || ogMap[path + '/'];
+
+  return ogPath ? `${baseUrl}${ogPath}` : `${baseUrl}/assets/images/JMF-Logo-Open-Graph.webp`;
+}
+
+const resolvedOgImage = getOgImage(resolvedCanonical, ogImage);
+const resolvedOgUrl = ogUrl ?? resolvedCanonical;
+---
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -43,15 +154,18 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
 
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={resolvedCanonical} />
   <meta name="author" content="JMF Contabilidade Blumenau" />
+  <meta name="strix-verification" content="strix-verify-ab9589f0fec03a8833657cb8c7a5ef7e" />
   {noindex && <meta name="robots" content="noindex, nofollow" />}
 
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={ogImage ?? "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png"} />
+  <meta property="og:image" content={resolvedOgImage} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content={ogUrl ?? canonical ?? 'https://www.jmfcontabilidade.com.br/'} />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:url" content={resolvedOgUrl} />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="pt_BR" />
 
@@ -59,33 +173,32 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   <meta name="twitter:site" content="@jmfcontab" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content={ogImage ?? "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png"} />
+  <meta name="twitter:image" content={resolvedOgImage} />
 
-  <link rel="alternate" hreflang="pt-BR" href={canonical ?? 'https://www.jmfcontabilidade.com.br/'} />
+  <link rel="alternate" hreflang="pt-BR" href={resolvedCanonical} />
 
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preconnect" href="https://images.pexels.com" />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-  <link rel="stylesheet" href="/_astro/fonts.css" />
+  <!-- Preload critical fonts (above-fold text uses Inter 400/600/700 and Fraunces 600) -->
+  <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/inter-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
 
-  <slot name="head" />
+  <!-- Preload hero logo image (LCP candidate) -->
+  <link rel="preload" href="/assets/images/jmf-contabilidade-jean-254x159.webp" as="image" fetchpriority="high" />
 
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
-
-  {canonical && <link rel="canonical" href={canonical} />}
-
-  <!-- Fonts (self-hosted via fontsource) -->
+  <!-- Fonts CSS - non-blocking: fonts don't block first paint, only cause FOUT -->
+  <link rel="stylesheet" href="/_astro/fonts.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/_astro/fonts.css" /></noscript>
 
   <!-- Bootstrap Icons (self-hosted, defer) -->
   <link rel="stylesheet" href="/bi/bootstrap-icons.min.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/bi/bootstrap-icons.min.css" /></noscript>
 
   <!-- JSON-LD Schemas -->
   {schemas.map(s => <script type="application/ld+json" set:html={s} />)}
-
   <noscript>
     <link rel="stylesheet" href="/bi/bootstrap-icons.min.css" />
   </noscript>
@@ -94,14 +207,16 @@ const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : [];
   <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7HGBD');</script>
 
   <!-- Google Ads Conversion Tag -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1021062139"></script>
+  <script async src="https://www.googletagmanager.com/gtag.js?id=AW-1021062139"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-1021062139');
   </script>
+
 </head>
+
 <body class={`bg-white text-[#334155] ${bodyClass}`}>
   <!-- GTM noscript -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q7HGBD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>

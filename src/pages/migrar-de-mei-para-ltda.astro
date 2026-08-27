@@ -5,14 +5,89 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20migrar%20de%20MEI%20para%20LTDA%20e%20preciso%20de%20orienta%C3%A7%C3%A3o.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Migração de MEI para LTDA em Blumenau/SC",
-  "description": "Processo completo de migração de MEI para LTDA em Blumenau/SC: baixa do MEI, abertura da nova empresa, transferência de inscrições e enquadramento tributário.",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda#localbusiness",
+  "name": "JMF Contabilidade – Migração MEI para LTDA Blumenau",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda",
+  "description": "Migração de MEI para LTDA em Blumenau/SC: processo completo, custos reais, simulação tributária e onboarding contábil. Atendimento digital para todo o Médio Vale.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Migração MEI → LTDA",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diagnóstico e Simulação Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Elaboração de Contrato Social" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Registro na JUCESC e CNPJ" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Baixa do MEI e Regularização" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Onboarding Contábil Completo" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -25,12 +100,13 @@ const faqSchema = JSON.stringify({
     { "@type": "Question", "name": "Fazem a migração de MEI para LTDA em Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF Contabilidade conduz a migração de MEI para LTDA para empreendedores de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com todo o processo feito digitalmente." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
   title="Migrar de MEI para LTDA em Blumenau/SC | JMF Contabilidade"
-  description="Migração de MEI para LTDA em Blumenau/SC: processo completo, custos reais, o que muda nos impostos e como fazer a transição sem problemas. JMF Contabilidade."
+  description="Migração de MEI para LTDA em Blumenau/SC: processo completo, custos reais, o que muda nos impostos e como fazer a transição sem problemas."
   canonical="https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda"
   ogUrl="https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda"
   schema={schema}
@@ -40,7 +116,7 @@ const schema = [serviceSchema, faqSchema];
 
   <HeroInterno
     title="Migrar de MEI para LTDA em Blumenau/SC"
-    subtitle="O negócio cresceu e o MEI não comporta mais. A JMF cuida de toda a transição — da baixa do MEI à abertura da LTDA — sem interrupção nas atividades."
+    subtitle="O negócio cresceu e o MEI não comporta mais. A JMF cuida..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -239,7 +315,7 @@ const schema = [serviceSchema, faqSchema];
   <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
     <div class="container mx-auto px-4 max-w-4xl">
       <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <a href="/blog/migrar-de-mei-para-ltda-guia-completo-2026"
           class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
           <p class="text-xs text-gray-400 mb-1">Guia completo</p>
@@ -250,10 +326,20 @@ const schema = [serviceSchema, faqSchema];
           <p class="text-xs text-gray-400 mb-1">MEI</p>
           <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">MEI estourou o faturamento: o que fazer agora</p>
         </a>
-        <a href="/blog/mei-2026-guia-completo-microempreendedor-individual"
+        <a href="/blog/desenquadramento-mei-retroativo-2026"
           class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
-          <p class="text-xs text-gray-400 mb-1">MEI 2026</p>
-          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">MEI 2026: guia completo do Microempreendedor Individual</p>
+          <p class="text-xs text-gray-400 mb-1">Desenquadramento</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Desenquadramento MEI Retroativo</p>
+        </a>
+        <a href="/blog/desenquadramento-mei-por-faturamento-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Desenquadramento</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Desenquadramento MEI por Faturamento</p>
+        </a>
+        <a href="/blog/desenquadramento-mei-excesso-receita-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group lg:col-span-1">
+          <p class="text-xs text-gray-400 mb-1">Desenquadramento</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Desenquadramento MEI por Excesso de Receita</p>
         </a>
       </div>
     </div>

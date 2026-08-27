@@ -1,5 +1,5 @@
 ---
-title: "Split Payment: O Que Muda Para Sua Empresa com a Reforma Tributária"
+title: "Split Payment: O Que Muda Para Sua Empresa com a Reforma..."
 description: "Entenda o Split Payment da Reforma Tributária: como funciona, quando entra em vigor e como preparar o fluxo de caixa da sua empresa antes que seja tarde."
 pubDate: 2026-06-13
 author: "Fabricio Rosa, CRC SC-029833/O"
@@ -7,7 +7,7 @@ image: "/assets/images/blog-split-payment-reforma.jpg"
 imageAlt: "Pagamento digital e gestão de caixa empresarial"
 ---
 
-A [Reforma Tributária](/reforma-tributaria-2026) trouxe mudanças que vão além da troca de impostos. Uma delas ainda passa despercebida pela maioria dos empresários — e vai impactar diretamente a forma como sua empresa gerencia o caixa.
+A [Reforma Tributária](/blog/reforma-tributaria-2026) trouxe mudanças que vão além da troca de impostos. Uma delas ainda passa despercebida pela maioria dos empresários — e vai impactar diretamente a forma como sua empresa gerencia o caixa.
 
 O nome é **Split Payment**. E você precisa entender agora, antes que ele entre em vigor.
 
@@ -117,7 +117,7 @@ Calcule, para os últimos 12 meses, qual o valor médio de impostos (ICMS, ISS, 
 
 > **Quer saber como o Split Payment vai afetar especificamente o seu negócio?**
 > A JMF faz esse diagnóstico gratuitamente.
-> Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria), leia também sobre a [Desoneração da Folha](/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao) ou acesse nossos serviços de [Consultoria e Planejamento Tributário](/consultoria-e-planejamento-tributario) e [Gestão Fiscal e Tributária](/gestao-fiscal-e-tributaria). [Fale com nossa equipe](/fale-conosco).
+> Veja nosso [guia completo sobre a Reforma Tributária](/reforma-tributaria), leia também sobre a [Desoneração da Folha](/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao) ou acesse nossos serviços de [Consultoria e Planejamento Tributário](/consultoria-e-planejamento-tributario) e [Gestão Fiscal e Tributária](/gestao-fiscal-e-tributaria). [Fale com nossa equipe](/fale-conosco).
 
 ---
 

@@ -1,63 +1,52 @@
 ---
-title: "DAS do Simples Nacional Atrasado: Multas, Juros e Como Regularizar em 2026"
-description: "Pagou o DAS depois do dia 20? A multa agora é automática. Entenda os valores, os juros SELIC e as opções de regularização para não perder o Simples Nacional."
+title: "DAS do Simples Nacional Atrasado: Como Emitir Guia Atualizada"
+description: "DAS atrasado do Simples Nacional: veja como reemitir a guia atualizada pelo PGDAS-D, conferir acréscimos e avaliar parcelamento quando necessário."
 pubDate: 2026-06-16
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-das-atrasado-past-due.jpg"
 imageAlt: "Guia com carimbo de atraso — DAS atrasado do Simples Nacional"
 ---
 
-O DAS (Documento de Arrecadação do Simples Nacional) é a guia única que concentra oito tributos em um único pagamento mensal. Mas o que muitos empresários não sabem é que, em 2026, a multa por atraso passou a ser **aplicada automaticamente** — sem precisar de notificação da Receita Federal.
+O DAS (Documento de Arrecadação do Simples Nacional) é a guia usada para pagar os tributos apurados no regime. Quando a data de vencimento passa, a recomendação é não reutilizar uma guia vencida: confira a apuração e **emita uma guia atualizada pelo canal oficial**. O próprio serviço do Governo Federal informa que o DAS é emitido para pagamento dos tributos do Simples e que pode existir DAS avulso quando não for possível emitir o documento pelo PGDAS-D.
 
-Se você pagou o DAS depois do dia 20 do mês seguinte ao período de apuração, este artigo explica o que acontece, quanto você vai pagar a mais e como regularizar antes que a situação piore.
+Se o seu DAS venceu, este guia mostra o caminho seguro para regularizar, o que conferir antes do pagamento e quando avaliar parcelamento. Os acréscimos dependem da data, do período apurado e da situação do débito; por isso, a guia atualizada é a referência mais segura para o valor a pagar.
 
-## Como funciona a multa automática em 2026
+## DAS atrasado: o que conferir antes de pagar
 
-A partir de 2026, a Receita Federal passou a aplicar a multa de **2% sobre o valor do DAS** automaticamente no dia 21 do mês seguinte. Antes, o lançamento da multa exigia um processo manual de notificação — agora é automático.
+Antes de gerar a nova guia, confira três pontos: se o período de apuração foi transmitido corretamente no PGDAS-D, se o valor de receita informado corresponde ao mês e se já existe parcelamento ou outra pendência relacionada ao débito. A reemissão pelo sistema oficial atualiza o documento conforme a situação registrada.
 
-**Exemplo prático:** DAS de R$ 2.000 pago com 5 dias de atraso:
-- Multa: 2% × R$ 2.000 = R$ 40,00
-- Juros SELIC: calculados proporcionalmente ao período de atraso
-- Total aproximado: R$ 40 + juros
-
-Para atrasos maiores, a multa pode ser majorada. E o pior: o DAS em atraso gera **restrições no Simples Nacional**, incluindo impedimento de emissão de certidão negativa de débitos.
+> **Atenção:** este conteúdo explica o procedimento geral. Valores de acréscimos, possibilidade de parcelamento e efeitos na regularidade fiscal precisam ser verificados no seu caso, no PGDAS-D, e-CAC ou com orientação contábil.
 
 ## O que acontece se não pagar
 
-As consequências do DAS em atraso vão além da multa:
-
-1. **Impedimento de emissão de certidão negativa** — sem certidão, a empresa não consegue licitar, contratar com o governo ou acessar linhas de crédito
-2. **Restrição no PGDAS-D** — o sistema pode bloquear a geração de guias futuras
-3. **Possibilidade de desenquadramento** — em casos extremos de inadimplência, a empresa pode perder a condição de optante pelo Simples Nacional
-4. **Negativação nos órgãos de proteção** — o débito pode ser inscrito na Dívida Ativa da União
+Deixar a pendência sem acompanhamento pode dificultar a organização financeira e a regularidade fiscal da empresa. Em inadimplências mais relevantes ou persistentes, podem existir notificações e outros desdobramentos previstos para o regime. A medida prática é consultar a situação no canal oficial e decidir entre quitação ou parcelamento com base no valor atualizado.
 
 ## Como regularizar
 
 ### Opção 1: Pagamento espontâneo
-Se o DAS foi gerado e não pago, acesse o PGDAS-D e gere uma nova guia de pagamento. A multa e os juros serão calculados automaticamente.
+Se o DAS foi gerado e não pago, acesse o [PGDAS-D — Portal do Simples Nacional](https://www8.receita.fazenda.gov.br/simplesnacional/) e emita a guia atualizada. Se houver dificuldade no procedimento, o serviço oficial também prevê DAS avulso em situações nas quais não seja possível emitir o documento pelo PGDAS-D.
 
 ### Opção 2: Parcelamento
-A Receita Federal oferece programas de parcelamento para débitos do Simples Nacional. O parcelamento pode ser feito em até 60 meses, com descontos progressivos conforme o número de parcelas pagas.
+Para débitos declarados no PGDAS-D, o [serviço oficial de parcelamento](https://www.gov.br/pt-br/servicos/parcelar-imposto-simples) informa limite máximo de 60 parcelas e regra de valor mínimo por parcela. Consulte as condições aplicáveis ao seu débito antes de aderir.
 
-### Opção 3: Transação tributária
-Para débitos inscritos em Dívida Ativa, existe a possibilidade de transação com descontos de até 65% sobre o valor total. Este programa está previsto na Lei 14.941/2024.
+### Opção 3: Débito com situação específica
+Quando houver inscrição, cobrança ou outra situação diferente da pendência comum no PGDAS-D, consulte o órgão responsável e a orientação aplicável antes de tomar qualquer decisão. O caminho e as condições podem mudar conforme a fase do débito.
 
-## Quanto a multa pode chegar
+## Como ver juros e encargos da forma correta
 
-A multa por atraso no DAS segue uma lógica progressiva por mês ou fração de atraso, com **limite máximo de 20% sobre o valor do tributo**. Ou seja, quanto mais tempo o débito fica em aberto, maior a multa acumulada — somada aos juros SELIC, que incidem mês a mês sobre o saldo devedor (capital + multa). Por isso, regularizar rapidamente é sempre mais barato do que esperar.
+O jeito mais seguro de conferir juros e encargos é olhar a **guia atualizada emitida pelo sistema oficial**. Evite calcular valores por memórias de regras antigas, imagens compartilhadas ou exemplos genéricos: uma pequena diferença de data, período ou situação do débito pode alterar o resultado.
 
-**Exemplo com atraso maior:** um DAS de R$ 2.000 pago com 4 meses de atraso pode acumular multa próxima do teto (até 20% = R$ 400) mais juros SELIC do período — facilmente dobrando o custo original em relação a um atraso de poucos dias.
+Se a empresa tem mais de uma competência em aberto, monte uma lista com período, valor atualizado, vencimento e prioridade. Isso ajuda a enxergar se a quitação imediata faz sentido ou se o parcelamento deve ser avaliado.
 
 ## Parcelamento: como funciona na prática
 
 O parcelamento de débitos do Simples Nacional é feito diretamente no Portal do Simples Nacional (PGDAS-D) ou no e-CAC, e segue regras próprias (diferentes do parcelamento do Lucro Presumido/Real, que corre pela Receita Federal "tradicional"):
 
-- **Entrada mínima** calculada com base no número de parcelas solicitadas e no valor total do débito
-- **Parcelas mensais** com juros SELIC incidindo sobre o saldo remanescente
-- **Prazo de até 60 meses**, dependendo do valor total e da modalidade
-- O parcelamento **regulariza a situação para fins de emissão de certidão negativa**, mas o débito continua existindo até a última parcela ser paga
+- O pedido deve ser feito no canal oficial apropriado para o débito declarado no PGDAS-D.
+- O serviço público informa limite de até 60 parcelas e valor mínimo por parcela; confirme os detalhes apresentados no momento da solicitação.
+- O parcelamento não substitui a necessidade de manter as apurações e os DAS correntes em dia.
 
-**Atenção:** atrasar uma parcela do parcelamento pode causar o cancelamento do acordo, fazendo a dívida voltar ao estado original (sem o desconto de eventuais reduções) — manter as parcelas em dia é tão importante quanto manter o DAS mensal em dia.
+**Atenção:** antes de parcelar, compare o fluxo de caixa da empresa com as parcelas e com as novas obrigações mensais. Um acordo só funciona se a rotina posterior também estiver organizada.
 
 ## Perguntas frequentes
 
@@ -68,7 +57,7 @@ Sim, em casos de inadimplência continuada e relevante (valor e tempo de atraso 
 Não diretamente — o Fator R é calculado sobre folha de pagamento e faturamento dos últimos 12 meses, não sobre o histórico de pagamento do DAS. Mas empresas com DAS atrasado tendem a ter menos controle financeiro em geral, o que pode mascarar também problemas no cálculo do Fator R — vale revisar os dois ao mesmo tempo.
 
 **Vale a pena pagar com atraso e depois parcelar a multa, ou é melhor pagar tudo de uma vez mesmo atrasado?**
-Quase sempre é melhor pagar o quanto antes, mesmo com atraso, do que deixar acumular e depois parcelar — os juros SELIC continuam correndo enquanto o débito não é liquidado ou parcelado, e cada mês de atraso aumenta a base de cálculo da multa seguinte.
+Não existe uma resposta igual para todas as empresas. A decisão depende do valor atualizado, do número de competências, do caixa disponível e das condições apresentadas no canal oficial. Se houver dúvida, organize os dados antes de optar por quitação ou parcelamento.
 
 ## Como evitar o problema
 
@@ -79,11 +68,12 @@ A melhor estratégia é preventiva:
 - **Automatize o pagamento** através do débito automático bancário
 - **Monitore o Fator R** mensalmente para evitar surpresas no valor do DAS — veja o [guia completo do Simples Nacional](/simples-nacional) e as [tabelas completas de alíquotas por anexo](/blog/simples-nacional-2026-tabelas-e-limites) para entender como o Fator R impacta diretamente o valor do seu DAS
 
-> **Precisa de ajuda para regularizar débitos do Simples Nacional?** A JMF Contabilidade em Blumenau/SC realiza o levantamento completo de pendências e apresenta as melhores opções de regularização. [Fale com nossa equipe →](/fale-conosco)
+> **Precisa organizar pendências do Simples Nacional?** A JMF Contabilidade em Blumenau ajuda a levantar competências, conferir apurações e estruturar a regularização conforme o cenário da empresa. [Fale com a equipe →](/fale-conosco?assunto=regularizacao-simples)
 
 ---
 
 **Fontes:**
+- [Emitir DAS para pagamento de tributos do Simples Nacional](https://www.gov.br/pt-br/servicos/emitir-das-para-pagamento-de-tributos-do-simples-nacional) — serviço oficial de emissão
+- [Parcelar dívidas do Simples Nacional](https://www.gov.br/pt-br/servicos/parcelar-imposto-simples) — serviço oficial de parcelamento
 - [Lei Complementar 123/2006](https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm) — norma geral do Simples Nacional
 - [Resolução CGSN 140/2018](https://www.in.gov.br/en/web/dou/-/resolucao-cgsn-n-140-de-11-de-marco-de-2018-184175098) — regulamentação do Simples Nacional
-- [PGDAS-D — Portal do Simples Nacional](https://www8.receita.fazenda.gov.br/simplesnacional/) — emissão de guias e regularização

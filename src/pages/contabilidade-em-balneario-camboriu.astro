@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Balne%C3%A1rio%20Cambori%C3%BA.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu#localbusiness",
+  "name": "JMF Contabilidade – Balneário Camboriú",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu",
+  "description": "Contabilidade para empresas em Balneário Camboriú/SC: Simples Nacional ou Lucro Presumido, abertura de empresa. Atendimento digital para turismo, construção civil, tecnologia, comércio e serviços. 60km de Blumenau.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Balneário Camboriú",
+    "addressRegion": "SC",
+    "postalCode": "88330-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.9876,
+    "longitude": -48.6358
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Balneário Camboriú" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Balneário Camboriú?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Atendemos empresas de Balneário Camboriú/SC 100% digital. BC fica a 60km de Blumenau (1h10), maior PIB do litoral catarinense. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais impostos para empresas em Balneário Camboriú?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "BC tem economia diversificada: turismo (hotéis, restaurantes, eventos), construção civil (arranha-céus), tecnologia (polo tech), comércio, serviços. Simples Nacional (Anexo III/V via Fator R), Lucro Presumido. ISS municipal 2-5%. Construção: RET ou Presumido. Tech: incentivos Lei do Bem (requer Lucro Real — a JMF atende apenas Simples Nacional ou Lucro Presumido, indicamos parceiro). Simulamos o regime ideal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Balneário Camboriú tem incentivos fiscais?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. BC participa de PRODEC/TTD (indústria/tech), Lei do Bem (P&D tech), incentivos municipais para turismo e eventos. Construção civil de alto padrão: RET (1-4%) ou Presumido. A JMF assessora adesão e manutenção de todos os benefícios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o atendimento remoto para Balneário Camboriú?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 60km (1h10 pela BR-101). Resposta no mesmo dia útil. Rotina mensal: docs até dia 5, fechamento até dia 15, guias até dia 20."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Balneário Camboriú/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Balneário Camboriú/SC: turismo, construção, tech, comércio.  Simples Nacional ou Lucro Presumido."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Balneário Camboriú"
+    subtitle="Maior PIB do litoral catarinense: turismo, arranha-céus, polo tech, comércio. Atendimento digital, 60km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Balneário Camboriú" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Balneário Camboriú:<br/><span class="pp3-grad">maior economia do litoral catarinense</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Balneário Camboriú tem o maior PIB do litoral de Santa Catarina e uma das economias mais diversificadas do estado: turismo de alto padrão (hotéis, beach clubs, eventos), construção civil verticalizada (maiores arranha-céus do Brasil), polo de tecnologia e inovação, comércio forte e setor de serviços sofisticado. Cada setor tem tributação própria e oportunidades de planejamento.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de BC com expertise multissetorial: turismo sazonal (Fator R), construção civil (RET, Patrimônio de Afetação), tecnologia (Lei do Bem, P&D), comércio e serviços (ISS, Simples, Presumido, Real). Atendimento 100% digital, estrutura de 35+ anos em Blumenau (60km / 1h10).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Turismo e Hospitalidade Premium</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Hotéis, resorts, beach clubs, restaurantes, eventos: Simples (Fator R), ISS 2-5%, folha sazonal, gorjetas (Lei 13.419/2017), controle de diária média/RevPAR, regimes especiais de eventos.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Construção Civil Verticalizada</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Incorporadoras de alto padrão: RET (1-4% receita), Patrimônio de Afetação (Lei 10.931/2004), INSS obra (1-2%), ISS obra, Lucro Presumido/Real. Controle de medições, fluxo de caixa de obra, CNDs.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Tecnologia e Inovação (Lei do Bem)</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Startups, software houses, scale-ups: Lei do Bem exige Lucro Real (a JMF atende apenas Simples Nacional ou Lucro Presumido — indicamos parceiro para Lucro Real), dedução 60-100% P&D, crédito financeiro, incentivos estaduais PRODEC/TTD. Planejamento societário para investimento/anjo.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Comércio e Serviços Diversificados</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Shopping, varejo, franquias, clínicas, academias, coworking: Simples (Fator R), ISS 2-5%, ICMS-ST varejo, Lucro Presumido/Real. Planejamento tributário por atividade (CNAE).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Balneário Camboriú — Multissetorial:<br/><span class="pp3-grad">particularidades tributárias por setor</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        BC concentra a maior diversidade econômica do litoral catarinense:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Turismo — Fator R e gorjetas:</strong> sazonalidade verão + eventos o ano todo. Fator R ≥ 28% mantém Anexo III (6%). Gorjetas em beach clubs/restaurantes premium: base INSS patronal (20%), FGTS, IRPJ/CSLL. Contabilização correta evita passivo.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Construção — RET vs Patrimônio de Afetação:</strong> RET (1-4% receita bruta) simplifica mas não permite crédito. Patrimônio de Afetação isola ativos da obra, exigido para financiamento bancário (CEF, bancos). Escolha impacta fluxo de caixa e risco.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Tech — Lei do Bem (11.196/2005):</strong> exige Lucro Real (a JMF atende apenas Simples Nacional ou Lucro Presumido — indicamos parceiro). Dedução 60-100% despesas P&D (pessoal, equipamentos, patentes). Crédito financeiro (IRPJ/CSLL) ou compensação. Exige contabilidade preparada: segregação de centros de custo, laudos técnicos.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISS municipal — BC tem legislação própria:</strong> alíquotas 2-5% por atividade. Serviços de tecnologia, saúde, educação, construção têm tratamentos diferenciados. Planejamento por CNAE economiza até 3 pp no ISS.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Incorporadora em BC com VGV R$ 200M (4 torres). RET 4% = R$ 8M impostos federais. Lucro Presumido (8% base IRPJ/CSLL + 3,65% PIS/COFINS) sobre receita realizada (PoC) = ~R$ 5.2M + ISS obra. Diferença: R$ 2.8M. Mas RET não permite crédito PIS/COFINS sobre insumos. A JMF modela cenário a cenário com fluxo de caixa projetado.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Balneário Camboriú</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Especialistas multissetoriais: turismo (Fator R, gorjetas), construção (RET, Patrimônio Afetação), tech (Lei do Bem), comércio/serviços.
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 60km (1h10 pela BR-101). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
+        </p>
+        <p>
+          <strong>Rotina BC:</strong> Docs até dia 5, fechamento até dia 15, guias até dia 20. Tech: acompanhamento trimestral Lei do Bem. Construção: medições mensais, CNDs, fluxo de caixa obra.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Diagnóstico multissetorial gratuito (turismo + construção + tech).</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

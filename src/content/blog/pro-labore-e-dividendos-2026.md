@@ -1,13 +1,13 @@
 ---
-title: "Pró-labore e Dividendos em 2026: Quanto Retirar e Como Pagar Menos Imposto"
-description: "A Lei 15.270/2025 mudou as regras: IRPF isento até R$ 5.000/mês no pró-labore e nova tributação de 10% sobre dividendos acima de R$ 50.000/mês. Veja como planejar a retirada dos sócios em 2026."
+title: "Pró-labore e Dividendos em 2026: Quanto Retirar e Como..."
+description: "A Lei 15.270/2025 mudou as regras: IRPF isento até R$ 5.000/mês no pró-labore e nova tributação de 10% sobre dividendos acima de R$ 50.000/mês."
 pubDate: 2026-06-12
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-pro-labore-dividendos-2026.jpg"
 imageAlt: "Sócios analisando planejamento financeiro da empresa — pró-labore e dividendos 2026"
 ---
 
-Dois temas que todo sócio de empresa precisa entender bem — e que mudaram significativamente em 2026 — são o **pró-labore** e a **distribuição de dividendos** — [veja nosso guia completo sobre distribuição de lucros](/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto). A Lei 15.270/2025, sancionada em 26 de dezembro de 2025, introduziu novidades importantes que afetam diretamente quanto você paga de imposto na hora de retirar dinheiro da sua empresa.
+Dois temas que todo sócio de empresa precisa entender bem — e que mudaram significativamente em 2026 — são o **pró-labore** e a **distribuição de dividendos** — [veja nosso guia completo sobre distribuição de lucros](/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto). A Lei 15.270/2025, sancionada em 26 de dezembro de 2025, introduziu novidades importantes que afetam diretamente quanto você paga de imposto na hora de retirar dinheiro da sua empresa.
 
 Neste artigo, explicamos as regras atuais, os novos limites de isenção e como planejar a retirada de forma mais eficiente.
 
@@ -73,7 +73,7 @@ A estratégia de retirada ideal varia conforme o regime tributário e o nível d
 
 **Para empresas no Lucro Presumido:**
 - Pró-labore até R$ 5.000/mês: economiza IR, mas a empresa paga INSS patronal de 20%.
-- Equilibrar pró-labore baixo com dividendos maiores pode ser mais eficiente — mas os dividendos acima de R$ 50.000/mês agora têm tributação de 10%. [Veja também quando uma holding familiar vale a pena](/holding-familiar-vale-a-pena-para-pequenos-empresarios).
+- Equilibrar pró-labore baixo com dividendos maiores pode ser mais eficiente — mas os dividendos acima de R$ 50.000/mês agora têm tributação de 10%. [Veja também quando uma holding familiar vale a pena](/blog/holding-familiar-vale-a-pena-para-pequenos-empresarios).
 - O planejamento tributário individualizado é essencial.
 
 ## Exemplo prático: sócio com retirada de R$ 15.000/mês (Simples Nacional)

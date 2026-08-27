@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Engenheiros e Arquitetos em Blumenau: PJ, ART e Tributação"
+title: "Contabilidade para Engenheiros e Arquitetos em Blumenau:..."
 description: "Engenheiros e arquitetos em Blumenau: Fator R, Simples Nacional, ART/CREA-SC, RRT/CAU-SC e ISS. JMF atende projetos e obras em SC."
 pubDate: 2026-06-10
 author: "Diego Rosa, CRC SC-035810/O"

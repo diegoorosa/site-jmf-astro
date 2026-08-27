@@ -7,23 +7,66 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20usei%20o%20simulador%2
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": ["WebApplication", "Service"],
   "name": "Simulador de Regime Tributário 2026 — Simples Nacional vs Lucro Presumido",
-  "description": "Compare Simples Nacional e Lucro Presumido: calcule impostos com base no seu faturamento, atividade e folha de pagamento. Ferramenta gratuita.",
+  "description": "Compare Simples Nacional e Lucro Presumido 2026: simule impostos com base no faturamento, atividade (CNAE), folha de pagamento e margem de lucro. Descubra qual regime paga menos impostos. Ferramenta gratuita com cálculo de Fator R automático.",
   "url": "https://www.jmfcontabilidade.com.br/simulador-regime-tributario",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "BRL" },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "description": "Acesso gratuito ao simulador comparativo de regimes tributários para empresas brasileiras",
+    "url": "https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
+  },
   "provider": {
     "@type": "Organization",
     "name": "JMF Contabilidade",
-    "@id": "https://www.jmfcontabilidade.com.br/#organization"
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "logo": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.webp",
+    "sameAs": [
+      "https://wa.me/554733265123",
+      "https://www.instagram.com/jmfcontabilidade"
+    ]
+  },
+  "areaServed": {
+    "@type": "GeoShape",
+    "addressCountry": "BR",
+    "addressRegion": "SC",
+    "addressLocality": "Blumenau",
+    "description": "Brasil — regras federais válidas nacionalmente; ISS e ICMS variam por município/estado"
+  },
+  "serviceType": "Simulador comparativo de regimes tributários (Simples Nacional vs Lucro Presumido) com Fator R automático",
+  "category": "FinanceApplication",
+  "featureList": [
+    "Seleção de 10 tipos de atividade (Comércio, Serviços Anexo III/V/VI, Indústria, Transporte)",
+    "Cálculo automático do Fator R para serviços (migração Anexo V → III quando ≥ 28%)",
+    "Simples Nacional: 8 anexos com tabelas CGSN 140/2018 atualizadas 2026",
+    "Lucro Presumido: IRPJ/CSLL sobre presunção + PIS/COFINS cumulativos + INSS patronal 20%",
+    "Adicional de 10% no IRPJ para lucro presumido acima de R$ 240k/ano",
+    "Comparação lado a lado: alíquota efetiva, DAS mensal, total anual",
+    "Detalhamento item a item dos impostos no Lucro Presumido",
+    "Cálculo de economia potencial anual entre regimes",
+    "Indicador visual do regime mais vantajoso com badge",
+    "Lista de observações importantes (ISS municipal, benefícios fiscais, lucros isentos, compliance)"
+  ],
+  "hasOutput": {
+    "@type": "PropertyValue",
+    "name": "Resultado da simulação",
+    "description": "Regime recomendado, alíquotas efetivas, impostos mensais/anuais por regime, economia potencial, detalhamento LP"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
   }
 });
 ---
 
 <Layout
-  title="Simulador de Regime Tributário 2026 — Simples Nacional vs Lucro Presumido | JMF"
+  title="Simulador de Regime Tributário 2026 — Simples Nacional vs..."
   description="Compare Simples Nacional e Lucro Presumido 2026: simule impostos com base no seu faturamento, atividade e folha. Descubra qual regime paga menos. Gratuito."
   canonical="https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
   ogUrl="https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
@@ -34,7 +77,7 @@ const schema = JSON.stringify({
 
   <HeroInterno
     title="Simulador de Regime Tributário 2026"
-    subtitle="Compare Simples Nacional e Lucro Presumido com base no seu faturamento, atividade e folha de pagamento. Veja qual regime paga menos imposto."
+    subtitle="Compare Simples Nacional e Lucro Presumido com base no..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Ferramentas" },

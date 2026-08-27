@@ -1,6 +1,6 @@
 ---
-title: "Contabilidade Gerencial: Use os Números da Sua Empresa para Decidir Melhor"
-description: "A contabilidade fiscal serve ao Fisco. A contabilidade gerencial serve a você. Entenda como usar DRE, fluxo de caixa e indicadores para tomar decisões mais seguras no seu negócio."
+title: "Contabilidade Gerencial: Use os Números da Sua Empresa..."
+description: "A contabilidade fiscal serve ao Fisco. A contabilidade gerencial serve a você. Entenda como usar DRE, fluxo de caixa e indicadores para tomar decisões..."
 pubDate: 2026-02-04
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-contabilidade-gerencial.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Dashboard com gráficos financeiros — contabilidade gerencial"
 
 A maioria dos empresários enxerga a contabilidade como uma obrigação burocrática — algo que existe para pagar impostos e entregar declarações ao governo. Essa visão deixa na mesa uma das ferramentas mais poderosas para gerir um negócio: a **contabilidade gerencial**.
 
-Enquanto a contabilidade fiscal segue as regras da Receita Federal e serve ao fisco, a contabilidade gerencial serve a você, o gestor. Ela transforma os mesmos dados em informações úteis para decisões reais: quando contratar, quando investir, onde cortar custos, qual produto abandona e qual produto sustenta a empresa. Um dos pilares da contabilidade gerencial é o [fluxo de caixa](/fluxo-de-caixa-guia-para-empresarios) — que evita a surpresa mais comum entre empresários: empresa lucrativa sem dinheiro em caixa.
+Enquanto a contabilidade fiscal segue as regras da Receita Federal e serve ao fisco, a contabilidade gerencial serve a você, o gestor. Ela transforma os mesmos dados em informações úteis para decisões reais: quando contratar, quando investir, onde cortar custos, qual produto abandona e qual produto sustenta a empresa. Um dos pilares da contabilidade gerencial é o [fluxo de caixa](/blog/fluxo-de-caixa-guia-para-empresarios) — que evita a surpresa mais comum entre empresários: empresa lucrativa sem dinheiro em caixa.
 
 ## Contabilidade fiscal vs. contabilidade gerencial
 
@@ -84,7 +84,7 @@ Além dos três relatórios acima, alguns KPIs simples transformam a gestão:
 
 **Não separar custo fixo de custo variável.** Sem essa separação, é impossível calcular o ponto de equilíbrio corretamente ou simular o impacto de uma queda de vendas no caixa.
 
-**Tratar pró-labore e distribuição de lucros como "custo zero".** A remuneração dos sócios é uma saída de caixa real e deveria aparecer na DRE gerencial, mesmo quando tributariamente tem tratamento diferenciado — veja como funciona a [distribuição de lucros](/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto) na prática.
+**Tratar pró-labore e distribuição de lucros como "custo zero".** A remuneração dos sócios é uma saída de caixa real e deveria aparecer na DRE gerencial, mesmo quando tributariamente tem tratamento diferenciado — veja como funciona a [distribuição de lucros](/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto) na prática.
 
 ## Ciclo financeiro: o indicador que conecta tudo
 

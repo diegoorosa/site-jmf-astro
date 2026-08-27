@@ -1,6 +1,6 @@
 ---
-title: "CNPJ Alfanumérico 2026: O Que Muda e Como Preparar Sua Empresa"
-description: "A partir de 31 de julho de 2026 a Receita Federal começa a emitir o CNPJ alfanumérico, com letras e números. Entenda o que muda, o que fazer e por que sua empresa atual não precisa se preocupar."
+title: "CNPJ Alfanumérico 2026: O Que Muda e Como Preparar Sua..."
+description: "A partir de 31 de julho de 2026 a Receita Federal começa a emitir o CNPJ alfanumérico, com letras e números."
 pubDate: 2026-07-10
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-cnpj-alfanumerico-2026.jpg"

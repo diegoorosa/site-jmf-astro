@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Médicos e Clínicas em Blumenau: PJ, Fator R e ISS"
+title: "Contabilidade para Médicos e Clínicas em Blumenau: PJ,..."
 description: "Abrir empresa como médico em Blumenau compensa? Entenda Fator R, Simples Anexos III e V, ISS para saúde e quando a PJ médica reduz imposto."
 pubDate: 2026-06-23
 author: "Fabricio Rosa, CRC SC-029833/O"

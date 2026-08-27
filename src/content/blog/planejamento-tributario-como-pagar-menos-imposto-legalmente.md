@@ -1,6 +1,6 @@
 ---
-title: "Planejamento Tributário: Como Pagar Menos Imposto de Forma Completamente Legal"
-description: "Planejamento tributário não é sonegação — é o uso inteligente das brechas e benefícios previstos em lei. Veja as principais estratégias para reduzir a carga tributária da sua empresa em 2026."
+title: "Planejamento Tributário: Como Pagar Menos Imposto de..."
+description: "Planejamento tributário não é sonegação — é o uso inteligente das brechas e benefícios previstos em lei."
 pubDate: 2026-02-18
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-planejamento-tributario.jpg"

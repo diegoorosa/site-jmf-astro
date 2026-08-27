@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Bombinhas.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas#localbusiness",
+  "name": "JMF Contabilidade – Bombinhas",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas",
+  "description": "Contabilidade para empresas em Bombinhas/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para turismo premium, hospedagem, gastronomia e comércio na península de Bombinhas. 70km de Blumenau.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Bombinhas",
+    "addressRegion": "SC",
+    "postalCode": "88215-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.1497,
+    "longitude": -48.4875
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bombinhas" },
+    { "@type": "City", "name": "Bombas" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Bombinhas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Atendemos empresas de Bombinhas/SC 100% digital. Bombinhas fica a 70km de Blumenau (1h20), península com 39 praias, destino turístico premium. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais impostos para turismo premium em Bombinhas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bombinhas tem turismo de alto padrão: resorts, pousadas boutique, restaurantes premiados, aluguel de temporada de luxo, comércio especializado. Simples Nacional (Anexo III via Fator R ≥ 28% ou Anexo V), ISS 2-5%, Lucro Presumido/Real para margens altas. A JMF simula o regime ideal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bombinhas tem incentivos para turismo e preservação?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Bombinhas é Área de Preservação Ambiental (APA Costeira) e Parque Municipal. Incentivos para turismo sustentável, certificações ambientais (Blue Flag), construção verde. Município pode ter incentivos próprios além de PRODEC/TTD estaduais. A JMF assessora."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o atendimento remoto para Bombinhas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 70km (1h20 pela BR-101 + SC-412). Resposta no mesmo dia útil. Rotina mensal: docs até dia 5, fechamento até dia 15, guias até dia 20."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Bombinhas/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Bombinhas/SC: turismo premium, hospedagem, gastronomia, comércio.  Simples Nacional, Lucro Presumido."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Bombinhas"
+    subtitle="Península com 39 praias: turismo premium, hospedagem de alto padrão, gastronomia. Atendimento digital, 70km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Bombinhas" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Bombinhas:<br/><span class="pp3-grad">turismo premium, hospedagem e gastronomia</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Bombinhas, península com 39 praias, é um dos destinos turísticos mais valorizados de Santa Catarina. A economia gira em torno de hospedagem premium (resorts, pousadas boutique), gastronomia de alto nível, aluguel de temporada de luxo, comércio especializado (surf, mergulho, náutica) e serviços náuticos. A sazonalidade e o ticket médio elevado exigem contabilidade especializada.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de Bombinhas com expertise em tributação de turismo premium, Fator R para sazonalidade de alto faturamento, ISS diferenciado, Holding imobiliária para aluguel de temporada e compliance ambiental. Atendimento 100% digital, estrutura de 35+ anos em Blumenau (70km / 1h20).
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Resorts e Pousadas Premium</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Hospedagem de alto padrão: Simples (Fator R), ISS 2-5%, folha especializada, eventos/casamentos, spas, day use. Controle de diária média, RevPAR, GOPPAR. Regimes especiais para eventos.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Gastronomia Premium</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Restaurantes premiados, beach clubs, bares sofisticados: ICMS-ST vinhos/bebidas importadas, ISS 2-5%, folha com gorjetas (Lei 13.419/2017), controle de CMV alto padrão, sazonalidade extrema.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Aluguel Temporada Luxo e Holding</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Imóveis de alto padrão (Airbnb Luxe, Vrbo Premier): estruturação via Holding imobiliária, Simples vs Lucro Presumido, ISS intermediação, planejamento sucessório, proteção patrimonial.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Serviços Náuticos e Mergulho</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escolas de mergulho, charters, marinas, lojas náuticas: ICMS interestadual equipamentos, ISS serviços, Simples Nacional, importação de equipamentos (II, IPI, PIS/COFINS-Importação).
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Bombinhas — Turismo Premium:<br/><span class="pp3-grad">particularidades tributárias e ambientais</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Bombinhas combina turismo de alto valor com restrições ambientais rigorosas:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Fator R em ticket alto:</strong> faturamento concentrado dez-mar, diárias médias altas. Pró-labore e folha devem ser planejados para manter Fator R ≥ 28% → Anexo III (6%) vs Anexo V (15,5%). Diferença em reais é significativa.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Holding imobiliária para aluguel temporada:</strong> imóveis de R$ 1M+ em aluguel de luxo. PJ (Holding) no Simples ou Presumido vs PF (IR 27,5%). Holding permite proteção patrimonial, planejamento sucessório e rateio de despesas.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Certificações ambientais (Blue Flag, Green Key):</strong> custos de certificação são dedutíveis. Incentivos para construção sustentável, energia solar, tratamento de efluentes. Compliance ambiental evita multas pesadas.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Gorjetas (Lei 13.419/2017):</strong> restaurantes premium em Bombinhas movimentam gorjetas altas. Contabilização correta: receita da empresa (não do empregado), base para INSS patronal (20%), FGTS, IRPJ/CSLL. Erro comum gera passivo trabalhista.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Resort em Bombinhas com 80 unidades, diária média R$ 1.200, ocupação 85% na temporada. Faturamento R$ 25M/ano. Simples Anexo V (sem planejamento Fator R) = ~R$ 3.87M impostos. Com Holding + Fator R planejado + incentivos = ~R$ 1.8M. Economia potencial > R$ 2M/ano. A JMF estrutura do zero.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Bombinhas</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Especialistas em turismo premium: Fator R ticket alto, Holding imobiliária, gorjetas, compliance ambiental.
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 70km (1h20 pela BR-101 + SC-412). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
+        </p>
+        <p>
+          <strong>Rotina premium:</strong> Docs até dia 5, fechamento até dia 15, guias até dia 20. KPIs mensais: RevPAR, GOPPAR, Fator R tracking, fluxo de caixa sazonal.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Diagnóstico Fator R + Holding imobiliária gratuito.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

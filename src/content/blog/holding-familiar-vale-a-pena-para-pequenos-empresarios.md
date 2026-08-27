@@ -1,13 +1,13 @@
 ---
 title: "Holding Familiar: Vale a Pena para Pequenos Empresários?"
-description: "Holding familiar não é só para grandes fortunas. Entenda quando essa estrutura faz sentido, o que ela protege, quanto custa e quando não vale a pena montar uma."
+description: "Holding familiar não é só para grandes fortunas. Entenda quando essa estrutura faz sentido, o que ela protege, quanto custa e quando não vale a pena..."
 pubDate: 2026-04-30
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-holding-familiar.jpg"
 imageAlt: "Reunião de família empresária discutindo planejamento patrimonial"
 ---
 
-Holding familiar é um daqueles termos que soa complicado e caro — algo para quem tem muito dinheiro, advogados sofisticados e um patrimônio que justifique toda aquela estrutura. Mas a realidade é que holdings familiares existem e funcionam bem para empresários com patrimônio muito mais modesto do que se imagina. Antes de montar uma holding, vale entender também as regras atuais de [pró-labore e dividendos](/pro-labore-e-dividendos-2026), já que a estrutura da holding impacta diretamente a forma como o sócio retira dinheiro da empresa.
+Holding familiar é um daqueles termos que soa complicado e caro — algo para quem tem muito dinheiro, advogados sofisticados e um patrimônio que justifique toda aquela estrutura. Mas a realidade é que holdings familiares existem e funcionam bem para empresários com patrimônio muito mais modesto do que se imagina. Antes de montar uma holding, vale entender também as regras atuais de [pró-labore e dividendos](/blog/pro-labore-e-dividendos-2026), já que a estrutura da holding impacta diretamente a forma como o sócio retira dinheiro da empresa.
 
 A pergunta correta não é "quem pode ter holding?", mas sim: "no meu caso específico, a holding resolve um problema real ou é burocracia cara sem benefício?"
 
@@ -33,7 +33,7 @@ Ativos que estão dentro de uma holding têm uma camada adicional de proteção.
 
 Imóveis dentro de uma holding podem ter o aluguel tributado de forma diferente da pessoa física. Para pessoa física, aluguéis sofrem IR progressivo de até 27,5%. Para empresa optante pelo Lucro Presumido com atividade de locação, a tributação pode ser inferior dependendo do volume.
 
-Além disso, a [distribuição de lucros](/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto) da holding para os sócios pode ser isenta de IR, como em qualquer outra empresa regularmente escriturada — saiba mais sobre [pró-labore e dividendos](/pro-labore-e-dividendos-2026).
+Além disso, a [distribuição de lucros](/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto) da holding para os sócios pode ser isenta de IR, como em qualquer outra empresa regularmente escriturada — saiba mais sobre [pró-labore e dividendos](/blog/pro-labore-e-dividendos-2026).
 
 **4. Organização empresarial**
 

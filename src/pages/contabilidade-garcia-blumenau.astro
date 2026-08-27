@@ -1,0 +1,242 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20no%20bairro%20Garcia%20em%20Blumenau.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-garcia-blumenau#localbusiness",
+  "name": "JMF Contabilidade – Garcia, Blumenau",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-garcia-blumenau",
+  "description": "Contabilidade no bairro Garcia, Blumenau/SC. Simples Nacional, abertura de empresa, planejamento tributário e gestão contábil. Atendimento presencial e digital.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "Neighborhood", "name": "Garcia" },
+    { "@type": "Neighborhood", "name": "Vila Nova" },
+    { "@type": "Neighborhood", "name": "Velha" },
+    { "@type": "Neighborhood", "name": "Centro" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Contabilidade",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
+});
+
+const breadcrumb = [
+  { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+  { label: "Contabilidade em Blumenau", href: "https://www.jmfcontabilidade.com.br/contabilidade-em-blumenau" },
+  { label: "Garcia" }
+];
+---
+
+<Layout
+  title="Contabilidade Garcia Blumenau | JMF Contabilidade | 35+ Anos"
+  description="Escritório de contabilidade no bairro Garcia, Blumenau/SC.  Simples Nacional, abertura de empresa e planejamento tributário."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-garcia-blumenau"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-garcia-blumenau"
+  schema={localBusinessSchema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+<HeroInterno
+  title="Contabilidade no Garcia, Blumenau"
+  subtitle="Atendemos empresas do Garcia com contabilidade completa: Simples Nacional, abertura de empresa, planejamento tributário e gestão de pessoal. Diagnóstico gratuito."
+  breadcrumb={breadcrumb}
+  ctas={[
+    { label: "WhatsApp Agora", href: WA, variant: "cta" },
+    { label: "Ir ao Formulário", href: "#formulario", variant: "outline" }
+  ]}
+/>
+
+<!-- Conteúdo Principal -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col lg:flex-row gap-10">
+
+      <!-- Conteúdo -->
+      <div class="lg:w-2/3">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Contabilidade para empresas do <span class="pp3-grad">Garcia</span></h2>
+
+        <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+          O Garcia é um dos maiores bairros de Blumenau, com forte vocação comercial, industrial e de serviços.
+          A JMF Contabilidade atende empresas da região há mais de 35 anos, com escritório no Centro (Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú)
+          e suporte 100% digital para quem prefere resolver tudo por WhatsApp, e-mail ou videoconferência.
+        </p>
+
+        <h3 class="text-2xl font-semibold text-[#0f172a] mb-4">O que oferecemos para sua empresa no Garcia</h3>
+        <ul class="space-y-3 mb-8">
+          <li class="flex items-center gap-3"><i class="bi bi-check-circle-fill text-cyan-500 text-xl"></i> <strong>Abertura de empresa:</strong> CNPJ em 3 a 7 dias úteis, viabilidade na prefeitura, alvará e inscrição estadual.</li>
+          <li class="flex items-center gap-3"><i class="bi bi-check-circle-fill text-cyan-500 text-xl"></i> <strong>Gestão Contábil:</strong> Escrituração, balanços, DRE, SPED Contábil/Fiscal, ECD, ECF.</li>
+          <li class="flex items-center gap-3"><i class="bi bi-check-circle-fill text-cyan-500 text-xl"></i> <strong>Gestão Fiscal e Tributária:</strong> Apuração de impostos (Simples, Presumido, Real), DAS, DCTF, EFD-Reinf, DIMOB.</li>
+          <li class="flex items-center gap-3"><i class="bi bi-check-circle-fill text-cyan-500 text-xl"></i> <strong>Gestão de Pessoal:</strong> Folha de pagamento, eSocial, férias, rescisões, benefícios, GFIP, SEFIP.</li>
+          <li class="flex items-center gap-3"><i class="bi bi-check-circle-fill text-cyan-500 text-xl"></i> <strong>Planejamento Tributário:</strong> Simulação de regimes, fator R, sublimites de ISS/ICMS, economia legal.</li>
+        </ul>
+
+        <h3 class="text-2xl font-semibold text-[#0f172a] mb-4">Por que empresas do Garcia escolhem a JMF</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h4 class="font-semibold text-[#0f172a] mb-2">35+ anos de mercado</h4>
+            <p class="text-slate-600 text-sm">Experiência real em Blumenau, não só presença digital.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h4 class="font-semibold text-[#0f172a] mb-2">+150 avaliações 5★ no Google</h4>
+            <p class="text-slate-600 text-sm">Reputação construída com entrega consistente.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h4 class="font-semibold text-[#0f172a] mb-2">Atendimento no seu bairro</h4>
+            <p class="text-slate-600 text-sm">Vamos até você ou resolvemos tudo digitalmente.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-slate-50 border border-slate-200">
+            <h4 class="font-semibold text-[#0f172a] mb-2">Tecnologia própria</h4>
+            <p class="text-slate-600 text-sm">Simuladores, portal do cliente, automação fiscal.</p>
+          </div>
+        </div>
+
+        <div class="bg-cyan-50 border border-cyan-200 rounded-xl p-6">
+          <h4 class="font-semibold text-cyan-800 mb-2 flex items-center gap-2"><i class="bi bi-lightning-charge"></i> Diagnóstico gratuito em 15 min</h4>
+          <p class="text-cyan-700 mb-4">Envie seu CNPJ e último balanço pelo WhatsApp. Analisamos regime tributário, pendências e oportunidades de economia — sem custo e sem compromisso.</p>
+          <a href={WA} target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-cyan-600 text-white px-5 py-2.5 rounded-lg font-medium hover:bg-cyan-700 transition">
+            <i class="bi bi-whatsapp"></i> Solicitar diagnóstico
+          </a>
+        </div>
+      </div>
+
+      <!-- Formulário lateral -->
+      <div class="lg:w-1/3">
+        <ContactForm />
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Local -->
+<section class="py-16 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-[#0f172a] text-center mb-10">Dúvidas de quem empreende no <span class="pp3-grad">Garcia</span></h2>
+
+    <dl class="max-w-3xl mx-auto space-y-4">
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <dt class="font-semibold text-[#0f172a] mb-2">Como funciona a abertura de empresa no Garcia?</dt>
+        <dd class="text-slate-600">A viabilidade é consultada na prefeitura de Blumenau (endereço no Garcia). Com CNPJ alfanumérico e sistemas integrados, a JMF cuida de todo o processo: contrato social, registro na Junta Comercial, inscrição estadual/municipal e alvará. Prazo médio: 3 a 7 dias úteis.</dd>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <dt class="font-semibold text-[#0f172a] mb-2">Atendem indústrias e comércios do Garcia?</dt>
+        <dd class="text-slate-600">Sim. O Garcia tem forte presença industrial (têxtil, metalúrgica, plástica) e comercial. Atendemos indústrias no Simples, Presumido e Real, com apuração de ICMS, IPI, PIS/COFINS. No comércio, gerenciamos ISS, ICMS-ST e substituição tributária.</dd>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <dt class="font-semibold text-[#0f172a] mb-2">Preciso ir até o escritório no Centro?</dt>
+        <dd class="text-slate-600">Não. Tudo pode ser feito digitalmente: WhatsApp, e-mail, videoconferência e portal do cliente. Se preferir atendimento presencial, nosso escritório fica na Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro — 10 min do Garcia.</dd>
+      </div>
+
+      <div class="bg-white p-6 rounded-xl border border-slate-200">
+        <dt class="font-semibold text-[#0f172a] mb-2">Como faço a troca de contador sendo do Garcia?</dt>
+        <dd class="text-slate-600">A JMF cuida de tudo: contatamos o contador anterior, solicitamos arquivos e backups, configuramos seus sistemas e montamos o calendário de obrigações. Em 5 a 10 dias úteis está 100% operacional. Você só assina a procuração e envia os documentos básicos.</dd>
+      </div>
+    </dl>
+  </div>
+</section>
+
+<!-- Mapa / Localização -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Onde estamos</h2>
+    <p class="text-slate-600 mb-6 max-w-2xl mx-auto">Nosso escritório fica no Centro de Blumenau, atendendo presencialmente empresas do Garcia e região. Também atendemos 100% digital.</p>
+
+    <div class="aspect-video max-w-3xl mx-auto rounded-xl overflow-hidden border border-slate-200">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3565.123456789!2d-49.06705!3d-26.92016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94df7c123456789%3A0xabcdef123456789!2sJMF%20Contabilidade!5e0!3m2!1spt-BR!2sbr!4v1690000000000!5m2!1spt-BR!2sbr"
+        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Localização JMF Contabilidade - Blumenau/SC">
+      </iframe>
+    </div>
+
+    <p class="mt-4 text-sm text-slate-500">Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro, Blumenau/SC — CEP 89010-060</p>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<section class="py-16 bg-[#0B1220]">
+  <div class="container mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-white mb-4">Vamos simplificar a contabilidade da sua empresa no <span class="pp3-grad">Garcia</span>?</h2>
+    <p class="text-slate-300 mb-8 max-w-2xl mx-auto">Diagnóstico gratuito, sem compromisso. Resposta no mesmo dia útil.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={WA} target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 bg-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-cyan-600 transition">
+        <i class="bi bi-whatsapp"></i> Falar no WhatsApp
+      </a>
+      <a href="tel:+554733265123" class="inline-flex items-center justify-center gap-2 border border-cyan-500 text-cyan-400 px-6 py-3 rounded-lg font-medium hover:bg-cyan-500/10 transition">
+        <i class="bi bi-telephone"></i> (47) 3326-5123
+      </a>
+    </div>
+  </div>
+</section>
+
+</Layout>

@@ -1,6 +1,6 @@
 ---
 title: "Como Regularizar Sua Empresa com Débitos na Receita Federal"
-description: "Dívida tributária não precisa ser o fim. Entenda como consultar débitos, quais programas de parcelamento existem, como negociar e o que fazer para obter a certidão negativa."
+description: "Dívida tributária não precisa ser o fim. Entenda como consultar débitos, quais programas de parcelamento existem, como negociar e o que fazer para obter..."
 pubDate: 2026-01-08
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-regularizar-debitos-receita-2.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Estátua da Justiça — regularização de débitos tributários"
 
 Débitos tributários são mais comuns do que parecem. De acordo com dados da Receita Federal, uma parcela significativa das empresas ativas no Brasil possui algum tipo de pendência fiscal — seja por atraso no pagamento, divergência de declaração ou parcelamento em aberto. A boa notícia: na maioria dos casos, a regularização é possível e viável.
 
-Neste artigo, explicamos como identificar débitos, quais são as opções de regularização e o que fazer para recuperar sua certidão negativa. Se o problema é mais amplo — atrasos recorrentes, falta de comunicação com o contador — veja também [quando vale a pena trocar de contador](/troca-de-contador-quando-vale-e-como-fazer-sem-susto).
+Neste artigo, explicamos como identificar débitos, quais são as opções de regularização e o que fazer para recuperar sua certidão negativa. Se o problema é mais amplo — atrasos recorrentes, falta de comunicação com o contador — veja também [quando vale a pena trocar de contador](/blog/troca-de-contador-quando-vale-e-como-fazer-sem-susto).
 
 ## Por que regularizar faz diferença
 

@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Indústria em Blumenau: Tributação, Folha e Regime Fiscal"
+title: "Contabilidade para Indústria em Blumenau: Tributação,..."
 description: "Indústrias em Blumenau: Simples Anexo II, Lucro Presumido, desoneração CPRB e obrigações industriais. JMF atende manufatura em SC."
 pubDate: 2026-06-12
 author: "Diego Rosa, CRC SC-035810/O"

@@ -7,24 +7,72 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%2
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": ["WebPage", "Service", "Dataset"],
   "@id": "https://www.jmfcontabilidade.com.br/calendario-fiscal-2026",
   "name": "Calendário Fiscal 2026 — Obrigações Tributárias e Trabalhistas",
-  "description": "Calendário completo com todas as obrigações fiscais de 2026 para empresas no Simples Nacional, MEI e Lucro Presumido. DAS, FGTS, DEFIS, ECF, IRPF e muito mais.",
+  "description": "Calendário completo e interativo com todas as obrigações fiscais de 2026 para empresas no Simples Nacional, MEI e Lucro Presumido. DAS, FGTS, DEFIS, ECF, IRPF, ECD, ECF, 13º salário e feriados nacionais com ajustes de prazos para fins de semana.",
   "url": "https://www.jmfcontabilidade.com.br/calendario-fiscal-2026",
   "inLanguage": "pt-BR",
   "isPartOf": { "@id": "https://www.jmfcontabilidade.com.br/#website" },
   "publisher": {
     "@type": "Organization",
     "name": "JMF Contabilidade",
-    "url": "https://www.jmfcontabilidade.com.br"
+    "url": "https://www.jmfcontabilidade.com.br",
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "logo": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.webp"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "JMF Contabilidade",
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "sameAs": [
+      "https://wa.me/554733265123",
+      "https://www.instagram.com/jmfcontabilidade"
+    ]
+  },
+  "areaServed": {
+    "@type": "GeoShape",
+    "addressCountry": "BR",
+    "description": "Brasil — prazos federais válidos nacionalmente; prazos municipais/estaduais podem variar"
+  },
+  "serviceType": "Calendário fiscal interativo 2026 com filtros por regime (Simples Nacional, MEI, Lucro Presumido, Pessoa Física)",
+  "category": "FinancialPlanning",
+  "featureList": [
+    "12 meses com obrigações federais, trabalhistas, anuais e feriados",
+    "Filtro por regime tributário (Simples Nacional, MEI, Lucro Presumido, PF)",
+    "Navegação por mês com contadores de obrigações por mês",
+    "Indicação da próxima obrigação vencendo com contagem regressiva",
+    "Ajuste automático de prazos para feriados nacionais e fins de semana",
+    "Tabela anual consolidada com regimes aplicáveis",
+    "Lista de 14 feriados nacionais 2026 com impacto nos prazos",
+    "Legenda por categoria: Federal, Trabalhista, Anual, Feriado"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
+  },
+  "datePublished": "2025-12-01",
+  "dateModified": "2026-01-15",
+  "temporalCoverage": "2026-01-01/2026-12-31",
+  "spatialCoverage": {
+    "@type": "Place",
+    "geo": {
+      "@type": "GeoShape",
+      "addressCountry": "BR"
+    }
+  },
+  "keywords": ["calendário fiscal 2026", "DAS Simples Nacional", "FGTS", "DEFIS", "ECF", "ECD", "IRPF 2026", "13º salário", "obrigações acessórias", "prazos tributários"],
+  "subjectOf": {
+    "@type": "WebPage",
+    "@id": "https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
   }
 });
 ---
 
 <Layout
-  title="Calendário Fiscal 2026 — Obrigações Tributárias Completo | JMF Contabilidade"
-  description="Calendário fiscal 2026: DAS Simples Nacional, FGTS, DEFIS, ECF, IRPF e obrigações acessórias com datas ajustadas para feriados e fins de semana. Consulta gratuita."
+  title="Calendário Fiscal 2026 — Obrigações Tributárias Completo"
+  description="Calendário fiscal 2026: DAS Simples Nacional, FGTS, DEFIS, ECF, IRPF e obrigações acessórias com datas ajustadas para feriados e fins de semana."
   canonical="https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
   ogUrl="https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
   schema={schema}
@@ -34,7 +82,7 @@ const schema = JSON.stringify({
 
   <HeroInterno
     title="Calendário Fiscal 2026"
-    subtitle="Todas as obrigações tributárias e trabalhistas do ano, com datas ajustadas para feriados e fins de semana. Simples Nacional, MEI e Lucro Presumido."
+    subtitle="Todas as obrigações tributárias e trabalhistas do ano,..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Ferramentas" },
@@ -437,7 +485,7 @@ const schema = JSON.stringify({
             </span>
             ${regimeBadges}
           </div>
-          <h4 class="font-bold text-[#0f172a] text-sm leading-tight">${ev.t}</h4>
+          <h3 class="font-bold text-[#0f172a] text-sm leading-tight">${ev.t}</h3>
           <p class="text-xs text-gray-500 mt-0.5 leading-relaxed">${ev.s}</p>
           ${notaHtml}
         </div>

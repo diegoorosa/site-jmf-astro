@@ -1,6 +1,6 @@
 ---
 title: "Abertura de Empresa em Blumenau: Passo a Passo Completo 2026"
-description: "Como abrir empresa em Blumenau em 2026: JUCESC, Prefeitura Municipal, Alvará de Funcionamento, Vigilância Sanitária, Corpo de Bombeiros. Prazos e custos reais do processo blumenauense."
+description: "Como abrir empresa em Blumenau em 2026: JUCESC, Prefeitura Municipal, Alvará de Funcionamento, Vigilância Sanitária, Corpo de Bombeiros."
 pubDate: 2026-06-30
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-abertura-empresa-blumenau-passo-a-passo.jpg"

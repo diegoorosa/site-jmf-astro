@@ -1,6 +1,6 @@
 ---
-title: "IRPF 2026: Quem Deve Declarar, Prazos, Deduções e Como Evitar a Malha Fina"
-description: "A declaração do Imposto de Renda 2026 (ano-base 2025) teve prazo até 29 de maio. Se você perdeu o prazo ou quer entender deduções, isenções e como evitar cair em malha fina, este guia é para você."
+title: "IRPF 2026: Quem Deve Declarar, Prazos, Deduções e Como..."
+description: "A declaração do Imposto de Renda 2026 (ano-base 2025) teve prazo até 29 de maio."
 pubDate: 2026-04-23
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-irpf-2026-declarar.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Declaração de Imposto de Renda 2026 — IRPF"
 
 A cada ano, a Receita Federal abre o período de entrega da declaração de Imposto de Renda da Pessoa Física (IRPF). Em 2026, o prazo foi de **23 de março a 29 de maio de 2026**, com transmissão pelo programa IRPF 2026, aplicativo Meu Imposto de Renda ou via computador pelo Portal e-CAC.
 
-Independentemente de você já ter declarado ou não, este guia reúne as informações mais importantes sobre quem é obrigado, o que pode deduzir e como evitar os erros que levam à malha fina. Se você é profissional liberal, veja também nosso guia específico de [contabilidade para profissionais liberais](/contabilidade-para-profissionais-liberais-o-que-voce-precisa-saber).
+Independentemente de você já ter declarado ou não, este guia reúne as informações mais importantes sobre quem é obrigado, o que pode deduzir e como evitar os erros que levam à malha fina. Se você é profissional liberal, veja também nosso guia específico de [contabilidade para profissionais liberais](/blog/contabilidade-para-profissionais-liberais-o-que-voce-precisa-saber).
 
 ## Quem é obrigado a declarar em 2026?
 

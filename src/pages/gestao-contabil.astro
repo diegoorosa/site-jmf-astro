@@ -5,14 +5,89 @@ import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
-const serviceSchema = JSON.stringify({
+
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Gestão Contábil",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/gestao-contabil#localbusiness",
+  "name": "JMF Contabilidade – Gestão Contábil",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/gestao-contabil",
   "description": "Escrituração contábil, balanços patrimoniais, DRE, ECD e SPED para empresas em Blumenau e região. Balancete mensal entregue até o dia 15.",
-  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
-  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "City", "name": "Gaspar" },
+    { "@type": "City", "name": "Pomerode" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Gestão Contábil",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+    "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+    "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+  ],
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
+  }
 });
+
 const faqSchema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": "FAQPage",
@@ -24,12 +99,13 @@ const faqSchema = JSON.stringify({
     { "@type": "Question", "name": "Fazem gestão contábil de empresas de Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF Contabilidade presta gestão contábil para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com escrituração e envio de relatórios totalmente digitais." } }
   ]
 });
-const schema = [serviceSchema, faqSchema];
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
   title="Gestão Contábil em Blumenau | JMF Contabilidade"
-  description="Gestão contábil em Blumenau/SC: escrituração, balanços, DRE, ECD e SPED no prazo. Balancete mensal entregue até o dia 15. Mais de 35 anos de experiência. JMF Contabilidade."
+  description="Gestão contábil em Blumenau/SC: escrituração, balanços, DRE, ECD e SPED no prazo. Balancete mensal entregue até o dia 15. Mais de 35 anos de experiência."
   canonical="https://www.jmfcontabilidade.com.br/gestao-contabil"
   ogUrl="https://www.jmfcontabilidade.com.br/gestao-contabil"
   schema={schema}
@@ -39,7 +115,7 @@ const schema = [serviceSchema, faqSchema];
 
   <HeroInterno
     title="Gestão Contábil para Empresas em Blumenau/SC"
-    subtitle="Mantenha sua empresa organizada, em conformidade e pronta para crescer com uma gestão contábil completa e estratégica."
+    subtitle="Mantenha sua empresa organizada, em conformidade e pronta..."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
@@ -54,117 +130,105 @@ const schema = [serviceSchema, faqSchema];
   <!-- Atualizado em -->
   <div class="bg-white border-b border-gray-100">
     <div class="container mx-auto px-4 py-2 text-right">
-      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
     </div>
   </div>
 
-  <!-- Seção: Obrigações Contábeis -->
+  <!-- Intro -->
   <section class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row items-center gap-10">
-        <div class="lg:w-7/12">
-          <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Cuide das suas<br/><span class="pp3-grad">obrigações contábeis</span></h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-4">
-            Com a gestão contábil da JMF, sua empresa terá todas as obrigações legais em dia e relatórios gerenciais que ajudam na tomada de decisões estratégicas.
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Gestão Contábil:<br/><span class="pp3-grad">escrituração precisa para decisões seguras</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A gestão contábil vai muito além de cumprir obrigações fiscais. É a base para decisões estratégicas: precificação correta, controle de custos, análise de rentabilidade por produto ou filial, e preparação de demonstrações financeiras que bancos e investidores exigem.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade entrega balancete mensal até o dia 15, com conciliação bancária completa e apuração de tributos no prazo. Nossa equipe atende empresas de Blumenau, Indaial, Gaspar, Pomerode, Timbó e região — 100% digital quando você preferir.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Balanços e DRE Mensais</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Balanço Patrimonial e DRE entregues até o dia 15 do mês seguinte. Conciliação bancária, apuração de resultado e análise de variações incluídas.
           </p>
-          <p class="text-gray-600 text-lg leading-relaxed mb-6">
-            Nossa equipe especializada cuida de toda a escrituração contábil, desde os lançamentos diários até a entrega das obrigações acessórias ao SPED, com total conformidade com as normas do CFC e da Receita Federal.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href={WA} target="_blank" rel="noopener"
-              class="px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
-              Falar no WhatsApp
-            </a>
-            <a href="#formulario"
-              class="px-6 py-3 border-2 border-[#1e40af] text-[#1e40af] font-semibold rounded-lg hover:bg-[#dbeafe] transition-colors">
-              Prefiro formulário
-            </a>
-          </div>
         </div>
-        <div class="lg:w-5/12">
-          <img src="/assets/images/mbr-2-816x544.webp" alt="Gestão Contábil JMF"
-            width="816" height="544" class="rounded-xl shadow-lg w-full" loading="lazy" />
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Obrigações Acessórias (SPED)</h3>
+          <p class="text-slate-600 leading-relaxed">
+            ECD, ECF, DCTF, EFD-Contribuições e PGDAS-D transmitidos no prazo. Sem multas por atraso ou erros de preenchimento.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Relatórios Gerenciais</h3>
+          <p class="text-slate-600 leading-relaxed">
+            DRE por centro de custo, fluxo de caixa projetado, indicadores de rentabilidade e liquidez. Dados para você decidir com confiança.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Análise de Custos</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Custeio por absorção e variável, ponto de equilíbrio, margem de contribuição. Precificação baseada em custo real, não em chute.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- O que você recebe -->
-  <section class="py-16 bg-[#f8fafc]">
-    <div class="container mx-auto px-4">
-      <div class="max-w-4xl mx-auto">
-        <h2 class="text-3xl font-bold text-[#0f172a] mb-6 text-center">O que você recebe<br/><span class="pp3-grad">todo mês</span></h2>
-        <p class="text-gray-600 text-lg text-center mb-8">A gestão contábil da JMF segue um ciclo mensal padronizado, com entregas previsíveis e prazos fixos.</p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
-            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-calendar-check text-[#1e40af]"></i> Até o dia 5 — Solicitação de documentos</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">No início de cada mês, você recebe uma lista organizada dos documentos necessários: extratos bancários, notas fiscais de compra e venda e comprovantes de despesas. Tudo pode ser enviado por e-mail ou WhatsApp, sem precisar sair da sua empresa.</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
-            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-file-earmark-text text-[#1e40af]"></i> Até o dia 15 — Fechamento mensal</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Disponibilizamos o balancete mensal, a DRE do período, as guias de impostos para pagamento e um resumo executivo com os principais indicadores financeiros da sua empresa.</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
-            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-arrow-repeat text-[#1e40af]"></i> Durante o mês — Acompanhamento contínuo</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Emissão de notas fiscais, conciliação bancária, registro de movimentações, apuração de tributos e obrigações acessórias — tudo é processado ao longo do mês, não apenas no fechamento. Atendimento pelo WhatsApp com retorno no mesmo dia útil.</p>
-          </div>
-          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
-            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-graph-up-arrow text-[#1e40af]"></i> Anualmente — Entregas estratégicas</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">Elaboração do Balanço Patrimonial completo, ECD (Escrituração Contábil Digital), ECF (Escrituração Contábil Fiscal), informe de rendimentos dos sócios e simulação comparativa entre regimes tributários para o ano seguinte.</p>
-          </div>
-        </div>
+  <!-- Particularidades -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">O que diferencia<br/><span class="pp3-grad">nossa gestão contábil</span></h2>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Prazo garantido:</strong> balancete até o dia 15. Se não entregarmos no prazo, o mês é por nossa conta.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Conciliação 100%:</strong> todas as contas conciliadas mensalmente — bancos, cartões, contas a receber/pagar.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>SPED sem erro:</strong> validação automática + revisão manual antes de transmitir. Zero retrabalho.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Relatórios que você entende:</strong> sem "contabilês". DRE comentada, gráficos de evolução, alertas de desvios.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dica:</strong> empresas que migram para a JMF ganham diagnóstico gratuito de pendências contábeis e fiscais — regularizamos tudo antes de assumir a rotina.
+        </p>
       </div>
     </div>
   </section>
 
-  <!-- Contabilidade Gerencial -->
-  <section class="py-16 bg-[#dbeafe]">
-    <div class="container mx-auto px-4">
-      <div class="flex flex-col lg:flex-row-reverse items-center gap-10">
-        <div class="lg:w-7/12">
-          <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Contabilidade Gerencial:<br/><span class="pp3-grad">decisões baseadas em dados reais</span></h2>
-          <p class="text-gray-600 text-lg leading-relaxed mb-4">
-            A contabilidade gerencial transforma os números da sua empresa em informações estratégicas. Com relatórios mensais claros, você sabe exatamente onde o negócio ganha e onde perde dinheiro.
-          </p>
-          <p class="text-gray-600 text-lg leading-relaxed">
-            Disponibilizamos Balanços Patrimoniais, DRE mensais, análise de indicadores e fluxo de caixa projetado — tudo em linguagem acessível para que você possa tomar decisões com segurança.
-          </p>
-        </div>
-        <div class="lg:w-5/12">
-          <img src="/assets/images/mbr-816x544.webp" alt="Contabilidade Gerencial JMF"
-            width="816" height="544" class="rounded-xl shadow-lg w-full" loading="lazy" />
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Como funciona -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">a rotina contábil</span></h2>
 
-  <!-- Vantagens -->
-  <section id="vantagens" class="py-16 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Vantagens da nossa<br/><span class="pp3-grad">gestão contábil</span></h2>
-        <p class="text-gray-600 text-lg">Com os nossos benefícios, a sua empresa estará protegida e você terá uma gestão próxima para crescer com segurança.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card-custom text-center h-full">
-          <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
-          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Conformidade Legal</h4>
-          <p class="text-gray-600">Mantenha sua empresa em conformidade com todas as exigências da Receita Federal, CFC e legislação estadual/municipal.</p>
-        </div>
-        <div class="card-custom text-center h-full">
-          <div class="icon-circle"><i class="bi bi-bar-chart"></i></div>
-          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Relatórios Gerenciais</h4>
-          <p class="text-gray-600">Receba relatórios mensais com DRE, fluxo de caixa e indicadores para tomar decisões estratégicas com dados confiáveis.</p>
-        </div>
-        <div class="card-custom text-center h-full">
-          <div class="icon-circle"><i class="bi bi-gear"></i></div>
-          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Administração Estratégica</h4>
-          <p class="text-gray-600">A gestão contábil proporciona uma administração estratégica para alcançar o desenvolvimento saudável do seu negócio.</p>
-        </div>
-      </div>
-      <div class="text-center mt-10">
-        <img src="/assets/images/mbr-816x544.webp" alt="Processo de Gestão Contábil"
-          width="816" height="544" class="rounded-xl shadow-lg mx-auto max-w-xl w-full" loading="lazy" />
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>1. Envio de documentos:</strong> portal do cliente, WhatsApp ou e-mail. Notas fiscais, extratos, comprovantes — tudo digital.
+        </p>
+        <p>
+          <strong>2. Escrituração e conciliação:</strong> nossa equipe lança, concilia e apura. Dúvidas são resolvidas no mesmo dia via WhatsApp.
+        </p>
+        <p>
+          <strong>3. Entrega do balancete:</strong> até o dia 15, com DRE, balanço, conciliações e relatório de pendências (se houver).
+        </p>
+        <p>
+          <strong>4. Reunião mensal (opcional):</strong> videoconferência de 15-30 min para revisar números, alinhar expectativas e planejar o mês seguinte.
+        </p>
       </div>
     </div>
   </section>
@@ -172,13 +236,13 @@ const schema = [serviceSchema, faqSchema];
   <!-- CTA Dark -->
   <section class="bg-[#0f172a] py-16">
     <div class="container mx-auto px-4 text-center max-w-4xl">
-      <h2 class="text-3xl font-bold text-white mb-4">Esqueça dos processos burocráticos<br/><span class="pp3-grad-light">que envolvem a contabilidade da sua empresa</span></h2>
+      <h2 class="text-3xl font-bold text-white mb-4">Quer balancete no prazo<br/><span class="pp3-grad-light">e relatórios que você entende?</span></h2>
       <p class="text-white/80 text-lg leading-relaxed mb-8">
-        Você está precisando de ajuda? Queremos falar com você, compreender seus objetivos e te ajudar a conduzir sua empresa ao êxito empresarial com mais segurança. Marque a sua reunião e conte com o nosso apoio.
+        35+ anos de experiência, balancete até o dia 15, SPED sem erro. Fale com a JMF e veja a diferença na sua gestão contábil.
       </p>
       <a href={WA} target="_blank" rel="noopener noreferrer"
         class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
-        <i class="bi bi-whatsapp mr-2"></i>AGENDE UMA REUNIÃO
+        <i class="bi bi-whatsapp mr-2"></i>Falar com Especialista
       </a>
     </div>
   </section>
@@ -188,37 +252,37 @@ const schema = [serviceSchema, faqSchema];
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row items-start gap-10">
         <div class="lg:w-5/12">
-          <img src="/assets/images/mbr-2-1036x691.webp" alt="Perguntas Frequentes - JMF Contabilidade"
-            width="1036" height="691" class="rounded-xl shadow-lg w-full" loading="lazy" />
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - Gestão Contábil"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
         </div>
         <div class="lg:w-7/12">
           <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
-            Precisa de mais esclarecimentos?<br />
-            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+            Dúvidas sobre<br />
+            <span class="pp3-grad">gestão contábil</span>
           </h2>
           <div class="space-y-3">
             <details class="accordion-item">
               <summary class="accordion-summary">O que a gestão contábil proporciona?</summary>
               <div class="accordion-body">
-                <p>A gestão contábil é o conjunto de processos que registra, organiza e interpreta todas as movimentações financeiras de uma empresa, transformando dados em decisões estratégicas. Para um negócio em Blumenau/SC, uma gestão contábil competente significa ter Balanços Patrimoniais e Demonstrações de Resultado (DRE) mensais precisos, além de relatórios que mostram exatamente onde o negócio ganha e onde perde dinheiro. Conforme as normas do CFC — em especial a ITG 1000 para micro e pequenas empresas — toda empresa é obrigada a manter escrituração contábil regular, independentemente do regime tributário adotado. A JMF entrega relatórios mensais em linguagem acessível, com análise de indicadores e alertas sobre desvios financeiros. Solicite uma reunião de diagnóstico gratuita pelo WhatsApp (47) 3326-5123.</p>
+                <p>A gestão contábil registra, organiza e interpreta todas as movimentações financeiras da empresa, transformando dados em decisões estratégicas. Inclui Balanços Patrimoniais e DRE mensais precisos, além de relatórios que mostram onde o negócio ganha e perde dinheiro. Conforme as normas do CFC (ITG 1000), toda empresa é obrigada a manter escrituração contábil regular.</p>
               </div>
             </details>
             <details class="accordion-item">
               <summary class="accordion-summary">Quais são as vantagens da gestão contábil?</summary>
               <div class="accordion-body">
-                <p>As vantagens de uma gestão contábil profissional vão muito além de manter a empresa em dia com a Receita Federal. A primeira é a previsibilidade: com balanços mensais precisos, o gestor sabe antecipadamente quanto vai pagar de imposto. A segunda é a precificação segura: muitas empresas cobram abaixo do ponto de equilíbrio por não terem os custos reais calculados corretamente. A terceira é a tomada de decisões embasada em dados. A quarta é o acesso facilitado a crédito — bancos e o BNDES/BADESC exigem demonstrações financeiras auditáveis. E por fim, a gestão contábil protege o sócio pessoalmente contra responsabilização patrimonial em caso de autuação fiscal.</p>
+                <p>Previsibilidade (balanços mensais precisos para saber antecipadamente quanto pagar de imposto), precificação segura (custos reais calculados corretamente), decisões embasadas em dados, acesso facilitado a crédito (bancos exigem demonstrações financeiras) e proteção patrimonial do sócio contra responsabilização em autuação fiscal.</p>
               </div>
             </details>
             <details class="accordion-item">
               <summary class="accordion-summary">Quais são as tarefas que a gestão contábil executa?</summary>
               <div class="accordion-body">
-                <p>A gestão contábil na JMF abrange um ciclo completo de tarefas mensais e anuais. Mensalmente: escrituração contábil de todos os lançamentos, apuração de tributos (IRPJ, CSLL, PIS, COFINS), emissão de guias de pagamento e conciliação bancária. Anualmente: elaboração do Balanço Patrimonial e da DRE. Entregamos todas as obrigações acessórias ao SPED: ECD (Escrituração Contábil Digital) e ECF (Escrituração Contábil Fiscal). Para empresas do Simples Nacional, geramos o PGDAS-D mensal. Adicionalmente, emitimos o Informe de Rendimentos anual para os sócios e elaboramos relatórios gerenciais customizados. Todos os documentos são armazenados digitalmente com acesso em qualquer momento.</p>
+                <p>Mensalmente: escrituração contábil, apuração de tributos, emissão de guias e conciliação bancária. Anualmente: Balanço Patrimonial e DRE. Obrigações acessórias: ECD e ECF ao SPED, PGDAS-D para Simples Nacional. Além disso, Informe de Rendimentos anual para sócios e relatórios gerenciais customizados.</p>
               </div>
             </details>
             <details class="accordion-item">
-              <summary class="accordion-summary">Como eu posso ter o suporte da JMF Contabilidade?</summary>
+              <summary class="accordion-summary">Como posso ter o suporte da JMF Contabilidade?</summary>
               <div class="accordion-body">
-                <p>O canal mais ágil é o WhatsApp (47) 3326-5123, com retorno no mesmo dia útil. Para uma análise mais aprofundada, agendamos uma reunião de diagnóstico gratuita — no nosso escritório na Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau, ou remotamente. Empresas que estão migrando de outro escritório passam por um onboarding estruturado: identificamos obrigações pendentes, regularizamos o que estiver em atraso e assumimos imediatamente a rotina contábil. Atendemos de segunda a sexta das 08h às 18h.</p>
+                <p>WhatsApp (47) 3326-5123 com retorno no mesmo dia útil. Reunião de diagnóstico gratuita no escritório (Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau) ou remotamente. Empresas que migraram de outro escritório passam por onboarding estruturado com regularização de pendências.</p>
               </div>
             </details>
             <details class="accordion-item">
@@ -233,12 +297,36 @@ const schema = [serviceSchema, faqSchema];
     </div>
   </section>
 
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/planejamento-tributario-como-pagar-menos-imposto-legalmente"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Planejamento tributário</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">7 estratégias para pagar menos imposto legalmente em 2026</p>
+        </a>
+        <a href="/blog/pro-labore-e-dividendos-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Distribuição de resultados</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Pró-labore e dividendos 2026: quanto retirar e como pagar menos imposto</p>
+        </a>
+        <a href="/blog/holding-familiar-vale-a-pena-para-pequenos-empresarios"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Planejamento patrimonial</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Holding familiar: vale a pena para pequenos empresários?</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- Formulário -->
   <section id="formulario" class="py-16 bg-[#dbeafe]">
     <div class="container mx-auto px-4">
       <div class="flex flex-col lg:flex-row gap-10">
         <div class="lg:w-5/12">
-          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e<br/><span class="pp3-grad">vamos juntos fazer a diferença</span></h2>
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
           <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade, você encontrou o lugar certo. Entre em contato e marque uma consulta sem custo.</p>
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">

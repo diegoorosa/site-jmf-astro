@@ -1,6 +1,6 @@
 ---
 title: "Quanto Custa um Contador? O Que Você Deveria Estar Pagando"
-description: "Preço de serviço contábil varia muito — e nem sempre o mais barato é o mais econômico. Entenda o que está incluído no honorário e como avaliar se o que você paga faz sentido."
+description: "Preço de serviço contábil varia muito — e nem sempre o mais barato é o mais econômico."
 pubDate: 2026-02-25
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-quanto-custa-contador.jpg"
@@ -9,7 +9,7 @@ imageAlt: "Calculadora e documentos fiscais sobre mesa de trabalho"
 
 Quando um empresário pergunta "quanto custa um contador?", a resposta honesta é: depende. Depende do porte da empresa, do regime tributário, da quantidade de funcionários, da complexidade das operações e do nível de serviço contratado.
 
-O que não depende de nada é o seguinte: contador barato demais quase sempre significa serviço incompleto. E serviço incompleto tem um custo que não aparece na fatura mensal — aparece na multa, na autuação, na oportunidade tributária perdida, no fechamento de balanço errado. Se você já passou por essa situação, veja também [quando vale a pena trocar de contador](/troca-de-contador-quando-vale-e-como-fazer-sem-susto).
+O que não depende de nada é o seguinte: contador barato demais quase sempre significa serviço incompleto. E serviço incompleto tem um custo que não aparece na fatura mensal — aparece na multa, na autuação, na oportunidade tributária perdida, no fechamento de balanço errado. Se você já passou por essa situação, veja também [quando vale a pena trocar de contador](/blog/troca-de-contador-quando-vale-e-como-fazer-sem-susto).
 
 ## O Que Compõe o Preço do Serviço Contábil
 
@@ -119,7 +119,7 @@ Se as respostas forem negativas, o problema não é necessariamente o preço —
 ## Perguntas frequentes
 
 **Trocar de contador é caro ou complicado?**
-O processo em si tem custo baixo (geralmente é o novo escritório que organiza a transição) e leva de 5 a 10 dias úteis em condições normais. O que precisa de atenção é o levantamento de pendências antes da troca — veja [quando vale a pena trocar de contador](/troca-de-contador-quando-vale-e-como-fazer-sem-susto) para entender o processo completo.
+O processo em si tem custo baixo (geralmente é o novo escritório que organiza a transição) e leva de 5 a 10 dias úteis em condições normais. O que precisa de atenção é o levantamento de pendências antes da troca — veja [quando vale a pena trocar de contador](/blog/troca-de-contador-quando-vale-e-como-fazer-sem-susto) para entender o processo completo.
 
 **Vale a pena pagar mais por um contador especializado no meu setor?**
 Em setores com particularidades tributárias relevantes (construção civil, saúde, tecnologia, comércio exterior), sim — a especialização costuma se pagar em economia tributária e prevenção de erros específicos do setor, que um contador generalista pode não conhecer em profundidade.

@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Dentistas em Blumenau: PJ, Fator R e Tributação Odontológica"
+title: "Contabilidade para Dentistas em Blumenau: PJ, Fator R e..."
 description: "Dentistas em Blumenau: quando abrir PJ compensa, como o Fator R define o Simples Nacional, ISS para odontologia e redução legal de imposto."
 pubDate: 2026-06-19
 author: "Diego Rosa, CRC SC-035810/O"

@@ -1,0 +1,215 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Bombas.";
+
+const localBusinessSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-bombas#localbusiness",
+  "name": "JMF Contabilidade – Bombas",
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-bombas",
+  "description": "Contabilidade para empresas em Bombas/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para turismo, comércios e indústrias na região da praia de Bombas. 70km de Blumenau.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    "addressLocality": "Bombas",
+    "addressRegion": "SC",
+    "postalCode": "88215-000",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.1483,
+    "longitude": -48.4900
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Bombas" },
+    { "@type": "City", "name": "Bombinhas" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    "opens": "08:00",
+    "closes": "18:00"
+  }]
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "A JMF Contabilidade atende empresas em Bombas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Atendemos empresas de Bombas/Bombinhas/SC 100% digital. Bombas fica a 70km de Blumenau (1h20), na península de Bombinhas. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais impostos para turismo e comércio em Bombas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bombas tem forte atuação no turismo de praia: hotéis, pousadas, restaurantes, bares e comércio de artigos de praia. Simples Nacional (Anexo III ou V via Fator R), ISS municipal 2% mínimo para serviços de hospedagem/alimentação. Indústrias/indústria de transformação: Lucro Presumido ou Real. Simulamos o regime ideal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Bombas tem incentivos fiscais para turismo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sim. Como parte do município de Bombinhas, que faz parte da Costa Esmeralda, pode contar com incentivos municipais e estaduais (PRODEC, TTD). Empresas de hospedagem, eventos e gastronomia podem acessar benefícios specificamente voltados ao setor de turismo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como funciona o atendimento remoto para Bombas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Atendimento 100% digital, com soluções específicas para o turismo sazonal da região. Presencial quando desejar: Blumenau a 70km (1h20 pela BR-101 + SC-412). Sede: Rua Rodolfo Freygang, 15, Sala 506, Centro."
+      }
+    }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade em Bombas/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Bombas/SC: turismo, comércio de praia, serviços. Simples Nacional, Lucro Presumido. Atendimento digital, 70km de Blumenau."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-bombas"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-bombas"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Bombas"
+    subtitle="Praia de Bombas, Bombinhas/SC: turismo, comércio e serviços. Atendimento digital, 70km de Blumenau."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Bombas" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Bombas:<br/><span class="pp3-grad">turismo, comércio de praia e serviços</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Bombas é a maior praia de Bombinhas, referência no turismo de verão de Santa Catarina. O comércio local gira em torno dehotéis, pousadas, restaurantes, bares, quiosques, aluguel de Temporada, lojas de artigos de praia e prestação de serviços. A sazonalidade intensa exige planejamento tributário e controle de custos bem específico.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de Bombas com expertise em tributação de turismo, Simples Nacional (Fator R), ISS de hospedagem, aluguel de Temporada e controle de folha variável. Estrutura de 35+ anos em Blumenau, 70km de distância, oferece suporte completo e digital.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Hospedagem</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Hotéis, pousadas, hostels, flats: Simples Nacional (Anexo III ou V via Fator R), ISS 2‑5% sobre diária, folha sazonal, controle de diárias, NFC‑e/NF‑e, retenções na fonte (IR/INSS) para funcionários temporários.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Aluguel de Temporada</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Airbnb, Vrbo, gestão de imóveis: escolha entre pessoa jurídica e física, tributação (Simples Anexo V ou Lucro Presumido),ISS sobre prestação de serviço, retenções de IR/CSLL, escrituração de receitas variáveis.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Restaurantes e Bares</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Estabelecimentos de alimentação: Simples Nacional (Anexo V), ICMS‑ST sobre bebidas, ISS 2‑5%, folha com adicionais noturnos e de risco, controle de estoque perecível, gestão de custos de sazonalidade.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Comércio de Artigos de Praia</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Lojas de vestuário, guarda-sóis, cadeiras, brinquedos e souvenirs: ICMS‑ST, NFC‑e obrigatória, DIFAL para compras com outro estado, controle de estoque cíclico, regime de tributação dependendo do faturamento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Bombas — Turismo Sazonal:<br/><span class="pp3-grad">particularidades tributárias</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        A economia de Bombas depende intensamente do verão (dez‑mar). Isso gera exigências específicas:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Fator R crítico:</strong> 4 meses concentram 70‑80% do faturamento anual. Folha sobe na temporada. Se o Fator R ficar abaixo de 28% no ano‑calendário, a empresa migra do Anexo III (6%) para o Anexo V (15,5%). Planejamento de pró‑labore e contratações temporárias é essencial.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISS sobre hospedagem e alimentação:</strong> alíquota varia entre 2% e 5% dependendo da atividade. A separação correta entre prestação de serviços de hospedagem e de alimentação evita autuação.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Aluguel Temporada – PJ x PF:</strong> pessoa jurídica no Simples (6‑15,5% ou Lucro Presumido ~11,33% federais + ISS) costuma ser mais vantajoso que pessoa física (IR 27,5% + carnê-leão). A JMF estrutura a Holding imobiliária quando necessário.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Retenções na fonte para eventos:</strong> shows e festivais de verão geram retenções de IR (1,5%), CSLL (1%), PIS (0,65%), COFINS (3%) e INSS (11‑20%). Um planejamento de caixa previne surpresas.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Pousada em Bombas com 20 quartos, faturamento de R$ 1,8 M/ano (70% concentrado entre dez‑mar). No Simples Anexo V a alíquota efetiva gira em torno de 15,5% → aproximadamente R$ 279 mil/ano de impostos federais. Com planejamento de Fator R (pró‑labore + folha sazonal) mantendo‑se acima de 28%, a alíquota pode cair para 6% (Anexo III) → economia de cerca de R$ 171 mil/ano. A JMF faz esse planejamento preventivo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Atendimento para<br/><span class="pp3-grad">Bombas</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>100% Digital:</strong> WhatsApp (47) 3326‑5123, portal do cliente, e‑mail, videoconferência. Especialistas em turismo sazonal: Fator R, folha de temporada, ISS de hospedagem, aluguel de Temporada.
+        </p>
+        <p>
+          <strong>Presencial quando quiser:</strong> Blumenau a 70 km (1 h 20 min pela BR‑101 + SC‑412). Sede: Rua Rodolfo Freygang, 15, Sala 506, Centro.
+        </p>
+        <p>
+          <strong>Rotina mensal:</strong> documentos até o dia 5, fechamento até o dia 15, guias e relatórios até o dia 20. Em períodos de alta temporada (jan‑mar) acompanhamos fluxo de caixa semanalmente.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Planejamento de Fator R para a Temporada gratuito.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

@@ -1,6 +1,6 @@
 ---
-title: "Domicílio Eletrônico Trabalhista (DET): O Risco das Notificações Invisíveis no Seu Negócio"
-description: "A fiscalização trabalhista tornou-se integralmente digital. Entenda como o DET notifica empresas e aplica autos de infração de forma remota, a presunção legal de leitura e como incluir o monitoramento na rotina quinzenal da empresa."
+title: "Domicílio Eletrônico Trabalhista (DET): O Risco das..."
+description: "A fiscalização trabalhista tornou-se integralmente digital. Entenda como o DET notifica empresas e aplica autos de infração de forma remota, a presunção..."
 pubDate: 2026-08-06
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-domicilio-eletronico-trabalhista-det.jpg"

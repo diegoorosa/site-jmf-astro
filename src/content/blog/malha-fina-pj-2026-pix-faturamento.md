@@ -1,6 +1,6 @@
 ---
-title: "Malha Fina PJ em 2026: Como a Receita Federal cruza os dados do PIX com o faturamento da sua empresa"
-description: "Em 2026, a fiscalização é 100% digital e instantânea. Supercomputadores cruzam em tempo real PIX, cartões e e-Financeira. Entenda os riscos de omitir receitas e como blindar seu negócio."
+title: "Malha Fina PJ em 2026: Como a Receita Federal cruza os..."
+description: "Em 2026, a fiscalização é 100% digital e instantânea. Supercomputadores cruzam em tempo real PIX, cartões e e-Financeira."
 pubDate: 2026-07-15
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-malha-fina-pj-2026.jpg"
