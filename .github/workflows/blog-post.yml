@@ -8,7 +8,6 @@ on:
         required: false
         type: string
   schedule:
-    # 17:33 UTC equivale a 14:33 (Horário de Brasília)
     - cron: '33 17 27 8 *'
 
 permissions:
@@ -29,7 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: '${{ secrets.GITHUB_TOKEN }}'
           fetch-depth: 0
 
       - name: Setup Node.js
@@ -51,9 +50,9 @@ jobs:
       - name: Generate blog post via Gemini
         id: generate-post
         env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          EXISTING_TOPICS: ${{ steps.blog-history.outputs.topics }}
-          FORCED_TOPIC: ${{ github.event.inputs.force_topic }}
+          GEMINI_API_KEY: '${{ secrets.GEMINI_API_KEY }}'
+          EXISTING_TOPICS: '${{ steps.blog-history.outputs.topics }}'
+          FORCED_TOPIC: '${{ github.event.inputs.force_topic }}'
         run: node scripts/generate-post.mjs
 
       - name: Convert images to WebP
@@ -62,9 +61,9 @@ jobs:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
-          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ env.AWS_REGION }}
+          aws-access-key-id: '${{ secrets.AWS_ACCESS_KEY_ID }}'
+          aws-secret-access-key: '${{ secrets.AWS_SECRET_ACCESS_KEY }}'
+          aws-region: 'sa-east-1'
 
       - name: Build Astro site
         run: npm run build
@@ -96,22 +95,22 @@ jobs:
       - name: CloudFront Invalidation
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id '${{ env.CLOUDFRONT_DISTRIBUTION_ID }}' \
             --paths "/*"
 
       - name: Post to Google Meu Negócio via n8n webhook
         if: success()
         env:
-          GMB_WEBHOOK_URL: ${{ secrets.GMB_WEBHOOK_URL }}
-          POST_TITLE: ${{ steps.generate-post.outputs.title }}
-          POST_SUMMARY: ${{ steps.generate-post.outputs.summary }}
-          POST_URL: ${{ steps.generate-post.outputs.url }}
-          POST_IMAGE: ${{ steps.generate-post.outputs.image }}
+          GMB_WEBHOOK_URL: '${{ secrets.GMB_WEBHOOK_URL }}'
+          POST_TITLE: '${{ steps.generate-post.outputs.title }}'
+          POST_SUMMARY: '${{ steps.generate-post.outputs.summary }}'
+          POST_URL: '${{ steps.generate-post.outputs.url }}'
+          POST_IMAGE: '${{ steps.generate-post.outputs.image }}'
         run: |
           curl -sS -X POST "$GMB_WEBHOOK_URL" \
             -H "Content-Type: application/json" \
             -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}" \
-            && echo "GMB webhook enviado" || echo "GMB webhook falhou"
+            || echo "GMB webhook falhou"
 
       - name: Commit and push new post
         if: success()
