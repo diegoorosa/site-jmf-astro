@@ -35,14 +35,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
-<<<<<<< HEAD
-          cache: npm
-=======
           cache: 'npm'
 
       - name: Verify Node version
         run: echo "Node: \$(node --version)"
->>>>>>> d2cbf058 (ci: escape $ in run command)
 
       - name: Install dependencies
         run: npm install
