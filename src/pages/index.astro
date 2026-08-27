@@ -1,0 +1,1162 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Parceiros from '../components/Parceiros.astro';
+import '../styles/index-2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.jmfcontabilidade.com.br/#website",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "name": "JMF Contabilidade",
+    "inLanguage": "pt-BR",
+    "potentialAction": { "@type": "SearchAction", "target": { "@type": "EntryPoint", "urlTemplate": "https://www.jmfcontabilidade.com.br/blog?q={search_term_string}" }, "query-input": "required name=search_term_string" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": ["AccountingService", "LocalBusiness"],
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "name": "JMF Contabilidade",
+    "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+    "taxID": "81.335.895/0001-17",
+    "identifier": { "@type": "PropertyValue", "name": "CRC", "value": "SC-002550/O" },
+    "url": "https://www.jmfcontabilidade.com.br",
+    "logo": { "@type": "ImageObject", "url": "https://www.jmfcontabilidade.com.br/assets/images/jmf-contabilidade-jean-254x159.webp" },
+    "description": "Escritório de contabilidade em Blumenau com mais de 35 anos de mercado. Especialistas em Simples Nacional, Lucro Presumido e abertura de empresas.",
+    "telephone": "+55-47-3326-5123",
+    "email": "contato@jmfcontabilidade.com.br",
+    "priceRange": "$$",
+    "address": { "@type": "PostalAddress", "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro", "addressLocality": "Blumenau", "addressRegion": "SC", "postalCode": "89010-060", "addressCountry": "BR" },
+    "geo": { "@type": "GeoCoordinates", "latitude": -26.92016, "longitude": -49.06705 },
+    "foundingDate": "1989-05-24",
+    "areaServed": [
+      { "@type": "City", "name": "Blumenau" },
+      { "@type": "City", "name": "Gaspar" },
+      { "@type": "City", "name": "Indaial" },
+      { "@type": "City", "name": "Pomerode" },
+      { "@type": "City", "name": "Timbó" },
+      { "@type": "City", "name": "Brusque" },
+      { "@type": "City", "name": "Itajaí" },
+      { "@type": "City", "name": "Balneário Camboriú" },
+      { "@type": "State", "name": "Santa Catarina" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Serviços de Contabilidade",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Contábil" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Fiscal e Tributária" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Pessoal" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Consultoria e Planejamento Tributário" } }
+      ]
+    },
+    "sameAs": [
+      "https://www.facebook.com/jmfcontabilidadebnu/",
+      "https://www.instagram.com/jmf.contabilidade/",
+      "https://www.linkedin.com/company/jmf-contabilidade/",
+      "https://twitter.com/jmfcontab",
+      "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+      "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+      "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5,
+      "bestRating": 5,
+      "worstRating": 1,
+      "reviewCount": 150
+    },
+    "review": [
+      { "@type": "Review", "author": { "@type": "Person", "name": "Bruno Schmitt Maes" }, "datePublished": "2026-05-28", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Contabilidade de confiança e atendimento personalizado. Sempre indico!" },
+      { "@type": "Review", "author": { "@type": "Person", "name": "André Maciel Nuernberg" }, "datePublished": "2026-05-20", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Atendido pelo Diego, me salvou com o IRPF — tinha bastante informação solta e declarações antigas omissas. Foi o contador que conseguiu me regularizar com o sistema fiscal brasileiro." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Juliana Silva" }, "datePublished": "2026-04-30", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Faço meu imposto de renda com eles há alguns anos e sou sempre muito bem assessorada. São muito corretos e atenciosos." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Connie Faria" }, "datePublished": "2026-04-22", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Eu uso os serviços deles desde 2022 e estou muito satisfeita. São muito educados e profissionais brilhantes. Recomendo muito!!" },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Renato Duarte Simões Pires" }, "datePublished": "2026-05-26", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Um profissional extremamente competente, organizado e sempre disposto a ajudar. Transmite muita confiança e segurança em cada orientação. Seu trabalho é impecável!" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Qual o prazo para abrir uma empresa em Blumenau com a JMF Contabilidade?", "acceptedAnswer": { "@type": "Answer", "text": "Em 2026 o prazo médio é de 3 a 7 dias úteis, dependendo da documentação, da viabilidade na prefeitura e do tipo de atividade. Com CNPJ alfanumérico e sistemas integrados, a JMF cuida de todo o processo." } },
+      { "@type": "Question", "name": "Quanto custa um contador em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Os honorários variam conforme a estrutura da empresa, o volume mensal de escrituração e a quantidade de funcionários. A JMF oferece pacotes transparentes e sem mensalidade escondida — pedemos uma reunião gratuita para montar o plano ideal." } },
+      { "@type": "Question", "name": "A JMF Contabilidade atende empresas de qualquer segmento?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos mais de 80 segmentos, incluindo clínicas médicas e odontológicas, obra e construção civil, restaurantes, pousadas, indústrias, despensa, suporte e serviços de tecnologia. Nosso time se especializa nos setores de cada cliente." } },
+      { "@type": "Question", "name": "Como contratar a JMF Contabilidade em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Basta enviar uma mensagem pelo WhatsApp, preencher o contatar no site ou ligar para (47) 3326-5123. Hacemos uma avaliação gratuita e montamos uma validação personalizada." } },
+      { "@type": "Question", "name": "A JMF Contabilidade cuida do imposto de renda de pessoa física?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, além da contabilidade empresarial, a JMF também presta serviços de consultoria para declaração de IRPF 2026 (pessoa física) para sócios, casais com custos médicos abusivos e clientes que precisam revisar saldos anteriores." } }
+    ]
+  }
+]);
+
+const pageTitle = "JMF Contabilidade Blumenau | 35+ Anos | +150 Avaliações 5★";
+const pageDesc = "Escritório de contabilidade em Blumenau/SC com 35+ anos de experiência e mais de 150 avaliações 5★ no Google. Simples Nacional, IRPF, abertura de empresa e planejamento tributário. Lidera com IA e suporte humano. Diagnóstico gratuito pelo WhatsApp.";
+---
+
+<Layout title={pageTitle} description={pageDesc} bodyClass="jmf-p2-page"
+  canonical="https://www.jmfcontabilidade.com.br/"
+  ogUrl="https://www.jmfcontabilidade.com.br/"
+  schema={schema}
+>
+  <slot name="head">
+  </slot>
+
+  <!-- EXIT POPUP -->
+  <div
+    x-data="{ show: false }"
+    x-init="
+      document.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 0 && !sessionStorage.getItem('popup_shown')) show = true;
+      });
+    "
+    x-show="show"
+    x-transition:enter="transition ease-out duration-500"
+    x-transition:enter-start="opacity-0 backdrop-blur-0"
+    x-transition:enter-end="opacity-100 backdrop-blur-sm"
+    x-transition:leave="transition ease-in duration-200"
+    x-transition:leave-start="opacity-100"
+    x-transition:leave-end="opacity-0"
+    class="jmf-exit-popup fixed inset-0 z-50 flex items-center justify-center p-4"
+    @click.self="show=false; sessionStorage.setItem('popup_shown','1')"
+    @keydown.escape.window="show=false; sessionStorage.setItem('popup_shown','1')"
+    style="display:none"
+  >
+    <div
+      x-show="show"
+      x-transition:enter="transition ease-out duration-500 delay-100"
+      x-transition:enter-start="opacity-0 scale-95 translate-y-2"
+      x-transition:enter-end="opacity-100 scale-100 translate-y-0"
+      class="jmf-exit-card relative w-full max-w-md overflow-hidden rounded-2xl bg-[#0a1628] shadow-[0_20px_80px_-20px_rgba(6,182,212,0.45)] ring-1 ring-cyan-400/20"
+    >
+      <!-- Grid de linhas finas (mesmo padrão do hero P2) -->
+      <svg class="absolute inset-0 w-full h-full opacity-[0.10] pointer-events-none" preserveAspectRatio="none">
+        <line x1="22%" y1="0" x2="22%" y2="100%" stroke="#67E8F9" stroke-width="1" />
+        <line x1="78%" y1="0" x2="78%" y2="100%" stroke="#67E8F9" stroke-width="1" />
+        <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#67E8F9" stroke-width="1" />
+      </svg>
+      <!-- Glow ciano -->
+      <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-40 h-40 bg-cyan-500/25 blur-3xl rounded-full pointer-events-none"></div>
+
+      <button
+        @click="show=false; sessionStorage.setItem('popup_shown','1')"
+        class="absolute top-3 right-3 w-9 h-9 flex items-center justify-center rounded-lg text-slate-400 hover:text-white hover:bg-white/10 transition-all duration-200 z-20"
+        aria-label="Fechar"
+      >
+        <i class="bi bi-x-lg text-base"></i>
+      </button>
+
+      <div class="relative z-10 px-8 pt-10 pb-8 text-center">
+        <!-- Badge eyebrow -->
+        <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-cyan-500/10 ring-1 ring-cyan-400/30">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+          <span class="text-cyan-300 text-[11px] font-semibold tracking-[0.18em] uppercase">Diagnóstico Gratuito</span>
+        </div>
+
+        <!-- Ícone -->
+        <div class="relative w-16 h-16 mx-auto mb-6">
+          <div class="absolute inset-0 bg-cyan-500/20 blur-xl rounded-full"></div>
+          <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
+            <i class="bi bi-whatsapp text-white text-3xl"></i>
+          </div>
+        </div>
+
+        <h3 class="text-2xl text-white tracking-tight mb-3" style="font-family:'Fraunces',serif;font-weight:500">
+          Espere! Antes de ir<span class="text-cyan-300">...</span>
+        </h3>
+        <p class="text-slate-300/80 text-sm leading-relaxed mb-6 max-w-xs mx-auto">
+          Fale com um especialista da JMF agora. Sem compromisso, sem burocracia — resposta no mesmo dia útil.
+        </p>
+
+        <!-- Selo de credibilidade -->
+        <div class="flex items-center justify-center gap-2 mb-7 text-xs">
+          <div class="flex text-yellow-400 text-[10px]">★★★★★</div>
+          <span class="text-slate-400">+150 avaliações no Google</span>
+        </div>
+
+        <a href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20estava%20no%20site%20da%20JMF%20e%20tenho%20uma%20d%C3%BAvida."
+          target="_blank" rel="noopener noreferrer"
+          @click="sessionStorage.setItem('popup_shown','1')"
+          class="group inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 text-white font-semibold rounded-xl shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/40 hover:shadow-xl transition-all duration-200">
+          <i class="bi bi-whatsapp text-lg"></i>
+          <span>Falar no WhatsApp</span>
+          <i class="bi bi-arrow-right text-sm group-hover:translate-x-1 transition-transform"></i>
+        </a>
+
+        <button
+          @click="show=false; sessionStorage.setItem('popup_shown','1')"
+          class="mt-4 text-xs text-slate-500 hover:text-slate-300 transition-colors"
+        >
+          Não, obrigado. Continuar no site.
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO P2 -->
+  <section class="jmf-hero-p2">
+    <!-- Grade de linhas finas -->
+    <svg class="jmf-hero-grid" preserveAspectRatio="none">
+      <line x1="8%" y1="0" x2="8%" y2="100%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+      <line x1="8%" y1="22%" x2="100%" y2="22%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+      <line x1="34%" y1="0" x2="34%" y2="60%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+      <line x1="34%" y1="60%" x2="100%" y2="60%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+      <line x1="71%" y1="0" x2="71%" y2="100%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+      <line x1="0" y1="84%" x2="100%" y2="84%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
+    </svg>
+
+    <div class="jmf-hero-p2-grid">
+      <div class="jmf-hero-p2-copy" data-reveal>
+        <span class="jmf-eyebrow">35+ Anos de Mercado em Blumenau</span>
+        <h1 class="jmf-hero-p2-title">
+          Contabilidade que simplifica<br/>
+          <span class="jmf-hero-p2-grad">o caminho do seu negócio</span>
+        </h1>
+        <p class="jmf-hero-p2-lead">
+          Na JMF, você encontra método, prazos claros e orientação objetiva - sem burocracia, sem surpresas no fim do mês.
+        </p>
+        <div class="jmf-hero-p2-actions">
+          <a href={WA} target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-cyan jmf-ring">
+            <svg class="jmf-p2-wa-ico" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
+            Fale com um Especialista
+          </a>
+          <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-ghost">
+            Simular abertura de empresa
+          </a>
+        </div>
+        <div class="jmf-hero-p2-rating">
+          <span class="jmf-hero-p2-score">5.0</span>
+          <span class="jmf-hero-p2-stars">★★★★★</span>
+          <span class="jmf-hero-p2-rs">+150 avaliações no Google</span>
+        </div>
+      </div>
+
+      <div class="jmf-hero-p2-dash" data-hero-dash>
+        <div class="jmf-hd-frame">
+          <div class="jmf-hd-glow"></div>
+          <div class="jmf-hd-header">
+            <span><span class="dot"></span>JMF · Painel do cliente</span>
+            <span class="jmf-hd-status"><span class="dt" data-hd-clock>09:42:18</span></span>
+          </div>
+          <div class="jmf-hd-stats">
+            <div class="jmf-hd-stat">
+              <span class="lbl">Faturamento</span>
+              <span class="val">R$ <span data-count="1.8" data-decimals="1">1,8</span> Mi</span>
+              <span class="delta up"><i class="bi bi-arrow-up-short"></i>12,4%</span>
+            </div>
+            <div class="jmf-hd-stat">
+              <span class="lbl">Impostos</span>
+              <span class="val">R$ <span data-count="284">284</span> mil</span>
+              <span class="delta down"><i class="bi bi-arrow-down-short"></i>3,2%</span>
+            </div>
+            <div class="jmf-hd-stat">
+              <span class="lbl">Margem</span>
+              <span class="val"><span data-count="24.6" data-decimals="1">24,6</span>%</span>
+              <span class="delta up"><i class="bi bi-arrow-up-short"></i>1,8 pp</span>
+            </div>
+            <div class="jmf-hd-stat">
+              <span class="lbl">Folha</span>
+              <span class="val">R$ <span data-count="412">412</span> mil</span>
+              <span class="delta up"><i class="bi bi-arrow-up-short"></i>5,1%</span>
+            </div>
+          </div>
+          <div class="jmf-hd-chart">
+            <div class="jmf-hd-bars">
+              <div class="jmf-hd-bar" style="--h:62%"></div>
+              <div class="jmf-hd-bar" style="--h:41%"></div>
+              <div class="jmf-hd-bar" style="--h:78%"></div>
+              <div class="jmf-hd-bar" style="--h:55%"></div>
+              <div class="jmf-hd-bar" style="--h:38%"></div>
+              <div class="jmf-hd-bar" style="--h:84%"></div>
+              <div class="jmf-hd-bar" style="--h:67%"></div>
+              <div class="jmf-hd-bar" style="--h:45%"></div>
+              <div class="jmf-hd-bar" style="--h:72%"></div>
+              <div class="jmf-hd-bar" style="--h:58%"></div>
+              <div class="jmf-hd-bar" style="--h:90%"></div>
+              <div class="jmf-hd-bar" style="--h:33%"></div>
+            </div>
+            <div class="jmf-hd-beam"></div>
+            <svg class="jmf-hd-line" viewBox="0 0 320 80" preserveAspectRatio="none">
+              <polyline class="jmf-hd-line-path" points="0,60 26,52 52,56 78,38 104,42 130,28 156,32 182,18 208,24 234,10 260,16 286,8 320,12"/>
+              <circle class="jmf-hd-line-dot" cx="320" cy="12" r="3"/>
+            </svg>
+          </div>
+          <div class="jmf-hd-progress">
+            <div class="jmf-hd-prog-row"><span class="lbl">Fechamento do mês</span><span class="val"><span data-count="82">82</span>%</span></div>
+            <div class="jmf-hd-prog-bar"><span class="fill" style="--p:82%"></span></div>
+          </div>
+          <div class="jmf-hd-logs" data-logs>
+            <div class="jmf-hd-log is-active"><span class="dot ok"></span><span class="txt">DAS gerado · Anexo III</span></div>
+            <div class="jmf-hd-log is-active"><span class="dot ok"></span><span class="txt">SPED enviado · sem ressalva</span></div>
+            <div class="jmf-hd-log is-active"><span class="dot wait"></span><span class="txt">e-Social · aguarda evento</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ticker discreto (credenciais) -->
+    <div class="jmf-hero-ticker">
+      <div class="jmf-hero-ticker-track">
+        <span><i class="bi bi-geo-alt"></i> Blumenau e região</span>
+        <span><i class="bi bi-geo-alt"></i> Vale do Itajaí</span>
+        <span><i class="bi bi-geo-alt"></i> Litoral catarinense</span>
+        <span><i class="bi bi-shield-check"></i> CRC SC-002550/O</span>
+        <span><i class="bi bi-star-fill"></i> 5,0 no Google</span>
+        <span><i class="bi bi-calendar-event"></i> desde 1989</span>
+        <span><i class="bi bi-geo-alt"></i> Blumenau e região</span>
+        <span><i class="bi bi-geo-alt"></i> Vale do Itajaí</span>
+        <span><i class="bi bi-geo-alt"></i> Litoral catarinense</span>
+        <span><i class="bi bi-shield-check"></i> CRC SC-002550/O</span>
+        <span><i class="bi bi-star-fill"></i> 5,0 no Google</span>
+        <span><i class="bi bi-calendar-event"></i> desde 1989</span>
+      </div>
+    </div>
+  </section>
+  <!-- CREDIBILITY STRIP -->
+  <section class="jmf-cred-p2">
+    <div class="jmf-container">
+      <div class="jmf-cred-grid">
+        <div class="jmf-cred-item" data-count-up>
+          <span class="jmf-cred-num"><span class="num" data-to="35">0</span>+</span>
+          <span class="jmf-cred-label">Anos de mercado</span>
+        </div>
+        <div class="jmf-cred-item" data-count-up>
+          <span class="jmf-cred-num">+<span class="num" data-to="150">0</span></span>
+          <span class="jmf-cred-label">Avaliações 5.0 no Google</span>
+        </div>
+        <div class="jmf-cred-item" data-count-up>
+          <span class="jmf-cred-num">+<span class="num" data-to="6">0</span></span>
+          <span class="jmf-cred-label">Cidades atendidas</span>
+        </div>
+        <div class="jmf-cred-item" data-count-up>
+          <span class="jmf-cred-num"><span class="num" data-to="100">0</span>%</span>
+          <span class="jmf-cred-label">Documentos com criptografia</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- NOSSAS SOLUÇÕES P2 -->
+  <section class="jmf-sol-sec" id="solucoes">
+    <div class="jmf-sol-grid-bg" aria-hidden="true"></div>
+    <div class="jmf-sol-inner">
+      <div class="jmf-sol-head">
+        <span class="jmf-eyebrow-paper on-light">Nossas Soluções</span>
+        <h2 class="jmf-sol-title">
+          Tudo que sua empresa precisa,
+          <span class="jmf-sol-title-grad">em um só lugar</span>
+        </h2>
+        <p class="jmf-sol-lead">Da abertura ao fechamento mensal — cada serviço com método, prazo e responsável claro.</p>
+      </div>
+
+      <div class="jmf-sol-cards">
+        <a class="jmf-sol-card" href="/abertura-de-empresa">
+          <span class="jmf-sol-ic"><i class="bi bi-box-seam"></i></span>
+          <h3 class="jmf-sol-card-title">Abertura de Empresas</h3>
+          <p class="jmf-sol-card-desc">Abertura guiada do início ao fim, com escolha correta de CNAE e regime para reduzir custo e risco.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="jmf-sol-card" href="/consultoria-e-planejamento-tributario">
+          <span class="jmf-sol-ic"><i class="bi bi-shield-check"></i></span>
+          <h3 class="jmf-sol-card-title">Consultoria e Planejamento Tributário</h3>
+          <p class="jmf-sol-card-desc">Planejamento legal para pagar o que é devido e evitar surpresas no caixa.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="jmf-sol-card" href="/gestao-contabil">
+          <span class="jmf-sol-ic"><i class="bi bi-journal-check"></i></span>
+          <h3 class="jmf-sol-card-title">Gestão Contábil</h3>
+          <p class="jmf-sol-card-desc">Contabilidade organizada para fechamento mensal e decisão com clareza.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="jmf-sol-card" href="/gestao-pessoal">
+          <span class="jmf-sol-ic"><i class="bi bi-people"></i></span>
+          <h3 class="jmf-sol-card-title">Gestão Pessoal</h3>
+          <p class="jmf-sol-card-desc">Departamento pessoal com rotina e conformidade para reduzir passivo trabalhista.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="jmf-sol-card" href="/gestao-fiscal-e-tributaria">
+          <span class="jmf-sol-ic"><i class="bi bi-receipt"></i></span>
+          <h3 class="jmf-sol-card-title">Gestão Fiscal e Tributária</h3>
+          <p class="jmf-sol-card-desc">Fiscal em dia para você não correr risco por atraso ou apuração errada.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+        <a class="jmf-sol-card" href="/imposto-de-renda">
+          <span class="jmf-sol-ic"><i class="bi bi-cash-coin"></i></span>
+          <h3 class="jmf-sol-card-title">Imposto de Renda</h3>
+          <p class="jmf-sol-card-desc">Declaração com conferência e orientação para reduzir risco de inconsistência.</p>
+          <span class="jmf-sol-arrow">Saiba mais <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- COMO FUNCIONA P2 -->
+  <section class="jmf-func-sec" id="como-funciona">
+    <div class="jmf-func-bg" aria-hidden="true"></div>
+    <div class="jmf-func-inner">
+      <div class="jmf-func-head">
+        <span class="jmf-eyebrow-paper">Como Funciona</span>
+        <h2 class="jmf-func-title">
+          Rotina mensal com
+          <span class="jmf-func-title-grad">previsibilidade</span>
+        </h2>
+        <p class="jmf-func-lead">Você sabe o que acontece, quando acontece e o que recebe. Sem improviso.</p>
+      </div>
+
+      <div class="jmf-func-grid">
+        <article class="jmf-func-card">
+          <header class="jmf-func-card-head">
+            <span class="jmf-func-ic"><i class="bi bi-calendar2-week"></i></span>
+            <span class="jmf-func-card-label">Ritual Mensal</span>
+          </header>
+          <ul class="jmf-func-list">
+            <li><i class="bi bi-check2"></i><span>Calendário de obrigações e prazos</span></li>
+            <li><i class="bi bi-check2"></i><span>Fluxo de documentos padronizado</span></li>
+            <li><i class="bi bi-check2"></i><span>Conferências e fechamento do mês</span></li>
+            <li><i class="bi bi-check2"></i><span>Resumo com impostos e pontos de atenção</span></li>
+          </ul>
+        </article>
+
+        <article class="jmf-func-card">
+          <header class="jmf-func-card-head">
+            <span class="jmf-func-ic"><i class="bi bi-file-earmark-bar-graph"></i></span>
+            <span class="jmf-func-card-label">O que você recebe</span>
+          </header>
+          <ul class="jmf-func-list">
+            <li><i class="bi bi-check2"></i><span>Orientação objetiva (o que pode, o que não pode)</span></li>
+            <li><i class="bi bi-check2"></i><span>Relatórios claros para decisão</span></li>
+            <li><i class="bi bi-check2"></i><span>Organização fiscal com rastreabilidade</span></li>
+            <li><i class="bi bi-check2"></i><span>Diagnóstico inicial e plano de execução</span></li>
+          </ul>
+        </article>
+
+        <article class="jmf-func-card">
+          <header class="jmf-func-card-head">
+            <span class="jmf-func-ic"><i class="bi bi-shield-lock"></i></span>
+            <span class="jmf-func-card-label">Por que confiar</span>
+          </header>
+          <ul class="jmf-func-list">
+            <li><i class="bi bi-check2"></i><span>35+ anos de mercado em Blumenau</span></li>
+            <li><i class="bi bi-check2"></i><span>Processo padronizado com checklist</span></li>
+            <li><i class="bi bi-check2"></i><span>Atendimento consultivo e direto</span></li>
+            <li><i class="bi bi-check2"></i><span>Tecnologia com responsabilidade técnica</span></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="jmf-func-cta">
+        <a href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es." target="_blank" rel="noopener" class="jmf-func-btn">
+          Quero uma contabilidade sem surpresas
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- FERRAMENTAS GRATUITAS P2 -->
+  <section class="jmf-tools-sec" id="ferramentas">
+    <div class="jmf-tools-bg" aria-hidden="true"></div>
+    <div class="jmf-tools-inner">
+      <div class="jmf-tools-head">
+        <span class="jmf-eyebrow-paper on-light">Ferramentas Gratuitas</span>
+        <h2 class="jmf-tools-title">
+          Calcule, simule e decida
+          <span class="jmf-tools-title-grad">com clareza</span>
+        </h2>
+        <p class="jmf-tools-lead">Ferramentas práticas para entender sua situação tributária antes de qualquer conversa.</p>
+      </div>
+
+      <div class="jmf-tools-grid">
+        <a class="jmf-tool-card" href="/calculadora-fator-r">
+          <div class="jmf-tool-top">
+            <span class="jmf-tool-ic"><i class="bi bi-calculator"></i></span>
+            <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Gratuito</span>
+          </div>
+          <h3 class="jmf-tool-title">Calculadora do Fator R</h3>
+          <p class="jmf-tool-desc">Descubra se sua empresa está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional.</p>
+          <span class="jmf-tool-cta">Calcular agora <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="jmf-tool-card" href="/calendario-fiscal-2026">
+          <div class="jmf-tool-top">
+            <span class="jmf-tool-ic"><i class="bi bi-calendar-event"></i></span>
+            <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Gratuito</span>
+          </div>
+          <h3 class="jmf-tool-title">Calendário Fiscal 2026</h3>
+          <p class="jmf-tool-desc">Todas as obrigações fiscais do ano com datas ajustadas para feriados.</p>
+          <span class="jmf-tool-cta">Ver calendário <i class="bi bi-arrow-right"></i></span>
+        </a>
+
+        <a class="jmf-tool-card" href="/simulador-regime-tributario">
+          <div class="jmf-tool-top">
+            <span class="jmf-tool-ic"><i class="bi bi-graph-up-arrow"></i></span>
+            <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Gratuito</span>
+          </div>
+          <h3 class="jmf-tool-title">Simulador de Regime Tributário</h3>
+          <p class="jmf-tool-desc">Compare Simples Nacional e Lucro Presumido. Veja qual regime paga menos.</p>
+          <span class="jmf-tool-cta">Simular agora <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- SIMULADOR IA P2 -->
+  <section class="jmf-ia-sec" id="simulador-ia">
+    <div class="jmf-ia-wave">
+      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice">
+        <path class="wave-path" d="M0,150 Q50,100 100,150 T200,150 T300,150 T400,150"/>
+        <path class="wave-path" d="M0,180 Q60,110 120,180 T240,180 T360,180 T400,180"/>
+        <path class="wave-path" d="M0,120 Q40,160 80,120 T160,120 T240,120 T320,120 T400,120"/>
+        <circle class="wave-dot" cx="60" cy="60" r="3"/>
+        <circle class="wave-dot" cx="340" cy="230" r="2.5"/>
+      </svg>
+    </div>
+    <div class="jmf-container" style="position:relative;z-index:1;">
+      <div class="jmf-ia-grid" data-reveal>
+        <div class="jmf-ia-grid-left">
+          <div class="jmf-ia-panel jmf-ia-panel-sim" data-ia-panel>
+            <div class="jmf-ia-panel-aura"></div>
+            <div class="jmf-ia-panel-head">
+              <span><span class="dot"></span>SIMULADOR IA · análise fiscal</span>
+              <span class="ts">v2.4</span>
+            </div>
+            <div class="jmf-sim-tabs">
+              <button class="jmf-sim-tab is-active" type="button">Análise</button>
+              <button class="jmf-sim-tab" type="button">Cenários</button>
+              <button class="jmf-sim-tab" type="button">Comparar</button>
+            </div>
+            <div class="jmf-sim-title">Simulação <em>tributária</em></div>
+            <div class="jmf-sim-stats">
+              <div class="jmf-sim-stat"><span class="lbl">Regime</span><span class="val">Simples Nacional</span></div>
+              <div class="jmf-sim-stat"><span class="lbl">Anexo</span><span class="val">III · 6%</span></div>
+              <div class="jmf-sim-stat"><span class="lbl">Faturamento</span><span class="val">R$ 80 mil/mês</span></div>
+              <div class="jmf-sim-stat"><span class="lbl">Margem</span><span class="val up">+R$ 1.420/mês</span></div>
+            </div>
+            <div class="jmf-sim-bars">
+              <div class="jmf-sim-bar-row">
+                <span class="bar-lbl">Simples</span><span class="bar-track"><span class="bar-fill" style="--w:28%"></span></span><span class="bar-val">R$ 2.240</span>
+              </div>
+              <div class="jmf-sim-bar-row">
+                <span class="bar-lbl">Presumido</span><span class="bar-track"><span class="bar-fill" style="--w:46%"></span></span><span class="bar-val">R$ 3.680</span>
+              </div>
+              <div class="jmf-sim-bar-row">
+                <span class="bar-lbl">Lucro Real</span><span class="bar-track"><span class="bar-fill" style="--w:72%"></span></span><span class="bar-val">R$ 5.760</span>
+              </div>
+            </div>
+            <div class="jmf-sim-spark">
+              <div class="jmf-sim-spark-head"><span>Economia projetada</span><span class="up">+R$ 17.040/ano ↗</span></div>
+              <svg viewBox="0 0 320 60" preserveAspectRatio="none" class="sparkline"><polyline points="0,48 40,42 80,46 120,32 160,30 200,18 240,22 280,8 320,4"/></svg>
+            </div>
+            <div class="jmf-ia-panel-foot">
+              <div class="jmf-ia-chip"><i class="bi bi-graph-up"></i>3 cenários</div>
+              <div class="jmf-ia-chip"><i class="bi bi-lightning-charge"></i>1.4s</div>
+              <div class="jmf-ia-chip ok"><span class="d"></span>Análise em tempo real</div>
+            </div>
+          </div>
+          <div class="jmf-ia-tag"><span class="jmf-ia-dot"></span>IA ativa · análise em tempo real</div>
+        </div>
+        <div class="jmf-ia-grid-right">
+          <span class="jmf-eyebrow-paper">Nova Ferramenta</span>
+          <h2 class="jmf-ia-title">
+            Não comece no
+            <span class="jmf-ia-title-grad">escuro</span>
+          </h2>
+          <p class="jmf-ia-lead">
+            Pensando em abrir um negócio? Nossa ferramenta com inteligência artificial analisa seu projeto e revela o melhor tipo de empresa, custos e impostos para você começar com segurança e economia.
+          </p>
+          <div class="jmf-ia-cta">
+            <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener" class="jmf-p2-cbtn jmf-p2-cbtn-cyan jmf-ring" style="animation:jmfGlowPulse 3.5s ease-in-out infinite;">
+              Acessar o Simulador Gratuito <span class="arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- AVALIAÇÕES GOOGLE P2 -->
+  <section class="jmf-rev-sec" id="avaliacoes">
+    <div class="jmf-rev-bg" aria-hidden="true"></div>
+    <div class="jmf-rev-inner">
+      <div class="jmf-rev-head">
+        <span class="jmf-eyebrow-paper on-light">Clientes</span>
+        <h2 class="jmf-rev-title">
+          <span class="jmf-rev-title-grad">+150 avaliações</span> — nota 5.0 no Google
+        </h2>
+        <div class="jmf-rev-stars" aria-label="5 de 5 estrelas">★★★★★</div>
+        <p class="jmf-rev-lead">Clientes reais de Blumenau e região que confiam na JMF.</p>
+      </div>
+
+      <div class="jmf-rev-cols">
+        <div class="jmf-rev-col">
+          <div class="jmf-rev-mask">
+            <div class="jmf-rev-track jmf-rev-up">
+              {[0,1].map(() => (
+                <>
+                  {[
+                    { name: "Bruno Schmitt", text: "Contabilidade de confiança e atendimento personalizado. Sempre indico!" },
+                    { name: "Matheus Leite", text: "Excelente atendimento, com muita agilidade e profissionalismo." },
+                    { name: "André Nuernberg", text: "Atendido pelo Diego, me salvou com o IRPF — tinha bastante informação solta e declarações antigas omissas. Foi o contador que conseguiu me regularizar com o sistema fiscal brasileiro." },
+                    { name: "Francielle Kratz", text: "Experiência perfeita, trabalho impecável. Diego me atendeu com muita paciência e gentileza! Obrigado mais uma vez!" },
+                    { name: "Elizandra Rech", text: "Ótimo atendimento, muito prestativo o responsável que me atendeu, Diego. Recomendo!" },
+                    { name: "Maria Ollinda", text: "Ótimo atendimento, fiquei bem feliz por agilizar tudo bem rápido." },
+                    { name: "Bruno Moreira", text: "Excelente profissional! Bem atencioso, tirou todas as minhas dúvidas e fez acompanhamento de todo o processo de declaração. Recomendo muito!" },
+                    { name: "Alessandra Dettmer", text: "Recomendo. Declaração do imposto de renda rápida e eficaz, tirando todas as minhas dúvidas." },
+                    { name: "Anzolin Anzolin", text: "Achei o trabalho deles impecável, me ajudaram demais. Super recomendo — agilidade no processo e atenção comigo. Top!" },
+                  ].map(t => (
+                    <article class="jmf-rev-card">
+                      <header class="jmf-rev-card-top">
+                        <span class="jmf-rev-card-stars">★★★★★</span>
+                        <span class="jmf-rev-card-google"><i class="bi bi-google"></i> Google</span>
+                      </header>
+                      <p class="jmf-rev-card-quote">“</p>
+                      <p class="jmf-rev-card-text">{t.text}</p>
+                      <footer class="jmf-rev-card-foot">
+                        <span class="jmf-rev-avatar">{t.name.charAt(0)}</span>
+                        <span class="jmf-rev-name">{t.name}</span>
+                      </footer>
+                    </article>
+                  ))}
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div class="jmf-rev-col jmf-rev-col-second">
+          <div class="jmf-rev-mask">
+            <div class="jmf-rev-track jmf-rev-down">
+              {[0,1].map(() => (
+                <>
+                  {[
+                    { name: "Aline Baia", text: "Atendimento excelente." },
+                    { name: "Renato Pires", text: "Um profissional extremamente competente, organizado e sempre disposto a ajudar. Transmite muita confiança e segurança em cada orientação. Seu trabalho é impecável!" },
+                    { name: "Ana Capello", text: "Profissional atencioso e muito paciente. Me explicou passo a passo o que eu precisava fazer e solucionou meu problema rapidamente. Recomendo!" },
+                    { name: "Eduardo R.", text: "Precisei de apoio para finalizar minha declaração de imposto de renda anual e fui prontamente atendido, com dúvidas esclarecidas e atendimento rápido." },
+                    { name: "Lucas Mariano", text: "Ótimo trabalho e comprometimento com o serviço. Nota 10, recomendo!" },
+                    { name: "Juliana Silva", text: "Faço meu imposto de renda com eles há alguns anos e sou sempre muito bem assessorada. São muito corretos e atenciosos." },
+                    { name: "Adriana Stapait", text: "Fiquei muito satisfeita com os serviços na JMF. Quem sempre me atende é o Diego — excelente profissional, eficaz, à disposição quando necessário, simpático e tira todas as minhas dúvidas com muita atenção." },
+                    { name: "Connie Faria", text: "Eu uso os serviços deles desde 2022 e estou muito satisfeita. São muito educados e profissionais brilhantes. Recomendo muito!!" },
+                  ].map(t => (
+                    <article class="jmf-rev-card">
+                      <header class="jmf-rev-card-top">
+                        <span class="jmf-rev-card-stars">★★★★★</span>
+                        <span class="jmf-rev-card-google"><i class="bi bi-google"></i> Google</span>
+                      </header>
+                      <p class="jmf-rev-card-quote">“</p>
+                      <p class="jmf-rev-card-text">{t.text}</p>
+                      <footer class="jmf-rev-card-foot">
+                        <span class="jmf-rev-avatar">{t.name.charAt(0)}</span>
+                        <span class="jmf-rev-name">{t.name}</span>
+                      </footer>
+                    </article>
+                  ))}
+                </>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="jmf-rev-cta">
+        <a href="https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9" target="_blank" rel="noopener noreferrer" class="jmf-rev-cta-link">
+          Ver +150 avaliações no Google
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- PARCEIROS P2 -->
+  <section class="jmf-par-sec" id="parceiros">
+    <div class="jmf-par-bg" aria-hidden="true"></div>
+    <div class="jmf-par-inner">
+      <div class="jmf-par-head">
+        <span class="jmf-eyebrow-paper">Parceiros</span>
+        <h2 class="jmf-par-title">
+          Quem confia na
+          <span class="jmf-par-title-grad">JMF Contabilidade</span>
+        </h2>
+        <p class="jmf-par-lead">Mais de 30 empresas de Blumenau e do Litoral catarinense que acreditam no nosso trabalho.</p>
+      </div>
+
+      <div class="jmf-par-marquee">
+        <Parceiros />
+      </div>
+    </div>
+  </section>
+  <!-- TECNOLOGIAS P2 -->
+  <section class="jmf-tech-sec" id="tecnologias">
+    <div class="jmf-tech-bg" aria-hidden="true"></div>
+    <div class="jmf-tech-inner">
+      <div class="jmf-tech-head">
+        <span class="jmf-eyebrow-paper on-light">Tecnologia</span>
+        <h2 class="jmf-tech-title">
+          Stack que roda a
+          <span class="jmf-tech-title-grad">JMF Contabilidade</span>
+        </h2>
+        <p class="jmf-tech-lead">Ferramentas modernas para segurança, automação e inteligência — a infraestrutura por trás do seu dia a dia.</p>
+      </div>
+
+      <div class="jmf-tech-grid">
+        <div class="jmf-tech-card" data-cat="Contabilidade">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-sci.webp" alt="SCI Sistemas Contábeis" width="235" height="67" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-calculator-fill"></i><span>Contabilidade</span></div>
+        </div>
+        <div class="jmf-tech-card" data-cat="Infraestrutura">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-aws.webp" alt="Amazon Web Services" width="238" height="143" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-hdd-network-fill"></i><span>Infraestrutura</span></div>
+        </div>
+        <div class="jmf-tech-card" data-cat="Inteligência Artificial">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-claude-wordmark.svg" alt="Claude AI — Anthropic" width="512" height="110" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-cpu-fill"></i><span>Inteligência Artificial</span></div>
+        </div>
+        <div class="jmf-tech-card" data-cat="Inteligência Artificial">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-gemini.webp" alt="Google Gemini AI" width="320" height="118" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-cpu-fill"></i><span>Inteligência Artificial</span></div>
+        </div>
+        <div class="jmf-tech-card" data-cat="Automação">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-n8n.webp" alt="n8n Automation" width="214" height="59" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-diagram-3-fill"></i><span>Automação</span></div>
+        </div>
+        <div class="jmf-tech-card inline-flex items-center justify-center gap-2" data-cat="Versionamento">
+          <div class="jmf-tech-logo jmf-tech-logo-flex">
+            <img src="/assets/images/logo-github.svg" alt="GitHub" width="24" height="24" loading="lazy" />
+            <span class="jmf-tech-brevo">GitHub</span>
+          </div>
+          <div class="jmf-tech-cat"><i class="bi bi-git"></i><span>Versionamento</span></div>
+        </div>
+        <div class="jmf-tech-card inline-flex items-center justify-center gap-2" data-cat="Comunicação">
+          <div class="jmf-tech-logo jmf-tech-logo-flex">
+            <img src="/assets/images/logo-brevo.svg" alt="Brevo" width="24" height="24" loading="lazy" />
+            <span class="jmf-tech-brevo">Brevo</span>
+          </div>
+          <div class="jmf-tech-cat"><i class="bi bi-envelope-fill"></i><span>Comunicação</span></div>
+        </div>
+        <a class="jmf-tech-card jmf-tech-card-link" href="/seguranca-dos-dados" data-cat="Segurança">
+          <div class="jmf-tech-logo"><img src="/assets/images/logo-protonpass.webp" alt="Proton Pass" width="430" height="89" loading="lazy" /></div>
+          <div class="jmf-tech-cat"><i class="bi bi-shield-lock-fill"></i><span>Segurança</span></div>
+          <span class="jmf-tech-card-arrow">Ver segurança dos dados <i class="bi bi-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- DIFERENCIAIS TECNOLÓGICOS P2 -->
+  <section class="jmf-dif-sec" id="diferenciais">
+    <div class="jmf-dif-bg" aria-hidden="true"></div>
+    <div class="jmf-dif-grid-lines" aria-hidden="true"></div>
+    <div class="jmf-dif-inner">
+      <div class="jmf-dif-head">
+        <span class="jmf-eyebrow-paper on-dark">Tecnologia</span>
+        <h2 class="jmf-dif-title">
+          Uma contabilidade
+          <span class="jmf-dif-title-grad">inteligente</span>
+        </h2>
+        <p class="jmf-dif-lead">Não apenas digital. Pilares que garantem sua tranquilidade — segurança, automação e inteligência em cada etapa.</p>
+      </div>
+
+      <div class="jmf-dif-grid">
+        <article class="jmf-dif-card jmf-dif-card--featured" data-i="0">
+          <div class="jmf-dif-icon"><i class="bi bi-shield-check"></i></div>
+          <h3 class="jmf-dif-h3">Segurança de Nível Mundial</h3>
+          <p class="jmf-dif-p">Infraestrutura <strong>AWS</strong>, a mesma tecnologia de gigantes globais, para garantir que suas informações estejam sempre protegidas e disponíveis.</p>
+          <a class="jmf-dif-cta" href="/seguranca-dos-dados">
+            <span>Veja como protegemos seus dados</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+          <div class="jmf-dif-pulse" aria-hidden="true"></div>
+        </article>
+
+        <article class="jmf-dif-card" data-i="1">
+          <div class="jmf-dif-icon"><i class="bi bi-robot"></i></div>
+          <h3 class="jmf-dif-h3">Eficiência por Automação</h3>
+          <p class="jmf-dif-p">Automatizamos tarefas repetitivas para que nossa equipe se dedique ao que realmente importa: <strong>analisar sua empresa</strong> e encontrar oportunidades.</p>
+        </article>
+
+        <article class="jmf-dif-card" data-i="2">
+          <div class="jmf-dif-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h3 class="jmf-dif-h3">Relatório Gerencial Inteligente</h3>
+          <p class="jmf-dif-p">Compilamos os dados essenciais do seu negócio em um relatório com <strong>análise gerada por IA</strong> para insights rápidos e precisos.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  <!-- FAQ P2 -->
+  <section class="jmf-faq-sec" id="faq">
+    <div class="jmf-faq-bg" aria-hidden="true"></div>
+    <div class="jmf-faq-inner">
+      <div class="jmf-faq-head">
+        <span class="jmf-eyebrow-paper on-light">Dúvidas Frequentes</span>
+        <h2 class="jmf-faq-title">
+          Respondemos
+          <span class="jmf-faq-title-grad">suas perguntas</span>
+        </h2>
+        <p class="jmf-faq-lead">Informação clara para você decidir com segurança.</p>
+      </div>
+
+      <div class="jmf-faq-list" id="jmf-faq-list">
+        <details class="jmf-faq-item" data-i="0">
+          <summary class="jmf-faq-q">
+            <span class="jmf-faq-q-text">Como funciona a troca de contador?</span>
+            <span class="jmf-faq-icon" aria-hidden="true"><i class="bi bi-plus-lg"></i></span>
+          </summary>
+          <div class="jmf-faq-a">
+            <div class="jmf-faq-a-inner">
+              <p>A troca de contador na JMF começa com um diagnóstico gratuito pelo WhatsApp ou telefone: levantamos o regime tributário atual da sua empresa, os meses em aberto, as obrigações acessórias pendentes (SPED, ECD, DEFIS, DASN) e eventuais pendências na Receita Federal ou Sefaz.</p>
+              <p>Com esse mapeamento, apresentamos um cronograma de transição com etapas e prazos claros. A JMF contata o contador anterior para solicitar arquivos, backups e documentação. Em paralelo, configuramos sua empresa em nossos sistemas e criamos o calendário de obrigações personalizado.</p>
+              <p>Em média, o processo leva de 5 a 10 dias úteis para estar 100% operacional. Durante toda a transição, as obrigações acessórias e o fechamento mensal continuam sendo entregues sem interrupção. Você só precisa assinar a procuração e nos fornecer os documentos básicos.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="jmf-faq-item" data-i="1">
+          <summary class="jmf-faq-q">
+            <span class="jmf-faq-q-text">Vocês atendem Simples Nacional e Lucro Presumido?</span>
+            <span class="jmf-faq-icon" aria-hidden="true"><i class="bi bi-plus-lg"></i></span>
+          </summary>
+          <div class="jmf-faq-a">
+            <div class="jmf-faq-a-inner">
+              <p>Sim, a JMF atende empresas em todos os regimes: Simples Nacional, Lucro Presumido e Lucro Real.</p>
+              <p>No <strong>Simples Nacional</strong>, calculamos o DAS mensalmente com o Anexo correto para a atividade, o fator R quando aplicável e os sublimites de ISS e ICMS por estado. Para empresas próximas ao limite de R$ 4,8 milhões/ano, planejamos a transição com antecedência.</p>
+              <p>No <strong>Lucro Presumido</strong>, apuramos IRPJ e CSLL trimestralmente com a margem de presunção correta, além de PIS e COFINS mensais. No <strong>Lucro Real</strong>, estruturamos a apuração por LALUR e LACS, com controle de adições, exclusões e compensação de prejuízos fiscais.</p>
+              <p>Em todos os regimes, você recebe um calendário de obrigações mensal e a JMF realiza anualmente a simulação comparativa entre regimes para garantir a menor carga tributária possível.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="jmf-faq-item" data-i="2">
+          <summary class="jmf-faq-q">
+            <span class="jmf-faq-q-text">Como funciona o envio de documentos e os prazos?</span>
+            <span class="jmf-faq-icon" aria-hidden="true"><i class="bi bi-plus-lg"></i></span>
+          </summary>
+          <div class="jmf-faq-a">
+            <div class="jmf-faq-a-inner">
+              <p>A JMF adota um fluxo de fechamento mensal padronizado e previsível. No início de cada mês, você recebe uma solicitação organizada com a lista exata dos documentos necessários: extratos bancários, notas fiscais de compra e venda, comprovantes de despesas, informações de folha de pagamento, pró-labore e movimentações específicas do período.</p>
+              <p>O prazo para envio é geralmente até o dia 5 do mês seguinte, o que nos permite realizar o fechamento contábil e fiscal dentro dos prazos legais. Tudo pode ser enviado por e-mail, WhatsApp ou sistema de gestão — sem necessidade de deslocamento.</p>
+              <p>Após o recebimento, nossa equipe confere os documentos, apura os impostos e envia o resumo do mês: valor dos tributos, guias para pagamento, informações de folha e pontos de atenção. Em caso de documentos faltantes, entramos em contato imediatamente para não atrasar o fechamento.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="jmf-faq-item" data-i="3">
+          <summary class="jmf-faq-q">
+            <span class="jmf-faq-q-text">Quanto custa e quanto tempo leva para abrir uma empresa com a JMF?</span>
+            <span class="jmf-faq-icon" aria-hidden="true"><i class="bi bi-plus-lg"></i></span>
+          </summary>
+          <div class="jmf-faq-a">
+            <div class="jmf-faq-a-inner">
+              <p>O custo varia por tipo de empresa e atividade — normalmente entre <strong>R$ 900 e R$ 2.800</strong> somando taxas oficiais (JUCESC, alvará, certificado digital) e honorários, com o processo levando de <strong>5 a 10 dias úteis</strong> em condições normais. A primeira conversa e a simulação de regime tributário são sempre gratuitas.</p>
+              <p>Veja o <a href="/abertura-de-empresa">passo a passo completo de abertura de empresa</a> ou o <a href="/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026">detalhamento de custos por tipo de empresa</a>.</p>
+            </div>
+          </div>
+        </details>
+
+        <details class="jmf-faq-item" data-i="4">
+          <summary class="jmf-faq-q">
+            <span class="jmf-faq-q-text">Vocês atendem clientes que não moram em Blumenau?</span>
+            <span class="jmf-faq-icon" aria-hidden="true"><i class="bi bi-plus-lg"></i></span>
+          </summary>
+          <div class="jmf-faq-a">
+            <div class="jmf-faq-a-inner">
+              <p>Sim. Atendemos pessoas físicas e empresas em todo Santa Catarina, sem restrição de cidade ou região. Nosso escritório está em Blumenau e nosso atendimento digital chega a <strong>Indaial, Gaspar, Pomerode, Timbó</strong> e demais cidades do Médio Vale do Itajaí, ao <strong>Litoral catarinense</strong> (<strong>Balneário Camboriú, Bombinhas, Porto Belo</strong>) e a <strong>Florianópolis</strong> e região da Grande Florianópolis.</p>
+              <p>Documentos são enviados digitalmente por WhatsApp, e-mail ou sistema de gestão, e reuniões podem ser feitas por videoconferência — sem necessidade de deslocamento até o escritório. Se você abre empresa em SC, ou já tem CNPJ ativa no estado, a JMF atende.</p>
+              <p>Quer declarar Imposto de Renda ou abrir empresa como pessoa física? Veja nossos serviços de <a href="/contabilidade-para-pessoa-fisica">contabilidade para pessoa física</a> e <a href="/imposto-de-renda">Imposto de Renda</a>.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+
+      <div class="jmf-faq-cta-row">
+        <a class="jmf-faq-cta-primary" href={WA} target="_blank" rel="noopener">
+          <i class="bi bi-whatsapp"></i>
+          <span>Falar no WhatsApp</span>
+        </a>
+        <a class="jmf-faq-cta-ghost" href="/como-abrir-empresa-em-blumenau">
+          <i class="bi bi-book"></i>
+          <span>Guia: Como abrir empresa em Blumenau</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- CTA PARCERIA P2 -->
+  <section class="jmf-cta-sec" id="cta-parceria">
+    <div class="jmf-cta-bg" aria-hidden="true"></div>
+    <div class="jmf-cta-grid" aria-hidden="true"></div>
+    <div class="jmf-cta-beam" aria-hidden="true"></div>
+    <div class="jmf-cta-inner">
+      <span class="jmf-eyebrow-paper on-dark">Vamos conversar</span>
+      <h2 class="jmf-cta-title">
+        Vamos construir uma
+        <span class="jmf-cta-title-grad">parceria de verdade</span>
+      </h2>
+      <p class="jmf-cta-lead">
+        Agende uma conversa sem compromisso. A JMF está pronta para entender seu negócio, apresentar um plano claro e mostrar como podemos simplificar sua contabilidade.
+      </p>
+      <div class="jmf-cta-row">
+        <a class="jmf-cta-primary" href={WA} target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-whatsapp"></i>
+          <span>Fale com um especialista</span>
+        </a>
+        <a class="jmf-cta-ghost" href="tel:+554733265123">
+          <i class="bi bi-telephone"></i>
+          <span>(47) 3326-5123</span>
+        </a>
+      </div>
+    </div>
+  </section>
+  <!-- ELLIZA IA P2 -->
+  <section class="jmf-sec jmf-elliza-sec">
+    <div class="jmf-container" style="position:relative;z-index:1;">
+      <div class="jmf-elliza-grid">
+        <div class="jmf-elliza-copy" data-reveal>
+          <div class="jmf-elliza-badge">EM BREVE</div>
+          <h2>Contabilidade<br><span style="color:#67E8F9;">com inteligência artificial</span></h2>
+          <p class="jmf-sec-lead" style="max-width:none;color:rgba(226,232,240,0.8);">
+            Em parceria com a <strong style="color:#67E8F9;">Synapse Robotics</strong>, estamos integrando a <strong style="color:#67E8F9;">Elliza</strong>: a primeira assistente de IA que automatiza a contabilidade de verdade.
+          </p>
+          <div class="jmf-elliza-steps">
+            <div data-elliza-step><span class="jmf-elliza-step-dot"></span>Coleta automática de documentos</div>
+            <div data-elliza-step><span class="jmf-elliza-step-dot"></span>Geração de relatórios gerenciais</div>
+            <div data-elliza-step><span class="jmf-elliza-step-dot"></span>Respostas a dúvidas em tempo real</div>
+            <div data-elliza-step><span class="jmf-elliza-step-dot"></span>Execução autônoma de tarefas</div>
+          </div>
+        </div>
+        <div class="jmf-elliza-brain" data-elliza-brain>
+          <div class="jmf-elliza-brain-corner tl"></div>
+          <div class="jmf-elliza-brain-corner tr"></div>
+          <div class="jmf-elliza-brain-corner bl"></div>
+          <div class="jmf-elliza-brain-corner br"></div>
+          <div class="jmf-elliza-img-wrap">
+            <div class="jmf-elliza-aura" aria-hidden="true"></div>
+            <div class="jmf-elliza-hud" aria-hidden="true"></div>
+            <div class="jmf-elliza-scan" aria-hidden="true"></div>
+            <img src="/assets/images/elliza-ia.webp" alt="Elliza - IA para Contabilidade Autônoma" class="jmf-elliza-img" width="1024" height="1024" loading="lazy" />
+            <div class="jmf-elliza-readout" aria-hidden="true">
+              <span class="ro-line"><span class="dot"></span>EL.SYS</span>
+              <span class="ro-line mono">v0.1 · EM BREVE</span>
+            </div>
+          </div>
+          <div class="jmf-elliza-brain-foot">
+            <span class="jmf-elliza-chip"><span class="d"></span>EM BREVE</span>
+            <span class="jmf-elliza-chip">Synapse Robotics</span>
+          </div>
+        </div>
+      </div>
+     </div>
+   </section>
+    <!-- FORMULÁRIO - readicionado P2 ( claro lateral ) -->
+   <section id="formulario" class="jmf-form-sec">
+     <div class="jmf-container" style="position:relative;z-index:1;">
+       <div class="jmf-form-grid">
+         <div class="jmf-form-copy" data-reveal>
+           <span class="jmf-eyebrow-paper on-light">Contato</span>
+           <h2>Vamos conversar<br><span class="jmf-h2-grad">sem compromisso</span></h2>
+           <p class="jmf-form-lead">Preencha o formulário e um especialista da JMF entra em contato em até 24h úteis. Sem custo, sem obrigação — só uma conversa para entender sua situação e propor o melhor caminho.</p>
+           <ul class="jmf-form-meta">
+             <li><i class="bi bi-whatsapp"></i><a href={WA} target="_blank" rel="noopener">WhatsApp &nbsp;(47) 3326-5123</a></li>
+             <li><i class="bi bi-telephone-fill"></i><a href="tel:+554733265123">Telefone &nbsp;(47) 3326-5123</a></li>
+             <li><i class="bi bi-envelope-fill"></i><a href="mailto:contato@jmfcontabilidade.com.br">contato@jmfcontabilidade.com.br</a></li>
+             <li><i class="bi bi-clock-fill"></i>Seg a Sex — 08h às 18h</li>
+           </ul>
+         </div>
+         <div class="jmf-form-card" data-reveal>
+           <ContactForm phoneName="phone" phoneLabel="WhatsApp / Telefone" phoneRequired={true} />
+         </div>
+       </div>
+     </div>
+   </section>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Scroll reveal
+      const revealEls = document.querySelectorAll('[data-reveal]');
+      const revealStaggers = document.querySelectorAll('[data-reveal-stagger]');
+      const revealObs = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+      }, { threshold: 0.15 });
+      revealEls.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+        revealObs.observe(el);
+      });
+      if (revealStaggers.length) {
+        revealStaggers.forEach(el => {
+          el.style.opacity = '0';
+          const children = el.children;
+          [...children].forEach((c, i) => {
+            c.style.opacity = '0';
+            c.style.transform = 'translateY(24px)';
+            c.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            c.style.transitionDelay = (i * 0.08) + 's';
+          });
+          const stagObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { [...e.target.children].forEach(c => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }); stagObs.disconnect(); } });
+          }, { threshold: 0.1 });
+          stagObs.observe(el);
+        });
+      }
+      // Count-up
+      document.querySelectorAll('[data-count-up] [data-to]').forEach(el => {
+        const to = parseInt(el.getAttribute('data-to'), 10);
+        let counted = false;
+        const obs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting && !counted) {
+              counted = true;
+              if (reduce) { el.textContent = to; return; }
+              const dur = 2000;
+              const start = performance.now();
+              const tick = (now) => {
+                const p = Math.min((now - start) / dur, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.round(eased * to);
+                if (p < 1) requestAnimationFrame(tick);
+              };
+              requestAnimationFrame(tick);
+            }
+          });
+        }, { threshold: 0.5 });
+        obs.observe(el);
+      });
+      // Hero dashboard tilt
+      const dash = document.querySelector('[data-hero-dash]');
+      if (dash) {
+        const frame = dash.querySelector('.jmf-hd-frame');
+        const sec = dash.closest('.jmf-hero-p2');
+        let rafId = null;
+        let tiltX = -5, tiltY = 4;
+        let baseTiltX = -5, baseTiltY = 4;
+        let baseInited = false;
+        if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
+        // Mousemove na seção — inclinação segue o mouse
+        sec.addEventListener('mousemove', (ev) => {
+          if (reduce || !frame) return;
+          const rect = sec.getBoundingClientRect();
+          const x = (ev.clientX - rect.left) / rect.width - 0.5;
+          const y = (ev.clientY - rect.top) / rect.height - 0.5;
+          tiltX = y * -14;
+          tiltY = x * 20;
+          if (rafId) return;
+          rafId = requestAnimationFrame(() => {
+            frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+            rafId = null;
+          });
+        });
+        // Mouse enter no dashboard — intensifica a aura
+        dash.addEventListener('mouseenter', () => {
+          if (frame) frame.classList.add('is-hover');
+        });
+        dash.addEventListener('mouseleave', () => {
+          if (frame) frame.classList.remove('is-hover');
+          if (!reduce && frame) {
+            tiltX = baseTiltX; tiltY = baseTiltY;
+            frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+          }
+        });
+        // Retorno suave ao sair da seção
+        sec.addEventListener('mouseleave', () => {
+          if (reduce || !frame) return;
+          tiltX = baseTiltX; tiltY = baseTiltY;
+          frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+        });
+
+        // Clock live — atualiza a cada segundo
+        const clock = dash.querySelector('[data-hd-clock]');
+        if (clock) {
+          const pad = (n) => String(n).padStart(2, '0');
+          const tickClock = () => {
+            const d = new Date();
+            clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+          };
+          tickClock();
+          setInterval(tickClock, 1000);
+        }
+
+      }
+      // Elliza steps
+      const ellizaSteps = document.querySelectorAll('[data-elliza-step]');
+      if (ellizaSteps.length) {
+        const ellizaObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              ellizaSteps.forEach((s, i) => { setTimeout(() => s.classList.add('is-on'), i * 200); });
+              ellizaObs.disconnect();
+            }
+          });
+        }, { threshold: 0.3 });
+        const ellizaSec = document.querySelector('.jmf-elliza-sec');
+        if (ellizaSec) ellizaObs.observe(ellizaSec);
+
+        // Reveal stagger dos Diferenciais Tecnológicos
+        const difCards = document.querySelectorAll('.jmf-dif-card');
+        if (difCards.length) {
+          const difObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
+                setTimeout(() => e.target.classList.add('is-visible'), i * 140);
+                difObs.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          difCards.forEach(c => difObs.observe(c));
+        }
+
+        // Reveal stagger do FAQ
+        const faqItems = document.querySelectorAll('.jmf-faq-item');
+        if (faqItems.length) {
+          const faqObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
+                setTimeout(() => e.target.classList.add('is-visible'), i * 120);
+                faqObs.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.2 });
+          faqItems.forEach(c => faqObs.observe(c));
+        }
+
+        // Smooth open ( accordion feel: fecha outros ao abrir )
+        const faqList = document.getElementById('jmf-faq-list');
+        if (faqList) {
+          faqList.addEventListener('click', (ev) => {
+            const summary = ev.target.closest('.jmf-faq-q');
+            if (!summary) return;
+            const item = summary.parentElement;
+            const opening = !item.hasAttribute('open');
+            if (opening) {
+              faqList.querySelectorAll('.jmf-faq-item[open]').forEach(o => {
+                if (o !== item) o.removeAttribute('open');
+              });
+            }
+          });
+        }
+
+        // Reveal da seção CTA Parceria
+        const ctaParceriaSec = document.querySelector('.jmf-cta-sec');
+        if (ctaParceriaSec) {
+          const ctaObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                ctaObs.unobserve(e.target);
+              }
+            });
+          }, { threshold: 0.25 });
+          ctaObs.observe(ctaParceriaSec);
+        }
+      }
+    });
+  </script>
+</Layout>

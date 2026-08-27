@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gestão Pessoal / Departamento Pessoal",
+  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+});
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Qual a importância de uma gestão pessoal para a minha empresa?", "acceptedAnswer": { "@type": "Answer", "text": "A gestão de pessoas é fundamental para motivar colaboradores e garantir conformidade legal com a CLT, FGTS e eSocial. O custo médio de um processo trabalhista no Brasil supera R$ 30 mil — prejuízo evitável com gestão pessoal correta desde o início." } },
+    { "@type": "Question", "name": "Quais são as atividades que a gestão pessoal vai realizar?", "acceptedAnswer": { "@type": "Answer", "text": "Na admissão: registro no eSocial, contrato, exame admissional. Na gestão mensal: folha com horas extras, comissões, recolhimento FGTS, INSS. Obrigações: CAGED, RAIS, DIRF. Nas rescisões: aviso prévio, saldo de salário, férias proporcionais, 13º, FGTS com multa 40% e homologação." } },
+    { "@type": "Question", "name": "Quais são as vantagens da gestão pessoal na minha empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Redução do risco trabalhista, previsibilidade de custos, conformidade com eSocial, agilidade nas rotinas de RH e proteção jurídica. Departamento pessoal correto é a principal prova em caso de disputa trabalhista." } },
+    { "@type": "Question", "name": "Como posso ter o auxílio da JMF Contabilidade?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp (47) 3326-5123 com resposta no mesmo dia útil. Atendimento presencial (Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau) ou por videoconferência. Empresas com passivo trabalhista recebem orientação para proceder da forma mais segura possível." } },
+    { "@type": "Question", "name": "Fazem departamento pessoal de empresas de Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF Contabilidade presta gestão de departamento pessoal para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com admissões, folha e obrigações do eSocial tratadas digitalmente." } }
+  ]
+});
+const schema = [serviceSchema, faqSchema];
+---
+
+<Layout
+  title="Gestão Pessoal e Departamento Pessoal em Blumenau | JMF Contabilidade"
+  description="Departamento pessoal em Blumenau/SC: folha de pagamento, eSocial, admissões, rescisões e FGTS no prazo. Sem passivo trabalhista. JMF Contabilidade."
+  canonical="https://www.jmfcontabilidade.com.br/gestao-pessoal"
+  ogUrl="https://www.jmfcontabilidade.com.br/gestao-pessoal"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Gestão Pessoal para Empresas em Blumenau/SC"
+    subtitle="Folha de pagamento, eSocial, admissões e rescisões — tudo correto, sem riscos trabalhistas, com a tranquilidade de uma equipe especializada."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Soluções" },
+      { label: "Gestão Pessoal" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver vantagens", href: "#vantagens", variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+    </div>
+  </div>
+
+  <!-- Suporte RH -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Suporte completo para o<br/><span class="pp3-grad">departamento pessoal da sua empresa!</span></h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            Com a gestão pessoal da JMF, sua empresa terá um departamento pessoal eficiente, em conformidade com a CLT, o eSocial e todas as obrigações trabalhistas e previdenciárias.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Nossa equipe especializada cuida de todas as rotinas: folha de pagamento, FGTS, INSS, admissões, rescisões, CAGED, RAIS e muito mais — para que você foque no crescimento do negócio.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href={WA} target="_blank" rel="noopener"
+              class="px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+              Falar no WhatsApp
+            </a>
+            <a href="#formulario"
+              class="px-6 py-3 border-2 border-[#1e40af] text-[#1e40af] font-semibold rounded-lg hover:bg-[#dbeafe] transition-colors">
+              Prefiro formulário
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-2-816x544.webp" alt="Gestão Pessoal JMF"
+            width="816" height="544" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vantagens -->
+  <section id="vantagens" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Vantagens da nossa<br/><span class="pp3-grad">gestão pessoal</span></h2>
+        <p class="text-gray-600 text-lg">Com os nossos benefícios, a sua empresa estará protegida e longe de conflitos trabalhistas.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-shield-check"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Evite Processos</h4>
+          <p class="text-gray-600">Evite erros e processos trabalhistas. Aqui, suas obrigações trabalhistas e previdenciárias estarão em ordem.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-lock-fill"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Segurança Garantida</h4>
+          <p class="text-gray-600">Contando com nossos especialistas para cuidar das questões do seu departamento pessoal, você terá mais segurança e evitará erros.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-people-fill"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Apoio Personalizado</h4>
+          <p class="text-gray-600">Você precisa de um atendimento totalmente personalizado para as suas necessidades, e nós entendemos isso — oferecemos um atendimento exclusivo para você.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <img src="/assets/images/mbr-816x459.webp" alt="Processo de Gestão Pessoal"
+          width="816" height="459" class="rounded-xl shadow-lg mx-auto max-w-xl w-full" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferencial: Entrega Digital de Folhas e Documentos -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 max-w-3xl mx-auto">
+        <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-3">Diferencial JMF</p>
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Uma ferramenta própria para facilitar<br/><span class="pp3-grad">o dia a dia da sua folha</span></h2>
+        <p class="text-gray-600 text-lg leading-relaxed">
+          A JMF criou uma solução própria para a entrega de holerites, recibos e demais documentos trabalhistas aos seus colaboradores — segura, prática, rápida, funcional e com todo o conteúdo criptografado.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-shield-lock-fill"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Documentos Criptografados</h4>
+          <p class="text-gray-600">Cada documento é protegido individualmente, garantindo que só o colaborador certo tenha acesso ao seu conteúdo.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-check2-circle"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Aceite com Validade Legal</h4>
+          <p class="text-gray-600">O colaborador confirma o recebimento antes de visualizar o documento, gerando registro de auditoria para a sua empresa.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-lightning-charge-fill"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Prático e Rápido</h4>
+          <p class="text-gray-600">Envio de holerites e documentos para toda a equipe em poucos cliques, sem planilhas ou e-mails manuais.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <a href={WA} target="_blank" rel="noopener"
+          class="inline-block px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+          Saiba mais sobre essa ferramenta
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Dark -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Mantenha sua empresa mais protegida e<br/><span class="pp3-grad-light">longe de conflitos trabalhistas com a gestão pessoal!</span></h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        Você está precisando de ajuda? Queremos falar com você, compreender seus objetivos e te ajudar a conduzir sua empresa ao sucesso empresarial com mais tranquilidade.
+      </p>
+      <a href={WA} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>AGENDE UMA REUNIÃO
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - JMF Contabilidade"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Precisa de mais esclarecimentos?<br />
+            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+          </h2>
+          <div class="space-y-3">
+            <details class="accordion-item">
+              <summary class="accordion-summary">Qual a importância de uma gestão pessoal para a minha empresa?</summary>
+              <div class="accordion-body">
+                <p>A gestão de pessoas é fundamental tanto para motivar colaboradores quanto para garantir a conformidade legal com a legislação trabalhista e previdenciária. Para negócios em Blumenau/SC, isso significa cumprir rigorosamente a CLT, a Lei 8.036/90 do FGTS e as obrigações do eSocial. O custo médio de um processo trabalhista no Brasil supera R$ 30 mil — um prejuízo completamente evitável com uma gestão pessoal correta desde o início. Com a JMF, você garante admissões corretas, folhas precisas, rescisões calculadas conforme a lei e cumprimento de todas as obrigações acessórias.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Quais são as atividades que a gestão pessoal vai realizar?</summary>
+              <div class="accordion-body">
+                <p>O departamento pessoal da JMF realiza um ciclo completo de atividades. Na admissão: registro no eSocial, elaboração do contrato, exame admissional. Na gestão mensal: cálculo da folha com horas extras, adicionais, comissões; recolhimento do FGTS; contribuições previdenciárias do INSS. Nas obrigações acessórias: CAGED, RAIS, DIRF. Nas rescisões: cálculo correto do aviso prévio, saldo de salário, férias proporcionais, 13º proporcional, FGTS com multa de 40% e homologação sindical quando exigida. Cada detalhe calculado errado pode se tornar uma ação trabalhista cara. A JMF garante precisão em cada etapa.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Quais são as vantagens da gestão pessoal na minha empresa?</summary>
+              <div class="accordion-body">
+                <p>Uma gestão de pessoal eficiente traz: redução do risco trabalhista (contratos e rescisões corretos minimizam ações na Justiça do Trabalho), previsibilidade de custos (projeção precisa dos custos totais de cada colaborador), conformidade com o eSocial (inconsistências geram notificações automáticas do Ministério do Trabalho), agilidade nas rotinas de RH e proteção jurídica (departamento pessoal correto é a principal prova em caso de disputa trabalhista). Fale conosco pelo WhatsApp (47) 3326-5123.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como eu posso ter o auxílio da JMF Contabilidade?</summary>
+              <div class="accordion-body">
+                <p>Contratar o serviço de departamento pessoal da JMF é rápido. Pelo WhatsApp (47) 3326-5123 você recebe uma resposta no mesmo dia útil. Atuamos presencialmente no nosso escritório (Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro, Blumenau) ou por videoconferência, de segunda a sexta das 08h às 18h. Empresas com situações de passivo trabalhista recebem orientação sobre como proceder da forma mais segura possível, minimizando riscos. Você também pode preencher o formulário de contato em nosso site.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Fazem departamento pessoal de empresas de Indaial, Gaspar, Pomerode e Timbó?</summary>
+              <div class="accordion-body">
+                <p>Sim. Além de Blumenau, a JMF Contabilidade presta gestão de departamento pessoal para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com admissões, folha e obrigações do eSocial tratadas digitalmente.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="/blog/esocial-2026-o-que-mudou-e-o-que-esperar"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">eSocial</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">eSocial 2026: o que mudou e o que esperar para o resto do ano</p>
+        </a>
+        <a href="/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Departamento pessoal</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Desoneração da folha 2026: o que muda com a reoneração gradual</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade, você encontrou o lugar certo. Marque uma consulta sem custo.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

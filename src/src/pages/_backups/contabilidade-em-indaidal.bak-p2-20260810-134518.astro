@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Indaial.";
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Contabilidade para Empresas em Indaial/SC",
+  "description": "Contabilidade completa para empresas em Indaial/SC: Simples Nacional, Lucro Presumido e Lucro Real. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.",
+  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+  "areaServed": [{ "@type": "City", "name": "Indaial" }, { "@type": "State", "name": "Santa Catarina" }]
+});
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "A JMF Contabilidade atende empresas em Indaial?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A JMF Contabilidade atende empresas de Indaial/SC remotamente, com o mesmo nível de serviço presencial. O fechamento mensal, envio de documentos e comunicação são feitos digitalmente. Indaial fica a 15km de Blumenau, no Médio Vale do Itajaí." } },
+    { "@type": "Question", "name": "Quais são os impostos para empresa em Indaial?", "acceptedAnswer": { "@type": "Answer", "text": "As empresas em Indaial seguem a legislação estadual de Santa Catarina (ICMS via SEFAL) e a legislação municipal (ISS para serviços, com alíquota mínima de 2%). O regime tributário (Simples Nacional, Lucro Presumido ou Lucro Real) define a composição exata dos tributos. Consulte um contador para simular o melhor regime para sua atividade." } },
+    { "@type": "Question", "name": "Posso abrir empresa em Indaial sem morar lá?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O sócio não precisa residir em Indaial para constituir empresa no município. O endereço comercial deve estar em Indaial (sede social), mas o processo de abertura pode ser feito remotamente via Portal Empresa Fácil de Santa Catarina." } },
+    { "@type": "Question", "name": "Indaial tem incentivos fiscais para empresas?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Indaial oferece programas municipais de incentivo fiscal, além dos programas estaduais como o PRODEC (Programa de Desenvolvimento Econômico de SC) e o TTD (Tipo de Tributação Diferenciada) da Lei 489/1997. As condições variam por porte e atividade da empresa." } },
+    { "@type": "Question", "name": "Como falar com a JMF sobre contabilidade em Indaial?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp (47) 3326-5123 com resposta no mesmo dia útil. Levantamento completo de obrigações pendentes sem custo. Atendimento por videoconferência ou presencial em Blumenau, segunda a sexta 08h às 18h." } }
+  ]
+});
+const schema = [serviceSchema, faqSchema];
+---
+
+<Layout
+  title="Contabilidade para Empresas em Indaial/SC | JMF Contabilidade"
+  description="Contabilidade para empresas em Indaial/SC: Simples Nacional, Lucro Presumido, Lucro Real. Fechamento mensal no prazo. Atendimento digital para o Médio Vale do Itajaí."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-indaidal"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-indaidal"
+  schema={schema}
+  heroInterno
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas em Indaial com previsibilidade e fechamento mensal."
+    subtitle="Atendimento digital completo para empresas do Médio Vale do Itajaí. Rotina organizada, impostos sob controle e relatórios claros para decisão."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Áreas de Atuação" },
+      { label: "Contabilidade em Indaial" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver serviços", href: "#servicos", variant: "outline" }
+    ]}
+  />
+
+  <section id="servicos" class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Indaial: por que empresas do vale confiam na JMF</h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Indaial é um dos municípios industriais mais dinâmicos do Médio Vale do Itajaí. Com polo têxtil forte, indústrias de metalurgia e plásticos, e proximidade de 15km com Blumenau, a cidade atrai empresas que precisam de contabilidade eficiente — sem burocracia e com planejamento tributário real.
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de Indaial remotamente, com o mesmo rigor de um atendimento presencial. O fechamento mensal, envio de documentos, declarações e obrigações acessórias são feitos digitalmente — você não precisa sair da fábrica ou do escritório.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Escrituração fiscal, apuração de impostos (Simples Nacional, Lucro Presumido ou Lucro Real), guias de recolhimento e obrigações acessórias — tudo no prazo, sem surpresa.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Identificação do regime mais vantajoso para sua atividade em Indaial. Diferença de dezenas de milhares de reais por ano entre escolher o regime certo e errado.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Relatórios Gerenciais</h3>
+          <p class="text-slate-600 leading-relaxed">
+            DRE mensal, fluxo de caixa, indicadores financeiros. Dados claros para você decidir com base em números, não em achismos.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Regularidade Fiscal</h3>
+          <p class="text-slate-600 leading-relaxed">
+            CNDs atualizadas, certidões negativas, INSS e FGTS em dia. Sua empresa habilitada para licitações e livres de multas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Particularidades tributárias de Indaial</h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Indaial segue a legislação estadual de Santa Catarina (ICMS via SEFAL) e a legislação municipal para ISS. Algumas particularidades que afetam empresas do município:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISS municipal:</strong> alíquota mínima de 2% para serviços, conforme Lei Complementar Federal 116/2003. A alíquota exata depende da atividade (CNAE) e da receita bruta.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ICMS estadual:</strong> alíquotas internas variam por produto (7%, 12%, 17% ou 18%). Para indústrias do vale, o diferencial de ICMS entre operações internas e interestaduais é um fator decisivo no planejamento tributário.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>PRODEC e TTD:</strong> Indaial participa dos programas estaduais de incentivo fiscal. O TTD (Tipo de Tributação Diferenciada) da Lei 489/1997 de SC pode reduzir significativamente a carga tributária de empresas industriais.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Simples Nacional:</strong> a maioria das empresas de pequeno porte em Indaial se enquadra no Simples Nacional. O Fator R (folha de pagamento sobre faturamento) define se a empresa paga pelo Anexo III ou V — diferença de até 15 pontos percentuais na alíquota.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dica prática:</strong> empresas industriais em Indaial com faturamento acima de R$ 4.800.000/ano não podem permanecer no Simples Nacional. A transição para Lucro Presumido ou Lucro Real precisa ser planejada com antecedência para evitar multas e surpresas fiscais.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona o atendimento para Indaial</h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>1. Primeiro contato:</strong> WhatsApp (47) 3326-5123 ou formulário no site. Levantamento inicial sem custo — analisamos sua situação fiscal e propomos o melhor caminho.
+        </p>
+        <p>
+          <strong>2. Diagnóstico:</strong> revisão de obrigações pendentes, regime tributário atual, documentos fiscais e situação cadastral. Se houver pendências, planejamos a regularização.
+        </p>
+        <p>
+          <strong>3. Implantação:</strong> organização da rotina contábil, cadastro em sistemas, definição de prazos de entrega e envio de documentos mensais.
+        </p>
+        <p>
+          <strong>4. Rotina mensal:</strong> fechamento, apuração, guias de recolhimento, obrigações acessórias e relatórios gerenciais — tudo no prazo, com comunicacao clara.
+        </p>
+      </div>
+
+      <p class="mt-8 text-lg text-slate-600 leading-relaxed">
+        Indaial fica a apenas 15km de Blumenau. Para assuntos que exigem presença física (reuniões estratégicas, revisão de documentos originais), o atendimento presencial no escritório em Blumenau é facilmente acessível. Para o dia a dia, tudo é resolvido digitalmente.
+      </p>
+    </div>
+  </section>
+
+  <section id="formulario" class="py-16 md:py-24 bg-slate-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a JMF</h2>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo.</p>
+      <ContactForm />
+    </div>
+  </section>
+
+</Layout>

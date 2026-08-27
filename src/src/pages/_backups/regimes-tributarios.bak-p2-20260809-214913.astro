@@ -1,0 +1,289 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20uma%20simula%C3%A7%C3%A3o%20tribut%C3%A1ria%20gratuita%20para%20minha%20empresa.";
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Simples Nacional, Lucro Presumido ou Lucro Real? Guia Completo 2026",
+  "description": "Compare Simples Nacional, Lucro Presumido e Lucro Real em 2026: tabelas, alíquotas e simulação gratuita. Descubra o regime ideal para sua empresa em Blumenau/SC.",
+  "datePublished": "2025-01-10T00:00:00-03:00",
+  "dateModified": "2026-06-15T00:00:00-03:00",
+  "author": {
+    "@type": "Person",
+    "name": "Diego Rosa",
+    "jobTitle": "Contador — CRC SC-035810/O",
+    "worksFor": { "@type": "Organization", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "JMF Contabilidade",
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "logo": { "@type": "ImageObject", "url": "https://www.jmfcontabilidade.com.br/assets/images/jmf-contabilidade-jean-254x159.webp" }
+  },
+  "image": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.jmfcontabilidade.com.br/regimes-tributarios" }
+});
+---
+
+<Layout
+  title="Simples Nacional, Lucro Presumido ou Lucro Real? | JMF Contabilidade Blumenau"
+  description="Compare Simples Nacional, Lucro Presumido e Lucro Real em 2026: tabelas, alíquotas e simulação gratuita. Descubra o regime ideal para sua empresa em Blumenau/SC."
+  canonical="https://www.jmfcontabilidade.com.br/regimes-tributarios"
+  ogUrl="https://www.jmfcontabilidade.com.br/regimes-tributarios"
+  schema={schema}
+  heroInterno
+>
+
+  <HeroInterno
+    title="Simples Nacional, Lucro Presumido ou Lucro Real?"
+    subtitle="Um guia completo para empresários que querem pagar menos imposto dentro da lei — e tomar essa decisão com segurança."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Soluções" },
+      { label: "Regimes Tributários" }
+    ]}
+    ctas={[
+      { label: "Quero simulação gratuita", href: WA, variant: "cta" },
+      { label: "Ver comparativo", href: "#tabela-comparativa", variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+    </div>
+  </div>
+
+  <!-- Introdução -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+          A escolha do regime tributário é uma das decisões mais importantes que um empresário pode tomar. Ela define quanto imposto sua empresa vai pagar, quais obrigações acessórias precisam ser cumpridas e até a complexidade da rotina contábil. No Brasil, existem três regimes principais: <strong>Simples Nacional</strong>, <strong>Lucro Presumido</strong> e <strong>Lucro Real</strong>.
+        </p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+          Não existe um regime "melhor" de forma universal. O regime ideal depende do faturamento, da atividade exercida, da margem de lucro real e das particularidades do seu negócio. Optar pelo regime errado pode custar caro — seja em impostos pagos a mais ou em multas por enquadramento incorreto.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-8">
+          <div class="bg-[#f0f7ff] rounded-xl p-5 text-center">
+            <i class="bi bi-building text-[#3b82f6] text-4xl mb-3 block"></i>
+            <h3 class="font-bold text-[#0f172a] mb-1">Simples Nacional</h3>
+            <p class="text-gray-500 text-sm">Até R$ 4,8 milhões/ano</p>
+          </div>
+          <div class="bg-[#fff7ed] rounded-xl p-5 text-center">
+            <i class="bi bi-graph-up text-[#f97316] text-4xl mb-3 block"></i>
+            <h3 class="font-bold text-[#0f172a] mb-1">Lucro Presumido</h3>
+            <p class="text-gray-500 text-sm">Até R$ 78 milhões/ano</p>
+          </div>
+          <div class="bg-[#f0fdf4] rounded-xl p-5 text-center">
+            <i class="bi bi-calculator text-[#16a34a] text-4xl mb-3 block"></i>
+            <h3 class="font-bold text-[#0f172a] mb-1">Lucro Real</h3>
+            <p class="text-gray-500 text-sm">Sem limite de faturamento</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Simples Nacional -->
+  <section id="simples-nacional" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-full bg-[#3b82f6] text-white flex items-center justify-center text-xl font-bold flex-shrink-0">1</div>
+          <h2 class="text-2xl font-bold text-[#0f172a]">Simples Nacional</h2>
+        </div>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+          O <strong>Simples Nacional</strong> foi criado pela LC nº 123/2006 para desburocratizar e reduzir a carga tributária das micro e pequenas empresas. Em vez de recolher vários impostos separadamente, a empresa paga uma única guia mensal chamada <strong>DAS</strong>, que unifica até 8 tributos.
+        </p>
+
+        <h3 class="text-lg font-semibold text-[#1e40af] mb-3 mt-5">Quem pode optar?</h3>
+        <ul class="text-gray-600 space-y-1 text-base leading-relaxed mb-4">
+          <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i><strong>MEI:</strong> faturamento até R$ 81 mil/ano</li>
+          <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i><strong>ME (Microempresa):</strong> faturamento até R$ 360 mil/ano</li>
+          <li><i class="bi bi-check-circle text-[#1e40af] mr-2"></i><strong>EPP (Empresa de Pequeno Porte):</strong> faturamento até R$ 4,8 milhões/ano</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-[#1e40af] mb-3 mt-5">Vantagens</h3>
+        <ul class="text-gray-600 space-y-1 text-base leading-relaxed mb-4">
+          <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Recolhimento unificado de tributos (menos guias, menos obrigações)</li>
+          <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Alíquotas reduzidas para faixas iniciais de faturamento</li>
+          <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Menor complexidade contábil e fiscal</li>
+        </ul>
+
+        <h3 class="text-lg font-semibold text-[#1e40af] mb-3 mt-5">Desvantagens</h3>
+        <ul class="text-gray-600 space-y-1 text-base leading-relaxed">
+          <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Pode ser mais caro para empresas com margens de lucro elevadas</li>
+          <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Não gera créditos de PIS/COFINS para os clientes</li>
+          <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Algumas atividades têm alíquotas altas (Anexo V) — <a href="/calculadora-fator-r" class="text-[#1e40af] hover:underline font-semibold">calcule seu Fator R</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lucro Presumido -->
+  <section id="lucro-presumido" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-full bg-[#f97316] text-white flex items-center justify-center text-xl font-bold flex-shrink-0">2</div>
+          <h2 class="text-2xl font-bold text-[#0f172a]">Lucro Presumido</h2>
+        </div>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+          O <strong>Lucro Presumido</strong> é um regime tributário simplificado onde a Receita Federal "presume" qual é o lucro da empresa com base em percentuais pré-definidos aplicados sobre a receita bruta. É disponível para empresas com receita bruta anual de até <strong>R$ 78 milhões</strong>.
+        </p>
+
+        <h3 class="text-lg font-semibold text-[#c2410c] mb-3 mt-5">Como funciona a tributação?</h3>
+        <ul class="text-gray-600 space-y-1 text-base leading-relaxed mb-4">
+          <li><strong>8%</strong> de presunção para comércio, indústria e transporte de cargas</li>
+          <li><strong>16%</strong> para transporte de passageiros</li>
+          <li><strong>32%</strong> para prestação de serviços em geral</li>
+        </ul>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">
+          Sobre o lucro presumido: <strong>IRPJ 15%</strong> + adicional de 10% + <strong>CSLL 9%</strong>. PIS <strong>0,65%</strong> + COFINS <strong>3%</strong> (regime cumulativo).
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="text-lg font-semibold text-green-700 mb-2">Vantagens</h3>
+            <ul class="text-gray-600 space-y-1 text-sm">
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Menos obrigações acessórias do que o Lucro Real</li>
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Vantajoso quando o lucro real é superior ao presumido</li>
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Apuração trimestral (melhora o fluxo de caixa)</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-red-600 mb-2">Desvantagens</h3>
+            <ul class="text-gray-600 space-y-1 text-sm">
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Paga imposto mesmo com prejuízo real</li>
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>PIS e COFINS sem aproveitamento de créditos</li>
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Não compensa prejuízos fiscais de períodos anteriores</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lucro Real -->
+  <section id="lucro-real" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto">
+        <div class="flex items-center gap-4 mb-6">
+          <div class="w-12 h-12 rounded-full bg-[#16a34a] text-white flex items-center justify-center text-xl font-bold flex-shrink-0">3</div>
+          <h2 class="text-2xl font-bold text-[#0f172a]">Lucro Real</h2>
+        </div>
+        <p class="text-gray-600 text-lg leading-relaxed mb-4">
+          O <strong>Lucro Real</strong> é o regime em que o IRPJ e a CSLL são calculados sobre o <strong>lucro contábil efetivamente apurado</strong>. É o mais complexo, mas também o mais justo: se a empresa tiver prejuízo, não há imposto a pagar. Obrigatório para empresas com receita bruta anual superior a <strong>R$ 78 milhões</strong>.
+        </p>
+
+        <h3 class="text-lg font-semibold text-[#166534] mb-3 mt-5">Tributação no Lucro Real</h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-4">
+          <strong>IRPJ 15%</strong> + adicional de 10% + <strong>CSLL 9%</strong>. PIS <strong>1,65%</strong> + COFINS <strong>7,6%</strong> (não-cumulativo, com direito a créditos sobre insumos, aluguéis, energia e outros custos).
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <h3 class="text-lg font-semibold text-green-700 mb-2">Vantagens</h3>
+            <ul class="text-gray-600 space-y-1 text-sm">
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Não paga IRPJ/CSLL em períodos de prejuízo</li>
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Compensa prejuízos fiscais acumulados (até 30%)</li>
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Créditos de PIS/COFINS reduzem a carga líquida</li>
+              <li><i class="bi bi-check-circle text-green-600 mr-2"></i>Ideal para margens de lucro pequenas ou voláteis</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold text-red-600 mb-2">Desvantagens</h3>
+            <ul class="text-gray-600 space-y-1 text-sm">
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Maior complexidade contábil e fiscal</li>
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Custo contábil mais elevado</li>
+              <li><i class="bi bi-x-circle text-red-500 mr-2"></i>Mais obrigações acessórias (ECD, ECF, SPED)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tabela Comparativa -->
+  <section id="tabela-comparativa" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Tabela Comparativa dos Regimes Tributários</h2>
+        <p class="text-gray-500 text-lg">Visão lado a lado para facilitar a comparação entre os três regimes.</p>
+      </div>
+      <div class="overflow-x-auto rounded-xl shadow-lg">
+        <table class="w-full text-sm">
+          <thead>
+            <tr>
+              <th class="bg-[#1e40af] text-white p-4 text-left">Critério</th>
+              <th class="bg-[#2563eb] text-white p-4 text-left"><i class="bi bi-building mr-1"></i>Simples Nacional</th>
+              <th class="bg-[#ea580c] text-white p-4 text-left"><i class="bi bi-graph-up mr-1"></i>Lucro Presumido</th>
+              <th class="bg-[#15803d] text-white p-4 text-left"><i class="bi bi-calculator mr-1"></i>Lucro Real</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100">
+            <tr class="bg-white"><td class="p-4 font-semibold bg-gray-50">Limite de Faturamento</td><td class="p-4 text-gray-700">Até <strong>R$ 4,8 milhões/ano</strong> (EPP)</td><td class="p-4 text-gray-700">Até <strong>R$ 78 milhões/ano</strong></td><td class="p-4 text-gray-700"><strong>Sem limite</strong> — obrigatório acima de R$ 78 mi</td></tr>
+            <tr class="bg-gray-50"><td class="p-4 font-semibold bg-gray-100">Base de Cálculo IRPJ/CSLL</td><td class="p-4 text-gray-700">Receita bruta com alíquota unificada (DAS)</td><td class="p-4 text-gray-700">Percentual presumido sobre a receita (8% a 32%)</td><td class="p-4 text-gray-700">Lucro contábil real apurado</td></tr>
+            <tr class="bg-white"><td class="p-4 font-semibold bg-gray-50">Alíquota IRPJ</td><td class="p-4 text-gray-700">Incluída no DAS</td><td class="p-4 text-gray-700"><strong>15%</strong> + adicional 10%</td><td class="p-4 text-gray-700"><strong>15%</strong> + adicional 10%</td></tr>
+            <tr class="bg-gray-50"><td class="p-4 font-semibold bg-gray-100">PIS / COFINS</td><td class="p-4 text-gray-700">Incluídos no DAS</td><td class="p-4 text-gray-700">0,65% + 3% (cumulativo)</td><td class="p-4 text-gray-700">1,65% + 7,6% (não-cumulativo, com créditos)</td></tr>
+            <tr class="bg-white"><td class="p-4 font-semibold bg-gray-50">Prejuízo Fiscal</td><td class="p-4 text-gray-700">Não se aplica</td><td class="p-4 text-gray-700"><span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-semibold">Não compensa</span></td><td class="p-4 text-gray-700"><span class="px-2 py-0.5 bg-green-100 text-green-700 rounded text-xs font-semibold">Compensa até 30%</span></td></tr>
+            <tr class="bg-gray-50"><td class="p-4 font-semibold bg-gray-100">Complexidade</td><td class="p-4 text-gray-700"><span class="px-2 py-0.5 bg-blue-100 text-blue-700 rounded text-xs font-semibold">Baixa</span></td><td class="p-4 text-gray-700"><span class="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded text-xs font-semibold">Média</span></td><td class="p-4 text-gray-700"><span class="px-2 py-0.5 bg-red-100 text-red-700 rounded text-xs font-semibold">Alta</span></td></tr>
+            <tr class="bg-white"><td class="p-4 font-semibold bg-gray-50">Obrigações Acessórias</td><td class="p-4 text-gray-700">PGDAS-D mensal, DEFIS anual</td><td class="p-4 text-gray-700">SPED ECD, ECF, DCTF, EFD-Contribuições</td><td class="p-4 text-gray-700">ECD, ECF, EFD-Contribuições, DCTF, LALUR/LACS</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center mt-3 text-xs text-gray-400">* As alíquotas apresentadas são as vigentes em 2026. Consulte sempre um contador habilitado para a análise do caso concreto da sua empresa.</p>
+    </div>
+  </section>
+
+  <!-- Como escolher -->
+  <section class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-8 text-center">Como escolher o regime tributário ideal para sua empresa?</h2>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          A <a href="/simulador-regime-tributario" class="text-[#1e40af] font-semibold hover:underline">simulação tributária</a> é o caminho mais seguro. Alguns critérios que um contador especializado avalia:
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {[
+            { title: "Faturamento e projeção de crescimento", text: "Se você está próximo do limite do Simples Nacional, pode valer planejar a migração antes de ultrapassar e ser excluído de ofício." },
+            { title: "Margem de lucro real", text: "Se sua margem real é de 5% e o Lucro Presumido presume 32%, você estará pagando imposto sobre um lucro que não teve." },
+            { title: "Volume de créditos de PIS/COFINS", text: "Empresas com muitos insumos tributáveis podem se beneficiar do regime não-cumulativo do Lucro Real." },
+            { title: "Perfil dos clientes (B2B ou B2C)", text: "Clientes PJ valorizam créditos fiscais — o Simples Nacional não gera esses créditos, o que pode ser uma desvantagem competitiva." },
+            { title: "Tipo de atividade (CNAE)", text: "Algumas atividades têm vedação ao Simples ou possuem alíquotas altas no Anexo V, tornando outros regimes mais vantajosos." },
+            { title: "Sazonalidade e variações de resultado", text: "Empresas com resultados muito voláteis podem se beneficiar do Lucro Real, que não tributa períodos de prejuízo." },
+          ].map(item => (
+            <div class="bg-white rounded-xl p-5">
+              <h3 class="font-bold text-[#0f172a] mb-2 text-sm flex items-start gap-2">
+                <i class="bi bi-check-circle-fill text-green-600 mt-0.5 flex-shrink-0"></i>
+                {item.title}
+              </h3>
+              <p class="text-gray-600 text-sm">{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-3xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Quer saber qual regime é o melhor para a sua empresa?</h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        A JMF Contabilidade realiza uma simulação tributária gratuita comparando os três cenários com os números reais do seu negócio em Blumenau. Sem compromisso.
+      </p>
+      <a href={WA} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>Quero a simulação gratuita
+      </a>
+    </div>
+  </section>
+
+</Layout>

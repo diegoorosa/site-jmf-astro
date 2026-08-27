@@ -1,0 +1,589 @@
+﻿/* ========== SOBRE-P2 — estilos especificos da pagina /sobre ========== */
+
+/* Garantir que as keyframes existam mesmo se o Astro tree-shakear o index-2.css */
+@keyframes jmfPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes jmfDifPulse {
+  0%   { box-shadow: 0 0 0 0 rgba(6,182,212,0.55); }
+  70%  { box-shadow: 0 0 0 12px rgba(6,182,212,0); }
+  100% { box-shadow: 0 0 0 0 rgba(6,182,212,0); }
+}
+@keyframes jmfHeroGradShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+@keyframes jmfGlowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(103,232,249,0.4); }
+  50% { box-shadow: 0 0 40px rgba(103,232,249,0.7); }
+}
+
+/* Sections */
+.jmf-sp-py { padding: 6rem 1.5rem; }
+@media (max-width: 768px) { .jmf-sp-py { padding: 4rem 1.25rem; } }
+
+.jmf-sp-light { background: #ffffff; }
+.jmf-sp-dark {
+  position: relative;
+  background:
+    radial-gradient(700px 500px at 85% 15%, rgba(6,182,212,0.10), transparent 60%),
+    radial-gradient(700px 500px at 15% 85%, rgba(30,64,175,0.18), transparent 60%),
+    linear-gradient(180deg, #0B1220 0%, #0f172a 100%);
+  overflow: hidden;
+}
+.jmf-sp-grid-bg {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(103,232,249,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103,232,249,0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 30%, transparent 85%);
+}
+
+/* Layout grids */
+.jmf-sp-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .jmf-sp-grid-2 { grid-template-columns: 1.05fr 0.95fr; gap: 4.5rem; }
+}
+
+/* Heads */
+.jmf-sp-head { max-width: 48rem; margin: 0 auto 3.5rem; text-align: center; }
+.jmf-sp-head .jmf-eyebrow-paper { margin-bottom: 0.85rem; }
+.jmf-sp-h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: clamp(1.9rem, 3.6vw, 2.85rem);
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+  color: #0f172a;
+  margin-bottom: 1.25rem;
+}
+.jmf-sp-h2.on-dark { color: #ffffff; }
+
+/* Headline gradient (text clip animado - igual index) */
+.jmf-sp-grad {
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0891b2 0%, #06B6D4 25%, #3b82f6 50%, #0891b2 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: jmfHeroGradShift 6s linear infinite;
+  padding-right: 0.1em;
+  padding-bottom: 0.15em;
+}
+.jmf-sp-grad.on-dark {
+  background: linear-gradient(90deg, #67E8F9 0%, #06B6D4 25%, #3b82f6 50%, #67E8F9 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: jmfHeroGradShift 6s linear infinite;
+  padding-right: 0.1em;
+  padding-bottom: 0.15em;
+}
+
+/* Leads / paragraphs */
+.jmf-sp-lead {
+  font-family: 'Inter', sans-serif;
+  color: #475569;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  margin-bottom: 1.1rem;
+  max-width: 36rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+.jmf-sp-lead.on-dark { color: rgba(203,213,225,0.78); max-width: 42rem; }
+.jmf-sp-strong { color: #0f172a; font-weight: 600; }
+
+/* Thumbnail (Quem Somos) */
+.jmf-sp-thumb {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+.jmf-sp-glow {
+  position: absolute;
+  inset: -1.5rem;
+  background: radial-gradient(ellipse 60% 60% at 50% 40%, rgba(6,182,212,0.25), transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+.jmf-sp-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1.25rem;
+  box-shadow: 0 20px 50px -20px rgba(2,6,23,0.25);
+  border: 1px solid rgba(15,23,42,0.06);
+}
+.jmf-sp-badge {
+  position: absolute;
+  bottom: 1rem; left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.85rem;
+  background: rgba(10,22,40,0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(103,232,249,0.25);
+  border-radius: 999px;
+  color: #e2e8f0;
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.jmf-sp-badge-dot {
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: #06B6D4;
+  box-shadow: 0 0 0 0 rgba(6,182,212,0.55);
+  animation: jmfDifPulse 2.2s ease-out infinite;
+}
+
+/* Team cards (dark) */
+.jmf-team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .jmf-team-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.jmf-team-card {
+  position: relative;
+  padding: 2.5rem 2rem;
+  background: rgba(10,22,40,0.55);
+  border: 1px solid rgba(103,232,249,0.12);
+  border-radius: 1.25rem;
+  text-align: center;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, transform 0.3s cubic-bezier(0.22,1,0.36,1), background 0.3s ease;
+}
+.jmf-team-card:hover {
+  border-color: rgba(103,232,249,0.45);
+  transform: translateY(-4px);
+  background: rgba(10,22,40,0.7);
+}
+.jmf-team-card-pulse {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: #06B6D4;
+  box-shadow: 0 0 0 0 rgba(6,182,212,0.55);
+  animation: jmfDifPulse 2.2s ease-out infinite;
+}
+.jmf-team-avatar {
+  position: relative;
+  width: 7rem; height: 7rem;
+  margin: 0 auto 1.25rem;
+}
+.jmf-team-avatar-glow {
+  position: absolute;
+  inset: -8px;
+  border-radius: 999px;
+  background: radial-gradient(circle, rgba(6,182,212,0.5), transparent 70%);
+  filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.jmf-team-card:hover .jmf-team-avatar-glow { opacity: 1; }
+.jmf-team-avatar img {
+  position: relative;
+  width: 100%; height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 3px solid rgba(103,232,249,0.3);
+}
+.jmf-team-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
+}
+.jmf-team-role {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #67E8F9;
+  margin-bottom: 0.35rem;
+  font-weight: 600;
+}
+.jmf-team-crc {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.72rem;
+  color: rgba(148,163,184,0.55);
+  margin-bottom: 1rem;
+}
+.jmf-team-bio {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: rgba(203,213,225,0.72);
+}
+
+/* Diferenciais — variante light */
+.jmf-dif-card.jmf-dif-card-on-light {
+  background: #ffffff;
+  border: 1px solid rgba(15,23,42,0.08);
+  border-radius: 1.25rem;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 2.25rem 2rem;
+}
+.jmf-dif-card.jmf-dif-card-on-light:hover {
+  border-color: rgba(6,182,212,0.35);
+  box-shadow: 0 20px 60px -25px rgba(6,182,212,0.35);
+  transform: translateY(-3px);
+}
+.jmf-dif-card-on-light .jmf-dif-icon {
+  width: 3.25rem; height: 3.25rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(135deg, #cffafe 0%, #a5f3fc 100%);
+  display: flex; align-items: center; justify-content: center;
+  color: #0891b2;
+  font-size: 1.5rem;
+  position: relative;
+}
+.jmf-dif-card-on-light .jmf-dif-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: #0f172a;
+  margin: 0;
+}
+.jmf-dif-card-on-light .jmf-dif-desc {
+  color: #475569;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
+
+/* Reaproveita .jmf-cta-* (ja existe no index-2.css) */
+.jmf-sp-missao-paragrafos {
+  max-width: 42rem;
+  margin: 1.5rem auto 2.5rem;
+  text-align: left;
+}
+.jmf-sp-missao-paragrafos p {
+  color: rgba(203,213,225,0.78);
+  font-size: 1.02rem;
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+.jmf-sp-missao-strong {
+  color: #67E8F9;
+  font-weight: 600;
+}
+
+/* ========== EXTRAIDO DO INDEX-2.CSS (apenas o que /sobre usa) ========== */
+.jmf-hero-p2-title {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+  color: #fff;
+  margin-bottom: 1.25rem;
+  padding-right: 0.15em;
+}
+.jmf-hero-p2-grad {
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #67E8F9 0%, #06B6D4 25%, #3b82f6 50%, #67E8F9 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: jmfHeroGradShift 6s linear infinite;
+  padding-right: 0.4em;
+  padding-bottom: 0.18em;
+  display: inline-block;
+}
+.jmf-hero-p2-lead {
+  color: rgba(203,213,225,0.85);
+  max-width: 32rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.75rem;
+}
+.jmf-hero-p2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  justify-content: center;
+}
+.jmf-eyebrow-paper {
+  font-family: 'SF Mono', monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #06B6D4;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.jmf-eyebrow-paper::before {
+  content: '';
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #06B6D4;
+  box-shadow: 0 0 10px rgba(6,182,212,0.7);
+  animation: jmfPulse 2s infinite;
+}
+.jmf-eyebrow-paper.on-light { color: #0891b2; }
+.jmf-eyebrow-paper.on-light::before {
+  background: #0891b2;
+  box-shadow: 0 0 10px rgba(8,145,178,0.7);
+}
+.jmf-eyebrow-paper.on-dark { color: #67E8F9; }
+.jmf-eyebrow-paper.on-dark::before {
+  background: #67E8F9;
+  box-shadow: 0 0 12px rgba(103,232,249,0.8);
+}
+.jmf-cta-sec {
+  position: relative;
+  background:
+    radial-gradient(900px 600px at 80% 10%, rgba(6,182,212,0.22), transparent 60%),
+    radial-gradient(900px 600px at 15% 90%, rgba(59,130,246,0.18), transparent 60%),
+    linear-gradient(180deg, #0a1f3a 0%, #082c4f 50%, #0a1f3a 100%);
+  padding: 6.5rem 1.5rem;
+  overflow: hidden;
+  text-align: center;
+}
+.jmf-cta-bg {
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(103,232,249,0.18), transparent 70%);
+  pointer-events: none;
+}
+.jmf-cta-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(103,232,249,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103,232,249,0.07) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 85%);
+  pointer-events: none;
+}
+.jmf-cta-beam {
+  position: absolute;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+  width: 2px; height: 100%;
+  background: linear-gradient(180deg, transparent, rgba(103,232,249,0.5), transparent);
+  opacity: 0.6;
+  animation: jmfHeroGradShift 6s linear infinite;
+  pointer-events: none;
+}
+.jmf-cta-inner {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+}
+.jmf-cta-title {
+  font-family: 'Fraunces', serif;
+  color: #ffffff;
+  font-size: clamp(2.1rem, 4.6vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin: 1.1rem 0 1.1rem;
+}
+.jmf-cta-lead {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.7;
+  max-width: 40rem;
+  margin: 0 auto 2.25rem;
+}
+.jmf-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.jmf-p2-cbtn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  padding: 0.85rem 2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s, color 0.3s;
+  border: none;
+}
+.jmf-p2-cbtn:hover { transform: translateY(-2px); }
+.jmf-p2-cbtn-cyan {
+  background: linear-gradient(135deg, #67E8F9, #06B6D4);
+  color: #0B1220;
+  box-shadow: 0 8px 32px -8px rgba(6,182,212,0.5);
+}
+.jmf-p2-cbtn-cyan:hover { box-shadow: 0 14px 40px -8px rgba(6,182,212,0.65); }
+.jmf-p2-cbtn-ghost {
+  background: transparent;
+  color: #E2E8F0;
+  border: 1px solid rgba(226,232,240,0.22);
+}
+.jmf-p2-cbtn-ghost:hover {
+  border-color: #06B6D4;
+  color: #67E8F9;
+  background: rgba(255,255,255,0.04);
+}
+.jmf-ring { animation: jmfGlowPulse 3.5s ease-in-out infinite; }
+
+/* ===== Diferenciais — override para 2 cards centralizados ===== */
+.jmf-dif-grid--two {
+  max-width: 52rem;
+}
+@media (min-width: 900px) {
+  .jmf-dif-grid--two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+    background: transparent;
+    border: none;
+    overflow: visible;
+    border-radius: 0;
+  }
+  .jmf-dif-grid--two .jmf-dif-card-on-light {
+    border-radius: 1.25rem;
+  }
+}
+
+/* ===== Parceiros — wrapper P2 (mesmo estilo do index) ===== */
+.jmf-par-sec {
+  position: relative;
+  background:
+    radial-gradient(700px 500px at 50% 100%, rgba(6,182,212,0.12), transparent 60%),
+    radial-gradient(700px 500px at 10% 0%, rgba(59,130,246,0.08), transparent 60%),
+    linear-gradient(180deg, #0B1220 0%, #0f172a 60%, #0B1220 100%);
+  padding: 6rem 1.5rem;
+  overflow: hidden;
+}
+.jmf-par-bg {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(103,232,249,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103,232,249,0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at 50% 50%, #000 30%, transparent 85%);
+  pointer-events: none;
+}
+.jmf-par-inner { position: relative; max-width: 80rem; margin: 0 auto; }
+.jmf-par-head { text-align: center; max-width: 42rem; margin: 0 auto 3rem; }
+.jmf-par-title {
+  color: #fff;
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin: 1.1rem 0 0.7rem;
+}
+.jmf-par-title-grad {
+  display: block;
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #67E8F9 0%, #06B6D4 25%, #3b82f6 50%, #67E8F9 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: jmfHeroGradShift 6s linear infinite;
+  padding-top: 0.18em;
+}
+.jmf-par-lead {
+  font-size: 1.05rem;
+  color: rgba(203,213,225,0.78);
+  line-height: 1.7;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+.jmf-par-marquee {
+  position: relative;
+  max-width: 48rem;
+  margin: 0 auto;
+  border-radius: 18px;
+  background: #f1f5f9;
+  border: 1px solid rgba(103,232,249,0.22);
+  box-shadow: 0 24px 60px -30px rgba(2,6,23,0.6), 0 0 0 1px rgba(103,232,249,0.06) inset;
+  padding: 1.5rem 0.5rem;
+}
+.jmf-par-marquee > section {
+  padding: 0 !important;
+  background: transparent !important;
+}
+.jmf-par-marquee h2 { display: none; }
+.jmf-par-marquee > section > div[style*="absolute"],
+.jmf-par-marquee > section > div[class*="absolute"] {
+  display: none !important;
+}
+.jmf-par-marquee img {
+  opacity: 1 !important;
+  filter: none;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.jmf-par-marquee a:hover img,
+.jmf-par-marquee div:hover img {
+  transform: scale(1.06);
+}
+
+/* ===== Compacatar CTA "Nossa Missao" no /sobre (nao afeta index) ===== */
+.jmf-sp-missao .jmf-cta-sec {
+  padding: 4.5rem 1.5rem;
+  text-align: left;
+}
+.jmf-sp-missao .jmf-cta-beam { opacity: 0.35; }
+.jmf-sp-missao .jmf-cta-inner {
+  max-width: 52rem;
+  margin: 0 auto;
+}
+.jmf-sp-missao .jmf-cta-title {
+  font-size: clamp(1.85rem, 3.6vw, 2.6rem);
+  margin: 0.85rem 0 0.6rem;
+}
+.jmf-sp-missao .jmf-cta-lead {
+  font-size: 1rem;
+  margin: 0 0 1.5rem;
+  max-width: none;
+}
+.jmf-sp-missao .jmf-sp-missao-paragrafos {
+  max-width: none;
+  margin: 0 0 1.5rem;
+}
+.jmf-sp-missao .jmf-cta-row {
+  justify-content: flex-start;
+}
+@media (max-width: 640px) {
+  .jmf-sp-missao .jmf-cta-sec { text-align: center; }
+  .jmf-sp-missao .jmf-cta-row { justify-content: center; }
+  .jmf-sp-missao .jmf-sp-missao-paragrafos { text-align: left; margin-left: auto; margin-right: auto; }
+}

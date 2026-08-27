@@ -1,0 +1,196 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.jmfcontabilidade.com.br/seguranca-dos-dados",
+  "name": "Segurança dos Dados - JMF Contabilidade",
+  "url": "https://www.jmfcontabilidade.com.br/seguranca-dos-dados",
+  "inLanguage": "pt-BR",
+  "isPartOf": { "@id": "https://www.jmfcontabilidade.com.br/#website" }
+});
+---
+
+<Layout
+  title="Segurança e Proteção de Dados | JMF Contabilidade Blumenau/SC"
+  description="Seus dados contábeis 100% protegidos na JMF Contabilidade: infraestrutura AWS, backup automático 2x ao dia, anti-ransomware, LGPD e 5 camadas de segurança."
+  canonical="https://www.jmfcontabilidade.com.br/seguranca-dos-dados"
+  ogUrl="https://www.jmfcontabilidade.com.br/seguranca-dos-dados"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Tecnologia de banco, atendimento de parceiro. Seus dados 100% blindados."
+    subtitle="Unimos a solidez de quem atua desde 1989 com a mesma infraestrutura em nuvem das maiores corporações do mundo. Na JMF, a proteção do seu negócio é levada a sério."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Segurança e Proteção de Dados" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver como protegemos", href: "#como-protegemos", variant: "outline" }
+    ]}
+  />
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="lg:w-7/12 lg:pr-8">
+
+          <div class="bg-[#dbeafe] rounded-xl p-5 mb-6 flex items-start gap-3">
+            <i class="bi bi-shield-lock-fill text-[#3b82f6] text-2xl flex-shrink-0 mt-0.5"></i>
+            <div>
+              <p class="font-bold text-[#0f172a] mb-1">Resumo para quem tem pressa:</p>
+              <p class="text-gray-700 text-sm m-0">Tratamos os documentos da sua empresa com a mesma tecnologia de um cofre digital. Na JMF, seus dados não somem, não vazam e estão protegidos contra falhas, hackers e perdas acidentais. Ponto final.</p>
+            </div>
+          </div>
+
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Segurança que vai muito<br/><span class="pp3-grad">além do básico.</span></h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            Dados contábeis são as informações mais sensíveis que uma empresa possui: faturamento, folha de pagamento, contratos e impostos. Sabemos exatamente o peso dessa responsabilidade.
+          </p>
+
+          <blockquote class="border-l-4 border-[#1e40af] pl-5 italic text-gray-600 text-lg my-6">
+            "Não terceirizamos a segurança dos seus dados. Toda a nossa infraestrutura foi construída dentro de casa. Ela é responsabilidade nossa e cuidamos de cada detalhe pessoalmente."
+          </blockquote>
+
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Enquanto muitos escritórios dependem de servidores antigos ou TI terceirizada genérica, a JMF possui gestão própria com certificação <strong>AWS (Amazon Web Services)</strong> — um nível de maturidade tecnológica que poucas contabilidades no Brasil possuem.
+          </p>
+          <a href={WA} target="_blank" rel="noopener"
+            class="inline-block px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+            <i class="bi bi-whatsapp mr-2"></i> Traga sua empresa para a JMF
+          </a>
+        </div>
+
+        <div class="lg:w-5/12">
+          <div class="bg-[#0f172a] rounded-2xl p-8 text-center">
+            <i class="bi bi-shield-check text-[#60a5fa] text-6xl mb-4 block"></i>
+            <h2 class="text-2xl font-bold text-white mb-3">Conformidade Total<br/><span class="pp3-grad-light">com a LGPD</span></h2>
+            <p class="text-white/80 text-base mb-5 leading-relaxed">
+              Todos os acessos, edições e exclusões de arquivos são registrados em logs de auditoria automáticos, inalteráveis e rastreáveis. Sabemos com precisão absoluta <strong>quem acessou o quê e quando</strong>.
+            </p>
+            <span class="inline-block px-5 py-2 bg-[#3b82f6] text-white rounded-full text-sm font-semibold">
+              <i class="bi bi-check-circle-fill mr-2"></i>AWS CloudTrail Ativo
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 Camadas de Segurança -->
+  <section id="como-protegemos" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Nossa Engenharia<br/><span class="pp3-grad">de Proteção</span></h2>
+        <p class="text-gray-600 text-lg">Conheça as 5 camadas de segurança implementadas e monitoradas pela nossa equipe de TI.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">1</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">Cofre Digital AWS (Tecnologia de Banco)</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Todos os seus arquivos ficam armazenados na <strong>Amazon Web Services</strong>, a maior infraestrutura de nuvem do planeta. Seus dados rodam em servidores isolados no Brasil, com replicação automática, garantindo 100% de disponibilidade.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">2</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">A Máquina do Tempo: Backup e Histórico</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Realizamos backups automáticos <strong>duas vezes por dia</strong>. O sistema cria um histórico imutável: mantemos as versões dos seus arquivos por 60 dias. Se alguém apagar ou alterar um documento por engano, restauramos a versão anterior com precisão cirúrgica.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">3</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">Acesso Restrito e Anti-Ransomware</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Cada colaborador acessa estritamente o necessário. <strong>Nenhum funcionário tem permissão para apagar o histórico de arquivos</strong> — a maior defesa contra hackers e vírus Ransomware. A administração central requer 2FA e cofres de senha.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">4</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">Auditoria LGPD e Rastreabilidade Total</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Nossas automações registram via AWS CloudTrail quem criou, modificou ou acessou dados. Esse "livro de registros" fica trancado em um compartimento separado, atendendo perfeitamente às exigências de fiscalização da LGPD.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">5</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">Cofre Digital de Credenciais</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Esqueça planilhas e arquivos soltos. Os acessos a Prefeituras, Gov.br e e-CAC são gerados e armazenados em um cofre digital com criptografia de ponta a ponta (tecnologia <strong>Zero-Knowledge</strong>), via Proton Pass — empresa suíça reconhecida mundialmente por privacidade. Apenas os profissionais designados têm acesso ao estritamente necessário para operar.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 flex gap-4">
+          <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold flex-shrink-0">6</div>
+          <div>
+            <h3 class="font-bold text-[#0f172a] mb-2">Blindagem de Rede e Escritório Físico</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Nossa segurança vai além da nuvem. O ambiente físico da JMF opera em uma rede estritamente isolada, com endereços IPs fixos e monitorados. <strong>A rede de visitantes e a rede de trabalho nunca se cruzam.</strong> Eliminamos qualquer brecha ou acesso externo não autorizado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefícios -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">O que isso significa<br/><span class="pp3-grad">para o seu negócio?</span></h2>
+        <p class="text-gray-600 text-lg">Não vendemos jargões técnicos. Vendemos tranquilidade para você focar em ganhar dinheiro.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-arrow-counterclockwise"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Recuperação Garantida</h4>
+          <p class="text-gray-600">Arquivo deletado sem querer? Documento corrompido? Com nosso versionamento, seus dados nunca somem definitivamente. Trazemos tudo de volta com um clique.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-shield-x"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Imunidade a Sequestros</h4>
+          <p class="text-gray-600">Mesmo que um vírus ransomware tente bloquear os arquivos da sua empresa, nossa nuvem proíbe alterações no histórico. O ataque falha e sua empresa não para.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-file-earmark-check-fill"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Paz com a Legislação</h4>
+          <p class="text-gray-600">Sua empresa alinhada à LGPD de ponta a ponta. Entregamos documentação clara, rastreabilidade total e a certeza de que a privacidade dos seus clientes está respeitada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Final -->
+  <section class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4 text-center max-w-3xl">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Contabilidade séria começa com<br/><span class="pp3-grad">dados blindados.</span></h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        Sua empresa não pode correr o risco de perder anos de histórico financeiro e fiscal por uma falha de TI. Traga sua contabilidade para a JMF e durma tranquilo sabendo que cuidamos de tudo.
+      </p>
+      <div class="flex flex-wrap gap-3 justify-center">
+        <a href={WA} target="_blank" rel="noopener noreferrer"
+          class="px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+          <i class="bi bi-whatsapp mr-2"></i>Agende uma conversa
+        </a>
+        <a href="/fale-conosco"
+          class="px-8 py-4 border-2 border-[#0f172a] text-[#0f172a] font-semibold rounded-lg hover:bg-[#0f172a] hover:text-white transition-colors text-lg">
+          Enviar e-mail
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

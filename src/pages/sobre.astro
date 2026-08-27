@@ -1,0 +1,281 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInternoP2 from '../components/HeroInternoP2.astro';
+import Parceiros from '../components/Parceiros.astro';
+import '../styles/index-2.css';
+import '../styles/sobre-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const schema = [
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "Sobre a JMF Contabilidade",
+    "url": "https://www.jmfcontabilidade.com.br/sobre"
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.jmfcontabilidade.com.br/sobre#joel-rosa",
+    "name": "Joel Rosa",
+    "jobTitle": "Fundador & Sócio",
+    "image": "https://www.jmfcontabilidade.com.br/assets/images/team-joel.webp",
+    "worksFor": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "FURB — Universidade Regional de Blumenau" },
+    "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "CRC SC-007091/O" },
+    "description": "Fundador da JMF Contabilidade. Bacharel em Ciências Contábeis pela FURB (1987) e Técnico em Contabilidade desde 1971. Mais de 55 anos de experiência na área contábil."
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.jmfcontabilidade.com.br/sobre#fabricio-rosa",
+    "name": "Fabricio Rosa",
+    "jobTitle": "Sócio-Administrador",
+    "image": "https://www.jmfcontabilidade.com.br/assets/images/team-fabricio.webp",
+    "worksFor": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "FURB — Universidade Regional de Blumenau" },
+    "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "CRC SC-029833/O" },
+    "description": "Sócio-Administrador da JMF Contabilidade. Bacharel em Ciências Contábeis pela FURB (2007) e pós-graduado em Contabilidade e Gestão Tributária (2011). Na JMF desde 2001."
+  }),
+  JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://www.jmfcontabilidade.com.br/sobre#diego-rosa",
+    "name": "Diego Rosa",
+    "jobTitle": "Sócio-Administrador",
+    "image": "https://www.jmfcontabilidade.com.br/assets/images/team-diego.webp",
+    "worksFor": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "FURB — Universidade Regional de Blumenau" },
+    "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "CRC SC-035810/O" },
+    "description": "Sócio-Administrador da JMF Contabilidade. Bacharel em Ciências Contábeis pela FURB (2011). Na JMF desde 2006, lidera a transformação digital e uso de IA no escritório."
+  }),
+];
+---
+
+<Layout
+  title="Sobre a JMF Contabilidade | 35+ Anos em Blumenau/SC"
+  description="Conheça a JMF Contabilidade em Blumenau/SC: 35+ anos de mercado, CRC SC-002550/O, equipe especializada e tecnologia para cuidar do seu negócio."
+  canonical="https://www.jmfcontabilidade.com.br/sobre"
+  ogUrl="https://www.jmfcontabilidade.com.br/sobre"
+  schema={schema}
+  heroInterno
+>
+
+  <HeroInternoP2
+    eyebrow="Sobre a JMF Contabilidade"
+    title="Mais de 35 anos cuidando"
+    titleHi="do sucesso das empresas"
+    subtitle="Tecnologia, ética e atendimento personalizado para Blumenau e região. Um escritório que une experiência e transformação digital."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Sobre nós" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver diferenciais", href: "#diferenciais", variant: "outline" }
+    ]}
+  />
+
+  <!-- Quem Somos -->
+  <section class="jmf-sp-py jmf-sp-light">
+    <div class="jmf-container">
+      <div class="jmf-sp-grid jmf-sp-grid-2">
+        <div data-reveal>
+          <span class="jmf-eyebrow-paper on-light">Quem Somos</span>
+          <h2 class="jmf-sp-h2">
+            Contabilidade que usa a tecnologia<br/>
+            <span class="jmf-sp-grad">a favor dos seus clientes</span>
+          </h2>
+          <p class="jmf-sp-lead">
+            Oferecemos soluções personalizadas e eficazes para cada tipo de negócio, seja tradicional ou inovador. Nossa gestão contábil é inteligente e estratégica — analisamos todas as possibilidades para ajudar as empresas a crescerem de forma sustentável e lucrativa.
+          </p>
+          <p class="jmf-sp-lead">
+            Estamos há mais de <strong class="jmf-sp-strong">35 anos no mercado</strong>, trabalhando com ética, transparência e comprometimento. Acompanhamos de perto todas as etapas do processo empresarial, desde a abertura até a gestão financeira.
+          </p>
+        </div>
+        <div class="jmf-sp-thumb" data-reveal>
+          <div class="jmf-sp-glow"></div>
+          <img src="/assets/images/background1-1.webp" alt="Escritório JMF Contabilidade em Blumenau"
+            width="1900" height="1200"
+            class="jmf-sp-img" loading="lazy" />
+          <div class="jmf-sp-badge">
+            <span class="jmf-sp-badge-dot"></span>
+            <span>Blumenau, SC</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Equipe -->
+  <section class="jmf-sp-py jmf-sp-dark">
+    <div class="jmf-sp-grid-bg"></div>
+    <div class="jmf-container">
+      <div class="jmf-sp-head" data-reveal>
+        <span class="jmf-eyebrow-paper on-dark">Nossa Equipe</span>
+        <h2 class="jmf-sp-h2 on-dark">
+          Contadores registrados no CRC/SC<br/>
+          <span class="jmf-sp-grad on-dark">com décadas de dedicação</span>
+        </h2>
+        <p class="jmf-sp-lead on-dark">Experiência e transformação digital working together — um time que une a trajetória clássica da contabilidade com a vanguarda tecnológica.</p>
+      </div>
+
+      <div class="jmf-team-grid" data-reveal-stagger>
+        <!-- Joel Rosa -->
+        <article class="jmf-team-card">
+          <div class="jmf-team-card-pulse"></div>
+          <div class="jmf-team-avatar">
+            <div class="jmf-team-avatar-glow"></div>
+            <img src="/assets/images/team-joel.webp"
+              alt="Joel Rosa — Fundador e Contador, CRC SC-007091/O"
+              width="128" height="128"
+              loading="lazy" />
+          </div>
+          <h3 class="jmf-team-name">Joel Rosa</h3>
+          <p class="jmf-team-role">Fundador & Sócio</p>
+          <p class="jmf-team-crc">CRC SC-007091/O</p>
+          <p class="jmf-team-bio">
+            Mais de 55 anos de carreira contábil. Técnico em Contabilidade desde 1971 e Bacharel em Ciências Contábeis pela FURB (1987). Fundou a JMF em 1989 com a missão de oferecer contabilidade próxima, ética e estratégica para empresas de Blumenau e região.
+          </p>
+        </article>
+
+        <!-- Fabricio Rosa -->
+        <article class="jmf-team-card">
+          <div class="jmf-team-card-pulse"></div>
+          <div class="jmf-team-avatar">
+            <div class="jmf-team-avatar-glow"></div>
+            <img src="/assets/images/team-fabricio.webp"
+              alt="Fabricio Rosa — Sócio-Administrador, CRC SC-029833/O"
+              width="128" height="128"
+              loading="lazy" />
+          </div>
+          <h3 class="jmf-team-name">Fabricio Rosa</h3>
+          <p class="jmf-team-role">Sócio-Administrador</p>
+          <p class="jmf-team-crc">CRC SC-029833/O</p>
+          <p class="jmf-team-bio">
+            Na JMF desde 2001. Bacharel em Ciências Contábeis pela FURB (2007) e pós-graduado em Contabilidade e Gestão Tributária (2011). Especializado em planejamento tributário, gestão fiscal e conformidade para empresas dos regimes Simples Nacional, Lucro Presumido e Lucro Real.
+          </p>
+        </article>
+
+        <!-- Diego Rosa -->
+        <article class="jmf-team-card">
+          <div class="jmf-team-card-pulse"></div>
+          <div class="jmf-team-avatar">
+            <div class="jmf-team-avatar-glow"></div>
+            <img src="/assets/images/team-diego.webp"
+              alt="Diego Rosa — Sócio-Administrador, CRC SC-035810/O"
+              width="128" height="128"
+              loading="lazy" />
+          </div>
+          <h3 class="jmf-team-name">Diego Rosa</h3>
+          <p class="jmf-team-role">Sócio-Administrador</p>
+          <p class="jmf-team-crc">CRC SC-035810/O</p>
+          <p class="jmf-team-bio">
+            Na JMF desde 2006. Bacharel em Ciências Contábeis pela FURB (2011). Lidera a transformação digital do escritório com automação, inteligência artificial e sistemas modernos para entregar contabilidade ágil, consultiva e orientada a resultados.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diferenciais -->
+  <section id="diferenciais" class="jmf-sp-py jmf-sp-light">
+    <div class="jmf-container">
+      <div class="jmf-sp-head" data-reveal>
+        <span class="jmf-eyebrow-paper on-light">Nossos Diferenciais</span>
+        <h2 class="jmf-sp-h2">
+          O que nos torna<br/>
+          <span class="jmf-sp-grad">o parceiro ideal</span>
+        </h2>
+        <p class="jmf-sp-lead">Combinação de experiência e tecnologia para o sucesso da sua empresa — dois pilares que sustentam tudo o que entregamos.</p>
+      </div>
+
+      <div class="jmf-dif-grid jmf-dif-grid--two" data-reveal-stagger>
+        <article class="jmf-dif-card jmf-dif-card-on-light">
+          <div class="jmf-dif-pulse"></div>
+          <div class="jmf-dif-icon"><i class="bi bi-graph-up-arrow"></i></div>
+          <h4 class="jmf-dif-title">Planejamento Tributário</h4>
+          <p class="jmf-dif-desc">Planejamos tributos para cada empresa, visando menor carga e menor risco fiscal. Cobrimos vários tributos e operações, inclusive da nova economia.</p>
+        </article>
+        <article class="jmf-dif-card jmf-dif-card-on-light">
+          <div class="jmf-dif-pulse"></div>
+          <div class="jmf-dif-icon"><i class="bi bi-briefcase"></i></div>
+          <h4 class="jmf-dif-title">Consultoria Estratégica</h4>
+          <p class="jmf-dif-desc">Auxiliamos nas decisões estratégicas e na condução de projetos das empresas com uma abordagem multidisciplinar que reúne diversas competências.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Nossa Missão (dark P2 com beam ciano) -->
+  <section class="jmf-cta-sec jmf-sp-missao" id="nossa-missao">
+    <div class="jmf-cta-bg"></div>
+    <div class="jmf-cta-grid"></div>
+    <div class="jmf-cta-beam"></div>
+
+    <div class="jmf-container">
+      <div class="jmf-cta-inner" data-reveal>
+        <span class="jmf-eyebrow-paper on-dark">Nossa Missão</span>
+        <h2 class="jmf-cta-title">
+          Unimos rapidez<br/>
+          <span class="jmf-sp-grad on-dark">e tecnologia a seu favor</span>
+        </h2>
+        <p class="jmf-cta-lead">O que nos motiva é saber que podemos potencializar o seu progresso.</p>
+
+        <div class="jmf-sp-missao-paragrafos">
+          <p>Unimos rapidez no atendimento, com uma política de resposta no mesmo dia, e sistemas que agilizam o tempo e o envio de informações.</p>
+          <p>Temos uma comunicação direta e próxima com nossos clientes, o que ajuda na atuação com transparência, organização, pontualidade e rapidez. Nossos profissionais auxiliam na tomada de decisões de forma prática e eficaz.</p>
+          <p>O resultado de tanto engajamento e comprometimento nos torna o parceiro estratégico ideal para insights e soluções personalizadas.</p>
+          <p>Nosso foco é satisfazer as necessidades dos nossos clientes, oferecendo as melhores soluções contábeis para alcançar o sucesso empresarial de forma segura e saudável. <strong class="jmf-sp-missao-strong">Se eles crescem, nós crescemos também!</strong></p>
+        </div>
+
+        <div class="jmf-cta-row">
+          <a href={WA} target="_blank" rel="noopener noreferrer"
+            class="jmf-p2-cbtn jmf-p2-cbtn-cyan jmf-ring" style="animation:jmfGlowPulse 3.5s ease-in-out infinite;">
+            <i class="bi bi-whatsapp"></i>
+            Entre em contato conosco
+            <i class="bi bi-arrow-right" style="font-size:0.9em;margin-left:0.35rem;"></i>
+          </a>
+          <a href="tel:+554733265123" class="jmf-p2-cbtn jmf-p2-cbtn-ghost">
+            <i class="bi bi-telephone"></i>
+            (47) 3326-5123
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="jmf-par-sec" id="parceiros">
+    <div class="jmf-par-bg" aria-hidden="true"></div>
+    <div class="jmf-par-inner">
+      <div class="jmf-par-head" data-reveal>
+        <span class="jmf-eyebrow-paper">Parceiros</span>
+        <h2 class="jmf-par-title">
+          Quem confia na
+          <span class="jmf-par-title-grad">JMF Contabilidade</span>
+        </h2>
+        <p class="jmf-par-lead">Mais de 30 empresas de Blumenau e do Litoral catarinense que acreditam no nosso trabalho.</p>
+      </div>
+
+      <div class="jmf-par-marquee">
+        <Parceiros />
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var sec = document.querySelector('#nossa-missao');
+      if (!sec) return;
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { sec.classList.add('is-visible'); return; }
+      var obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('is-visible'); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.2 });
+      obs.observe(sec);
+    })();
+  </script>
+
+</Layout>

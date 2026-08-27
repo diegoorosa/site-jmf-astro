@@ -1,0 +1,692 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Parceiros from '../components/Parceiros.astro';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+
+const schema = JSON.stringify([
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://www.jmfcontabilidade.com.br/#website",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "name": "JMF Contabilidade",
+    "inLanguage": "pt-BR",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.jmfcontabilidade.com.br/blog?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": ["AccountingService", "LocalBusiness"],
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "name": "JMF Contabilidade",
+    "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+    "taxID": "81.335.895/0001-17",
+    "identifier": { "@type": "PropertyValue", "name": "CRC", "value": "SC-002550/O" },
+    "url": "https://www.jmfcontabilidade.com.br",
+    "logo": { "@type": "ImageObject", "url": "https://www.jmfcontabilidade.com.br/assets/images/jmf-contabilidade-jean-254x159.webp" },
+    "description": "Escritório de contabilidade em Blumenau, Santa Catarina com mais de 35 anos de mercado. Especialistas em Simples Nacional, Lucro Presumido e abertura de empresas.",
+    "telephone": "+55-47-3326-5123",
+    "email": "contato@jmfcontabilidade.com.br",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+      "addressLocality": "Blumenau",
+      "addressRegion": "SC",
+      "postalCode": "89010-060",
+      "addressCountry": "BR"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": -26.92016, "longitude": -49.06705 },
+    "foundingDate": "1989-05-24",
+    "areaServed": [
+      { "@type": "City", "name": "Blumenau" },
+      { "@type": "City", "name": "Indaial" },
+      { "@type": "City", "name": "Gaspar" },
+      { "@type": "City", "name": "Pomerode" },
+      { "@type": "City", "name": "Timbó" },
+      { "@type": "State", "name": "Santa Catarina" }
+    ],
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    },{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Saturday","Sunday"],
+      "opens": "00:00",
+      "closes": "00:00"
+    }],
+    "sameAs": [
+      "https://www.facebook.com/jmfcontabilidadebnu/",
+      "https://www.instagram.com/jmf.contabilidade/",
+      "https://www.linkedin.com/company/jmf-contabilidade/",
+      "https://twitter.com/jmfcontab",
+      "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+      "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+      "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5,
+      "bestRating": 5,
+      "worstRating": 1,
+      "reviewCount": 152
+    },
+    "review": [
+      { "@type": "Review", "author": { "@type": "Person", "name": "Bruno Schmitt Maes" }, "datePublished": "2026-05-28", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Contabilidade de confiança e atendimento personalizado. Sempre indico!" },
+      { "@type": "Review", "author": { "@type": "Person", "name": "André Maciel Nuernberg" }, "datePublished": "2026-05-20", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Atendido pelo Diego, me salvou com o IRPF — tinha bastante informação solta e declarações antigas omissas. Foi o contador que conseguiu me regularizar com o sistema fiscal brasileiro." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Juliana Silva" }, "datePublished": "2026-04-30", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Faço meu imposto de renda com eles há alguns anos e sou sempre muito bem assessorada. São muito corretos e atenciosos." },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Connie Faria" }, "datePublished": "2026-04-22", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Eu uso os serviços deles desde 2022 e estou muito satisfeita. São muito educados e profissionais brilhantes. Recomendo muito!!" },
+      { "@type": "Review", "author": { "@type": "Person", "name": "Renato Duarte Simões Pires" }, "datePublished": "2026-05-26", "reviewRating": { "@type": "Rating", "ratingValue": 5, "bestRating": 5 }, "reviewBody": "Um profissional extremamente competente, organizado e sempre disposto a ajudar. Transmite muita confiança e segurança em cada orientação. Seu trabalho é impecável!" }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Como funciona a troca de contador?", "acceptedAnswer": { "@type": "Answer", "text": "A troca de contador na JMF começa com um diagnóstico gratuito pelo WhatsApp ou telefone: levantamos o regime tributário atual da sua empresa, os meses em aberto, as obrigações acessórias pendentes (como SPED, ECD, DEFIS, DASN) e se há parcelamentos ou pendências na Receita Federal ou Sefaz. Com esse mapeamento, apresentamos um cronograma de transição com etapas e prazos claros. A JMF contata o contador anterior para solicitar os arquivos, backups e documentação necessária. Em paralelo, configuramos sua empresa em nossos sistemas e criamos o calendário de obrigações personalizado. Em média, o processo leva de 5 a 10 dias úteis para estar 100% operacional. Durante toda a transição, as obrigações acessórias e o fechamento mensal continuam sendo entregues dentro dos prazos sem interrupção. Você não precisa fazer nada além de assinar a procuração e nos fornecer os documentos básicos." } },
+      { "@type": "Question", "name": "Vocês atendem Simples Nacional e Lucro Presumido?", "acceptedAnswer": { "@type": "Answer", "text": "Sim, a JMF Contabilidade atende empresas em todos os regimes tributários: Simples Nacional, Lucro Presumido e Lucro Real. Para empresas no Simples Nacional, calculamos o DAS mensalmente considerando o Anexo correto da atividade, o fator R quando aplicável e os sublimites de ISS e ICMS por estado. Para empresas próximas ao limite de faturamento anual (R$ 4,8 milhões), acompanhamos a evolução e planejamos a transição com antecedência. No Lucro Presumido, apuramos IRPJ e CSLL trimestralmente com base na margem de presunção correta para a atividade, além do PIS e COFINS mensais. Para o Lucro Real, estruturamos a apuração por LALUR e LACS, com controle de adições, exclusões e compensação de prejuízos fiscais. Em todos os regimes, você recebe um calendário de obrigações mensal personalizado e a JMF realiza anualmente a simulação comparativa entre regimes para garantir a menor carga tributária possível para o seu perfil de negócio." } },
+      { "@type": "Question", "name": "Como funciona o envio de documentos e os prazos?", "acceptedAnswer": { "@type": "Answer", "text": "A JMF adota um fluxo de fechamento mensal padronizado e previsível. No início de cada mês, você recebe uma solicitação organizada com a lista de documentos necessários para aquele período: extratos bancários, notas fiscais de compra e venda, comprovantes de despesas, informações sobre folha de pagamento, pró-labore e eventuais movimentações específicas. O prazo para envio dos documentos é geralmente até o dia 5 do mês seguinte, o que nos permite realizar o fechamento contábil e fiscal dentro dos prazos legais. Tudo pode ser enviado por e-mail, WhatsApp ou através do nosso sistema de gestão — sem necessidade de deslocamento. Após o recebimento, nossa equipe realiza as conferências, apura os impostos e envia o resumo do mês: valor dos tributos, guias para pagamento, informações de folha e eventuais pontos de atenção. Em caso de divergências ou documentos faltantes, entramos em contato imediatamente para não atrasar o fechamento." } },
+      { "@type": "Question", "name": "Quanto custa e quanto tempo leva para abrir uma empresa com a JMF?", "acceptedAnswer": { "@type": "Answer", "text": "O custo varia por tipo de empresa e atividade — normalmente entre R$ 900 e R$ 2.800 somando taxas oficiais e honorários, com o processo levando de 5 a 10 dias úteis em condições normais. A primeira conversa e a simulação de regime tributário são sempre gratuitas. Veja o detalhamento completo de custos e o passo a passo no nosso guia de abertura de empresa." } },
+      { "@type": "Question", "name": "Vocês atendem clientes que não moram em Blumenau?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Atendemos pessoas físicas e empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, além de Blumenau. Documentos são enviados digitalmente por WhatsApp, e-mail ou sistema de gestão, e reuniões podem ser feitas por videoconferência — sem necessidade de deslocamento até o escritório." } }
+    ]
+  }
+]);
+---
+
+<Layout
+  title="JMF Contabilidade Blumenau | 35+ Anos | 152 Avaliações 5★"
+  description="Escritório de contabilidade em Blumenau/SC com 35+ anos de experiência e 152 avaliações 5★ no Google. Simples Nacional, IRPF, abertura de empresa e planejamento tributário. Diagnóstico gratuito pelo WhatsApp."
+  canonical="https://www.jmfcontabilidade.com.br/"
+  ogUrl="https://www.jmfcontabilidade.com.br/"
+  schema={schema}
+>
+  <!-- EXIT POPUP -->
+  <div
+    x-data="{ show: false }"
+    x-init="
+      document.addEventListener('mouseleave', (e) => {
+        if (e.clientY <= 0 && !sessionStorage.getItem('popup_shown')) show = true;
+      });
+    "
+    x-show="show"
+    x-transition:enter="transition ease-out duration-300"
+    x-transition:enter-start="opacity-0"
+    x-transition:enter-end="opacity-100"
+    class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4"
+    @click.self="show=false; sessionStorage.setItem('popup_shown','1')"
+    style="display:none"
+  >
+    <div class="relative max-w-sm w-full bg-white rounded-2xl shadow-2xl p-8 text-center">
+      <button
+        @click="show=false; sessionStorage.setItem('popup_shown','1')"
+        class="absolute top-3 right-3 w-8 h-8 flex items-center justify-center text-gray-400 hover:text-gray-700 transition-colors z-10"
+        aria-label="Fechar"
+      >
+        <i class="bi bi-x-lg text-sm"></i>
+      </button>
+      <div class="w-14 h-14 bg-[#1e40af]/10 rounded-full flex items-center justify-center mx-auto mb-5">
+        <i class="bi bi-whatsapp text-[#1e40af] text-2xl"></i>
+      </div>
+      <h3 class="text-lg font-bold text-[#0f172a] mb-2">Tem alguma dúvida?</h3>
+      <p class="text-sm text-[#334155] mb-6 leading-relaxed">Fale agora com um especialista da JMF pelo WhatsApp. Resposta no mesmo dia útil.</p>
+      <a href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20estava%20no%20site%20da%20JMF%20e%20tenho%20uma%20d%C3%BAvida."
+        target="_blank" rel="noopener noreferrer"
+        @click="sessionStorage.setItem('popup_shown','1')"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors duration-200">
+        <i class="bi bi-whatsapp"></i>
+        Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-[#0f172a] min-h-[92vh] flex items-center">
+    <!-- Grade de linhas finas -->
+    <svg class="absolute inset-0 w-full h-full opacity-[0.14]" preserveAspectRatio="none">
+      <line x1="8%" y1="0" x2="8%" y2="100%" stroke="#3b82f6" stroke-width="1" />
+      <line x1="8%" y1="22%" x2="100%" y2="22%" stroke="#3b82f6" stroke-width="1" />
+      <line x1="34%" y1="0" x2="34%" y2="60%" stroke="#3b82f6" stroke-width="1" />
+      <line x1="34%" y1="60%" x2="100%" y2="60%" stroke="#3b82f6" stroke-width="1" />
+      <line x1="71%" y1="0" x2="71%" y2="100%" stroke="#3b82f6" stroke-width="1" />
+      <line x1="0" y1="84%" x2="100%" y2="84%" stroke="#3b82f6" stroke-width="1" />
+    </svg>
+
+    <div class="relative z-10 container mx-auto px-4 py-28 md:py-32">
+      <div class="max-w-4xl mx-auto text-center">
+        <div class="inline-flex items-center gap-3 mb-7">
+          <span class="w-2 h-2 bg-blue-400"></span>
+          <span class="text-blue-300 text-xs font-semibold tracking-[0.2em] uppercase" style="font-family:'Inter',sans-serif">35+ Anos de Mercado em Blumenau</span>
+        </div>
+
+        <h1 class="text-[2.6rem] md:text-6xl lg:text-7xl text-white tracking-tight leading-[1.05] mb-7" style="font-family:'Fraunces',serif;font-weight:500">
+          Contabilidade que simplifica<br/>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300" style="font-style:italic;font-weight:500">o caminho do seu negócio</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-white/55 leading-relaxed max-w-2xl mx-auto mb-10">
+          Na JMF, você encontra método, prazos claros e orientação objetiva — sem burocracia, sem surpresas no fim do mês.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <a href={WA} target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-sm hover:bg-[#1e3a8a] transition-colors duration-200 text-lg">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
+            Fale com um Especialista
+          </a>
+          <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 px-8 py-4 border border-white/25 text-white/85 font-semibold rounded-sm hover:bg-white/5 hover:text-white transition-all duration-200 text-lg">
+            Simular abertura de empresa
+          </a>
+        </div>
+
+        <div class="inline-flex items-center gap-4 border-l border-blue-400/40 pl-4 text-left">
+          <div class="flex items-center gap-1">
+            <span class="text-white font-semibold text-sm">5.0</span>
+            <div class="flex text-yellow-400 text-[11px]">★★★★★</div>
+          </div>
+          <span class="text-white/35 text-xs">152 avaliações no Google</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDIBILITY STRIP -->
+  <section class="bg-[#0f172a] border-t border-blue-400/15">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 max-w-5xl mx-auto divide-x divide-white/10">
+        <div class="text-center py-8 md:py-10 px-2">
+          <p class="text-3xl md:text-4xl text-white tracking-tight" style="font-family:'Fraunces',serif;font-weight:500">35+</p>
+          <p class="text-white/40 text-xs uppercase tracking-wide mt-1">Anos de mercado</p>
+        </div>
+        <div class="text-center py-8 md:py-10 px-2">
+          <p class="text-3xl md:text-4xl text-white tracking-tight" style="font-family:'Fraunces',serif;font-weight:500">152</p>
+          <p class="text-white/40 text-xs uppercase tracking-wide mt-1">Avaliações 5.0 Google</p>
+        </div>
+        <div class="text-center py-8 md:py-10 px-2">
+          <p class="text-3xl md:text-4xl text-white tracking-tight" style="font-family:'Fraunces',serif;font-weight:500">6</p>
+          <p class="text-white/40 text-xs uppercase tracking-wide mt-1">Soluções contábeis</p>
+        </div>
+        <div class="text-center py-8 md:py-10 px-2">
+          <p class="text-3xl md:text-4xl text-white tracking-tight" style="font-family:'Fraunces',serif;font-weight:500">100%</p>
+          <p class="text-white/40 text-xs uppercase tracking-wide mt-1">Atendimento consultivo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS — ledger list -->
+  <section id="servicos" class="py-24 md:py-32 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mb-16">
+        <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Nossas Soluções</span>
+        <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Tudo que sua empresa precisa, em um só lugar</h2>
+        <p class="text-[#334155] text-lg">Da abertura ao fechamento mensal — cada serviço com método, prazo e responsável claro.</p>
+      </div>
+
+      <div class="max-w-4xl border-t border-[#0f172a]/12">
+        {[
+          { n: "01", title: "Abertura de Empresas", desc: "Abertura guiada do início ao fim, com escolha correta de CNAE e regime para reduzir custo e risco.", href: "/abertura-de-empresa" },
+          { n: "02", title: "Consultoria e Planejamento Tributário", desc: "Planejamento legal para pagar o que é devido e evitar surpresas no caixa.", href: "/consultoria-e-planejamento-tributario" },
+          { n: "03", title: "Gestão Contábil", desc: "Contabilidade organizada para fechamento mensal e decisão com clareza.", href: "/gestao-contabil" },
+          { n: "04", title: "Gestão Pessoal", desc: "Departamento pessoal com rotina e conformidade para reduzir passivo trabalhista.", href: "/gestao-pessoal" },
+          { n: "05", title: "Gestão Fiscal e Tributária", desc: "Fiscal no dia para você não correr risco por atraso ou apuração errada.", href: "/gestao-fiscal-e-tributaria" },
+          { n: "06", title: "Imposto de Renda", desc: "Declaração com conferência e orientação para reduzir risco de inconsistência.", href: "/imposto-de-renda" },
+          { n: "07", title: "Endereço Fiscal / Sede Virtual", desc: "Estrutura legal para o registro do seu CNPJ e Alvará sem os custos de um espaço físico, através de nossos parceiros estratégicos.", href: WA },
+        ].map(s => (
+          <a href={s.href} target={s.href.startsWith('http') ? '_blank' : undefined} rel={s.href.startsWith('http') ? 'noopener' : undefined} class="group grid grid-cols-[3rem_1fr] md:grid-cols-[4rem_1fr_2fr] gap-4 md:gap-8 items-start py-6 border-b border-[#0f172a]/12 hover:bg-[#1e40af]/[0.03] transition-colors px-2 -mx-2">
+            <span class="text-[#1e40af]/50 text-sm pt-1" style="font-family:'Fraunces',serif">{s.n}</span>
+            <h3 class="text-[#0f172a] text-lg md:text-xl font-semibold group-hover:text-[#1e40af] transition-colors">{s.title}</h3>
+            <p class="text-[#334155] text-sm leading-relaxed md:pt-0.5 col-span-2 md:col-span-1">
+              {s.desc} <span class="inline-flex items-center gap-1 text-[#0f172a] font-medium group-hover:gap-2 transition-all whitespace-nowrap">Saiba mais <i class="bi bi-arrow-right text-xs"></i></span>
+            </p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS / COMO FUNCIONA -->
+  <section class="py-24 bg-[#f8fafc]">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Como Funciona</span>
+        <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Rotina mensal com previsibilidade</h2>
+        <p class="text-[#334155] text-lg">Você sabe o que acontece, quando acontece e o que recebe. Sem improviso.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px max-w-5xl mx-auto bg-[#0f172a]/12 border border-[#0f172a]/12">
+        <div class="bg-white p-8">
+          <p class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase mb-4">Ritual Mensal</p>
+          <ul class="text-[#334155] text-sm space-y-2.5">
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Calendário de obrigações e prazos</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Fluxo de documentos padronizado</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Conferências e fechamento do mês</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Resumo com impostos e pontos de atenção</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8">
+          <p class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase mb-4">O que você recebe</p>
+          <ul class="text-[#334155] text-sm space-y-2.5">
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Orientação objetiva (o que pode, o que não pode)</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Relatórios claros para decisão</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Organização fiscal com rastreabilidade</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Diagnóstico inicial e plano de execução</li>
+          </ul>
+        </div>
+        <div class="bg-white p-8">
+          <p class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase mb-4">Por que confiar</p>
+          <ul class="text-[#334155] text-sm space-y-2.5">
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>35+ anos de mercado em Blumenau</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Processo padronizado com checklist</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Atendimento consultivo e direto</li>
+            <li class="flex items-start gap-2"><span class="text-[#1e40af] mt-1">—</span>Tecnologia com responsabilidade técnica</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="text-center mt-12">
+        <a href={WA} target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-sm hover:bg-[#1e3a8a] transition-colors duration-200 text-lg">
+          Quero uma contabilidade sem surpresas
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FERRAMENTAS GRATUITAS -->
+  <section class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Ferramentas Gratuitas</span>
+        <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Calcule, simule e decida com clareza</h2>
+        <p class="text-[#334155] text-lg">Ferramentas práticas para entender sua situação tributária antes de qualquer conversa.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <a href="/calculadora-fator-r"
+          class="group flex flex-col bg-white border border-[#0f172a]/15 hover:border-[#1e40af] rounded-sm p-6 transition-all duration-300">
+          <h3 class="text-[#0f172a] text-lg font-semibold mb-1">Calculadora do Fator R</h3>
+          <p class="text-[#334155] text-sm mb-4 flex-1">Descubra se sua empresa está no Anexo III (6%) ou Anexo V (15,5%) do Simples Nacional.</p>
+          <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm group-hover:gap-2 transition-all">
+            Calcular agora <i class="bi bi-arrow-right"></i>
+          </span>
+        </a>
+        <a href="/calendario-fiscal-2026"
+          class="group flex flex-col bg-white border border-[#0f172a]/15 hover:border-[#1e40af] rounded-sm p-6 transition-all duration-300">
+          <h3 class="text-[#0f172a] text-lg font-semibold mb-1">Calendário Fiscal 2026</h3>
+          <p class="text-[#334155] text-sm mb-4 flex-1">Todas as obrigações fiscais do ano com datas ajustadas para feriados.</p>
+          <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm group-hover:gap-2 transition-all">
+            Ver calendário <i class="bi bi-arrow-right"></i>
+          </span>
+        </a>
+        <a href="/simulador-regime-tributario"
+          class="group flex flex-col bg-white border border-[#0f172a]/15 hover:border-[#1e40af] rounded-sm p-6 transition-all duration-300">
+          <h3 class="text-[#0f172a] text-lg font-semibold mb-1">Simulador de Regime Tributário</h3>
+          <p class="text-[#334155] text-sm mb-4 flex-1">Compare Simples Nacional e Lucro Presumido. Veja qual regime paga menos.</p>
+          <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm group-hover:gap-2 transition-all">
+            Simular agora <i class="bi bi-arrow-right"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULADOR IA DESTAQUE — bloco de alto contraste -->
+  <section class="py-20 bg-[#1e40af]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
+        <div class="lg:w-5/12 order-2 lg:order-1">
+          <img src="/assets/images/simulador-ia.webp" alt="Simulador IA para Abertura de Empresa"
+            class="rounded-sm w-full" width="1024" height="1024" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12 order-1 lg:order-2">
+          <span class="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase">Nova Ferramenta</span>
+          <h2 class="text-3xl md:text-4xl text-white tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Não comece no escuro</h2>
+          <p class="text-white/80 text-lg leading-relaxed mb-6">
+            Pensando em abrir um negócio? Nossa ferramenta com inteligência artificial analisa seu projeto e revela o melhor tipo de empresa, custos e impostos para você começar com segurança e economia.
+          </p>
+          <a href="https://simulador.jmfcontabilidade.com.br/" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1e40af] font-semibold rounded-sm hover:bg-blue-50 transition-all duration-200 text-lg">
+            Acessar o Simulador Gratuito
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="py-24 bg-[#f8fafc] overflow-hidden">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Clientes</span>
+        <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-3" style="font-family:'Fraunces',serif;font-weight:500">152 avaliações — nota 5.0 no Google</h2>
+        <div class="flex items-center justify-center gap-1 mb-3 text-yellow-400">★★★★★</div>
+        <p class="text-[#334155]">Clientes reais de Blumenau e região que confiam na JMF.</p>
+      </div>
+
+      <div class="flex gap-6 max-w-5xl mx-auto" style="max-height:520px">
+        <div class="flex-1 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <div class="flex flex-col gap-5 scroll-up-azul hover:[animation-play-state:paused]">
+            {[0,1].map(() => (
+              <>
+                {[
+                  { name: "Bruno Schmitt", text: "Contabilidade de confiança e atendimento personalizado. Sempre indico!" },
+                  { name: "Matheus Leite", text: "Excelente atendimento, com muita agilidade e profissionalismo." },
+                  { name: "André Nuernberg", text: "Atendido pelo Diego, me salvou com o IRPF — tinha bastante informação solta e declarações antigas omissas. Foi o contador que conseguiu me regularizar com o sistema fiscal brasileiro." },
+                  { name: "Francielle Kratz", text: "Experiência perfeita, trabalho impecável. Diego me atendeu com muita paciência e gentileza! Obrigado mais uma vez!" },
+                  { name: "Elizandra Rech", text: "Ótimo atendimento, muito prestativo o responsável que me atendeu, Diego. Recomendo!" },
+                  { name: "Maria Ollinda", text: "Ótimo atendimento, fiquei bem feliz por agilizar tudo bem rápido." },
+                  { name: "Bruno Moreira", text: "Excelente profissional! Bem atencioso, tirou todas as minhas dúvidas e fez acompanhamento de todo o processo de declaração. Recomendo muito!" },
+                  { name: "Alessandra Dettmer", text: "Recomendo. Declaração do imposto de renda rápida e eficaz, tirando todas as minhas dúvidas." },
+                  { name: "Anzolin Anzolin", text: "Achei o trabalho deles impecável, me ajudaram demais. Super recomendo — agilidade no processo e atenção comigo. Top!" },
+                ].map(t => (
+                  <div class="bg-white border border-[#0f172a]/10 p-6">
+                    <p class="text-[#1e40af]/40 text-2xl mb-1" style="font-family:'Fraunces',serif">"</p>
+                    <p class="text-[#334155] text-sm leading-relaxed mb-4 -mt-3">{t.text}</p>
+                    <p class="font-semibold text-[#0f172a] text-sm">{t.name}</p>
+                    <p class="text-xs text-[#334155]/70">Google</p>
+                  </div>
+                ))}
+              </>
+            ))}
+          </div>
+        </div>
+
+        <div class="hidden md:block flex-1 overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <div class="flex flex-col gap-5 scroll-down-azul hover:[animation-play-state:paused]">
+            {[0,1].map(() => (
+              <>
+                {[
+                  { name: "Aline Baia", text: "Atendimento excelente." },
+                  { name: "Renato Pires", text: "Um profissional extremamente competente, organizado e sempre disposto a ajudar. Transmite muita confiança e segurança em cada orientação. Seu trabalho é impecável!" },
+                  { name: "Ana Capello", text: "Profissional atencioso e muito paciente. Me explicou passo a passo o que eu precisava fazer e solucionou meu problema rapidamente. Recomendo!" },
+                  { name: "Eduardo R.", text: "Precisei de apoio para finalizar minha declaração de imposto de renda anual e fui prontamente atendido, com dúvidas esclarecidas e atendimento rápido." },
+                  { name: "Lucas Mariano", text: "Ótimo trabalho e comprometimento com o serviço. Nota 10, recomendo!" },
+                  { name: "Juliana Silva", text: "Faço meu imposto de renda com eles há alguns anos e sou sempre muito bem assessorada. São muito corretos e atenciosos." },
+                  { name: "Adriana Stapait", text: "Fiquei muito satisfeita com os serviços na JMF. Quem sempre me atende é o Diego — excelente profissional, eficaz, à disposição quando necessário, simpático e tira todas as minhas dúvidas com muita atenção." },
+                  { name: "Connie Faria", text: "Eu uso os serviços deles desde 2022 e estou muito satisfeita. São muito educados e profissionais brilhantes. Recomendo muito!!" },
+                ].map(t => (
+                  <div class="bg-white border border-[#0f172a]/10 p-6">
+                    <p class="text-[#1e40af]/40 text-2xl mb-1" style="font-family:'Fraunces',serif">"</p>
+                    <p class="text-[#334155] text-sm leading-relaxed mb-4 -mt-3">{t.text}</p>
+                    <p class="font-semibold text-[#0f172a] text-sm">{t.name}</p>
+                    <p class="text-xs text-[#334155]/70">Google</p>
+                  </div>
+                ))}
+              </>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9" target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-[#0f172a] hover:text-[#1e40af] font-semibold text-sm transition-colors border-b border-[#0f172a]/30 pb-0.5">
+          Ver todas as 152 avaliações no Google
+          <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    @keyframes scroll-up-azul-kf { 0% { transform: translateY(0); } 100% { transform: translateY(-50%); } }
+    @keyframes scroll-down-azul-kf { 0% { transform: translateY(-50%); } 100% { transform: translateY(0); } }
+    .scroll-up-azul { animation: scroll-up-azul-kf 40s linear infinite; }
+    .scroll-down-azul { animation: scroll-down-azul-kf 40s linear infinite; }
+  </style>
+
+  <!-- PARCEIROS -->
+  <Parceiros />
+
+  <!-- TECH LOGOS -->
+  <section class="py-16 bg-white overflow-hidden">
+    <div class="container mx-auto px-4">
+      <p class="text-center text-[#334155] text-sm mb-8 font-medium">Tecnologias que integram nossa operação</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 divide-x divide-y divide-[#0f172a]/10 border border-[#0f172a]/10">
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-sci.webp" alt="SCI Sistemas Contábeis" width="235" height="67" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-aws.webp" alt="Amazon Web Services" width="238" height="143" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-claude-wordmark.svg" alt="Claude AI — Anthropic" width="512" height="110" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-gemini.webp" alt="Google Gemini AI" width="320" height="118" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-n8n.webp" alt="n8n Automation" width="214" height="59" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-make.webp" alt="Make Automation" width="394" height="454" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-github-wordmark.svg" alt="GitHub" width="249" height="68" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+        <div class="h-full flex items-center justify-center gap-3 bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-brevo.svg" alt="Brevo" width="24" height="24" loading="lazy" class="max-h-9 md:max-h-11 w-auto h-auto object-contain" />
+          <span class="text-[#0f172a] font-semibold text-lg md:text-xl">Brevo</span>
+        </div>
+        <div class="h-full flex items-center justify-center bg-white px-5 py-6 md:py-8">
+          <img src="/assets/images/logo-protonpass.webp" alt="Proton Pass" width="430" height="89" loading="lazy" class="max-h-9 md:max-h-11 max-w-[120px] md:max-w-[150px] w-auto h-auto object-contain" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS TECNOLÓGICOS -->
+  <section class="py-24 bg-[#0f172a]">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-blue-300 text-xs font-semibold tracking-[0.2em] uppercase">Tecnologia</span>
+        <h2 class="text-3xl md:text-4xl text-white tracking-tight mt-3 mb-3" style="font-family:'Fraunces',serif;font-weight:500">Uma contabilidade inteligente</h2>
+        <p class="text-white/50 text-lg">Não apenas digital. Nossos pilares que garantem sua tranquilidade.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px max-w-5xl mx-auto bg-white/10 border border-white/10">
+        <div class="bg-[#0f172a] p-8 text-center hover:bg-white/[0.03] transition-colors">
+          <h3 class="text-white font-semibold text-lg mb-3">Segurança de Nível Mundial</h3>
+          <p class="text-white/50 text-sm leading-relaxed mb-5">Infraestrutura AWS, a mesma tecnologia de gigantes globais, para garantir que suas informações estejam sempre protegidas e disponíveis.</p>
+          <a href="/seguranca-dos-dados" class="text-blue-400 text-sm hover:text-blue-300 transition-colors font-medium">Ver como protegemos seus dados →</a>
+        </div>
+        <div class="bg-[#0f172a] p-8 text-center hover:bg-white/[0.03] transition-colors">
+          <h3 class="text-white font-semibold text-lg mb-3">Eficiência por Automação</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Automatizamos tarefas repetitivas para que nossa equipe se dedique ao que realmente importa: analisar sua empresa e encontrar oportunidades.</p>
+        </div>
+        <div class="bg-[#0f172a] p-8 text-center hover:bg-white/[0.03] transition-colors">
+          <h3 class="text-white font-semibold text-lg mb-3">Relatório Gerencial Inteligente</h3>
+          <p class="text-white/50 text-sm leading-relaxed">Compilamos os dados essenciais do seu negócio em um relatório com análise gerada por IA para insights rápidos e precisos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-24 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Dúvidas Frequentes</span>
+        <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Respondemos suas perguntas</h2>
+        <p class="text-[#334155] text-lg">Informação clara para você decidir com segurança.</p>
+      </div>
+      <div class="max-w-3xl mx-auto border-t border-[#0f172a]/12">
+        <details class="faq-azul group">
+          <summary class="faq-azul-summary">Como funciona a troca de contador?</summary>
+          <div class="faq-azul-body">
+            <p>A troca de contador na JMF começa com um diagnóstico gratuito pelo WhatsApp ou telefone: levantamos o regime tributário atual da sua empresa, os meses em aberto, as obrigações acessórias pendentes (SPED, ECD, DEFIS, DASN) e eventuais pendências na Receita Federal ou Sefaz.</p>
+            <p class="mt-3">Com esse mapeamento, apresentamos um cronograma de transição com etapas e prazos claros. A JMF contata o contador anterior para solicitar arquivos, backups e documentação. Em paralelo, configuramos sua empresa em nossos sistemas e criamos o calendário de obrigações personalizado.</p>
+            <p class="mt-3">Em média, o processo leva de 5 a 10 dias úteis para estar 100% operacional. Durante toda a transição, as obrigações acessórias e o fechamento mensal continuam sendo entregues sem interrupção. Você só precisa assinar a procuração e nos fornecer os documentos básicos.</p>
+          </div>
+        </details>
+        <details class="faq-azul group">
+          <summary class="faq-azul-summary">Vocês atendem Simples Nacional e Lucro Presumido?</summary>
+          <div class="faq-azul-body">
+            <p>Sim, a JMF atende empresas em todos os regimes: Simples Nacional, Lucro Presumido e Lucro Real.</p>
+            <p class="mt-3">No <strong>Simples Nacional</strong>, calculamos o DAS mensalmente com o Anexo correto para a atividade, o fator R quando aplicável e os sublimites de ISS e ICMS por estado. Para empresas próximas ao limite de R$ 4,8 milhões/ano, planejamos a transição com antecedência.</p>
+            <p class="mt-3">No <strong>Lucro Presumido</strong>, apuramos IRPJ e CSLL trimestralmente com a margem de presunção correta, além de PIS e COFINS mensais. No <strong>Lucro Real</strong>, estruturamos a apuração por LALUR e LACS, com controle de adições, exclusões e compensação de prejuízos fiscais.</p>
+            <p class="mt-3">Em todos os regimes, você recebe um calendário de obrigações mensal e a JMF realiza anualmente a simulação comparativa entre regimes para garantir a menor carga tributária possível.</p>
+          </div>
+        </details>
+        <details class="faq-azul group">
+          <summary class="faq-azul-summary">Como funciona o envio de documentos e os prazos?</summary>
+          <div class="faq-azul-body">
+            <p>A JMF adota um fluxo de fechamento mensal padronizado e previsível. No início de cada mês, você recebe uma solicitação organizada com a lista exata dos documentos necessários: extratos bancários, notas fiscais de compra e venda, comprovantes de despesas, informações de folha de pagamento, pró-labore e movimentações específicas do período.</p>
+            <p class="mt-3">O prazo para envio é geralmente até o dia 5 do mês seguinte, o que nos permite realizar o fechamento contábil e fiscal dentro dos prazos legais. Tudo pode ser enviado por e-mail, WhatsApp ou sistema de gestão — sem necessidade de deslocamento.</p>
+            <p class="mt-3">Após o recebimento, nossa equipe confere os documentos, apura os impostos e envia o resumo do mês: valor dos tributos, guias para pagamento, informações de folha e pontos de atenção. Em caso de documentos faltantes, entramos em contato imediatamente para não atrasar o fechamento.</p>
+          </div>
+        </details>
+        <details class="faq-azul group">
+          <summary class="faq-azul-summary">Quanto custa e quanto tempo leva para abrir uma empresa com a JMF?</summary>
+          <div class="faq-azul-body">
+            <p>O custo varia por tipo de empresa e atividade — normalmente entre <strong>R$ 900 e R$ 2.800</strong> somando taxas oficiais (JUCESC, alvará, certificado digital) e honorários, com o processo levando de <strong>5 a 10 dias úteis</strong> em condições normais. A primeira conversa e a simulação de regime tributário são sempre gratuitas.</p>
+            <p class="mt-3">Veja o <a href="/abertura-de-empresa" class="text-[#1e40af] hover:underline font-semibold">passo a passo completo de abertura de empresa</a> ou o <a href="/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026" class="text-[#1e40af] hover:underline font-semibold">detalhamento de custos por tipo de empresa</a>.</p>
+          </div>
+        </details>
+        <details class="faq-azul group">
+          <summary class="faq-azul-summary">Vocês atendem clientes que não moram em Blumenau?</summary>
+          <div class="faq-azul-body">
+            <p>Sim. Atendemos pessoas físicas e empresas de <strong>Indaial, Gaspar, Pomerode, Timbó</strong> e demais cidades do Médio Vale do Itajaí, além de Blumenau. Documentos são enviados digitalmente por WhatsApp, e-mail ou sistema de gestão, e reuniões podem ser feitas por videoconferência — sem necessidade de deslocamento até o escritório.</p>
+            <p class="mt-3">Quer declarar Imposto de Renda ou abrir empresa como pessoa física? Veja nossos serviços de <a href="/contabilidade-para-pessoa-fisica" class="text-[#1e40af] hover:underline font-semibold">contabilidade para pessoa física</a> e <a href="/imposto-de-renda" class="text-[#1e40af] hover:underline font-semibold">Imposto de Renda</a>.</p>
+          </div>
+        </details>
+      </div>
+      <div class="text-center mt-10 flex flex-wrap gap-4 justify-center">
+        <a href={WA} target="_blank" rel="noopener"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-sm hover:bg-[#1e3a8a] transition-all duration-200 text-lg">
+          <i class="bi bi-whatsapp mr-1"></i>Falar no WhatsApp
+        </a>
+        <a href="/como-abrir-empresa-em-blumenau"
+          class="inline-flex items-center gap-2 px-8 py-4 border-2 border-blue-200 text-blue-700 font-semibold rounded-sm hover:bg-blue-50 transition-colors text-lg">
+          <i class="bi bi-book"></i>Guia: Como abrir empresa em Blumenau
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    details.faq-azul { border-bottom: 1px solid rgba(15,23,42,0.12); }
+    .faq-azul-summary {
+      cursor: pointer; padding: 1.25rem 0.5rem; font-weight: 600; color: #0f172a;
+      list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .faq-azul-summary::-webkit-details-marker { display: none; }
+    .faq-azul-summary::after {
+      content: '+'; font-size: 1.4rem; font-weight: 300; color: #1e40af; flex-shrink: 0;
+    }
+    details.faq-azul[open] .faq-azul-summary::after { content: '−'; }
+    .faq-azul-body { padding: 0 0.5rem 1.5rem; color: #334155; line-height: 1.8; }
+  </style>
+
+  <!-- CTA FINAL — bloco de alto contraste -->
+  <section class="relative overflow-hidden bg-[#1e40af] py-24">
+    <svg class="absolute inset-0 w-full h-full opacity-[0.08]" preserveAspectRatio="none">
+      <line x1="20%" y1="0" x2="20%" y2="100%" stroke="#ffffff" stroke-width="1" />
+      <line x1="80%" y1="0" x2="80%" y2="100%" stroke="#ffffff" stroke-width="1" />
+    </svg>
+    <div class="relative z-10 container mx-auto px-4 text-center max-w-3xl">
+      <h2 class="text-3xl md:text-4xl text-white tracking-tight mb-4" style="font-family:'Fraunces',serif;font-weight:500">Vamos construir uma parceria de verdade</h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8 max-w-2xl mx-auto">
+        Agende uma conversa sem compromisso. A JMF está pronta para entender seu negócio, apresentar um plano claro e mostrar como podemos simplificar sua contabilidade.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={WA} target="_blank" rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-white text-[#1e40af] font-semibold rounded-sm hover:bg-blue-50 transition-all duration-200 text-lg">
+          <i class="bi bi-whatsapp"></i>Fale com um especialista
+        </a>
+        <a href="tel:+554733265123"
+          class="inline-flex items-center gap-2 px-8 py-4 border border-white/40 text-white font-semibold rounded-sm hover:bg-white/10 transition-all duration-200 text-lg">
+          <i class="bi bi-telephone"></i>(47) 3326-5123
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ELLIZA IA TEASER -->
+  <section class="py-24 bg-[#0f172a] border-t border-white/10">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
+        <div class="lg:w-5/12 text-center">
+          <img src="/assets/images/elliza-ia.webp" alt="Elliza - IA para Contabilidade Autônoma"
+            class="w-full max-w-sm mx-auto" width="1024" height="1024" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <span class="inline-block bg-white/5 text-emerald-300 text-xs font-semibold px-3 py-1 rounded-full border border-white/10 mb-4">EM BREVE</span>
+          <h2 class="text-3xl md:text-4xl text-white tracking-tight mb-4" style="font-family:'Fraunces',serif;font-weight:500">O futuro da contabilidade está chegando</h2>
+          <p class="text-white/60 text-lg leading-relaxed mb-4">
+            Em parceria com a <strong class="text-emerald-400">Synapse Robotics</strong>, estamos integrando a <strong class="text-emerald-400">Elliza</strong>: a primeira assistente de IA que automatiza a contabilidade de verdade.
+          </p>
+          <p class="text-white/60 text-lg leading-relaxed mb-6">
+            Coleta de documentos, geração de relatórios, respostas a dúvidas e execução de tarefas repetitivas de forma autônoma. Nossos clientes terão acesso exclusivo.
+          </p>
+          <a href="#form-contato"
+            class="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-semibold rounded-sm hover:from-emerald-600 hover:to-emerald-700 transition-all duration-200 text-lg">
+            Faça Parte do Futuro
+            <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULÁRIO DE CONTATO -->
+  <section id="form-contato" class="py-24 bg-[#f8fafc]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-12 max-w-5xl mx-auto">
+        <div class="lg:w-5/12">
+          <span class="text-[#1e40af] text-xs font-semibold tracking-[0.2em] uppercase">Contato</span>
+          <h2 class="text-3xl md:text-4xl text-[#0f172a] tracking-tight mt-3 mb-4" style="font-family:'Fraunces',serif;font-weight:500">Entre em contato e vamos juntos fazer a diferença no seu negócio</h2>
+          <p class="text-[#334155] text-lg mb-8">
+            Precisa de um parceiro estratégico em contabilidade? Agende uma consulta sem custo.
+          </p>
+          <div class="space-y-5">
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-sm bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+                <i class="bi bi-whatsapp text-white"></i>
+              </div>
+              <div>
+                <p class="text-xs text-[#334155] font-medium uppercase tracking-wide">WhatsApp</p>
+                <a href={WA} target="_blank" rel="noopener" class="text-[#0f172a] font-semibold hover:text-[#1e40af] transition-colors">(47) 3326-5123</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-sm bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+                <i class="bi bi-telephone text-white"></i>
+              </div>
+              <div>
+                <p class="text-xs text-[#334155] font-medium uppercase tracking-wide">Telefone</p>
+                <a href="tel:+554733265123" class="text-[#0f172a] font-semibold hover:text-[#1e40af] transition-colors">(47) 3326-5123</a>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-11 h-11 rounded-sm bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+                <i class="bi bi-envelope text-white"></i>
+              </div>
+              <div>
+                <p class="text-xs text-[#334155] font-medium uppercase tracking-wide">E-mail</p>
+                <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#0f172a] font-semibold hover:text-[#1e40af] transition-colors">contato@jmfcontabilidade.com.br</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white p-8 border border-[#0f172a]/10">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

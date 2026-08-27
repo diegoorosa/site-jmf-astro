@@ -1,0 +1,310 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const serviceSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Gestão Fiscal e Tributária",
+  "provider": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
+  "areaServed": [{ "@type": "City", "name": "Blumenau" },{ "@type": "City", "name": "Indaial" },{ "@type": "City", "name": "Gaspar" },{ "@type": "City", "name": "Pomerode" },{ "@type": "City", "name": "Timbó" },{ "@type": "State", "name": "Santa Catarina" }]
+});
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Qual a importância de uma gestão fiscal e tributária?", "acceptedAnswer": { "@type": "Answer", "text": "Garante que sua empresa cumpra todas as obrigações perante a Receita Federal, o Estado de SC e o Município de Blumenau — recolhendo impostos corretos, nos prazos certos, sem pagar a mais nem a menos. Uma gestão fiscal deficiente é a principal causa de autuações no Brasil." } },
+    { "@type": "Question", "name": "Como a gestão fiscal pode melhorar a sua empresa?", "acceptedAnswer": { "@type": "Answer", "text": "Fluxo de caixa com calendário tributário organizado, competitividade com elisão fiscal legal, prevenção de passivos com escrituração correta e acesso a crédito com certidões negativas sempre em dia. A JMF mantém um calendário atualizado de todas as obrigações acessórias." } },
+    { "@type": "Question", "name": "Por que fazer um bom planejamento tributário?", "acceptedAnswer": { "@type": "Answer", "text": "Os impostos representam entre 10% e 34% do faturamento de uma empresa brasileira. Uma empresa de serviços com R$ 80 mil/mês pode pagar entre 11% e 17% dependendo do regime — diferença de até R$ 4.800/mês. A JMF realiza simulação comparativa entre Simples Nacional, Lucro Presumido e Lucro Real." } },
+    { "@type": "Question", "name": "Como posso ter o auxílio da JMF Contabilidade?", "acceptedAnswer": { "@type": "Answer", "text": "WhatsApp (47) 3326-5123 com retorno no mesmo dia útil. Reunião de diagnóstico gratuita presencial ou por videoconferência. Empresas em migração passam por onboarding com regularização imediata de obrigações pendentes. Atendimento de segunda a sexta, 08h às 18h." } },
+    { "@type": "Question", "name": "Atendem empresas de Indaial, Gaspar, Pomerode e Timbó?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. Além de Blumenau, a JMF Contabilidade presta gestão fiscal e tributária para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com calendário de obrigações e guias enviados digitalmente." } }
+  ]
+});
+const schema = [serviceSchema, faqSchema];
+---
+
+<Layout
+  title="Gestão Fiscal e Tributária em Blumenau | JMF Contabilidade"
+  description="Gestão fiscal e tributária em Blumenau/SC: DAS, PGDAS, DCTF, SPED e EFD entregues no prazo. Sem multas por atraso. Conformidade total com a Receita Federal."
+  canonical="https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria"
+  ogUrl="https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Gestão Fiscal e Tributária em Blumenau/SC"
+    subtitle="Sua empresa em conformidade com a Receita Federal, Estado e Município — sem multas, sem surpresas, com o suporte de especialistas."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Soluções" },
+      { label: "Gestão Fiscal e Tributária" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Ver vantagens", href: "#vantagens", variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: junho de 2026</span>
+    </div>
+  </div>
+
+  <!-- Suporte Fiscal -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center gap-10">
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-6">Suporte fiscal<br/><span class="pp3-grad">completo para sua empresa</span></h2>
+          <p class="text-gray-600 text-lg leading-relaxed mb-4">
+            Com a gestão fiscal e tributária da JMF, você terá uma equipe especializada cuidando de todas as obrigações perante a Receita Federal, o Estado de Santa Catarina e o Município de Blumenau.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed mb-6">
+            Mantemos um calendário atualizado de todas as obrigações acessórias — PGDAS, DCTF, SPED, EFD-Contribuições, DIRF — garantindo zero atrasos e zero surpresas para o seu negócio.
+          </p>
+          <div class="flex flex-wrap gap-3">
+            <a href={WA} target="_blank" rel="noopener"
+              class="px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
+              Falar no WhatsApp
+            </a>
+            <a href="#formulario"
+              class="px-6 py-3 border-2 border-[#1e40af] text-[#1e40af] font-semibold rounded-lg hover:bg-[#dbeafe] transition-colors">
+              Prefiro formulário
+            </a>
+          </div>
+        </div>
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-2-816x544.webp" alt="Gestão Fiscal JMF"
+            width="816" height="544" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O que cuidamos por regime -->
+  <section class="py-16 bg-[#f8fafc]">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-6 text-center">O que cuidamos para<br/><span class="pp3-grad">cada regime tributário</span></h2>
+        <p class="text-gray-600 text-lg text-center mb-8">Cada empresa tem obrigações fiscais específicas — a JMF entrega todas dentro do prazo, sem exceção.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
+            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-file-text text-[#1e40af]"></i> Simples Nacional</h3>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> DAS mensal com Fator R</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> PGDAS-D mensal</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> DEFIS anual</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> DASN-SIMEI (MEI)</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> EFD-Reinf mensal</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
+            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-bar-chart text-[#1e40af]"></i> Lucro Presumido</h3>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> IRPJ e CSLL trimestrais</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> PIS e COFINS mensais</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> ECD e ECF anuais</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> SPED Fiscal mensal</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> DCTF mensal</li>
+            </ul>
+          </div>
+          <div class="bg-white rounded-xl border border-[#dbeafe] p-6">
+            <h3 class="font-bold text-[#0f172a] mb-3 flex items-center gap-2"><i class="bi bi-calculator text-[#1e40af]"></i> Lucro Real</h3>
+            <ul class="text-gray-600 text-sm space-y-2">
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> IRPJ e CSLL por LALUR</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> PIS/COFINS não cumulativos</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> ECD, ECF, SPED completos</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> Controle de créditos fiscais</li>
+              <li class="flex items-start gap-2"><i class="bi bi-check-circle text-green-500 mt-0.5"></i> Compensação de prejuízos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="mt-6 p-4 bg-[#dbeafe] rounded-xl text-center">
+          <p class="text-[#1e3a8a] font-semibold">Quer entender melhor as obrigações fiscais da sua empresa? <a href="/calendario-fiscal-2026" class="text-[#1e40af] hover:underline">Consulte o calendário fiscal 2026 completo</a> ou <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] hover:underline">fale conosco</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vantagens -->
+  <section id="vantagens" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Vantagens da nossa<br/><span class="pp3-grad">gestão fiscal</span></h2>
+        <p class="text-gray-600 text-lg">Com os nossos benefícios, a sua empresa estará protegida com suas obrigações e você terá uma consultoria próxima para auxiliar na tributação.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-file-earmark-check"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Obrigações em Dia</h4>
+          <p class="text-gray-600">Cumprimento rigoroso de todas as obrigações tributárias federais, estaduais e municipais, sem atrasos ou inconsistências.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-coin"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Economia Tributária</h4>
+          <p class="text-gray-600">Com o serviço de avaliação e planejamento tributário, vamos proporcionar uma diminuição de custos e mais economia em impostos.</p>
+        </div>
+        <div class="card-custom text-center h-full">
+          <div class="icon-circle"><i class="bi bi-cash-coin"></i></div>
+          <h4 class="text-xl font-semibold text-[#0f172a] mb-3">Compensação de Créditos</h4>
+          <p class="text-gray-600">Compense créditos tributários com valores de tributos devidos (impostos, taxas e contribuições) com o auxílio dos nossos profissionais.</p>
+        </div>
+      </div>
+      <div class="text-center mt-10">
+        <img src="/assets/images/mbr-1-816x544.webp" alt="Processo de Gestão Fiscal"
+          width="816" height="544" class="rounded-xl shadow-lg mx-auto max-w-xl w-full" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Dark -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Esqueça os processos burocráticos<br/><span class="pp3-grad-light">que envolvem a gestão fiscal da empresa</span></h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        Você está precisando de ajuda? Queremos falar com você, compreender seus objetivos e te ajudar a conduzir a sua empresa ao sucesso empresarial com mais tranquilidade e te livrando das burocracias fiscais e tributárias.
+      </p>
+      <a href={WA} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>AGENDE UMA REUNIÃO
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - JMF Contabilidade"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Precisa de mais esclarecimentos?<br />
+            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+          </h2>
+          <div class="space-y-3">
+            <details class="accordion-item">
+              <summary class="accordion-summary">Qual a importância de uma gestão fiscal e tributária?</summary>
+              <div class="accordion-body">
+                <p>A gestão fiscal e tributária garante que sua empresa cumpra todas as obrigações perante a Receita Federal, o Estado de Santa Catarina e o Município de Blumenau — recolhendo os impostos corretos, nos prazos certos, sem pagar a mais nem a menos. Para empresas em Blumenau, isso envolve tributos federais (IRPJ, CSLL, PIS, COFINS), estaduais (ICMS) e municipais (ISS). Uma gestão fiscal deficiente é a principal causa de autuações no Brasil. Além de evitar penalidades, uma boa gestão fiscal identifica oportunidades de redução legal da carga tributária. A JMF mantém um calendário atualizado de todas as obrigações acessórias para sua empresa.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como a gestão fiscal pode melhorar a sua empresa?</summary>
+              <div class="accordion-body">
+                <p>Uma gestão fiscal eficiente melhora a empresa em pelo menos quatro dimensões: fluxo de caixa (calendário tributário organizado), competitividade (elisão fiscal legal), prevenção de passivos (escrituração correta evita débitos futuros) e acesso a crédito (certidões negativas sempre em dia). Com a JMF cuidando da gestão fiscal da sua empresa em Blumenau, você mantém certidões sempre regulares e tem um especialista atento a cada mudança na legislação catarinense.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Por que fazer um bom planejamento tributário?</summary>
+              <div class="accordion-body">
+                <p>O planejamento tributário é a análise das opções fiscais legais para minimizar a carga de impostos da sua empresa — e é especialmente crítico na escolha entre <a href="/regimes-tributarios" class="text-[#1e40af] hover:underline font-semibold">Simples Nacional, Lucro Presumido e Lucro Real</a>. Uma empresa de serviços em Blumenau com R$ 80 mil/mês pode pagar entre 11% e 17% de tributos sobre o faturamento bruto dependendo do regime — uma diferença de até R$ 4.800/mês ou R$ 57.600/ano. A JMF realiza a simulação comparativa entre os três regimes — ou <a href="/simulador-regime-tributario" class="text-[#1e40af] hover:underline font-semibold">use nosso simulador gratuito</a> para uma estimativa imediata. Não deixe para depois.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como eu posso ter o auxílio da JMF Contabilidade?</summary>
+              <div class="accordion-body">
+                <p>O canal mais ágil é o WhatsApp (47) 3326-5123, com retorno no mesmo dia útil. Para uma análise mais aprofundada, agendamos uma reunião de diagnóstico gratuita — no nosso escritório na Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau, ou remotamente por videoconferência. Empresas que estão migrando de outro escritório passam por um onboarding estruturado, com regularização imediata de obrigações pendentes. Atendemos de segunda a sexta das 08h às 18h.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Atendem empresas de Indaial, Gaspar, Pomerode e Timbó?</summary>
+              <div class="accordion-body">
+                <p>Sim. Além de Blumenau, a JMF Contabilidade presta gestão fiscal e tributária para empresas de Indaial, Gaspar, Pomerode, Timbó e demais cidades do Médio Vale do Itajaí, com calendário de obrigações e guias enviados digitalmente.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Veja Também -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-200">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center gap-5 bg-white rounded-2xl border border-[#dbeafe] p-6 shadow-sm">
+        <div class="w-14 h-14 rounded-full bg-[#dbeafe] flex items-center justify-center shrink-0">
+          <i class="bi bi-calculator text-[#1e40af] text-2xl"></i>
+        </div>
+        <div class="flex-1 text-center sm:text-left">
+          <p class="text-xs font-semibold text-[#1e40af] uppercase tracking-widest mb-1">Ferramenta gratuita</p>
+          <h3 class="text-lg font-bold text-[#0f172a] mb-1">Simulador de Regime Tributário 2026</h3>
+          <p class="text-gray-500 text-sm">Compare Simples Nacional e Lucro Presumido com base no seu faturamento, atividade e folha. Veja em reais qual regime paga menos.</p>
+        </div>
+        <a href="/simulador-regime-tributario"
+          class="shrink-0 px-5 py-3 bg-[#1e40af] text-white text-sm font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors whitespace-nowrap">
+          Simular agora
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/iss-em-blumenau-aliquotas-por-servico-e-como-calcular"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">ISS Blumenau</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">ISS em Blumenau: alíquotas por atividade e como calcular em 2026</p>
+        </a>
+        <a href="/blog/nota-fiscal-de-servicos-como-emitir-corretamente"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Fiscal</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Nota fiscal de serviços: como emitir corretamente e evitar erros</p>
+        </a>
+        <a href="/blog/reforma-tributaria-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Reforma tributária</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Reforma tributária 2026: o que muda na gestão fiscal da sua empresa</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e<br/><span class="pp3-grad">vamos juntos fazer a diferença</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade, você encontrou o lugar certo. Marque uma consulta sem custo.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>

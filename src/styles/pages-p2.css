@@ -1,0 +1,580 @@
+/* ============================================================
+   PAGES-P2.CSS — v3
+   Replica FIEL do visual das seções do index.astro:
+   - Secões light = jmf-sol-sec (radial gradient soft, no grid)
+   - Secões dark = jmf-cta-sec (navy + grid ciano + beam)
+   - Headings = Fraunces 500 com gradient ciano animado em span
+   - Eyebrow = chip mono ciano com dot pulsante (só no eyebrow!)
+   - Cards light = jmf-sol-card (border-ciano no hover, sem dot)
+   - Form = jmf-form-sec + jmf-form-card
+   Sem invenções. Sem dots por todo o lugar.
+   ============================================================ */
+
+/* ============================================================
+   KEYFRAMES (garantidos)
+   ============================================================ */
+@keyframes pp3Pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+@keyframes pp3GradShift {
+  0%   { background-position: 0% center; }
+  100% { background-position: 300% center; }
+}
+@keyframes pp3BeamMove {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+@keyframes pp3AccentShift {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ============================================================
+   SECTION BACKGROUNDS — replica index
+   ============================================================
+   light  -> jmf-sol-sec (branco com radial ciano/azul soft)
+   #f8fafc -> mesmo (sem distinção visual forte)
+   #dbeafe -> keep light soft
+   #0f172a -> jmf-cta-sec (navy gradiente + grid + beam)
+============================================================ */
+.pp3 section.bg-white {
+  position: relative;
+  background:
+    radial-gradient(700px 500px at 80% 10%, rgba(6,182,212,0.07), transparent 60%),
+    radial-gradient(700px 500px at 15% 90%, rgba(59,130,246,0.05), transparent 60%),
+    #ffffff !important;
+  padding: 6rem 1.5rem !important;
+  overflow: hidden;
+}
+.pp3 section.bg-\[\#f8fafc\] {
+  position: relative;
+  background:
+    radial-gradient(700px 500px at 80% 10%, rgba(6,182,212,0.07), transparent 60%),
+    radial-gradient(700px 500px at 15% 90%, rgba(59,130,246,0.05), transparent 60%),
+    #f8fafc !important;
+  padding: 6rem 1.5rem !important;
+  overflow: hidden;
+}
+.pp3 section.bg-\[\#dbeafe\] {
+  position: relative;
+  background:
+    radial-gradient(700px 500px at 80% 10%, rgba(6,182,212,0.07), transparent 60%),
+    radial-gradient(700px 500px at 15% 90%, rgba(59,130,246,0.05), transparent 60%),
+    #f0f9ff !important;
+  padding: 6rem 1.5rem !important;
+  overflow: hidden;
+}
+.pp3 section.bg-\[\#0f172a\] {
+  position: relative;
+  background:
+    radial-gradient(900px 600px at 80% 10%, rgba(6,182,212,0.20), transparent 60%),
+    radial-gradient(900px 600px at 15% 90%, rgba(59,130,246,0.15), transparent 60%),
+    linear-gradient(180deg, #0a1f3a 0%, #082c4f 50%, #0a1f3a 100%) !important;
+  padding: 6rem 1.5rem !important;
+  overflow: hidden;
+  text-align: center;
+}
+/* Grid ciano (igual jmf-cta-grid) e beam (igual jmf-cta-beam) só na dark */
+.pp3 section.bg-\[\#0f172a\]::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(103,232,249,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(103,232,249,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 85%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, #000 30%, transparent 85%);
+  pointer-events: none;
+}
+.pp3 section.bg-\[\#0f172a\]::after {
+  content: '';
+  position: absolute;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+  width: 2px; height: 60%;
+  background: linear-gradient(180deg, transparent, rgba(103,232,249,0.5), transparent);
+  animation: pp3BeamMove 5s ease-in-out infinite;
+  pointer-events: none;
+}
+.pp3 section.bg-\[\#0f172a\] > * { position: relative; z-index: 1; }
+.pp3 section.bg-\[\#0f172a\] .container { max-width: 56rem; }
+
+/* ============================================================
+   HEADINGS — FIEL jmf-sol-title + jmf-h2-grad
+   ============================================================ */
+.pp3 h2.text-3xl {
+  font-family: 'Fraunces', serif !important;
+  font-weight: 600 !important;
+  font-size: clamp(1.85rem, 3.4vw, 2.6rem) !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em !important;
+  color: #0f172a !important;
+  margin: 0 0 0.85rem !important;
+}
+.pp3 section.bg-\[\#0f172a\] h2.text-3xl { color: #ffffff !important; }
+.pp3 h2.text-3xl span.text-\[\#1e40af\] {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0891b2 0%, #06B6D4 25%, #3b82f6 50%, #0891b2 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: pp3GradShift 6s linear infinite;
+  padding-top: 0.05em;
+}
+
+/* h3/h4 mantém Inter (sem Fraunces para não poluir) mas com peso/balance certo */
+.pp3 h3.font-bold {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: 1.18rem;
+}
+.pp3 h4.text-xl {
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  font-size: 1.18rem;
+}
+
+/* ===== Span gradient P2 (FIEL jmf-sol-title-grad + variante light p/ fundo dark) ===== */
+.pp3 .pp3-grad {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #0891b2 0%, #06B6D4 25%, #3b82f6 50%, #0891b2 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: pp3GradShift 6s linear infinite;
+  padding-top: 0.05em;
+  padding-right: 0.18em;
+  padding-bottom: 0.15em;
+}
+.pp3 .pp3-grad-light {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 500;
+  background: linear-gradient(90deg, #67E8F9 0%, #06B6D4 25%, #3b82f6 50%, #67E8F9 75%, #06B6D4 100%);
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: pp3GradShift 6s linear infinite;
+  padding-top: 0.05em;
+  padding-right: 0.18em;
+  padding-bottom: 0.15em;
+}
+
+/* ============================================================
+   LINKS P2 ciano
+   ============================================================ */
+.pp3 a.text-\[\#1e40af\],
+.pp3 .text-\[\#1e40af\] {
+  color: #0891b2 !important;
+  transition: color 0.2s ease;
+}
+.pp3 a.text-\[\#1e40af\]:hover { color: #06B6D4 !important; }
+
+/* ============================================================
+   BOTOES — FIEL jmf-form-card button + jmf-p2-cbtn-cyan
+   Animações ricas no hover (igual index): lift -3px + glow + transition cubic
+   ============================================================ */
+.pp3 a.bg-\[\#1e40af\],
+.pp3 a.bg-\[\#1e40af\]:hover {
+  background: linear-gradient(135deg, #06B6D4 0%, #3b82f6 100%) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(103,232,249,0.4);
+  box-shadow: 0 10px 30px -10px rgba(6,182,212,0.5);
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, background 0.3s ease !important;
+  animation: none !important;
+}
+.pp3 a.bg-\[\#1e40af\]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 40px -10px rgba(6,182,212,0.65), 0 0 0 4px rgba(6,182,212,0.10);
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%) !important;
+}
+.pp3 a.bg-\[\#1e40af\]:active { transform: translateY(-1px); }
+.pp3 a.border-2.border-\[\#1e40af\] {
+  border: 1px solid rgba(8,145,178,0.4) !important;
+  color: #0891b2 !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+  border-radius: 10px !important;
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, color 0.3s ease, background 0.3s ease, box-shadow 0.3s ease !important;
+}
+.pp3 a.border-2.border-\[\#1e40af\]:hover {
+  border-color: #06B6D4 !important;
+  color: #06B6D4 !important;
+  background: rgba(6,182,212,0.05) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px -12px rgba(6,182,212,0.45);
+}
+
+/* ============================================================
+   TEXTOS LEAD — FIEL jmf-sol-lead
+   ============================================================ */
+.pp3 p.text-gray-600,
+.pp3 p.text-gray-600.text-lg,
+.pp3 p.text-gray-600.text-lg.leading-relaxed {
+  color: #475569 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.75 !important;
+}
+.pp3 section.bg-\[\#0f172a\] p.text-white\/80.text-lg {
+  color: rgba(203,213,225,0.85) !important;
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================
+   CARDS — FIEL jmf-sol-card
+   Background branco, border 1px sutil, no hover lift + border ciano + ic glow.
+   SEM dots pulsantes, SEM linha gradiente no topo (esses vêm do diferenciais do index, que é dark e tem pulse só em reactors).
+   ============================================================ */
+.pp3 .card-custom {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border: 1px solid rgba(15,23,42,0.09) !important;
+  border-radius: 16px !important;
+  padding: 1.75rem 1.6rem 1.5rem !important;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+.pp3 .card-custom::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(6,182,212,0.18), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.pp3 .card-custom:hover {
+  transform: translateY(-6px);
+  border-color: rgba(8,145,178,0.35) !important;
+  box-shadow: 0 24px 45px -22px rgba(2,6,23,0.18), 0 0 32px -8px rgba(6,182,212,0.15);
+}
+.pp3 .card-custom:hover::before { opacity: 1; }
+.pp3 .card-custom > * { position: relative; z-index: 1; }
+
+/* icon-circle — FIEL jmf-sol-ic (não pulse, só hover scale + bg swap) */
+.pp3 .icon-circle {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 12px !important;
+  background: rgba(6,182,212,0.08) !important;
+  border: 1px solid rgba(6,182,212,0.22) !important;
+  color: #0891b2 !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.1rem !important;
+  font-size: 1.35rem !important;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease !important;
+  animation: none !important;
+}
+.pp3 .icon-circle::after { display: none !important; }
+.pp3 .card-custom:hover .icon-circle {
+  background: rgba(6,182,212,0.18) !important;
+  transform: scale(1.06) rotate(-3deg);
+  color: #0e7490;
+}
+
+/* Cards listrados (border #dbeafe) — mesmo padrão jmf-sol-card */
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\] {
+  position: relative;
+  border: 1px solid rgba(15,23,42,0.09) !important;
+  border-radius: 16px !important;
+  transition: transform 0.3s cubic-bezier(0.22,1,0.36,1), border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+}
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\]::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 180px; height: 180px;
+  background: radial-gradient(circle, rgba(6,182,212,0.18), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\]::after { display: none !important; }
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\]:hover {
+  transform: translateY(-4px);
+  border-color: rgba(8,145,178,0.35) !important;
+  box-shadow: 0 24px 45px -22px rgba(2,6,23,0.18), 0 0 32px -8px rgba(6,182,212,0.15);
+}
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\]:hover::before { opacity: 1; }
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\] > * { position: relative; z-index: 1; }
+.pp3 .bg-white.rounded-xl.border.border-\[\#dbeafe\] h3 i { color: #0891b2 !important; }
+
+/* ============================================================
+   FAQ accordion (FIURNS)
+   ============================================================ */
+.pp3 details.accordion-item {
+  border: 1px solid rgba(15,23,42,0.09) !important;
+  border-radius: 12px !important;
+  background: #ffffff;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.pp3 details.accordion-item + details.accordion-item { margin-top: 0.6rem !important; }
+.pp3 details.accordion-item:hover { border-color: rgba(6,182,212,0.3) !important; }
+.pp3 details.accordion-item[open] {
+  border-color: rgba(6,182,212,0.35) !important;
+  box-shadow: 0 14px 36px -22px rgba(6,182,212,0.3);
+}
+.pp3 details.accordion-item .accordion-summary {
+  color: #0f172a;
+  font-weight: 600;
+  padding: 1.1rem 1.5rem;
+  transition: color 0.2s ease;
+}
+.pp3 details.accordion-item:hover .accordion-summary { color: #0891b2; }
+.pp3 details.accordion-item .accordion-body {
+  background: #f8fafc;
+  border-top: 1px solid rgba(15,23,42,0.06);
+  padding: 1.25rem 1.5rem 1.4rem;
+  color: #475569;
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
+/* ============================================================
+   TABLE comparativo
+   ============================================================ */
+.pp3 table thead tr th {
+  background: linear-gradient(180deg, #0a1628 0%, #102a44 100%) !important;
+  color: #ffffff !important;
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  border-bottom: 2px solid rgba(103,232,249,0.4);
+}
+.pp3 table tbody tr { transition: background 0.2s ease; }
+.pp3 table tbody tr:hover { background: rgba(6,182,212,0.05) !important; }
+.pp3 table td { border-color: rgba(15,23,42,0.08) !important; }
+
+/* ============================================================
+   IMAGENS — ring ciano soft no hover
+   ============================================================ */
+.pp3 img.rounded-xl.shadow-lg {
+  border-radius: 16px !important;
+  box-shadow: 0 24px 60px -30px rgba(10,22,40,0.25) !important;
+  transition: box-shadow 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+.pp3 img.rounded-xl.shadow-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 30px 70px -30px rgba(6,182,212,0.30) !important;
+}
+
+/* ============================================================
+   BARRA "Atualizado em" — eyebrow tech navy
+   ============================================================ */
+.pp3 div.bg-white.border-b.border-gray-100 {
+  background: #0a1628 !important;
+  border-bottom: 1px solid rgba(103,232,249,0.18) !important;
+  padding: 0.55rem 1.5rem !important;
+}
+.pp3 div.bg-white.border-b.border-gray-100 span {
+  color: rgba(103,232,249,0.7) !important;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.pp3 div.bg-white.border-b.border-gray-100 span i { color: #67E8F9; }
+.pp3 div.bg-white.border-b.border-gray-100 .container { text-align: center !important; }
+
+/* ============================================================
+   BLOCOS DE CONTATO (icon chips) — ciano soft bg
+   ============================================================ */
+.pp3 div.w-10.h-10.rounded-full.bg-\[\#1e40af\] {
+  background: rgba(6,182,212,0.08) !important;
+  border: 1px solid rgba(6,182,212,0.22) !important;
+  color: #0891b2 !important;
+  box-shadow: none;
+}
+
+/* ============================================================
+   LINK CARDS (artigos relacionados)
+   ============================================================ */
+.pp3 a.bg-white.rounded-xl.border.border-gray-100 {
+  border: 1px solid rgba(15,23,42,0.09) !important;
+  border-radius: 12px !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s cubic-bezier(0.22,1,0.36,1);
+}
+.pp3 a.bg-white.rounded-xl.border.border-gray-100:hover {
+  border-color: rgba(8,145,178,0.35) !important;
+  box-shadow: 0 16px 40px -22px rgba(6,182,212,0.25);
+  transform: translateY(-2px);
+}
+.pp3 a.bg-white.rounded-xl.border.border-gray-100:hover p.font-semibold { color: #0891b2 !important; }
+
+/* ============================================================
+   SECTION #formulario — TRANSFORMADA em jmf-form-sec do index
+   Layout: grid 1fr 1.1fr | copy à esquerda | card à direita
+   Copy tem: eyebrow Contato (dot pulsante), h2 Fraunces, lead, meta list
+   Card tem: border ciano, linha gradiente topo, inputs ciano focus, submit gradient
+   ============================================================ */
+.pp3 section#formulario {
+  position: relative;
+  background: #f8fafc !important;
+  padding: 6rem 1.5rem 7rem !important;
+  overflow: hidden;
+}
+.pp3 section#formulario::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(900px 500px at 88% 100%, rgba(6,182,212,0.12), transparent 60%),
+    radial-gradient(700px 400px at 5% 5%, rgba(59,130,246,0.08), transparent 60%);
+  pointer-events: none;
+}
+.pp3 section#formulario > .container { position: relative; z-index: 1; }
+
+/* grid layout */
+.pp3 section#formulario .flex.flex-col.lg\:flex-row {
+  display: grid !important;
+  grid-template-columns: 1fr;
+  gap: 3rem !important;
+  max-width: 72rem !important;
+  margin: 0 auto !important;
+  align-items: start !important;
+}
+@media (min-width: 1024px) {
+  .pp3 section#formulario .flex.flex-col.lg\:flex-row {
+    grid-template-columns: 1fr 1.1fr !important;
+    gap: 4rem !important;
+  }
+}
+.pp3 section#formulario .lg\:w-5\/12,
+.pp3 section#formulario .lg\:w-7\/12 {
+  width: auto !important;
+  max-width: none !important;
+  flex: none !important;
+}
+
+/* copy column */
+.pp3 section#formulario .lg\:w-5\/12 > h2 {
+  font-family: 'Fraunces', serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(2rem, 4vw, 3rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.02em !important;
+  color: #0f172a !important;
+  margin: 0 0 1.2rem !important;
+  padding: 0.18em 0.16em 0 0;
+}
+.pp3 section#formulario .lg\:w-5\/12 > p {
+  color: #475569 !important;
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  max-width: 32rem !important;
+  margin-bottom: 2rem !important;
+}
+/* meta items */
+.pp3 section#formulario .lg\:w-5\/12 > div.flex.items-center.gap-3 {
+  display: flex !important;
+  align-items: center;
+  gap: 0.7rem !important;
+  margin-bottom: 0.7rem !important;
+}
+.pp3 section#formulario .lg\:w-5\/12 > div.flex.items-center.gap-3 p {
+  color: #334155 !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+.pp3 section#formulario .lg\:w-5\/12 > div.flex.items-center.gap-3 a {
+  color: #0891b2 !important;
+  transition: color 0.2s;
+}
+.pp3 section#formulario .lg\:w-5\/12 > div.flex.items-center.gap-3 a:hover {
+  color: #06B6D4 !important;
+}
+
+/* card column */
+.pp3 section#formulario .bg-\[\#dbeafe\].rounded-2xl,
+.pp3 section#formulario div.bg-white.rounded-2xl.p-8.shadow-lg {
+  position: relative;
+  background: #ffffff !important;
+  border: 1px solid rgba(6,182,212,0.28) !important;
+  border-radius: 18px !important;
+  padding: 2rem !important;
+  box-shadow:
+    0 1px 2px rgba(15,23,42,0.04),
+    0 12px 40px -16px rgba(8,145,178,0.20) !important;
+  transition: box-shadow 0.4s, transform 0.4s;
+}
+.pp3 section#formulario .bg-\[\#dbeafe\].rounded-2xl::before,
+.pp3 section#formulario div.bg-white.rounded-2xl.p-8.shadow-lg::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #67E8F9, #06B6D4, #3b82f6);
+  border-radius: 18px 18px 0 0;
+  opacity: 0.85;
+}
+.pp3 section#formulario .bg-\[\#dbeafe\].rounded-2xl:hover,
+.pp3 section#formulario div.bg-white.rounded-2xl.p-8.shadow-lg:hover {
+  box-shadow:
+    0 1px 2px rgba(15,23,42,0.04),
+    0 24px 60px -20px rgba(8,145,178,0.32) !important;
+}
+/* inputs */
+.pp3 section#formulario .form-field {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15,23,42,0.14);
+  border-radius: 10px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+}
+.pp3 section#formulario .form-field:focus {
+  outline: none;
+  border-color: #06B6D4;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(6,182,212,0.12);
+}
+.pp3 section#formulario .form-field::placeholder { color: #94a3b8; }
+.pp3 section#formulario button[type="submit"] {
+  background: linear-gradient(135deg, #06B6D4 0%, #3b82f6 100%) !important;
+  border-radius: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em;
+  box-shadow: 0 10px 30px -10px rgba(6,182,212,0.5);
+  transition: transform 0.25s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s ease, background 0.3s ease !important;
+}
+.pp3 section#formulario button[type="submit"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 45px -12px rgba(6,182,212,0.70), 0 0 0 4px rgba(6,182,212,0.10) !important;
+  background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%) !important;
+}
+.pp3 section#formulario button[type="submit"]:active { transform: translateY(-1px); }
+.pp3 section#formulario button[type="submit"]:disabled {
+  transform: none;
+  box-shadow: none !important;
+  opacity: 0.7;
+}

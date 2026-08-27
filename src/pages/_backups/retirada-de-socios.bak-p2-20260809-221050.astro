@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20pr%C3%B3-labore%20e%20distribui%C3%A7%C3%A3o%20de%20lucros.";
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Retirada de Sócios: Pró-labore, Dividendos e Holding Familiar",
+  "description": "Hub completo sobre como sócios retiram dinheiro da empresa: pró-labore, distribuição de lucros isenta de IR, holding familiar e planejamento patrimonial.",
+  "url": "https://www.jmfcontabilidade.com.br/retirada-de-socios",
+  "publisher": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" }
+});
+---
+
+<Layout
+  title="Retirada de Sócios: Pró-labore, Dividendos e Holding | JMF"
+  description="Como sócios retiram dinheiro da empresa: pró-labore, distribuição de lucros isenta de IR, holding familiar e planejamento patrimonial. Guia JMF Contabilidade."
+  canonical="https://www.jmfcontabilidade.com.br/retirada-de-socios"
+  ogUrl="https://www.jmfcontabilidade.com.br/retirada-de-socios"
+  schema={schema}
+  heroInterno
+>
+
+  <HeroInterno
+    title="Retirada de Sócios"
+    subtitle="Pró-labore, distribuição de lucros, holding familiar — entenda como retirar dinheiro da empresa de forma legal e eficiente."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Retirada de Sócios" }
+    ]}
+    ctas={[
+      { label: "Falar com Especialista", href: WA, variant: "cta" }
+    ]}
+  />
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        Todo sócio que trabalha na empresa precisa retirar dinheiro — mas <strong>como</strong> faz isso faz toda a diferença no imposto que vai pagar. O pró-labore é tributado com INSS e IR. A distribuição de lucros, quando feita corretamente, é <strong>isenta de Imposto de Renda</strong>.
+      </p>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        Em 2026, a Lei 15.270/2025 trouxe mudanças importantes: isenção de IRPF para pró-labore de até R$ 5.000/mês (a partir do ano-base 2026) e nova tributação de 10% sobre dividendos acima de R$ 50.000/mês. Este hub reúne todos os artigos da JMF sobre o tema.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-[#fef3c7] rounded-xl p-5">
+          <h3 class="font-bold text-[#0f172a] mb-2">Pró-labore</h3>
+          <p class="text-gray-600 text-sm">Remuneração pelo trabalho do sócio. Tributada com INSS (11%) e IRRF na fonte. Obrigatória para sócios que exercem atividades.</p>
+        </div>
+        <div class="bg-[#f0fdf4] rounded-xl p-5">
+          <h3 class="font-bold text-[#0f172a] mb-2">Distribuição de Lucros</h3>
+          <p class="text-gray-600 text-sm">Transferência do lucro apurado para os sócios. <strong>Iscrita de IR</strong> (art. 10, Lei 9.249/95). Requer escrituração contábil regular.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Resumo completo -->
+  <section class="py-16 bg-white border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold text-[#0f172a] mb-6">Pró-labore: obrigatório e com novo limite de isenção</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        O pró-labore é a remuneração do sócio pelo trabalho na empresa e é <strong>obrigatório</strong> para qualquer sócio que exerça atividades — independentemente do regime tributário. A ausência de pró-labore é uma irregularidade fiscal grave: a Receita Federal pode interpretar toda a distribuição de lucros como remuneração pelo trabalho e cobrar INSS retroativamente, com multa e juros. O valor mínimo em 2026 é R$ 1.621,00/mês (salário mínimo nacional). Sobre o pró-labore incide 11% de INSS na fonte (teto de contribuição: R$ 932,31/mês, sobre um teto de R$ 8.475,55).
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        A principal novidade da <strong>Lei 15.270/2025</strong>: pró-labore de até R$ 5.000/mês fica <strong>totalmente isento de Imposto de Renda</strong> na fonte; entre R$ 5.000,01 e R$ 7.350/mês há redução progressiva; acima disso, volta a tabela progressiva normal (7,5% a 27,5%). Na prática, um sócio com pró-labore de R$ 5.000/mês paga apenas R$ 550 de INSS, sem IR — líquido de R$ 4.450.
+      </p>
+
+      <h2 class="text-2xl font-bold text-[#0f172a] mt-10 mb-6">Distribuição de lucros: isenta de IR, com uma condição</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        O <a href="https://www.planalto.gov.br/ccivil_03/leis/l9249/art10.htm" target="_blank" rel="noopener" class="text-[#1e40af] hover:underline font-semibold">artigo 10 da Lei 9.249/1995</a> garante que lucros distribuídos por empresas do Lucro Real, Lucro Presumido ou Simples Nacional são isentos de IR na fonte e na declaração do beneficiário — regra em vigor desde 1996. A condição para usar esse benefício é ter <strong>escrituração contábil regular</strong> que comprove o lucro apurado: sem balanço e DRE atualizados, a Receita pode entender que não há lucro a distribuir e reclassificar o valor como pró-labore disfarçado, cobrando INSS e IR retroativos com multa.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        No Simples Nacional, sem escrituração contábil, só é possível distribuir isento o valor equivalente ao lucro presumido sobre o faturamento (8% a 32%, conforme a atividade) — um limite bem mais restritivo do que o lucro real apurado. Por isso manter a contabilidade em dia no Simples vale dinheiro real no bolso do sócio, não é só burocracia.
+      </p>
+
+      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">O que muda em 2026: tributação de 10% acima de R$ 50.000/mês</h3>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        A Lei 15.270/2025 criou uma retenção de <strong>10% de IRRF</strong> sobre a distribuição de lucros que supere R$ 50.000/mês por CPF beneficiário — abaixo desse valor, a isenção continua integral. Lucros já apurados e com distribuição aprovada em ata até 31/12/2025 continuam totalmente isentos, mesmo que o pagamento ocorra depois. Há uma controvérsia jurídica em aberto sobre se essa nova tributação se aplica ao Simples Nacional: a Receita Federal entende que sim; parte da doutrina argumenta que a Lei Complementar 123/2006 (que garante a isenção no Simples) não pode ser revogada por uma lei ordinária. Empresas do Simples que distribuem valores expressivos devem acompanhar essa discussão com o contador.
+      </p>
+
+      <h3 class="text-xl font-bold text-[#0f172a] mt-8 mb-3">A combinação ideal: pró-labore + dividendos</h3>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        O planejamento mais eficiente combina os dois instrumentos: pró-labore suficiente para manter a qualidade de contribuinte do INSS (a partir do salário mínimo), e o restante da remuneração via distribuição de lucros, isenta de IR. Exemplo: sócio com retirada total de R$ 15.000/mês no Simples Nacional — R$ 5.000 de pró-labore (INSS R$ 550, IR zero) + R$ 10.000 de dividendos (potencialmente isentos) resulta em carga efetiva de cerca de <strong>3,7%</strong>, líquido de ~R$ 14.450. O mesmo valor todo via pró-labore, ou no Lucro Presumido, geraria uma carga bem mais alta.
+      </p>
+
+      <h2 class="text-2xl font-bold text-[#0f172a] mt-10 mb-6">Holding familiar: quando vale a pena</h2>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        Uma holding controla participações em outras empresas ou ativos da família, em vez de eles ficarem no nome das pessoas físicas. Faz sentido para quem tem <strong>dois ou três imóveis e quer simplificar a herança</strong> (evitando meses de inventário com ITCMD e custas judiciais), quem participa de <strong>mais de uma empresa</strong> e quer centralizar a gestão, ou quem quer <strong>proteger o patrimônio pessoal</strong> do risco de uma empresa operacional. Não costuma valer a pena para quem tem patrimônio pequeno e sem complexidade, empresa ainda em estágio inicial, ou nenhum planejamento sucessório de curto prazo.
+      </p>
+      <p class="text-gray-600 leading-relaxed mb-4">
+        O investimento total para montar e manter uma holding simples em Blumenau no primeiro ano fica tipicamente entre <strong>R$ 5.000 e R$ 15.000</strong> — constituição (R$ 1.500 a R$ 3.500), ITBI sobre imóveis transferidos (~2% do valor venal), e manutenção mensal de R$ 300 a R$ 800 com contabilidade e declarações fiscais.
+      </p>
+
+      <div class="bg-[#fef3c7] rounded-xl p-6 mt-6">
+        <p class="text-[#0f172a] text-sm font-medium"><i class="bi bi-lightbulb mr-2"></i><strong>Resumo prático:</strong> a estrutura certa depende do seu regime tributário, do volume retirado e dos seus planos de longo prazo. A JMF faz essa análise com base nos seus números reais antes de qualquer recomendação.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos do cluster -->
+  <section class="py-16 bg-[#f8fafc]">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-2xl font-bold text-[#0f172a] mb-8">Artigos sobre Retirada de Sócios</h2>
+
+      <div class="space-y-6">
+        <a href="/blog/pro-labore-e-dividendos-2026" class="block bg-white rounded-xl border border-gray-100 p-6 hover:border-[#1e40af] hover:shadow-md transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-[#dbeafe] rounded-xl flex items-center justify-center shrink-0">
+              <i class="bi bi-cash text-[#1e40af] text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg group-hover:text-[#1e40af] mb-1">Pró-labore e Dividendos 2026: Quanto Retirar e Como Pagar Menos</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Mudanças da Lei 15.270/2025: isenção até R$ 5.000/mês no pró-labore e nova tributação de 10% sobre dividendos acima de R$ 50.000/mês.</p>
+              <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm mt-2 group-hover:gap-2 transition-all">Ler artigo <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto" class="block bg-white rounded-xl border border-gray-100 p-6 hover:border-[#1e40af] hover:shadow-md transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-[#dbeafe] rounded-xl flex items-center justify-center shrink-0">
+              <i class="bi bi-percent text-[#1e40af] text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg group-hover:text-[#1e40af] mb-1">Distribuição de Lucros 2026: Como Fazer Certo e Pagar Menos</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">A isenção do IR está prevista em lei (art. 10, Lei 9.249/95). Entenda como funciona na prática, os limites e a escrituração necessária.</p>
+              <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm mt-2 group-hover:gap-2 transition-all">Ler artigo <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+
+        <a href="/blog/holding-familiar-vale-a-pena-para-pequenos-empresarios" class="block bg-white rounded-xl border border-gray-100 p-6 hover:border-[#1e40af] hover:shadow-md transition-all group">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 bg-[#dbeafe] rounded-xl flex items-center justify-center shrink-0">
+              <i class="bi bi-building text-[#1e40af] text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-[#0f172a] text-lg group-hover:text-[#1e40af] mb-1">Holding Familiar: Vale a Pena para Pequenos Empresários?</h3>
+              <p class="text-gray-500 text-sm leading-relaxed">Análise de viabilidade: tipos de holding, custos de criação, economia em ITCMD, planejamento sucessório e quando compensa.</p>
+              <span class="inline-flex items-center gap-1 text-[#1e40af] font-semibold text-sm mt-2 group-hover:gap-2 transition-all">Ler artigo <i class="bi bi-arrow-right"></i></span>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-14 bg-[#0f172a]">
+    <div class="container mx-auto px-4 text-center max-w-2xl">
+      <h2 class="text-2xl font-bold text-white mb-3">Quanto você está pagando a mais de imposto?</h2>
+      <p class="text-white/70 mb-6">A JMF analisa a melhor proporção entre pró-labore e distribuição de lucros para o seu caso específico.</p>
+      <a href={WA} target="_blank" rel="noopener"
+        class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25d366] hover:bg-[#22c55e] text-white font-bold rounded-xl transition-colors shadow-lg">
+        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
+        Falar com Especialista
+      </a>
+    </div>
+  </section>
+
+</Layout>

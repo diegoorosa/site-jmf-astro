@@ -1,0 +1,17 @@
+---
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+---
+
+<div id="whatsapp-flutuante">
+  <a href={WA} target="_blank" rel="noopener noreferrer" class="whatsapp-button" aria-label="Fale conosco pelo WhatsApp">
+    <i class="bi bi-whatsapp text-white text-3xl"></i>
+    <span class="whatsapp-tooltip">Fale Conosco</span>
+  </a>
+</div>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('whatsapp-flutuante');
+    if (btn) btn.classList.toggle('show', window.scrollY > 300);
+  });
+</script>
