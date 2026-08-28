@@ -1,35 +1,24 @@
 ---
-// Banner de consentimento LGPD. Pequeno, centralizado embaixo no mobile.
+// Banner de consentimento LGPD. Muito pequeno, só aparece após scroll.
 // "Sim" = mantém tags. "Não" = remove GTM, gtag.js e o script do WhatsApp conversion.
 ---
 
 <div
   id="jmf-cookie-banner"
-  class="fixed bottom-0 left-0 right-0 z-[1200] hidden px-3 pb-3 sm:bottom-4 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:max-w-md"
+  class="fixed bottom-0 left-0 right-0 z-[1200] hidden px-2 pb-2 sm:bottom-2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:max-w-md"
   role="dialog"
   aria-live="polite"
   aria-label="Aviso de cookies"
 >
-  <div class="rounded-2xl bg-[#0f172a]/95 backdrop-blur border border-cyan-400/20 shadow-2xl p-4 text-slate-200 text-sm">
-    <p class="mb-3 leading-snug">
-      Usamos cookies para análise (Google Analytics) e anúncios. Pode aceitar ou recusar — sua escolha vale só para este navegador.
-      <a href="/politica-de-privacidade" class="text-cyan-300 hover:text-cyan-200 underline underline-offset-2">Política de privacidade</a>
-    </p>
-    <div class="flex gap-2 justify-end">
-      <button
-        type="button"
-        id="jmf-cookie-reject"
-        class="px-4 py-2 rounded-lg text-sm font-semibold border border-slate-500 text-slate-200 hover:bg-slate-700/50 transition-colors"
-      >
-        Recusar
-      </button>
-      <button
-        type="button"
-        id="jmf-cookie-accept"
-        class="px-4 py-2 rounded-lg text-sm font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-900 transition-colors"
-      >
-        Aceitar
-      </button>
+  <div class="rounded-xl bg-[#0f172a]/95 backdrop-blur border border-cyan-400/20 shadow-lg px-3 py-2 text-slate-200 text-xs">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+      <p class="leading-snug text-[0.7rem] sm:text-xs">
+        Cookies para análise (GA) e anúncios. <a href="/politica-de-privacidade" class="text-cyan-300 hover:text-cyan-200 underline">Política</a>
+      </p>
+      <div class="flex gap-1.5 justify-end">
+        <button type="button" id="jmf-cookie-reject" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold border border-slate-500 text-slate-200 hover:bg-slate-700/50 transition-colors">Recusar</button>
+        <button type="button" id="jmf-cookie-accept" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-900 transition-colors">Aceitar</button>
+      </div>
     </div>
   </div>
 </div>
@@ -46,11 +35,9 @@
     function show() { banner.classList.remove('hidden'); }
     function hide() { banner.classList.add('hidden'); }
     function setTags(allowed) {
-      // Marca elementos com data-cookie-tag (GTM, gtag, etc) — esconde se rejeitar
       document.querySelectorAll('[data-cookie-tag]').forEach(function (el) {
         el.style.display = allowed ? '' : 'none';
       });
-      // Avisa o WhatsApp conversion (injetado no body, sem atributo data-cookie-tag) pra parar
       if (allowed) {
         try { sessionStorage.removeItem('jmf_wa_blocked'); } catch (e) {}
       } else {
@@ -61,9 +48,20 @@
     if (saved === 'accepted') { setTags(true); hide(); return; }
     if (saved === 'rejected') { setTags(false); hide(); return; }
 
-    // Primeira visita: bloqueia até decidir
+    // Primeira visita: bloqueia tags, mas NÃO mostra banner ainda
     setTags(false);
-    show();
+
+    // Mostra só depois de rolar um pouco (100px)
+    var shown = false;
+    function onScroll() {
+      if (shown) return;
+      if (window.scrollY > 100) {
+        shown = true;
+        show();
+        window.removeEventListener('scroll', onScroll, { passive: true });
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
 
     function decide(value) {
       try { localStorage.setItem(STORAGE, value); } catch (e) {}
