@@ -170,11 +170,9 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-drawer .dd-head { padding: 0.85rem 1.5rem; color: #67E8F9; font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; }
 </style>
 
+<div x-data="{ open: false, scrolled: false }" @scroll.window="scrolled = window.scrollY > 20" x-init="scrolled = window.scrollY > 20">
 <nav
   class="jmf-nav sticky top-0 z-[1030] py-2.5"
-  x-data="{ open: false, scrolled: false }"
-  @scroll.window="scrolled = window.scrollY > 20"
-  x-init="scrolled = window.scrollY > 20"
   :class="scrolled ? 'is-scrolled' : ''"
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
@@ -308,7 +306,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 
   <!-- Mobile drawer (fora do nav para z-index global) -->
   <div class="jmf-drawer-overlay lg:hidden" :class="open ? 'is-open' : ''" @click="open = false"></div>
-  <aside class="jmf-drawer lg:hidden" :class="open ? 'is-open' : ''" x-data="{ d1:false, d2:false, d3:false, d4:false }">
+  <aside class="jmf-drawer lg:hidden" :class="open ? 'is-open' : ''">
     <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
       <img src="/assets/images/jmf-contabilidade-jean-254x159.webp" alt="JMF" width="254" height="159" style="height:2.5rem;width:auto;" />
       <button @click="open = false" class="text-slate-300 p-2" aria-label="Fechar"><i class="bi bi-x-lg text-xl"></i></button>
@@ -350,3 +348,4 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     <a href="/trabalhe-conosco">Trabalhe Conosco</a>
     <a href="https://www.sciweb.com.br/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 font-semibold mt-2">Área do Cliente <i class="bi bi-box-arrow-in-right"></i></a>
   </aside>
+</div>
