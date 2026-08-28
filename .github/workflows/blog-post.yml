@@ -103,7 +103,11 @@ jobs:
           POST_URL: ${{ steps.generate-post.outputs.url }}
           POST_IMAGE: ${{ steps.generate-post.outputs.image }}
         run: |
-          curl -sS -X POST "$GMB_WEBHOOK_URL" -H "Content-Type: application/json" -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}" || echo "Webhook falhou"
+          if [ -z "$GMB_WEBHOOK_URL" ]; then
+            echo "❌ GMB_WEBHOOK_URL não configurado"
+            exit 1
+          fi
+          curl -sS -X POST "$GMB_WEBHOOK_URL" -H "Content-Type: application/json" -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}"
 
       - name: Commit and push new post
         if: success()
