@@ -55,6 +55,14 @@ jobs:
           FORCED_TOPIC: ${{ github.event.inputs.force_topic }}
         run: node scripts/generate-post.mjs
 
+      - name: Fetch image from Pexels/Unsplash
+        env:
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+          UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
+          POST_SLUG: ${{ steps.generate-post.outputs.slug }}
+          POST_TITLE: ${{ steps.generate-post.outputs.title }}
+        run: node scripts/fetch-image.mjs
+
       - name: Convert images to WebP
         run: node scripts/convert-images.mjs
 
