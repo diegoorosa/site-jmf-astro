@@ -2,7 +2,7 @@
 title: "Desenquadramento MEI por Faturamento"
 description: "Entenda o desenquadramento do MEI por excesso de faturamento: limites 2026, diferença entre ultrapassar até 20% e acima de 20%, e como planejar a..."
 pubDate: 2026-07-18
-author: "Fabrício Santos, CRC SC-042156/O"
+author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-desenquadramento-faturamento.jpg"
 imageAlt: "Calculadora e gráficos de faturamento MEI"
 ---

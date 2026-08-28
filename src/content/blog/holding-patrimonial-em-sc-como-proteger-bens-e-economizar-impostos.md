@@ -2,7 +2,7 @@
 title: "Holding Patrimonial em SC: Como Proteger Bens e Economizar Impostos"
 description: "Entenda como a holding patrimonial em Santa Catarina protege o patrimônio da sua família e reduz impostos no ITCMD e IRPF. Veja o guia completo 2026."
 pubDate: 2026-08-27
-author: "Fabricio Rosa, CRC SC-041280/O"
+author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-holding-patrimonial-em-sc-como-proteger-bens-e-economizar-impostos.webp"
 imageAlt: "Empresário e advogados analisando planejamento sucessório e holding patrimonial em escritório moderno em Blumenau SC"
 ---
