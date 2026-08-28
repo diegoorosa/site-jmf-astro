@@ -13,7 +13,7 @@ const BLOG_DIR = path.resolve(__dirname, '../src/content/blog');
 const IMAGES_DIR = path.resolve(__dirname, '../public/assets/images');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-3.5-flash-lite' });
+const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
 
 // Tópicos existentes (do step anterior)
 const EXISTING_TOPICS = process.env.EXISTING_TOPICS || '';
