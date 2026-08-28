@@ -87,6 +87,8 @@ const ogImageUrl = entry.data.image || "https://www.jmfcontabilidade.com.br/asse
     <meta property="og:type" content="article" />
     <meta property="article:published_time" content={entry.data.pubDate.toISOString()} />
     <meta property="article:author" content={authorName} />
+    <!-- Google Preferred Sources - apenas em artigos do blog -->
+    <script async src="https://news.google.com/swg/js/v1/swg.js"></script>
   </Fragment>
 
   <HeroInterno
@@ -132,6 +134,9 @@ const ogImageUrl = entry.data.image || "https://www.jmfcontabilidade.com.br/asse
       <div class="prose-jmf">
         <Content />
       </div>
+
+      <!-- Google Preferred Sources Button -->
+      <div google-add-preferred-source-btn data-theme="light"></div>
 
       <!-- CTA WhatsApp -->
       <div class="mt-14 p-7 bg-[#dbeafe] rounded-2xl border border-blue-200 text-center">
