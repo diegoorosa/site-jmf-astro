@@ -1,11 +1,11 @@
 ---
-// Banner de consentimento LGPD. Muito pequeno, só aparece após scroll.
+// Banner de consentimento LGPD. Muito pequeno, só aparece após CTA bar (500px).
 // "Sim" = mantém tags. "Não" = remove GTM, gtag.js e o script do WhatsApp conversion.
 ---
 
 <div
   id="jmf-cookie-banner"
-  class="fixed bottom-0 left-0 right-0 z-[1200] hidden px-2 pb-2 sm:bottom-2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:max-w-md"
+  class="fixed left-2 right-2 bottom-14 z-[1200] hidden sm:bottom-2 sm:left-1/2 sm:right-auto sm:-translate-x-1/2 sm:max-w-md"
   role="dialog"
   aria-live="polite"
   aria-label="Aviso de cookies"
@@ -13,11 +13,11 @@
   <div class="rounded-xl bg-[#0f172a]/95 backdrop-blur border border-cyan-400/20 shadow-lg px-3 py-2 text-slate-200 text-xs">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
       <p class="leading-snug text-[0.7rem] sm:text-xs">
-        Cookies para análise (GA) e anúncios. <a href="/politica-de-privacidade" class="text-cyan-300 hover:text-cyan-200 underline">Política</a>
+        Este site usa cookies para melhorar sua experiência. <a href="/politica-de-privacidade" class="text-cyan-300 hover:text-cyan-200 underline">Saiba mais</a>
       </p>
       <div class="flex gap-1.5 justify-end">
-        <button type="button" id="jmf-cookie-reject" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold border border-slate-500 text-slate-200 hover:bg-slate-700/50 transition-colors">Recusar</button>
-        <button type="button" id="jmf-cookie-accept" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-900 transition-colors">Aceitar</button>
+        <button type="button" id="jmf-cookie-reject" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold border border-slate-500 text-slate-200 hover:bg-slate-700/50 transition-colors">Não</button>
+        <button type="button" id="jmf-cookie-accept" class="px-2.5 py-1 rounded text-[0.65rem] font-semibold bg-cyan-500 hover:bg-cyan-400 text-slate-900 transition-colors">Sim</button>
       </div>
     </div>
   </div>
@@ -48,14 +48,13 @@
     if (saved === 'accepted') { setTags(true); hide(); return; }
     if (saved === 'rejected') { setTags(false); hide(); return; }
 
-    // Primeira visita: bloqueia tags, mas NÃO mostra banner ainda
     setTags(false);
 
-    // Mostra só depois de rolar um pouco (100px)
+    // Mostra só depois do CTA bar (que aparece aos 400px) = 500px
     var shown = false;
     function onScroll() {
       if (shown) return;
-      if (window.scrollY > 100) {
+      if (window.scrollY > 500) {
         shown = true;
         show();
         window.removeEventListener('scroll', onScroll, { passive: true });
