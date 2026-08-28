@@ -63,7 +63,7 @@ jobs:
           aws-region: sa-east-1
 
       - name: Build Astro site
-        run: npx astro build
+        run: npm exec astro build
 
       - name: Deploy assets
         run: |
