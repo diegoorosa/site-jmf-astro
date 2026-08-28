@@ -1,6 +1,7 @@
+node_modules/
+dist/
+.astro/
 gsc-service-account.json
 google-key.json
 scripts/gmb_token.json
-gsc-service-account.json
-google-key.json
 *service-account*.json
