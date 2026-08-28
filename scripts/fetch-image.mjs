@@ -137,6 +137,8 @@ async function searchUnsplash(terms) {
 
 async function downloadAndSave(imageInfo, webpPath, originalPath) {
   try {
+    const sharp = (await import('sharp')).default;
+
     // Preferir original para GMB, maior disponível para WebP
     const originalUrl = imageInfo.original || imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium;
     const webpUrl = imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium || imageInfo.original;
@@ -148,26 +150,38 @@ async function downloadAndSave(imageInfo, webpPath, originalPath) {
     console.log(`🌐 URL original: ${originalUrl}`);
     console.log(`🌐 URL WebP: ${webpUrl}`);
 
-    // Baixar original (para GMB)
+    // Baixar original
     const origResponse = await fetch(originalUrl);
     if (!origResponse.ok) throw new Error(`HTTP ${origResponse.status} (original)`);
     const origBuffer = Buffer.from(await origResponse.arrayBuffer());
-    fs.writeFileSync(originalPath, origBuffer);
-    console.log(`✅ Original salvo: ${originalPath}`);
+
+    // Processar original: limitar a 10000x10000 e salvar como JPG (GMB)
+    const origImage = sharp(origBuffer);
+    const origMetadata = await origImage.metadata();
+    console.log(`📐 Original: ${origMetadata.width}x${origMetadata.height}`);
+
+    let origToSave = origImage;
+    if (origMetadata.width > 10000 || origMetadata.height > 10000) {
+      console.log(`⚠️ Redimensionando original (máx 10000px)...`);
+      origToSave = origImage.resize(10000, 10000, { fit: 'inside', withoutEnlargement: true });
+    }
+    // Sempre salvar como JPG (formato aceito pelo GMB)
+    await origToSave
+      .jpeg({ quality: 85, mozjpeg: true })
+      .toFile(originalPath);
+    console.log(`✅ Original (JPG) salvo: ${originalPath}`);
 
     // Baixar e converter para WebP (para site)
     const webpResponse = await fetch(webpUrl);
     if (!webpResponse.ok) throw new Error(`HTTP ${webpResponse.status} (webp)`);
     const webpBuffer = Buffer.from(await webpResponse.arrayBuffer());
 
-    const sharp = (await import('sharp')).default;
     await sharp(webpBuffer)
       .webp({ quality: 80, effort: 4 })
       .resize(1200, 630, { fit: 'cover', position: 'center' })
       .toFile(webpPath);
     console.log(`✅ WebP salvo: ${webpPath}`);
 
-    // Retornar URL pública do original para GMB
     const publicOriginalUrl = `https://www.jmfcontabilidade.com.br/assets/images/blog-${SLUG}.orig.jpg`;
     const publicWebpUrl = `https://www.jmfcontabilidade.com.br/assets/images/blog-${SLUG}.webp`;
 

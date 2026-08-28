@@ -1,0 +1,77 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [master]
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      AWS_REGION: sa-east-1
+      S3_BUCKET: www.jmfcontabilidade.com.br
+      CLOUDFRONT_DISTRIBUTION_ID: E3Q5M4A0VOV8MY
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Fix bin permissions
+        run: chmod -R +x node_modules/.bin
+
+      - name: Build Astro site
+        run: npm exec astro build
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: sa-east-1
+
+      - name: Deploy assets to S3
+        run: |
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET }}/ \
+            --delete \
+            --exclude "*.html" \
+            --exclude "sitemap.xml" \
+            --exclude "robots.txt" \
+            --exclude "llms.txt" \
+            --exclude "llms-full.txt" \
+            --cache-control "public, max-age=31536000, immutable"
+
+      - name: Deploy HTML to S3
+        run: |
+          aws s3 sync dist/ s3://${{ env.S3_BUCKET }}/ \
+            --exclude "*" \
+            --include "*.html" \
+            --cache-control "no-cache, no-store, must-revalidate"
+
+      - name: Deploy SEO files to S3
+        run: |
+          aws s3 cp dist/sitemap.xml s3://${{ env.S3_BUCKET }}/sitemap.xml --cache-control "no-cache"
+          aws s3 cp dist/llms.txt s3://${{ env.S3_BUCKET }}/llms.txt --cache-control "no-cache"
+          aws s3 cp dist/llms-full.txt s3://${{ env.S3_BUCKET }}/llms-full.txt --cache-control "no-cache"
+
+      - name: CloudFront Invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
