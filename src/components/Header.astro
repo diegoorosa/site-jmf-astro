@@ -304,8 +304,9 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
       </button>
     </div>
   </div>
+</nav>
 
-  <!-- Mobile drawer -->
+  <!-- Mobile drawer (fora do nav para z-index global) -->
   <div class="jmf-drawer-overlay lg:hidden" :class="open ? 'is-open' : ''" @click="open = false"></div>
   <aside class="jmf-drawer lg:hidden" :class="open ? 'is-open' : ''" x-data="{ d1:false, d2:false, d3:false, d4:false }">
     <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
@@ -349,4 +350,3 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     <a href="/trabalhe-conosco">Trabalhe Conosco</a>
     <a href="https://www.sciweb.com.br/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 font-semibold mt-2">Área do Cliente <i class="bi bi-box-arrow-in-right"></i></a>
   </aside>
-</nav>
