@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import WhatsApp from '../components/WhatsApp.astro';
 import MobileCtaBar from '../components/MobileCtaBar.astro';
 import Reveal from '../components/Reveal.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import { schema1 } from '../schema.js-snippet.js';
 
 interface Props {
@@ -204,11 +205,11 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
   </noscript>
 
   <!-- Google Tag Manager (deferred to avoid main-thread blocking) -->
-  <script defer>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7HGBD');</script>
+  <script defer data-cookie-tag>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7HGBD');</script>
 
   <!-- Google Ads Conversion Tag -->
-  <script async src="https://www.googletagmanager.com/gtag.js?id=AW-1021062139"></script>
-  <script>
+  <script async data-cookie-tag src="https://www.googletagmanager.com/gtag.js?id=AW-1021062139"></script>
+  <script data-cookie-tag>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -227,6 +228,7 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
   <WhatsApp />
   <MobileCtaBar />
   <Reveal />
+  <CookieBanner />
 
   <!-- Alpine.js -->
   <script>
@@ -248,8 +250,10 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
   </script>
 
   <!-- WhatsApp conversion tracking -->
-  <script>
+  <script data-cookie-tag>
     document.addEventListener('click', e => {
+      // bloqueia se usuário recusou cookies
+      if (sessionStorage.getItem('jmf_wa_blocked')) return;
       const a = e.target.closest('a');
       if (a && /wa\.me|whatsapp/i.test(a.href)) {
         window.dataLayer = window.dataLayer || [];
