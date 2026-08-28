@@ -56,6 +56,7 @@ jobs:
         run: node scripts/generate-post.mjs
 
       - name: Fetch image from Pexels/Unsplash
+        id: fetch-image
         env:
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
@@ -101,7 +102,7 @@ jobs:
           POST_TITLE: ${{ steps.generate-post.outputs.title }}
           POST_SUMMARY: ${{ steps.generate-post.outputs.summary }}
           POST_URL: ${{ steps.generate-post.outputs.url }}
-          POST_IMAGE: ${{ steps.generate-post.outputs.image }}
+          POST_IMAGE: ${{ steps.fetch-image.outputs.image_original }}
         run: |
           if [ -z "$GMB_WEBHOOK_URL" ]; then
             echo "❌ GMB_WEBHOOK_URL não configurado"
@@ -114,7 +115,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/content/blog/*.md public/assets/images/*.webp
+          git add src/content/blog/*.md public/assets/images/*.webp public/assets/images/*.jpg
           if git diff --staged --quiet; then
             echo "Nenhuma mudanca"
           else

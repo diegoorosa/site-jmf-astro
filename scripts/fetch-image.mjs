@@ -1,7 +1,7 @@
 /**
- * Busca imagem no Pexels baseada no slug/tema do post.
- * Salva como WebP em public/assets/images/blog-{slug}.webp
- * Evita imagens duplicadas.
+ * Busca imagem no Pexels/Unsplash baseada no slug/tema do post.
+ * Salva: WebP para o site + original (JPG/PNG) para GMB.
+ * Exporta URLs originais para GitHub Actions.
  */
 import fs from 'fs';
 import path from 'path';
@@ -21,11 +21,12 @@ if (!SLUG) {
   process.exit(1);
 }
 
-const OUTPUT_FILE = path.join(IMAGES_DIR, `blog-${SLUG}.webp`);
+const WEBP_FILE = path.join(IMAGES_DIR, `blog-${SLUG}.webp`);
+const ORIGINAL_FILE = path.join(IMAGES_DIR, `blog-${SLUG}.orig.jpg`);
 
 // Verificar se já existe
-if (fs.existsSync(OUTPUT_FILE)) {
-  console.log(`✅ Imagem já existe: ${OUTPUT_FILE}`);
+if (fs.existsSync(WEBP_FILE)) {
+  console.log(`✅ Imagens já existem: ${WEBP_FILE}`);
   process.exit(0);
 }
 
@@ -33,11 +34,9 @@ if (fs.existsSync(OUTPUT_FILE)) {
 function getSearchTerms(slug, title) {
   const terms = [];
 
-  // Extrair palavras do slug
   const slugWords = slug.split('-').filter(w => w.length > 2);
   terms.push(...slugWords);
 
-  // Adicionar termos contextuais baseados em palavras-chave do título
   const titleLower = title.toLowerCase();
   const contextMap = {
     'holding': ['holding familiar', 'business structure', 'corporate governance'],
@@ -66,12 +65,10 @@ function getSearchTerms(slug, title) {
     }
   }
 
-  // Fallback genérico
   if (terms.length === 0) {
     terms.push('business', 'office', 'finance', 'professional');
   }
 
-  // Remover duplicatas e limitar
   return [...new Set(terms)].slice(0, 5);
 }
 
@@ -93,9 +90,13 @@ async function searchPexels(terms) {
 
     const data = await response.json();
     if (data.photos && data.photos.length > 0) {
-      // Pegar a primeira foto com boa resolução
-      const photo = data.photos.find(p => p.src.large2x || p.src.large || p.src.medium);
-      return photo.src.large2x || photo.src.large || photo.src.medium;
+      const photo = data.photos.find(p => p.src.original || p.src.large2x || p.src.large || p.src.medium);
+      return {
+        original: photo.src.original,
+        large2x: photo.src.large2x,
+        large: photo.src.large,
+        medium: photo.src.medium
+      };
     }
   } catch (err) {
     console.warn(`⚠️ Pexels search failed: ${err.message}`);
@@ -122,7 +123,11 @@ async function searchUnsplash(terms) {
     const data = await response.json();
     if (data.results && data.results.length > 0) {
       const photo = data.results[0];
-      return photo.urls.regular || photo.urls.full;
+      return {
+        original: photo.urls.raw || photo.urls.full,
+        regular: photo.urls.regular,
+        full: photo.urls.full
+      };
     }
   } catch (err) {
     console.warn(`⚠️ Unsplash search failed: ${err.message}`);
@@ -130,26 +135,46 @@ async function searchUnsplash(terms) {
   return null;
 }
 
-async function downloadAndConvert(imageUrl, outputPath) {
+async function downloadAndSave(imageInfo, webpPath, originalPath) {
   try {
-    const response = await fetch(imageUrl);
-    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    // Preferir original para GMB, maior disponível para WebP
+    const originalUrl = imageInfo.original || imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium;
+    const webpUrl = imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium || imageInfo.original;
 
-    const arrayBuffer = await response.arrayBuffer();
-    const buffer = Buffer.from(arrayBuffer);
+    if (!originalUrl || !webpUrl) {
+      throw new Error('URLs de imagem não encontradas');
+    }
 
-    // Usar sharp para converter para WebP
+    console.log(`🌐 URL original: ${originalUrl}`);
+    console.log(`🌐 URL WebP: ${webpUrl}`);
+
+    // Baixar original (para GMB)
+    const origResponse = await fetch(originalUrl);
+    if (!origResponse.ok) throw new Error(`HTTP ${origResponse.status} (original)`);
+    const origBuffer = Buffer.from(await origResponse.arrayBuffer());
+    fs.writeFileSync(originalPath, origBuffer);
+    console.log(`✅ Original salvo: ${originalPath}`);
+
+    // Baixar e converter para WebP (para site)
+    const webpResponse = await fetch(webpUrl);
+    if (!webpResponse.ok) throw new Error(`HTTP ${webpResponse.status} (webp)`);
+    const webpBuffer = Buffer.from(await webpResponse.arrayBuffer());
+
     const sharp = (await import('sharp')).default;
-    await sharp(buffer)
+    await sharp(webpBuffer)
       .webp({ quality: 80, effort: 4 })
-      .resize(1200, 630, { fit: 'cover', position: 'center' }) // 1.91:1 ratio for social
-      .toFile(outputPath);
+      .resize(1200, 630, { fit: 'cover', position: 'center' })
+      .toFile(webpPath);
+    console.log(`✅ WebP salvo: ${webpPath}`);
 
-    console.log(`✅ Imagem salva: ${outputPath}`);
-    return true;
+    // Retornar URL pública do original para GMB
+    const publicOriginalUrl = `https://www.jmfcontabilidade.com.br/assets/images/blog-${SLUG}.orig.jpg`;
+    const publicWebpUrl = `https://www.jmfcontabilidade.com.br/assets/images/blog-${SLUG}.webp`;
+
+    return { originalUrl: publicOriginalUrl, webpUrl: publicWebpUrl };
   } catch (err) {
-    console.error(`❌ Falha ao baixar/converter: ${err.message}`);
-    return false;
+    console.error(`❌ Falha ao baixar/salvar: ${err.message}`);
+    return null;
   }
 }
 
@@ -159,30 +184,36 @@ async function main() {
   const terms = getSearchTerms(SLUG, TITLE);
   console.log(`🔑 Termos de busca: ${terms.join(', ')}`);
 
-  let imageUrl = null;
+  let imageInfo = null;
 
-  // Tentar Pexels primeiro
   if (PEXELS_API_KEY) {
     console.log('📸 Tentando Pexels...');
-    imageUrl = await searchPexels(terms);
+    imageInfo = await searchPexels(terms);
   }
 
-  // Fallback para Unsplash
-  if (!imageUrl && UNSPLASH_ACCESS_KEY) {
+  if (!imageInfo && UNSPLASH_ACCESS_KEY) {
     console.log('📸 Tentando Unsplash...');
-    imageUrl = await searchUnsplash(terms);
+    imageInfo = await searchUnsplash(terms);
   }
 
-  if (!imageUrl) {
+  if (!imageInfo) {
     console.error('❌ Nenhuma imagem encontrada ou APIs não configuradas');
     console.log('💡 Configure PEXELS_API_KEY ou UNSPLASH_ACCESS_KEY nos secrets');
     process.exit(1);
   }
 
-  console.log(`🌐 URL da imagem: ${imageUrl}`);
+  const urls = await downloadAndSave(imageInfo, WEBP_FILE, ORIGINAL_FILE);
+  if (!urls) process.exit(1);
 
-  const success = await downloadAndConvert(imageUrl, OUTPUT_FILE);
-  if (!success) process.exit(1);
+  // Exportar URLs para GitHub Actions
+  const githubOutput = process.env.GITHUB_OUTPUT;
+  if (githubOutput) {
+    fs.appendFileSync(githubOutput, `image_original=${urls.originalUrl}\n`);
+    fs.appendFileSync(githubOutput, `image_webp=${urls.webpUrl}\n`);
+  }
+
+  console.log(`📤 GMB image: ${urls.originalUrl}`);
+  console.log(`📤 Site image: ${urls.webpUrl}`);
 }
 
 main().catch(e => {
