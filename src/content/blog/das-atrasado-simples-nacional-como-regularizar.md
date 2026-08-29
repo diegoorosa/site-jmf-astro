@@ -1,6 +1,6 @@
 ---
-title: "DAS do Simples Nacional Atrasado: Como Emitir Guia Atualizada"
-description: "DAS atrasado do Simples Nacional: veja como reemitir a guia atualizada pelo PGDAS-D, conferir acréscimos e avaliar parcelamento quando necessário."
+title: "DAS Atrasado do Simples Nacional: Como Emitir e Parcelar (2026)"
+description: "DAS vencido? Saiba como emitir a guia atualizada pelo PGDAS-D, conferir juros/multa e parcelar em até 60x. Regularize sua empresa no Simples Nacional."
 pubDate: 2026-06-16
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-das-atrasado-past-due.jpg"
