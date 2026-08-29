@@ -8,7 +8,8 @@ on:
         required: false
         type: string
   schedule:
-    - cron: '5 14 * * 4'
+    # Roda toda Terça e Quinta às 10:00 da manhã (13:00 UTC)
+    - cron: '0 13 * * 2,4'
 
 permissions:
   contents: write
