@@ -1,5 +1,5 @@
 ---
-title: "Notificação do Simples Nacional em 2026: Recebeu o Termo..."
+title: "Notificação do Simples Nacional em 2026: O Que Fazer no Termo de Exclusão"
 description: "No 2º semestre, a Receita Federal e a PGFN intensificam os Termos de Exclusão do Simples Nacional para empresas com débitos."
 pubDate: 2026-08-04
 author: "Fabricio Rosa, CRC SC-029833/O"

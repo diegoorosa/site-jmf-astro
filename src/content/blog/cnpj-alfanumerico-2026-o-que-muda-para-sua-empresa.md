@@ -1,5 +1,5 @@
 ---
-title: "CNPJ Alfanumérico 2026: O Que Muda e Como Preparar Sua..."
+title: "CNPJ Alfanumérico em 2026: O Que Muda no Seu Sistema de Emissão"
 description: "A partir de 31 de julho de 2026 a Receita Federal começa a emitir o CNPJ alfanumérico, com letras e números."
 pubDate: 2026-07-10
 author: "Fabricio Rosa, CRC SC-029833/O"

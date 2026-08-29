@@ -1,5 +1,5 @@
 ---
-title: "NR-1 e Riscos Psicossociais: Sua Empresa Já Deveria Estar..."
+title: "NR-1 e Riscos Psicossociais: Obrigações e Fiscalização para Empresas"
 description: "Desde 26 de maio de 2026 a fiscalização da NR-1 sobre riscos psicossociais no trabalho é plenamente punitiva."
 pubDate: 2026-07-13
 author: "Diego Rosa, CRC SC-035810/O"

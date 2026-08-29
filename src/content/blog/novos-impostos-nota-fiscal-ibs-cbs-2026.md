@@ -1,5 +1,5 @@
 ---
-title: "Novos Impostos na Nota Fiscal: O Que a Sua Empresa..."
+title: "Novos Impostos na Nota Fiscal: Testes de IBS e CBS em 2026"
 description: "A Reforma Tributária entrou em fase de testes na NF-e e NFC-e com os novos campos de IBS e CBS."
 pubDate: 2026-08-12
 author: "Diego Rosa, CRC SC-035810/O"

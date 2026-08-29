@@ -1,5 +1,5 @@
 ---
-title: "Reforma Tributária e Sistemas ERP: Por Que Sua Empresa..."
+title: "Reforma Tributária e Sistemas ERP: Como Adequar Sua Empresa em 2026"
 description: "Com a fase de testes e transição do IBS e da CBS prevista para 2027, a adequação dos ERPs e emissão de notas deve ocorrer ainda no 2º semestre de 2026."
 pubDate: 2026-08-11
 author: "Fabricio Rosa, CRC SC-029833/O"

@@ -1,5 +1,5 @@
 ---
-title: "Domicílio Eletrônico Trabalhista (DET): O Risco das..."
+title: "Domicílio Eletrônico Trabalhista (DET): Riscos e Prazos de Notificação"
 description: "A fiscalização trabalhista tornou-se integralmente digital. Entenda como o DET notifica empresas e aplica autos de infração de forma remota, a presunção..."
 pubDate: 2026-08-06
 author: "Diego Rosa, CRC SC-035810/O"

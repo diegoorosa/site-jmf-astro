@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Psicólogos em Blumenau: PJ, Fator R e..."
+title: "Contabilidade para Psicólogos em Blumenau: Simples e Fator R"
 description: "Psicólogos em Blumenau: Fator R, Simples Nacional, ISS, LGPD no consultório e obrigações do CRP-SC. JMF ajuda a reduzir imposto legalmente."
 pubDate: 2026-06-17
 author: "Diego Rosa, CRC SC-035810/O"

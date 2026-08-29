@@ -1,5 +1,5 @@
 ---
-title: "Por que agosto é o mês decisivo para o Planejamento..."
+title: "Planejamento Tributário 2027: Por Que Começar a Análise com Antecedência"
 description: "Deixar o planejamento para janeiro é um erro caro. Em agosto já temos histórico consolidado de faturamento, impacto real da folha no Fator R e projeção..."
 pubDate: 2026-07-25
 author: "Fabricio Rosa, CRC SC-029833/O"
