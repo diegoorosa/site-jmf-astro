@@ -10,6 +10,12 @@ imageAlt: "Microempreendedor individual trabalhando — MEI 2026"
 O MEI (Microempreendedor Individual) é o regime tributário mais acessível do Brasil — e continua sendo a porta de entrada para a formalização de milhões de trabalhadores autônomos. Em 2026, os valores do DAS foram reajustados com base no novo salário mínimo, e há datas importantes que todo MEI precisa conhecer.
 
 > **Ultrapassou o limite?** Veja o que fazer quando o [faturamento estoura o limite do MEI](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) e como [migrar de MEI para LTDA](/blog/migrar-de-mei-para-ltda-guia-completo-2026) sem problemas.
+>
+> **Cluster MEI — Artigos relacionados:**
+> - [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026) — quando o retroativo se aplica e multas
+> - [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026) — as duas faixas de ultrapassagem
+> - [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026) — o que conta como receita bruta
+> - [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda) — contrate a transição com a JMF
 
 Neste guia, reunimos tudo o que você precisa saber sobre o MEI em 2026.
 

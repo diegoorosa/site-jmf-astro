@@ -16,10 +16,12 @@ Este guia explica o processo completo: o que muda, quanto custa, como funciona a
 Além do limite de faturamento (R$ 81 mil anuais) — [veja o que fazer quando o faturamento ultrapassa o limite](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) — existem outras razões que levam um ex-MEI a abrir uma LTDA:
 
 **Artigos relacionados do cluster MEI:**
-- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda)
-- [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026)
-- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026)
-- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026)
+- [MEI 2026: Guia Completo](/blog/mei-2026-guia-completo-microempreendedor-individual) — base de conhecimento sobre o MEI
+- [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026) — quando o retroativo se aplica e multas
+- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026) — as duas faixas de ultrapassagem
+- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026) — o que conta como receita bruta
+- [MEI Estourou o Faturamento: O Que Fazer](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) — guia de ação imediata
+- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda) — contrate a transição com a JMF
 
 **Proteção patrimonial**
 O MEI é um empresário individual — o patrimônio pessoal responde pelas dívidas da empresa sem limite. Na LTDA, a responsabilidade de cada sócio é limitada ao valor do capital social integralizado.

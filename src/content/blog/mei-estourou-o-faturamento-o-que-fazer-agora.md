@@ -99,11 +99,20 @@ Se você está se aproximando do limite:
 
 O MEI foi ótimo para começar. Mas quando o negócio cresce além do limite, a estrutura precisa crescer junto. 
 
-- [Guia completo: Migrar de MEI para LTDA](/blog/migrar-de-mei-para-ltda-guia-completo-2026)
-- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda)
-- [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026)
-- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026)
-- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026)
+## Artigos Relacionados do Cluster MEI
+
+- [MEI 2026: Guia Completo](/blog/mei-2026-guia-completo-microempreendedor-individual) — base de conhecimento sobre o MEI
+- [Desenquadramento MEI Retroativo](/blog/desenquadramento-mei-retroativo-2026) — quando o retroativo se aplica e multas
+- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026) — as duas faixas de ultrapassagem
+- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026) — o que conta como receita bruta
+- [Migrar de MEI para LTDA — Guia Completo](/blog/migrar-de-mei-para-ltda-guia-completo-2026) — processo, custos e tributação
+- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda) — contrate a transição com a JMF
+
+---
+
+## Precisa de ajuda com contabilidade em Blumenau?
+
+Se sua empresa está no Vale do Itajaí e precisa de apoio contábil para regularizar o desenquadramento, a JMF atende presencialmente em Blumenau e digitalmente em todo o Médio Vale. [Veja nossos serviços de contabilidade em Blumenau →](/contabilidade-em-blumenau)
 
 Fazer essa transição bem feita é o que separa quem cresce de forma sustentável de quem cresce e depois tem surpresas desagradáveis com o fisco.
 

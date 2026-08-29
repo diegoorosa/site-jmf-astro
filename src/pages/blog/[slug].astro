@@ -37,39 +37,23 @@ const authorSlug = authorName
   .replace(/ç/g, 'c')
   .replace(/\s+/g, '-');
 
-const schema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": entry.data.title,
-  "description": entry.data.description,
-  "datePublished": entry.data.pubDate.toISOString(),
-  "dateModified": (entry.data.updatedDate ? new Date(entry.data.updatedDate) : entry.data.pubDate).toISOString(),
-  "author": {
-    "@type": "Person",
-    "@id": `https://www.jmfcontabilidade.com.br/sobre#${authorSlug}`,
-    "name": authorName,
-    "jobTitle": `Contador — ${authorCrc}`,
-    "worksFor": {
-      "@type": "Organization",
-      "name": "JMF Contabilidade",
-      "@id": "https://www.jmfcontabilidade.com.br/#organization"
-    }
+const blogPosting = {
+  headline: entry.data.title,
+  description: entry.data.description,
+  image: entry.data.image,
+  datePublished: entry.data.pubDate.toISOString(),
+  dateModified: entry.data.updatedDate ? new Date(entry.data.updatedDate).toISOString() : entry.data.pubDate.toISOString(),
+  author: {
+    name: authorName,
+    url: `https://www.jmfcontabilidade.com.br/sobre#${authorSlug}`,
   },
-  "publisher": {
-    "@type": "AccountingService",
-    "name": "JMF Contabilidade",
-    "@id": "https://www.jmfcontabilidade.com.br/#organization",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.jmfcontabilidade.com.br/assets/images/jmf-contabilidade-jean-254x159.webp"
-    }
+  publisher: {
+    name: 'JMF Contabilidade',
+    logo: '/assets/images/jmf-contabilidade-jean-254x159.webp',
   },
-  "image": entry.data.image || "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": `https://www.jmfcontabilidade.com.br/blog/${entry.id}`
-  }
-});
+  articleSection: 'Contabilidade',
+  keywords: entry.data.tags || [],
+};
 
 const ogImageUrl = entry.data.image || "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png";
 ---
@@ -80,7 +64,7 @@ const ogImageUrl = entry.data.image || "https://www.jmfcontabilidade.com.br/asse
   canonical={`https://www.jmfcontabilidade.com.br/blog/${entry.id}`}
   ogUrl={`https://www.jmfcontabilidade.com.br/blog/${entry.id}`}
   ogImage={ogImageUrl}
-  schema={schema}
+  blogPosting={blogPosting}
   heroInterno
 >
   <Fragment slot="head">

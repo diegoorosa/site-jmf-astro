@@ -110,11 +110,18 @@ O desenquadramento retroativo **não é castigo** — é consequência matemáti
 
 ## Artigos Relacionados do Cluster MEI
 
-- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026)
-- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026)
-- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda)
+- [MEI 2026: Guia Completo](/blog/mei-2026-guia-completo-microempreendedor-individual) — base de conhecimento sobre o MEI
+- [Desenquadramento MEI por Faturamento](/blog/desenquadramento-mei-por-faturamento-2026) — entenda as duas faixas de ultrapassagem
+- [Desenquadramento MEI por Excesso de Receita](/blog/desenquadramento-mei-excesso-receita-2026) — cálculo detalhado da reapuração
+- [MEI Estourou o Faturamento: O Que Fazer](/blog/mei-estourou-o-faturamento-o-que-fazer-agora) — guia prático de ação imediata
+- [Migrar de MEI para LTDA — Guia Completo](/blog/migrar-de-mei-para-ltda-guia-completo-2026) — processo, custos e tributação
+- [Migrar de MEI para LTDA — Página Transacional](/migrar-de-mei-para-ltda) — contrate a transição com a JMF
 
 ---
+
+## Precisa de ajuda com contabilidade em Blumenau?
+
+Se sua empresa está no Vale do Itajaí e precisa de apoio contábil para regularizar o desenquadramento, a JMF atende presencialmente em Blumenau e digitalmente em todo o Médio Vale. [Veja nossos serviços de contabilidade em Blumenau →](/contabilidade-em-blumenau)
 
 **Fontes:**
 - Lei Complementar 123/2006, art. 18-A, § 3º

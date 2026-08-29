@@ -8,6 +8,51 @@ import Reveal from '../components/Reveal.astro';
 import CookieBanner from '../components/CookieBanner.astro';
 import { schema1 } from '../schema.js-snippet.js';
 
+interface LocalBusinessData {
+  name: string;
+  legalName?: string;
+  telephone: string;
+  address: {
+    streetAddress: string;
+    addressLocality: string;
+    addressRegion: string;
+    postalCode: string;
+    addressCountry: string;
+  };
+  openingHours?: string[];
+  priceRange?: string;
+  areaServed?: string[];
+  geo?: {
+    latitude: number;
+    longitude: number;
+  };
+}
+
+interface BlogPostingData {
+  headline: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  author: {
+    name: string;
+    url?: string;
+  };
+  publisher?: {
+    name: string;
+    logo?: string;
+  };
+  description?: string;
+  articleSection?: string;
+  keywords?: string[];
+}
+
+interface FAQPageData {
+  mainEntity: Array<{
+    question: string;
+    answer: string;
+  }>;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -18,6 +63,11 @@ interface Props {
   bodyClass?: string;
   heroInterno?: boolean;
   noindex?: boolean;
+  speakable?: boolean;
+  // JSON-LD structured data props
+  localBusiness?: LocalBusinessData;
+  blogPosting?: BlogPostingData;
+  faqPage?: FAQPageData;
 }
 
 const {
@@ -30,7 +80,10 @@ const {
   bodyClass = '',
   heroInterno = false,
   noindex = false,
-  speakable = true, // Enable Speakable markup for voice/AI citation
+  speakable = true,
+  localBusiness,
+  blogPosting,
+  faqPage,
 } = Astro.props;
 
 const siteOrigin = 'https://www.jmfcontabilidade.com.br';
@@ -98,6 +151,115 @@ function getSpeakableSchema(canonicalUrl?: string) {
       ]
     }
   });
+}
+
+// Generate LocalBusiness / AccountingService schema
+function getLocalBusinessSchema(data: LocalBusinessData, url: string) {
+  const openingHoursSpecification = data.openingHours?.map(hours => {
+    const [day, time] = hours.split(' ');
+    const [opens, closes] = time?.split('-') || ['08:00', '18:00'];
+    return {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: day,
+      opens,
+      closes,
+    };
+  });
+
+  const areaServed = data.areaServed?.map(area => ({
+    "@type": "City",
+    name: area,
+  }));
+
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": ["AccountingService", "LocalBusiness"],
+    name: data.name,
+    legalName: data.legalName || data.name,
+    url,
+    telephone: data.telephone,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: data.address.streetAddress,
+      addressLocality: data.address.addressLocality,
+      addressRegion: data.address.addressRegion,
+      postalCode: data.address.postalCode,
+      addressCountry: data.address.addressCountry,
+    },
+    openingHoursSpecification,
+    priceRange: data.priceRange,
+    areaServed,
+    geo: data.geo ? {
+      "@type": "GeoCoordinates",
+      latitude: data.geo.latitude,
+      longitude: data.geo.longitude,
+    } : undefined,
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(data.address.streetAddress + ', ' + data.address.addressLocality + ', ' + data.address.addressRegion)}`,
+  });
+}
+
+// Generate BlogPosting schema
+function getBlogPostingSchema(data: BlogPostingData, url: string) {
+  const imageUrl = data.image?.startsWith('http') ? data.image : data.image ? `${siteOrigin}${data.image}` : undefined;
+  const publisherLogo = data.publisher?.logo?.startsWith('http') ? data.publisher.logo : data.publisher?.logo ? `${siteOrigin}${data.publisher.logo}` : `${siteOrigin}/assets/images/jmf-contabilidade-jean-254x159.webp`;
+
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: data.headline,
+    description: data.description,
+    image: imageUrl,
+    datePublished: data.datePublished,
+    dateModified: data.dateModified || data.datePublished,
+    author: {
+      "@type": "Person",
+      name: data.author.name,
+      url: data.author.url,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: data.publisher?.name || 'JMF Contabilidade',
+      logo: {
+        "@type": "ImageObject",
+        url: publisherLogo,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": url,
+    },
+    articleSection: data.articleSection,
+    keywords: data.keywords?.join(', '),
+  });
+}
+
+// Generate FAQPage schema
+function getFAQPageSchema(data: FAQPageData) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: data.mainEntity.map(faq => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  });
+}
+
+// Add structured schemas to the schemas array
+if (localBusiness) {
+  schemas.push(getLocalBusinessSchema(localBusiness, resolvedCanonical));
+}
+
+if (blogPosting) {
+  schemas.push(getBlogPostingSchema(blogPosting, resolvedCanonical));
+}
+
+if (faqPage) {
+  schemas.push(getFAQPageSchema(faqPage));
 }
 
 const speakableSchema = getSpeakableSchema(resolvedCanonical);

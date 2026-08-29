@@ -6,81 +6,51 @@ import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20a%20JMF%20Contabilidade%20e%20quero%20saber%20sobre%20contabilidade%20para%20minha%20empresa%20em%20Balne%C3%A1rio%20Cambori%C3%BA.";
 
-const localBusinessSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": ["AccountingService", "LocalBusiness"],
-  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu#localbusiness",
-  "name": "JMF Contabilidade – Balneário Camboriú",
-  "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu",
-  "description": "Contabilidade para empresas em Balneário Camboriú/SC: Simples Nacional ou Lucro Presumido, abertura de empresa. Atendimento digital para turismo, construção civil, tecnologia, comércio e serviços. 60km de Blumenau.",
-  "telephone": "+55-47-3326-5123",
-  "email": "contato@jmfcontabilidade.com.br",
-  "priceRange": "$$",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
-    "addressLocality": "Balneário Camboriú",
-    "addressRegion": "SC",
-    "postalCode": "88330-000",
-    "addressCountry": "BR"
+const localBusiness = {
+  name: "JMF Contabilidade – Balneário Camboriú",
+  telephone: "+55-47-3326-5123",
+  address: {
+    streetAddress: "Atendimento digital / Sede em Blumenau: Rua Rodolfo Freygang, 15, Sala 506",
+    addressLocality: "Balneário Camboriú",
+    addressRegion: "SC",
+    postalCode: "88330-000",
+    addressCountry: "BR",
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": -26.9876,
-    "longitude": -48.6358
-  },
-  "areaServed": [
-    { "@type": "City", "name": "Balneário Camboriú" },
-    { "@type": "State", "name": "Santa Catarina" }
+  openingHours: [
+    "Monday 08:00-18:00",
+    "Tuesday 08:00-18:00",
+    "Wednesday 08:00-18:00",
+    "Thursday 08:00-18:00",
+    "Friday 08:00-18:00",
   ],
-  "openingHoursSpecification": [{
-    "@type": "OpeningHoursSpecification",
-    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-    "opens": "08:00",
-    "closes": "18:00"
-  }]
-});
+  priceRange: "$$",
+  areaServed: ["Balneário Camboriú", "Santa Catarina"],
+  geo: {
+    latitude: -26.9876,
+    longitude: -48.6358,
+  },
+};
 
-const faqSchema = JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
+const faqPage = {
+  mainEntity: [
     {
-      "@type": "Question",
-      "name": "A JMF Contabilidade atende empresas em Balneário Camboriú?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. Atendemos empresas de Balneário Camboriú/SC 100% digital. BC fica a 60km de Blumenau (1h10), maior PIB do litoral catarinense. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
-      }
+      question: "A JMF Contabilidade atende empresas em Balneário Camboriú?",
+      answer: "Sim. Atendemos empresas de Balneário Camboriú/SC 100% digital. BC fica a 60km de Blumenau (1h10), maior PIB do litoral catarinense. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência.",
     },
     {
-      "@type": "Question",
-      "name": "Quais impostos para empresas em Balneário Camboriú?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "BC tem economia diversificada: turismo (hotéis, restaurantes, eventos), construção civil (arranha-céus), tecnologia (polo tech), comércio, serviços. Simples Nacional (Anexo III/V via Fator R), Lucro Presumido. ISS municipal 2-5%. Construção: RET ou Presumido. Tech: incentivos Lei do Bem (requer Lucro Real — a JMF atende apenas Simples Nacional ou Lucro Presumido, indicamos parceiro). Simulamos o regime ideal."
-      }
+      question: "Quais impostos para empresas em Balneário Camboriú?",
+      answer: "BC tem economia diversificada: turismo (hotéis, restaurantes, eventos), construção civil (arranha-céus), tecnologia (polo tech), comércio, serviços. Simples Nacional (Anexo III/V via Fator R), Lucro Presumido. ISS municipal 2-5%. Construção: RET ou Presumido. Tech: incentivos Lei do Bem (requer Lucro Real — a JMF atende apenas Simples Nacional ou Lucro Presumido, indicamos parceiro). Simulamos o regime ideal.",
     },
     {
-      "@type": "Question",
-      "name": "Balneário Camboriú tem incentivos fiscais?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Sim. BC participa de PRODEC/TTD (indústria/tech), Lei do Bem (P&D tech), incentivos municipais para turismo e eventos. Construção civil de alto padrão: RET (1-4%) ou Presumido. A JMF assessora adesão e manutenção de todos os benefícios."
-      }
+      question: "Balneário Camboriú tem incentivos fiscais?",
+      answer: "Sim. BC participa de PRODEC/TTD (indústria/tech), Lei do Bem (P&D tech), incentivos municipais para turismo e eventos. Construção civil de alto padrão: RET (1-4%) ou Presumido. A JMF assessora adesão e manutenção de todos os benefícios.",
     },
     {
-      "@type": "Question",
-      "name": "Como funciona o atendimento remoto para Balneário Camboriú?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 60km (1h10 pela BR-101). Resposta no mesmo dia útil. Rotina mensal: docs até dia 5, fechamento até dia 15, guias até dia 20."
-      }
-    }
-  ]
-});
-
-const schema = [localBusinessSchema, faqSchema];
+      question: "Como funciona o atendimento remoto para Balneário Camboriú?",
+      answer: "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 60km (1h10 pela BR-101). Resposta no mesmo dia útil. Rotina mensal: docs até dia 5, fechamento até dia 15, guias até dia 20.",
+    },
+  ],
+};
 ---
 
 <Layout
@@ -88,7 +58,8 @@ const schema = [localBusinessSchema, faqSchema];
   description="Contabilidade para empresas em Balneário Camboriú/SC: turismo, construção, tech, comércio.  Simples Nacional ou Lucro Presumido."
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-balneario-camboriu"
-  schema={schema}
+  localBusiness={localBusiness}
+  faqPage={faqPage}
   heroInterno
   bodyClass="pp3"
 >
@@ -199,6 +170,9 @@ const schema = [localBusinessSchema, faqSchema];
         </p>
         <p>
           <strong>Rotina BC:</strong> Docs até dia 5, fechamento até dia 15, guias até dia 20. Tech: acompanhamento trimestral Lei do Bem. Construção: medições mensais, CNDs, fluxo de caixa obra.
+        </p>
+        <p class="mt-4">
+          <strong>Sede e equipe completa em Blumenau:</strong> Nossa estrutura principal fica em <a href="/contabilidade-em-blumenau" class="text-blue-700 font-semibold hover:underline">Blumenau</a> — 35+ anos de experiência no Vale do Itajaí, atendimento presencial e digital para empresas de toda a região.
         </p>
       </div>
     </div>
