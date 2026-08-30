@@ -1,416 +1,74 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-export const prerender = true;
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
 
 const title = "Contabilidade para Indústria em Blumenau e SC | Gestão Fiscal e Custos";
 const description = "Contabilidade especializada para indústrias no Vale do Itajaí: Timbó, Blumenau, Indaial e Pomerode. Gestão do Bloco K, recuperação de créditos e Lucro Real.";
 const canonical = "https://www.jmfcontabilidade.com.br/contabilidade-para-industria";
 const ogUrl = canonical;
 
-const schema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "AccountingService",
-      "name": "JMF Contabilidade - Especializada em Indústria e Manufatura",
-      "url": canonical,
-      "telephone": "+55-47-3326-5123",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Centro",
-        "addressLocality": "Blumenau",
-        "addressRegion": "SC",
-        "postalCode": "89010-060",
-        "addressCountry": "BR"
+const schema = [
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AccountingService",
+        "name": "JMF Contabilidade - Especializada em Indústria e Manufatura",
+        "url": canonical,
+        "telephone": "+55-47-3326-5123",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Centro",
+          "addressLocality": "Blumenau",
+          "addressRegion": "SC",
+          "postalCode": "89010-060",
+          "addressCountry": "BR"
+        },
+        "areaServed": [
+          "Blumenau", "Timbó", "Indaial", "Pomerode", "Gaspar", "Brusque", "Joinville", "Jaraguá do Sul"
+        ],
+        "priceRange": "$$"
       },
-      "areaServed": [
-        "Blumenau", "Timbó", "Indaial", "Pomerode", "Gaspar", "Brusque", "Joinville", "Jaraguá do Sul"
-      ],
-      "priceRange": "$$"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "Qual o melhor regime tributário para uma indústria em Santa Catarina?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Depende da margem de lucro operacional e do volume de insumos adquiridos com direito a crédito. Indústrias em fase inicial ou com faturamento até R$ 4,8 milhões podem iniciar no Simples Nacional (Anexo II). Contudo, fábricas com margens menores, despesas elevadas de matéria-prima ou clientes corporativos que exigem crédito integral de ICMS e IPI economizam substancialmente no Lucro Real."
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual o melhor regime tributário para uma indústria em Santa Catarina?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Depende da margem de lucro operacional e do volume de insumos adquiridos com direito a crédito. Indústrias em fase inicial ou com faturamento até R$ 4,8 milhões podem iniciar no Simples Nacional (Anexo II). Contudo, fábricas com margens menores, despesas elevadas de matéria-prima ou clientes corporativos que exigem crédito integral de ICMS e IPI economizam substancialmente no Lucro Real."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que é o Bloco K do SPED Fiscal e como evitar multas na indústria?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O Bloco K é o Livro de Registro de Controle da Produção e do Estoque digital. A Receita Federal e a SEF/SC cruzam o consumo de matérias-primas com o produto final fabricado. Divergências no inventário físico ou falta de escrituração de perdas geram pesadas autuações. A JMF realiza a conciliação preventiva das ordens de produção com o SPED Fiscal."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como funciona a recuperação de créditos de ICMS, IPI e PIS/COFINS?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A indústria pode se creditar dos tributos recolhidos na compra de matérias-primas, materiais de embalagem, produtos intermediários que sofrem desgaste na produção, energia elétrica consumida no processo fabril e máquinas/equipamentos através do CIAP (em 48 meses). Mapeamos todos os insumos para aproveitar 100% dos créditos devidos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como a indústria deve se preparar para la Reforma Tributária (IBS/CBS)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Com a unificação dos tributos sobre o consumo, a indústria precisará auditar seus sistemas ERP para garantir a não-cumulatividade plena (crédito financeiro total nas compras) e adequar a precificação ao novo mecanismo de recolhimento na liquidação financeira (Split Payment)."
+            }
           }
-        },
-        {
-          "@type": "Question",
-          "name": "O que é o Bloco K do SPED Fiscal e como evitar multas na indústria?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O Bloco K é o Livro de Registro de Controle da Produção e do Estoque digital. A Receita Federal e a SEF/SC cruzam o consumo de matérias-primas com o produto final fabricado. Divergências no inventário físico ou falta de escrituração de perdas geram pesadas autuações. A JMF realiza a conciliação preventiva das ordens de produção com o SPED Fiscal."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como funciona a recuperação de créditos de ICMS, IPI e PIS/COFINS?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A indústria pode se creditar dos tributos recolhidos na compra de matérias-primas, materiais de embalagem, produtos intermediários que sofrem desgaste na produção, energia elétrica consumida no processo fabril e máquinas/equipamentos através do CIAP (em 48 meses). Mapeamos todos os insumos para aproveitar 100% dos créditos devidos."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como a indústria deve se preparar para a Reforma Tributária (IBS/CBS)?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Com a unificação dos tributos sobre o consumo, a indústria precisará auditar seus sistemas ERP para garantir a não-cumulatividade plena (crédito financeiro total nas compras) e adequar a precificação ao novo mecanismo de recolhimento na liquidação financeira (Split Payment)."
-          }
-        }
-      ]
-    }
-  ]
-};
+        ]
+      }
+    ]
+  }
+];
 ---
-
-<Layout
-  title={title}
-  description={description}
-  canonical={canonical}
-  ogUrl={ogUrl}
-  schema={schema}
-  heroInterno
-  bodyClass="pagina-industria"
->
-  <!-- HERO SECTION -->
-  <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wide uppercase mb-6 border border-blue-400/30">
-          Assessoria Contábil & Tributária Industrial • Vale do Itajaí
-        </span>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-          Contabilidade Especializada para Indústrias no Vale Europeu e Santa Catarina
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
-          Maximize a margem líquida da sua fábrica com apuração rigorosa de custos industriais, gestão preventiva do Bloco K no SPED e recuperação legal de créditos de ICMS, IPI e PIS/COFINS. Atendimento consultivo para indústrias têxteis, metalmecânicas, plásticas e manufatura em Blumenau, Timbó, Indaial, Pomerode e região.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20para%20minha%20ind%C3%BAstria."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-green-600 hover:bg-green-700 shadow-lg shadow-green-600/30 transition duration-200"
-          >
-            Solicitar Diagnóstico Tributário Industrial
-          </a>
-          <a
-            href="#solucoes"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition duration-200"
-          >
-            Conhecer Soluções Fabris
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CARDS PROVAS E DIFERENCIAIS -->
-  <section class="py-10 bg-slate-100 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">35+ Anos</p>
-          <p class="text-sm font-medium text-slate-600">Tradição e Autoridade em SC</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">Lucro Real</p>
-          <p class="text-sm font-medium text-slate-600">Planejamento e Créditos Plenos</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">Bloco K</p>
-          <p class="text-sm font-medium text-slate-600">Auditoria Digital de Estoque</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">IBS / CBS</p>
-          <p class="text-sm font-medium text-slate-600">Preparação Reforma Tributária</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GARGALOS DAS FÁBRICAS -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Onde as indústrias mais perdem dinheiro sem perceber?
-        </h2>
-        <p class="text-lg text-slate-600">
-          A complexidade das operações fabris exige controle milimétrico. Pequenas falhas fiscais e de estoque geram custos ocultos que corroem o lucro da sua operação.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">1</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Enquadramento Inadequado</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Manter a indústria no Simples Nacional ou Lucro Presumido quando o Lucro Real geraria economia expressiva através do creditamento de matérias-primas e depreciação de máquinas.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">2</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Divergências no Bloco K</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Diferença entre o consumo físico de insumos nas ordens de produção e o estoque escriturado no SPED, gerando autuações fiscais automáticas por presunção de omissão de receita.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">3</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Créditos de ICMS/IPI Esquecidos</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Falta de aproveitamento legal de créditos sobre energia elétrica fabril, partes e peças de reposição e creditamento de ativo imobilizado (CIAP).
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">4</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Passivos de Chão de Fábrica</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Inconsistências em folhas de pagamento industriais, horas extras em turnos de revezamento, adicionais de insalubridade e falhas no envio de eventos de SST ao eSocial.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUÇÕES FABRIS DA JMF -->
-  <section id="solucoes" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Nossa Expertise</span>
-        <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-4">
-          Gestão Contábil e Tributária de Alta Performance para Fábricas
-        </h2>
-        <p class="text-lg text-slate-600">
-          Integração dos dados do chão de fábrica à diretoria financeira com foco em conformidade fiscal e aumento de margem líquida.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário Industrial</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Simulação aprofundada comparando Simples Nacional (Anexo II), Lucro Presumido e Lucro Real. Identificamos o regime ideal para aproveitar incentivos catarinenses e maximizar a recuperação de créditos de PIS, COFINS, IPI e ICMS.
-          </p>
-          <a href="/consultoria-e-planejamento-tributario" class="text-blue-600 font-semibold text-sm hover:underline">
-            Conhecer Planejamento Tributário →
-          </a>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Auditoria de Bloco K e Estoques</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Revisão preventiva das fichas técnicas de produtos (Registro 0200/0210), apontamentos de perdas normais do processo produtivo e alinhamento do inventário físico ao SPED Fiscal.
-          </p>
-          <a href="/gestao-fiscal-e-tributaria" class="text-blue-600 font-semibold text-sm hover:underline">
-            Conhecer Gestão Fiscal →
-          </a>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Contabilidade de Custos Fabris</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Estruturação de relatórios gerenciais com cálculo de margem de contribuição por linha de produto, centro de custos industriais e controle de custos diretos e indiretos de produção.
-          </p>
-          <a href="/gestao-contabil" class="text-blue-600 font-semibold text-sm hover:underline">
-            Conhecer Gestão Contábil →
-          </a>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Departamento Pessoal & SST Integrados</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Gestão de folha especializada em convenções coletivas de indústrias metalúrgicas, têxteis e químicas. Monitoramento de adicionais, banco de horas e envio de eventos de SST (S-2210, S-2220, S-2240) ao eSocial.
-          </p>
-          <a href="/gestao-pessoal" class="text-blue-600 font-semibold text-sm hover:underline">
-            Conhecer Gestão de Pessoal →
-          </a>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Adequação à Reforma Tributária (IBS/CBS)</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Parametrização contábil do ERP para a transição dos novos tributos federais e estaduais, garantindo que sua indústria esteja preparada para o Split Payment e para o aproveitamento de créditos financeiros amplos.
-          </p>
-          <a href="/blog/reforma-tributaria-atualizacao-erp-sistemas-2026" class="text-blue-600 font-semibold text-sm hover:underline">
-            Ler sobre ERP e Reforma →
-          </a>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura e Filiais Industriais em SC</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Constituição ágil de parques fabris e galpões industriais na JUCESC, viabilidade locacional na prefeitura, licenças ambientais (IMA) e alvará do Corpo de Bombeiros em Blumenau e região.
-          </p>
-          <a href="/como-abrir-empresa-em-blumenau" class="text-blue-600 font-semibold text-sm hover:underline">
-            Abertura de Fábricas →
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TABELA COMPARATIVA DE REGIMES TRIBUTÁRIOS -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Qual o Regime Tributário Ideal para Sua Indústria?
-        </h2>
-        <p class="text-lg text-slate-600">
-          Veja as principais diferenças fiscais para operações industriais em Santa Catarina:
-        </p>
-      </div>
-
-      <div class="overflow-x-auto shadow-sm rounded-2xl border border-slate-200">
-        <table class="w-full text-left text-sm text-slate-700">
-          <thead class="bg-slate-900 text-white font-semibold">
-            <tr>
-              <th class="py-4 px-6">Critério</th>
-              <th class="py-4 px-6">Simples Nacional (Anexo II)</th>
-              <th class="py-4 px-6">Lucro Presumido</th>
-              <th class="py-4 px-6">Lucro Real (Recomendado)</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-200 bg-slate-50">
-            <tr>
-              <td class="py-4 px-6 font-bold text-slate-900">Limite de Faturamento</td>
-              <td class="py-4 px-6">Até R$ 4,8 milhões/ano</td>
-              <td class="py-4 px-6">Até R$ 78 milhões/ano</td>
-              <td class="py-4 px-6">Obrigatório acima de R$ 78M ou por opção</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-6 font-bold text-slate-900">Créditos de ICMS e IPI</td>
-              <td class="py-4 px-6">Não repassa crédito integral de IPI para clientes</td>
-              <td class="py-4 px-6">Destaque de IPI na saída com crédito na entrada</td>
-              <td class="py-4 px-6">Crédito integral de ICMS, IPI, PIS e COFINS sobre insumos e energia</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-6 font-bold text-slate-900">Tributação sobre o Lucro</td>
-              <td class="py-4 px-6">Alíquota única sobre o faturamento bruto</td>
-              <td class="py-4 px-6">Base presumida de 8% (IRPJ) e 12% (CSLL)</td>
-              <td class="py-4 px-6">Tributa exclusivamente o Lucro Líquido Real apurado</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-6 font-bold text-slate-900">Encargos sobre Folha (INSS)</td>
-              <td class="py-4 px-6">Inclusos na guia DAS</td>
-              <td class="py-4 px-6">INSS Patronal (20%) + RAT + Terceiros</td>
-              <td class="py-4 px-6">INSS Patronal (20%) + RAT + Terceiros</td>
-            </tr>
-            <tr>
-              <td class="py-4 px-6 font-bold text-slate-900">Perfil Ideal</td>
-              <td class="py-4 px-6">Pequenas oficinas e manufaturas em início</td>
-              <td class="py-4 px-6">Indústrias com alta margem e baixo custo de insumos</td>
-              <td class="py-4 px-6">Indústrias com margens apertadas, alto custo de insumos ou oscilação de faturamento</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- POLOS INDUSTRIAIS ATENDIDOS -->
-  <section class="py-16 lg:py-20 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold mb-4">
-          Atendimento nos Maiores Polos Fabris de Santa Catarina
-        </h2>
-        <p class="text-slate-300">
-          Nossa equipe contábil atende fábricas em toda a bacia fabril catarinense com suporte presencial e atendimento digital integrado:
-        </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
-          <h3 class="font-bold text-xl text-blue-400 mb-2">Blumenau & Brusque</h3>
-          <p class="text-slate-300 text-sm">Polo Têxtil, Confecções, Tinturarias, Fiações e Tecnologia Industrial.</p>
-        </div>
-        <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
-          <h3 class="font-bold text-xl text-blue-400 mb-2">Timbó & Pomerode</h3>
-          <p class="text-slate-300 text-sm">Indústria Metalmecânica, Usinagem, Automação, Eletrodomésticos e Injeção Plástica.</p>
-        </div>
-        <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
-          <h3 class="font-bold text-xl text-blue-400 mb-2">Indaial & Gaspar</h3>
-          <p class="text-slate-300 text-sm">Indústria de Papel, Embalagens, Alimentos, Bebidas, Químicos e Transformação.</p>
-        </div>
-        <div class="p-6 bg-slate-800 rounded-xl border border-slate-700">
-          <h3 class="font-bold text-xl text-blue-400 mb-2">Joinville & Jaraguá</h3>
-          <p class="text-slate-300 text-sm">Metalurgia pesada, Motores Elétricos, Fundições e Indústria Automotiva.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ SECTION -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Perguntas Frequentes sobre Contabilidade Industrial</h2>
-        <p class="text-slate-600">Tire suas dúvidas sobre tributação fabril, créditos e conformidade em SC.</p>
-      </div>
-
-      <div class="space-y-6">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Qual o melhor regime tributário para uma indústria em Santa Catarina?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Depende da margem de lucro operacional e do volume de insumos adquiridos com direito a crédito. Indústrias em fase inicial ou com faturamento até R$ 4,8 milhões podem iniciar no Simples Nacional (Anexo II). Contudo, fábricas com margens menores, despesas elevadas de matéria-prima ou clientes corporativos que exigem crédito integral de ICMS e IPI economizam substancialmente no Lucro Real.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">O que é o Bloco K do SPED Fiscal e como evitar multas na indústria?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            O Bloco K é o Livro de Registro de Controle da Produção e do Estoque digital. A Receita Federal e a SEF/SC cruzam o consumo de matérias-primas com o produto final fabricado. Divergências no inventário físico ou falta de escrituração de perdas geram pesadas autuações. A JMF realiza a conciliação preventiva das ordens de produção com o SPED Fiscal.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Como funciona a recuperação de créditos de ICMS, IPI e PIS/COFINS?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            A indústria pode se creditar dos tributos recolhidos na compra de matérias-primas, materiais de embalagem, produtos intermediários que sofrem desgaste na produção, energia elétrica consumida no processo fabril e máquinas/equipamentos através do CIAP (em 48 meses). Mapeamos todos os insumos para aproveitar 100% dos créditos devidos.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-          <h3 class="text-lg font-bold text-slate-900 mb-2">Como a indústria deve se preparar para a Reforma Tributária (IBS/CBS)?</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Com a unificação dos tributos sobre o consumo, a indústria precisará auditar seus sistemas ERP para garantir a não-cumulatividade plena (crédito financeiro total nas compras) e adequar a precificação ao novo mecanismo de recolhimento na liquidação financeira (Split Payment).
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="py-16 bg-blue-900 text-white text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
-        Sua indústria está pagando mais impostos do que deveria?
-      </h2>
-      <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-        Converse com os especialistas da JMF Contabilidade. Realizamos um diagnóstico tributário completo da sua fábrica para identificar oportunidades de redução de impostos e blindagem do SPED Fiscal.
-      </p>
-      <a
-        href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20para%20minha%20ind%C3%BAstria."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-2xl text-slate-900 bg-green-400 hover:bg-green-300 shadow-xl shadow-green-500/30 transition duration-200"
-      >
-        Falar com um Contador Especialista em Indústria
-      </a>
-      <p class="mt-4 text-xs text-blue-200">Atendimento rápido via WhatsApp • Sede em Blumenau/SC</p>
-    </div>
-  </section>
-</Layout>

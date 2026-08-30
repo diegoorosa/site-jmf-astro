@@ -1,273 +1,221 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
 
-export const prerender = true;
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const WAsim = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20de%20viabilidade%20do%20TTD%20para%20minha%20importadora.";
 
-const title = "Contabilidade para Importação e TTD em SC | JMF Contabilidade";
-const description = "Contabilidade especializada em tradings e importadoras em Santa Catarina. Benefício fiscal TTD 409, habilitação no RADAR Siscomex e redução legal de ICMS.";
-const canonical = "https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc";
-const ogUrl = canonical;
-
-const schema = {
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc#localbusiness",
+  "name": "JMF Contabilidade – Contabilidade para Importação e TTD em SC",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc",
+  "description": "Contabilidade especializada para importadoras e tradings em Santa Catarina: benefício fiscal TTD 409/410, habilitação RADAR Siscomex, parametrização NF-e e abertura de filiais portuárias.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Itajaí" },
+    { "@type": "City", "name": "Navegantes" },
+    { "@type": "City", "name": "Joinville" },
+    { "@type": "City", "name": "Itapoá" },
+    { "@type": "City", "name": "São Francisco do Sul" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Contabilidade para Comércio Exterior",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pleito e Gestão do TTD 409/410" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Habilitação e Aumento de RADAR Siscomex" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parametrização da NF-e de Importação" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Tradings e Filiais Portuárias" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planejamento Tributário de Importação" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+  ],
+  "openingHoursSpecification": [
     {
-      "@type": "AccountingService",
-      "name": "JMF Contabilidade - Especializada em Importação e Comércio Exterior",
-      "url": canonical,
-      "telephone": "+55-47-3326-5123",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Centro",
-        "addressLocality": "Blumenau",
-        "addressRegion": "SC",
-        "postalCode": "89010-060",
-        "addressCountry": "BR"
-      },
-      "areaServed": [
-        "Itajaí", "Navegantes", "Blumenau", "Joinville", "Itapoá", "São Francisco do Sul", "Florianópolis"
-      ],
-      "priceRange": "$$"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "O que é o TTD 409 em Santa Catarina e quem pode solicitar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O TTD 409 (Tratamento Tributário Diferenciado) é um regime especial concedido pela SEF/SC que permite o diferimento do ICMS no desembaraço aduaneiro de mercadorias importadas por portos e aeroportos catarinenses e concede crédito presumido na saída interestadual, reduzindo a carga tributária efetiva de ICMS para percentuais entre 0,6% e 2,6%."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Qual o regime tributário necessário para usufruir do TTD de Importação?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A empresa deve ser optante pelo Lucro Real ou Lucro Presumido. Empresas do Simples Nacional não podem usufruir do crédito presumido do TTD, sendo altamente recomendada a abertura de uma trading ou filial específica no Lucro Real/Presumido para operar o benefício."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como funciona a habilitação no RADAR Siscomex?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "O RADAR é a licença concedida pela Receita Federal para operar no comércio exterior. É dividido em Expressa (até US$ 50 mil/semestre), Limitada (até US$ 160 mil/semestre) e Ilimitada (acima de US$ 160 mil). Nossa equipe organiza a capacidade financeira da empresa e faz o protocolo para obtenção e revisão de limite."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como fica o TTD de Santa Catarina com a Reforma Tributária?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Os incentivos fiscais estaduais como o TTD de SC possuem transição garantida pela Emenda Constitucional nº 132/2023 até 2032 através do Fundo de Compensação de Benefícios Fiscais. Estruturar sua trading agora garante segurança jurídica e competitividade durante toda a fase de transição."
-          }
-        }
-      ]
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
     }
-  ]
-};
-
-const whatsappUrl = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20uma%20an%C3%A1lise%20de%20viabilidade%20do%20TTD%20e%20importa%C3%A7%C3%A3o%20em%20SC.";
-
-const faqs = [
-  {
-    q: "O que é o TTD 409 em Santa Catarina e quem pode solicitar?",
-    a: "O TTD 409 (Tratamento Tributário Diferenciado) é um regime especial concedido pela SEF/SC que permite o diferimento do ICMS no desembaraço aduaneiro de mercadorias importadas por portos e aeroportos catarinenses e concede crédito presumido na saída interestadual, reduzindo a carga tributária efetiva de ICMS para percentuais entre 0,6% e 2,6%."
-  },
-  {
-    q: "Qual o regime tributário necessário para usufruir do TTD de Importação?",
-    a: "A empresa deve ser optante pelo Lucro Real ou Lucro Presumido. Empresas do Simples Nacional não podem usufruir do crédito presumido do TTD, sendo altamente recomendada a abertura de uma trading ou filial específica no Lucro Real/Presumido para operar o benefício."
-  },
-  {
-    q: "Como funciona a habilitação no RADAR Siscomex?",
-    a: "O RADAR é a licença concedida pela Receita Federal para operar no comércio exterior. É dividido em Expressa (até US$ 50 mil/semestre), Limitada (até US$ 160 mil/semestre) e Ilimitada (acima de US$ 160 mil). Nossa equipe organiza a capacidade financeira da empresa e faz o protocolo para obtenção e revisão de limite."
-  },
-  {
-    q: "Como fica o TTD de Santa Catarina com a Reforma Tributária?",
-    a: "Os incentivos fiscais estaduais como o TTD de SC possuem transição garantida pela Emenda Constitucional nº 132/2023 até 2032 através do Fundo de Compensação de Benefícios Fiscais. Estruturar sua trading agora garante segurança jurídica e competitividade durante toda a fase de transição."
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
   }
-];
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "O que é o TTD 409 em Santa Catarina e quem pode solicitar?", "acceptedAnswer": { "@type": "Answer", "text": "O TTD 409 (Tratamento Tributário Diferenciado) é um regime especial concedido pela SEF/SC que permite o diferimento do ICMS no desembaraço aduaneiro de mercadorias importadas por portos e aeroportos catarinenses e concede crédito presumido na saída interestadual, reduzindo a carga tributária efetiva de ICMS para percentuais entre 0,6% e 2,6%." } },
+    { "@type": "Question", "name": "Qual o regime tributário necessário para usufruir do TTD de Importação?", "acceptedAnswer": { "@type": "Answer", "text": "A empresa deve ser optante pelo Lucro Real ou Lucro Presumido. Empresas do Simples Nacional não podem usufruir do crédito presumido do TTD, sendo altamente recomendada a abertura de uma trading ou filial específica no Lucro Real/Presumido para operar o benefício." } },
+    { "@type": "Question", "name": "Como funciona a habilitação no RADAR Siscomex?", "acceptedAnswer": { "@type": "Answer", "text": "O RADAR é a licença concedida pela Receita Federal para operar no comércio exterior. É dividido em Expressa (até US$ 50 mil/semestre), Limitada (até US$ 160 mil/semestre) e Ilimitada (acima de US$ 160 mil). Nossa equipe organiza a capacidade financeira da empresa e faz o protocolo para obtenção e revisão de limite." } },
+    { "@type": "Question", "name": "Como fica o TTD de Santa Catarina com a Reforma Tributária?", "acceptedAnswer": { "@type": "Answer", "text": "Os incentivos fiscais estaduais como o TTD de SC possuem transição garantida pela Emenda Constitucional nº 132/2023 até 2032 através do Fundo de Compensação de Benefícios Fiscais. Estruturar sua trading agora garante segurança jurídica e competitividade durante toda a fase de transição." } }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title={title}
-  description={description}
-  canonical={canonical}
-  ogUrl={ogUrl}
+  title="Contabilidade para Importação e TTD em SC | JMF Contabilidade"
+  description="Contabilidade especializada para importadoras e tradings em Santa Catarina: benefício fiscal TTD 409/410, habilitação RADAR Siscomex, parametrização NF-e e abertura de filiais portuárias."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc"
   schema={schema}
   heroInterno
-  bodyClass="pagina-importacao"
+  bodyClass="pp3"
 >
-  <!-- HERO SECTION -->
-  <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wide uppercase mb-6 border border-blue-400/30">
-          Assessoria Tributária em Comércio Exterior • Hub Portuário de SC
-        </span>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-          Contabilidade Especializada para Importadoras e Tradings em Santa Catarina
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
-          Reduza a carga tributária da sua importação com o TTD 409/410, habilite sua empresa no RADAR Siscomex e opere com conformidade fiscal e desembaraço ágil pelos portos de Itajaí, Navegantes, Itapoá e São Francisco do Sul.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-green-600 hover:bg-green-700 shadow-lg shadow-green-600/30 transition duration-200"
-          >
-            Solicitar Análise de Viabilidade do TTD
-          </a>
-          <a
-            href="#solucoes"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition duration-200"
-          >
-            Conhecer Soluções de Comex
-          </a>
-        </div>
-      </div>
+
+  <HeroInterno
+    title="Contabilidade para Importadoras e Tradings em Santa Catarina"
+    subtitle="Reduza a carga tributária com TTD 409/410, habilite no RADAR Siscomex e opere com conformidade pelos portos de Itajaí, Navegantes, Itapoá e São Francisco do Sul."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Especialidades" },
+      { label: "Importação e TTD em SC" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Simular Economia TTD", href: WAsim, variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
     </div>
-  </section>
+  </div>
 
-  <!-- CARDS PROVAS E DIFERENCIAIS -->
-  <section class="py-10 bg-slate-100 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">TTD 409 e 410</p>
-          <p class="text-sm font-medium text-slate-600">Implantação e Manutenção na SEF/SC</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">0,6% a 2,6%</p>
-          <p class="text-sm font-medium text-slate-600">Carga Efetiva de ICMS Interestadual</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">RADAR Siscomex</p>
-          <p class="text-sm font-medium text-slate-600">Habilitação e Revisão de Limites</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">35+ Anos</p>
-          <p class="text-sm font-medium text-slate-600">Tradição e Governança Fiscal em SC</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Contabilidade para importação:<br/><span class="pp3-grad">por que escolher a JMF</span></h2>
 
-  <!-- GARGALOS DAS IMPORTADORAS -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Onde as importadoras mais perdem dinheiro e tempo na aduana?
-        </h2>
-        <p class="text-lg text-slate-600">
-          A complexidade das operações de comércio exterior exige controle milimétrico. Pequenas falhas fiscais, aduaneiras e de parametrização geram custos ocultos que corroem a margem da sua operação.
-        </p>
-      </div>
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Santa Catarina é a porta de entrada do comércio exterior no Sul do Brasil. Os portos de Itajaí/Navegantes (Portonave), Itapoá e São Francisco do Sul movimentam mais de 2 milhões de TEUs/ano. Empresas importadoras da região precisam de contabilidade que entenda a dinâmica aduaneira, o benefício fiscal TTD catarinense e a estruturação de tradings para operar com economia legal e segurança.
+      </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">1</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Desembaraço Travado por NF-e de Entrada</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Erros na composição da base de cálculo do ICMS na Nota Fiscal de Entrada da DI/Duimp (II, IPI, PIS, COFINS, Taxa Siscomex, AFRMM e capatazia).
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende importadoras e tradings há 35+ anos, com sede em Blumenau (40km dos portos) e atendimento digital para empresas de todo o estado. Conhecemos cada particularidade do TTD 409/410, da habilitação RADAR e da parametrização fiscal da NF-e de entrada — e usamos esse conhecimento para sua empresa pagar menos ICMS, dentro da lei.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">TTD 409 e 410 — Pleito e Gestão</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Solicitação inicial junto à SEF/SC, acompanhamento mensal e apuração rigorosa do crédito presumido de ICMS na saída interestadual. Redução da carga efetiva para 0,6%–2,6%.
           </p>
         </div>
 
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">2</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Perda do Benefício Fiscal do TTD</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Descumprimento de obrigações acessórias estaduais (DIME, DCIP e EFD-ICMS/IPI) ou falta de recolhimento de fundos obrigatórios (Fundo Pró-Emprego/Fundo Social).
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">RADAR Siscomex — Habilitação e Limites</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Auditoria do balanço, comprovação de capacidade contributiva via DCTFWeb/eSocial e protocolo na RFB. Modalidades Expressa, Limitada e Ilimitada.
           </p>
         </div>
 
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">3</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Limite Insuficiente no RADAR</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Trava de importação na modalidade Expressa (US$ 50 mil) por falta de comprovação de capacidade financeira perante a Receita Federal.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">4</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Bitributação e Glosa de Créditos</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Problemas na retenção de tributos federais e na aplicação da alíquota interestadual de 4% da Resolução do Senado nº 13/2012.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- NOSSAS SOLUÇÕES PARA COMÉRCIO EXTERIOR -->
-  <section id="solucoes" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Nossa Expertise</span>
-        <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-4">
-          Gestão Contábil, Aduaneira e Fiscal de Ponta a Ponta
-        </h2>
-        <p class="text-lg text-slate-600">
-          Integração dos dados da nacionalização à venda interestadual com foco em conformidade fiscal e redução legal da carga tributária.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Pleito e Gestão do TTD 409/410/411</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Solicitação inicial, acompanhamento junto à SEF/SC e apuração mensal rigorosa do crédito presumido de ICMS.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Habilitação e Aumento de RADAR Siscomex</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Auditoria do balanço patrimonial, comprovação de capacidade contributiva via DCTFWeb/eSocial e protocolo junto à Receita Federal.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Parametrização da NF-e de Importação</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Validação de CFOPs (3.101, 3.102), NCMs, CSTs e cálculo automatizado dos impostos incidentes na nacionalização.
+          <p class="text-slate-600 leading-relaxed">
+            Validação de CFOPs (3.101, 3.102), NCMs, CSTs e cálculo automatizado dos impostos incidentes na nacionalização (II, IPI, PIS, COFINS, AFRMM, capatazia).
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento: Importação Própria, Encomenda ou Conta e Ordem</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Estruturação societária e contratual para tradings atenderem clientes em todo o território nacional.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura de Tradings e Filiais Portuárias</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Constituição societária ágil em Blumenau, Itajaí, Navegantes ou Joinville para usufruir dos incentivos catarinenses.
+          <p class="text-slate-600 leading-relaxed">
+            Constituição societária ágil em Blumenau, Itajaí, Navegantes ou Joinville para usufruir dos incentivos catarinenses. Alvarás, licenciamentos e registro na JUCESC.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TABELA COMPARATIVA (IMPORTAÇÃO TRADICIONAL VS. TTD 409 SC) -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Importação Comum vs. TTD 409: O Diferencial Catarinense
-        </h2>
-        <p class="text-lg text-slate-600">
-          Veja por que importar por Santa Catarina com o TTD 409 é a escolha estratégica para tradings e importadoras:
+  <!-- Gargalos das importadoras -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Onde as importadoras<br/><span class="pp3-grad">mais perdem dinheiro</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        A complexidade das operações de comércio exterior exige controle milimétrico. Pequenas falhas fiscais, aduaneiras e de parametrização geram custos ocultos que corroem a margem da sua operação:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Desembaraço travado por NF-e de entrada:</strong> erros na composição da base de cálculo do ICMS na Nota Fiscal de Entrada da DI/Duimp (II, IPI, PIS, COFINS, Taxa Siscomex, AFRMM e capatazia).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Perda do benefício fiscal do TTD:</strong> descumprimento de obrigações acessórias estaduais (DIME, DCIP, EFD-ICMS/IPI) ou falta de recolhimento de fundos obrigatórios (Fundo Pró-Emprego/Fundo Social).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Limite insuficiente no RADAR:</strong> trava de importação na modalidade Expressa (US$ 50 mil) por falta de comprovação de capacidade financeira perante a Receita Federal.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Bitributação e glosa de créditos:</strong> problemas na retenção de tributos federais e na aplicação da alíquota interestadual de 4% da Resolução do Senado nº 13/2012.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Em 2026, uma importadora com faturamento de R$ 10 milhões/ano que opera sem TTD paga cerca de R$ 400.000/ano a mais em ICMS interestadual do que uma trading estruturada com TTD 409 (carga efetiva 0,6%–2,6% vs 4% alíquota interestadual + créditos acumulados). A JMF faz o cálculo exato de viabilidade para sua operação.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Tabela comparativa -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Importação Comum<br/><span class="pp3-grad">vs. TTD 409 SC</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Veja por que importar por Santa Catarina com o TTD 409 é a escolha estratégica para tradings e importadoras:
+      </p>
 
       <div class="overflow-x-auto shadow-sm rounded-2xl border border-slate-200">
         <table class="w-full text-left text-sm text-slate-700">
@@ -305,9 +253,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- TERMINAIS E PORTOS ATENDIDOS -->
+  <!-- Portos atendidos -->
   <section class="py-16 lg:py-20 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl font-bold mb-4">
           Operações Integradas nos Maiores Portos e Aeroportos de SC
@@ -338,43 +286,147 @@ const faqs = [
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Perguntas Frequentes sobre TTD e Importação em SC</h2>
-        <p class="text-slate-600">Tire suas dúvidas sobre benefícios fiscais, RADAR Siscomex e comércio exterior.</p>
+  <!-- Como funciona -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>1. Primeiro contato:</strong> WhatsApp (47) 3326-5123 ou formulário no site. Levantamento inicial sem custo — analisamos sua operação de importação, volume e enquadramento fiscal.
+        </p>
+        <p>
+          <strong>2. Diagnóstico de viabilidade:</strong> simulação comparativa TTD 409 vs. importação comum, verificação de enquadramento no Lucro Real/Presumido, análise de RADAR atual e capacidade financeira.
+        </p>
+        <p>
+          <strong>3. Implantação:</strong> pleito do TTD na SEF/SC, abertura/adequação da trading, parametrização do ERP para NF-e de importação, configuração de CFOPs, NCMs e CSTs.
+        </p>
+        <p>
+          <strong>4. Rotina mensal:</strong> apuração do crédito presumido, escrituração EFD-ICMS/IPI, DIME, DCIP, controle de fundos estaduais e relatórios gerenciais de economia tributária — tudo no prazo.
+        </p>
       </div>
 
-      <div class="space-y-6">
-        {faqs.map(faq => (
-          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{faq.q}</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="py-16 bg-blue-900 text-white text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
-        Quer importar por Santa Catarina com a menor carga tributária do país?
-      </h2>
-      <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-        Fale com os consultores de comércio exterior da JMF Contabilidade. Analisamos a viabilidade do TTD 409 e o enquadramento do seu RADAR para sua empresa operar com máxima economia e conformidade.
+      <p class="mt-8 text-lg text-slate-600 leading-relaxed">
+        Atendemos também empresas de <strong>Itajaí (15km)</strong>, <strong>Navegantes (20km)</strong>, <strong>Joinville (60km)</strong>, <strong>Itapoá (80km)</strong>, <strong>São Francisco do Sul (90km)</strong>, <strong>Florianópolis (140km)</strong> — com a mesma qualidade, 100% digital quando preferir.
       </p>
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-2xl text-slate-900 bg-green-400 hover:bg-green-300 shadow-xl shadow-green-500/30 transition duration-200"
-      >
-        Falar com um Especialista em TTD e Importação
-      </a>
-      <p class="mt-4 text-xs text-blue-200">Atendimento rápido via WhatsApp • Sede em Blumenau/SC</p>
     </div>
   </section>
+
+  <!-- CTA Dark -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Importe por Santa Catarina<br/><span class="pp3-grad-light">com a menor carga tributária do país!</span></h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        Com 35+ anos de experiência no mercado contábil de Blumenau e proximidade dos portos catarinenses, conhecemos cada detalhe do TTD 409/410, RADAR Siscomex e parametrização fiscal de importação. Fale conosco e veja a diferença no seu desembaraço aduaneiro.
+      </p>
+      <a href={WAsim} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>Análise de Viabilidade TTD Gratuita
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - Contabilidade para Importação e TTD"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Precisa de mais esclarecimentos?<br />
+            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+          </h2>
+          <div class="space-y-3">
+            <details class="accordion-item">
+              <summary class="accordion-summary">O que é o TTD 409 em Santa Catarina e quem pode solicitar?</summary>
+              <div class="accordion-body">
+                <p>O TTD 409 (Tratamento Tributário Diferenciado) é um regime especial concedido pela SEF/SC que permite o diferimento do ICMS no desembaraço aduaneiro de mercadorias importadas por portos e aeroportos catarinenses e concede crédito presumido na saída interestadual, reduzindo a carga tributária efetiva de ICMS para percentuais entre 0,6% e 2,6%.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Qual o regime tributário necessário para usufruir do TTD de Importação?</summary>
+              <div class="accordion-body">
+                <p>A empresa deve ser optante pelo Lucro Real ou Lucro Presumido. Empresas do Simples Nacional não podem usufruir do crédito presumido do TTD, sendo altamente recomendada a abertura de uma trading ou filial específica no Lucro Real/Presumido para operar o benefício.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como funciona a habilitação no RADAR Siscomex?</summary>
+              <div class="accordion-body">
+                <p>O RADAR é a licença concedida pela Receita Federal para operar no comércio exterior. É dividido em Expressa (até US$ 50 mil/semestre), Limitada (até US$ 160 mil/semestre) e Ilimitada (acima de US$ 160 mil). Nossa equipe organiza a capacidade financeira da empresa e faz o protocolo para obtenção e revisão de limite.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como fica o TTD de Santa Catarina com a Reforma Tributária?</summary>
+              <div class="accordion-body">
+                <p>Os incentivos fiscais estaduais como o TTD de SC possuem transição garantida pela Emenda Constitucional nº 132/2023 até 2032 através do Fundo de Compensação de Benefícios Fiscais. Estruturar sua trading agora garante segurança jurídica e competitividade durante toda a fase de transição.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/incentivos-fiscais-blumenau-pagar-menos-imposto"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Incentivos fiscais</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Incentivos fiscais em Blumenau: como pagar menos imposto legalmente</p>
+        </a>
+        <a href="/blog/contabilidade-para-industria-blumenau"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Indústria</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Contabilidade para indústria em Blumenau: tributação e CPRB</p>
+        </a>
+        <a href="/blog/como-abrir-empresa-em-blumenau"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Abertura de empresa</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Como abrir empresa em Blumenau: guia completo com custos e prazos 2026</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade para importação e comércio exterior, você encontrou o lugar certo. Entre em contato e marque uma consulta sem custo.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>

@@ -1,273 +1,222 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
 
-export const prerender = true;
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const WAsim = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20sou%20m%C3%A9dico%20e%20gostaria%20de%20saber%20se%20abrir%20empresa%20compensa%20no%20meu%20caso.";
 
-const title = "Contabilidade para Clínicas Médicas e Equiparação em SC | JMF";
-const description = "Contabilidade especializada para clínicas médicas e odontológicas em SC. Economize até 60% com Equiparação Hospitalar no Lucro Presumido e Fator R.";
-const canonical = "https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas";
-const ogUrl = canonical;
-
-const schema = {
+const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
-  "@graph": [
+  "@type": ["AccountingService", "LocalBusiness"],
+  "@id": "https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas#localbusiness",
+  "name": "JMF Contabilidade – Contabilidade para Clínicas Médicas e Saúde",
+  "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+  "taxID": "81.335.895/0001-17",
+  "identifier": {
+    "@type": "PropertyValue",
+    "name": "CRC",
+    "value": "SC-002550/O"
+  },
+  "url": "https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas",
+  "description": "Contabilidade especializada para clínicas médicas e odontológicas em SC. Equiparação Hospitalar (Tema 328 STJ), Fator R, abertura de PJ médica e gestão de pró-labore para redução legal de impostos.",
+  "telephone": "+55-47-3326-5123",
+  "email": "contato@jmfcontabilidade.com.br",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+    "addressLocality": "Blumenau",
+    "addressRegion": "SC",
+    "postalCode": "89010-060",
+    "addressCountry": "BR"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -26.92016,
+    "longitude": -49.06705
+  },
+  "foundingDate": "1989-05-24",
+  "areaServed": [
+    { "@type": "City", "name": "Blumenau" },
+    { "@type": "City", "name": "Florianópolis" },
+    { "@type": "City", "name": "Joinville" },
+    { "@type": "City", "name": "Balneário Camboriú" },
+    { "@type": "City", "name": "Itajaí" },
+    { "@type": "City", "name": "Timbó" },
+    { "@type": "City", "name": "Indaial" },
+    { "@type": "State", "name": "Santa Catarina" }
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Serviços de Contabilidade para Área Médica e Saúde",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Implantação da Equiparação Hospitalar" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão Inteligente do Fator R" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura e Regularização de PJ Médica" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Distribuição de Lucros Isenta" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Folha de Pagamento Especializada em Saúde" } }
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/jmfcontabilidadebnu/",
+    "https://www.instagram.com/jmf.contabilidade/",
+    "https://www.linkedin.com/company/jmf-contabilidade/",
+    "https://twitter.com/jmfcontab",
+    "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+  ],
+  "openingHoursSpecification": [
     {
-      "@type": "AccountingService",
-      "name": "JMF Contabilidade - Especializada em Clínicas Médicas e Saúde",
-      "url": canonical,
-      "telephone": "+55-47-3326-5123",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Centro",
-        "addressLocality": "Blumenau",
-        "addressRegion": "SC",
-        "postalCode": "89010-060",
-        "addressCountry": "BR"
-      },
-      "areaServed": [
-        "Blumenau", "Florianópolis", "Joinville", "Balneário Camboriú", "Itajaí", "Timbó", "Indaial", "Brusque"
-      ],
-      "priceRange": "$$"
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "O que é a Equiparação Hospitalar e como ela reduz os impostos da clínica?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A Equiparação Hospitalar é um benefício fiscal respaldado pela Lei nº 9.249/95 e pelo Tema 328 do STJ. Ela permite que clínicas médicas e odontológicas que realizam procedimentos ambulatoriais, cirurgias ou exames reduzam a base de presunção do IRPJ de 32% para 8% e da CSLL de 32% para 12% no Lucro Presumido, gerando uma redução de até 60% nos tributos federais."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quais os requisitos para uma clínica médica obter a Equiparação Hospitalar?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "A clínica precisa: 1) Ser constituída sob a forma de Sociedade Empresária (LTDA); 2) Estar enquadrada no regime do Lucro Presumido; 3) Possuir alvará sanitário regular emitido pela Vigilância Sanitária atendendo às normas da RDC 50 da Anvisa; 4) Prestar serviços médicos voltados à promoção da saúde e procedimentos (consultas simples continuam tributadas na alíquota padrão)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Quando vale a pena optar pelo Simples Nacional com Fator R?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Para consultórios individuais ou clínicas médicas com faturamento menor e que prestam majoritariamente consultas clínicas, o Simples Nacional é muito vantajoso. Ao manter a folha de pagamento e o pró-labore em no mínimo 28% do faturamento bruto (Fator R), a tributação cai do Anexo V (15,5%) para o Anexo III (iniciando em 6%)."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Como funciona a distribuição de lucros isenta de IRPF para médicos sócios?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Com a escrituração contábil regular realizada pela JMF Contabilidade, todo o lucro líquido contábil apurado pela PJ (após pagamento dos tributos e pró-labore com recolhimento de INSS) pode ser transferido para as contas bancárias físicas dos médicos com 100% de isenção de Imposto de Renda."
-          }
-        }
-      ]
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "18:00"
     }
-  ]
-};
-
-const whatsappUrl = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20para%20minha%20cl%C3%ADnica%20m%C3%A9dica.";
-
-const faqs = [
-  {
-    q: "O que é a Equiparação Hospitalar e como ela reduz os impostos da clínica?",
-    a: "A Equiparação Hospitalar é um benefício fiscal respaldado pela Lei nº 9.249/95 e pelo Tema 328 do STJ. Ela permite que clínicas médicas e odontológicas que realizam procedimentos ambulatoriais, cirurgias ou exames reduzam a base de presunção do IRPJ de 32% para 8% e da CSLL de 32% para 12% no Lucro Presumido, gerando uma redução de até 60% nos tributos federais."
-  },
-  {
-    q: "Quais os requisitos para uma clínica médica obter a Equiparação Hospitalar?",
-    a: "A clínica precisa: 1) Ser constituída sob a forma de Sociedade Empresária (LTDA); 2) Estar enquadrada no regime do Lucro Presumido; 3) Possuir alvará sanitário regular emitido pela Vigilância Sanitária atendendo às normas da RDC 50 da Anvisa; 4) Prestar serviços médicos voltados à promoção da saúde e procedimentos (consultas simples continuam tributadas na alíquota padrão)."
-  },
-  {
-    q: "Quando vale a pena optar pelo Simples Nacional com Fator R?",
-    a: "Para consultórios individuais ou clínicas médicas com faturamento menor e que prestam majoritariamente consultas clínicas, o Simples Nacional é muito vantajoso. Ao manter a folha de pagamento e o pró-labore em no mínimo 28% do faturamento bruto (Fator R), a tributação cai do Anexo V (15,5%) para o Anexo III (iniciando em 6%)."
-  },
-  {
-    q: "Como funciona a distribuição de lucros isenta de IRPF para médicos sócios?",
-    a: "Com a escrituração contábil regular realizada pela JMF Contabilidade, todo o lucro líquido contábil apurado pela PJ (após pagamento dos tributos e pró-labore com recolhimento de INSS) pode ser transferido para as contas bancárias físicas dos médicos com 100% de isenção de Imposto de Renda."
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": 5,
+    "bestRating": 5,
+    "worstRating": 1,
+    "reviewCount": 150
   }
-];
+});
+
+const faqSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "O que é a Equiparação Hospitalar e como ela reduz os impostos da clínica?", "acceptedAnswer": { "@type": "Answer", "text": "A Equiparação Hospitalar é um benefício fiscal respaldado pela Lei nº 9.249/95 e pelo Tema 328 do STJ. Ela permite que clínicas médicas e odontológicas que realizam procedimentos ambulatoriais, cirurgias ou exames reduzam a base de presunção do IRPJ de 32% para 8% e da CSLL de 32% para 12% no Lucro Presumido, gerando uma redução de até 60% nos tributos federais." } },
+    { "@type": "Question", "name": "Quais os requisitos para uma clínica médica obter a Equiparação Hospitalar?", "acceptedAnswer": { "@type": "Answer", "text": "A clínica precisa: 1) Ser constituída sob a forma de Sociedade Empresária (LTDA); 2) Estar enquadrada no regime do Lucro Presumido; 3) Possuir alvará sanitário regular emitido pela Vigilância Sanitária atendendo às normas da RDC 50 da Anvisa; 4) Prestar serviços médicos voltados à promoção da saúde e procedimentos (consultas simples continuam tributadas na alíquota padrão)." } },
+    { "@type": "Question", "name": "Quando vale a pena optar pelo Simples Nacional com Fator R?", "acceptedAnswer": { "@type": "Answer", "text": "Para consultórios individuais ou clínicas médicas com faturamento menor e que prestam majoritariamente consultas clínicas, o Simples Nacional é muito vantajoso. Ao manter a folha de pagamento e o pró-labore em no mínimo 28% do faturamento bruto (Fator R), a tributação cai do Anexo V (15,5%) para o Anexo III (iniciando em 6%)." } },
+    { "@type": "Question", "name": "Como funciona a distribuição de lucros isenta de IRPF para médicos sócios?", "acceptedAnswer": { "@type": "Answer", "text": "Com a escrituração contábil regular realizada pela JMF Contabilidade, todo o lucro líquido contábil apurado pela PJ (após pagamento dos tributos e pró-labore com recolhimento de INSS) pode ser transferido para as contas bancárias físicas dos médicos com 100% de isenção de Imposto de Renda." } }
+  ]
+});
+
+const schema = [localBusinessSchema, faqSchema];
 ---
 
 <Layout
-  title={title}
-  description={description}
-  canonical={canonical}
-  ogUrl={ogUrl}
+  title="Contabilidade para Clínicas Médicas e Equiparação Hospitalar em SC | JMF"
+  description="Contabilidade especializada para clínicas médicas e odontológicas em SC. Economize até 60% com Equiparação Hospitalar no Lucro Presumido e Fator R no Simples Nacional."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas"
   schema={schema}
   heroInterno
-  bodyClass="pagina-medica"
+  bodyClass="pp3"
 >
-  <!-- HERO SECTION -->
-  <section class="relative bg-slate-900 text-white py-20 lg:py-28 overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="max-w-3xl">
-        <span class="inline-block py-1.5 px-4 rounded-full bg-blue-500/20 text-blue-300 text-sm font-semibold tracking-wide uppercase mb-6 border border-blue-400/30">
-          Gestão Tributária para Área Médica & Saúde • Santa Catarina
-        </span>
-        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight mb-6">
-          Contabilidade para Clínicas Médicas e Equiparação Hospitalar em SC
-        </h1>
-        <p class="text-lg sm:text-xl text-slate-300 mb-8 leading-relaxed">
-          Reduza legalmente em até 60% os impostos da sua clínica com a tese da Equiparação Hospitalar no Lucro Presumido ou economize no Simples Nacional com a gestão estratégica do Fator R. Atendimento especializado para médicos, dentistas e clínicas em Blumenau e região.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-bold rounded-xl text-white bg-green-600 hover:bg-green-700 shadow-lg shadow-green-600/30 transition duration-200"
-          >
-            Solicitar Diagnóstico para Minha Clínica
-          </a>
-          <a
-            href="#tabela-comparativa"
-            class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold rounded-xl text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition duration-200"
-          >
-            Ver Tabela de Economia
-          </a>
-        </div>
-      </div>
+
+  <HeroInterno
+    title="Contabilidade para Clínicas Médicas e Equiparação Hospitalar em SC"
+    subtitle="Reduza legalmente em até 60% os impostos da sua clínica com a tese da Equiparação Hospitalar no Lucro Presumido ou otimize o Simples Nacional com a gestão do Fator R."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Especialidades" },
+      { label: "Clínicas Médicas e Saúde" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Simular Economia", href: WAsim, variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
     </div>
-  </section>
+  </div>
 
-  <!-- CARDS PROVA E DIFERENCIAIS -->
-  <section class="py-10 bg-slate-100 border-b border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">Até 60%</p>
-          <p class="text-sm font-medium text-slate-600">Redução de Tributos Federais (IRPJ/CSLL)</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">Tema 328 STJ</p>
-          <p class="text-sm font-medium text-slate-600">Segurança Jurídica e RDC 50 Anvisa</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">Fator R (6%)</p>
-          <p class="text-sm font-medium text-slate-600">Otimização de Folha no Simples</p>
-        </div>
-        <div class="p-4 bg-white rounded-xl shadow-sm border border-slate-200">
-          <p class="text-3xl font-extrabold text-blue-900 mb-1">35+ Anos</p>
-          <p class="text-sm font-medium text-slate-600">Tradição e Blindagem Fiscal em Blumenau</p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Contabilidade para clínicas médicas:<br/><span class="pp3-grad">por que escolher a JMF</span></h2>
 
-  <!-- GARGALOS TRIBUTÁRIOS -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Onde os médicos e clínicas mais perdem dinheiro com impostos?
-        </h2>
-        <p class="text-lg text-slate-600">
-          Pequenas falhas fiscais e de estruturação podem representar dezenas de milhares de reais em tributação a mais por ano.
-        </p>
-      </div>
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Blumenau é um dos polos de saúde do Vale do Itajaí, com centenas de clínicas médicas, odontológicas e de diagnóstico por imagem. Profissionais da região enfrentam uma carga tributária elevada — IRPF de até 27,5% sobre pessoa física ou alíquotas de 15,5% no Simples Nacional — quando poderiam pagar até 60% menos com a tese da Equiparação Hospitalar (Tema 328 STJ) ou com gestão estratégica do Fator R.
+      </p>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">1</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Atuação na Pessoa Física (Carnê-Leão)</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Pagar até 27,5% de Imposto de Renda na PF sobre os rendimentos de consultas e plantões em vez de abrir uma PJ médica estruturada.
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade é especializada em contabilidade médica e odontológica há 35+ anos, com sede em Blumenau (Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú). Conhecemos cada particularidade do Tema 328 STJ, da RDC 50 da Anvisa, do Fator R e da distribuição isenta de lucros — e usamos esse conhecimento para clínicas e consultórios pagarem menos imposto, dentro da lei.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Equiparação Hospitalar</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Implantação da tese Tema 328 STJ no Lucro Presumido: base de IRPJ cai de 32% para 8% e CSLL de 32% para 12%. Economia de até 60% em tributos federais para clínicas com procedimentos ambulatoriais.
           </p>
         </div>
 
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">2</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Tributação no Anexo V (15,5%)</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Falta de planejamento do pró-labore médico, fazendo a clínica pagar 15,5% de imposto em vez de 6% no Anexo III.
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fator R Otimizado</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Monitoramento mensal de folha + pró-labore sobre faturamento (mínimo 28%) para manter a clínica no Anexo III do Simples (alíquota inicial 6% em vez de 15,5% do Anexo V).
           </p>
         </div>
 
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">3</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Lucro Presumido Sem Equiparação</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Clínicas que realizam procedimentos e cirurgias ambulatoriais pagando IRPJ e CSLL sobre a base cheia de 32%, desperdiçando o direito à redução para 8% e 12%.
-          </p>
-        </div>
-
-        <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200 hover:shadow-md transition">
-          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-xl flex items-center justify-center font-bold text-xl mb-4">4</div>
-          <h3 class="text-xl font-bold text-slate-900 mb-2">Falhas de Registro no CRM e Vigilância</h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            Desalinhamento entre o contrato social, o registro no CRM-SC/CRO-SC e as exigências da Vigilância Sanitária, impedindo a obtenção de benefícios fiscais.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUÇÕES -->
-  <section id="solucoes" class="py-16 lg:py-24 bg-slate-50 border-y border-slate-200">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="text-blue-600 font-bold uppercase tracking-wider text-sm">Nossa Expertise</span>
-        <h2 class="text-3xl font-bold text-slate-900 mt-2 mb-4">
-          Planejamento Tributário e Gestão Contábil de Alta Performance
-        </h2>
-        <p class="text-lg text-slate-600">
-          Estruturação jurídica, tributação otimizada e compliance para o setor médico e da saúde.
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Implantação da Equiparação Hospitalar</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Análise dos procedimentos realizados, adequação societária (LTDA), conformidade com a RDC 50 da Anvisa e redução da base de IRPJ de 32% para 8% e CSLL para 12%.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Gestão Inteligente do Fator R</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Monitoramento mensal do faturamento e da folha de pagamento/pró-labore para manter a clínica enquadrada na alíquota inicial de 6% do Simples Nacional.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura e Regularização de PJ Médica</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Registro ágil na Junta Comercial de SC (JUCESC), inscrição no CRM-SC ou CRO-SC, CNES e alvará sanitário municipal.
+          <p class="text-slate-600 leading-relaxed">
+            Constituição ágil na JUCESC, registro no CRM-SC/CRO-SC, CNES, alvará da Vigilância Sanitária (VISAM) e adequação à RDC 50 da Anvisa para clínicas e centros cirúrgicos.
           </p>
         </div>
 
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Distribuição de Lucros Isenta</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Organização contábil para repassar os lucros aos médicos sócios sem incidência de IRPF, blindando o patrimônio pessoal.
-          </p>
-        </div>
-
-        <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-200">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Folha de Pagamento Especializada</h3>
-          <p class="text-slate-600 text-sm leading-relaxed mb-4">
-            Gestão de folha com técnicos de enfermagem, recepcionistas, plantões e laudos de SST ao eSocial.
+          <p class="text-slate-600 leading-relaxed">
+            Escrituração contábil regular para que todo o lucro líquido apurado pela PJ (após tributos e INSS sobre pró-labore) seja distribuído aos médicos sócios sem IRPF.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TABELA COMPARATIVA -->
-  <section id="tabela-comparativa" class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center max-w-3xl mx-auto mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">
-          Tabela Comparativa da Carga Tributária Médica
-        </h2>
-        <p class="text-lg text-slate-600">
-          Veja a tributação efetiva para diferentes modelos de atuação médica em Santa Catarina:
+  <!-- Gargalos tributários -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Onde clínicas e médicos<br/><span class="pp3-grad">mais perdem dinheiro com impostos</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Pequenas falhas fiscais e de estruturação podem representar dezenas de milhares de reais em tributação a mais por ano. Os erros mais comuns em clínicas de Blumenau e região:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Atuação como pessoa física (Carnê-Leão):</strong> pagar até 27,5% de IRPF sobre consultas e plantões em vez de abrir uma PJ médica estruturada — prejuízo direto de até R$ 100 mil/ano em faturamento de R$ 50 mil/mês.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Tributação no Anexo V (15,5%):</strong> falta de planejamento do pró-labore médico fazendo a clínica pagar 15,5% no Simples em vez de 6% no Anexo III — diferença de R$ 2.850/mês para faturamento de R$ 30 mil.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Lucro Presumido sem Equiparação Hospitalar:</strong> clínicas de procedimentos e cirurgias ambulatoriais pagando IRPJ e CSLL sobre base cheia de 32%, desperdiçando redução para 8% e 12% garantida pelo Tema 328 STJ.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Falhas no CRM-SC, CRO-SC e Vigilância Sanitária:</strong> desalinhamento entre contrato social, registros profissionais e exigências da VISAM/RDC 50 da Anvisa impedindo a obtenção de benefícios fiscais.</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Em 2026, uma clínica de procedimentos com faturamento de R$ 60 mil/mês no Lucro Presumido padrão paga cerca de R$ 13.300/mês em tributos federais. Com a Equiparação Hospitalar, a carga cai para aprox. R$ 5.900/mês — <strong>economia de R$ 7.400/mês, ou R$ 89 mil/ano</strong>. A JMF faz o diagnóstico de elegibilidade para sua clínica.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- Tabela comparativa -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Tabela comparativa da<br/><span class="pp3-grad">carga tributária médica</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Veja a tributação efetiva para diferentes modelos de atuação médica em Santa Catarina:
+      </p>
 
       <div class="overflow-x-auto shadow-sm rounded-2xl border border-slate-200">
         <table class="w-full text-left text-sm text-slate-700">
@@ -310,9 +259,9 @@ const faqs = [
     </div>
   </section>
 
-  <!-- ESPECIALIDADES -->
+  <!-- Especialidades -->
   <section class="py-16 lg:py-20 bg-slate-900 text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center max-w-3xl mx-auto mb-16">
         <h2 class="text-3xl font-bold mb-4">
           Especialidades com Alto Potencial de Redução de Impostos
@@ -351,43 +300,147 @@ const faqs = [
     </div>
   </section>
 
-  <!-- FAQ SECTION -->
-  <section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-slate-900 mb-4">Perguntas Frequentes sobre Tributação Médica</h2>
-        <p class="text-slate-600">Tire suas dúvidas sobre Equiparação Hospitalar, Fator R e planejamento tributário.</p>
+  <!-- Como funciona -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>1. Primeiro contato:</strong> WhatsApp (47) 3326-5123 ou formulário no site. Levantamento inicial sem custo — analisamos seu perfil (consultório, clínica, centro cirúrgico) e enquadramento tributário atual.
+        </p>
+        <p>
+          <strong>2. Diagnóstico de viabilidade:</strong> simulação comparativa Pessoa Física × Simples × Lucro Presumido (com e sem Equiparação Hospitalar), verificação de procedimentos elegíveis e Fator R.
+        </p>
+        <p>
+          <strong>3. Implantação:</strong> abertura ou regularização da PJ médica (LTDA), registro no CRM-SC/CRO-SC, adequação à RDC 50 da Anvisa, parametrização de pró-labore e folha.
+        </p>
+        <p>
+          <strong>4. Rotina mensal:</strong> apuração tributária, gestão do Fator R, escrituração fiscal e contábil, folha de pagamento, eSocial e relatórios de economia — tudo no prazo, com comunicação clara.
+        </p>
       </div>
 
-      <div class="space-y-6">
-        {faqs.map(faq => (
-          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-200">
-            <h3 class="text-lg font-bold text-slate-900 mb-2">{faq.q}</h3>
-            <p class="text-slate-600 text-sm leading-relaxed">{faq.a}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA FINAL -->
-  <section class="py-16 bg-blue-900 text-white text-center">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-extrabold mb-6">
-        Sua clínica está pagando mais impostos do que a legislação exige?
-      </h2>
-      <p class="text-lg text-blue-100 mb-8 max-w-2xl mx-auto">
-        Converse com os especialistas em contabilidade médica da JMF Contabilidade. Realizamos um diagnóstico tributário gratuito para verificar a elegibilidade da sua clínica à Equiparação Hospitalar e ao Fator R.
+      <p class="mt-8 text-lg text-slate-600 leading-relaxed">
+        Atendemos médicos, dentistas e clínicas de <strong>Blumenau</strong>, <strong>Florianópolis (140km)</strong>, <strong>Joinville (120km)</strong>, <strong>Balneário Camboriú (60km)</strong>, <strong>Itajaí (60km)</strong>, <strong>Timbó (35km)</strong>, <strong>Indaial (15km)</strong> e <strong>Brusque (50km)</strong> — com a mesma qualidade, 100% digital quando preferir.
       </p>
-      <a
-        href={whatsappUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center justify-center px-10 py-5 text-lg font-bold rounded-2xl text-slate-900 bg-green-400 hover:bg-green-300 shadow-xl shadow-green-500/30 transition duration-200"
-      >
-        Falar com um Contador Especialista em Saúde
-      </a>
-      <p class="mt-4 text-xs text-blue-200">Atendimento rápido via WhatsApp • Sede em Blumenau/SC</p>
     </div>
   </section>
+
+  <!-- CTA Dark -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Sua clínica está pagando<br/><span class="pp3-grad-light">mais impostos do que deveria?</span></h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        Com 35+ anos de experiência em contabilidade médica em Blumenau, conhecemos cada detalhe da Equiparação Hospitalar (Tema 328 STJ), do Fator R e da distribuição isenta de lucros. Fale conosco e veja a diferença no seu fechamento mensal.
+      </p>
+      <a href={WAsim} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>Diagnóstico Médico Gratuito
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - Contabilidade para Clínicas Médicas"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Precisa de mais esclarecimentos?<br />
+            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+          </h2>
+          <div class="space-y-3">
+            <details class="accordion-item">
+              <summary class="accordion-summary">O que é a Equiparação Hospitalar e como ela reduz os impostos da clínica?</summary>
+              <div class="accordion-body">
+                <p>A Equiparação Hospitalar é um benefício fiscal respaldado pela Lei nº 9.249/95 e pelo Tema 328 do STJ. Ela permite que clínicas médicas e odontológicas que realizam procedimentos ambulatoriais, cirurgias ou exames reduzam a base de presunção do IRPJ de 32% para 8% e da CSLL de 32% para 12% no Lucro Presumido, gerando uma redução de até 60% nos tributos federais.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Quais os requisitos para uma clínica médica obter a Equiparação Hospitalar?</summary>
+              <div class="accordion-body">
+                <p>A clínica precisa: 1) Ser constituída sob a forma de Sociedade Empresária (LTDA); 2) Estar enquadrada no regime do Lucro Presumido; 3) Possuir alvará sanitário regular emitido pela Vigilância Sanitária atendendo às normas da RDC 50 da Anvisa; 4) Prestar serviços médicos voltados à promoção da saúde e procedimentos (consultas simples continuam tributadas na alíquota padrão).</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Quando vale a pena optar pelo Simples Nacional com Fator R?</summary>
+              <div class="accordion-body">
+                <p>Para consultórios individuais ou clínicas médicas com faturamento menor e que prestam majoritariamente consultas clínicas, o Simples Nacional é muito vantajoso. Ao manter a folha de pagamento e o pró-labore em no mínimo 28% do faturamento bruto (Fator R), a tributação cai do Anexo V (15,5%) para o Anexo III (iniciando em 6%).</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como funciona a distribuição de lucros isenta de IRPF para médicos sócios?</summary>
+              <div class="accordion-body">
+                <p>Com a escrituração contábil regular realizada pela JMF Contabilidade, todo o lucro líquido contábil apurado pela PJ (após pagamento dos tributos e pró-labore com recolhimento de INSS) pode ser transferido para as contas bancárias físicas dos médicos com 100% de isenção de Imposto de Renda.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/contabilidade-para-medicos-clinicas-blumenau"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Médicos e clínicas</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Contabilidade para médicos e clínicas em Blumenau: guia PJ</p>
+        </a>
+        <a href="/blog/fator-r-simples-nacional-como-calcular"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Fator R</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Fator R no Simples Nacional: como calcular e economizar até R$ 34 mil/ano</p>
+        </a>
+        <a href="/blog/pro-labore-e-dividendos-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Pró-labore</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Pró-labore e dividendos 2026: quanto retirar e como pagar menos</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você é médico, dentista ou gestor de clínica, encontrou o lugar certo. Entre em contato e marque uma consulta sem custo para análise de Equiparação Hospitalar e Fator R.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 </Layout>
