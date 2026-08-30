@@ -1,5 +1,5 @@
 ---
-title: "Separar Pessoa Física de Jurídica: O Erro Que Mata..."
+title: "Separar Pessoa Física de Jurídica: Evite a Confusão Patrimonial"
 description: "Misturar as finanças pessoais com as da empresa é um dos erros mais comuns e mais caros para quem empreende."
 pubDate: 2026-01-29
 author: "Diego Rosa, CRC SC-035810/O"

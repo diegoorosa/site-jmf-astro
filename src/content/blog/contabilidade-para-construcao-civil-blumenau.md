@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Construção Civil em Blumenau: INSS,..."
+title: "Contabilidade para Construção Civil em Blumenau: INSS e RET"
 description: "Construtoras em Blumenau: INSS 3,5% na NF, desoneração CPRB, RET para incorporações e Simples Anexo IV. JMF atende construção civil em SC."
 pubDate: 2026-06-25
 author: "Diego Rosa, CRC SC-035810/O"

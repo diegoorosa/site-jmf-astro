@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Pousadas e Turismo no Litoral de SC:..."
+title: "Contabilidade para Pousadas e Turismo no Litoral de SC: Guia"
 description: "Pousadas no litoral de SC: sazonalidade, Cadastur obrigatório, contratação temporária e gestão de caixa."
 pubDate: 2026-06-18
 author: "Fabricio Rosa, CRC SC-029833/O"

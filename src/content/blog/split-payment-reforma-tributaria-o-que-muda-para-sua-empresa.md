@@ -1,5 +1,5 @@
 ---
-title: "Split Payment: O Que Muda Para Sua Empresa com a Reforma..."
+title: "Split Payment na Reforma Tributária: Impacto no Fluxo de Caixa"
 description: "Entenda o Split Payment da Reforma Tributária: como funciona, quando entra em vigor e como preparar o fluxo de caixa da sua empresa antes que seja tarde."
 pubDate: 2026-06-13
 author: "Fabricio Rosa, CRC SC-029833/O"

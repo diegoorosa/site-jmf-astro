@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Condomínios em Blumenau: Gestão,..."
+title: "Contabilidade para Condomínios em Blumenau: Gestão e eSocial"
 description: "Condomínios em Blumenau: contabilidade condominial, folha de funcionários, eSocial e prestação de contas para síndicos e administradoras."
 pubDate: 2026-06-11
 author: "Fabricio Rosa, CRC SC-029833/O"

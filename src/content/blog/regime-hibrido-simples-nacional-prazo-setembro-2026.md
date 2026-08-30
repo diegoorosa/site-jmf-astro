@@ -1,5 +1,5 @@
 ---
-title: "Regime Híbrido do Simples Nacional: O Que Decidir Até 30..."
+title: "Regime Híbrido do Simples Nacional: O Que Decidir em 2026"
 description: "A Resolução CGSN 186/2026 fixou a janela de 1 a 30 de setembro de 2026 para optar pelo regime híbrido do Simples Nacional."
 pubDate: 2026-06-22
 author: "Fabricio Rosa, CRC SC-029833/O"

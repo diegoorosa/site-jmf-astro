@@ -1,5 +1,5 @@
 ---
-title: "BPO Financeiro: A solução definitiva para acabar com a..."
+title: "BPO Financeiro: Gestão e Organização de Caixa para Pequenas Empresas"
 description: "Horas gastas com notas, boletos, conciliação e cobrança? O BPO Financeiro terceiriza o coração financeiro da empresa com especialistas."
 pubDate: 2026-08-01
 author: "Diego Rosa, CRC SC-035810/O"

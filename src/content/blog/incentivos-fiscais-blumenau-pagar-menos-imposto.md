@@ -1,5 +1,5 @@
 ---
-title: "Incentivos Fiscais em Blumenau: O Que Sua Empresa Pode..."
+title: "Incentivos Fiscais em Blumenau: Como Pagar Menos Imposto Legalmente"
 description: "Incentivos fiscais reais para empresas de Blumenau/SC: redução de ISS prevista em lei municipal, isenção de ITBI e os programas estaduais PRODEC,..."
 pubDate: 2026-06-18
 author: "Fabricio Rosa, CRC SC-029833/O"

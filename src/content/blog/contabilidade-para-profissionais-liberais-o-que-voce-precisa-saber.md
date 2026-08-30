@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Profissionais Liberais: O Que Você..."
+title: "Contabilidade para Profissionais Liberais: Médicos, Advogados, Engenheiros"
 description: "Médico, advogado, engenheiro, psicólogo, arquiteto — profissionais liberais têm particularidades tributárias que a maioria não conhece."
 pubDate: 2026-06-05
 author: "Diego Rosa, CRC SC-035810/O"

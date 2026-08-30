@@ -1,5 +1,5 @@
 ---
-title: "Nota Fiscal de Serviços (NFS-e) em Blumenau: Como Emitir..."
+title: "Nota Fiscal de Serviços (NFS-e) em Blumenau: Como Emitir"
 description: "Guia completo da NFS-e em Blumenau: alíquotas de ISS, cadastro, sistema de emissão, erros comuns e obrigações para prestadores de serviço."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"

@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Restaurantes em Blumenau e SC: O Que..."
+title: "Contabilidade para Restaurantes e Bares em Blumenau e SC"
 description: "Restaurantes e bares em Blumenau: Simples Nacional Anexo I, gorjeta, CMV e Vigilância Sanitária. JMF Contabilidade especializada no setor de alimentação."
 pubDate: 2026-06-27
 author: "Fabricio Rosa, CRC SC-029833/O"

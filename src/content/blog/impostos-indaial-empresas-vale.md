@@ -1,5 +1,5 @@
 ---
-title: "Impostos em Indaial/SC: O Que Muda Para Empresas do Médio..."
+title: "Impostos em Indaial/SC: Guia Tributário para Empresas do Vale"
 description: "Alíquotas de ISS, ICMS, incentivos do PRODEC e obrigações fiscais para empresas em Indaial/SC em 2026. Guia completo do Médio Vale."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"
