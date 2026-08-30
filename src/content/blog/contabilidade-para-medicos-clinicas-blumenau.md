@@ -25,7 +25,7 @@ Antes de qualquer cálculo, é preciso entender o que muda de verdade entre atua
 - Emite nota fiscal de serviço pela PJ
 - Patrimônio da empresa separado do pessoal
 
-Para a maioria dos médicos com faturamento acima de R$ 8.000/mês, a PJ já começa a fazer sentido. Abaixo disso, os custos fixos da empresa (contador, alvará, taxas) podem não compensar.
+Para a maioria dos médicos com faturamento acima de R$ 8.000/mês, a PJ já começa a fazer sentido. Se você busca a maior redução de impostos possível para clínicas médicas, a tese da [Equiparação Hospitalar](/contabilidade-para-clinicas-medicas) permite reduzir a base de IRPJ/CSLL de 32% para 8%/12%. Abaixo disso, os custos fixos da empresa (contador, alvará, taxas) podem não compensar.
 
 ## Simples Nacional para Médicos: Fator R é a Chave
 
@@ -123,7 +123,11 @@ Não. Atividades médicas não estão na lista de ocupações permitidas para ME
 
 A JMF Contabilidade atende médicos e clínicas em Blumenau com planejamento de Fator R, abertura de empresa médica no CRM-SC e gestão de pró-labore para redução de imposto. [Fale com nossa equipe](/fale-conosco) para análise gratuita do seu caso.
 
-> **Sua clínica está buscando a maior redução de impostos possível?** Veja nossa página dedicada — [Contabilidade para Clínicas Médicas e Equiparação Hospitalar](/contabilidade-para-clinicas-medicas) — com a tese da Equiparação Hospitalar, simulações de economia e gestão do Fator R.
+> 🏥 **Box de Destaque — Especialista em Clínicas Médicas em SC**
+>
+> Sua clínica paga mais impostos do que a legislação exige. A tese da Equiparação Hospitalar (Tema 328 STJ + Lei 9.249/95) reduz a base do IRPJ/CSLL de 32% para 8%/12% no Lucro Presumido, gerando economia de até 60%.
+>
+> **Acesse a página completa:** [Contabilidade para Clínicas Médicas e Equiparação Hospitalar](/contabilidade-para-clinicas-medicas) — com simulações de economia, tabela comparativa de regimes e checklists de conformidade sanitária (RDC 50).
 
 > **É médico e quer saber se a PJ compensa para você?**
 > [Conversar com a JMF](https://wa.me/554733265123?text=Ol%C3%A1%2C%20sou%20m%C3%A9dico%20e%20gostaria%20de%20saber%20se%20abrir%20empresa%20compensa%20no%20meu%20caso.) — simulação gratuita, sem compromisso.

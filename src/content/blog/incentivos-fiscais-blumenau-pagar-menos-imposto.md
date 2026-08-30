@@ -29,7 +29,7 @@ Para indústrias, o Governo do Estado de Santa Catarina mantém três programas 
 
 - **PRODEC** (Programa de Desenvolvimento da Empresa Catarinense): posterga o recolhimento de uma parcela do ICMS gerado por um novo projeto de implantação ou expansão industrial, funcionando como um financiamento do próprio imposto futuro para viabilizar o investimento.
 - **Pró-Emprego**: permite diferimento do ICMS na aquisição de insumos e bens para o processo produtivo, aliviando o caixa da empresa no momento do investimento.
-- **TTD 489** (Tratamento Tributário Diferenciado): amplia os limites de transferência de crédito de ICMS, condicionado à realização de investimentos no estado.
+- **TTD 489** (Tratamento Tributário Diferenciado): amplia os limites de transferência de crédito de ICMS, condicionado à realização de investimentos no estado. Para operações de importação comercial, o TTD 409 catarinense também oferece diferimento de ICMS — veja o guia completo sobre [Importação e TTD em SC](/contabilidade-para-importacao-sc).
 
 Esses três programas são voltados a empresas industriais com projetos de investimento relevante (implantação, expansão ou modernização de planta) — não se aplicam a qualquer CNAE ou a qualquer porte de empresa. A análise de enquadramento e o pedido são feitos junto à SEF/SC, normalmente com apoio de assessoria especializada dado o volume de documentação técnica exigido.
 

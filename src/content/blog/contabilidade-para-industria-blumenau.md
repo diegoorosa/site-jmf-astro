@@ -30,7 +30,7 @@ Pequenas e médias indústrias com faturamento até R$ 4,8 milhões/ano podem op
 | De R$ 1.800.001 a R$ 3.600.000 | 14,70% | R$ 85.500 |
 | De R$ 3.600.001 a R$ 4.800.000 | 30,00% | R$ 720.000 |
 
-**Atenção:** o Simples Nacional não é sempre a melhor opção para indústrias. Dependendo do mix de produtos e da estrutura de créditos de ICMS, o Lucro Presumido ou Real pode ser mais vantajoso — cada caso exige análise individualizada.
+**Atenção:** o Simples Nacional não é sempre a melhor opção para indústrias. Dependendo do mix de produtos e da estrutura de créditos de ICMS, o Lucro Presumido ou Real pode ser mais vantajoso — cada caso exige análise individualizada. Para aprofundar essa decisão tributária específica do setor industrial, veja a página completa sobre [Contabilidade para Indústria em SC](/contabilidade-para-industria).
 
 ### Lucro Presumido para Indústrias
 
@@ -156,6 +156,12 @@ A landing page **[Contabilidade para Indústria](/contabilidade-para-industria)*
 - Casos reais de economia com CPRB e planejamento de IPI
 - Perguntas frequentes expandidas por setor (metalurgia, confecções, plásticos, alimentação)
 - CTA direto para WhatsApp com diagnóstico gratuito
+
+> 🏭 **Box de Destaque — Especialista em Indústria em SC**
+>
+> Sua indústria perde dinheiro escolhendo o regime tributário errado ou deixando de pleitear a CPRB. A JMF Contabilidade oferece um diagnóstico completo que analisa seu regime fiscal, direitos de crédito de ICMS e elegibilidade à Desoneração da Folha.
+>
+> **Acesse a página dedicada:** [Contabilidade para Indústria](/contabilidade-para-industria) — com simulações de economia e checklists práticos para manufatura.
 
 ---
 
