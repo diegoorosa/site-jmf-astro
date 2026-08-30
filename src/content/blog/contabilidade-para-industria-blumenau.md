@@ -9,6 +9,8 @@ imageAlt: "Linha de produção industrial em Blumenau com maquinário moderno"
 
 A indústria catarinense é o coração da economia de Blumenau e da região do Vale do Itajaí — de confecções a metalurgia, de plásticos a alimentos processados. Cada setor industrial tem suas próprias regras tributárias, e escolher o regime fiscal errado pode custar dezenas ou centenas de milhares de reais por ano. A JMF Contabilidade atende empresas industriais em Blumenau, Gaspar, Indaial, Timbó e toda a região, com foco em redução legal da carga tributária e conformidade com as obrigações do setor.
 
+> **📄 Página completa do serviço:** Veja também nossa landing page dedicada — [Contabilidade para Indústria: Planos, Cases e Perguntas Frequentes](/contabilidade-para-industria) — com tabelas comparativas de regimes, checklists de obrigações industriais e casos reais de economia tributária.
+
 ## Regimes Tributários para Indústrias
 
 A indústria tem acesso aos mesmos regimes tributários do comércio e serviços, mas com particularidades importantes — especialmente o IPI (Imposto sobre Produtos Industrializados), que incide sobre a saída do produto da fábrica.
@@ -143,6 +145,17 @@ A JMF Contabilidade atende indústrias em Blumenau e região com planejamento tr
 
 > **Tem uma indústria e quer saber se está no regime tributário ideal?**
 > [Conversar com a JMF](https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20ind%C3%BAstria%20e%20gostaria%20de%20revisar%20o%20regime%20tribut%C3%A1rio.) — diagnóstico sem custo, resposta em até 1 dia útil.
+
+---
+
+### 🎯 Quer ir além do artigo?
+
+A landing page **[Contabilidade para Indústria](/contabilidade-para-industria)** reúne:
+- Tabelas comparativas completas de regimes tributários (Simples, Presumido, Real)
+- Checklist de obrigações acessórias industriais (SPED, CIAP, Inventário)
+- Casos reais de economia com CPRB e planejamento de IPI
+- Perguntas frequentes expandidas por setor (metalurgia, confecções, plásticos, alimentação)
+- CTA direto para WhatsApp com diagnóstico gratuito
 
 ---
 

@@ -123,6 +123,8 @@ Não. Atividades médicas não estão na lista de ocupações permitidas para ME
 
 A JMF Contabilidade atende médicos e clínicas em Blumenau com planejamento de Fator R, abertura de empresa médica no CRM-SC e gestão de pró-labore para redução de imposto. [Fale com nossa equipe](/fale-conosco) para análise gratuita do seu caso.
 
+> **Sua clínica está buscando a maior redução de impostos possível?** Veja nossa página dedicada — [Contabilidade para Clínicas Médicas e Equiparação Hospitalar](/contabilidade-para-clinicas-medicas) — com a tese da Equiparação Hospitalar, simulações de economia e gestão do Fator R.
+
 > **É médico e quer saber se a PJ compensa para você?**
 > [Conversar com a JMF](https://wa.me/554733265123?text=Ol%C3%A1%2C%20sou%20m%C3%A9dico%20e%20gostaria%20de%20saber%20se%20abrir%20empresa%20compensa%20no%20meu%20caso.) — simulação gratuita, sem compromisso.
 
