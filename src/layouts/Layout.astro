@@ -93,7 +93,14 @@ const resolvedCanonical = canonical ?? `${siteOrigin}${currentPath}`;
 // Define default schema (schema1) to be used when no schema prop is provided
 const defaultSchema = [JSON.stringify(schema1)];
 
-const schemas = schema ? (Array.isArray(schema) ? schema : [schema]) : defaultSchema;
+// Blindagem: normaliza cada entrada para string JSON.
+// Suporta string, objeto JS ou array de ambos — evita renderizar [object Object].
+function normalizeSchemaEntry(entry: string | object): string {
+  return typeof entry === 'string' ? entry : JSON.stringify(entry);
+}
+
+const rawSchemas = schema ? (Array.isArray(schema) ? schema : [schema]) : defaultSchema;
+const schemas = rawSchemas.map(normalizeSchemaEntry);
 
 // SpeakableSpecification schema for voice search / AI citation readiness
 function getSpeakableSchema(canonicalUrl?: string) {
