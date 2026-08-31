@@ -3,7 +3,7 @@ title: "TTD 409 em Santa Catarina: O Que É, Quem Tem Direito e Como Funciona"
 description: "Entenda o benefício fiscal do TTD 409 em SC: diferimento do ICMS na importação, crédito presumido na saída interestadual (0,6% a 2,6%) e requisitos da SEF/SC."
 pubDate: 2026-08-25
 author: "Fabricio Rosa, CRC SC-029833/O"
-image: "/assets/images/blog-ttd-409-sc.jpg"
+image: "/assets/images/blog-ttd-409-sc.webp"
 imageAlt: "Porto de Itajaí e Navegantes — complexo portuário catarinense para importação com TTD 409"
 ---
 
