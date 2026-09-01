@@ -101,6 +101,11 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  name: "Gestão Fiscal e Tributária",
+  description: "Gestão fiscal e tributária em Blumenau/SC: DAS, PGDAS, DCTF, SPED e EFD entregues no prazo. Sem multas por atraso."
+};
 ---
 
 <Layout
@@ -109,6 +114,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria"
   ogUrl="https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

@@ -97,6 +97,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Gaspar",
+  description: "Contabilidade para empresas em Gaspar/SC: Simples Nacional ou Lucro Presumido. Fechamento mensal, obrigações acessórias e planejamento tributário para o Médio Vale do Itajaí.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar"
+};
 ---
 
 <Layout
@@ -105,6 +111,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

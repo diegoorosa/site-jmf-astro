@@ -103,6 +103,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade para Indústria",
+  description: "Contabilidade especializada para indústrias no Vale do Itajaí: Bloco K, recuperação de créditos ICMS/IPI/PIS/COFINS, Lucro Real e adequação à Reforma Tributária.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-para-industria"
+};
 ---
 
 <Layout
@@ -111,6 +117,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-industria"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-industria"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

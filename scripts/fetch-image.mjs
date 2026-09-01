@@ -34,72 +34,97 @@ if (fs.existsSync(WEBP_FILE)) {
 function getSearchTerms(slug, title) {
   const terms = [];
 
+  // Extrair palavras do slug (filtrar curtas)
   const slugWords = slug.split('-').filter(w => w.length > 2);
   terms.push(...slugWords);
 
+  // Normalizar título
   const titleLower = title.toLowerCase();
+
+  // Mapeamento contextual: palavra-chave do título → termos de busca visual (cada termo tentado individualmente)
   const contextMap = {
-    'holding': ['holding familiar', 'business structure', 'corporate governance'],
-    'patrimonial': ['asset protection', 'wealth management', 'estate planning'],
-    'protecao': ['protection', 'security', 'shield'],
-    'bens': ['assets', 'property', 'wealth'],
-    'sucessao': ['succession', 'inheritance', 'legacy'],
-    'planejamento': ['planning', 'strategy', 'financial planning'],
-    'tributario': ['tax planning', 'tax optimization', 'finance'],
-    'fiscal': ['tax', 'accounting', 'finance'],
-    'trabalhista': ['labor law', 'employment', 'workplace'],
-    'esocial': ['digital HR', 'payroll', 'compliance'],
-    'simples': ['small business', 'tax simplicity', 'entrepreneurship'],
-    'mei': ['microentrepreneur', 'small business', 'startup'],
-    'irpf': ['tax return', 'personal finance', 'tax'],
-    'abertura': ['business startup', 'company formation', 'entrepreneurship'],
-    'contabilidade': ['accounting', 'finance', 'bookkeeping'],
-    'blumenau': ['Blumenau Santa Catarina', 'business Brazil', 'corporate'],
-    'sc': ['Santa Catarina Brazil', 'southern Brazil', 'business'],
-    '2026': ['2026 business', 'modern office', 'future planning'],
+    // Holding / Estrutura societária
+    'holding': ['corporate office', 'modern building', 'business architecture'],
+    'patrimonial': ['modern house', 'real estate', 'property'],
+    'protecao': ['security shield', 'protection concept', 'safe'],
+    'bens': ['wealth', 'assets', 'financial growth'],
+    'sucessao': ['family legacy', 'inheritance', 'generational'],
+    'planejamento': ['financial planning', 'strategy chart', 'business meeting'],
+    'tributario': ['tax document', 'calculator', 'finance', 'money'],
+    'fiscal': ['tax form', 'accounting', 'spreadsheet', 'finance'],
+    'trabalhista': ['workplace', 'employment', 'team meeting'],
+    'esocial': ['digital workflow', 'HR software', 'compliance'],
+    'simples': ['small business', 'office', 'entrepreneurship'],
+    'mei': ['microbusiness', 'startup', 'small office'],
+    'irpf': ['tax return', 'personal finance', 'document'],
+    'abertura': ['company formation', 'business startup', 'logo'],
+    'contabilidade': ['accounting', 'finance', 'calculator', 'documents'],
+    'blumenau': ['Blumenau Brazil', 'cityscape', 'Brazil business'],
+    'sc': ['Santa Catarina Brazil', 'southern Brazil', 'coast'],
+    '2026': ['2026', 'modern business', 'future', 'technology'],
   };
 
+  // Adicionar termos do mapa se a palavra-chave aparecer no título OU slug
   for (const [key, values] of Object.entries(contextMap)) {
     if (titleLower.includes(key) || slug.includes(key)) {
       terms.push(...values);
     }
   }
 
+  // Se nenhum contexto específico bateu, usar termos genéricos mas bem escolhidos
   if (terms.length === 0) {
-    terms.push('business', 'office', 'finance', 'professional');
+    if (titleLower.includes('imposto') || titleLower.includes('tribut')) {
+      terms.push('tax document', 'calculator', 'finance', 'money');
+    } else if (titleLower.includes('holding')) {
+      terms.push('corporate office', 'modern building', 'business structure');
+    } else {
+      terms.push('professional', 'business', 'office', 'finance');
+    }
   }
 
-  return [...new Set(terms)].slice(0, 5);
+  // Deixar termos únicos e limitar a 5
+  const finalTerms = [...new Set(terms)].slice(0, 5);
+
+  // Se ainda estiver vazio (impossível), usar defaults
+  if (finalTerms.length === 0) {
+    finalTerms.push('professional', 'business', 'office', 'finance');
+  }
+
+  return finalTerms;
 }
 
 async function searchPexels(terms) {
   if (!PEXELS_API_KEY) return null;
 
-  const query = terms.join(' ');
-  const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(query)}&per_page=10&orientation=landscape`;
+  // Tentar cada termo individualmente até achar resultado
+  for (const term of terms) {
+    const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(term)}&per_page=10&orientation=landscape`;
 
-  try {
-    const response = await fetch(url, {
-      headers: { 'Authorization': PEXELS_API_KEY }
-    });
+    try {
+      const response = await fetch(url, {
+        headers: { 'Authorization': PEXELS_API_KEY }
+      });
 
-    if (!response.ok) {
-      console.warn(`⚠️ Pexels API error: ${response.status}`);
-      return null;
+      if (!response.ok) {
+        console.warn(`⚠️ Pexels API error (${term}): ${response.status}`);
+        continue;
+      }
+
+      const data = await response.json();
+      if (data.photos && data.photos.length > 0) {
+        const photo = data.photos.find(p => p.src.original || p.src.large2x || p.src.large || p.src.medium);
+        console.log(`✅ Pexels encontrou com: "${term}"`);
+        return {
+          original: photo.src.original,
+          large2x: photo.src.large2x,
+          large: photo.src.large,
+          medium: photo.src.medium
+        };
+      }
+      console.log(`⚪ Pexels sem resultados para: "${term}"`);
+    } catch (err) {
+      console.warn(`⚠️ Pexels search failed (${term}): ${err.message}`);
     }
-
-    const data = await response.json();
-    if (data.photos && data.photos.length > 0) {
-      const photo = data.photos.find(p => p.src.original || p.src.large2x || p.src.large || p.src.medium);
-      return {
-        original: photo.src.original,
-        large2x: photo.src.large2x,
-        large: photo.src.large,
-        medium: photo.src.medium
-      };
-    }
-  } catch (err) {
-    console.warn(`⚠️ Pexels search failed: ${err.message}`);
   }
   return null;
 }
@@ -107,30 +132,34 @@ async function searchPexels(terms) {
 async function searchUnsplash(terms) {
   if (!UNSPLASH_ACCESS_KEY) return null;
 
-  const query = terms.join(' ');
-  const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(query)}&per_page=10&orientation=landscape`;
+  // Tentar cada termo individualmente até achar resultado
+  for (const term of terms) {
+    const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(term)}&per_page=10&orientation=landscape`;
 
-  try {
-    const response = await fetch(url, {
-      headers: { 'Authorization': `Client-ID ${UNSPLASH_ACCESS_KEY}` }
-    });
+    try {
+      const response = await fetch(url, {
+        headers: { 'Authorization': `Client-ID ${UNSPLASH_ACCESS_KEY}` }
+      });
 
-    if (!response.ok) {
-      console.warn(`⚠️ Unsplash API error: ${response.status}`);
-      return null;
+      if (!response.ok) {
+        console.warn(`⚠️ Unsplash API error (${term}): ${response.status}`);
+        continue;
+      }
+
+      const data = await response.json();
+      if (data.results && data.results.length > 0) {
+        const photo = data.results[0];
+        console.log(`✅ Unsplash encontrou com: "${term}"`);
+        return {
+          original: photo.urls.raw || photo.urls.full,
+          regular: photo.urls.regular,
+          full: photo.urls.full
+        };
+      }
+      console.log(`⚪ Unsplash sem resultados para: "${term}"`);
+    } catch (err) {
+      console.warn(`⚠️ Unsplash search failed (${term}): ${err.message}`);
     }
-
-    const data = await response.json();
-    if (data.results && data.results.length > 0) {
-      const photo = data.results[0];
-      return {
-        original: photo.urls.raw || photo.urls.full,
-        regular: photo.urls.regular,
-        full: photo.urls.full
-      };
-    }
-  } catch (err) {
-    console.warn(`⚠️ Unsplash search failed: ${err.message}`);
   }
   return null;
 }

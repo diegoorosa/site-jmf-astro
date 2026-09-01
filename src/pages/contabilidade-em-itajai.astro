@@ -81,6 +81,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Itajaí",
+  description: "Contabilidade para empresas em Itajaí/SC: porto, comércio exterior, logística, indústria e serviços. Simples Nacional ou Lucro Presumido. Atendimento digital, 60km de Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
+};
 ---
 
 <Layout
@@ -89,6 +95,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

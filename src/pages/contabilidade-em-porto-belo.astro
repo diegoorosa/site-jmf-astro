@@ -81,6 +81,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Porto Belo",
+  description: "Contabilidade para empresas em Porto Belo/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para comércio, turismo e construção civil na Costa Esmeralda. 65km de Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
+};
 ---
 
 <Layout
@@ -89,6 +95,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

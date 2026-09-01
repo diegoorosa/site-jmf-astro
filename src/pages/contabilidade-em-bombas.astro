@@ -82,6 +82,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Bombas",
+  description: "Contabilidade para empresas em Bombas/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para turismo, comércios e indústrias na região da praia de Bombas. 70km de Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-bombas"
+};
 ---
 
 <Layout
@@ -90,6 +96,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-bombas"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-bombas"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

@@ -109,6 +109,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Abertura de Empresa em Santa Catarina",
+  description: "Abertura de empresa em Santa Catarina: CNPJ em 3 a 7 dias, viabilidade, alvará e inscrição estadual. Atendemos Blumenau, Indaial, Gaspar, Balneário Camboriú, Florianópolis e todo o estado.",
+  url: "https://www.jmfcontabilidade.com.br/abertura-empresa-sc"
+};
 ---
 
 <Layout
@@ -117,6 +123,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/abertura-empresa-sc"
   ogUrl="https://www.jmfcontabilidade.com.br/abertura-empresa-sc"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

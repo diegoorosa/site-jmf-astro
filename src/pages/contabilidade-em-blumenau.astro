@@ -140,6 +140,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Blumenau",
+  description: "Escritório de contabilidade em Blumenau/SC com 35+ anos de experiência. Simples Nacional, abertura de empresa e planejamento tributário. Sede própria no Centro.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-blumenau"
+};
 ---
 
 <Layout
@@ -148,6 +154,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-blumenau"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-blumenau"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

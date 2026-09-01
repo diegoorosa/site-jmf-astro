@@ -7,14 +7,12 @@ import path from 'path';
 
 export default defineConfig({
   output: 'static',
-  site: 'https://www.jmfcontabilidade.com.br',
+  site: 'https://www.jmfcontabilidade.com.br/',
   integrations: [
     sitemap({
-      // lastmod global (build time) - o @astrojs/sitemap v3 só aceita Date, não função
-      // lastmod por página é feito via serialize abaixo
+      // lastmod global (build time)
       lastmod: new Date(),
-      changefreq: 'weekly',
-      priority: 0.7,
+      // REMOVIDO: changefreq e priority são tags depreciadas pelo Google
       // serialize permite customizar cada entrada do sitemap individualmente
       serialize: (entry) => {
         // Se é post do blog, tentar ler pubDate do arquivo .md

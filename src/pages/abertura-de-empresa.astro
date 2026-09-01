@@ -102,6 +102,11 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  name: "Abertura de Empresa",
+  description: "Abertura de empresa em Blumenau/SC com a JMF: CNPJ, JUCESC, alvará e inscrição municipal em até 10 dias úteis. Atendimento digital para todo o Médio Vale."
+};
 ---
 
 <Layout
@@ -110,6 +115,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/abertura-de-empresa"
   ogUrl="https://www.jmfcontabilidade.com.br/abertura-de-empresa"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

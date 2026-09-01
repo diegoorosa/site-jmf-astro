@@ -101,6 +101,12 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@graph": [JSON.parse(localBusinessSchema), JSON.parse(faqSchema)]
 });
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Indaial",
+  description: "Contabilidade para empresas de Indaial/SC: rotina fiscal, Simples Nacional, Lucro Presumido e planejamento tributário com atendimento digital e sede em Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-indaial"
+};
 ---
 
 <Layout
@@ -109,6 +115,7 @@ const schema = JSON.stringify({
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-indaial"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-indaial"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

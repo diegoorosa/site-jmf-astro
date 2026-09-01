@@ -27,6 +27,11 @@ const schema = JSON.stringify({
   "image": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.png",
   "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.jmfcontabilidade.com.br/regimes-tributarios" }
 });
+
+const serviceSchema = {
+  name: "Consultoria e Planejamento Tributário",
+  description: "Compare Simples Nacional, Lucro Presumido e Lucro Real em 2026: tabelas, alíquotas e simulação gratuita para descobrir o regime ideal."
+};
 ---
 
 <Layout
@@ -35,6 +40,7 @@ const schema = JSON.stringify({
   canonical="https://www.jmfcontabilidade.com.br/regimes-tributarios"
   ogUrl="https://www.jmfcontabilidade.com.br/regimes-tributarios"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

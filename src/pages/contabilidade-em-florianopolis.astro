@@ -81,6 +81,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Florianópolis",
+  description: "Contabilidade para empresas em Florianópolis/SC: Simples Nacional ou Lucro Presumido, abertura de empresa. Atendimento digital para tech, turismo, construção, comércio, serviços e órgãos públicos. 140km de Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-florianopolis"
+};
 ---
 
 <Layout
@@ -89,6 +95,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-florianopolis"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-florianopolis"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

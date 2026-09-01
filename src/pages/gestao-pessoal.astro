@@ -101,6 +101,11 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  name: "Gestão de Pessoal",
+  description: "Departamento pessoal em Blumenau/SC: folha de pagamento, eSocial, admissões, rescisões e FGTS no prazo. Sem passivo trabalhista."
+};
 ---
 
 <Layout
@@ -109,6 +114,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/gestao-pessoal"
   ogUrl="https://www.jmfcontabilidade.com.br/gestao-pessoal"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

@@ -102,6 +102,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade para Empresas",
+  description: "Contabilidade completa para empresas em Blumenau/SC: Simples Nacional, Lucro Presumido e Lucro Real. Fechamento mensal, relatórios gerenciais e obrigações acessórias no prazo.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-para-empresas"
+};
 ---
 
 <Layout
@@ -110,6 +116,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-empresas"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-empresas"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

@@ -101,6 +101,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade para Pessoa Física",
+  description: "Contabilidade para pessoa física em Blumenau/SC: IRPF, Carnê-Leão, profissionais liberais e autônomos. Maximize a restituição e evite a malha fina.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-para-pessoa-fisica"
+};
 ---
 
 <Layout
@@ -109,6 +115,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-pessoa-fisica"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-pessoa-fisica"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

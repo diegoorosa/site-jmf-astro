@@ -53,6 +53,11 @@ interface FAQPageData {
   }>;
 }
 
+interface ServiceSchemaData {
+  name: string;
+  description?: string;
+}
+
 interface Props {
   title: string;
   description: string;
@@ -68,6 +73,7 @@ interface Props {
   localBusiness?: LocalBusinessData;
   blogPosting?: BlogPostingData;
   faqPage?: FAQPageData;
+  serviceSchema?: ServiceSchemaData;
 }
 
 const {
@@ -84,14 +90,16 @@ const {
   localBusiness,
   blogPosting,
   faqPage,
+  serviceSchema,
 } = Astro.props;
 
 const siteOrigin = 'https://www.jmfcontabilidade.com.br';
-const currentPath = Astro.url.pathname === '/' ? '/' : Astro.url.pathname.replace(/\/$/, '');
+// Ensure trailing slash consistency for all pages (Google recommends consistent trailing slashes)
+const currentPath = Astro.url.pathname === '/' ? '/' : (Astro.url.pathname.replace(/\/$/, '') + '/');
 const resolvedCanonical = canonical ?? `${siteOrigin}${currentPath}`;
 
 // Define default schema (schema1) to be used when no schema prop is provided
-const defaultSchema = [JSON.stringify(schema1)];
+const defaultSchema = [JSON.stringify(schema1), generateOrganizationSchema()];
 
 // Blindagem: normaliza cada entrada para string JSON.
 // Suporta string, objeto JS ou array de ambos — evita renderizar [object Object].
@@ -261,6 +269,118 @@ if (localBusiness) {
   schemas.push(getLocalBusinessSchema(localBusiness, resolvedCanonical));
 }
 
+// Add Organization schema (for entity identity, used in ContactPage reference)
+function generateOrganizationSchema() {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "JMF Contabilidade",
+    url: "https://www.jmfcontabilidade.com.br",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://www.jmfcontabilidade.com.br/assets/images/jmf-contabilidade-jean-254x159.webp"
+    },
+    description: "Escritório de contabilidade em Blumenau com mais de 35 anos de experiência. Especialistas em Simples Nacional, Lucro Presumido e abertura de empresas.",
+    telephone: "+55-47-3326-5123",
+    email: "contato@jmfcontabilidade.com.br",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+      addressLocality: "Blumenau",
+      addressRegion: "SC",
+      postalCode: "89010-060",
+      addressCountry: "BR"
+    },
+    sameAs: [
+      "https://www.facebook.com/jmfcontabilidadebnu/",
+      "https://www.instagram.com/jmf.contabilidade/",
+      "https://www.linkedin.com/company/jmf-contabilidade/",
+      "https://twitter.com/jmfcontab",
+      "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9"
+    ],
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: 5,
+      bestRating: 5,
+      worstRating: 1,
+      reviewCount: 150
+    }
+  });
+}
+
+// Generate BreadcrumbList schema
+function getBreadcrumbListSchema(url: string) {
+  const breadcrumbs = [
+    { name: "Início", url: "https://www.jmfcontabilidade.com.br/" }
+  ];
+
+  // Parse URL path to build breadcrumbs
+  const path = new URL(url).pathname.replace(/\/$/, '');
+  const segments = path.split('/').filter(Boolean);
+
+  let currentPath = '';
+  for (const segment of segments) {
+    currentPath += '/' + segment;
+    // Convert slug to readable name
+    const name = segment
+      .split('-')
+      .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+      .join(' ');
+    breadcrumbs.push({
+      name,
+      url: `https://www.jmfcontabilidade.com.br${currentPath}/`
+    });
+  }
+
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbs.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  });
+}
+
+// Generate Service schema for service pages
+function getServiceSchema(serviceName: string, url: string, description?: string) {
+  return JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: serviceName,
+    description: description,
+    provider: {
+      "@type": "Organization",
+      name: "JMF Contabilidade",
+      url: "https://www.jmfcontabilidade.com.br",
+      telephone: "+55-47-3326-5123",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+        addressLocality: "Blumenau",
+        addressRegion: "SC",
+        postalCode: "89010-060",
+        addressCountry: "BR"
+      }
+    },
+    areaServed: [
+      { "@type": "City", "name": "Blumenau" },
+      { "@type": "City", "name": "Gaspar" },
+      { "@type": "City", "name": "Indaial" },
+      { "@type": "City", "name": "Pomerode" },
+      { "@type": "City", "name": "Timbó" },
+      { "@type": "City", "name": "Brusque" },
+      { "@type": "City", "name": "Itajaí" },
+      { "@type": "City", "name": "Balneário Camboriú" },
+      { "@type": "State", "name": "Santa Catarina" }
+    ],
+    serviceType: serviceName,
+    url: url
+  });
+}
+
 if (blogPosting) {
   schemas.push(getBlogPostingSchema(blogPosting, resolvedCanonical));
 }
@@ -272,6 +392,14 @@ if (faqPage) {
 const speakableSchema = getSpeakableSchema(resolvedCanonical);
 if (speakableSchema) {
   schemas.push(speakableSchema);
+}
+
+// Add BreadcrumbList schema to all pages
+schemas.push(getBreadcrumbListSchema(resolvedCanonical));
+
+// Add Service schema for service pages
+if (serviceSchema) {
+  schemas.push(getServiceSchema(serviceSchema.name, resolvedCanonical, serviceSchema.description));
 }
 
 // Auto-detect OG image based on canonical URL

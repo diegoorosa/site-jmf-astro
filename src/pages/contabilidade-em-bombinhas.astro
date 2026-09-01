@@ -82,6 +82,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Bombinhas",
+  description: "Contabilidade para empresas em Bombinhas/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para turismo premium, hospedagem, gastronomia e comércio na península de Bombinhas. 70km de Blumenau.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas"
+};
 ---
 
 <Layout
@@ -90,6 +96,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-bombinhas"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

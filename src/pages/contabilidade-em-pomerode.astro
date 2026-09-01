@@ -81,6 +81,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Pomerode",
+  description: "Contabilidade para empresas em Pomerode/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital completo para a cidade mais alemã do Brasil.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode"
+};
 ---
 
 <Layout
@@ -89,6 +95,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-pomerode"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >

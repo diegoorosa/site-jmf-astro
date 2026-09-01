@@ -81,6 +81,12 @@ const faqSchema = JSON.stringify({
 });
 
 const schema = [localBusinessSchema, faqSchema];
+
+const serviceSchema = {
+  serviceName: "Contabilidade em Timbó",
+  description: "Contabilidade para empresas em Timbó/SC: Simples Nacional, Lucro Presumido, abertura de empresa. Atendimento digital para o polo industrial do Alto Vale.",
+  url: "https://www.jmfcontabilidade.com.br/contabilidade-em-timbo"
+};
 ---
 
 <Layout
@@ -89,6 +95,7 @@ const schema = [localBusinessSchema, faqSchema];
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-timbo"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-timbo"
   schema={schema}
+  serviceSchema={serviceSchema}
   heroInterno
   bodyClass="pp3"
 >
