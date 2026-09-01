@@ -13,7 +13,37 @@ const BLOG_DIR = path.resolve(__dirname, '../src/content/blog');
 const IMAGES_DIR = path.resolve(__dirname, '../public/assets/images');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const model = genAI.getGenerativeModel({ model: 'gemini-3.6-flash' });
+
+// Fallback chain: modelos atuais funcionando
+const MODELS = [
+  'gemini-3.6-flash',
+  'gemini-3.5-flash',
+  'gemini-3.5-flash-lite'
+];
+
+async function generateWithFallback(prompt) {
+  let lastError;
+  for (const modelName of MODELS) {
+    try {
+      console.log(`🤖 Tentando modelo: ${modelName}`);
+      const model = genAI.getGenerativeModel({ model: modelName });
+      const result = await model.generateContent(prompt);
+      console.log(`✅ Sucesso com ${modelName}`);
+      return result.response.text().trim();
+    } catch (err) {
+      lastError = err;
+      const msg = err.message || String(err);
+      console.warn(`⚠️  Falhou ${modelName}: ${msg.includes('503') ? '503 indisponível' : msg.slice(0, 100)}`);
+      if (!msg.includes('503') && !msg.includes('429') && !msg.includes('quota')) {
+        // Erro não-retryable (ex: auth, prompt inválido) — não tentar próximo
+        throw err;
+      }
+      // Pequeno delay antes do próximo modelo
+      await new Promise(r => setTimeout(r, 1000));
+    }
+  }
+  throw lastError;
+}
 
 // Tópicos existentes (do step anterior)
 const EXISTING_TOPICS = process.env.EXISTING_TOPICS || '';
@@ -175,8 +205,7 @@ async function main() {
   const prompt = buildPrompt();
 
   console.log('🤖 Enviando prompt para Gemini...');
-  const result = await model.generateContent(prompt);
-  const markdown = result.response.text().trim();
+  const markdown = await generateWithFallback(prompt);
 
   // Validar e extrair frontmatter
   const fmMatch = markdown.match(/^---\n([\s\S]*?)\n---/);
