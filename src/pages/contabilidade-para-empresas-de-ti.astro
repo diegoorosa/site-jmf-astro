@@ -1,0 +1,379 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade%20para%20empresas%20de%20TI.";
+const WAsim = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20uma%20simula%C3%A7%C3%A3o%20tribut%C3%A1ria%20gratuita%20para%20minha%20empresa%20de%20tecnologia.";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["AccountingService", "LocalBusiness"],
+      "@id": "https://www.jmfcontabilidade.com.br/contabilidade-para-empresas-de-ti#localbusiness",
+      "name": "JMF Contabilidade – Contabilidade para Empresas de TI",
+      "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
+      "taxID": "81.335.895/0001-17",
+      "identifier": {
+        "@type": "PropertyValue",
+        "name": "CRC",
+        "value": "SC-002550/O"
+      },
+      "url": "https://www.jmfcontabilidade.com.br/contabilidade-para-empresas-de-ti",
+      "description": "Contabilidade especializada para empresas de tecnologia em Blumenau e SC: SaaS, startups, software houses, desenvolvedores PJ. Fator R, isenção de impostos na exportação de serviços, Lei do Bem e planejamento tributário para tech companies.",
+      "telephone": "+55-47-3326-5123",
+      "email": "contato@jmfcontabilidade.com.br",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro",
+        "addressLocality": "Blumenau",
+        "addressRegion": "SC",
+        "postalCode": "89010-060",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.92016,
+        "longitude": -49.06705
+      },
+      "foundingDate": "1989-05-24",
+      "areaServed": [
+        { "@type": "City", "name": "Blumenau" },
+        { "@type": "City", "name": "Joinville" },
+        { "@type": "City", "name": "Florianópolis" },
+        { "@type": "City", "name": "São José" },
+        { "@type": "City", "name": "Palhoça" },
+        { "@type": "City", "name": "Itajaí" },
+        { "@type": "City", "name": "Balneário Camboriú" },
+        { "@type": "State", "name": "Santa Catarina" }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Serviços de Contabilidade para Tecnologia",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Planejamento Tributário para SaaS e Software Houses" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Isenção Fiscal na Exportação de Serviços de TI (PIS/COFINS/ISS)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fator R no Simples Nacional (Redução para 6%)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Adequação à Lei do Bem (Inovação Tecnológica)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Desenvolvedores PJ e Startups" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Gestão de Stock Options e Planos de Incentivo" } }
+        ]
+      },
+      "sameAs": [
+        "https://www.facebook.com/jmfcontabilidadebnu/",
+        "https://www.instagram.com/jmf.contabilidade/",
+        "https://www.linkedin.com/company/jmf-contabilidade/",
+        "https://twitter.com/jmfcontab",
+        "https://maps.app.goo.gl/LzYJn5GURg5t5Lsa9",
+        "https://www.yelp.com/biz/jmf-contabilidade-escrit%C3%B3rio-de-contabilidade-blumenau",
+        "https://www.apontador.com.br/local/sc/blumenau/assessoria_contabil/6a43ca8942af5752cc2a601d/jmf_contabilidade.html"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "00:00"
+        }
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": 5,
+        "bestRating": 5,
+        "worstRating": 1,
+        "reviewCount": 150
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "O que é o Fator R e como reduz a alíquota do Simples Nacional para 6%?", "acceptedAnswer": { "@type": "Answer", "text": "O Fator R é a razão entre a folha de salários (últimos 12 meses) e a receita bruta (últimos 12 meses). Se o Fator R for igual ou superior a 28%, a empresa de TI enquadra no Anexo III do Simples Nacional (alíquota inicial de 6%), em vez do Anexo V (15,5%). Para software houses e SaaS com equipe própria, isso gera economia massiva — a JMF faz o cálculo e a gestão da folha para manter o Fator R otimizado." } },
+        { "@type": "Question", "name": "Como funciona a isenção de PIS, COFINS e ISS na exportação de serviços de software?", "acceptedAnswer": { "@type": "Answer", "text": "A exportação de serviços de software e TI para o exterior é isenta de PIS (Lei 10.865/2004, art. 1º), COFINS (Lei 10.865/2004, art. 1º) e ISS (LC 116/2003, art. 2º, § 1º, item 7.05 da lista anexa). No Simples Nacional, a isenção é automática via PGDAS-D. No Lucro Presumido/Real, exige escrituração correta e comprovação de ingresso de divisas. A JMF estrutura toda a operação para garantir o benefício sem risco fiscal." } },
+        { "@type": "Question", "name": "O que é a Lei do Bem e como minha empresa de TI pode se beneficiar?", "acceptedAnswer": { "@type": "Answer", "text": "A Lei do Bem (Lei 11.196/2005) permite deduzir 60% a 100% dos dispêndios com P&D do IRPJ e da CSLL (Lucro Real). Para empresas de TI que desenvolvem software, algoritmos, IA, automação ou novas funcionalidades, isso pode reduzir a carga efetiva de IRPJ/CSLL em até 34%. Exige laudo técnico, segregação de custos e envio do formulário ao MCTI até 31/07 do ano seguinte. A JMF estrutura o processo end-to-end." } },
+        { "@type": "Question", "name": "Desenvolvedor PJ (pessoa jurídica) deve abrir empresa no Simples Nacional?", "acceptedAnswer": { "@type": "Answer", "text": "Na maioria dos casos, sim. O Simples Nacional (Anexo III ou V, conforme Fator R) costuma ser o regime mais vantajoso para dev PJ com faturamento até R$ 4,8 milhões/ano. Se o Fator R ≥ 28% (folha própria ou pró-labore + INSS), a alíquota cai para 6% no Anexo III. Acima de R$ 4,8 milhões, avaliamos Lucro Presumido com isenção de exportação ou Lucro Real com Lei do Bem. A JMF simula os três cenários com projeção de 12 meses." } },
+        { "@type": "Question", "name": "Vocês atendem empresas de tecnologia de Joinville, Florianópolis e Itajaí?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A JMF atende SaaS, startups, software houses e devs PJ em todo o ecossistema tech de Santa Catarina: Blumenau, Joinville (polo de software), Florianópolis (Sapiens Parque, ACATE), São José, Palhoça, Itajaí, Balneário Camboriú, Brusque e Jaraguá do Sul. Atendimento 100% digital com reuniões presenciais quando necessário." } }
+      ]
+    }
+  ]
+});
+---
+
+<Layout
+  title="Contabilidade para Empresas de TI em Blumenau e SC | JMF Contabilidade"
+  description="Contabilidade especializada para SaaS, startups, software houses e desenvolvedores PJ: Fator R (6%), isenção na exportação de serviços, Lei do Bem. Atendimento em Blumenau, Joinville, Florianópolis e todo SC."
+  canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-empresas-de-ti"
+  ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-empresas-de-ti"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Contabilidade para empresas de tecnologia em Blumenau e SC"
+    subtitle="SaaS, startups, software houses e devs PJ: Fator R no Simples (6%), isenção fiscal na exportação, Lei do Bem. Contabilidade que entende seu modelo de receita recorrente e crescimento exponencial."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Especialidades" },
+      { label: "Contabilidade para Empresas de TI" }
+    ]}
+    ctas={[
+      { label: "Falar no WhatsApp", href: WA, variant: "cta" },
+      { label: "Simular Tributação", href: "/simulador-regime-tributario", variant: "outline" }
+    ]}
+  />
+
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
+    </div>
+  </div>
+
+  <!-- Intro -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Contabilidade para tech companies:<br/><span class="pp3-grad">por que a JMF</span></h2>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        Santa Catarina é um dos maiores polos de tecnologia do Brasil. Blumenau, Joinville, Florianópolis, São José, Itajaí e Balneário Camboriú concentram centenas de SaaS, software houses, fintechs, healthtechs, edtechs e desenvolvedores PJ que faturam em dólar, escalam rápido e precisam de contabilidade que acompanhe o ritmo — não apenas "entregue guias".
+      </p>
+
+      <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+        A JMF Contabilidade atende empresas de tecnologia com foco em três pilares que definem o resultado financeiro do setor: <strong>Fator R otimizado</strong> para pagar 6% no Simples Nacional, <strong>isenção total de PIS/COFINS/ISS na exportação de serviços</strong> para quem fatura em moeda estrangeira, e <strong>aproveitamento da Lei do Bem</strong> para quem investe em P&D e inovação. Tudo isso com 35+ anos de experiência e sede em Blumenau.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mt-12">
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Fator R: de 15,5% para 6%</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Gestão ativa da folha de salários e pró-labore para manter o Fator R ≥ 28% e enquadrar no Anexo III do Simples. Economia real de até 9,5 pontos percentuais sobre o faturamento.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Exportação Isenta (PIS/COFINS/ISS)</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Estruturação da operação de exportação de software e serviços de TI: contratos, invoices, comprovação de ingresso de divisas, escrituração no PGDAS-D ou EFD-Contribuições. Zero imposto na receita internacional.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Lei do Bem (P&D e Inovação)</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Dedutibilidade de 60% a 100% dos custos de P&D no IRPJ/CSLL (Lucro Real). Laudo técnico, segregação de horas de dev, envio ao MCTI. Transforma investimento em inovação em redução direta de imposto.
+          </p>
+        </div>
+
+        <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Stock Options e Incentivos</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Estruturação contábil e fiscal de planos de opções (Stock Options, RSUs, Phantom Shares) para atração e retenção de talentos. Conformidade com RFB e otimização tributária no exercício/liquidação.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Particularidades do setor tech -->
+  <section class="py-16 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Particularidades tributárias<br/><span class="pp3-grad">do setor de tecnologia</span></h2>
+
+      <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+        Empresas de tecnologia têm dinâmica própria que a contabilidade geral ignora — e isso custa caro. Veja o que a JMF endereça especificamente para o seu modelo:
+      </p>
+
+      <ul class="space-y-4 text-slate-600 text-lg">
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Receita recorrente (MRR/ARR) vs. competência:</strong> SaaS fatura assinatura mensal/anual. O reconhecimento de receita (CPC 47 / IFRS 15) impacta diretamente a base do Simples Nacional (RBT12) e a apuração do Fator R. Parametrizamos o ERP para separar receita diferida de receita realizada.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Exportação de serviços (item 7.05 da LC 116):</strong> desenvolvimento de software, sustentação, hospedagem, consultoria em TI prestados para clientes no exterior são isentos de ISS. No federal, PIS e COFINS são isentos (Lei 10.865/04). Exige contrato com cláusula de prestação no exterior + comprovante de ingresso (SWIFT, Wise, Payoneer).</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Fator R no Simples Nacional (Anexo III vs V):</strong> a diferença entre 6% (Anexo III) e 15,5% (Anexo V) é o Fator R ≥ 28%. Para tech companies, a folha de devs, designers, PO, QA e pró-labore dos sócios costuma garantir o enquadramento — mas precisa de gestão ativa (contratação x faturamento). A JMF monitora mensalmente.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Lei do Bem para software (Lei 11.196/05):</strong> desenvolvimento de novo software, nova funcionalidade, algoritmo proprietário, IA, automação de processos = P&D elegível. Dedução de até 100% dos custos (pessoal, equipamentos, materiais, serviços de terceiros) no IRPJ/CSLL. Exige Lucro Real e laudo técnico.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Incentivos estaduais em SC (TTD 409/410, PRODEC, Tratamento Tributário Diferenciado):</strong> para empresas que importam insumos/serviços para desenvolvimento ou exportam software, há regimes de diferimento e crédito presumido de ICMS. A JMF analisa enquadramento e pleiteia junto à SEF/SC.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Stock Options e remuneração variável:</strong> plano de opções bem estruturado evita tributação antecipada no exercício e otimiza ganho de capital no exit. A JMF assessora na modelagem contábil (CPC 10) e fiscal (RFB).</span>
+        </li>
+      </ul>
+
+      <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
+        <p class="text-slate-700 font-medium">
+          <strong class="text-blue-700">Dado real:</strong> Empresas de TI no Simples Nacional com Fator R ≥ 28% pagam alíquota efetiva de <strong>6% a 9,5%</strong> (Anexo III) vs. <strong>15,5% a 19,5%</strong> (Anexo V). Para um SaaS faturando R$ 3 milhões/ano, a economia anual passa de <strong>R$ 200 mil</strong>. A JMF garante o enquadramento correto e a manutenção do Fator R mês a mês.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento para tech</span></h2>
+
+      <div class="space-y-6 text-lg text-slate-600">
+        <p>
+          <strong>1. Diagnóstico Tech:</strong> WhatsApp (47) 3326-5123 ou formulário. Levantamento do modelo de negócio (SaaS, software house, consultoria, marketplace, dev PJ), regime atual, Fator R atual, % de receita de exportação, investimento em P&D, estrutura societária. Sem custo.
+        </p>
+        <p>
+          <strong>2. Planejamento Tributário Tech:</strong> simulação de 3 cenários (Simples com Fator R otimizado, Lucro Presumido com isenção de exportação, Lucro Real com Lei do Bem) com projeção de 12 meses. Identificação de incentivos estaduais (TTD 409/410, PRODEC) e benefícios federais aplicáveis.
+        </p>
+        <p>
+          <strong>3. Implantação:</strong> parametrização fiscal do ERP/faturamento (CFOPs de exportação, CSTs de PIS/COFINS isentos, NCMs de software), estruturação do plano de contas por linha de receita (recorrente vs. projeto vs. exportação), rotinas de comprovação de ingresso de divisas, integração folha/DP para Fator R.
+        </p>
+        <p>
+          <strong>4. Rotina Mensal:</strong> fechamento contábil e fiscal, apuração de impostos (com separação de receita interna vs. exportação), PGDAS-D / EFD-Contribuições / DCTFWeb, relatórios gerenciais (MRR, ARR, churn, LTV, CAC, Fator R tracking), fluxo de caixa — tudo no prazo, com reunião de alinhamento mensal.
+        </p>
+      </div>
+
+      <p class="mt-8 text-lg text-slate-600 leading-relaxed">
+        Atendemos empresas de tecnologia em <strong>Blumenau</strong>, <strong>Joinville (55km)</strong>, <strong>Florianópolis (140km)</strong>, <strong>São José (135km)</strong>, <strong>Palhoça (140km)</strong>, <strong>Itajaí (35km)</strong>, <strong>Balneário Camboriú (45km)</strong>, <strong>Brusque (25km)</strong>, <strong>Jaraguá do Sul (60km)</strong> — com a mesma qualidade, 100% digital quando preferir.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Dark -->
+  <section class="bg-[#0f172a] py-16">
+    <div class="container mx-auto px-4 text-center max-w-4xl">
+      <h2 class="text-3xl font-bold text-white mb-4">Tenha uma contabilidade<br/><span class="pp3-grad-light">que fala a língua da sua tech company!</span></h2>
+      <p class="text-white/80 text-lg leading-relaxed mb-8">
+        Com 35+ anos de experiência e atuação no ecossistema de inovação de Santa Catarina (Blumenau, Joinville, Florianópolis), conhecemos as particularidades de SaaS, startups, software houses e devs PJ. Fale conosco e veja a diferença no seu planejamento tributário e na gestão do Fator R.
+      </p>
+      <a href={WAsim} target="_blank" rel="noopener noreferrer"
+        class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
+        <i class="bi bi-whatsapp mr-2"></i>Diagnóstico Tributário para Tech Gratuito
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-start gap-10">
+        <div class="lg:w-5/12">
+          <img src="/assets/images/mbr-1036x624.webp" alt="Perguntas Frequentes - Contabilidade para Empresas de TI"
+            width="1036" height="624" class="rounded-xl shadow-lg w-full" loading="lazy" />
+        </div>
+        <div class="lg:w-7/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
+            Precisa de mais esclarecimentos?<br />
+            <span class="pp3-grad">A nossa equipe pode fornecê-los</span>
+          </h2>
+          <div class="space-y-3">
+            <details class="accordion-item">
+              <summary class="accordion-summary">O que é o Fator R e como reduz a alíquota do Simples Nacional para 6%?</summary>
+              <div class="accordion-body">
+                <p>O Fator R é a razão entre a folha de salários (últimos 12 meses) e a receita bruta (últimos 12 meses). Se o Fator R for igual ou superior a 28%, a empresa de TI enquadra no Anexo III do Simples Nacional (alíquota inicial de 6%), em vez do Anexo V (15,5%). Para software houses e SaaS com equipe própria, isso gera economia massiva — a JMF faz o cálculo e a gestão da folha para manter o Fator R otimizado.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como funciona a isenção de PIS, COFINS e ISS na exportação de serviços de software?</summary>
+              <div class="accordion-body">
+                <p>A exportação de serviços de software e TI para o exterior é isenta de PIS (Lei 10.865/2004, art. 1º), COFINS (Lei 10.865/2004, art. 1º) e ISS (LC 116/2003, art. 2º, § 1º, item 7.05 da lista anexa). No Simples Nacional, a isenção é automática via PGDAS-D. No Lucro Presumido/Real, exige escrituração correta e comprovação de ingresso de divisas. A JMF estrutura toda a operação para garantir o benefício sem risco fiscal.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">O que é a Lei do Bem e como minha empresa de TI pode se beneficiar?</summary>
+              <div class="accordion-body">
+                <p>A Lei do Bem (Lei 11.196/2005) permite deduzir 60% a 100% dos dispêndios com P&D do IRPJ e da CSLL (Lucro Real). Para empresas de TI que desenvolvem software, algoritmos, IA, automação ou novas funcionalidades, isso pode reduzir a carga efetiva de IRPJ/CSLL em até 34%. Exige laudo técnico, segregação de custos e envio do formulário ao MCTI até 31/07 do ano seguinte. A JMF estrutura o processo end-to-end.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Desenvolvedor PJ (pessoa jurídica) deve abrir empresa no Simples Nacional?</summary>
+              <div class="accordion-body">
+                <p>Na maioria dos casos, sim. O Simples Nacional (Anexo III ou V, conforme Fator R) costuma ser o regime mais vantajoso para dev PJ com faturamento até R$ 4,8 milhões/ano. Se o Fator R ≥ 28% (folha própria ou pró-labore + INSS), a alíquota cai para 6% no Anexo III. Acima de R$ 4,8 milhões, avaliamos Lucro Presumido com isenção de exportação ou Lucro Real com Lei do Bem. A JMF simula os três cenários com projeção de 12 meses.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Vocês atendem empresas de tecnologia de Joinville, Florianópolis e Itajaí?</summary>
+              <div class="accordion-body">
+                <p>Sim. A JMF atende SaaS, startups, software houses e devs PJ em todo o ecossistema tech de Santa Catarina: Blumenau, Joinville (polo de software), Florianópolis (Sapiens Parque, ACATE), São José, Palhoça, Itajaí, Balneário Camboriú, Brusque e Jaraguá do Sul. Atendimento 100% digital com reuniões presenciais quando necessário.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artigos relacionados -->
+  <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a href="/blog/exportacao-de-software-servicos-ti-impostos-2026"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Exportação de Serviços</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Exportação de Software e Serviços de TI: Como Pagar Menos Imposto</p>
+        </a>
+        <a href="/blog/fator-r-simples-nacional-contabilidade-ti"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Fator R</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Fator R no Simples Nacional: Como Empresas de TI Pagam 6% de Alíquota</p>
+        </a>
+        <a href="/blog/lei-do-bem-empresas-tecnologia-inovacao"
+          class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
+          <p class="text-xs text-gray-400 mb-1">Lei do Bem</p>
+          <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Lei do Bem para Empresas de Tecnologia: Deduzindo P&D no IRPJ/CSLL</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-16 bg-[#dbeafe]">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row gap-10">
+        <div class="lg:w-5/12">
+          <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">otimizar a tributação da sua tech company!</span></h2>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de uma contabilidade que entende de Fator R, exportação de serviços, Lei do Bem, stock options e modelo SaaS, você encontrou o lugar certo. Entre em contato e marque um diagnóstico sem custo.</p>
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-whatsapp text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
+              <a href={WA} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-envelope text-white"></i>
+            </div>
+            <div>
+              <p class="font-semibold text-[#0f172a] text-sm">E-mail</p>
+              <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af] font-semibold">contato@jmfcontabilidade.com.br</a>
+            </div>
+          </div>
+        </div>
+        <div class="lg:w-7/12">
+          <div class="bg-white rounded-2xl p-8 shadow-lg">
+            <ContactForm />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
