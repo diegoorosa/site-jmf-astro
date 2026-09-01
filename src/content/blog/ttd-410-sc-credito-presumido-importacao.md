@@ -1,11 +1,13 @@
 ---
+
 title: "TTD 410 em SC: Como Funciona o Crédito Presumido na Importação"
-description: "Entenda o crédito presumido de ICMS do TTD 410 para importadoras e tradings em Santa Catarina: cálculo prático, impacto no preço final e obrigações acessórias (DIME, DCIP, EFD)."
+description: "Entenda o crédito presumido de ICMS do TTD 410 em SC: cálculo prático, impacto no preço final e obrigações mensais (DIME, DCIP e EFD)."
 pubDate: 2026-08-20
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-ttd-410-sc.webp"
 imageAlt: "Cálculo de crédito presumido ICMS — planilha demonstrando economia do TTD 410 em Santa Catarina"
 ---
+
 
 O **TTD 410** é o regime que complementa o TTD 409: enquanto o 409 difere o ICMS no desembaraço, o 410 concede o **crédito presumido na saída interestadual** que reduz a alíquota efetiva de 4% para **0,6% a 2,6%**. É a perna que torna a operação financeiramente viável para tradings e importadoras que vendem para fora de Santa Catarina.
 

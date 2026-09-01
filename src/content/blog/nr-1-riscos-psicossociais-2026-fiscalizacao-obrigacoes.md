@@ -1,11 +1,13 @@
 ---
-title: "NR-1 e Riscos Psicossociais: Obrigações e Fiscalização para Empresas"
+
+title: "NR-1 e Riscos Psicossociais: Novas Regras e Fiscalização"
 description: "Desde 26 de maio de 2026 a fiscalização da NR-1 sobre riscos psicossociais no trabalho é plenamente punitiva."
 pubDate: 2026-07-13
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-nr1-riscos-psicossociais-2026.jpg"
 imageAlt: "Trabalhadora sobrecarregada em escritório — riscos psicossociais no ambiente de trabalho"
 ---
+
 
 Se sua empresa tem empregados registrados pela CLT, este prazo já passou por você: desde **26 de maio de 2026**, a fiscalização da NR-1 sobre riscos psicossociais no trabalho deixou de ser educativa e passou a ser plenamente punitiva. Muita gente ainda trata esse tema como "coisa de RH de empresa grande" — mas a regra não faz essa distinção.
 

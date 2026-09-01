@@ -1,11 +1,13 @@
 ---
-title: "Holding Patrimonial em SC: Como Proteger Bens e Economizar Impostos"
+
+title: "Holding Patrimonial em SC: Como Proteger Bens e Família"
 description: "Entenda como a holding patrimonial em Santa Catarina protege o patrimônio da sua família e reduz impostos no ITCMD e IRPF. Veja o guia completo 2026."
 pubDate: 2026-08-27
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-holding-patrimonial-em-sc-como-proteger-bens-e-economizar-impostos.webp"
 imageAlt: "Empresário e advogados analisando planejamento sucessório e holding patrimonial em escritório moderno em Blumenau SC"
 ---
+
 
 Santa Catarina é reconhecida nacionalmente por sua força econômica, espírito empreendedor e pela consolidação de patrimônios familiares expressivos, especialmente no Vale do Itajaí. Em cidades como Blumenau, Joinville, Florianópolis e Criciúma, muitas famílias construíram ativos valiosos ao longo de décadas — incluindo imóveis residenciais, comerciais, terrenos e participações societárias. 
 

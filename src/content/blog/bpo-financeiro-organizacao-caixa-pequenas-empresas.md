@@ -1,11 +1,13 @@
 ---
-title: "BPO Financeiro: Gestão e Organização de Caixa para Pequenas Empresas"
+
+title: "BPO Financeiro: Gestão de Caixa para Pequenas Empresas"
 description: "Horas gastas com notas, boletos, conciliação e cobrança? O BPO Financeiro terceiriza o coração financeiro da empresa com especialistas."
 pubDate: 2026-08-01
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-bpo-financeiro-caixa.jpg"
 imageAlt: "BPO Financeiro: organização de contas a pagar/receber, conciliação bancária e relatórios de fluxo de caixa"
 ---
+
 
 Como dono de negócio, quantas horas preciosas da sua semana são gastas emitindo notas fiscais, agendando contas no aplicativo do banco, cobrando clientes inadimplentes e tentando entender para onde o dinheiro foi no final do mês? Se a resposta for "mais do que eu gostaria", o BPO Financeiro (Business Process Outsourcing) pode ser o ponto de virada que faltava.
 

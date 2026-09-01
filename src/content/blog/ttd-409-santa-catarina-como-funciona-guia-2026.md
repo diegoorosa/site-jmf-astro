@@ -1,11 +1,13 @@
 ---
-title: "TTD 409 em Santa Catarina: O Que É, Quem Tem Direito e Como Funciona"
+
+title: "TTD 409 em Santa Catarina: Guia Completo e Como Funciona"
 description: "Entenda o benefício fiscal do TTD 409 em SC: diferimento do ICMS na importação, crédito presumido na saída interestadual (0,6% a 2,6%) e requisitos da SEF/SC."
 pubDate: 2026-08-25
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-ttd-409-sc.webp"
 imageAlt: "Porto de Itajaí e Navegantes — complexo portuário catarinense para importação com TTD 409"
 ---
+
 
 O **TTD 409** (Tratamento Tributário Diferenciado) é o principal regime especial de Santa Catarina para empresas importadoras. Concedido pela SEF/SC (Secretaria de Estado da Fazenda), ele permite **diferir o ICMS no desembaraço aduaneiro** e concede **crédito presumido na saída interestadual**, reduzindo a carga efetiva de ICMS para **0,6% a 2,6%**.
 

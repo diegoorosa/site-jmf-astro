@@ -1,11 +1,13 @@
 ---
-title: "Contabilidade para Indústria Têxtil em Blumenau e SC: Gestão Fiscal"
+
+title: "Contabilidade para Indústria Têxtil em Blumenau e SC"
 description: "Guia contábil e fiscal para confecções, fiações e tinturarias em Blumenau e Vale do Itajaí: incentivos de ICMS em SC, Lucro Real e controle de perdas."
 pubDate: 2026-08-26
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-industria-textil-blumenau.webp"
 imageAlt: "Fábrica têxtil em Blumenau — polo industrial de confecções e tinturarias no Vale do Itajaí"
 ---
+
 
 O polo têxtil de **Blumenau, Brusque e Gaspar** concentra a maior cadeia de confecções, fiações e tinturarias de Santa Catarina. São centenas de indústrias que movimentam a economia regional e enfrentam desafios fiscais específicos: incentivos de ICMS, escolha de regime tributário e controle rigoroso de perdas produtivas.
 

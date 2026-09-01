@@ -1,11 +1,13 @@
 ---
-title: "Incentivos Fiscais em Blumenau: Como Pagar Menos Imposto Legalmente"
-description: "Incentivos fiscais reais para empresas de Blumenau/SC: redução de ISS prevista em lei municipal, isenção de ITBI e os programas estaduais PRODEC,..."
+
+title: "Incentivos Fiscais em Blumenau: Como Pagar Menos Imposto"
+description: "Incentivos fiscais Blumenau/SC: redução de ISS em lei municipal, isenção de ITBI e programas PRODEC, Pró-Emprego e TTD 489. Saiba como pagar menos imposto."
 pubDate: 2026-06-18
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-incentivos-fiscais-crescimento.jpg"
 imageAlt: "Gráfico de crescimento de vendas — incentivos fiscais e redução de carga tributária"
 ---
+
 
 A maioria dos empresários de Blumenau conhece os regimes tributários federais — Simples Nacional, Lucro Presumido e Lucro Real. Mas poucos sabem que existem também incentivos fiscais municipais (Blumenau) e estaduais (Santa Catarina) que podem reduzir a carga tributária de forma legal, dependendo do setor e do porte da empresa.
 

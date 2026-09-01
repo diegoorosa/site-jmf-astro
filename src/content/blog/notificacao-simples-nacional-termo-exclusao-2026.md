@@ -1,11 +1,13 @@
 ---
-title: "Notificação do Simples Nacional em 2026: O Que Fazer no Termo de Exclusão"
+
+title: "Termo de Exclusão do Simples Nacional 2026: O Que Fazer"
 description: "No 2º semestre, a Receita Federal e a PGFN intensificam os Termos de Exclusão do Simples Nacional para empresas com débitos."
 pubDate: 2026-08-04
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-notificacao-simples-nacional-exclusao.jpg"
 imageAlt: "Notificação do Simples Nacional: carta de exclusão e prazos de regularização no DTE-SN"
 ---
+
 
 No segundo semestre, a Receita Federal e a Procuradoria-Geral da Fazenda Nacional intensificam a expedição dos Termos de Exclusão do Simples Nacional para empresas com débitos tributários ou previdenciários. A notificação é disponibilizada no Domicílio Tributário Eletrônico (DTE-SN) e concede um prazo impositivo — normalmente de 30 dias após a ciência — para a regularização dos valores antes que o desenquadramento seja efetivado para 1º de janeiro.
 

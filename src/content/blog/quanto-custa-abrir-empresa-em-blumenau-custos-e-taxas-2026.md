@@ -1,11 +1,13 @@
 ---
-title: "Quanto Custa Abrir Empresa em Blumenau em 2026? (Tabela de Taxas e Custos)"
+
+title: "Quanto Custa Abrir Empresa em Blumenau em 2026? (Custos)"
 description: "Confira os custos atualizados de 2026 para abrir empresa em Blumenau: JUCESC, alvará, certificado digital, licenças e honorários. Peça estimativa personalizada."
 pubDate: 2026-05-28
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-custos-taxas-abertura-empresa.jpg"
 imageAlt: "Calculadora e moedas — cálculo de custos e taxas de abertura de empresa"
 ---
+
 
 Uma das perguntas mais frequentes de quem vai abrir empresa em Blumenau é: quanto isso vai custar? A resposta não é um número único. Ela depende da natureza jurídica, da atividade, do endereço, da necessidade de licenças, da tabela vigente dos órgãos e do escopo de apoio profissional contratado. [Veja também o passo a passo completo para abrir empresa em Blumenau](/como-abrir-empresa-em-blumenau).
 

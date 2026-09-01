@@ -97,7 +97,10 @@ const faqSchema = JSON.stringify({
   ]
 });
 
-const schema = [localBusinessSchema, faqSchema];
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [JSON.parse(localBusinessSchema), JSON.parse(faqSchema)]
+});
 ---
 
 <Layout

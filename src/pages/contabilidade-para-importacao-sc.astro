@@ -93,12 +93,15 @@ const faqSchema = JSON.stringify({
   ]
 });
 
-const schema = [localBusinessSchema, faqSchema];
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [JSON.parse(localBusinessSchema), JSON.parse(faqSchema)]
+});
 ---
 
 <Layout
   title="Contabilidade para Importação e TTD em SC | JMF Contabilidade"
-  description="Contabilidade especializada para importadoras e tradings em Santa Catarina: benefício fiscal TTD 409/410, habilitação RADAR Siscomex, parametrização NF-e e abertura de filiais portuárias."
+  description="Contabilidade especializada para importadoras e tradings em Santa Catarina: benefício fiscal TTD 409/410, habilitação RADAR Siscomex, parametrização NF-e e abertura"
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-importacao-sc"
   schema={schema}

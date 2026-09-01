@@ -94,12 +94,15 @@ const faqSchema = JSON.stringify({
   ]
 });
 
-const schema = [localBusinessSchema, faqSchema];
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@graph": [JSON.parse(localBusinessSchema), JSON.parse(faqSchema)]
+});
 ---
 
 <Layout
-  title="Contabilidade para Clínicas Médicas e Equiparação Hospitalar em SC | JMF"
-  description="Contabilidade especializada para clínicas médicas e odontológicas em SC. Economize até 60% com Equiparação Hospitalar no Lucro Presumido e Fator R no Simples Nacional."
+  title="Contabilidade para Clínicas Médicas e Equiparação Hospitalar em S"
+  description="Contabilidade especializada para clínicas médicas e odontológicas em SC. Economize até 60% com Equiparação Hospitalar no Lucro Presumido e Fator R no Simples Naciona"
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-clinicas-medicas"
   schema={schema}

@@ -1,11 +1,13 @@
 ---
-title: "Planejamento Tributário 2027: Por Que Começar a Análise com Antecedência"
+
+title: "Planejamento Tributário 2027: Por Que Começar em Agosto?"
 description: "Deixar o planejamento para janeiro é um erro caro. Em agosto já temos histórico consolidado de faturamento, impacto real da folha no Fator R e projeção..."
 pubDate: 2026-07-25
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-planejamento-tributario-2027.jpg"
 imageAlt: "Planejamento tributário 2027: calendário, documentos e estratégia fiscal — agosto decisivo"
 ---
+
 
 Qual é o mês em que a maioria dos empresários começa a pensar no regime tributário do ano seguinte? Janeiro. Qual é o mês em que isso já deveria estar encaminhado? Agosto.
 

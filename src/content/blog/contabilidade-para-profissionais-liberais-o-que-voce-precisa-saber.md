@@ -1,11 +1,13 @@
 ---
-title: "Contabilidade para Profissionais Liberais: Médicos, Advogados, Engenheiros"
+
+title: "Contabilidade para Profissionais Liberais: Guia Completo"
 description: "Médico, advogado, engenheiro, psicólogo, arquiteto — profissionais liberais têm particularidades tributárias que a maioria não conhece."
 pubDate: 2026-06-05
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-profissionais-liberais.jpg"
 imageAlt: "Profissional liberal em reunião de consultoria com cliente"
 ---
+
 
 Médico com consultório próprio. Advogado com escritório solo. Arquiteto autônomo. Psicólogo com agenda cheia. Engenheiro que presta consultoria. São perfis diferentes, mas com um ponto em comum: todos são profissionais liberais que precisam de uma estrutura tributária e contábil adequada — e frequentemente operam com uma que não é a ideal.
 
