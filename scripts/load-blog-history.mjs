@@ -7,14 +7,16 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-const BLOG_DIR = process.env.GITHUB_WORKSPACE
-  ? `${process.env.GITHUB_WORKSPACE}/src/content/blog`
-  : 'src/content/blog';
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const BLOG_DIR = path.resolve(__dirname, '../src/content/blog');
+
+console.log(`📂 Lendo posts de: ${BLOG_DIR}`);
 
 function extractFrontmatter(content, file) {
   // Remove BOM if present
   const cleanContent = content.replace(/^﻿/, '');
-  const match = cleanContent.match(/^---\n([\s\S]*?)\n---/);
+  // Handle both CRLF and LF line endings
+  const match = cleanContent.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   if (!match) return null;
 
   const fm = match[1];
@@ -40,6 +42,7 @@ function fileNameToSlug(filename) {
 function loadBlogHistory() {
   const files = fs.readdirSync(BLOG_DIR).filter(f => f.endsWith('.md'));
   const posts = [];
+  const skipped = [];
 
   for (const file of files) {
     const fullPath = path.join(BLOG_DIR, file);
@@ -52,6 +55,8 @@ function loadBlogHistory() {
         slug: fm.slug,
         file
       });
+    } else {
+      skipped.push(file);
     }
   }
 
@@ -84,6 +89,17 @@ function loadBlogHistory() {
 
   console.log(`📚 Loaded ${posts.length} blog posts (${output.recent_posts} recent for context)`);
   console.log(`Autores detectados: ${output.authors}`);
+  if (skipped.length) {
+    console.log(`⚠️  ${skipped.length} posts sem frontmatter válido (ignorados):`);
+    skipped.forEach(f => console.log(`   - ${f}`));
+  }
+
+  // Debug: show posts with holding/sucessorio in title
+  const holdingPosts = posts.filter(p => /holding|sucess[oó]rio/i.test(p.title));
+  if (holdingPosts.length) {
+    console.log(`🔍 Posts de holding/sucessório detectados:`);
+    holdingPosts.forEach(p => console.log(`   - "${p.title}" (${p.pubDate})`));
+  }
 }
 
 function main() {
