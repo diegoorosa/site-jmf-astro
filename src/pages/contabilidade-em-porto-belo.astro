@@ -74,7 +74,23 @@ const faqSchema = JSON.stringify({
       "name": "Como funciona o atendimento remoto para Porto Belo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 65km (1h15 pela BR-101). Resposta no mesmo dia útil. Rotina mensal padrão: docs até dia 5, fechamento até dia 15, guias até dia 20."
+        "text": "WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Para presença física, Blumenau a 65km (1h15 pela BR-101). Resposta no mesmo dia útil. Rotina mensal padrão: docs até dia 5, fechamento até dia 15, guias até dia 20."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Como tributar aluguel de temporada em Porto Belo — PJ x PF?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Imóveis de luxo em Porto Belo (Praia do Perequê) em aluguel de temporada: PJ (Holding ou Simples/Presumido) vs PF (IR 27,5%). PJ permite rateio de despesas, proteção patrimonial, planejamento sucessório e redução de carga. A JMF compara cenário a cenário."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quais alvarás e ISSQN locais em Porto Belo?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Porto Belo exige alvará de funcionamento municipal para turismo e comércio (Lei Municipal). ISSQN: 2% hospedagem, 3% alimentação, 5% eventos/shows. Alvará de obra para construção: ISS obra 2-5% + retenções. Alvará de temporada (dez-mar) para eventos de verão. A JMF orienta e regulariza."
       }
     }
   ]
@@ -91,7 +107,7 @@ const serviceSchema = {
 
 <Layout
   title="Contabilidade em Porto Belo/SC | JMF Contabilidade"
-  description="Contabilidade para empresas em Porto Belo/SC: turismo, comércio, construção civil.  Simples Nacional, Lucro Presumido."
+  description="Contabilidade para empresas em Porto Belo/SC: turismo, comércio, construção civil. Simples Nacional, Lucro Presumido."
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-porto-belo"
   schema={schema}
@@ -130,7 +146,7 @@ const serviceSchema = {
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Turismo e Hospitalidade</h3>
           <p class="text-slate-600 leading-relaxed">
-            Hotéis, pousadas, restaurantes, bares, agências de turismo: Simples Nacional (Fator R), ISS 2%+, sazonalidade de folha, controle de estoque, NFC-e/NF-e, regime especial de eventos.
+            Hotéis, pousadas, restaurantes, bares, agências de turismo: Simples Nacional (Fator R), ISS 2%+, sazonalidade de folha, controle de estoque, NFC-e/NF-e, regime especial de eventos. Aluguel temporada (Airbnb Luxe) via PJ ou Holding.
           </p>
         </div>
 
@@ -144,14 +160,14 @@ const serviceSchema = {
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Construção Civil e Imobiliário</h3>
           <p class="text-slate-600 leading-relaxed">
-            Construtoras, incorporadoras, imobiliárias: RET (Regime Especial de Tributação 1% a 4%), Lucro Presumido (8% base), patrimônio de afetação, INSS obra (1% a 2%), ISS obra.
+            Construtoras, incorporadoras, imobiliárias: RET (Regime Especial de Tributação 1% a 4%), Lucro Presumido (8% base), patrimônio de afetação, INSS obra (1% a 2%), ISS obra, retenções na fonte. Holding imobiliária para proteção patrimonial.
           </p>
         </div>
 
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
           <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
           <p class="text-slate-600 leading-relaxed">
-            Escrituração fiscal, SPED, ECD/ECF, DCTF, PER/DCOMP, obrigações municipais (ISS), retenções na fonte (IR, CSLL, PIS, COFINS, INSS). Tudo no prazo, sem multas.
+            Escrituração fiscal, SPED, ECD/ECF, DCTF, PER/DCOMP, obrigações municipais (ISSQN Porto Belo), retenções na fonte (IR, CSLL, PIS, COFINS, INSS). Tudo no prazo, sem multas. Alvarás de obra, temporada e turismo regularizados.
           </p>
         </div>
       </div>
@@ -173,15 +189,31 @@ const serviceSchema = {
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Construção civil — RET vs Presumido:</strong> RET (Lei 12.024/2009): 1% a 4% sobre receita (Patrimônio de Afetação). Lucro Presumido: base 8% (construção) + ISS. A JMF atende apenas Simples Nacional ou Lucro Presumido; para Lucro Real indicamos parceiro. Escolha impacta caixa e margem.</span>
+          <span><strong>Construção civil — RET vs Presumido:</strong> RET (Lei 12.024/2009): 1% a 4% sobre receita (Patrimônio de Afetação). Lucro Presumido: base 8% (construção) + ISS. A JMF atende Simples Nacional ou Lucro Presumido; para Lucro Real indicamos parceiro. Escolha impacta caixa e margem.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>ISS municipal — obra e serviços:</strong> obra (2% a 5% sobre valor do serviço), serviços de arquitetura/engenharia (2% a 5%). Porto Belo tem legislação própria para ISS fixo vs variável.</span>
+          <span><strong>ISS municipal — obra e serviços:</strong> obra (2% a 5% sobre valor do serviço), serviços de arquitetura/engenharia (2% a 5%). Porto Belo tem legislação própria para ISS fixo vs variável. Alvará de obra obrigatório e retenções de IR/CSLL/PIS/COFINS/INSS no pagamento de empreiteiras.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Incentivos estaduais:</strong> PRODEC/TTD podem beneficiar indústrias de base e construção em Porto Belo. Turismo: isenções/ reduções específicas.</span>
+          <span><strong>Incentivos estaduais:</strong> PRODEC/TTD podem beneficiar indústrias de base e construção em Porto Belo. Turismo: isenções/reduções específicas para hospedagem, eventos e gastronomia certificada. A JMF monitora benefícios vigentes.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Aluguel temporada de luxo — PJ vs PF:</strong> imóveis de alto padrão na Praia do Perequê (R$ 2M+): PJ (Simples/Presumido ou Holding) permite proteção patrimonial, rateio de despesas de condomínio/manutenção, planejamento sucessório e redução de carga tributária. A JMF compara cenário a cenário e estrutura a Holding.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>ISSQN municipal — Porto Belo:</strong> Lei Municipal estabelece alíquotas diferenciadas: hospedagem (2%), alimentação (3%), eventos/shows (5%), obra (2-5%), serviços de arquitetura/engenharia (2-5%). Alvarás específicos para turismo de temporada (dez-mar), obra e eventos. A JMF orienta abertura, renovação e regularização.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>Sazonalidade financeira e folha intermitente:</strong> fluxo de caixa projetado para alta temporada (dez-mar) e baixa (abr-nov). Contratos intermitentes para funcionários temporários de turismo. Reserva mínima de 3-4 meses de custos fixos. A JMF projeta cenário a cenário e negocia prazos.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-blue-700 font-bold mt-1">•</span>
+          <span><strong>COMPLIANCE ambiental e turístico:</strong> Porto Belo integra Área de Preservação Ambiental da Marinha. Empreendimentos turísticos precisam de licenciamento ambiental (FATMA/IMA) e outorga de uso de recurso hídrico. Certificações (Blue Flag, Green Key) permitem dedução de custos e incentivos. A JMF assessora compliance ambiental.</span>
         </li>
       </ul>
 
@@ -199,13 +231,13 @@ const serviceSchema = {
 
       <div class="space-y-6 text-lg text-slate-600">
         <p>
-          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Especialistas em construção (RET, patrimônio de afetação) e turismo (Fator R, sazonalidade).
+          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Especialistas em construção (RET, patrimônio de afetação, INSS obra) e turismo (Fator R, sazonalidade, alvarás).
         </p>
         <p>
           <strong>Presencial quando quiser:</strong> Blumenau a 65km (1h15 pela BR-101). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
         </p>
         <p>
-          <strong>Rotina mensal:</strong> Recebimento docs até dia 5, fechamento até dia 15, guias e relatórios até dia 20. Controle de obra: medições, retenções, CNDs.
+          <strong>Rotina mensal:</strong> Recebimento docs até dia 5, fechamento até dia 15, guias e relatórios até dia 20. Controle de obra: medições, retenções, CNDs. Alvarás de obra, temporada e turismo acompanhados.
         </p>
         <p class="mt-4">
           <strong>Sede e equipe completa em Blumenau:</strong> Nossa estrutura principal fica em <a href="/contabilidade-em-blumenau" class="text-blue-700 font-semibold hover:underline">Blumenau</a> — 35+ anos de experiência no Vale do Itajaí, atendimento presencial e digital para empresas de toda a região.
@@ -217,7 +249,7 @@ const serviceSchema = {
   <section id="formulario" class="py-16 md:py-24 bg-slate-50">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
-      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Simulação RET vs Presumido vs Real gratuita para construção.</p>
+      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Simulação RET vs Presumido vs Real gratuita para construção. Diagnóstico Fator R + alvarás turísticos gratuito.</p>
       <ContactForm />
     </div>
   </section>
