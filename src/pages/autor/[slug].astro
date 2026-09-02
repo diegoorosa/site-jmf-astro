@@ -15,25 +15,28 @@ export async function getStaticPaths() {
       title: 'Contador',
       crc: 'CRC SC-035810/O',
       bio: 'Sócio-administrador da JMF Contabilidade. Formado em Ciências Contábeis pela FURB, com pós-graduação em Controladoria e Finanças. Especialista em tributação para empresas de tecnologia, construção civil e planejamento tributário estratégico. Atua há mais de 10 anos na assessoria contábil e fiscal para empresas do Vale do Itajaí.',
-      initials: 'DSR',
+      image: '/assets/images/team-diego.webp',
+      imageAlt: 'Diego Schlemper Rosa — Sócio-Administrador, CRC SC-035810/O',
     },
     {
       slug: 'fabricio-rosa',
-      name: 'Fabrício Rosa',
-      role: 'Contador',
+      name: 'Fabricio Rosa',
+      role: 'Sócio-Administrador',
       title: 'Contador',
-      crc: 'CRC SC-038912/O',
-      bio: 'Contador da JMF Contabilidade. Formado em Ciências Contábeis pela FURB. Especialista em tributação para clínicas médicas, hospitais, profissionais liberais e empresas do Simples Nacional. Foco em Fator R, equiparação hospitalar e compliance setorial.',
-      initials: 'FR',
+      crc: 'CRC SC-029833/O',
+      bio: 'Sócio-administrador da JMF Contabilidade. Formado em Ciências Contábeis pela FURB (2007) e pós-graduado em Contabilidade e Gestão Tributária (2011). Na JMF desde 2001. Especialista em planejamento tributário, gestão fiscal e conformidade para empresas dos regimes Simples Nacional, Lucro Presumido e Lucro Real.',
+      image: '/assets/images/team-fabricio.webp',
+      imageAlt: 'Fabricio Rosa — Sócio-Administrador, CRC SC-029833/O',
     },
     {
       slug: 'joel-rosa',
-      name: 'Joel Antonio Rosa',
-      role: 'Contador Fundador',
+      name: 'Joel Rosa',
+      role: 'Fundador & Sócio',
       title: 'Contador',
-      crc: 'CRC SC-012345/O',
-      bio: 'Fundador da JMF Contabilidade. Contador com mais de 35 anos de experiência no Vale do Itajaí. Especialista em contabilidade societária, planejamento sucessório, holdings patrimoniais e tributação imobiliária. Referência em contabilidade para empresas familiares e de grande porte na região.',
-      initials: 'JAR',
+      crc: 'CRC SC-007091/O',
+      bio: 'Fundador da JMF Contabilidade. Bacharel em Ciências Contábeis pela FURB (1987) e Técnico em Contabilidade desde 1971. Mais de 55 anos de experiência na área contábil. Fundou a JMF em 1989 com a missão de oferecer contabilidade próxima, ética e estratégica para empresas de Blumenau e região.',
+      image: '/assets/images/team-joel.webp',
+      imageAlt: 'Joel Rosa — Fundador & Sócio, CRC SC-007091/O',
     },
   ];
 
@@ -85,7 +88,7 @@ const profileSchema = JSON.stringify({
   "alternateName": author.name,
   "description": `${author.role} na JMF Contabilidade. ${author.bio}`,
   "url": `https://www.jmfcontabilidade.com.br/autor/${author.slug}`,
-  "image": `https://www.jmfcontabilidade.com.br/assets/images/autor-${author.slug}.webp`,
+  "image": `https://www.jmfcontabilidade.com.br${author.image}`,
   "sameAs": [
     "https://www.linkedin.com/company/jmf-contabilidade",
     "https://www.instagram.com/jmfcontabilidade",
@@ -117,7 +120,7 @@ const profileSchema = JSON.stringify({
   "credential": author.crc,
 });
 
-const ogImageUrl = `https://www.jmfcontabilidade.com.br/assets/images/autor-${author.slug}.webp`;
+const ogImageUrl = `https://www.jmfcontabilidade.com.br${author.image}`;
 
 const WA = `https://wa.me/554733265123?text=Ol%C3%A1%2C%20vi%20o%20perfil%20de%20${encodeURIComponent(author.name)}%20no%20site%20da%20JMF%20e%20gostaria%20de%20falar%20com%20um%20especialista.`;
 
@@ -154,9 +157,14 @@ const WA = `https://wa.me/554733265123?text=Ol%C3%A1%2C%20vi%20o%20perfil%20de%2
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4 max-w-4xl">
       <div class="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-        <div class="w-28 h-28 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-[#1e40af] to-[#0f172a] flex items-center justify-center text-white text-3xl md:text-4xl font-bold flex-shrink-0 shadow-lg">
-          {author.initials}
-        </div>
+        <img
+          src={author.image}
+          alt={author.imageAlt}
+          width="160"
+          height="160"
+          loading="eager"
+          class="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover flex-shrink-0 shadow-lg ring-4 ring-white"
+        />
         <div class="text-center md:text-left flex-1">
           <h1 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-2">{author.name}</h1>
           <p class="text-lg text-[#1e40af] font-semibold mb-1">{author.role}</p>
