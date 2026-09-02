@@ -1,5 +1,5 @@
 ---
-title: "Planejamento Tributário: Estratégias Legais para Reduzir Impostos"
+title: "Planejamento Tributário: Estratégias para Reduzir Impostos"
 description: "Planejamento tributário não é sonegação — é o uso inteligente das brechas e benefícios previstos em lei."
 pubDate: 2026-02-18
 author: "Fabricio Rosa, CRC SC-029833/O"

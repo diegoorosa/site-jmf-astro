@@ -1,5 +1,5 @@
 ---
-title: "Desoneração da Folha em 2026: Entenda o Cronograma de Reoneração"
+title: "Desoneração da Folha 2026: Cronograma de Reoneração"
 description: "A desoneração da folha está em extinção gradual até 2028. Em 2026, empresas beneficiadas passam a recolher CPRB a 60% da alíquota original mais 10%..."
 pubDate: 2026-03-19
 author: "Fabricio Rosa, CRC SC-029833/O"

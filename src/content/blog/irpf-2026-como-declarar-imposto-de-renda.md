@@ -1,5 +1,5 @@
 ---
-title: "IRPF 2026: Quem Deve Declarar, Prazos e Como Evitar a Malha Fina"
+title: "IRPF 2026: Quem Deve Declarar, Prazos e Malha Fina"
 description: "A declaração do Imposto de Renda 2026 (ano-base 2025) teve prazo até 29 de maio."
 pubDate: 2026-04-23
 author: "Diego Rosa, CRC SC-035810/O"

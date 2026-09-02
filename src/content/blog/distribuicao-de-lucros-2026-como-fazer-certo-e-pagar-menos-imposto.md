@@ -1,5 +1,5 @@
 ---
-title: "Distribuição de Lucros em 2026: Como Fazer com Isenção de IR"
+title: "Distribuição de Lucros 2026: Como Fazer com Isenção de IR"
 description: "Distribuição de lucros é isenta de IR para o sócio — mas só quando feita corretamente."
 pubDate: 2026-04-16
 author: "Fabricio Rosa, CRC SC-029833/O"

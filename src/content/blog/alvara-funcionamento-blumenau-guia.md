@@ -1,6 +1,6 @@
 ---
 
-title: "Alvará de Funcionamento em Blumenau: Guia 2026 e Passo a Passo"
+title: "Alvará em Blumenau: Guia Completo 2026 e Passo a Passo"
 description: "Passo a passo para emitir, regularizar ou renovar o alvará em Blumenau 2026. Viabilidade, documentos, vistorias e canais oficiais. Guia completo 2026."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"

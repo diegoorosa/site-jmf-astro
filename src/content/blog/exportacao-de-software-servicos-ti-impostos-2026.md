@@ -1,6 +1,6 @@
 ---
 
-title: "Exportação de Software e Serviços de TI: Como Pagar Menos Imposto"
+title: "Exportação de Software e TI: Como Pagar Menos Imposto"
 description: "Guia completo sobre a tributação na exportação de software e serviços de tecnologia: isenção de PIS, COFINS e ISS no Simples Nacional e Lucro Presumido."
 pubDate: 2026-08-30
 author: "Diego Rosa, CRC SC-035810/O"

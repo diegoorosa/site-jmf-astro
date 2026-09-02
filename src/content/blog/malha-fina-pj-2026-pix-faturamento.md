@@ -1,5 +1,5 @@
 ---
-title: "Malha Fina PJ em 2026: Cruzamento de PIX e Cartões pela Receita"
+title: "Malha Fina PJ 2026: Cruzamento de PIX/Cartões pela Receita"
 description: "Em 2026, a fiscalização é 100% digital e instantânea. Supercomputadores cruzam em tempo real PIX, cartões e e-Financeira."
 pubDate: 2026-07-15
 author: "Fabricio Rosa, CRC SC-029833/O"

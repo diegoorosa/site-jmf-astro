@@ -1,5 +1,5 @@
 ---
-title: "Pró-labore e Dividendos em 2026: Regras de Retirada e Isenções"
+title: "Pró-labore e Dividendos em 2026: Retirada e Isenções"
 description: "A Lei 15.270/2025 mudou as regras: IRPF isento até R$ 5.000/mês no pró-labore e nova tributação de 10% sobre dividendos acima de R$ 50.000/mês."
 pubDate: 2026-06-12
 author: "Fabricio Rosa, CRC SC-029833/O"

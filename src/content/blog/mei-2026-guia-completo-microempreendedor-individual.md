@@ -1,5 +1,5 @@
 ---
-title: "MEI 2026: Guia Completo para o Microempreendedor Individual"
+title: "MEI 2026: Guia Completo do Microempreendedor Individual"
 description: "Tudo sobre o MEI em 2026: valor do DAS atualizado (R$ 82,05 a R$ 87,05), limite de faturamento, prazo da DASN-SIMEI, quando ter funcionário e quando é..."
 pubDate: 2026-05-14
 author: "Diego Rosa, CRC SC-035810/O"

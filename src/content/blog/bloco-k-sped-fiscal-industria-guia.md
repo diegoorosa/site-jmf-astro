@@ -1,5 +1,5 @@
 ---
-title: "Bloco K do SPED Fiscal: O Que É e Como Evitar Multas na Fábrica"
+title: "Bloco K do SPED Fiscal: O Que É e Como Evitar Multas"
 description: "Entenda o Bloco K do SPED Fiscal em Santa Catarina: controle de produção, Registro 0210 (fichas técnicas), perdas produtivas e conciliação de estoque."
 pubDate: 2026-08-27
 author: "Diego Rosa, CRC SC-035810/O"

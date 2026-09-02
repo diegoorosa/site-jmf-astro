@@ -1,5 +1,5 @@
 ---
-title: "Desenquadramento MEI Retroativo em 2026: O Que Fazer e Multas"
+title: "Desenquadramento MEI Retroativo 2026: O Que Fazer e Multas"
 description: "Ultrapassou 20% do limite do MEI? Entenda o desenquadramento retroativo a 01/01, reapuração no Simples, multa de 0,33%/dia e como evitar. Consulte especialistas."
 pubDate: 2026-07-16
 author: "Diego Rosa, CRC SC-035810/O"

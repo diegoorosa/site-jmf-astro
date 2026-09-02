@@ -1,5 +1,5 @@
 ---
-title: "Como Regularizar Sua Empresa com Débitos na Receita Federal"
+title: "Como Regularizar Empresa com Débitos na Receita Federal"
 description: "Dívida tributária não precisa ser o fim. Entenda como consultar débitos, quais programas de parcelamento existem, como negociar e o que fazer para obter..."
 pubDate: 2026-01-08
 author: "Diego Rosa, CRC SC-035810/O"

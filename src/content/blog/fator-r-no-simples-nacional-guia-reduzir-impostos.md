@@ -1,5 +1,5 @@
 ---
-title: "Fator R no Simples Nacional: Guia para Reduzir Impostos em SC"
+title: "Fator R no Simples Nacional: Reduzir Impostos em SC"
 description: "Entenda como funciona o Fator R no Simples Nacional em 2026, aprenda a calcular a regra dos 28% e reduza a carga tributária do seu negócio em Blumenau."
 pubDate: 2026-09-01
 author: "Fabricio Rosa, CRC SC-038912/O"

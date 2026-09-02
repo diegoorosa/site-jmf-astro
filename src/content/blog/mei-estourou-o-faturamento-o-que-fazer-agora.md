@@ -1,5 +1,5 @@
 ---
-title: "MEI Estourou o Faturamento: O Que Fazer Antes Que Seja Tarde"
+title: "MEI Estourou o Faturamento: O Que Fazer Antes de Passar"
 description: "Ultrapassar o limite de R$ 81 mil como MEI não é o fim do mundo — mas exige ação rápida."
 pubDate: 2026-03-12
 author: "Diego Rosa, CRC SC-035810/O"

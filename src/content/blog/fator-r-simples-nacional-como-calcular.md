@@ -1,5 +1,5 @@
 ---
-title: "Fator R no Simples Nacional: Como Calcular e Reduzir Imposto"
+title: "Fator R no Simples: Como Calcular e Reduzir Imposto"
 description: "O Fator R determina se sua empresa paga 6% (Anexo III) ou 15,5% (Anexo V) no Simples Nacional."
 pubDate: 2026-06-15
 author: "Fabricio Rosa, CRC SC-029833/O"

@@ -1,5 +1,5 @@
 ---
-title: "Fluxo de Caixa: Guia Prático de Gestão Financeira para Empresas"
+title: "Fluxo de Caixa: Guia Prático de Gestão para Empresas"
 description: "Empresa lucrativa pode quebrar por falta de caixa. Entenda como montar, interpretar e usar o fluxo de caixa para antecipar crises e tomar decisões com..."
 pubDate: 2026-01-22
 author: "Diego Rosa, CRC SC-035810/O"

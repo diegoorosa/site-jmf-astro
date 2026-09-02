@@ -1,5 +1,5 @@
 ---
-title: "Contabilidade para Advogados em Blumenau: Sociedade e Fator R"
+title: "Contabilidade para Advogados Blumenau: Sociedade e Fator R"
 description: "Advogados em Blumenau: sociedade de advogados, Fator R, ISS para serviços jurídicos e obrigações da OAB-SC. JMF ajuda a reduzir imposto."
 pubDate: 2026-06-16
 author: "Fabricio Rosa, CRC SC-029833/O"

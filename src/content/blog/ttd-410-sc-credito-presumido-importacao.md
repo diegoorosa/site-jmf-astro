@@ -1,6 +1,6 @@
 ---
 
-title: "TTD 410 em SC: Como Funciona o Crédito Presumido na Importação"
+title: "TTD 410 em SC: Entenda o Crédito Presumido na Importação"
 description: "Entenda o crédito presumido de ICMS do TTD 410 em SC: cálculo prático, impacto no preço final e obrigações mensais (DIME, DCIP e EFD)."
 pubDate: 2026-08-20
 author: "Diego Rosa, CRC SC-035810/O"

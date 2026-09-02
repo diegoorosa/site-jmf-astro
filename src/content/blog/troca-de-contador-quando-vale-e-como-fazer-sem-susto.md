@@ -1,5 +1,5 @@
 ---
-title: "Como Trocar de Contador em Blumenau: Checklist de Transição"
+title: "Como Trocar de Contador em Blumenau: Checklist Completo"
 description: "Quer trocar de contador em Blumenau? Veja quais documentos, acessos e pontos fiscais conferir antes de iniciar uma transição organizada."
 pubDate: 2026-02-11
 author: "Diego Rosa, CRC SC-035810/O"

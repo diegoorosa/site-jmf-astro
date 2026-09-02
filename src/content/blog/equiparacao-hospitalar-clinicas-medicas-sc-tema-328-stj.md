@@ -1,5 +1,5 @@
 ---
-title: "Equiparação Hospitalar para Clínicas em SC: Guia do Tema 328 STJ"
+title: "Equiparação Hospitalar em SC: Guia Completo Tema 328"
 description: "Reduza até 60% dos impostos federais da sua clínica médica em SC: requisitos da Lei 9.249/95, Tema 328 do STJ, alvará da Anvisa RDC 50 e Lucro Presumido."
 pubDate: 2026-08-28
 author: "Diego Rosa, CRC SC-035810/O"
