@@ -1,0 +1,169 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import '../styles/pages-p2.css';
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://www.jmfcontabilidade.com.br/termos-de-uso",
+  "name": "Termos de Uso - JMF Contabilidade",
+  "url": "https://www.jmfcontabilidade.com.br/termos-de-uso",
+  "inLanguage": "pt-BR",
+  "isPartOf": { "@id": "https://www.jmfcontabilidade.com.br/#website" }
+});
+---
+
+<Layout
+  title="Termos de Uso | JMF Contabilidade"
+  description="Termos de Uso do site da JMF Contabilidade: natureza informativa do conteúdo, propriedade intelectual, links externos e foro da Comarca de Blumenau/SC."
+  canonical="https://www.jmfcontabilidade.com.br/termos-de-uso"
+  ogUrl="https://www.jmfcontabilidade.com.br/termos-de-uso"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+  <HeroInterno
+    title="Termos de Uso"
+    subtitle="Regras de uso do site da JMF Contabilidade: natureza informativa do blog e guias, propriedade intelectual, links externos e foro da Comarca de Blumenau/SC."
+    breadcrumb={[
+      { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+      { label: "Termos de Uso" }
+    ]}
+  />
+
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="max-w-3xl mx-auto prose prose-gray max-w-none">
+
+        <p class="text-gray-500 text-sm mb-8">Última atualização: junho de 2026</p>
+
+        <!-- Seção 1 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-8">1. <span class="pp3-grad">Objeto e Aceitação</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Estes Termos de Uso regulam o acesso e a utilização do website <strong>jmfcontabilidade.com.br</strong>, de titularidade da <strong>JMF Contabilidade Empresarial e Fiscal Ltda</strong> (CNPJ 81.335.895/0001-17), com sede na Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau/SC.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Ao acessar e navegar neste site, você ("Usuário") concorda integralmente com os presentes termos. Caso não concorde, recomendamos que interrompa a navegação imediatamente.
+        </p>
+
+        <!-- Seção 2 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">2. <span class="pp3-grad">Natureza Estritamente Informativa</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Todo o conteúdo publicado neste site — incluindo, mas não se limitando a: artigos do blog, guias práticos, simuladores, calculadoras, calendários fiscais, e-books, infográficos e demais materiais educativos — possui caráter <strong>exclusivamente informativo e educacional</strong>.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          <strong>Não constitui</strong> assessoria contábil, tributária, trabalhista, jurídica ou financeira personalizada. As informações são de natureza geral e podem não se aplicar à sua situação específica. Legislações e interpretações normativas mudam frequentemente; a JMF não garante a atualização em tempo real de todo o conteúdo.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Para decisões que impactem sua empresa ou patrimônio, <strong>consulte sempre um profissional habilitado</strong> (contador, advogado ou consultor tributário) que analise seu caso concreto.
+        </p>
+
+        <!-- Seção 3 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">3. <span class="pp3-grad">Propriedade Intelectual</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Todos os direitos de propriedade intelectual sobre o conteúdo deste site pertencem à JMF Contabilidade ou a terceiros que licenciaram seu uso. Estão protegidos pela Lei nº 9.610/1998 (Lei de Direitos Autorais) e demais legislações aplicáveis:
+        </p>
+        <ul class="text-gray-600 space-y-2 mb-4 pl-5 list-disc">
+          <li><strong>Textos, artigos, guias e materiais educativos:</strong> de autoria da equipe JMF ou colaboradores autorizados.</li>
+          <li><strong>Marca "JMF Contabilidade", logotipos, identidade visual:</strong> registro de marca próprio.</li>
+          <li><strong>Códigos, scripts, calculadoras e ferramentas interativas:</strong> desenvolvimento próprio ou licenciado.</li>
+          <li><strong>Imagens e fotografias:</strong> banco de imagens licenciado (Pexels, Unsplash) ou produção própria.</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          É <strong>vedada</strong> a reprodução total ou parcial, distribuição, modificação, engenharia reversa, criação de obras derivadas ou exploração comercial de qualquer conteúdo sem autorização prévia por escrito. Citações breves com atribuição e link para a fonte original são permitidas nos termos do art. 46, III, da Lei 9.610/98.
+        </p>
+
+        <!-- Seção 4 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">4. <span class="pp3-grad">Uso dos Simuladores e Calculadoras</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          As ferramentas interativas (Calculadora Fator R, Simulador de Regime Tributário, Calendário Fiscal) são fornecidas <strong>como auxiliares de estimativa</strong>, baseadas em parâmetros legais vigentes na data de publicação.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A JMF <strong>não se responsabiliza</strong> por decisões tomadas com base exclusiva nos resultados dessas ferramentas. Elas não substituem o trabalho técnico de um contador na apuração de tributos, escolha de regime ou planejamento tributário.
+        </p>
+
+        <!-- Seção 5 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">5. <span class="pp3-grad">Links Externos</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Este site pode conter links para websites de terceiros (órgãos governamentais, legislação, notícias, parceiros). A JMF <strong>não controla, não endossa e não se responsabiliza</strong> pelo conteúdo, políticas de privacidade, práticas ou segurança de sites externos.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          O acesso a links externos é por conta e risco do Usuário. Recomendamos a leitura dos termos de uso e políticas de privacidade de cada site visitado.
+        </p>
+
+        <!-- Seção 6 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">6. <span class="pp3-grad">Limitação de Responsabilidade</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A JMF Contabilidade envida esforços para manter as informações precisas e atualizadas, mas <strong>não garante</strong> a exatidão, completude, atualidade ou adequação a qualquer finalidade específica. O uso do site é por conta e risco do Usuário.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Em nenhuma hipótese a JMF, seus sócios, colaboradores ou prestadores serão responsáveis por danos diretos, indiretos, incidentais, consequenciais, lucros cessantes ou danos morais decorrentes do uso ou impossibilidade de uso deste site, de seu conteúdo ou de ferramentas nele disponibilizadas.
+        </p>
+
+        <!-- Seção 7 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">7. <span class="pp3-grad">Disponibilidade do Site</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A JMF não garante que o site estará disponível de forma ininterrupta, livre de erros, vírus ou falhas de segurança. Manutenções programadas ou emergenciais podem suspender temporariamente o acesso sem aviso prévio.
+        </p>
+
+        <!-- Seção 8 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">8. <span class="pp3-grad">Conduta do Usuário</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          O Usuário compromete-se a não:
+        </p>
+        <ul class="text-gray-600 space-y-2 mb-4 pl-5 list-disc">
+          <li>Utilizar o site para fins ilícitos, imorais ou que violem direitos de terceiros.</li>
+          <li>Tentar acessar áreas restritas, burlar medidas de segurança ou interferir na integridade do sistema.</li>
+          <li>Transmitir código malicioso, realizar scraping automatizado ou sobrecarregar a infraestrutura.</li>
+          <li>Coletar dados de outros usuários sem consentimento.</li>
+        </ul>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A violação destes termos autoriza a JMF a bloquear o acesso do infrator, sem prejuízo das medidas judiciais cabíveis.
+        </p>
+
+        <!-- Seção 9 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">9. <span class="pp3-grad">Proteção de Dados Pessoais (LGPD)</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          O tratamento de dados pessoais coletados neste site (formulários de contato, cookies analíticos, newsletter) segue o disposto na <strong>Lei nº 13.709/2018 (LGPD)</strong> e na nossa <a href="/politica-de-privacidade" class="text-[#1e40af] font-semibold">Política de Privacidade</a>, que faz parte integrante destes Termos.
+        </p>
+
+        <!-- Seção 10 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">10. <span class="pp3-grad">Alterações nos Termos</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          A JMF pode alterar estes Termos a qualquer momento, publicando a versão atualizada nesta página com a data de "Última atualização". O uso contínuo do site após alterações implica aceitação dos novos termos.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Recomendamos a leitura periódica desta página.
+        </p>
+
+        <!-- Seção 11 -->
+        <h2 class="text-2xl font-bold text-[#0f172a] mb-4 mt-10">11. <span class="pp3-grad">Foro e Lei Aplicável</span></h2>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Estes Termos são regidos pelas leis da República Federativa do Brasil.
+        </p>
+        <p class="text-gray-600 leading-relaxed mb-4">
+          Fica eleito o <strong>Foro da Comarca de Blumenau, Estado de Santa Catarina</strong>, com exclusão de qualquer outro, por mais privilegiado que seja, para dirimir quaisquer controvérsias decorrentes destes Termos de Uso ou do uso deste site.
+        </p>
+
+        <!-- Contato -->
+        <div class="bg-[#dbeafe] rounded-xl p-6 mt-10">
+          <h3 class="font-bold text-[#0f172a] mb-2">
+            <i class="bi bi-envelope text-[#1e40af] mr-2"></i>Contato
+          </h3>
+          <p class="text-gray-600 mb-1">
+            Dúvidas sobre estes Termos de Uso:
+          </p>
+          <p class="text-gray-600">
+            <strong>E-mail:</strong> <a href="mailto:contato@jmfcontabilidade.com.br" class="text-[#1e40af]">contato@jmfcontabilidade.com.br</a><br />
+            <strong>Telefone:</strong> <a href="tel:+554733265123" class="text-[#1e40af]">(47) 3326-5123</a><br />
+            <strong>Endereço:</strong> Rua Rodolfo Freygang, 15, Sala 506, Centro, Blumenau/SC — CEP 89010-060
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
