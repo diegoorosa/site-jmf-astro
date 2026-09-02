@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => data.pubDate <= new Date())).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+// City landing pages
+const cityPages = [
+  { label: 'Blumenau', href: '/contabilidade-em-blumenau' },
+  { label: 'Gaspar', href: '/contabilidade-em-gaspar' },
+  { label: 'Indaial', href: '/contabilidade-em-indaial' },
+  { label: 'Pomerode', href: '/contabilidade-em-pomerode' },
+  { label: 'Timbó', href: '/contabilidade-em-timbo' },
+  { label: 'Itajaí', href: '/contabilidade-em-itajai' },
+  { label: 'Balneário Camboriú', href: '/contabilidade-em-balneario-camboriu' },
+  { label: 'Florianópolis', href: '/contabilidade-em-florianopolis' },
+  { label: 'Bombinhas', href: '/contabilidade-em-bombinhas' },
+  { label: 'Bombas', href: '/contabilidade-em-bombas' },
+  { label: 'Porto Belo', href: '/contabilidade-em-porto-belo' },
+  { label: 'Santa Catarina (todo o estado)', href: '/contabilidade-para-empresas' },
+];
+
+// Main solutions/services
+const solutions = [
+  { label: 'Abertura de Empresa', href: '/abertura-de-empresa' },
+  { label: 'Gestão Contábil', href: '/gestao-contabil' },
+  { label: 'Gestão Fiscal e Tributária', href: '/gestao-fiscal-e-tributaria' },
+  { label: 'Gestão de Pessoal', href: '/gestao-pessoal' },
+  { label: 'Consultoria e Planejamento Tributário', href: '/consultoria-e-planejamento-tributario' },
+  { label: 'Migração MEI para LTDA', href: '/migrar-de-mei-para-ltda' },
+  { label: 'Retirada de Sócios e Dividendos', href: '/retirada-de-socios' },
+  { label: 'Contabilidade por Segmento', href: '/segmentos' },
+  { label: 'Reforma Tributária 2026', href: '/reforma-tributaria' },
+  { label: 'Declaração de Imposto de Renda', href: '/imposto-de-renda' },
+];
+
+// Tools
+const tools = [
+  { label: 'Calculadora do Fator R', href: '/calculadora-fator-r' },
+  { label: 'Simulador de Regime Tributário', href: '/simulador-regime-tributario' },
+  { label: 'Calendário Fiscal 2026', href: '/calendario-fiscal-2026' },
+];
+
+// Institutional
+const institutional = [
+  { label: 'Sobre a JMF Contabilidade', href: '/sobre' },
+  { label: 'Segurança dos Dados e LGPD', href: '/seguranca-dos-dados' },
+  { label: 'Fale Conosco', href: '/fale-conosco' },
+  { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
+  { label: 'Política de Privacidade', href: '/politica-de-privacidade' },
+  { label: 'Diego Rosa (CRC SC-035810/O)', href: '/autor/diego-rosa' },
+  { label: 'Fabrício Rosa', href: '/autor/fabricio-rosa' },
+];
+
+const breadcrumb = [
+  { label: 'Início', href: '/' },
+  { label: 'Mapa do Site', href: '/mapa-do-site' },
+];
+
+const canonical = 'https://www.jmfcontabilidade.com.br/mapa-do-site';
+const title = 'Mapa do Site | JMF Contabilidade';
+const description = 'Navegue por todas as páginas, soluções contábeis, ferramentas, municípios atendidos e artigos da JMF Contabilidade.';
+
+const sitemapSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "SiteNavigationElement",
+  "name": "Mapa do Site JMF Contabilidade",
+  "url": "https://www.jmfcontabilidade.com.br/mapa-do-site",
+  "description": "Mapa completo de navegação do site da JMF Contabilidade"
+});
+---
+
+<Layout
+  title={title}
+  description={description}
+  canonical={canonical}
+  schema={[sitemapSchema]}
+  heroInterno={true}
+>
+  <script type="application/ld+json" set:html={sitemapSchema} />
+
+  <HeroInterno
+    title="Mapa do Site"
+    subtitle="Encontre rapidamente qualquer página, serviço, ferramenta ou artigo do site da JMF Contabilidade."
+    breadcrumb={breadcrumb}
+  />
+
+  <main class="container mx-auto px-4 py-16 md:py-24">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+
+      <!-- Soluções e Serviços -->
+      <section class="col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-2" data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-grid-3x3-gap-fill text-cyan-500 mr-2"></i>Soluções e Serviços
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
+          {solutions.map(item => (
+            <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
+                <i class="bi bi-chevron-right text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Atendimento Regional (Cidades) -->
+      <section data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-geo-alt-fill text-cyan-500 mr-2"></i>Atendimento Regional
+        </h2>
+        <div class="grid grid-cols-1 gap-3 mt-4">
+          {cityPages.map(item => (
+            <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
+                <i class="bi bi-building text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Ferramentas e Simuladores -->
+      <section data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-tools text-cyan-500 mr-2"></i>Ferramentas e Simuladores
+        </h2>
+        <div class="grid grid-cols-1 gap-3 mt-4">
+          {tools.map(item => (
+            <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
+                <i class="bi bi-calculator text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Institucional e Governança -->
+      <section data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-shield-lock-fill text-cyan-500 mr-2"></i>Institucional e Governança
+        </h2>
+        <div class="grid grid-cols-1 gap-3 mt-4">
+          {institutional.map(item => (
+            <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
+                <i class="bi bi-file-earmark-text text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Blog e Artigos -->
+      <section class="col-span-1 md:col-span-2 lg:col-span-3 xl:col-span-4" data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-journal-text text-cyan-500 mr-2"></i>Blog e Artigos ({posts.length})
+        </h2>
+        <a href="/blog" class="inline-flex items-center gap-2 text-cyan-600 hover:text-cyan-700 font-medium mb-6 transition-colors">
+          <i class="bi bi-arrow-right-circle"></i> Ver todos os artigos no Blog
+        </a>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {posts.map(post => (
+            <a href={`/blog/${post.id}`} class="group flex items-start gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center flex-shrink-0 group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors mt-0.5">
+                <i class="bi bi-journal-text text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors line-clamp-2">{post.data.title}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+    </div>
+  </main>
+</Layout>
+
+<style>
+  /* Ensure the layout styling applies to this page */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  @media (max-width: 640px) {
+    .col-span-1 {
+      grid-column: span 1;
+    }
+    .md\:col-span-2 {
+      grid-column: span 1;
+    }
+    .lg\:col-span-2 {
+      grid-column: span 1;
+    }
+    .xl\:col-span-2 {
+      grid-column: span 1;
+    }
+    .lg\:col-span-3 {
+      grid-column: span 1;
+    }
+    .xl\:col-span-4 {
+      grid-column: span 1;
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1023px) {
+    .md\:col-span-2 {
+      grid-column: span 2;
+    }
+    .xl\:col-span-2 {
+      grid-column: span 2;
+    }
+    .lg\:col-span-3 {
+      grid-column: span 2;
+    }
+    .xl\:col-span-4 {
+      grid-column: span 2;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1279px) {
+    .lg\:col-span-2 {
+      grid-column: span 2;
+    }
+    .lg\:col-span-3 {
+      grid-column: span 3;
+    }
+    .xl\:col-span-4 {
+      grid-column: span 3;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .xl\:col-span-2 {
+      grid-column: span 2;
+    }
+    .xl\:col-span-4 {
+      grid-column: span 4;
+    }
+  }
+</style>
