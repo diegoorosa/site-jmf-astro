@@ -231,110 +231,187 @@ const updatedDate = 'Atualizado em 03/09/2026';
   heroInterno={heroData}
   bodyClass="pp3"
 >
-  <div class="updated-bar">
-    <span class="updated-label">{updatedDate}</span>
+  <!-- Atualizado em -->
+  <div class="bg-white border-b border-gray-100">
+    <div class="container mx-auto px-4 py-2 text-right">
+      <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>{updatedDate}</span>
+    </div>
   </div>
 
   <!-- SEÇÃO 1: POR QUE A CONSTRUÇÃO CIVIL EXIGE UM CONTADOR ESPECIALIZADO? -->
-  <section class="section section-white" aria-labelledby="pilares">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="pilares" class="section-title">Por que a Construção Civil Exige um Contador Especializado?</h2>
-        <p class="section-lead">A construção civil possui particularidades fiscais que não existem em nenhum outro setor da economia. Uma contabilidade genérica trata o negócio como uma prestadora de serviços comum, gerando pagamento indevido de tributos, retenções incorretas e passivos trabalhistas.</p>
+  <section class="bg-white" aria-labelledby="pilares">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="pilares" class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">
+          Por que a Construção Civil Exige um<br/>
+          <span class="pp3-grad">Contador Especializado?</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed max-w-3xl mx-auto">
+          A construção civil possui particularidades fiscais que não existem em nenhum outro setor da economia. Uma contabilidade genérica trata o negócio como uma prestadora de serviços comum, gerando pagamento indevido de tributos, retenções incorretas e passivos trabalhistas.
+        </p>
       </header>
-      <p class="section-intro">Na JMF Contabilidade, estruturamos a sua operação em cinco pilares decisivos:</p>
+      <p class="text-lg text-slate-600 mb-10 leading-relaxed max-w-3xl mx-auto text-center">
+        Na JMF Contabilidade, estruturamos a sua operação em cinco pilares decisivos:
+      </p>
 
-      <div class="pillars-grid">
-        <article class="pillar-card">
-          <div class="pillar-number">1</div>
-          <h3 class="pillar-title">Regime Especial de Tributação (RET) a 4%</h3>
-          <p class="pillar-text">Para incorporações com Patrimônio de Afetação, unificamos IRPJ, CSLL, PIS e COFINS em uma alíquota única de 4% sobre a receita mensal, segregando o patrimônio do empreendimento e protegendo o caixa da construtora.</p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="card-custom">
+          <div class="pillar-number mb-4 text-4xl font-bold text-cyan-500">1</div>
+          <h3 class="pillar-title font-bold text-xl text-slate-900 mb-3">Regime Especial de Tributação (RET) a 4%</h3>
+          <p class="pillar-text text-slate-600 leading-relaxed">Para incorporações com Patrimônio de Afetação, unificamos IRPJ, CSLL, PIS e COFINS em uma alíquota única de 4% sobre a receita mensal, segregando o patrimônio do empreendimento e protegendo o caixa da construtora.</p>
         </article>
-        <article class="pillar-card">
-          <div class="pillar-number">2</div>
-          <h3 class="pillar-title">Desoneração da Folha (CPRB a 4,5%)</h3>
-          <p class="pillar-text">Avaliamos estrategicamente a opção pela Contribuição Previdenciária sobre a Receita Bruta (4,5%) em substituição aos 20% de INSS patronal sobre a folha de salários, gerando economia expressiva para empresas intensivas em mão de obra.</p>
+        <article class="card-custom">
+          <div class="pillar-number mb-4 text-4xl font-bold text-cyan-500">2</div>
+          <h3 class="pillar-title font-bold text-xl text-slate-900 mb-3">Desoneração da Folha (CPRB a 4,5%)</h3>
+          <p class="pillar-text text-slate-600 leading-relaxed">Avaliamos estrategicamente a opção pela Contribuição Previdenciária sobre a Receita Bruta (4,5%) em substituição aos 20% de INSS patronal sobre a folha de salários, gerando economia expressiva para empresas intensivas em mão de obra.</p>
         </article>
-        <article class="pillar-card">
-          <div class="pillar-number">3</div>
-          <h3 class="pillar-title">Retenções Corretas de INSS na Fonte (3,5% vs 11%)</h3>
-          <p class="pillar-text">Segurança total na emissão e no recebimento de notas fiscais de serviços com cessão de mão de obra. Evitamos bitributação no Anexo IV do Simples Nacional e prevenimos retenções indevidas em subempreitadas.</p>
+        <article class="card-custom">
+          <div class="pillar-number mb-4 text-4xl font-bold text-cyan-500">3</div>
+          <h3 class="pillar-title font-bold text-xl text-slate-900 mb-3">Retenções Corretas de INSS na Fonte (3,5% vs 11%)</h3>
+          <p class="pillar-text text-slate-600 leading-relaxed">Segurança total na emissão e no recebimento de notas fiscais de serviços com cessão de mão de obra. Evitamos bitributação no Anexo IV do Simples Nacional e prevenimos retenções indevidas em subempreitadas.</p>
         </article>
-        <article class="pillar-card">
-          <div class="pillar-number">4</div>
-          <h3 class="pillar-title">Gestão de Custos por Empreendimento</h3>
-          <p class="pillar-text">Cada canteiro de obra é tratado como uma unidade contábil individual. Acompanhe despesas com materiais, mão de obra, subcontratados e equipamentos em tempo real para apurar o lucro líquido real de cada projeto antes de precificar o próximo.</p>
+        <article class="card-custom">
+          <div class="pillar-number mb-4 text-4xl font-bold text-cyan-500">4</div>
+          <h3 class="pillar-title font-bold text-xl text-slate-900 mb-3">Gestão de Custos por Empreendimento</h3>
+          <p class="pillar-text text-slate-600 leading-relaxed">Cada canteiro de obra é tratado como uma unidade contábil individual. Acompanhe despesas com materiais, mão de obra, subcontratados e equipamentos em tempo real para apurar o lucro líquido real de cada projeto antes de precificar o próximo.</p>
         </article>
-        <article class="pillar-card">
-          <div class="pillar-number">5</div>
-          <h3 class="pillar-title">Gestão Municipal do ISS da Obra</h3>
-          <p class="pillar-text">O ISS na construção civil é devido no município onde o serviço é executado (alíquota de 3% em Blumenau, variando entre 2% e 5% no Vale do Itajaí e Litoral). Coordenamos os cadastros municipais avulsos para que sua construtora opere em qualquer cidade sem travar certidões.</p>
+        <article class="card-custom">
+          <div class="pillar-number mb-4 text-4xl font-bold text-cyan-500">5</div>
+          <h3 class="pillar-title font-bold text-xl text-slate-900 mb-3">Gestão Municipal do ISS da Obra</h3>
+          <p class="pillar-text text-slate-600 leading-relaxed">O ISS na construção civil é devido no município onde o serviço é executado (alíquota de 3% em Blumenau, variando entre 2% e 5% no Vale do Itajaí e Litoral). Coordenamos os cadastros municipais avulsos para que sua construtora opere em qualquer cidade sem travar certidões.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- SEÇÃO 2: QUEM ATENDEMOS -->
-  <section class="section section-slate" aria-labelledby="quem-atendemos">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="quem-atendemos" class="section-title">Quem Atendemos</h2>
-        <p class="section-lead">Atuamos com foco em empresas do setor imobiliário e de obras que buscam estruturação contábil e tributária de alto nível.</p>
+  <section class="bg-[#f8fafc]" aria-labelledby="quem-atendemos">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="quem-atendemos" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Quem<br/>
+          <span class="pp3-grad">Atendemos</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Atuamos com foco em empresas do setor imobiliário e de obras que buscam estruturação contábil e tributária de alto nível.
+        </p>
       </header>
-      <ul class="audience-list">
-        <li>Construtoras e Empreiteiras (Obras residenciais verticais e horizontais, comerciais e industriais)</li>
-        <li>Incorporadoras e Loteadoras (Planejamento de SPE, SCP e Patrimônio de Afetação)</li>
-        <li>Empresas de Terraplanagem, Infraestrutura e Pavimentação</li>
-        <li>Subempreiteiras Especializadas (Estruturas metálicas, instalações hidrossanitárias, elétricas e pré-moldados)</li>
+      <ul class="space-y-4 text-lg text-slate-600">
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Construtoras e Empreiteiras</strong> (Obras residenciais verticais e horizontais, comerciais e industriais)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Incorporadoras e Loteadoras</strong> (Planejamento de SPE, SCP e Patrimônio de Afetação)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Empresas de Terraplanagem, Infraestrutura e Pavimentação</strong></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Subempreiteiras Especializadas</strong> (Estruturas metálicas, instalações hidrossanitárias, elétricas e pré-moldados)</span>
+        </li>
       </ul>
     </div>
   </section>
 
   <!-- SEÇÃO 3: SERVIÇOS -->
-  <section id="servicos" class="section section-white" aria-labelledby="servicos">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="servicos" class="section-title">Nossos Serviços para o Setor Imobiliário e de Obras</h2>
-        <p class="section-lead">Ciclo completo de assessoria contábil, fiscal e trabalhista para construtoras e incorporadoras.</p>
+  <section id="servicos" class="bg-white" aria-labelledby="servicos">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="servicos" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Nossos Serviços para o<br/>
+          <span class="pp3-grad">Setor Imobiliário e de Obras</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Ciclo completo de assessoria contábil, fiscal e trabalhista para construtoras e incorporadoras.
+        </p>
       </header>
-      <ul class="services-list">
-        <li>Abertura, Planejamento e Constituição de SPEs (Sociedades de Propósito Específico) e SCPs</li>
-        <li>Registro e Adesão ao Regime Especial de Tributação (RET) perante a Receita Federal</li>
-        <li>Abertura de CNO (Cadastro Nacional de Obras) e encerramento via SERO para pessoas jurídicas</li>
-        <li>Escrituração Contábil Digital (ECD/ECF) com plano de contas setorizado por obra</li>
-        <li>Folha de pagamento integrada ao eSocial, e-CAC, SST (PGR, PCMSO, LTCAT) e emissão de guias de FGTS Digital</li>
-        <li>Emissão de DCTFWeb de Aferição de Obras e levantamento de Certidões Negativas de Débitos (CND) para averbação em cartório</li>
-        <li>Gestão Municipal do ISS da Obra</li>
-        <li>Planejamento Tributário: Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET</li>
+      <ul class="space-y-4 text-lg text-slate-600">
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span>Abertura, Planejamento e Constituição de <strong>SPEs (Sociedades de Propósito Específico) e SCPs</strong></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span>Registro e Adesão ao <strong>Regime Especial de Tributação (RET)</strong> perante a Receita Federal</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Abertura de CNO (Cadastro Nacional de Obras)</strong> e encerramento via SERO para pessoas jurídicas</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span>Escrituração Contábil Digital (ECD/ECF) com <strong>plano de contas setorizado por obra</strong></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span>Folha de pagamento integrada ao <strong>eSocial, e-CAC, SST (PGR, PCMSO, LTCAT)</strong> e emissão de guias de FGTS Digital</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span>Emissão de <strong>DCTFWeb de Aferição de Obras</strong> e levantamento de Certidões Negativas de Débitos (CND) para averbação em cartório</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Gestão Municipal do ISS da Obra</strong></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="text-cyan-500 font-bold mt-1">•</span>
+          <span><strong>Planejamento Tributário:</strong> Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET</span>
+        </li>
       </ul>
     </div>
   </section>
 
   <!-- SEÇÃO 4: DIFERENCIAIS -->
-  <section class="section section-slate" aria-labelledby="diferenciais">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="diferenciais" class="section-title">Diferenciais da JMF Contabilidade</h2>
+  <section class="bg-[#f8fafc]" aria-labelledby="diferenciais">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="diferenciais" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Diferenciais da<br/>
+          <span class="pp3-grad">JMF Contabilidade</span>
+        </h2>
       </header>
-      <ul class="differentials-list">
-        <li>
-          <strong>Tradição desde 1989 no Vale do Itajaí:</strong> mais de 35 anos de vivência no mercado corporativo catarinense.
+      <ul class="space-y-6 text-lg text-slate-600">
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          </div>
+          <div>
+            <strong class="text-slate-900">Tradição desde 1989 no Vale do Itajaí:</strong> mais de 35 anos de vivência no mercado corporativo catarinense.
+          </div>
         </li>
-        <li>
-          <strong>Atendimento direto e técnico:</strong> contato descomplicado com contadores que entendem a realidade de canteiro de obras e lançamentos fiscais.
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+          </div>
+          <div>
+            <strong class="text-slate-900">Atendimento direto e técnico:</strong> contato descomplicado com contadores que entendem a realidade de canteiro de obras e lançamentos fiscais.
+          </div>
         </li>
-        <li>
-          <strong>Inteligência Tributária:</strong> revisão contínua entre Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET para garantir a menor carga tributária anual.
+        <li class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-full bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+          </div>
+          <div>
+            <strong class="text-slate-900">Inteligência Tributária:</strong> revisão contínua entre Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET para garantir a menor carga tributária anual.
+          </div>
         </li>
       </ul>
     </div>
   </section>
 
   <!-- SEÇÃO 5: FAQ -->
-  <section class="section section-white" aria-labelledby="faq">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="faq" class="section-title">Perguntas Frequentes</h2>
+  <section class="bg-white" aria-labelledby="faq">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="faq" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Perguntas<br/>
+          <span class="pp3-grad">Frequentes</span>
+        </h2>
       </header>
       <script type="application/ld+json" set:html={JSON.stringify(faqSchema, null, 2)} />
       <div class="faq-accordion">
@@ -370,13 +447,18 @@ const updatedDate = 'Atualizado em 03/09/2026';
   </section>
 
   <!-- CTA FINAL -->
-  <section class="section section-dark" aria-labelledby="cta-final">
-    <div class="container">
-      <header class="section-header section-header-dark">
-        <h2 id="cta-final" class="section-title">Garanta a lucratividade e o cumprimento fiscal da sua construtora</h2>
-        <p class="section-lead">Agende uma conversa técnica com a equipe da JMF Contabilidade e avalie como podemos otimizar seus tributos e centros de custo.</p>
+  <section class="bg-[#0f172a]" aria-labelledby="cta-final">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="cta-final" class="text-3xl md:text-4xl font-bold text-white mb-4">
+          Garanta a lucratividade e o cumprimento fiscal<br/>
+          <span class="pp3-grad">da sua construtora</span>
+        </h2>
+        <p class="text-lg text-slate-300 leading-relaxed">
+          Agende uma conversa técnica com a equipe da JMF Contabilidade e avalie como podemos otimizar seus tributos e centros de custo.
+        </p>
       </header>
-      <div class="cta-buttons">
+      <div class="cta-buttons flex justify-center">
         <a
           href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20contabilidade%20da%20minha%20construtora."
           class="btn btn-primary"
@@ -390,11 +472,16 @@ const updatedDate = 'Atualizado em 03/09/2026';
   </section>
 
   <!-- CONTATO -->
-  <section class="section section-white" aria-labelledby="contato">
-    <div class="container">
-      <header class="section-header">
-        <h2 id="contato" class="section-title">Fale Conosco</h2>
-        <p class="section-lead">Preencha o formulário ou chame no WhatsApp. Retornamos em até 4 horas úteis.</p>
+  <section class="bg-white" aria-labelledby="contato">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <header class="section-header text-center mb-12">
+        <h2 id="contato" class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+          Fale<br/>
+          <span class="pp3-grad">Conosco</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Preencha o formulário ou chame no WhatsApp. Retornamos em até 4 horas úteis.
+        </p>
       </header>
       <div class="contact-grid">
         <ContactForm />
