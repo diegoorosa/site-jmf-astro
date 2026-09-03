@@ -1,6 +1,6 @@
 ---
 title: "eSocial 2026: Mudanças, Novos Eventos e Como Evitar Multas"
-description: "O eSocial S-1.3 está em vigor para todos os grupos. Entenda as mudanças da Nota Técnica 06/2026, os novos campos obrigatórios, o fim da DIRF e o que sua..."
+description: "eSocial S-1.3 vigente para todos os grupos. Nota Técnica 06/2026: novos campos S-1200/S-2190/S-2299/S-2500, fim da DIRF, certificado CA Sectigo."
 pubDate: 2026-05-28
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-esocial-2026.jpg"

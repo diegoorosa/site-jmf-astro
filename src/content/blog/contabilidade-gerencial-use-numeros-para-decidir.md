@@ -1,6 +1,6 @@
 ---
 title: "Contabilidade Gerencial: Use Números para Tomar Decisões"
-description: "A contabilidade fiscal serve ao Fisco. A contabilidade gerencial serve a você. Entenda como usar DRE, fluxo de caixa e indicadores para tomar decisões..."
+description: "Contabilidade fiscal serve ao Fisco; gerencial serve ao gestor. Como usar DRE, fluxo de caixa e indicadores (margem, CAC, ponto de equilíbrio) para decidir."
 pubDate: 2026-02-04
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-contabilidade-gerencial.jpg"

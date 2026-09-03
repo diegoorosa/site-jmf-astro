@@ -1,6 +1,6 @@
 ---
 title: "Lei 15.377/2026: Novas Regras de Saúde na CLT 2026"
-description: "Lei nº 15.377/2026 altera a CLT e obriga empresas a informar campanhas de vacinação, conscientização sobre HPV/câncer e direito à ausência remunerada..."
+description: "Lei nº 15.377/2026 altera a CLT: novas obrigações de saúde, vacinação, conscientização HPV/câncer e direito à ausência remunerada para empregados."
 pubDate: 2026-07-07
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-lei-15377-vacinacao.jpg"

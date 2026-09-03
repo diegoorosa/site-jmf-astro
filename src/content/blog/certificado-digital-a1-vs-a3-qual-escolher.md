@@ -1,6 +1,6 @@
 ---
 title: "Certificado A1 vs A3: Qual Escolher para Sua Empresa?"
-description: "Certificado digital é obrigatório para muitas empresas. Entenda a diferença entre A1 e A3, qual é mais vantajoso para o seu caso e como adquirir com..."
+description: "Certificado digital é obrigatório para muitas empresas. Entenda a diferença entre A1 e A3, qual é mais vantajoso para o seu caso e como adquirir com autoridade ICP-Brasil."
 pubDate: 2026-06-17
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-certificado-digital-a1-a3.jpg"

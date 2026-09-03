@@ -1,6 +1,6 @@
 ---
 title: "Reforma Tributária 2026: O Que Muda para Sua Empresa Agora"
-description: "Entenda o cronograma de transição, o que muda em 2026 para cada regime tributário e qual é a decisão crítica que empresas do Simples Nacional precisam..."
+description: "Entenda o cronograma de transição, o que muda em 2026 para cada regime tributário e qual é a decisão crítica que empresas do Simples Nacional precisam definir agora."
 pubDate: 2026-06-12
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-reforma-tributaria-2026.jpg"

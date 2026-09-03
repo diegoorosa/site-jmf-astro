@@ -11,18 +11,18 @@ Pousadas, chalés, albergues e hotéis boutique no litoral de Santa Catarina tê
 
 ## O Perfil Tributário de Pousadas e Hospedagem
 
-Estabelecimentos de hospedagem (pousadas, hotéis, chalés, resorts) são tributados como **comércio** no Simples Nacional — **Anexo I** — com alíquota inicial de **4%** sobre o faturamento.
+Estabelecimentos de hospedagem (pousadas, hotéis, chalés, resorts) são tributados como **prestação de serviços** no Simples Nacional — **Anexo III** — com alíquota inicial de **6%** sobre o faturamento, conforme **art. 18, § 5º-B da LC 123/2006**.
 
-A hospedagem é uma atividade de comércio de serviços e não de serviços puros, o que coloca a maioria das pousadas no Anexo I — diferente de serviços de turismo receptivo ou agências, que podem ter enquadramento diferente dependendo do CNAE.
+A hospedagem é uma atividade de prestação de serviços de turismo e não de comércio, o que coloca as pousadas no Anexo III — diferente de serviços de turismo receptivo ou agências, que podem ter enquadramento diferente dependendo do CNAE.
 
-**Tabela resumida Anexo I (hospedagem):**
+**Tabela resumida Anexo III (hospedagem — prestação de serviços):**
 
 | Faixa de Faturamento (12 meses) | Alíquota | Dedução |
 |---|---|---|
-| Até R$ 180.000 | 4,00% | — |
-| De R$ 180.001 a R$ 360.000 | 7,30% | R$ 5.940 |
-| De R$ 360.001 a R$ 720.000 | 9,50% | R$ 13.860 |
-| De R$ 720.001 a R$ 1.800.000 | 10,70% | R$ 22.500 |
+| Até R$ 180.000 | 6,00% | — |
+| De R$ 180.001 a R$ 360.000 | 11,20% | R$ 9.360 |
+| De R$ 360.001 a R$ 720.000 | 13,50% | R$ 21.960 |
+| De R$ 720.001 a R$ 1.800.000 | 16,00% | R$ 39.960 |
 
 ## ISS para Hospedagem no Litoral de SC
 

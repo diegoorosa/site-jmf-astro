@@ -1,6 +1,6 @@
 ---
 title: "Como Regularizar Empresa com Débitos na Receita Federal"
-description: "Dívida tributária não precisa ser o fim. Entenda como consultar débitos, quais programas de parcelamento existem, como negociar e o que fazer para obter..."
+description: "Como consultar débitos no e-CAC e PGFN, parcelar em até 60 meses, usar transação tributária (até 65% de desconto) e recuperar a certidão negativa."
 pubDate: 2026-01-08
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-regularizar-debitos-receita-2.jpg"
