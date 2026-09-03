@@ -21,6 +21,7 @@
     "astro": "^6.4.6",
     "bootstrap-icons": "^1.13.1",
     "ecc-universal": "^2.0.0",
+    "rss-parser": "^3.13.0",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
