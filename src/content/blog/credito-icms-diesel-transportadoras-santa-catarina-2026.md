@@ -246,8 +246,8 @@ Vamos fazer a conta com os números da **sua frota**. Simulação gratuita, sem 
 ## Próximos Passos
 
 1. **Simule sua economia real:** [Simulador de Regime Tributário para Transportadoras](/simulador-regime-tributario)
-2. **Leia também:** [CT-e e MDF-e: Como Evitar Multas e Manter a Frota Regular](/blog/cte-mde-frete-transportadoras-como-evitar-multas)
-3. **Leia também:** [Simples Nacional vs Lucro Real para Transportadora: Qual Compensa?](/blog/simples-nacional-lucro-real-transportadora-frota-2026)
+2. **Leia também:** [CT-e e MDF-e: Como Evitar Multas e Manter a Frota Regular](/contabilidade-para-transportadoras)
+3. **Leia também:** [Simples Nacional vs Lucro Real para Transportadora: Qual Compensa?](/contabilidade-para-transportadoras)
 4. **Agende seu diagnóstico gratuito:** [WhatsApp (47) 3326-5123](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20gratuito%20para%20minha%20transportadora.)
 
 ---

@@ -168,8 +168,8 @@ Vamos estruturar a operação corretamente — do contrato à escrituração —
 ## Próximos Passos
 
 1. **Simule sua economia:** [Calculadora de Fator R e Exportação](/simulador-regime-tributario)
-2. **Leia também:** [Fator R no Simples Nacional: Como Empresas de TI Pagam 6% de Alíquota](/blog/fator-r-simples-nacional-contabilidade-ti)
-3. **Leia também:** [Lei do Bem para Empresas de Tecnologia: Deduzindo P&D no IRPJ/CSLL](/blog/lei-do-bem-empresas-tecnologia-inovacao)
+2. **Leia também:** [Fator R no Simples Nacional: Como Empresas de TI Pagam 6% de Alíquota](/blog/fator-r-simples-nacional-como-calcular)
+3. **Leia também:** [Lei do Bem para Empresas de Tecnologia: Deduzindo P&D no IRPJ/CSLL](/consultoria-e-planejamento-tributario)
 4. **Agende seu diagnóstico gratuito:** [WhatsApp (47) 3326-5123](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20gratuito%20para%20minha%20empresa%20de%20tecnologia.)
 
 ---
