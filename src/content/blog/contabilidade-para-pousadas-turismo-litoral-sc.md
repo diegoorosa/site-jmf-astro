@@ -105,7 +105,7 @@ A JMF Contabilidade atende pousadas e empreendimentos de hospedagem no litoral d
 ---
 
 **Fontes:**
-- Resolução CGSN 140/2018 — Simples Nacional Anexo I
+- Resolução CGSN 140/2018 — Simples Nacional Anexo III
 - Lei 11.771/2008 — Política Nacional de Turismo, CADASTUR
 - Lei 6.019/1974 — Contrato de trabalho temporário
 - RDC ANVISA 216/2004 — Boas práticas para serviços de alimentação
