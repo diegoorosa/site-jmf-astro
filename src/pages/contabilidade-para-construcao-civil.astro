@@ -1,0 +1,425 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import ContactForm from '../components/ContactForm.astro';
+import '../styles/pages-p2.css';
+
+const pageTitle = 'Contabilidade para Construção Civil em Blumenau e SC | JMF Contabilidade';
+const pageDescription = 'Especialistas em contabilidade para construtoras e incorporadoras em Blumenau. Economia com RET (4%), desoneração da folha, controle por obra e Simples Anexo IV.';
+const canonicalUrl = 'https://www.jmfcontabilidade.com.br/contabilidade-para-construcao-civil';
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AccountingService",
+      "@id": "https://www.jmfcontabilidade.com.br/contabilidade-para-construcao-civil#service",
+      "name": "Contabilidade Especializada para Construção Civil",
+      "description": "Gestão contábil, tributária e estratégica para construtoras, incorporadoras e empreiteiras. Planejamento com RET (4%), CPRB (4,5%), controle de custos por obra e gestão municipal do ISS.",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://www.jmfcontabilidade.com.br/#organization"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Blumenau",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Gaspar",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Indaial",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Timbó",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Itajaí",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Balneário Camboriú",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        },
+        {
+          "@type": "City",
+          "name": "Brusque",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "Santa Catarina",
+            "containedInPlace": {
+              "@type": "Country",
+              "name": "Brasil"
+            }
+          }
+        }
+      ],
+      "serviceType": [
+        "Abertura e Planejamento de SPEs e SCPs",
+        "Registro e Adesão ao Regime Especial de Tributação (RET)",
+        "Abertura de CNO e Encerramento via SERO",
+        "Escrituração Contábil Digital (ECD/ECF) por Obra",
+        "Folha de Pagamento e eSocial para Construção Civil",
+        "Emissão de CND de Obra para Averbação em Cartório",
+        "Gestão Municipal do ISS de Obra",
+        "Planejamento Tributário: Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET"
+      ],
+      "priceRange": "Sob Consulta",
+      "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20empresa%20de%20constru%C3%A7%C3%A3o%20civil%20e%20quero%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20com%20a%20JMF.",
+        "servicePhone": "+554733265123",
+        "availableLanguage": "pt-BR"
+      }
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.jmfcontabilidade.com.br/#localbusiness-blumenau",
+      "name": "JMF Contabilidade",
+      "description": "Escritório de contabilidade especializado em construção civil e incorporação imobiliária desde 1989.",
+      "url": "https://www.jmfcontabilidade.com.br/contabilidade-para-construcao-civil",
+      "telephone": "+554733265123",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Rua XV de Novembro, 123 - Sala 401",
+        "addressLocality": "Blumenau",
+        "addressRegion": "SC",
+        "postalCode": "89010-000",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -26.9194,
+        "longitude": -49.0661
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "priceRange": "Sob Consulta",
+      "currenciesAccepted": "BRL",
+      "paymentAccepted": "PIX, Boleto, Transferência",
+      "areaServed": "Blumenau, Gaspar, Indaial, Timbó, Itajaí, Balneário Camboriú, Brusque e região do Vale do Itajaí",
+      "sameAs": [
+        "https://www.linkedin.com/company/jmfcontabilidade",
+        "https://www.instagram.com/jmfcontabilidade"
+      ]
+    }
+  ]
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Construtora no Simples Nacional pode ser dispensada do INSS patronal?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Não. O setor de construção civil enquadrado no Anexo IV recolhe o INSS patronal (20%) separadamente fora da guia única do DAS, além da alíquota tributária das atividades. Por isso, o planejamento entre Simples e Lucro Presumido/Real precisa ser analisado periodicamente."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "O que é necessário para usufruir da alíquota do RET de 4%?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "É indispensável que a incorporação tenha o Patrimônio de Afetação averbado no Registro de Imóveis, inscrição da SPE no CNPJ e formalização da opção no portal e-CAC da Receita Federal."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vocês atendem a regularização de obras residenciais de pessoa física?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "O foco da nossa equipe contábil interna é estritamente corporativo (PJ). Para demandas de regularização de obras particulares e residenciais de pessoas físicas no SERO, conectamos o cliente a um profissional parceiro credenciado e especializado nesse atendimento."
+      }
+    }
+  ]
+};
+
+const heroData = {
+  tagline: 'Gestão Contábil, Tributária e Estratégica',
+  title: 'Contabilidade Especializada para <span class="pp3-grad">Construção Civil e Incorporação Imobiliária</span>',
+  subtitle: 'Estructure seus empreendimentos com máxima segurança jurídica, apuração precisa de centros de custos e planejamento tributário focado na redução legal de impostos (RET, CPRB e Anexo IV).',
+  breadcrumbs: [
+    { label: 'Início', href: '/' },
+    { label: 'Serviços', href: '/servicos' },
+    { label: 'Construção Civil', href: '/contabilidade-para-construcao-civil' }
+  ],
+  ctas: [
+    {
+      label: 'Solicitar Diagnóstico Tributário Gratuito',
+      href: 'https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20empresa%20de%20constru%C3%A7%C3%A3o%20civil%20e%20quero%20um%20diagn%C3%B3stico%20tribut%C3%A1rio%20com%20a%20JMF.',
+      variant: 'cta'
+    },
+    {
+      label: 'Ver Serviços para Construção Civil',
+      href: '#servicos',
+      variant: 'outline'
+    }
+  ],
+  subNotice: 'Atendimento especializado a pessoas jurídicas: construtoras, incorporadoras, empreiteiras e loteadoras em Blumenau e região.'
+};
+
+const updatedDate = 'Atualizado em 03/09/2026';
+---
+
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonical={canonicalUrl}
+  ogUrl={canonicalUrl}
+  schema={JSON.stringify(localBusinessSchema)}
+  heroInterno={heroData}
+  bodyClass="pp3"
+>
+  <div class="updated-bar">
+    <span class="updated-label">{updatedDate}</span>
+  </div>
+
+  <!-- SEÇÃO 1: POR QUE A CONSTRUÇÃO CIVIL EXIGE UM CONTADOR ESPECIALIZADO? -->
+  <section class="section section-white" aria-labelledby="pilares">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="pilares" class="section-title">Por que a Construção Civil Exige um Contador Especializado?</h2>
+        <p class="section-lead">A construção civil possui particularidades fiscais que não existem em nenhum outro setor da economia. Uma contabilidade genérica trata o negócio como uma prestadora de serviços comum, gerando pagamento indevido de tributos, retenções incorretas e passivos trabalhistas.</p>
+      </header>
+      <p class="section-intro">Na JMF Contabilidade, estruturamos a sua operação em cinco pilares decisivos:</p>
+
+      <div class="pillars-grid">
+        <article class="pillar-card">
+          <div class="pillar-number">1</div>
+          <h3 class="pillar-title">Regime Especial de Tributação (RET) a 4%</h3>
+          <p class="pillar-text">Para incorporações com Patrimônio de Afetação, unificamos IRPJ, CSLL, PIS e COFINS em uma alíquota única de 4% sobre a receita mensal, segregando o patrimônio do empreendimento e protegendo o caixa da construtora.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-number">2</div>
+          <h3 class="pillar-title">Desoneração da Folha (CPRB a 4,5%)</h3>
+          <p class="pillar-text">Avaliamos estrategicamente a opção pela Contribuição Previdenciária sobre a Receita Bruta (4,5%) em substituição aos 20% de INSS patronal sobre a folha de salários, gerando economia expressiva para empresas intensivas em mão de obra.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-number">3</div>
+          <h3 class="pillar-title">Retenções Corretas de INSS na Fonte (3,5% vs 11%)</h3>
+          <p class="pillar-text">Segurança total na emissão e no recebimento de notas fiscais de serviços com cessão de mão de obra. Evitamos bitributação no Anexo IV do Simples Nacional e prevenimos retenções indevidas em subempreitadas.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-number">4</div>
+          <h3 class="pillar-title">Gestão de Custos por Empreendimento</h3>
+          <p class="pillar-text">Cada canteiro de obra é tratado como uma unidade contábil individual. Acompanhe despesas com materiais, mão de obra, subcontratados e equipamentos em tempo real para apurar o lucro líquido real de cada projeto antes de precificar o próximo.</p>
+        </article>
+        <article class="pillar-card">
+          <div class="pillar-number">5</div>
+          <h3 class="pillar-title">Gestão Municipal do ISS da Obra</h3>
+          <p class="pillar-text">O ISS na construção civil é devido no município onde o serviço é executado (alíquota de 3% em Blumenau, variando entre 2% e 5% no Vale do Itajaí e Litoral). Coordenamos os cadastros municipais avulsos para que sua construtora opere em qualquer cidade sem travar certidões.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 2: QUEM ATENDEMOS -->
+  <section class="section section-slate" aria-labelledby="quem-atendemos">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="quem-atendemos" class="section-title">Quem Atendemos</h2>
+        <p class="section-lead">Atuamos com foco em empresas do setor imobiliário e de obras que buscam estruturação contábil e tributária de alto nível.</p>
+      </header>
+      <ul class="audience-list">
+        <li>Construtoras e Empreiteiras (Obras residenciais verticais e horizontais, comerciais e industriais)</li>
+        <li>Incorporadoras e Loteadoras (Planejamento de SPE, SCP e Patrimônio de Afetação)</li>
+        <li>Empresas de Terraplanagem, Infraestrutura e Pavimentação</li>
+        <li>Subempreiteiras Especializadas (Estruturas metálicas, instalações hidrossanitárias, elétricas e pré-moldados)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 3: SERVIÇOS -->
+  <section id="servicos" class="section section-white" aria-labelledby="servicos">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="servicos" class="section-title">Nossos Serviços para o Setor Imobiliário e de Obras</h2>
+        <p class="section-lead">Ciclo completo de assessoria contábil, fiscal e trabalhista para construtoras e incorporadoras.</p>
+      </header>
+      <ul class="services-list">
+        <li>Abertura, Planejamento e Constituição de SPEs (Sociedades de Propósito Específico) e SCPs</li>
+        <li>Registro e Adesão ao Regime Especial de Tributação (RET) perante a Receita Federal</li>
+        <li>Abertura de CNO (Cadastro Nacional de Obras) e encerramento via SERO para pessoas jurídicas</li>
+        <li>Escrituração Contábil Digital (ECD/ECF) com plano de contas setorizado por obra</li>
+        <li>Folha de pagamento integrada ao eSocial, e-CAC, SST (PGR, PCMSO, LTCAT) e emissão de guias de FGTS Digital</li>
+        <li>Emissão de DCTFWeb de Aferição de Obras e levantamento de Certidões Negativas de Débitos (CND) para averbação em cartório</li>
+        <li>Gestão Municipal do ISS da Obra</li>
+        <li>Planejamento Tributário: Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 4: DIFERENCIAIS -->
+  <section class="section section-slate" aria-labelledby="diferenciais">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="diferenciais" class="section-title">Diferenciais da JMF Contabilidade</h2>
+      </header>
+      <ul class="differentials-list">
+        <li>
+          <strong>Tradição desde 1989 no Vale do Itajaí:</strong> mais de 35 anos de vivência no mercado corporativo catarinense.
+        </li>
+        <li>
+          <strong>Atendimento direto e técnico:</strong> contato descomplicado com contadores que entendem a realidade de canteiro de obras e lançamentos fiscais.
+        </li>
+        <li>
+          <strong>Inteligência Tributária:</strong> revisão contínua entre Lucro Presumido, Lucro Real, Simples Nacional (Anexo IV) e RET para garantir a menor carga tributária anual.
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SEÇÃO 5: FAQ -->
+  <section class="section section-white" aria-labelledby="faq">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="faq" class="section-title">Perguntas Frequentes</h2>
+      </header>
+      <script type="application/ld+json" set:html={JSON.stringify(faqSchema, null, 2)} />
+      <div class="faq-accordion">
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>Construtora no Simples Nacional pode ser dispensada do INSS patronal?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="accordion-body">
+            <p>Não. O setor de construção civil enquadrado no Anexo IV recolhe o INSS patronal (20%) separadamente fora da guia única do DAS, além da alíquota tributária das atividades. Por isso, o planejamento entre Simples e Lucro Presumido/Real precisa ser analisado periodicamente.</p>
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>O que é necessário para usufruir da alíquota do RET de 4%?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="accordion-body">
+            <p>É indispensável que a incorporação tenha o Patrimônio de Afetação averbado no Registro de Imóveis, inscrição da SPE no CNPJ e formalização da opção no portal e-CAC da Receita Federal.</p>
+          </div>
+        </details>
+        <details class="accordion-item">
+          <summary class="accordion-summary">
+            <span>Vocês atendem a regularização de obras residenciais de pessoa física?</span>
+            <span class="accordion-icon" aria-hidden="true">+</span>
+          </summary>
+          <div class="accordion-body">
+            <p>O foco da nossa equipe contábil interna é estritamente corporativo (PJ). Para demandas de regularização de obras particulares e residenciais de pessoas físicas no SERO, conectamos o cliente a um profissional parceiro credenciado e especializado nesse atendimento.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="section section-dark" aria-labelledby="cta-final">
+    <div class="container">
+      <header class="section-header section-header-dark">
+        <h2 id="cta-final" class="section-title">Garanta a lucratividade e o cumprimento fiscal da sua construtora</h2>
+        <p class="section-lead">Agende uma conversa técnica com a equipe da JMF Contabilidade e avalie como podemos otimizar seus tributos e centros de custo.</p>
+      </header>
+      <div class="cta-buttons">
+        <a
+          href="https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20conversar%20sobre%20a%20contabilidade%20da%20minha%20construtora."
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Falar com o Especialista em Construção Civil
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section section-white" aria-labelledby="contato">
+    <div class="container">
+      <header class="section-header">
+        <h2 id="contato" class="section-title">Fale Conosco</h2>
+        <p class="section-lead">Preencha o formulário ou chame no WhatsApp. Retornamos em até 4 horas úteis.</p>
+      </header>
+      <div class="contact-grid">
+        <ContactForm />
+        <aside class="contact-info">
+          <h3>Outros Canais</h3>
+          <ul>
+            <li>
+              <a href="https://wa.me/554733265123" target="_blank" rel="noopener noreferrer">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <span>WhatsApp: (47) 3326-5123</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@jmfcontabilidade.com.br">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <span>E-mail: contato@jmfcontabilidade.com.br</span>
+              </a>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span>Rua XV de Novembro, 123 - Sala 401, Centro, Blumenau/SC - 89010-000</span>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+</Layout>
