@@ -541,7 +541,7 @@
     .jmf-cred-label {
       display: block;
       font-size: 0.8rem;
-      color: rgba(148,163,184,0.7);
+      color: rgba(51,65,85,0.85);
       margin-top: 0.2rem;
     }
     @keyframes jmfGlowPulse {
@@ -3463,6 +3463,34 @@
 @media (prefers-reduced-motion: reduce) {
   .jmf-path-card, .jmf-path-link { transition: none; }
   .jmf-path-card:hover { transform: none; }
+}
+
+/* Disable heavy infinite animations on mobile for performance (TBT reduction) */
+@media (max-width: 768px) {
+  .jmf-hero-p2-grad,
+  .jmf-h2-grad,
+  .jmf-local-title-grad,
+  .jmf-tools-title-grad,
+  .jmf-sol-title-grad,
+  .jmf-hd-beam,
+  .jmf-hd-bar,
+  .jmf-ia-wave .wave-path,
+  .jmf-ia-wave .wave-path:nth-child(2),
+  .jmf-ia-wave .wave-path:nth-child(3),
+  .jmf-ia-panel::before,
+  .jmf-ia-panel-aura,
+  .jmf-ia-dot,
+  .jmf-eyebrow::before,
+  .jmf-cred-item .num,
+  .jmf-hd-line-path,
+  .jmf-hd-line-dot,
+  .jmf-hero-ticker-track,
+  .jmf-sim-spark .sparkline polyline,
+  .jmf-sim-bar-row .bar-fill {
+    animation: none !important;
+  }
+  .jmf-hd-bar { animation: none !important; }
+  .jmf-hero-ticker-track { animation: none !important; }
 }
 
 

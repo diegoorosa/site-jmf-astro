@@ -502,16 +502,42 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
     <link rel="stylesheet" href="/bi/bootstrap-icons.min.css" />
   </noscript>
 
-  <!-- Google Tag Manager (deferred to avoid main-thread blocking) -->
-  <script defer data-cookie-tag>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7HGBD');</script>
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://cdn.jsdelivr.net https://images.unsplash.com https://images.pexels.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://stats.g.doubleclick.net https://www.googleadservices.com https://region1.google-analytics.com; frame-src https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self';" />
 
-  <!-- Google Ads Conversion Tag -->
-  <script async data-cookie-tag src="https://www.googletagmanager.com/gtag.js?id=AW-1021062139"></script>
+  <!-- Google Tag Manager (deferred via requestIdleCallback to avoid main-thread blocking) -->
   <script data-cookie-tag>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-1021062139');
+    (function() {
+      function loadGTM() {
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-T2Q7HGBD');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGTM, { timeout: 2000 });
+      } else {
+        setTimeout(loadGTM, 100);
+      }
+    })();
+  </script>
+
+  <!-- Google Ads Conversion Tag (deferred via requestIdleCallback) -->
+  <script data-cookie-tag>
+    (function() {
+      function loadGtag() {
+        const s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag.js?id=AW-1021062139';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-1021062139');
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGtag, { timeout: 2000 });
+      } else {
+        setTimeout(loadGtag, 100);
+      }
+    })();
   </script>
 
 </head>

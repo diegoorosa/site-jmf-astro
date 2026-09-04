@@ -1,5 +1,3 @@
-License: https://www.jmfcontabilidade.com.br/rsl.xml
-
 User-agent: *
 Allow: /
 
