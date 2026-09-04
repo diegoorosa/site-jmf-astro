@@ -77,10 +77,11 @@ Acesse com a sua conta **Gov.br** (nível Prata ou Ouro) ou com Certificado Digi
 
 O CNO é a porta de entrada; o **SERO** é o processo de saída. Concluída a obra (ou ao término de uma fase parcial), o titular acessa o SERO informando o número do CNO correspondente:
 
-[Início da Obra]                [Durante a Execução]               [Conclusão da Obra]
-│                                  │                                  │
-▼                                  ▼                                  ▼
-Inscrição no CNO  ──►  Apuração de Mão de Obra e NF-es  ──►  Aferição SERO + CND Final
+| Fase da Obra | Ação Obrigatória | Órgão / Sistema |
+| :--- | :--- | :--- |
+| **1. Início da Construção** | Abertura e vinculação do alvará no CNO | Receita Federal (e-CAC) |
+| **2. Durante a Execução** | Gestão de folha, notas fiscais e retenções de INSS | eSocial / EFD-Reinf |
+| **3. Conclusão / Habite-se** | Aferição indireta/direta no SERO e emissão da CND | SERO / DCTFWeb |
 
 
 1. **Aferição no SERO:** O sistema calcula a contribuição previdenciária devida (com base na folha real para empresas ou pela aferição indireta sobre o VAF/CUB).
