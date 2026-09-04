@@ -547,7 +547,9 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T2Q7HGBD" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <Header />
-  <slot />
+  <main id="main-content">
+    <slot />
+  </main>
   <Footer />
   <WhatsApp />
   <MobileCtaBar />
