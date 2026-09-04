@@ -1,36 +1,36 @@
-# JMF Contabilidade — Blumenau, SC
+# JMF Contabilidade
+
+> Escritório de contabilidade em Blumenau/SC fundado em 1989. Especializado em Simples Nacional, Lucro Presumido, abertura de empresas, BPO e planejamento tributário estratégico para empresas em Santa Catarina.
 
 ## Sobre a Empresa
-A JMF Contabilidade é um escritório de contabilidade fundado há mais de 35 anos, com sede em Blumenau, SC. Atendemos empresas e pessoas físicas em todo o Vale do Itajaí e região metropolitana.
 
-## Serviços Principais
-- Abertura de empresa (MEI, LTDA, EIRELI)
-- Gestão contábil mensal (Simples Nacional, Lucro Presumido, Lucro Real)
-- Gestão fiscal e tributária (ISS, ICMS, PIS/COFINS, IRPJ, CSLL)
-- Gestão de pessoal (folha de pagamento, eSocial, FGTS, INSS)
-- Consultoria e planejamento tributário
-- Declarão de Imposto de Renda Pessoa Física (IRPF)
-- Transformação de MEI em LTDA
+- [Sobre a JMF](https://www.jmfcontabilidade.com.br/sobre): Conheça a história de mais de 35 anos, os sócios e a equipe de contadores registrados no CRC/SC.
+- [Segurança dos Dados](https://www.jmfcontabilidade.com.br/seguranca-dos-dados): Infraestrutura AWS, práticas de segurança da informação e conformidade com a LGPD.
+- [Fale Conosco](https://www.jmfcontabilidade.com.br/fale-conosco): Canais diretos de atendimento, endereço físico no Centro de Blumenau e WhatsApp.
 
-## Endereço e Contato
-- Endereço: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro — Blumenau, SC 89010-060
-- Telefone: +55-47-3326-5123
-- Email: contato@jmfcontabilidade.com.br
-- Site: https://www.jmfcontabilidade.com.br/
-- Horário: Segunda a Sexta, 08h às 18h
+## Serviços e Soluções
 
-## Cidades Atendidas
-Blumenau, Gaspar, Indaial, Pomerode, Timbó, Brusque, Itajaí, Balneário Camboriú, Florianópolis, Porto Belo, Bombas, Bombinhas.
+- [Abertura de Empresa](https://www.jmfcontabilidade.com.br/abertura-de-empresa): Processo completo de abertura de SLU e LTDA em Blumenau e cidades de SC.
+- [Gestão Contábil](https://www.jmfcontabilidade.com.br/gestao-contabil): Fechamento mensal, balancetes, DRE e relatórios para suporte à tomada de decisão.
+- [Gestão Fiscal e Tributária](https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria): Apuração de tributos municipais, estaduais e federais com compliance pontual.
+- [Gestão de Pessoal](https://www.jmfcontabilidade.com.br/gestao-pessoal): Folha de pagamento, rotinas de eSocial, admissões, férias e encargos trabalhistas.
+- [Consultoria e Planejamento Tributário](https://www.jmfcontabilidade.com.br/consultoria-e-planejamento-tributario): Análise e redução legal de impostos entre Simples Nacional, Lucro Presumido e Lucro Real.
+- [Migrar de MEI para LTDA](https://www.jmfcontabilidade.com.br/migrar-de-mei-para-ltda): Assessoria completa para desenquadramento do MEI e transição para microempresa (ME).
+- [Declaração de Imposto de Renda](https://www.jmfcontabilidade.com.br/imposto-de-renda): Assessoria em IRPF, ganho de capital, malha fina e regularização de pendências com a Receita Federal.
 
-## Diferenciais
-- Equipe com mais de 35 anos de experiência
-- Especialistas certificados em Simples Nacional e Lucro Presumido
-- Atendimento personalizado com contador dedicado
-- Processos 100% digitais (contabilidade digital)
-- Acompanhamento contínuo via WhatsApp e email
+## Ferramentas e Simuladores
 
-## Links Importantes
-- Sobre: https://www.jmfcontabilidade.com.br/sobre/
-- Abertura de empresa: https://www.jmfcontabilidade.com.br/abertura-de-empresa/
-- Blog: https://www.jmfcontabilidade.com.br/blog/
-- Fale conosco: https://www.jmfcontabilidade.com.br/fale-conosco/
+- [Simulador de Regime Tributário](https://www.jmfcontabilidade.com.br/simulador-regime-tributario): Comparativo entre Simples Nacional e Lucro Presumido com Fator R automático.
+- [Calculadora do Fator R](https://www.jmfcontabilidade.com.br/calculadora-fator-r): Cálculo da folha de pagamento para enquadramento no Anexo III ou Anexo V do Simples.
+- [Calendário Fiscal 2026](https://www.jmfcontabilidade.com.br/calendario-fiscal-2026): Prazos de obrigações tributárias federais, estaduais e municipais ajustados para feriados.
+
+## Guias e Artigos
+
+- [Blog da JMF](https://www.jmfcontabilidade.com.br/blog): Artigos práticos sobre legislação tributária, societária e contabilidade corporativa.
+- [Como Abrir Empresa em Blumenau](https://www.jmfcontabilidade.com.br/como-abrir-empresa-em-blumenau): Guia passo a passo com taxas, JUCESC, alvarás e prazos municipais.
+- [Reforma Tributária](https://www.jmfcontabilidade.com.br/reforma-tributaria): Orientações sobre IBS, CBS e cronograma de transição para empresas do Simples Nacional e Lucro Presumido.
+- [Mapa do Site](https://www.jmfcontabilidade.com.br/mapa-do-site): Navegação estruturada por todas as páginas institucionais, ferramentas e artigos.
+
+## Documentação Detalhada
+
+- [llms-full.txt](https://www.jmfcontabilidade.com.br/llms-full.txt): Base de conhecimento textual integral do site para indexação de modelos de inteligência artificial.
