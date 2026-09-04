@@ -68,7 +68,7 @@ jobs:
         run: |
           aws s3 cp dist/sitemap.xml s3://${{ env.S3_BUCKET }}/sitemap.xml --cache-control "no-cache"
           aws s3 cp dist/llms.txt s3://${{ env.S3_BUCKET }}/llms.txt --cache-control "no-cache"
-          aws s3 cp dist/llms-full.txt s3://${{ env.S3_BUCKET }}/llms-full.txt --cache-control "no-cache"
+          aws s3 cp dist/robots.txt s3://${{ env.S3_BUCKET }}/robots.txt --cache-control "no-cache"
 
       - name: CloudFront Invalidation
         run: |
