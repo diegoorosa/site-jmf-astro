@@ -35,6 +35,20 @@ const solutions = [
   { label: 'Contabilidade por Segmento', href: '/segmentos' },
   { label: 'Reforma Tributária 2026', href: '/reforma-tributaria' },
   { label: 'Declaração de Imposto de Renda', href: '/imposto-de-renda' },
+  { label: 'Simples Nacional', href: '/simples-nacional' },
+  { label: 'Regimes Tributários', href: '/regimes-tributarios' },
+  { label: 'Como Abrir Empresa em Blumenau', href: '/como-abrir-empresa-em-blumenau' },
+];
+
+// Páginas de Segmentos
+const segmentosPages = [
+  { label: 'Contabilidade para Pessoa Física', href: '/contabilidade-para-pessoa-fisica' },
+  { label: 'Contabilidade para Construção Civil', href: '/contabilidade-para-construcao-civil' },
+  { label: 'Contabilidade para Indústria', href: '/contabilidade-para-industria' },
+  { label: 'Contabilidade para Clínicas Médicas', href: '/contabilidade-para-clinicas-medicas' },
+  { label: 'Contabilidade para Transportadoras', href: '/contabilidade-para-transportadoras' },
+  { label: 'Contabilidade para Importação (SC)', href: '/contabilidade-para-importacao-sc' },
+  { label: 'Contabilidade para Empresas de TI', href: '/contabilidade-para-empresas-de-ti' },
 ];
 
 // Tools
@@ -51,8 +65,10 @@ const institutional = [
   { label: 'Fale Conosco', href: '/fale-conosco' },
   { label: 'Trabalhe Conosco', href: '/trabalhe-conosco' },
   { label: 'Política de Privacidade', href: '/politica-de-privacidade' },
+  { label: 'Termos de Uso', href: '/termos-de-uso' },
   { label: 'Diego Rosa (CRC SC-035810/O)', href: '/autor/diego-rosa' },
-  { label: 'Fabrício Rosa', href: '/autor/fabricio-rosa' },
+  { label: 'Fabrício Rosa (CRC SC-029833/O)', href: '/autor/fabricio-rosa' },
+  { label: 'Joel Rosa (CRC SC-007091/O)', href: '/autor/joel-rosa' },
 ];
 
 const breadcrumb = [
@@ -135,6 +151,23 @@ const sitemapSchema = JSON.stringify({
             <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
               <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
                 <i class="bi bi-calculator text-xl"></i>
+              </div>
+              <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <!-- Segmentos de Atuação -->
+      <section data-reveal>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 pb-2 border-b-2 border-cyan-500 inline-block">
+          <i class="bi bi-building-gear text-cyan-500 mr-2"></i>Segmentos de Atuação
+        </h2>
+        <div class="grid grid-cols-1 gap-3 mt-4">
+          {segmentosPages.map(item => (
+            <a href={item.href} class="group flex items-center gap-3 p-4 bg-white border border-slate-200 rounded-xl hover:border-cyan-400 hover:shadow-lg hover:shadow-cyan-500/10 transition-all duration-300">
+              <div class="w-10 h-10 rounded-lg bg-cyan-50 flex items-center justify-center group-hover:bg-cyan-100 group-hover:text-cyan-600 transition-colors">
+                <i class="bi bi-industry text-xl"></i>
               </div>
               <span class="text-slate-700 font-medium group-hover:text-cyan-600 transition-colors">{item.label}</span>
             </a>
