@@ -1155,7 +1155,8 @@
       grid-template-columns: 1fr;
       gap: 1.35rem;
     }
-    @media (min-width: 768px) { .jmf-tools-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 640px) { .jmf-tools-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .jmf-tools-grid { grid-template-columns: repeat(4, 1fr); } }
 
     .jmf-tool-card {
       position: relative;
