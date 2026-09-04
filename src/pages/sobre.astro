@@ -42,12 +42,15 @@ const schema = [
     "@type": "Person",
     "@id": "https://www.jmfcontabilidade.com.br/sobre#diego-rosa",
     "name": "Diego Rosa",
-    "jobTitle": "Sócio-Administrador",
+    "jobTitle": "Sócio-Administrador e Head de TI",
     "image": "https://www.jmfcontabilidade.com.br/assets/images/team-diego.webp",
     "worksFor": { "@type": "AccountingService", "name": "JMF Contabilidade", "@id": "https://www.jmfcontabilidade.com.br/#organization" },
     "alumniOf": { "@type": "CollegeOrUniversity", "name": "FURB — Universidade Regional de Blumenau" },
-    "hasCredential": { "@type": "EducationalOccupationalCredential", "name": "CRC SC-035810/O" },
-    "description": "Sócio-Administrador da JMF Contabilidade. Bacharel em Ciências Contábeis pela FURB (2011). Na JMF desde 2006, lidera a transformação digital e uso de IA no escritório."
+    "hasCredential": [
+      { "@type": "EducationalOccupationalCredential", "name": "CRC SC-035810/O" },
+      { "@type": "EducationalOccupationalCredential", "name": "AWS Certified Cloud Practitioner" }
+    ],
+    "description": "Sócio-Administrador da JMF Contabilidade, na empresa desde 2006. Bacharel em Ciências Contábeis pela FURB (2010) e certificado AWS Cloud Practitioner. Lidera TI, automação e integrações de IA."
   }),
 ];
 ---
@@ -168,10 +171,10 @@ const schema = [
               loading="lazy" />
           </div>
           <h3 class="jmf-team-name">Diego Rosa</h3>
-          <p class="jmf-team-role">Sócio-Administrador</p>
+          <p class="jmf-team-role">Sócio-Administrador & TI</p>
           <p class="jmf-team-crc">CRC SC-035810/O</p>
           <p class="jmf-team-bio">
-            Na JMF desde 2006. Bacharel em Ciências Contábeis pela FURB (2011). Lidera a transformação digital do escritório com automação, inteligência artificial e sistemas modernos para entregar contabilidade ágil, consultiva e orientada a resultados.
+            Na JMF desde 2006. Bacharel em Ciências Contábeis pela FURB (2010) e certificado AWS Certified Cloud Practitioner. Lidera as operações e a infraestrutura tecnológica do escritório, integrando inteligência artificial, fluxos de automação (Python, n8n) e nuvem para garantir uma contabilidade ágil, segura e orientada a dados.
           </p>
         </article>
       </div>
