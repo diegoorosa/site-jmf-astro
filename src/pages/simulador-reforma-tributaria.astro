@@ -1,0 +1,923 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroInterno from '../components/HeroInterno.astro';
+import '../styles/pages-p2.css';
+
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20usei%20o%20Simulador%20de%20Reforma%20Tribut%C3%A1ria%20no%20site%20da%20JMF%20e%20quero%20validar%20os%20resultados%20com%20um%20especialista.";
+
+const schema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": ["WebApplication", "Service"],
+  "name": "Simulador Reforma Tributária — Simples Nacional vs Lucro Presumido 2026",
+  "description": "Compare Simples Nacional e Lucro Presumido com base na Reforma Tributária. Calcule Fator R, analise impacto do pró-labore e identifique a melhor estratégia tributária para sua empresa. Ferramenta gratuita.",
+  "url": "https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Web Browser",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "BRL",
+    "availability": "https://schema.org/InStock",
+    "description": "Acesso gratuito ao simulador de reforma tributária para comparação de regimes",
+    "url": "https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
+  },
+  "provider": {
+    "@type": "Organization",
+    "name": "JMF Contabilidade",
+    "@id": "https://www.jmfcontabilidade.com.br/#organization",
+    "url": "https://www.jmfcontabilidade.com.br",
+    "logo": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.webp",
+    "sameAs": [
+      "https://wa.me/554733265123",
+      "https://www.instagram.com/jmfcontabilidade"
+    ]
+  },
+  "areaServed": {
+    "@type": "GeoShape",
+    "addressCountry": "BR",
+    "addressRegion": "SC",
+    "addressLocality": "Blumenau",
+    "description": "Brasil — foco em Santa Catarina e região Sul"
+  },
+  "serviceType": "Simulador tributário online para Reforma Tributária (Simples Nacional vs Lucro Presumido)",
+  "category": "FinanceApplication",
+  "featureList": [
+    "Comparação entre Simples Nacional (Anexo III/V) e Lucro Presumido",
+    "Cálculo do Fator R com identificação automática de Anexo",
+    "Análise de impacto tributário de ajustes no pró-labore",
+    "Cálculo de alíquota efetiva e DAS mensal estimado",
+    "Comparação de economia entre regimes tributários",
+    "Diagnóstico personalizado com sugestão de estratégia",
+    "Tabelas atualizadas 2026 das alíquotas do Simples Nacional e Lucro Presumido"
+  ],
+  "hasOutput": {
+    "@type": "PropertyValue",
+    "name": "Resultado do Simulador",
+    "description": "Regime recomendado, Fator R, Anexo aplicável, alíquota efetiva, DAS mensal, economia anual e estratégia de pró-labore"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
+  }
+});
+---
+
+<Layout
+  title="Simulador Reforma Tributária — Simples Nacional vs Lucro Presumido 2026"
+  description="Compare Simples Nacional e Lucro Presumido com base na Reforma Tributária. Calcule Fator R, analise impacto do pró-labore e identifique a melhor estratégia tributária."
+  canonical="https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
+  ogUrl="https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
+  schema={schema}
+  heroInterno
+  bodyClass="pp3"
+>
+
+<HeroInterno
+  title="Simulador Reforma Tributária"
+  subtitle="Compare Simples Nacional vs Lucro Presumido, analise o Fator R e o impacto do pró-labore. Identifique a melhor estratégia tributária para sua empresa em 2026."
+  breadcrumb={[
+    { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
+    { label: "Ferramentas" },
+    { label: "Simulador Reforma Tributária" }
+  ]}
+  ctas={[
+    { label: "Simular agora", href: "#simulador", variant: "cta" },
+    { label: "Falar com especialista", href: WA, variant: "outline" }
+  ]}
+/>
+
+<!-- SIMULADOR PRINCIPAL -->
+<section id="simulador" class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="text-center mb-10">
+        <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+          <i class="bi bi-bar-chart-line"></i>
+          Ferramenta Gratuita
+        </div>
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Simule <span class="pp3-grad">Reforma Tributária</span> agora</h2>
+        <p class="text-gray-500 text-lg max-w-2xl mx-auto">
+          Preencha os dados com a média dos últimos 12 meses. O simulador compara Simples Nacional e Lucro Presumido automaticamente.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <!-- FORMULÁRIO -->
+        <div class="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
+          <h3 class="font-bold text-[#0f172a] text-lg mb-6 flex items-center gap-2">
+            <span class="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
+            Dados da empresa
+          </h3>
+
+          <div class="mb-5">
+            <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="faturamento">
+              Receita bruta mensal média — últimos 12 meses
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">R$</span>
+              <input
+                type="text"
+                id="faturamento"
+                inputmode="numeric"
+                placeholder="15.000,00"
+                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+                autocomplete="off"
+              />
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Média do que sua empresa faturou por mês (total das notas fiscais emitidas)</p>
+          </div>
+
+          <div class="mb-5">
+            <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="prolabore">
+              Pró-labore mensal — total dos sócios
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">R$</span>
+              <input
+                type="text"
+                id="prolabore"
+                inputmode="numeric"
+                placeholder="5.000,00"
+                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+                autocomplete="off"
+              />
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Some o pró-labore declarado de todos os sócios. Se não há pró-labore, coloque 0</p>
+          </div>
+
+          <div class="mb-5">
+            <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="salarios">
+              Salários brutos CLT mensais — total dos funcionários
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">R$</span>
+              <input
+                type="text"
+                id="salarios"
+                inputmode="numeric"
+                placeholder="0,00"
+                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+                autocomplete="off"
+              />
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Total bruto de salários dos funcionários CLT. Se não há funcionários, deixe em 0</p>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="despesas-dedutiveis">
+              Despesas operacionais dedutíveis mensais (Lucro Presumido)
+            </label>
+            <div class="relative">
+              <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 font-medium text-sm">R$</span>
+              <input
+                type="text"
+                id="despesas-dedutiveis"
+                inputmode="numeric"
+                placeholder="2.000,00"
+                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-lg focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all"
+                autocomplete="off"
+              />
+            </div>
+            <p class="mt-1 text-xs text-gray-400">Estimativa de despesas dedutíveis para base do Lucro Presumido (aluguel, energia, honorários, etc.)</p>
+          </div>
+
+          <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 text-sm text-amber-800">
+            <i class="bi bi-info-circle mr-1.5"></i>
+            <strong>Metodologia:</strong> Simples Nacional usa Fator R (CGSN 140/2018). Lucro Presumido usa presunção de 8% (comércio/indústria) ou 32% (serviços) sobre receita, menos despesas dedutíveis. IRPJ 15% + 10% (adicional) + CSLL 9% + PIS/COFINS não cumulativos. Resultado é estimativa orientativa.
+          </div>
+        </div>
+
+        <!-- RESULTADO -->
+        <div id="resultado-container" class="rounded-2xl border-2 border-dashed border-gray-200 p-8 flex flex-col items-center justify-center transition-all duration-500 min-h-[500px]">
+
+          <div id="estado-vazio" class="text-center">
+            <div class="w-20 h-20 rounded-full bg-gray-50 border-2 border-gray-100 flex items-center justify-center mx-auto mb-5">
+              <i class="bi bi-bar-chart-line text-gray-300 text-3xl"></i>
+            </div>
+            <p class="text-gray-400 font-semibold text-lg">Preencha os dados ao lado</p>
+            <p class="text-gray-300 text-sm mt-1">O resultado aparece aqui automaticamente</p>
+          </div>
+
+          <div id="estado-resultado" class="w-full" style="display:none">
+
+            <!-- Regime Recomendado -->
+            <div class="text-center mb-5">
+              <p class="text-xs font-bold tracking-widest text-gray-400 mb-2">REGIME RECOMENDADO</p>
+              <div id="regime-recomendado" class="text-3xl font-black leading-none mb-3 transition-all duration-300">—</div>
+              <div id="regime-badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold"></div>
+            </div>
+
+            <!-- Comparativo Principal -->
+            <div class="grid grid-cols-2 gap-3 mb-5">
+              <!-- Simples Nacional -->
+              <div id="card-simples" class="rounded-xl p-4 text-center border-2 transition-all duration-300">
+                <p id="card-simples-label" class="text-xs font-bold tracking-wide mb-1 opacity-70"></p>
+                <p id="card-simples-valor" class="text-2xl font-black leading-tight"></p>
+                <p id="card-simples-aliquota" class="text-xs mt-1 opacity-60"></p>
+                <p id="card-simples-detalhe" class="text-xs mt-1 opacity-50"></p>
+              </div>
+
+              <!-- Lucro Presumido -->
+              <div id="card-lucro" class="rounded-xl p-4 text-center border-2 border-dashed transition-all duration-300">
+                <p id="card-lucro-label" class="text-xs font-bold tracking-wide mb-1 opacity-70"></p>
+                <p id="card-lucro-valor" class="text-2xl font-black leading-tight opacity-60"></p>
+                <p id="card-lucro-aliquota" class="text-xs mt-1 opacity-50"></p>
+                <p id="card-lucro-detalhe" class="text-xs mt-1 opacity-40"></p>
+              </div>
+            </div>
+
+            <!-- Fator R e Anexo -->
+            <div class="grid grid-cols-2 gap-3 mb-4">
+              <div id="card-fator-r" class="rounded-xl p-4 text-center border-2 transition-all duration-300">
+                <p class="text-xs font-bold tracking-wide mb-1 text-gray-500">FATOR R</p>
+                <p id="fator-r-display" class="text-2xl font-black leading-tight"></p>
+                <p id="anexo-display" class="text-xs mt-1 opacity-60"></p>
+              </div>
+              <div id="card-economia" class="rounded-xl p-4 text-center border-2 transition-all duration-300">
+                <p class="text-xs font-bold tracking-wide mb-1 text-gray-500">ECONOMIA MENSAL</p>
+                <p id="economia-mensal-display" class="text-2xl font-black leading-tight"></p>
+                <p id="economia-anual-display" class="text-xs mt-1 opacity-60"></p>
+              </div>
+            </div>
+
+            <!-- Diagnóstico -->
+            <div id="diagnostico" class="rounded-xl p-4 mb-5 transition-all duration-300">
+              <div class="flex items-start gap-3">
+                <span id="diagnostico-icon" class="text-2xl flex-shrink-0 mt-0.5"></span>
+                <div>
+                  <h4 id="diagnostico-titulo" class="font-bold text-base mb-0.5"></h4>
+                  <p id="diagnostico-texto" class="text-sm leading-relaxed"></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Botão WhatsApp -->
+            <a href={WA} target="_blank" rel="noopener"
+              class="block w-full text-center px-6 py-3.5 bg-[#f97316] text-white font-bold rounded-xl hover:bg-[#ea580c] transition-colors text-sm">
+              <i class="bi bi-whatsapp mr-2"></i>Validar com especialista da JMF
+            </a>
+
+            <!-- Captura de e-mail após resultado -->
+            <div
+              class="mt-4 bg-[#f8fafc] border border-gray-200 rounded-xl p-4"
+              x-data="{ sent: false, error: false, loading: false }"
+            >
+              <p class="text-xs font-bold text-[#0f172a] mb-0.5">Receber resultado por e-mail</p>
+              <p class="text-xs text-gray-400 mb-2">A JMF envia uma análise completa comparando os regimes tributários.</p>
+              <form
+                x-show="!sent"
+                action="https://formspree.io/f/xldnlbpk"
+                method="POST"
+                @submit.prevent="
+                  loading = true;
+                  fetch($el.action, { method: 'POST', body: new FormData($el), headers: { Accept: 'application/json' } })
+                    .then(r => { if (r.ok) { sent = true; } else { error = true; } })
+                    .catch(() => { error = true; })
+                    .finally(() => { loading = false; });
+                "
+                class="flex flex-col gap-2"
+              >
+                <input type="hidden" name="_subject" value="Lead via Simulador Reforma Tributária — JMF" />
+                <label for="calc-name" class="sr-only">Seu nome</label>
+                <input id="calc-name" type="text" name="name" placeholder="Seu nome" required
+                  class="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                <label for="calc-email" class="sr-only">Seu e-mail</label>
+                <input id="calc-email" type="email" name="email" placeholder="Seu e-mail" required
+                  class="w-full border border-gray-200 rounded-lg px-3 py-2 text-xs focus:outline-none focus:ring-2 focus:ring-amber-500" />
+                <button type="submit" :disabled="loading"
+                  class="w-full py-2 bg-amber-600 text-white text-xs font-semibold rounded-lg hover:bg-amber-700 transition-colors disabled:opacity-60">
+                  <span x-show="!loading">Enviar</span>
+                  <span x-show="loading">Enviando...</span>
+                </button>
+              </form>
+              <p x-show="error" class="mt-1 text-xs text-red-600">Erro. Tente pelo WhatsApp.</p>
+              <p x-show="sent" class="text-xs font-semibold text-green-700 flex items-center gap-1">
+                <i class="bi bi-check-circle-fill"></i> Recebido! Em breve a JMF entra em contato.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- O QUE É O SIMULADOR -->
+<section class="py-16 bg-[#fef3c7]">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-4">O que analisa o <span class="pp3-grad">Simulador de Reforma Tributária?</span></h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-6">
+        A Reforma Tributária (EC 132/2023 e PLP 68/2024) traz mudanças graduais até 2033. Hoje, a decisão entre <strong>Simples Nacional</strong> e <strong>Lucro Presumido</strong> ainda define a competitividade de muitas empresas. Este simulador cruza os dois regimes:
+      </p>
+
+      <div class="bg-white rounded-2xl p-6 mb-8 shadow-sm">
+        <h3 class="font-bold text-[#0f172a] mb-4 text-center text-lg">O que é comparado</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-green-50 border border-green-200 rounded-xl p-4">
+            <div class="text-2xl font-black text-green-700 mb-1">Simples Nacional</div>
+            <div class="font-bold text-green-800 text-sm">Fator R define Anexo III (6%) ou V (15,5%)</div>
+            <div class="text-green-700 text-xs mt-2">DAS unificado — simplicidade operacional</div>
+          </div>
+          <div class="bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <div class="text-2xl font-black text-blue-700 mb-1">Lucro Presumido</div>
+            <div class="font-bold text-blue-800 text-sm">Presunção 8% (indústria/comércio) ou 32% (serviços)</div>
+            <div class="text-blue-700 text-xs mt-2">IRPJ + CSLL + PIS/COFINS não cumulativos</div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="text-xl font-bold text-[#0f172a] mb-3">Principais variáveis analisadas</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
+        {[
+          { incl: true, text: "Fator R e Anexo aplicável (Simples Nacional)" },
+          { incl: true, text: "Alíquota efetiva e DAS mensal (Simples)" },
+          { incl: true, text: "Base de cálculo presumida (Lucro Presumido)" },
+          { incl: true, text: "IRPJ, CSLL, PIS, COFINS estimados (Lucro Presumido)" },
+          { incl: true, text: "Impacto do pró-labore no Fator R" },
+          { incl: true, text: "Economia potencial entre regimes" },
+          { incl: false, text: "ICMS/IPI (fora do escopo — varia por estado/operação)" },
+          { incl: false, text: "Transição 2026-2033 (Reforma Tributária em andamento)" },
+        ].map(item => (
+          <div class="flex items-center gap-2.5 bg-white rounded-lg p-3 text-sm shadow-sm">
+            <i class={`${item.incl ? 'bi-check-circle-fill text-green-600' : 'bi-x-circle-fill text-red-400'} bi flex-shrink-0`}></i>
+            <span class={item.incl ? 'text-gray-700' : 'text-gray-400 line-through'}>{item.text}</span>
+            {item.incl
+              ? <span class="ml-auto text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-semibold flex-shrink-0">Incluso</span>
+              : <span class="ml-auto text-xs bg-red-50 text-red-400 px-2 py-0.5 rounded-full font-semibold flex-shrink-0">Não incluso</span>
+            }
+          </div>
+        ))}
+      </div>
+
+      <div class="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm text-amber-800">
+        <i class="bi bi-exclamation-triangle-fill mr-2"></i>
+        <strong>Importante:</strong> A Reforma Tributária institui o IBS (estadual/municipal) e CBS (federal) substituindo ICMS, ISS, IPI, PIS, COFINS. A transição vai de 2026 a 2033. Este simulador usa a legislação vigente em 2026 para decisão imediata. Converse com um especialista para planejamento de longo prazo.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TABELAS DE REFERÊNCIA -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-2">Tabelas de <span class="pp3-grad">Referência 2026</span></h2>
+        <p class="text-gray-500">Alíquotas vigentes para comparação entre regimes</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+
+        <!-- Anexo III -->
+        <div class="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <div class="bg-green-600 text-white p-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-arrow-down-circle-fill text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Simples — Anexo III</h3>
+              <p class="text-green-100 text-xs">Fator R ≥ 28% — Serviços favorecidos</p>
+            </div>
+          </div>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-3 text-left text-gray-500 font-semibold text-xs">Faturamento 12 meses</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Alíq. Nominal</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Parcela Ded.</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-50">
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 180.000</td><td class="p-3 text-center font-bold text-green-700">6,00%</td><td class="p-3 text-center text-gray-400 text-xs">—</td></tr>
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 360.000</td><td class="p-3 text-center font-bold text-green-700">11,20%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 9.360</td></tr>
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 720.000</td><td class="p-3 text-center font-bold text-green-700">13,50%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 17.640</td></tr>
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 1.800.000</td><td class="p-3 text-center font-bold text-green-700">16,00%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 35.640</td></tr>
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 3.600.000</td><td class="p-3 text-center font-bold text-green-700">21,00%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 125.640</td></tr>
+              <tr class="hover:bg-green-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 4.800.000</td><td class="p-3 text-center font-bold text-green-700">33,00%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 648.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Anexo V -->
+        <div class="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <div class="bg-orange-500 text-white p-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-arrow-up-circle-fill text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Simples — Anexo V</h3>
+              <p class="text-orange-100 text-xs">Fator R &lt; 28% — Alíquotas mais elevadas</p>
+            </div>
+          </div>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-3 text-left text-gray-500 font-semibold text-xs">Faturamento 12 meses</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Alíq. Nominal</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Parcela Ded.</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-50">
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 180.000</td><td class="p-3 text-center font-bold text-orange-700">15,50%</td><td class="p-3 text-center text-gray-400 text-xs">—</td></tr>
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 360.000</td><td class="p-3 text-center font-bold text-orange-700">18,00%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 4.500</td></tr>
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 720.000</td><td class="p-3 text-center font-bold text-orange-700">19,50%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 9.900</td></tr>
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 1.800.000</td><td class="p-3 text-center font-bold text-orange-700">20,50%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 17.100</td></tr>
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 3.600.000</td><td class="p-3 text-center font-bold text-orange-700">23,00%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 62.100</td></tr>
+              <tr class="hover:bg-orange-50 transition-colors"><td class="p-3 text-gray-700">Até R$ 4.800.000</td><td class="p-3 text-center font-bold text-orange-700">30,50%</td><td class="p-3 text-center text-gray-500 text-xs">R$ 540.000</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Lucro Presumido -->
+        <div class="rounded-xl overflow-hidden shadow-sm border border-gray-100">
+          <div class="bg-blue-600 text-white p-4 flex items-center gap-3">
+            <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-building-fill text-xl"></i>
+            </div>
+            <div>
+              <h3 class="font-bold text-lg">Lucro Presumido</h3>
+              <p class="text-blue-100 text-xs">Serviços: 32% | Comércio/Indústria: 8%</p>
+            </div>
+          </div>
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="bg-gray-50">
+                <th class="p-3 text-left text-gray-500 font-semibold text-xs">Tributo</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Alíquota</th>
+                <th class="p-3 text-center text-gray-500 font-semibold text-xs">Base</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-50">
+              <tr class="hover:bg-blue-50 transition-colors"><td class="p-3 text-gray-700">IRPJ</td><td class="p-3 text-center font-bold text-blue-700">15%</td><td class="p-3 text-center text-gray-500 text-xs">Lucro Presumido</td></tr>
+              <tr class="hover:bg-blue-50 transition-colors"><td class="p-3 text-gray-700">Adicional IRPJ</td><td class="p-3 text-center font-bold text-blue-700">10%</td><td class="p-3 text-center text-gray-500 text-xs">Acima de R$ 240k/ano</td></tr>
+              <tr class="hover:bg-blue-50 transition-colors"><td class="p-3 text-gray-700">CSLL</td><td class="p-3 text-center font-bold text-blue-700">9%</td><td class="p-3 text-center text-gray-500 text-xs">Lucro Presumido</td></tr>
+              <tr class="hover:bg-blue-50 transition-colors"><td class="p-3 text-gray-700">PIS</td><td class="p-3 text-center font-bold text-blue-700">1,65%</td><td class="p-3 text-center text-gray-500 text-xs">Receita (não cumulativo)</td></tr>
+              <tr class="hover:bg-blue-50 transition-colors"><td class="p-3 text-gray-700">COFINS</td><td class="p-3 text-center font-bold text-blue-700">7,60%</td><td class="p-3 text-center text-gray-500 text-xs">Receita (não cumulativo)</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <p class="text-center text-xs text-gray-400">
+        Tabelas conforme Lei Complementar 123/2006, Decreto 9.580/2018 e legislação do Lucro Presumido. Vigentes em 2026.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- EXEMPLO PRÁTICO -->
+<section class="py-16 bg-[#fef3c7]">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-2"><span class="pp3-grad">Exemplo prático</span></h2>
+      <p class="text-gray-600 text-lg leading-relaxed mb-8">
+        Empresa de serviços (TI) com faturamento de R$ 20.000/mês, dois sócios com pró-labore de R$ 4.000 cada, sem funcionários CLT, despesas dedutíveis de R$ 3.000/mês:
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
+        <div class="bg-white rounded-xl p-5 text-center shadow-sm">
+          <p class="text-xs font-bold tracking-wide text-gray-400 mb-2">FATURAMENTO 12 MESES</p>
+          <p class="text-2xl font-black text-[#0f172a]">R$ 240 mil</p>
+          <p class="text-xs text-gray-400 mt-1">R$ 20.000 × 12 meses</p>
+        </div>
+        <div class="bg-white rounded-xl p-5 text-center shadow-sm">
+          <p class="text-xs font-bold tracking-wide text-gray-400 mb-2">FOLHA 12 MESES (c/ encargos)</p>
+          <p class="text-2xl font-black text-[#0f172a]">R$ 115.200</p>
+          <p class="text-xs text-gray-400 mt-1">R$ 8.000 × 1,20 × 12</p>
+        </div>
+        <div class="bg-green-50 border-2 border-green-300 rounded-xl p-5 text-center">
+          <p class="text-xs font-bold tracking-wide text-green-600 mb-2">FATOR R</p>
+          <p class="text-2xl font-black text-green-700">48,0%</p>
+          <p class="text-xs text-green-600 mt-1">≥ 28% → <strong>Anexo III</strong> ✓</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="bi bi-check-circle-fill text-green-600 text-xl"></i>
+            <h4 class="font-bold text-green-800">Simples Nacional (Anexo III)</h4>
+          </div>
+          <p class="text-3xl font-black text-green-700 mb-1">R$ 1.200<span class="text-base font-semibold text-green-600">/mês</span></p>
+          <p class="text-sm text-green-700">Alíquota efetiva: 6,00% (1ª faixa)</p>
+        </div>
+        <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <i class="bi bi-building-fill text-blue-500 text-xl"></i>
+            <h4 class="font-bold text-blue-800">Lucro Presumido (Serviços 32%)</h4>
+          </div>
+          <p class="text-3xl font-black text-blue-700 mb-1">R$ 3.240<span class="text-base font-semibold text-blue-600">/mês</span></p>
+          <p class="text-sm text-blue-700">IRPJ+CSLL+PIS/COFINS ≈ 13,5% efetivo</p>
+        </div>
+      </div>
+
+      <div class="bg-gradient-to-r from-green-600 to-emerald-500 rounded-xl p-6 text-white text-center">
+        <p class="text-sm font-bold opacity-80 mb-1 tracking-wide">ECONOMIA COM SIMPLES NACIONAL</p>
+        <p class="text-4xl font-black mb-1">R$ 2.040 por mês</p>
+        <p class="opacity-80">Equivale a <strong>R$ 24.480 por ano</strong> — Simples Nacional é mais vantajoso neste cenário.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUANDO VALE A PENA CADA REGIME -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-[#0f172a] mb-6 text-center">Quando <span class="pp3-grad">vale a pena cada regime?</span></h2>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+
+        <div class="bg-green-50 border border-green-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-check-circle-fill text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-green-800">Simples Nacional é melhor quando:</h3>
+          </div>
+          <ul class="space-y-3 text-gray-700">
+            {[
+              "Fator R ≥ 28% (Anexo III) — alíquota a partir de 6%",
+              "Faturamento até R$ 4,8 milhões/ano",
+              "Empresa de serviços com folha de pagamento representativa",
+              "Desejo de simplicidade: DAS unificado, menos obrigações acessórias",
+              "Não há crédito relevante de PIS/COFINS a recuperar",
+              "Atividades permitidas no Simples (maioria dos serviços intelectuais)"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check2-circle text-green-600 flex-shrink-0 mt-0.5"></i>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class="bg-blue-50 border border-blue-200 rounded-2xl p-6">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <i class="bi bi-building-fill text-white text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-blue-800">Lucro Presumido é melhor quando:</h3>
+          </div>
+          <ul class="space-y-3 text-gray-700">
+            {[
+              "Fator R &lt; 28% (Anexo V) — alíquota Simples a partir de 15,5%",
+              "Faturamento próximo ou acima de R$ 4,8 milhões/ano",
+              "Empresa com muitas despesas dedutíveis (aluguel, energia, honorários, fretes)",
+              "Necessidade de créditos de PIS/COFINS não cumulativos (9,25% sobre insumos)",
+              "Vendas B2B para grandes empresas que exigem destaque de tributos na NF-e",
+              "Planejamento de transição para Lucro Real no futuro próximo"
+            ].map(item => (
+              <li class="flex items-start gap-2">
+                <i class="bi bi-check2-circle text-blue-600 flex-shrink-0 mt-0.5"></i>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="bg-[#0f172a] text-white rounded-xl p-5 text-sm text-center">
+        <i class="bi bi-lightbulb-fill text-yellow-400 mr-2"></i>
+        <strong>Regra prática JMF:</strong> Para serviços com Fator R &lt; 28% e faturamento > R$ 2,5 milhões/ano, o Lucro Presumido costuma ser mais vantajoso. Abaixo disso, o Simples (mesmo Anexo V) costuma compensar pela simplicidade. Cada caso exige análise personalizada.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="bg-[#0f172a] py-16">
+  <div class="container mx-auto px-4 text-center max-w-3xl">
+    <div class="w-16 h-16 bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6">
+      <i class="bi bi-person-check-fill text-white text-2xl"></i>
+    </div>
+    <h2 class="text-3xl font-bold text-white mb-4">Quer validar a simulação<br/><span class="pp3-grad-light">com um especialista?</span></h2>
+    <p class="text-white/80 text-lg leading-relaxed mb-8">
+      O simulador dá uma estimativa orientativa baseada nas regras atuais. Para o cálculo exato — considerando sua realidade completa, planejamento de Reforma Tributária 2026-2033 e otimização de pró-labore — a JMF faz a análise gratuitamente. Em muitos casos, identificamos ajustes que garantem a melhor tributação sem aumentar a carga total.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href={WA} target="_blank" rel="noopener noreferrer"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-amber-600 text-white font-semibold rounded-lg hover:bg-amber-700 transition-colors text-lg">
+        <i class="bi bi-whatsapp"></i>Falar com especialista no WhatsApp
+      </a>
+      <a href="/fale-conosco"
+        class="inline-flex items-center justify-center gap-2 px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
+        <i class="bi bi-envelope"></i>Enviar por e-mail
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+// ────────────────────────────────────────────────────────
+// SIMULADOR REFORMA TRIBUTÁRIA — JMF Contabilidade
+// Comparação: Simples Nacional (Fator R) vs Lucro Presumido
+// Legislação base: LC 123/2006, CGSN 140/2018, Dec. 9.580/2018
+// ────────────────────────────────────────────────────────
+
+// Tabela Anexo III (Simples Nacional)
+const ANEXO_III = [
+  { limite: 180000,    nominal: 0.06,  deducao: 0 },
+  { limite: 360000,    nominal: 0.112, deducao: 9360 },
+  { limite: 720000,    nominal: 0.135, deducao: 17640 },
+  { limite: 1800000,   nominal: 0.16,  deducao: 35640 },
+  { limite: 3600000,   nominal: 0.21,  deducao: 125640 },
+  { limite: 4800000,   nominal: 0.33,  deducao: 648000 },
+];
+
+// Tabela Anexo V (Simples Nacional)
+const ANEXO_V = [
+  { limite: 180000,    nominal: 0.155, deducao: 0 },
+  { limite: 360000,    nominal: 0.18,  deducao: 4500 },
+  { limite: 720000,    nominal: 0.195, deducao: 9900 },
+  { limite: 1800000,   nominal: 0.205, deducao: 17100 },
+  { limite: 3600000,   nominal: 0.23,  deducao: 62100 },
+  { limite: 4800000,   nominal: 0.305, deducao: 540000 },
+];
+
+// Lucro Presumido - Presunção de lucro
+// Serviços: 32% | Comércio/Indústria: 8%
+const PRESUMAO_SERVICOS = 0.32;
+const PRESUMAO_COMERCIO = 0.08;
+
+// Alíquotas Lucro Presumido (federais)
+const ALIQUOTAS_LP = {
+  irpj: 0.15,
+  irpj_adicional: 0.10, // acima de 240k/ano
+  csll: 0.09,
+  pis: 0.0165,
+  cofins: 0.076,
+};
+
+function getFaixa(rbt12, tabela) {
+  for (const faixa of tabela) {
+    if (rbt12 <= faixa.limite) return faixa;
+  }
+  return tabela[tabela.length - 1];
+}
+
+function getAliquotaEfetiva(rbt12, tabela) {
+  if (rbt12 <= 0) return 0;
+  const faixa = getFaixa(rbt12, tabela);
+  return (rbt12 * faixa.nominal - faixa.deducao) / rbt12;
+}
+
+function parseBRL(str) {
+  if (!str) return 0;
+  const cleaned = str.replace(/\./g, '').replace(',', '.');
+  const n = parseFloat(cleaned);
+  return isNaN(n) ? 0 : n;
+}
+
+function formatBRL(value) {
+  return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+
+function formatPct(value) {
+  return value.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 }) + '%';
+}
+
+function applyMask(input) {
+  let v = input.value.replace(/\D/g, '');
+  if (v === '') { input.value = ''; return; }
+  const num = parseInt(v, 10) / 100;
+  input.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function calcular() {
+  const faturamento = parseBRL(document.getElementById('faturamento').value);
+  const prolabore   = parseBRL(document.getElementById('prolabore').value);
+  const salarios    = parseBRL(document.getElementById('salarios').value);
+  const despesasDed = parseBRL(document.getElementById('despesas-dedutiveis').value);
+
+  const vazio = document.getElementById('estado-vazio');
+  const resultado = document.getElementById('estado-resultado');
+
+  if (faturamento <= 0) {
+    vazio.style.display = 'flex';
+    resultado.style.display = 'none';
+    document.getElementById('resultado-container').className =
+      'rounded-2xl border-2 border-dashed border-gray-200 p-8 flex flex-col items-center justify-center transition-all duration-500 min-h-[500px]';
+    return;
+  }
+
+  // ── Cálculo da Folha com Encargos (Simples Nacional) ───────
+  // Pró-labore: + 20% INSS patronal (contribuinte individual)
+  const folhaProlaboreComEncargos = prolabore * 1.20;
+
+  // CLT: + 20% INSS patronal + 8% FGTS + 8,33% 13º + 11,11% férias+1/3
+  // Total encargos sobre salário bruto CLT ≈ 47,44%
+  const folhaCLTComEncargos = salarios * 1.4744;
+
+  const folhaMensalComEncargos = folhaProlaboreComEncargos + folhaCLTComEncargos;
+
+  // ── Fator R (Simples Nacional) ────────────────────────────
+  const receita12m = faturamento * 12;
+  const folha12m   = folhaMensalComEncargos * 12;
+
+  let fatorR;
+  if (folha12m > 0 && receita12m <= 0) {
+    fatorR = 0.28; // definição legislativa CGSN 140/2018
+  } else if (folha12m <= 0 && receita12m > 0) {
+    fatorR = 0.0;
+  } else {
+    fatorR = folha12m / receita12m;
+  }
+
+  const isAnexoIII = fatorR >= 0.28;
+  const tabelaSimples = isAnexoIII ? ANEXO_III : ANEXO_V;
+  const aliquotaSimples = getAliquotaEfetiva(receita12m, tabelaSimples);
+  const dasMensal = faturamento * aliquotaSimples;
+
+  // ── Lucro Presumido ───────────────────────────────────────
+  // Presunção: 32% para serviços, 8% para comércio/indústria
+  // Usamos 32% (serviços) como padrão - pode ser ajustado
+  const presuncao = PRESUMAO_SERVICOS;
+  const lucroPresumidoMensal = faturamento * presuncao;
+  const lucroPresumidoAnual = lucroPresumidoMensal * 12;
+
+  // IRPJ: 15% sobre lucro presumido + 10% adicional sobre excedente de R$ 20.000/mês (R$ 240.000/ano)
+  const lucroPresumidoAnualParaIRPJ = lucroPresumidoAnual;
+  const irpjBase = lucroPresumidoAnualParaIRPJ * ALIQUOTAS_LP.irpj;
+  const irpjAdicional = Math.max(0, lucroPresumidoAnualParaIRPJ - 240000) * ALIQUOTAS_LP.irpj_adicional;
+  const irpjTotal = irpjBase + irpjAdicional;
+
+  // CSLL: 9% sobre lucro presumido
+  const csllTotal = lucroPresumidoAnualParaIRPJ * ALIQUOTAS_LP.csll;
+
+  // PIS/COFINS: não cumulativos sobre receita bruta (com créditos sobre despesas)
+  // Simplificação: base = receita - despesas dedutíveis (aprox.)
+  const receitaAnual = receita12m;
+  const despesasAnuais = despesasDed * 12;
+  const basePisCofins = Math.max(0, receitaAnual - despesasAnuais);
+  const pisTotal = basePisCofins * ALIQUOTAS_LP.pis;
+  const cofinsTotal = basePisCofins * ALIQUOTAS_LP.cofins;
+
+  const totalLucroPresumidoAnual = irpjTotal + csllTotal + pisTotal + cofinsTotal;
+  const totalLucroPresumidoMensal = totalLucroPresumidoAnual / 12;
+
+  // Aliquota efetiva Lucro Presumido
+  const aliquotaLucroPresumido = totalLucroPresumidoMensal / faturamento;
+
+  // ── Comparação ───────────────────────────────────────────
+  const diferenca = totalLucroPresumidoMensal - dasMensal;
+  const simplesMenor = dasMensal < totalLucroPresumidoMensal;
+
+  // ── Atualiza UI ─────────────────────────────────────────
+  vazio.style.display = 'none';
+  resultado.style.display = 'block';
+
+  // Container border color
+  const container = document.getElementById('resultado-container');
+  container.className = simplesMenor
+    ? 'rounded-2xl border-2 border-green-300 bg-green-50/30 p-8 flex flex-col justify-center transition-all duration-500 min-h-[500px]'
+    : 'rounded-2xl border-2 border-blue-300 bg-blue-50/30 p-8 flex flex-col justify-center transition-all duration-500 min-h-[500px]';
+
+  // Regime recomendado
+  const regimeEl = document.getElementById('regime-recomendado');
+  const regimeBadge = document.getElementById('regime-badge');
+  if (simplesMenor) {
+    regimeEl.textContent = 'Simples Nacional';
+    regimeEl.className = 'text-3xl font-black leading-none mb-3 transition-all duration-300 text-green-700';
+    regimeBadge.className = 'inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-green-100 text-green-800';
+    regimeBadge.innerHTML = '<i class="bi bi-check-circle-fill"></i> Recomendado: Simples Nacional';
+  } else {
+    regimeEl.textContent = 'Lucro Presumido';
+    regimeEl.className = 'text-3xl font-black leading-none mb-3 transition-all duration-300 text-blue-700';
+    regimeBadge.className = 'inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800';
+    regimeBadge.innerHTML = '<i class="bi bi-building-fill"></i> Recomendado: Lucro Presumido';
+  }
+
+  // Card Simples Nacional
+  const cardSimples = document.getElementById('card-simples');
+  const cardSimplesLabel = document.getElementById('card-simples-label');
+  const cardSimplesValor = document.getElementById('card-simples-valor');
+  const cardSimplesAliquota = document.getElementById('card-simples-aliquota');
+  const cardSimplesDetalhe = document.getElementById('card-simples-detalhe');
+
+  if (simplesMenor) {
+    cardSimples.className = 'rounded-xl p-4 text-center border-2 border-green-200 bg-green-50 transition-all duration-300';
+    cardSimplesLabel.textContent = 'SIMPLES NACIONAL (RECOMENDADO)';
+    cardSimplesLabel.className = 'text-xs font-bold tracking-wide mb-1 text-green-700';
+  } else {
+    cardSimples.className = 'rounded-xl p-4 text-center border-2 border-dashed border-green-200 bg-green-50/40 transition-all duration-300';
+    cardSimplesLabel.textContent = 'SIMPLES NACIONAL';
+    cardSimplesLabel.className = 'text-xs font-bold tracking-wide mb-1 text-green-500';
+  }
+  cardSimplesValor.textContent = formatBRL(dasMensal);
+  cardSimplesValor.className = simplesMenor ? 'text-2xl font-black leading-tight text-green-700' : 'text-2xl font-black leading-tight text-green-400';
+  cardSimplesAliquota.textContent = `Alíquota efetiva: ${formatPct(aliquotaSimples * 100)}`;
+  cardSimplesAliquota.className = 'text-xs mt-1 ' + (simplesMenor ? 'text-green-600' : 'text-green-400');
+  cardSimplesDetalhe.textContent = `Anexo ${isAnexoIII ? 'III' : 'V'} • DAS unificado`;
+  cardSimplesDetalhe.className = 'text-xs mt-1 ' + (simplesMenor ? 'text-green-500' : 'text-green-400');
+
+  // Card Lucro Presumido
+  const cardLucro = document.getElementById('card-lucro');
+  const cardLucroLabel = document.getElementById('card-lucro-label');
+  const cardLucroValor = document.getElementById('card-lucro-valor');
+  const cardLucroAliquota = document.getElementById('card-lucro-aliquota');
+  const cardLucroDetalhe = document.getElementById('card-lucro-detalhe');
+
+  if (!simplesMenor) {
+    cardLucro.className = 'rounded-xl p-4 text-center border-2 border-blue-200 bg-blue-50 transition-all duration-300';
+    cardLucroLabel.textContent = 'LUCRO PRESUMIDO (RECOMENDADO)';
+    cardLucroLabel.className = 'text-xs font-bold tracking-wide mb-1 text-blue-700';
+  } else {
+    cardLucro.className = 'rounded-xl p-4 text-center border-2 border-dashed border-blue-200 bg-blue-50/40 transition-all duration-300';
+    cardLucroLabel.textContent = 'LUCRO PRESUMIDO';
+    cardLucroLabel.className = 'text-xs font-bold tracking-wide mb-1 text-blue-500';
+  }
+  cardLucroValor.textContent = formatBRL(totalLucroPresumidoMensal);
+  cardLucroValor.className = simplesMenor ? 'text-2xl font-black leading-tight text-blue-400' : 'text-2xl font-black leading-tight text-blue-700';
+  cardLucroAliquota.textContent = `Alíquota efetiva: ${formatPct(aliquotaLucroPresumido * 100)}`;
+  cardLucroAliquota.className = 'text-xs mt-1 ' + (simplesMenor ? 'text-blue-400' : 'text-blue-600');
+  cardLucroDetalhe.textContent = `Serviços 32% • IRPJ+CSLL+PIS/COFINS`;
+  cardLucroDetalhe.className = 'text-xs mt-1 ' + (simplesMenor ? 'text-blue-400' : 'text-blue-500');
+
+  // Fator R e Anexo
+  const fatorRDisplay = document.getElementById('fator-r-display');
+  const anexoDisplay = document.getElementById('anexo-display');
+  fatorRDisplay.textContent = formatPct(fatorR * 100);
+  fatorRDisplay.className = `text-2xl font-black leading-tight ${isAnexoIII ? 'text-green-700' : 'text-orange-600'}`;
+  anexoDisplay.textContent = `Anexo ${isAnexoIII ? 'III' : 'V'}`;
+  anexoDisplay.className = `text-xs mt-1 ${isAnexoIII ? 'text-green-600' : 'text-orange-600'}`;
+
+  // Economia
+  const economiaMensalDisplay = document.getElementById('economia-mensal-display');
+  const economiaAnualDisplay = document.getElementById('economia-anual-display');
+  const economiaCard = document.getElementById('card-economia');
+
+  if (Math.abs(diferenca) > 0.5) {
+    economiaCard.style.display = 'block';
+    if (simplesMenor) {
+      economiaCard.className = 'rounded-xl p-4 text-center border-2 border-green-200 bg-green-50 transition-all duration-300';
+      economiaMensalDisplay.textContent = formatBRL(diferenca) + '/mês';
+      economiaMensalDisplay.className = 'text-2xl font-black leading-tight text-green-700';
+      economiaAnualDisplay.textContent = `Economia de ${formatBRL(diferenca * 12)}/ano vs Lucro Presumido`;
+      economiaAnualDisplay.className = 'text-xs mt-1 text-green-600';
+    } else {
+      economiaCard.className = 'rounded-xl p-4 text-center border-2 border-blue-200 bg-blue-50 transition-all duration-300';
+      economiaMensalDisplay.textContent = formatBRL(Math.abs(diferenca)) + '/mês';
+      economiaMensalDisplay.className = 'text-2xl font-black leading-tight text-blue-700';
+      economiaAnualDisplay.textContent = `Economia de ${formatBRL(Math.abs(diferenca) * 12)}/ano vs Simples Nacional`;
+      economiaAnualDisplay.className = 'text-xs mt-1 text-blue-600';
+    }
+  } else {
+    economiaCard.style.display = 'none';
+  }
+
+  // Diagnóstico
+  const diag = document.getElementById('diagnostico');
+  const diagIcon = document.getElementById('diagnostico-icon');
+  const diagTitulo = document.getElementById('diagnostico-titulo');
+  const diagTexto = document.getElementById('diagnostico-texto');
+
+  if (simplesMenor) {
+    if (isAnexoIII) {
+      diag.className = 'rounded-xl p-4 mb-5 bg-green-50 border border-green-200 transition-all duration-300';
+      diagIcon.textContent = '✅';
+      diagTitulo.textContent = 'Simples Nacional (Anexo III) — Melhor opção';
+      diagTitulo.className = 'font-bold text-base mb-0.5 text-green-800';
+      diagTexto.textContent = `Seu Fator R de ${formatPct(fatorR * 100)} garante o Anexo III (alíquota ${formatPct(aliquotaSimples * 100)}). O Simples Nacional é mais vantajoso que o Lucro Presumido, com economia de ${formatBRL(diferenca)}/mês.`;
+      diagTexto.className = 'text-sm leading-relaxed text-green-800';
+    } else {
+      diag.className = 'rounded-xl p-4 mb-5 bg-amber-50 border border-amber-200 transition-all duration-300';
+      diagIcon.textContent = '⚖️';
+      diagTitulo.textContent = 'Simples Nacional (Anexo V) — Ainda vantajoso';
+      diagTitulo.className = 'font-bold text-base mb-0.5 text-amber-800';
+      const prolaboreNecessario = Math.ceil((0.28 * receita12m - folha12m) / 12 / 1.20 + prolabore);
+      diagTexto.textContent = `Fator R de ${formatPct(fatorR * 100)} (Anexo V, alíquota ${formatPct(aliquotaSimples * 100)}). Mesmo no Anexo V, o Simples economiza ${formatBRL(diferenca)}/mês vs Lucro Presumido. Aumentar pró-labore para ~${formatBRL(prolaboreNecessario)}/mês migraria para Anexo III e aumentaria a economia.`;
+      diagTexto.className = 'text-sm leading-relaxed text-amber-800';
+    }
+  } else {
+    diag.className = 'rounded-xl p-4 mb-5 bg-blue-50 border border-blue-200 transition-all duration-300';
+    diagIcon.textContent = '🏢';
+    diagTitulo.textContent = 'Lucro Presumido — Melhor opção';
+    diagTitulo.className = 'font-bold text-base mb-0.5 text-blue-800';
+    if (isAnexoIII) {
+      diagTexto.textContent = `Embora seu Fator R (${formatPct(fatorR * 100)}) garanta Anexo III (${formatPct(aliquotaSimples * 100)}), o Lucro Presumido sai mais barato (${formatPct(aliquotaLucroPresumido * 100)} efetivo) devido às despesas dedutíveis e créditos de PIS/COFINS. Economia de ${formatBRL(Math.abs(diferenca))}/mês.`;
+    } else {
+      diagTexto.textContent = `Fator R de ${formatPct(fatorR * 100)} (Anexo V, ${formatPct(aliquotaSimples * 100)}). O Lucro Presumido é mais vantajoso (${formatPct(aliquotaLucroPresumido * 100)} efetivo) com economia de ${formatBRL(Math.abs(diferenca))}/mês. Considere créditos de PIS/COFINS e planejamento para Reforma Tributária.`;
+    }
+    diagTexto.className = 'text-sm leading-relaxed text-blue-800';
+  }
+}
+
+// Inputs com máscara BRL
+const inputs = ['faturamento', 'prolabore', 'salarios', 'despesas-dedutiveis'];
+inputs.forEach(id => {
+  const el = document.getElementById(id);
+  el.addEventListener('input', () => { applyMask(el); calcular(); });
+  el.addEventListener('paste', () => { setTimeout(() => { applyMask(el); calcular(); }, 0); });
+});
+</script>
+
+</Layout>
