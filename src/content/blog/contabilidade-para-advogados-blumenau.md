@@ -63,7 +63,7 @@ A sociedade de advogados precisa de registro na OAB-SC antes de iniciar a ativid
 - **Atividades exclusivas:** a sociedade só pode exercer advocacia
 - **Responsabilidade:** os sócios respondem solidariamente pelas obrigações da sociedade
 
-A sociedade de advogados **não tem personalidade jurídica** nos termos do Código Civil — é regulada exclusivamente pelo Estatuto da OAB.
+A sociedade de advogados adquire personalidade jurídica com o registro formal de seus atos constitutivos na Seccional da OAB-SC (art. 15 da Lei nº 8.906/1994), não sendo registrada em Junta Comercial ou Cartório.
 
 ## Lucro Presumido: Quando Considerar
 

@@ -125,4 +125,3 @@ Quer saber exatamente quanto sua indústria têxtil economizaria com a estrutura
 - Decreto Estadual nº 2.870/1998 — RICMS/SC
 - Lei Complementar nº 123/2006 — Simples Nacional (Anexo III)
 - RFB — IN RFB nº 1.700/2017 (PIS/COFINS não cumulativos — conceito de insumo)
-- STJ — Tema 328 (equiparação hospitalar, aplicável por analogia a clínicas de procedimento)

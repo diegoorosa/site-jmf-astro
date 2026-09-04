@@ -42,7 +42,7 @@ const schema = JSON.stringify({
   "serviceType": "Simulador comparativo de regimes tributários (Simples Nacional vs Lucro Presumido) com Fator R automático",
   "category": "FinanceApplication",
   "featureList": [
-    "Seleção de 10 tipos de atividade (Comércio, Serviços Anexo III/V/VI, Indústria, Transporte)",
+    "Seleção de 10 tipos de atividade (Comércio, Serviços Anexo III/V (Fator R), Indústria, Transporte)",
     "Cálculo automático do Fator R para serviços (migração Anexo V → III quando ≥ 28%)",
     "Simples Nacional: 8 anexos com tabelas CGSN 140/2018 atualizadas 2026",
     "Lucro Presumido: IRPJ/CSLL sobre presunção + PIS/COFINS cumulativos + INSS patronal 20%",
@@ -145,7 +145,7 @@ const schema = JSON.stringify({
                 <optgroup label="Serviços">
                   <option value="servicos_anexo3">Serviços — Anexo III (TI, academias, manutenção)</option>
                   <option value="servicos_anexo5">Serviços — Anexo V (consultoria, engenharia, publicidade)</option>
-                  <option value="servicos_anexo6">Serviços — Anexo VI (medicina, odonto, advocacia, contabilidade)</option>
+                  <option value="servicos_anexo6">Serviços Intelectuais e Saúde (Anexo V / Fator R)</option>
                   <option value="servicos_32">Serviços — Lucro Presumido 32% (consultoria, corretagem)</option>
                 </optgroup>
                 <optgroup label="Indústria">
