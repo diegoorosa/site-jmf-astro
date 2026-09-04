@@ -10,11 +10,11 @@ export async function getStaticPaths() {
   const authors = [
     {
       slug: 'diego-rosa',
-      name: 'Diego Schlemper Rosa',
-      role: 'Sócio-Administrador',
-      title: 'Contador',
+      name: 'Diego Rosa',
+      role: 'Sócio-Administrador & Head de TI/Operações',
+      title: 'Contador e Especialista em Cloud',
       crc: 'CRC SC-035810/O',
-      bio: 'Sócio-administrador da JMF Contabilidade. Formado em Ciências Contábeis pela FURB, com pós-graduação em Controladoria e Finanças. Especialista em tributação para empresas de tecnologia, construção civil e planejamento tributário estratégico. Atua há mais de 10 anos na assessoria contábil e fiscal para empresas do Vale do Itajaí.',
+      bio: 'Sócio-administrador e líder de Operações e TI da JMF Contabilidade, atuando na empresa desde 2006. É Bacharel em Ciências Contábeis pela FURB (2010) e certificado AWS Certified Cloud Practitioner. Une a sólida experiência fiscal e contábil à tecnologia aplicada, desenvolvendo integrações com Inteligência Artificial, ferramentas internas e fluxos de automação em Python e n8n para entregar uma gestão ágil e moderna.',
       image: '/assets/images/team-diego.webp',
       imageAlt: 'Diego Schlemper Rosa — Sócio-Administrador, CRC SC-035810/O',
     },
@@ -54,12 +54,12 @@ export async function getStaticPaths() {
   }
 
   const paths = authors.flatMap(author => {
-    const authorSlug = slugify(author.name);
-    // Filtrar posts deste autor
+    // Filtrar posts deste autor batendo diretamente pelo slug cadastrado ou nome completo
     const authorPosts = posts
       .filter(post => {
-        const postAuthor = post.data.author.split(',')[0].trim().toLowerCase();
-        return slugify(postAuthor) === authorSlug;
+        const postAuthor = post.data.author.split(',')[0].trim();
+        const postAuthorSlug = slugify(postAuthor);
+        return postAuthorSlug === author.slug || postAuthorSlug === slugify(author.name);
       })
       .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
