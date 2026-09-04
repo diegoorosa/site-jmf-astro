@@ -1,10 +1,15 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Parceiros from '../components/Parceiros.astro';
 import '../styles/index-2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+
+// URLs personalizadas para cada momento do lead no WhatsApp
+const WA_ABERTURA = "https://wa.me/554733265123?text=Ol%C3%A1%21%20Acessei%20o%20site%20da%20JMF%20e%20gostaria%20de%20orienta%C3%A7%C3%A3o%20para%20abrir%20minha%20empresa.";
+const WA_TROCA = "https://wa.me/554733265123?text=Ol%C3%A1%21%20Tenho%20uma%20empresa%20e%20gostaria%20de%20entender%20como%20funciona%20a%20troca%20de%20contador%20para%20a%20JMF.";
+const WA_REGULARIZAR = "https://wa.me/554733265123?text=Ol%C3%A1%21%20Preciso%20de%20ajuda%20para%20regularizar%20minha%20situa%C3%A7%C3%A3o%20fiscal%20ou%20declarar%20meu%20Imposto%20de%20Renda.";
 
 const schema = JSON.stringify([
   {
@@ -145,13 +150,11 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       x-transition:enter-end="opacity-100 scale-100 translate-y-0"
       class="jmf-exit-card relative w-full max-w-md overflow-hidden rounded-2xl bg-[#0a1628] shadow-[0_20px_80px_-20px_rgba(6,182,212,0.45)] ring-1 ring-cyan-400/20"
     >
-      <!-- Grid de linhas finas (mesmo padrão do hero P2) -->
       <svg class="absolute inset-0 w-full h-full opacity-[0.10] pointer-events-none" preserveAspectRatio="none">
         <line x1="22%" y1="0" x2="22%" y2="100%" stroke="#67E8F9" stroke-width="1" />
         <line x1="78%" y1="0" x2="78%" y2="100%" stroke="#67E8F9" stroke-width="1" />
         <line x1="0" y1="40%" x2="100%" y2="40%" stroke="#67E8F9" stroke-width="1" />
       </svg>
-      <!-- Glow ciano -->
       <div class="absolute -top-16 left-1/2 -translate-x-1/2 w-40 h-40 bg-cyan-500/25 blur-3xl rounded-full pointer-events-none"></div>
 
       <button
@@ -163,13 +166,11 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </button>
 
       <div class="relative z-10 px-8 pt-10 pb-8 text-center">
-        <!-- Badge eyebrow -->
         <div class="inline-flex items-center gap-2 mb-6 px-3 py-1 rounded-full bg-cyan-500/10 ring-1 ring-cyan-400/30">
           <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
           <span class="text-cyan-300 text-[11px] font-semibold tracking-[0.18em] uppercase">Diagnóstico Gratuito</span>
         </div>
 
-        <!-- Ícone -->
         <div class="relative w-16 h-16 mx-auto mb-6">
           <div class="absolute inset-0 bg-cyan-500/20 blur-xl rounded-full"></div>
           <div class="relative w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-cyan-600 flex items-center justify-center shadow-lg shadow-cyan-500/30">
@@ -184,7 +185,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           Fale com um especialista da JMF agora. Sem compromisso, sem burocracia — resposta no mesmo dia útil.
         </p>
 
-        <!-- Selo de credibilidade -->
         <div class="flex items-center justify-center gap-2 mb-7 text-xs">
           <div class="flex text-yellow-400 text-[10px]">★★★★★</div>
           <span class="text-slate-400">+150 avaliações no Google</span>
@@ -211,7 +211,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
 
   <!-- HERO P2 -->
   <section class="jmf-hero-p2">
-    <!-- Grade de linhas finas -->
     <svg class="jmf-hero-grid" preserveAspectRatio="none">
       <line x1="8%" y1="0" x2="8%" y2="100%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
       <line x1="8%" y1="22%" x2="100%" y2="22%" stroke="#67E8F9" stroke-width="1" opacity="0.25"/>
@@ -228,7 +227,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           Contabilidade que simplifica<br/>
           <span class="jmf-hero-p2-grad">o caminho do seu negócio</span>
         </h1>
-  <p class="jmf-hero-p2-lead">
+        <p class="jmf-hero-p2-lead">
           Para abrir uma empresa, trocar de contador ou organizar a rotina fiscal, você encontra método, prazos claros e orientação objetiva em Blumenau e região — sem burocracia e sem surpresas no fim do mês.
         </p>
         <div class="jmf-hero-p2-actions">
@@ -329,6 +328,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- CREDIBILITY STRIP -->
   <section class="jmf-cred-p2">
     <div class="jmf-container">
@@ -353,45 +353,57 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
     </div>
   </section>
 
-  <!-- POR ONDE COMEÇAR: jornada por necessidade -->
+  <!-- POR ONDE COMEÇAR: jornada por necessidade com WhatsApp direto -->
   <section class="jmf-path-sec" id="por-onde-comecar">
     <div class="jmf-path-inner">
       <div class="jmf-path-head">
         <span class="jmf-eyebrow-paper on-light">Por onde começar</span>
         <h2 class="jmf-path-title">Qual é o seu próximo passo?</h2>
-        <p class="jmf-path-lead">Comece pelo momento em que sua empresa está. A primeira conversa serve para organizar o cenário e indicar o próximo passo.</p>
+        <p class="jmf-path-lead">Comece pelo momento em que sua empresa está. Clique no seu cenário para iniciar uma conversa direta no WhatsApp:</p>
       </div>
 
       <div class="jmf-path-grid">
-        <a class="jmf-path-card" href="/abertura-de-empresa">
+        <!-- Card 1: Abertura de Empresa -->
+        <a class="jmf-path-card" href={WA_ABERTURA} target="_blank" rel="noopener noreferrer">
           <span class="jmf-path-number">01</span>
           <span class="jmf-path-icon"><i class="bi bi-rocket-takeoff"></i></span>
           <h3>Estou abrindo uma empresa</h3>
           <p>Defina tipo de empresa, CNAE e regime tributário com clareza antes de colocar o negócio em operação.</p>
-          <span class="jmf-path-link">Planejar minha abertura <i class="bi bi-arrow-right"></i></span>
+          <span class="jmf-path-link"><i class="bi bi-whatsapp"></i> Iniciar abertura no WhatsApp <i class="bi bi-arrow-right"></i></span>
         </a>
 
-        <a class="jmf-path-card" href="/fale-conosco?assunto=troca-de-contador">
+        <!-- Card 2: Troca de Contador -->
+        <a class="jmf-path-card" href={WA_TROCA} target="_blank" rel="noopener noreferrer">
           <span class="jmf-path-number">02</span>
           <span class="jmf-path-icon"><i class="bi bi-arrow-left-right"></i></span>
           <h3>Quero trocar de contador</h3>
           <p>Entenda obrigações, documentos e pendências da situação atual antes de fazer a transição.</p>
-          <span class="jmf-path-link">Avaliar minha transição <i class="bi bi-arrow-right"></i></span>
+          <span class="jmf-path-link"><i class="bi bi-whatsapp"></i> Avaliar troca no WhatsApp <i class="bi bi-arrow-right"></i></span>
         </a>
 
-        <a class="jmf-path-card" href="/imposto-de-renda">
+        <!-- Card 3: Regularização / Imposto de Renda -->
+        <a class="jmf-path-card" href={WA_REGULARIZAR} target="_blank" rel="noopener noreferrer">
           <span class="jmf-path-number">03</span>
           <span class="jmf-path-icon"><i class="bi bi-file-earmark-text"></i></span>
           <h3>Preciso regularizar ou declarar</h3>
           <p>Organize Imposto de Renda e pendências com conferência, prioridade e orientação próxima.</p>
-          <span class="jmf-path-link">Organizar minha situação <i class="bi bi-arrow-right"></i></span>
+          <span class="jmf-path-link"><i class="bi bi-whatsapp"></i> Regularizar no WhatsApp <i class="bi bi-arrow-right"></i></span>
         </a>
       </div>
 
-      <div class="jmf-path-local-note">
-        <i class="bi bi-geo-alt"></i>
-        <span><strong>No Centro de Blumenau.</strong> Atendimento presencial quando necessário e rotina digital para empresas de todo o Vale do Itajaí.</span>
-        <a href="/contabilidade-em-blumenau">Ver contabilidade em Blumenau <i class="bi bi-arrow-right"></i></a>
+      <!-- Destaque de Avaliação Real do Google + Atendimento Local -->
+      <div class="jmf-path-local-note" style="display:flex; flex-direction:column; gap:0.75rem; text-align:center; align-items:center;">
+        <div style="display:inline-flex; align-items:center; gap:0.5rem; font-size:0.95rem; color:#0f172a;">
+          <span style="color:#eab308; font-size:1.05rem;">★★★★★</span>
+          <strong>Nota 5.0 no Google (+150 avaliações)</strong>
+          <span style="color:#64748b;">— "Contabilidade de confiança e atendimento personalizado. Sempre indico!"</span>
+          <span style="color:#0284c7; font-weight:600; font-size:0.85rem;">(Bruno Schmitt)</span>
+        </div>
+        <div style="font-size:0.9rem; color:#475569;">
+          <i class="bi bi-geo-alt" style="color:#0284c7;"></i>
+          <span><strong>No Centro de Blumenau.</strong> Atendimento presencial quando necessário e rotina digital para empresas de todo o Vale do Itajaí.</span>
+          <a href="/contabilidade-em-blumenau" style="margin-left:0.5rem; color:#0284c7; font-weight:600;">Ver contabilidade em Blumenau <i class="bi bi-arrow-right"></i></a>
+        </div>
       </div>
     </div>
   </section>
@@ -449,6 +461,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- COMO FUNCIONA P2 -->
   <section class="jmf-func-sec" id="como-funciona">
     <div class="jmf-func-bg" aria-hidden="true"></div>
@@ -511,6 +524,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- FERRAMENTAS GRATUITAS P2 -->
   <section class="jmf-tools-sec" id="ferramentas">
     <div class="jmf-tools-bg" aria-hidden="true"></div>
@@ -545,16 +559,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           <span class="jmf-tool-cta">Ver calendário <i class="bi bi-arrow-right"></i></span>
         </a>
 
-        <a class="jmf-tool-card" href="/simulador-reforma-tributaria">
-          <div class="jmf-tool-top">
-            <span class="jmf-tool-ic"><i class="bi bi-bar-chart-line"></i></span>
-            <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Gratuito</span>
-          </div>
-          <h3 class="jmf-tool-title">Simulador Reforma Tributária</h3>
-          <p class="jmf-tool-desc">Compare Simples Nacional e Lucuro Presumido com base na Reforma Tributária, analise o Fator R e o impacto do pró-labore.</p>
-          <span class="jmf-tool-cta">Simular agora <i class="bi bi-arrow-right"></i></span>
-        </a>
-
         <a class="jmf-tool-card" href="/simulador-regime-tributario">
           <div class="jmf-tool-top">
             <span class="jmf-tool-ic"><i class="bi bi-graph-up-arrow"></i></span>
@@ -564,9 +568,20 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           <p class="jmf-tool-desc">Compare cenários de Simples Nacional e Lucro Presumido para entender o que merece ser validado.</p>
           <span class="jmf-tool-cta">Simular agora <i class="bi bi-arrow-right"></i></span>
         </a>
+
+        <a class="jmf-tool-card" href="/como-abrir-empresa-em-blumenau">
+          <div class="jmf-tool-top">
+            <span class="jmf-tool-ic"><i class="bi bi-building"></i></span>
+            <span class="jmf-tool-badge"><i class="bi bi-stars"></i> Guia</span>
+          </div>
+          <h3 class="jmf-tool-title">Guia de Abertura em Blumenau</h3>
+          <p class="jmf-tool-desc">Tudo sobre taxas, alvarás, JUCESC e prazos municipais para registrar sua empresa sem travar.</p>
+          <span class="jmf-tool-cta">Ler guia completo <i class="bi bi-arrow-right"></i></span>
+        </a>
       </div>
     </div>
   </section>
+
   <!-- SIMULADOR IA P2 -->
   <section class="jmf-ia-sec" id="simulador-ia">
     <div class="jmf-ia-wave">
@@ -641,6 +656,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- AVALIAÇÕES GOOGLE P2 -->
   <section class="jmf-rev-sec" id="avaliacoes">
     <div class="jmf-rev-bg" aria-hidden="true"></div>
@@ -760,6 +776,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- TECNOLOGIAS P2 -->
   <section class="jmf-tech-sec" id="tecnologias">
     <div class="jmf-tech-bg" aria-hidden="true"></div>
@@ -816,6 +833,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- DIFERENCIAIS TECNOLÓGICOS P2 -->
   <section class="jmf-dif-sec" id="diferenciais">
     <div class="jmf-dif-bg" aria-hidden="true"></div>
@@ -856,6 +874,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- FAQ P2 -->
   <section class="jmf-faq-sec" id="faq">
     <div class="jmf-faq-bg" aria-hidden="true"></div>
@@ -953,6 +972,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- CTA PARCERIA P2 -->
   <section class="jmf-cta-sec" id="cta-parceria">
     <div class="jmf-cta-bg" aria-hidden="true"></div>
@@ -965,7 +985,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
         <span class="jmf-cta-title-grad">parceria de verdade</span>
       </h2>
       <p class="jmf-cta-lead">
-          Agende uma conversa sem compromisso. A JMF entende sua situação, apresenta um plano claro e indica o próximo passo — sem empurrar uma solução pronta.
+        Agende uma conversa sem compromisso. A JMF entende sua situação, apresenta um plano claro e indica o próximo passo — sem empurrar uma solução pronta.
       </p>
       <div class="jmf-cta-row">
         <a class="jmf-cta-primary" href={WA} target="_blank" rel="noopener noreferrer">
@@ -979,6 +999,7 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
       </div>
     </div>
   </section>
+
   <!-- ELLIZA IA P2 -->
   <section class="jmf-sec jmf-elliza-sec">
     <div class="jmf-container" style="position:relative;z-index:1;">
@@ -1017,30 +1038,30 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           </div>
         </div>
       </div>
-     </div>
-   </section>
-    <!-- FORMULÁRIO - readicionado P2 ( claro lateral ) -->
-   <section id="formulario" class="jmf-form-sec">
-     <div class="jmf-container" style="position:relative;z-index:1;">
-       <div class="jmf-form-grid">
-         <div class="jmf-form-copy" data-reveal>
-           <span class="jmf-eyebrow-paper on-light">Contato</span>
-           <h2>Vamos conversar<br><span class="jmf-h2-grad">sem compromisso</span></h2>
-           <p class="jmf-form-lead">Preencha o formulário e um especialista da JMF entra em contato em até 24h úteis. Sem custo, sem obrigação — só uma conversa para entender sua situação e propor o melhor caminho.</p>
-           <ul class="jmf-form-meta">
-             <li><i class="bi bi-whatsapp"></i><a href={WA} target="_blank" rel="noopener">WhatsApp &nbsp;(47) 3326-5123</a></li>
-             <li><i class="bi bi-telephone-fill"></i><a href="tel:+554733265123">Telefone &nbsp;(47) 3326-5123</a></li>
-             <li><i class="bi bi-envelope-fill"></i><a href="mailto:contato@jmfcontabilidade.com.br">contato@jmfcontabilidade.com.br</a></li>
-             <li><i class="bi bi-clock-fill"></i>Seg a Sex — 08h às 18h</li>
-           </ul>
-         </div>
-         <div class="jmf-form-card" data-reveal>
-           <ContactForm phoneName="phone" phoneLabel="WhatsApp / Telefone" phoneRequired={true} />
-         </div>
-       </div>
-     </div>
-   </section>
+    </div>
+  </section>
 
+  <!-- FORMULÁRIO -->
+  <section id="formulario" class="jmf-form-sec">
+    <div class="jmf-container" style="position:relative;z-index:1;">
+      <div class="jmf-form-grid">
+        <div class="jmf-form-copy" data-reveal>
+          <span class="jmf-eyebrow-paper on-light">Contato</span>
+          <h2>Vamos conversar<br><span class="jmf-h2-grad">sem compromisso</span></h2>
+          <p class="jmf-form-lead">Preencha o formulário e um especialista da JMF entra em contato em até 24h úteis. Sem custo, sem obrigação — só uma conversa para entender sua situação e propor o melhor caminho.</p>
+          <ul class="jmf-form-meta">
+            <li><i class="bi bi-whatsapp"></i><a href={WA} target="_blank" rel="noopener">WhatsApp &nbsp;(47) 3326-5123</a></li>
+            <li><i class="bi bi-telephone-fill"></i><a href="tel:+554733265123">Telefone &nbsp;(47) 3326-5123</a></li>
+            <li><i class="bi bi-envelope-fill"></i><a href="mailto:contato@jmfcontabilidade.com.br">contato@jmfcontabilidade.com.br</a></li>
+            <li><i class="bi bi-clock-fill"></i>Seg a Sex — 08h às 18h</li>
+          </ul>
+        </div>
+        <div class="jmf-form-card" data-reveal>
+          <ContactForm phoneName="phone" phoneLabel="WhatsApp / Telefone" phoneRequired={true} />
+        </div>
+      </div>
+    </div>
+  </section>
 
   <script>
     document.addEventListener('DOMContentLoaded', () => {
@@ -1106,7 +1127,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
         let baseTiltX = -5, baseTiltY = 4;
         let baseInited = false;
         if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
-        // Mousemove na seção — inclinação segue o mouse
         sec.addEventListener('mousemove', (ev) => {
           if (reduce || !frame) return;
           const rect = sec.getBoundingClientRect();
@@ -1120,7 +1140,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
             rafId = null;
           });
         });
-        // Mouse enter no dashboard — intensifica a aura
         dash.addEventListener('mouseenter', () => {
           if (frame) frame.classList.add('is-hover');
         });
@@ -1131,14 +1150,12 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
             frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
           }
         });
-        // Retorno suave ao sair da seção
         sec.addEventListener('mouseleave', () => {
           if (reduce || !frame) return;
           tiltX = baseTiltX; tiltY = baseTiltY;
           frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
         });
 
-        // Clock live — atualiza a cada segundo
         const clock = dash.querySelector('[data-hd-clock]');
         if (clock) {
           const pad = (n) => String(n).padStart(2, '0');
@@ -1149,8 +1166,8 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           tickClock();
           setInterval(tickClock, 1000);
         }
-
       }
+
       // Elliza steps
       const ellizaSteps = document.querySelectorAll('[data-elliza-step]');
       if (ellizaSteps.length) {
@@ -1165,7 +1182,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
         const ellizaSec = document.querySelector('.jmf-elliza-sec');
         if (ellizaSec) ellizaObs.observe(ellizaSec);
 
-        // Reveal stagger dos Diferenciais Tecnológicos
         const difCards = document.querySelectorAll('.jmf-dif-card');
         if (difCards.length) {
           const difObs = new IntersectionObserver((entries) => {
@@ -1180,7 +1196,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           difCards.forEach(c => difObs.observe(c));
         }
 
-        // Reveal stagger do FAQ
         const faqItems = document.querySelectorAll('.jmf-faq-item');
         if (faqItems.length) {
           const faqObs = new IntersectionObserver((entries) => {
@@ -1195,7 +1210,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           faqItems.forEach(c => faqObs.observe(c));
         }
 
-        // Smooth open ( accordion feel: fecha outros ao abrir )
         const faqList = document.getElementById('jmf-faq-list');
         if (faqList) {
           faqList.addEventListener('click', (ev) => {
@@ -1211,7 +1225,6 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
           });
         }
 
-        // Reveal da seção CTA Parceria
         const ctaParceriaSec = document.querySelector('.jmf-cta-sec');
         if (ctaParceriaSec) {
           const ctaObs = new IntersectionObserver((entries) => {
