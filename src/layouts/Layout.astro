@@ -480,8 +480,9 @@ const resolvedOgUrl = ogUrl ?? resolvedCanonical;
   <link rel="preconnect" href="https://images.pexels.com" />
   <link rel="preconnect" href="https://www.googletagmanager.com" />
 
-  <!-- Preload critical fonts (above-fold text uses Inter 400; heavier weights loaded via fonts.css) -->
+  <!-- Preload critical fonts (above-fold text uses Inter 400; H1 hero uses Fraunces 600; heavier weights loaded via fonts.css) -->
   <link rel="preload" href="/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/fonts/fraunces-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
 
   <!-- Preload hero logo image (LCP candidate) -->
   <link rel="preload" href="/assets/images/jmf-contabilidade-jean-254x159.webp" as="image" fetchpriority="high" />
