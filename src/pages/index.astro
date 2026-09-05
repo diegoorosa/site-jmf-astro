@@ -1129,13 +1129,15 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
         if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
         sec.addEventListener('mousemove', (ev) => {
           if (reduce || !frame) return;
-          const rect = sec.getBoundingClientRect();
-          const x = (ev.clientX - rect.left) / rect.width - 0.5;
-          const y = (ev.clientY - rect.top) / rect.height - 0.5;
-          tiltX = y * -14;
-          tiltY = x * 20;
+          const clientX = ev.clientX;
+          const clientY = ev.clientY;
           if (rafId) return;
           rafId = requestAnimationFrame(() => {
+            const rect = sec.getBoundingClientRect();
+            const x = (clientX - rect.left) / rect.width - 0.5;
+            const y = (clientY - rect.top) / rect.height - 0.5;
+            tiltX = y * -14;
+            tiltY = x * 20;
             frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
             rafId = null;
           });

@@ -8,6 +8,7 @@ import path from 'path';
 export default defineConfig({
   output: 'static',
   site: 'https://www.jmfcontabilidade.com.br/',
+  build: { inlineStylesheets: 'always' },
   integrations: [
     sitemap({
       // lastmod global (build time)
