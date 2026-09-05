@@ -1064,182 +1064,197 @@ const pageDesc = "Contabilidade em Blumenau para empresas: abertura, troca de co
   </section>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      // Scroll reveal
-      const revealEls = document.querySelectorAll('[data-reveal]');
-      const revealStaggers = document.querySelectorAll('[data-reveal-stagger]');
-      const revealObs = new IntersectionObserver((entries) => {
-        entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
-      }, { threshold: 0.15 });
-      revealEls.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
-        revealObs.observe(el);
-      });
-      if (revealStaggers.length) {
-        revealStaggers.forEach(el => {
+    (function() {
+      function init() {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('[data-reveal]');
+        const revealStaggers = document.querySelectorAll('[data-reveal-stagger]');
+        const revealObs = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; } });
+        }, { threshold: 0.15 });
+        revealEls.forEach(el => {
           el.style.opacity = '0';
-          const children = el.children;
-          [...children].forEach((c, i) => {
-            c.style.opacity = '0';
-            c.style.transform = 'translateY(24px)';
-            c.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            c.style.transitionDelay = (i * 0.08) + 's';
-          });
-          const stagObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => { if (e.isIntersecting) { [...e.target.children].forEach(c => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }); stagObs.disconnect(); } });
-          }, { threshold: 0.1 });
-          stagObs.observe(el);
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'opacity 0.7s ease-out, transform 0.7s ease-out';
+          revealObs.observe(el);
         });
-      }
-      // Count-up
-      document.querySelectorAll('[data-count-up] [data-to]').forEach(el => {
-        const to = parseInt(el.getAttribute('data-to'), 10);
-        let counted = false;
-        const obs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting && !counted) {
-              counted = true;
-              if (reduce) { el.textContent = to; return; }
-              const dur = 2000;
-              const start = performance.now();
-              const tick = (now) => {
-                const p = Math.min((now - start) / dur, 1);
-                const eased = 1 - Math.pow(1 - p, 3);
-                el.textContent = Math.round(eased * to);
-                if (p < 1) requestAnimationFrame(tick);
-              };
-              requestAnimationFrame(tick);
+        if (revealStaggers.length) {
+          revealStaggers.forEach(el => {
+            el.style.opacity = '0';
+            const children = el.children;
+            [...children].forEach((c, i) => {
+              c.style.opacity = '0';
+              c.style.transform = 'translateY(24px)';
+              c.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+              c.style.transitionDelay = (i * 0.08) + 's';
+            });
+            const stagObs = new IntersectionObserver((entries) => {
+              entries.forEach(e => { if (e.isIntersecting) { [...e.target.children].forEach(c => { c.style.opacity = '1'; c.style.transform = 'translateY(0)'; }); stagObs.disconnect(); } });
+            }, { threshold: 0.1 });
+            stagObs.observe(el);
+          });
+        }
+        // Count-up
+        document.querySelectorAll('[data-count-up] [data-to]').forEach(el => {
+          const to = parseInt(el.getAttribute('data-to'), 10);
+          let counted = false;
+          const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting && !counted) {
+                counted = true;
+                if (reduce) { el.textContent = to; return; }
+                const dur = 2000;
+                const start = performance.now();
+                const tick = (now) => {
+                  const p = Math.min((now - start) / dur, 1);
+                  const eased = 1 - Math.pow(1 - p, 3);
+                  el.textContent = Math.round(eased * to);
+                  if (p < 1) requestAnimationFrame(tick);
+                };
+                requestAnimationFrame(tick);
+              }
+            });
+          }, { threshold: 0.5 });
+          obs.observe(el);
+        });
+        // Hero dashboard tilt
+        const dash = document.querySelector('[data-hero-dash]');
+        if (dash) {
+          const frame = dash.querySelector('.jmf-hd-frame');
+          const sec = dash.closest('.jmf-hero-p2');
+          let rafId = null;
+          let tiltX = -5, tiltY = 4;
+          let baseTiltX = -5, baseTiltY = 4;
+          let baseInited = false;
+          if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
+          sec.addEventListener('mousemove', (ev) => {
+            if (reduce || !frame) return;
+            const clientX = ev.clientX;
+            const clientY = ev.clientY;
+            if (rafId) return;
+            rafId = requestAnimationFrame(() => {
+              const rect = sec.getBoundingClientRect();
+              const x = (clientX - rect.left) / rect.width - 0.5;
+              const y = (clientY - rect.top) / rect.height - 0.5;
+              tiltX = y * -14;
+              tiltY = x * 20;
+              frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+              rafId = null;
+            });
+          });
+          dash.addEventListener('mouseenter', () => {
+            if (frame) frame.classList.add('is-hover');
+          });
+          dash.addEventListener('mouseleave', () => {
+            if (frame) frame.classList.remove('is-hover');
+            if (!reduce && frame) {
+              tiltX = baseTiltX; tiltY = baseTiltY;
+              frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
             }
           });
-        }, { threshold: 0.5 });
-        obs.observe(el);
-      });
-      // Hero dashboard tilt
-      const dash = document.querySelector('[data-hero-dash]');
-      if (dash) {
-        const frame = dash.querySelector('.jmf-hd-frame');
-        const sec = dash.closest('.jmf-hero-p2');
-        let rafId = null;
-        let tiltX = -5, tiltY = 4;
-        let baseTiltX = -5, baseTiltY = 4;
-        let baseInited = false;
-        if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
-        sec.addEventListener('mousemove', (ev) => {
-          if (reduce || !frame) return;
-          const clientX = ev.clientX;
-          const clientY = ev.clientY;
-          if (rafId) return;
-          rafId = requestAnimationFrame(() => {
-            const rect = sec.getBoundingClientRect();
-            const x = (clientX - rect.left) / rect.width - 0.5;
-            const y = (clientY - rect.top) / rect.height - 0.5;
-            tiltX = y * -14;
-            tiltY = x * 20;
-            frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
-            rafId = null;
-          });
-        });
-        dash.addEventListener('mouseenter', () => {
-          if (frame) frame.classList.add('is-hover');
-        });
-        dash.addEventListener('mouseleave', () => {
-          if (frame) frame.classList.remove('is-hover');
-          if (!reduce && frame) {
+          sec.addEventListener('mouseleave', () => {
+            if (reduce || !frame) return;
             tiltX = baseTiltX; tiltY = baseTiltY;
             frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
+          });
+
+          const clock = dash.querySelector('[data-hd-clock]');
+          if (clock) {
+            const pad = (n) => String(n).padStart(2, '0');
+            const tickClock = () => {
+              const d = new Date();
+              clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+            };
+            tickClock();
+            setInterval(tickClock, 1000);
+          }
+        }
+
+        // Elliza steps
+        const ellizaSteps = document.querySelectorAll('[data-elliza-step]');
+        if (ellizaSteps.length) {
+          const ellizaObs = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                ellizaSteps.forEach((s, i) => { setTimeout(() => s.classList.add('is-on'), i * 200); });
+                ellizaObs.disconnect();
+              }
+            });
+          }, { threshold: 0.3 });
+          const ellizaSec = document.querySelector('.jmf-elliza-sec');
+          if (ellizaSec) ellizaObs.observe(ellizaSec);
+
+          const difCards = document.querySelectorAll('.jmf-dif-card');
+          if (difCards.length) {
+            const difObs = new IntersectionObserver((entries) => {
+              entries.forEach(e => {
+                if (e.isIntersecting) {
+                  const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
+                  setTimeout(() => e.target.classList.add('is-visible'), i * 140);
+                  difObs.unobserve(e.target);
+                }
+              });
+            }, { threshold: 0.2 });
+            difCards.forEach(c => difObs.observe(c));
+          }
+
+          const faqItems = document.querySelectorAll('.jmf-faq-item');
+          if (faqItems.length) {
+            const faqObs = new IntersectionObserver((entries) => {
+              entries.forEach(e => {
+                if (e.isIntersecting) {
+                  const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
+                  setTimeout(() => e.target.classList.add('is-visible'), i * 120);
+                  faqObs.unobserve(e.target);
+                }
+              });
+            }, { threshold: 0.2 });
+            faqItems.forEach(c => faqObs.observe(c));
+          }
+
+          const faqList = document.getElementById('jmf-faq-list');
+          if (faqList) {
+            faqList.addEventListener('click', (ev) => {
+              const summary = ev.target.closest('.jmf-faq-q');
+              if (!summary) return;
+              const item = summary.parentElement;
+              const opening = !item.hasAttribute('open');
+              if (opening) {
+                faqList.querySelectorAll('.jmf-faq-item[open]').forEach(o => {
+                  if (o !== item) o.removeAttribute('open');
+                });
+              }
+            });
+          }
+
+          const ctaParceriaSec = document.querySelector('.jmf-cta-sec');
+          if (ctaParceriaSec) {
+            const ctaObs = new IntersectionObserver((entries) => {
+              entries.forEach(e => {
+                if (e.isIntersecting) {
+                  e.target.classList.add('is-visible');
+                  ctaObs.unobserve(e.target);
+                }
+              });
+            }, { threshold: 0.25 });
+            ctaObs.observe(ctaParceriaSec);
+          }
+        }
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+          if ('requestIdleCallback' in window) {
+            requestIdleCallback(init, { timeout: 200 });
+          } else {
+            setTimeout(init, 100);
           }
         });
-        sec.addEventListener('mouseleave', () => {
-          if (reduce || !frame) return;
-          tiltX = baseTiltX; tiltY = baseTiltY;
-          frame.style.transform = `perspective(900px) rotateY(${tiltY}deg) rotateX(${tiltX}deg)`;
-        });
-
-        const clock = dash.querySelector('[data-hd-clock]');
-        if (clock) {
-          const pad = (n) => String(n).padStart(2, '0');
-          const tickClock = () => {
-            const d = new Date();
-            clock.textContent = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
-          };
-          tickClock();
-          setInterval(tickClock, 1000);
-        }
+      } else if ('requestIdleCallback' in window) {
+        requestIdleCallback(init, { timeout: 200 });
+      } else {
+        setTimeout(init, 100);
       }
-
-      // Elliza steps
-      const ellizaSteps = document.querySelectorAll('[data-elliza-step]');
-      if (ellizaSteps.length) {
-        const ellizaObs = new IntersectionObserver((entries) => {
-          entries.forEach(e => {
-            if (e.isIntersecting) {
-              ellizaSteps.forEach((s, i) => { setTimeout(() => s.classList.add('is-on'), i * 200); });
-              ellizaObs.disconnect();
-            }
-          });
-        }, { threshold: 0.3 });
-        const ellizaSec = document.querySelector('.jmf-elliza-sec');
-        if (ellizaSec) ellizaObs.observe(ellizaSec);
-
-        const difCards = document.querySelectorAll('.jmf-dif-card');
-        if (difCards.length) {
-          const difObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-              if (e.isIntersecting) {
-                const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
-                setTimeout(() => e.target.classList.add('is-visible'), i * 140);
-                difObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.2 });
-          difCards.forEach(c => difObs.observe(c));
-        }
-
-        const faqItems = document.querySelectorAll('.jmf-faq-item');
-        if (faqItems.length) {
-          const faqObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-              if (e.isIntersecting) {
-                const i = parseInt(e.target.getAttribute('data-i') || '0', 10) || 0;
-                setTimeout(() => e.target.classList.add('is-visible'), i * 120);
-                faqObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.2 });
-          faqItems.forEach(c => faqObs.observe(c));
-        }
-
-        const faqList = document.getElementById('jmf-faq-list');
-        if (faqList) {
-          faqList.addEventListener('click', (ev) => {
-            const summary = ev.target.closest('.jmf-faq-q');
-            if (!summary) return;
-            const item = summary.parentElement;
-            const opening = !item.hasAttribute('open');
-            if (opening) {
-              faqList.querySelectorAll('.jmf-faq-item[open]').forEach(o => {
-                if (o !== item) o.removeAttribute('open');
-              });
-            }
-          });
-        }
-
-        const ctaParceriaSec = document.querySelector('.jmf-cta-sec');
-        if (ctaParceriaSec) {
-          const ctaObs = new IntersectionObserver((entries) => {
-            entries.forEach(e => {
-              if (e.isIntersecting) {
-                e.target.classList.add('is-visible');
-                ctaObs.unobserve(e.target);
-              }
-            });
-          }, { threshold: 0.25 });
-          ctaObs.observe(ctaParceriaSec);
-        }
-      }
-    });
+    })();
   </script>
 </Layout>
