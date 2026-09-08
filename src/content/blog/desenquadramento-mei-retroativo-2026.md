@@ -1,6 +1,6 @@
 ---
-title: "Desenquadramento MEI Retroativo 2026: O Que Fazer e Multas"
-description: "Ultrapassou 20% do limite do MEI? Entenda o desenquadramento retroativo a 01/01, reapuração no Simples, multa de 0,33%/dia e como evitar. Consulte especialistas."
+title: "Desenquadramento MEI Retroativo em 2026: Riscos, Multas e Como Resolver"
+description: "Ultrapassou o limite do MEI e o desenquadramento veio retroativo? Entenda quando o imposto retroativo é cobrado e como migrar para ME sem prejuízo."
 pubDate: 2026-07-16
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-desenquadramento-mei-retroativo.jpg"
@@ -57,6 +57,25 @@ Se em **agosto** você já faturou **R$ 70.000**, a projeção linear dá **R$ 1
 | **Até 20% acima** (até R$ 97.200) | 01/01 do **ano seguinte** | Não (mantém MEI até 31/12) |
 | **Acima de 20%** (acima de R$ 97.200) | **01/01 do ano corrente** | **Sim, todos os meses** |
 
+## A Regra dos 20% de Tolerância e a Apuração no Simples
+
+A tolerância de 20% existe para dar margem a pequenos excessos — ela não é uma autorização para faturar mais. Entenda a conta:
+
+- **Até R$ 81.000:** nada muda, você continua MEI.
+- **Entre R$ 81.000 e R$ 97.200** (excesso de até 20%): desenquadramento só a partir de **01/01 do ano seguinte**. Neste ano você segue no MEI, mas já deve parar de emitir DAS-MEI quando estourar o teto.
+- **Acima de R$ 97.200** (excesso superior a 20%): desenquadramento **retroativo a 01/01 do próprio ano**, com reapuração de todos os meses.
+
+### Passo a passo da apuração retroativa no Simples Nacional
+
+1. **Levante o faturamento mês a mês** — notas fiscais emitidas e receitas não notificadas (todas contam).
+2. **Defina o novo enquadramento** — em regra, ME (Simples Nacional, Anexo III ou V conforme o Fator R); empresas de comércio vão para o Anexo I.
+3. **Recalcule o DAS de cada competência** — aplique a alíquota do Simples sobre a receita de cada mês e subtraia o DAS-MEI já pago (R$ 75,60 em 2026).
+4. **Some a diferença de todos os meses** — esse é o imposto complementar em atraso.
+5. **Acrescente multa e juros** — multa de 0,33%/dia (máx. 20%) + juros Selic sobre cada competência vencida.
+6. **Emita os DARFs complementares** (código 5952) e **formalize o desenquadramento** no Portal do Empreendedor.
+
+Fazer essa apuração sem erro exige escrituração mês a mês e conhecimento do anexo correto — é exatamente o tipo de cálculo em que um contador evita pagar imposto a mais (ou a menos, com risco de fiscalização). Com suporte contábil, o mapeamento do faturamento, a escolha do anexo e a emissão dos DARFs ficam corretos na primeira tentativa.
+
 ## É Possível Evitar o Retroativo?
 
 **Não há como evitar a regra** — ela é automática. Mas há **planejamento**:
@@ -103,8 +122,8 @@ Sim. O limite é R$ 251.600, a tolerância de 20% dá R$ 301.920. Acima disso, m
 
 O desenquadramento retroativo **não é castigo** — é consequência matemática de ultrapassar o teto em mais de 20%. A boa notícia: **é 100% evitável com monitoramento e planejamento**.
 
-> **Seu faturamento está crescendo rápido?**
-> [Fale com nossa equipe](/fale-conosco) para uma análise de enquadramento e planejamento da transição antes que o retroativo bata à porta.
+> **Mapeie seu faturamento e regularize seu MEI com nossos especialistas.**
+> [Falar com a JMF no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20ultrapassei%20o%20limite%20do%20MEI%20e%20preciso%20avaliar%20o%20desenquadramento%20retroativo%20e%20a%20migra%C3%A7%C3%A3o%20para%20ME.) — levantamos mês a mês, calculamos a diferença e cuidamos da transição completa para você.
 
 ---
 

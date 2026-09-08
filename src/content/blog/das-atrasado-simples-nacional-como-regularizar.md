@@ -1,6 +1,6 @@
 ---
-title: "DAS Atrasado do Simples Nacional: Como Emitir e Parcelar"
-description: "DAS vencido? Saiba como emitir a guia atualizada pelo PGDAS-D, conferir juros/multa e parcelar em até 60x. Regularize sua empresa no Simples Nacional."
+title: "DAS Atrasado do Simples Nacional em 2026: Como Emitir com Juros e Parcelar"
+description: "Guia prático para recalcular e emitir a guia DAS vencida no PGDAS-D em 2026. Veja como funciona a multa automática do dia 21 e as opções de parcelamento."
 pubDate: 2026-06-16
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-das-atrasado-past-due.jpg"
@@ -23,13 +23,29 @@ Deixar a pendência sem acompanhamento pode dificultar a organização financeir
 
 ## Como regularizar
 
-### Opção 1: Pagamento espontâneo
-Se o DAS foi gerado e não pago, acesse o [PGDAS-D — Portal do Simples Nacional](https://www8.receita.fazenda.gov.br/simplesnacional/) e emita a guia atualizada. Se houver dificuldade no procedimento, o serviço oficial também prevê DAS avulso em situações nas quais não seja possível emitir o documento pelo PGDAS-D.
+### Passo a passo para emitir a guia DAS vencida no portal
 
-### Opção 2: Parcelamento
-Para débitos declarados no PGDAS-D, o [serviço oficial de parcelamento](https://www.gov.br/pt-br/servicos/parcelar-imposto-simples) informa limite máximo de 60 parcelas e regra de valor mínimo por parcela. Consulte as condições aplicáveis ao seu débito antes de aderir.
+| Passo | O que fazer | Onde |
+|-------|-------------|------|
+| 1 | Acesse o portal com certificado digital ou código de acesso (e-CAC) | [Portal do Simples Nacional](https://www8.receita.fazenda.gov.br/simplesnacional/) |
+| 2 | Abra o **PGDAS-D** e confira se o período em atraso foi transmitido | Menu "Apuração" |
+| 3 | Gere o DAS da competência vencida — o sistema recalcula com juros e multa até a data de pagamento | Menu "Emitir DAS" / "Consulta Pendências" |
+| 4 | Compare o valor atualizado com o caixa disponível e escolha pagar ou parcelar | — |
+| 5 | Pague pela internet banking, lotérica ou banco (até o vencimento da nova guia) | — |
 
-### Opção 3: Débito com situação específica
+Se houver dificuldade no procedimento, o serviço oficial também prevê DAS avulso em situações nas quais não seja possível emitir o documento pelo PGDAS-D.
+
+**Sobre a multa:** após o vencimento (dia 20), a guia atualizada já vem com os acréscimos automáticos a partir do dia 21 — multa de mora de 0,33% por dia de atraso (limitada a 20%) e juros Selic sobre o valor do tributo. Quanto mais cedo você emite e paga, menor o encargo.
+
+### Quando vale a pena parcelar (e por qual canal)
+
+- **DAS declarado, sem cobrança formal:** parcelamento pelo próprio Portal do Simples Nacional (até 60 parcelas, com valor mínimo por parcela definido em tabela). É o caminho mais simples.
+- **Débito já inscrito em dívida ativa (cobrança pela PGFN):** o parcelamento muda de canal — passa a ser negociado como débito da União, com condições próprias (inclusive possibilidades como transação para débitos de pequeno valor). Nesse estágio, o caminho correto economiza mais do que o parcelamento padrão.
+- **Regra prática para decidir:** se pagar à vista compromete o capital de giro da operação, parcelar preserva o negócio e a regularização. Se o caixa permite quitar, quitar — evita juros correndo e mantém a empresa apta a certidões e novos parcelamentos.
+
+> Compare sempre o total parcelado (com juros) com o pagamento à vista. Parcelar é ferramenta de caixa, não de economia.
+
+### Débito com situação específica
 Quando houver inscrição, cobrança ou outra situação diferente da pendência comum no PGDAS-D, consulte o órgão responsável e a orientação aplicável antes de tomar qualquer decisão. O caminho e as condições podem mudar conforme a fase do débito.
 
 ## Como ver juros e encargos da forma correta
