@@ -59,6 +59,7 @@ jobs:
       - name: Fetch image from Pexels/Unsplash
         id: fetch-image
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
           UNSPLASH_ACCESS_KEY: ${{ secrets.UNSPLASH_ACCESS_KEY }}
           POST_SLUG: ${{ steps.generate-post.outputs.slug }}
