@@ -58,26 +58,23 @@ Faremos a análise comparativa entre a tributação no Lucro Presumido (com as r
 Para prestação de serviços em geral (exceto serviços hospitalares e de transporte), a alíquota de presunção do Lucro Presumido é de 32% tanto para o IRPJ quanto para a CSLL.
 
 #### 1. Cálculo da Base de Cálculo Presumida
-$$\text{Faturamento Trimestral} = R\$ 300.000,00$$
-$$\text{Base de Cálculo (IRPJ e CSLL)} = R\$ 300.000,00 \times 32\% = R\$ 96.000,00$$
+* **Faturamento Trimestral:** R$ 300.000,00
+* **Base de Cálculo (IRPJ e CSLL):** R$ 300.000,00 × 32% = **R$ 96.000,00**
 
 #### 2. Cálculo do IRPJ (Alíquota de 15% + Adicional de 10% sobre o excedente de R$ 20.000,00/mês)
-O limite trimestral para isenção do adicional de IRPJ é de R$ 60.000,00 (R$ 20.000,00 x 3 meses).
-$$\text{Excedente da Base de Cálculo} = R\$ 96.000,00 - R\$ 60.000,00 = R\$ 36.000,00$$
+O limite trimestral para isenção do adicional de IRPJ é de R$ 60.000,00 (R$ 20.000,00 × 3 meses).
+* **Excedente da Base de Cálculo:** R$ 96.000,00 - R$ 60.000,00 = **R$ 36.000,00**
 
-* **IRPJ Alíquota Normal (15%):**
-  $$R\$ 96.000,00 \times 15\% = R\$ 14.400,00$$
-* **IRPJ Adicional (10% sobre o excedente):**
-  $$R\$ 36.000,00 \times 10\% = R\$ 3.600,00$$
-* **IRPJ Total Devido:**
-  $$R\$ 14.400,00 + R\$ 3.600,00 = R\$ 18.000,00$$
+* **IRPJ Alíquota Normal (15%):** R$ 96.000,00 × 15% = **R$ 14.400,00**
+* **IRPJ Adicional (10% sobre o excedente):** R$ 36.000,00 × 10% = **R$ 3.600,00**
+* **IRPJ Total Devido:** R$ 14.400,00 + R$ 3.600,00 = **R$ 18.000,00**
 
 #### 3. Cálculo da CSLL (Alíquota de 9%)
 A alíquota de CSLL é aplicada diretamente sobre a base de cálculo presumida de 32%, sem deduções ou adicionais.
-$$\text{CSLL Devida} = R\$ 96.000,00 \times 9\% = R\$ 8.640,00$$
+* **CSLL Devida:** R$ 96.000,00 × 9% = **R$ 8.640,00**
 
 #### 4. Totalização dos Tributos Federais sobre a Renda (Trimestral)
-$$\text{Total (IRPJ + CSLL)} = R\$ 18.000,00 + R\$ 8.640,00 = R\$ 26.640,00$$
+* **Total (IRPJ + CSLL):** R$ 18.000,00 + R$ 8.640,00 = **R$ 26.640,00**
 
 Nesse cenário do Lucro Presumido, a empresa também recolhe PIS e COFINS no regime cumulativo (totalizando 3,65%) ou efetuará a transição para IBS/CBS conforme a regra aplicável. O que este cálculo demonstra é o impacto direto que a estrutura de margem de lucro e os custos tributários de renda exercem sobre o fluxo de caixa, exigindo precisão aritmética por parte da [gestão fiscal e tributária](/gestao-fiscal-e-tributaria).
 
@@ -132,7 +129,7 @@ A transição tributária é um terreno fértil para equívocos operacionais que
 
 Não coloque em risco a sobrevivência financeira do seu negócio. A JMF Contabilidade possui um time especializado de [contabilidade para empresas](/contabilidade-para-empresas) e estruturação fiscal focado em auxiliar os empresários de Blumenau a atravessarem a Reforma Tributária com total segurança jurídica.
 
-Fale com os nossos contadores sêniores agora mesmo e agende uma simulação personalizada para a sua empresa. Clique no botão abaixo para iniciar o seu atendimento via WhatsApp.
+Fale com os nossos contadores sêniores agora mesmo e agende uma simulação personalizada para a sua empresa. Clique no link abaixo para iniciar o seu atendimento via WhatsApp.
 
 [**Falar com os especialistas da JMF Contabilidade**](https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20planejamento%20do%20IBS%20e%20CBS%20para%20minha%20empresa)
 
