@@ -118,7 +118,7 @@ A mensalidade contábil recorrente, não a abertura em si. Muitos empreendedores
 
 > **Quer uma estimativa precisa para o seu tipo de negócio?**
 > A JMF pode estruturar uma estimativa conforme atividade, endereço, CNAE e regime tributário pretendidos.
-> [Fale com nossa equipe](/fale-conosco), veja nosso [guia completo para abrir empresa em Blumenau](/como-abrir-empresa-em-blumenau) ou conheça nosso serviço de [Abertura de Empresa](/abertura-de-empresa).
+> [Falar com a JMF no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20estou%20planejando%20abrir%20uma%20empresa%20em%20Blumenau%20e%20gostaria%20de%20uma%20estimativa%20de%20custos.), veja nosso [guia completo para abrir empresa em Blumenau](/como-abrir-empresa-em-blumenau) ou conheça nosso serviço de [Abertura de Empresa](/abertura-de-empresa).
 
 ---
 

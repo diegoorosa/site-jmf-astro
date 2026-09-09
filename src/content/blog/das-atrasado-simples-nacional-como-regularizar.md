@@ -84,7 +84,7 @@ A melhor estratégia é preventiva:
 - **Automatize o pagamento** através do débito automático bancário
 - **Monitore o Fator R** mensalmente para evitar surpresas no valor do DAS — veja o [guia completo do Simples Nacional](/simples-nacional) e as [tabelas completas de alíquotas por anexo](/blog/simples-nacional-2026-tabelas-e-limites) para entender como o Fator R impacta diretamente o valor do seu DAS
 
-> **Precisa organizar pendências do Simples Nacional?** A JMF Contabilidade em Blumenau ajuda a levantar competências, conferir apurações e estruturar a regularização conforme o cenário da empresa. [Fale com a equipe →](/fale-conosco?assunto=regularizacao-simples)
+> **Precisa organizar pendências do Simples Nacional?** A JMF Contabilidade em Blumenau ajuda a levantar competências, conferir apurações e estruturar a regularização conforme o cenário da empresa. [Falar com a JMF no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20estou%20com%20guias%20do%20Simples%20Nacional%20em%20atraso%20e%20preciso%20de%20ajuda%20para%20regularizar.)
 
 ---
 

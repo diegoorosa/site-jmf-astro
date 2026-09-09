@@ -134,7 +134,7 @@ Não coloque em risco a sobrevivência financeira do seu negócio. A JMF Contabi
 
 Fale com os nossos contadores sêniores agora mesmo e agende uma simulação personalizada para a sua empresa. Clique no botão abaixo para iniciar o seu atendimento via WhatsApp.
 
-[**Falar com os especialistas da JMF Contabilidade**](https://wa.me/5547999999999?text=Ol%C3%A1,%20gostaria%20de%20fazer%20o%20planejamento%20do%20IBS%20e%20CBS%20para%20minha%20empresa)
+[**Falar com os especialistas da JMF Contabilidade**](https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20o%20planejamento%20do%20IBS%20e%20CBS%20para%20minha%20empresa)
 
 ---
 
