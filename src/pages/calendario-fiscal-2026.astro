@@ -5,6 +5,12 @@ import '../styles/pages-p2.css';
 
 const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20obriga%C3%A7%C3%B5es%20fiscais%20de%202026%20e%20gostaria%20de%20conversar%20com%20um%20especialista%20da%20JMF.";
 
+// Mês atual para título dinâmico e destaque SSR
+const hoje = new Date();
+const mesAtual = hoje.getMonth() + 1;
+const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+const mesNome = MESES[mesAtual - 1];
+
 const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": ["WebPage", "Service", "Dataset"],
@@ -71,8 +77,8 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Calendário Fiscal 2026 — Obrigações Tributárias Completo"
-  description="Calendário fiscal 2026: DAS Simples Nacional, FGTS, DEFIS, ECF, IRPF e obrigações acessórias com datas ajustadas para feriados e fins de semana."
+  title={`Calendário Fiscal ${mesNome} 2026: DAS, FGTS, IRPJ/CSLL 3º Tri + Feriados`}
+  description={`Calendário fiscal ${mesNome} 2026: DAS Simples Nacional, FGTS, IRPJ/CSLL 3º trimestre e feriados com datas ajustadas. Próxima obrigação em destaque.`}
   canonical="https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
   ogUrl="https://www.jmfcontabilidade.com.br/calendario-fiscal-2026"
   schema={schema}
@@ -81,12 +87,12 @@ const schema = JSON.stringify({
 >
 
   <HeroInterno
-    title="Calendário Fiscal 2026"
-    subtitle="Todas as obrigações tributárias e trabalhistas do ano, com filtros por regime, feriados nacionais e ajustes de prazos para fins de semana."
+    title={`Calendário Fiscal ${mesNome} 2026`}
+    subtitle={`Todas as obrigações tributárias e trabalhistas de ${mesNome}, com filtros por regime, feriados e ajustes de prazos.${mesAtual === 9 ? " Próximo vencimento: DAS 21/09 (seg)" : ""}`}
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Ferramentas" },
-      { label: "Calendário Fiscal 2026" }
+      { label: `Calendário Fiscal ${mesNome} 2026` }
     ]}
     ctas={[
       { label: "Ver obrigações", href: "#calendario", variant: "cta" },
@@ -113,6 +119,33 @@ const schema = JSON.stringify({
       Prazos municipais e estaduais podem variar. Confirme com seu contador.
     </div>
   </div>
+
+  <!-- SETEMBRO 2026 — DESTAQUE SSR -->
+  {/* ponytail: bloco SSR dinâmico por mês; se precisar de datas por mês além de set, mover pro array EVENTOS */}
+  {mesAtual === 9 && (
+  <section id="setembro-destaque" class="py-6 bg-[#dbeafe] border-b border-blue-100" aria-labelledby="setembro-titulo">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h2 id="setembro-titulo" class="text-2xl font-bold text-[#0f172a] mb-3">Setembro 2026 — Obrigações e Vencimentos</h2>
+      <div class="grid sm:grid-cols-3 gap-3 text-sm">
+        <div class="bg-white rounded-lg p-3 border border-blue-200">
+          <div class="text-xs font-semibold text-blue-700 mb-1">DAS — Simples Nacional</div>
+          <div class="text-[#0f172a] font-bold">21/09 (seg)</div>
+          <div class="text-xs text-gray-500">Comp. agosto (dia 20=dom → prorrogado)</div>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-green-200">
+          <div class="text-xs font-semibold text-green-700 mb-1">FGTS</div>
+          <div class="text-[#0f172a] font-bold">18/09 (sex)</div>
+          <div class="text-xs text-gray-500">Comp. agosto (dia 20=dom → antecipado)</div>
+        </div>
+        <div class="bg-white rounded-lg p-3 border border-gray-200">
+          <div class="text-xs font-semibold text-gray-600 mb-1">Feriado: Independência</div>
+          <div class="text-[#0f172a] font-bold">07/09 (seg)</div>
+          <div class="text-xs text-gray-500">Desloca vencimentos do dia 20</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  )}
 
   <!-- FILTROS + MESES -->
   <section id="calendario" class="py-8 bg-white border-b border-gray-100 sticky top-0 z-20 shadow-sm">

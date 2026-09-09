@@ -1,7 +1,6 @@
 ---
-
-title: "Alvará de Funcionamento em Blumenau (2026): Guia, Taxas e VISA Sanitária"
-description: "Passo a passo completo para emitir o alvará de funcionamento, consulta de viabilidade e alvará sanitário (VISA) em Blumenau. Evite multas."
+title: "Alvará de Funcionamento Blumenau 2026: Guia, VISA Sanitária e Viabilidade"
+description: "Passo a passo completo para emitir o alvará de funcionamento, consulta de viabilidade e alvará sanitário (VISA Blumenau) em 2026. Taxas, prazos, documentos e multas. Evite problemas."
 pubDate: 2026-06-30
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: /assets/images/blog-alvara-carimbo-aprovacao.jpg
@@ -17,6 +16,10 @@ faq:
     answer: "O funcionamento sem alvará ou com informações divergentes pode levar a notificações, fiscalização e outras medidas previstas na legislação municipal. Para evitar riscos, confira se natureza jurídica, atividades, área utilizada e demais dados refletem a realidade do estabelecimento."
   - question: "O alvará de funcionamento precisa ser renovado? Como?"
     answer: "A Prefeitura de Blumenau disponibiliza emissão ou renovação para o exercício de 2026. Consulte a situação da empresa no canal oficial e siga as exigências apresentadas para a atividade e o estabelecimento."
+  - question: "O que é o Alvará Sanitário (VISA) em Blumenau?"
+    answer: "O alvará sanitário é emitido pela Vigilância Sanitária de Blumenau (VISA) e é obrigatório para atividades de alimentação, saúde, estética e farmácias. A vistoria verifica estrutura física, higiene, controle de pragas, temperatura de equipamentos e boas práticas de manipulação."
+  - question: "Como fazer a consulta de viabilidade em Blumenau?"
+    answer: "Acesse o serviço de consulta de viabilidade da Prefeitura de Blumenau (blumenau.sc.gov.br/pedidoviabilidade/), informe o endereço, o CNAE e a natureza jurídica. O sistema retorna se a atividade é compatível com o zoneamento e quais licenças serão exigidas."
 ---
 
 
@@ -186,6 +189,25 @@ Documentos para renovação:
 - Comprovante de pagamento quando o canal oficial indicar emissão de guia
 
 As exigências podem mudar conforme atividade e situação cadastral. O ideal é revisar o processo com antecedência e não esperar uma fiscalização para identificar divergências.
+
+## Consulta de Viabilidade e Alvará Sanitário (VISA Blumenau)
+
+A **consulta de viabilidade** é o primeiro passo obrigatório antes de solicitar qualquer alvará em Blumenau. Ela verifica se o endereço e a atividade (CNAE) são compatíveis com o zoneamento municipal e quais licenças serão exigidas — incluindo o **alvará sanitário (VISA Blumenau)** para atividades de alimentação, saúde e estética.
+
+**Como fazer a consulta de viabilidade em Blumenau:**
+1. Acesse o [serviço oficial da Prefeitura](https://www.blumenau.sc.gov.br/pedidoviabilidade/)
+2. Informe o endereço completo, o CNAE principal e a natureza jurídica
+3. O sistema retorna: compatibilidade de zoneamento, licenças exigidas (VISA, Bombeiros, Ambiental) e taxas estimadas
+4. Se houver exigência sanitária, o sistema já sinaliza a necessidade de vistoria da VISA
+
+> **Dica:** Faça a consulta **antes** de assinar contrato de locação ou reformar o imóvel. Evita retrabalho e custos desnecessários.
+
+**Quem precisa do Alvará Sanitário (VISA Blumenau):**
+- **Alimentação:** restaurantes, bares, lanchonetes, padarias, mercados, food trucks, cafeterias, sorveterias
+- **Saúde:** clínicas médicas/odontológicas, consultórios, laboratórios, farmácias, óticas
+- **Estética:** salões de beleza, barbearias, clínicas de estética, tatuagem e piercing
+
+A vistoria da VISA verifica: estrutura física (piso, paredes, teto), controle de temperatura, água/esgoto, controle de pragas, higiene dos manipuladores e boas práticas. A taxa varia de R$ 200 a R$ 350 com validade de 1 ano.
 
 ## Mudança de Endereço ou Atividade
 

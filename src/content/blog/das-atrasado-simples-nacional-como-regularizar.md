@@ -1,10 +1,19 @@
 ---
-title: "DAS Atrasado do Simples Nacional em 2026: Como Emitir com Juros e Parcelar"
-description: "Guia prático para recalcular e emitir a guia DAS vencida no PGDAS-D em 2026. Veja como funciona a multa automática do dia 21 e as opções de parcelamento."
+title: "DAS Atrasado Simples Nacional 2026: Como Emitir, Recalcular e Parcelar"
+description: "Guia completo para emitir DAS vencido no PGDAS-D 2026: passo a passo, juros, multa, parcelamento e código DARF. Regularize agora e evite exclusão do Simples."
 pubDate: 2026-06-16
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-das-atrasado-past-due.jpg"
 imageAlt: "Guia com carimbo de atraso — DAS atrasado do Simples Nacional"
+faq:
+  - question: "Como emitir DAS atrasado do Simples Nacional?"
+    answer: "Acesse o Portal do Simples Nacional com certificado digital ou código de acesso, abra o PGDAS-D, confira se o período foi transmitido e gere o DAS da competência vencida — o sistema recalcula automaticamente com juros e multa a partir do dia 21."
+  - question: "Qual o código do DARF para DAS atrasado do Simples Nacional?"
+    answer: "O código geralmente utilizado para recolhimento complementar de diferenças do Simples Nacional é o 5952. Confira sempre no momento da emissão, pois pode variar conforme a competência e a situação do débito."
+  - question: "Posso parcelar DAS atrasado do Simples Nacional?"
+    answer: "Sim. Débitos declarados no PGDAS-D podem ser parcelados em até 60 vezes diretamente no Portal do Simples Nacional. Se já estiver inscrito em dívida ativa (PGFN), o parcelamento segue regras próprias da União."
+  - question: "O que acontece se não pagar DAS atrasado?"
+    answer: "Além de juros Selic e multa de 0,33%/dia (máx. 20%), a inadimplência continuada pode levar à notificação de exclusão do Simples Nacional e inscrição em dívida ativa. Regularize ou parcele antes desse estágio."
 ---
 
 O DAS (Documento de Arrecadação do Simples Nacional) é a guia usada para pagar os tributos apurados no regime. Quando a data de vencimento passa, a recomendação é não reutilizar uma guia vencida: confira a apuração e **emita uma guia atualizada pelo canal oficial**. O próprio serviço do Governo Federal informa que o DAS é emitido para pagamento dos tributos do Simples e que pode existir DAS avulso quando não for possível emitir o documento pelo PGDAS-D.
@@ -21,7 +30,7 @@ Antes de gerar a nova guia, confira três pontos: se o período de apuração fo
 
 Deixar a pendência sem acompanhamento pode dificultar a organização financeira e a regularidade fiscal da empresa. Em inadimplências mais relevantes ou persistentes, podem existir notificações e outros desdobramentos previstos para o regime. A medida prática é consultar a situação no canal oficial e decidir entre quitação ou parcelamento com base no valor atualizado.
 
-## Como regularizar
+## Como Emitir DAS Atrasado no PGDAS-D: Passo a Passo 2026 {#como-emitir-das-atrasado}
 
 ### Passo a passo para emitir a guia DAS vencida no portal
 
