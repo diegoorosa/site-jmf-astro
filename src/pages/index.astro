@@ -1066,7 +1066,6 @@ const pageDesc = "Contabilidade em Blumenau: 35+ anos de mercado e +150 avaliaç
   <script>
     (function() {
       function init() {
-        if (window.innerWidth < 768) return;
         const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         // Scroll reveal
         const revealEls = document.querySelectorAll('[data-reveal]');
@@ -1127,7 +1126,7 @@ const pageDesc = "Contabilidade em Blumenau: 35+ anos de mercado e +150 avaliaç
           let baseInited = false;
           if (frame) { baseTiltX = -5; baseTiltY = 4; baseInited = true; }
           sec.addEventListener('mousemove', (ev) => {
-            if (reduce || !frame) return;
+            if (window.innerWidth < 768 || reduce || !frame) return;
             const clientX = ev.clientX;
             const clientY = ev.clientY;
             if (rafId) return;

@@ -190,7 +190,7 @@ Documentos para renovação:
 
 As exigências podem mudar conforme atividade e situação cadastral. O ideal é revisar o processo com antecedência e não esperar uma fiscalização para identificar divergências.
 
-## Consulta de Viabilidade e Alvará Sanitário (VISA Blumenau)
+## Consulta de Viabilidade em Blumenau: Passo a Passo Prático
 
 A **consulta de viabilidade** é o primeiro passo obrigatório antes de solicitar qualquer alvará em Blumenau. Ela verifica se o endereço e a atividade (CNAE) são compatíveis com o zoneamento municipal e quais licenças serão exigidas — incluindo o **alvará sanitário (VISA Blumenau)** para atividades de alimentação, saúde e estética.
 
@@ -201,13 +201,6 @@ A **consulta de viabilidade** é o primeiro passo obrigatório antes de solicita
 4. Se houver exigência sanitária, o sistema já sinaliza a necessidade de vistoria da VISA
 
 > **Dica:** Faça a consulta **antes** de assinar contrato de locação ou reformar o imóvel. Evita retrabalho e custos desnecessários.
-
-**Quem precisa do Alvará Sanitário (VISA Blumenau):**
-- **Alimentação:** restaurantes, bares, lanchonetes, padarias, mercados, food trucks, cafeterias, sorveterias
-- **Saúde:** clínicas médicas/odontológicas, consultórios, laboratórios, farmácias, óticas
-- **Estética:** salões de beleza, barbearias, clínicas de estética, tatuagem e piercing
-
-A vistoria da VISA verifica: estrutura física (piso, paredes, teto), controle de temperatura, água/esgoto, controle de pragas, higiene dos manipuladores e boas práticas. A taxa varia de R$ 200 a R$ 350 com validade de 1 ano.
 
 ## Mudança de Endereço ou Atividade
 

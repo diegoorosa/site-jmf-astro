@@ -108,7 +108,10 @@ const faqSchema = JSON.stringify({
   ]
 });
 
-const schema = [localBusinessSchema, faqSchema];
+const schema = JSON.stringify([
+  JSON.parse(localBusinessSchema),
+  JSON.parse(faqSchema)
+]);
 
 const serviceSchema = {
   serviceName: "Abertura de Empresa em Santa Catarina",
