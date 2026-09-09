@@ -89,14 +89,6 @@ const INTERNAL_LINKS = {
   padrao: '/fale-conosco'
 };
 
-function slugify(text) {
-  return text
-    .toLowerCase()
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '');
-}
-
 function getTodayBR() {
   const now = new Date();
   const brTime = new Date(now.getTime() - 3 * 60 * 60 * 1000);
@@ -153,13 +145,18 @@ imageAlt: "Descrição visual da imagem"
 ---
 
 CONTEÚDO (1500-2200 palavras):
-- Introdução contextualizando o momento atual (${currentMonthYear}) e impactos para o empresário
-- Tópicos estruturados em H2 e H3
-- Exemplos práticos voltados para Santa Catarina/Blumenau quando couber
+- Introdução contextualizando o momento atual (${currentMonthYear}) e impactos para o empresário.
+- Tópicos estruturados em H2 e H3.
+- Exemplos práticos voltados para Santa Catarina/Blumenau quando couber.
+- PROIBIDO USAR LATEX OU CIFRÕES ($$ ou $): O blog NÃO possui suporte a KaTeX/MathJax. NUNCA use $$, \\text{}, \\times, \\frac. Todos os cálculos devem ser escritos em Markdown limpo com listas e negrito. Exemplo:
+  * **Base de Cálculo:** R$ 300.000,00 × 32% = **R$ 96.000,00**
+  * **IRPJ Normal (15%):** R$ 96.000,00 × 15% = **R$ 14.400,00**
 - RIGOR MATEMÁTICO: Caso apresente tabelas tributárias (Presumido, Real ou Simples), calcule o IRPJ (15% + 10% sobre excedente de R$ 20.000/mês), CSLL (9%) e confira as somas aritmeticamente.
-- LEGISLAÇÃO VIGENTE: Use apenas leis ativas (ex: Lei 14.789/2023 para subvenções; IN RFB 2.121/2022 para PIS/COFINS).
-- PROIBIÇÃO DE LINKS INVENTADOS: Não gere links falsos. Cite apenas normas reais.
-- CTA final para o WhatsApp da JMF Contabilidade.
+- LEGISLAÇÃO VIGENTE: Use apenas normas e leis ativas.
+- PROIBIÇÃO DE LINKS INVENTADOS: Não gere links falsos.
+- LINK OBRIGATÓRIO DE WHATSAPP NO FINAL: O CTA final DEVE direcionar para o WhatsApp oficial da JMF Contabilidade com o número real:
+  [Falar com os especialistas da JMF Contabilidade](https://wa.me/554733265123?text=MENSAGEM_URL_ENCODED)
+  É EXPRESSAMENTE PROIBIDO usar números fictícios como 999999999, XXXXXXXXX ou placeholders.
 
 LINKS INTERNOS OBRIGATÓRIOS:
 `;
@@ -200,8 +197,10 @@ async function auditPost(rawMarkdown) {
 SUAS TAREFAS:
 1. Verifique qualquer cálculo de imposto nas tabelas ou textos. Se houver erro de IRPJ, CSLL ou soma errada, corrija os números.
 2. Certifique-se de que não haja leis revogadas nem links inventados.
-3. Garanta que o frontmatter (title, description, pubDate, author, image) permaneça íntegro.
-4. Retorne APENAS o Markdown completo pronto para publicação, sem comentários adicionais.
+3. ELIMINE QUALQUER NOTAÇÃO LATEX ($$ ou $): Converta equações matemáticas para texto/Markdown simples com negrito (ex: * **Base:** R$ 100 × 10% = R$ 10).
+4. VERIFIQUE O NÚMERO DO WHATSAPP: O número oficial deve ser estritamente '554733265123'. Corrija se houver placeholders como '999999999'.
+5. Garanta que o frontmatter (title, description, pubDate, author, image) permaneça íntegro.
+6. Retorne APENAS o Markdown completo pronto para publicação, sem comentários adicionais.
 
 ARTIGO:
 ${rawMarkdown}`;
@@ -210,17 +209,38 @@ ${rawMarkdown}`;
   return await generateWithFallback(auditPrompt);
 }
 
+// BLINDAGEM PROGRAMÁTICA: Limpa qualquer LaTeX residual ou número falso antes de gravar
+function sanitizeMarkdown(md) {
+  let clean = md;
+
+  // 1. Corrige números de WhatsApp fictícios
+  clean = clean.replace(/wa\.me\/55479[0-9]{8}/g, 'wa.me/554733265123');
+  clean = clean.replace(/wa\.me\/5547999999999/g, 'wa.me/554733265123');
+
+  // 2. Remove blocos LaTeX $$ ... $$ convertendo para texto limpo
+  clean = clean.replace(/\$\$\\text\{([^}]+)\}\s*=\s*([^$]+)\$\$/g, '* **$1:** $2');
+  clean = clean.replace(/\$\$([^$]+)\$\$/g, '$1');
+  clean = clean.replace(/\\text\{([^}]+)\}/g, '$1');
+  clean = clean.replace(/\\times/g, '×');
+  clean = clean.replace(/\\%/g, '%');
+  clean = clean.replace(/\\\$/g, 'R$');
+
+  return clean;
+}
+
 async function main() {
   const news = await fetchLatestNews();
   const prompt = buildPrompt(news);
 
   console.log('🤖 Gerando rascunho com base nas notícias...');
   let markdown = await generateWithFallback(prompt);
-
   markdown = markdown.replace(/^```markdown\n/, '').replace(/\n```$/, '');
 
   const auditedMarkdown = await auditPost(markdown);
-  const cleanMarkdown = auditedMarkdown.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+  let cleanMarkdown = auditedMarkdown.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+
+  // Aplica a blindagem por código
+  cleanMarkdown = sanitizeMarkdown(cleanMarkdown);
 
   const fmMatch = cleanMarkdown.match(/^---\n([\s\S]*?)\n---/);
   if (!fmMatch) throw new Error('Frontmatter inválido');
