@@ -1,5 +1,5 @@
 /**
- * Busca imagem no Pexels/Unsplash baseada no slug/tema do post.
+ * Busca imagem no Pexels/Unsplash baseada no tema contábil/empresarial do post.
  * Salva: WebP para o site + original (JPG/PNG) para GMB.
  * Exporta URLs originais para GitHub Actions.
  */
@@ -30,73 +30,105 @@ if (fs.existsSync(WEBP_FILE)) {
   process.exit(0);
 }
 
-// Palavras-chave para busca baseadas no slug/título
+// Mapeador semântico: Converte termos contábeis/fiscais em buscas corporativas em INGLÊS
 function getSearchTerms(slug, title) {
+  const text = `${slug} ${title}`.toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '');
+
   const terms = [];
 
-  // Extrair palavras do slug (filtrar curtas)
-  const slugWords = slug.split('-').filter(w => w.length > 2);
-  terms.push(...slugWords);
+  // Mapeamento temático estrito para o ecossistema contábil e corporativo
+  const THEME_MAP = [
+    // 1. Tributário / Reforma / IBS / CBS / Planejamento Fiscal
+    {
+      keywords: ['ibs', 'cbs', 'reforma', 'tribut', 'imposto', 'planejamento', 'presumido', 'lucro real'],
+      queries: [
+        'corporate tax financial planning',
+        'business strategy meeting finance',
+        'financial analysis documents office',
+        'corporate accounting calculation'
+      ]
+    },
+    // 2. Simples Nacional / DAS / PGDAS / Dívidas
+    {
+      keywords: ['simples', 'das', 'pgdas', 'parcelamento', 'receita', 'fator r'],
+      queries: [
+        'accounting office spreadsheet calculator',
+        'small business financial paperwork',
+        'modern finance office paperwork desk'
+      ]
+    },
+    // 3. MEI / Desenquadramento / Faturamento
+    {
+      keywords: ['mei', 'desenquadr', 'faturamento', 'excesso'],
+      queries: [
+        'small business owner modern office',
+        'entrepreneur reviewing business finance',
+        'business growth planning laptop desk'
+      ]
+    },
+    // 4. Abertura de Empresa / Viabilidade / Custos / JUCESC
+    {
+      keywords: ['abrir', 'abertura', 'custa', 'custo', 'taxa', 'jucesc', 'viabilidade', 'sociedade', 'contrato'],
+      queries: [
+        'corporate business contract signing desk',
+        'business partners consultation office',
+        'entrepreneur starting new company office'
+      ]
+    },
+    // 5. Alvará / Vigilância Sanitária (VISA) / Licenças
+    {
+      keywords: ['alvara', 'visa', 'sanitar', 'localizacao', 'prefeitura', 'vistoria', 'imovel'],
+      queries: [
+        'architectural blueprint commercial office',
+        'modern corporate business facility desk',
+        'business compliance documentation meeting'
+      ]
+    },
+    // 6. Sucessão / Holding / Sócios / Patrimônio
+    {
+      keywords: ['holding', 'patrimon', 'sucess', 'bens', 'socio'],
+      queries: [
+        'corporate boardroom executive meeting',
+        'modern corporate architecture skyscraper',
+        'executive handshake business agreement'
+      ]
+    },
+    // 7. Trabalhista / eSocial / Folha / RH
+    {
+      keywords: ['trabalh', 'esocial', 'folha', 'pessoal', 'rh', 'salario'],
+      queries: [
+        'human resources corporate team meeting',
+        'professional modern workplace business staff'
+      ]
+    }
+  ];
 
-  // Normalizar título
-  const titleLower = title.toLowerCase();
-
-  // Mapeamento contextual: palavra-chave do título → termos de busca visual (cada termo tentado individualmente)
-  const contextMap = {
-    // Holding / Estrutura societária
-    'holding': ['corporate office', 'modern building', 'business architecture'],
-    'patrimonial': ['modern house', 'real estate', 'property'],
-    'protecao': ['security shield', 'protection concept', 'safe'],
-    'bens': ['wealth', 'assets', 'financial growth'],
-    'sucessao': ['family legacy', 'inheritance', 'generational'],
-    'planejamento': ['financial planning', 'strategy chart', 'business meeting'],
-    'tributario': ['tax document', 'calculator', 'finance', 'money'],
-    'fiscal': ['tax form', 'accounting', 'spreadsheet', 'finance'],
-    'trabalhista': ['workplace', 'employment', 'team meeting'],
-    'esocial': ['digital workflow', 'HR software', 'compliance'],
-    'simples': ['small business', 'office', 'entrepreneurship'],
-    'mei': ['microbusiness', 'startup', 'small office'],
-    'irpf': ['tax return', 'personal finance', 'document'],
-    'abertura': ['company formation', 'business startup', 'logo'],
-    'contabilidade': ['accounting', 'finance', 'calculator', 'documents'],
-    'blumenau': ['Blumenau Brazil', 'cityscape', 'Brazil business'],
-    'sc': ['Santa Catarina Brazil', 'southern Brazil', 'coast'],
-    '2026': ['2026', 'modern business', 'future', 'technology'],
-  };
-
-  // Adicionar termos do mapa se a palavra-chave aparecer no título OU slug
-  for (const [key, values] of Object.entries(contextMap)) {
-    if (titleLower.includes(key) || slug.includes(key)) {
-      terms.push(...values);
+  // Adicionar buscas dos temas identificados
+  for (const theme of THEME_MAP) {
+    if (theme.keywords.some(kw => text.includes(kw))) {
+      terms.push(...theme.queries);
     }
   }
 
-  // Se nenhum contexto específico bateu, usar termos genéricos mas bem escolhidos
-  if (terms.length === 0) {
-    if (titleLower.includes('imposto') || titleLower.includes('tribut')) {
-      terms.push('tax document', 'calculator', 'finance', 'money');
-    } else if (titleLower.includes('holding')) {
-      terms.push('corporate office', 'modern building', 'business structure');
-    } else {
-      terms.push('professional', 'business', 'office', 'finance');
-    }
-  }
+  // Fallback corporativo garantido (se o tema for muito específico)
+  const CORPORATE_FALLBACKS = [
+    'modern corporate accounting office',
+    'business executives financial meeting',
+    'financial report analysis office desk',
+    'corporate business meeting boardroom'
+  ];
 
-  // Deixar termos únicos e limitar a 5
-  const finalTerms = [...new Set(terms)].slice(0, 5);
+  terms.push(...CORPORATE_FALLBACKS);
 
-  // Se ainda estiver vazio (impossível), usar defaults
-  if (finalTerms.length === 0) {
-    finalTerms.push('professional', 'business', 'office', 'finance');
-  }
-
-  return finalTerms;
+  // Remove duplicados preservando a prioridade dos temas mais relevantes
+  return [...new Set(terms)].slice(0, 5);
 }
 
 async function searchPexels(terms) {
   if (!PEXELS_API_KEY) return null;
 
-  // Tentar cada termo individualmente até achar resultado
   for (const term of terms) {
     const url = `https://api.pexels.com/v1/search?query=${encodeURIComponent(term)}&per_page=10&orientation=landscape`;
 
@@ -113,13 +145,15 @@ async function searchPexels(terms) {
       const data = await response.json();
       if (data.photos && data.photos.length > 0) {
         const photo = data.photos.find(p => p.src.original || p.src.large2x || p.src.large || p.src.medium);
-        console.log(`✅ Pexels encontrou com: "${term}"`);
-        return {
-          original: photo.src.original,
-          large2x: photo.src.large2x,
-          large: photo.src.large,
-          medium: photo.src.medium
-        };
+        if (photo) {
+          console.log(`✅ Pexels encontrou com termo corporativo: "${term}"`);
+          return {
+            original: photo.src.original,
+            large2x: photo.src.large2x,
+            large: photo.src.large,
+            medium: photo.src.medium
+          };
+        }
       }
       console.log(`⚪ Pexels sem resultados para: "${term}"`);
     } catch (err) {
@@ -132,7 +166,6 @@ async function searchPexels(terms) {
 async function searchUnsplash(terms) {
   if (!UNSPLASH_ACCESS_KEY) return null;
 
-  // Tentar cada termo individualmente até achar resultado
   for (const term of terms) {
     const url = `https://api.unsplash.com/search/photos?query=${encodeURIComponent(term)}&per_page=10&orientation=landscape`;
 
@@ -149,7 +182,7 @@ async function searchUnsplash(terms) {
       const data = await response.json();
       if (data.results && data.results.length > 0) {
         const photo = data.results[0];
-        console.log(`✅ Unsplash encontrou com: "${term}"`);
+        console.log(`✅ Unsplash encontrou com termo corporativo: "${term}"`);
         return {
           original: photo.urls.raw || photo.urls.full,
           regular: photo.urls.regular,
@@ -168,7 +201,6 @@ async function downloadAndSave(imageInfo, webpPath, originalPath) {
   try {
     const sharp = (await import('sharp')).default;
 
-    // Preferir original para GMB, maior disponível para WebP
     const originalUrl = imageInfo.original || imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium;
     const webpUrl = imageInfo.large2x || imageInfo.large || imageInfo.regular || imageInfo.full || imageInfo.medium || imageInfo.original;
 
@@ -179,12 +211,10 @@ async function downloadAndSave(imageInfo, webpPath, originalPath) {
     console.log(`🌐 URL original: ${originalUrl}`);
     console.log(`🌐 URL WebP: ${webpUrl}`);
 
-    // Baixar original
     const origResponse = await fetch(originalUrl);
     if (!origResponse.ok) throw new Error(`HTTP ${origResponse.status} (original)`);
     const origBuffer = Buffer.from(await origResponse.arrayBuffer());
 
-    // Processar original: limitar a 10000x10000 e salvar como JPG (GMB)
     const origImage = sharp(origBuffer);
     const origMetadata = await origImage.metadata();
     console.log(`📐 Original: ${origMetadata.width}x${origMetadata.height}`);
@@ -194,13 +224,12 @@ async function downloadAndSave(imageInfo, webpPath, originalPath) {
       console.log(`⚠️ Redimensionando original (máx 10000px)...`);
       origToSave = origImage.resize(10000, 10000, { fit: 'inside', withoutEnlargement: true });
     }
-    // Sempre salvar como JPG (formato aceito pelo GMB)
+
     await origToSave
       .jpeg({ quality: 85, mozjpeg: true })
       .toFile(originalPath);
     console.log(`✅ Original (JPG) salvo: ${originalPath}`);
 
-    // Baixar e converter para WebP (para site)
     const webpResponse = await fetch(webpUrl);
     if (!webpResponse.ok) throw new Error(`HTTP ${webpResponse.status} (webp)`);
     const webpBuffer = Buffer.from(await webpResponse.arrayBuffer());
@@ -222,10 +251,10 @@ async function downloadAndSave(imageInfo, webpPath, originalPath) {
 }
 
 async function main() {
-  console.log(`🔍 Buscando imagem para: ${SLUG} (${TITLE})`);
+  console.log(`🔍 Buscando imagem corporativa para: ${SLUG} (${TITLE})`);
 
   const terms = getSearchTerms(SLUG, TITLE);
-  console.log(`🔑 Termos de busca: ${terms.join(', ')}`);
+  console.log(`🔑 Termos de busca prioritários: ${terms.join(' | ')}`);
 
   let imageInfo = null;
 
@@ -241,14 +270,12 @@ async function main() {
 
   if (!imageInfo) {
     console.error('❌ Nenhuma imagem encontrada ou APIs não configuradas');
-    console.log('💡 Configure PEXELS_API_KEY ou UNSPLASH_ACCESS_KEY nos secrets');
     process.exit(1);
   }
 
   const urls = await downloadAndSave(imageInfo, WEBP_FILE, ORIGINAL_FILE);
   if (!urls) process.exit(1);
 
-  // Exportar URLs para GitHub Actions
   const githubOutput = process.env.GITHUB_OUTPUT;
   if (githubOutput) {
     fs.appendFileSync(githubOutput, `image_original=${urls.originalUrl}\n`);
