@@ -82,6 +82,8 @@ O alvará municipal (Vigilância Sanitária) deve autorizar explicitamente:
 - [ ] Equipamentos de emergência (desfibrilador, carrinho de parada, oxigênio)
 - [ ] Prontuário eletrônico ou físico com registro de procedimentos
 
+> **Importante:** laudos técnicos de engenharia clínica e projetos arquitetônicos de vigilância sanitária (RDC 50) são de responsabilidade do corpo técnico da própria clínica. A JMF faz a orientação societária e tributária para alinhar a estrutura da clínica ao Tema 328, levantando os requisitos fiscais em cooperação com o responsável técnico.
+
 ### 5. Regularidade fiscal e trabalhista
 
 - [ ] Certidões negativas (Federal, Estadual, Municipal, FGTS, Trabalhista)
@@ -119,9 +121,9 @@ O alvará municipal (Vigilância Sanitária) deve autorizar explicitamente:
 | Risco | O que acontece | Prevenção JMF |
 |-------|----------------|---------------|
 | Sociedade Simples em vez de LTDA | Autuação total + multa 75% + juros | **Alteração de tipo societário antes da opção** |
-| Alvará apenas para "consultas" | Glosa do benefício + auto de infração | **Assessoria para adequação do VISAM/RDC 50** |
+| Alvará apenas para "consultas" | Glosa do benefício + auto de infração | **Levantamento dos requisitos fiscais do alvará, em cooperação com o responsável técnico da clínica** |
 | Lucro Real (não Presumido) | Benefício não se aplica (base real) | **Simulação prévia: Lucro Presumido costuma compensar mais** |
-| Ausência de CME/esterilização | Risco sanitário + questionamento da estrutura | **Checklist físico + laudo de engenheiro clínico** |
+| Ausência de CME/esterilização | Risco sanitário + questionamento da estrutura | **Orientação tributária sobre os requisitos a comprovar; laudos de engenharia clínica e projetos RDC 50 são do corpo técnico da clínica** |
 | Médicos sócios como PJ (pejotização) | Descaracterização da estrutura | **Contratação CLT ou cooperativa regularizada** |
 | Cruzamento RFB: CNPJ × CNES × Alvará | Malha fiscal automática | **Validação prévia de todos os cadastros** |
 
@@ -143,7 +145,7 @@ A Receita Federal e a SEF/SC cruzam automaticamente:
 
 <div class="bg-[#fef3c7] border-l-4 border-[#f59e0b] p-6 my-8 rounded-r-xl">
 
-**JMF Contabilidade:** "A Equiparação Hospitalar não é 'brecha' — é lei federal (Lei 9.249/95) confirmada pelo STJ (Tema 328). Mas exige **execução técnica rigorosa**: sociedade correta, alvará correto, estrutura física, contratação CLT, e conciliação de todos os cadastros. Clínica que tenta fazer sozinha, sem assessoria contábil especializada, quase sempre cai na malha. Nós entregamos o pacote completo: adequação societária + VISAM + CNES + parametrização fiscal + rotina mensal."
+**JMF Contabilidade:** "A Equiparação Hospitalar não é 'brecha' — é lei federal (Lei 9.249/95) confirmada pelo STJ (Tema 328). Mas exige **execução técnica rigorosa**: sociedade correta, alvará correto, estrutura física, contratação CLT, e conciliação de todos os cadastros. Clínica que tenta fazer sozinha, sem assessoria contábil especializada, quase sempre cai na malha. Nós cuidamos da parte contábil: adequação societária na JUCESC, opção pelo Lucro Presumido, apuração fiscal e conciliação dos cadastros perante a RFB. A estrutura física, os laudos de engenharia clínica e os projetos de vigilância sanitária (RDC 50) ficam com o corpo técnico da própria clínica — e nós alinhamos tudo isso ao que a fiscal exige."
 
 </div>
 

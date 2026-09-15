@@ -118,7 +118,7 @@ Empresas que estruturarem a operação **agora** capturam 6 a 7 anos de economia
 
 ## Próximos passos
 
-A JMF cuida de toda a stack: **pleito TTD 409/410 + RADAR + parametrização NF-e + rotina mensal DIME/DCIP/EFD**.
+A JMF cuida da inteligência tributária em SC: **pleito e manutenção do TTD 409/410 na SEF/SC + abertura da filial/trading + parametrização da NF-e de entrada + rotina mensal DIME/DCIP/EFD**. Desembaraço aduaneiro, habilitação no RADAR e logística portuária ficam a cargo do despachante aduaneiro de confiança do cliente — trabalhamos juntos para a operação fluir.
 
 - [Fale com um especialista em TTD no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20entender%20o%20cr%C3%A9dito%20presumido%20do%20TTD%20410%20para%20minha%20importadora.)
 - [Conheça nossa página completa de Contabilidade para Importação e TTD em SC](/contabilidade-para-importacao-sc)

@@ -91,20 +91,19 @@ A indústria têxtil tem perdas inerentes ao processo: **quebra de fio na tecela
 
 ### Rotina recomendada pela JMF
 
-1. **Diário:** Apontamento de produção no ERP (ordem de produção × consumo real × perda real)
-2. **Semanal:** Conciliação chão de fábrica × contabilidade (K200 vs. estoque contábil)
-3. **Mensal:** Geração do Bloco K com K280 (correções) justificadas tecnicamente
-4. **Trimestral:** Laudo técnico de perdas normais por produto/processo (base para defesa fiscal)
+A coleta física dos dados de produção (corte, fiação, tinturaria) é responsabilidade da equipe de produção interna da fábrica, por meio do ERP da empresa. O papel da contabilidade é orientar essa rotina:
+
+1. **Orientação aos gestores fabris e ao setor fiscal interno** na correta parametrização do software de gestão (ERP) e no cálculo das perdas normais e anormais
+2. **Mensal:** conferência dos relatórios gerados pela indústria para transmissão com exatidão no Bloco K do SPED Fiscal (K200, K280 com correções justificadas)
+3. **Trimestral:** revisão conjunta dos percentuais de perda por produto/processo, base técnica para eventual defesa fiscal
 
 ---
 
 <div class="bg-[#fef3c7] border-l-4 border-[#f59e0b] p-6 my-8 rounded-r-xl">
 
-**35+ anos atendendo indústrias têxteis no Vale do Itajaí** — conhecemos a dinâmica do fio ao varejo.
+**35+ anos atendendo indústrias no Vale do Itajaí** — conhecemos a dinâmica do fio ao varejo.
 
-**Casos reais:** confecções de 50 a 500 funcionários com economia comprovada de ICMS e PIS/COFINS via Lucro Real + regime especial.
-
-**Stack completa:** diagnóstico de viabilidade → pleito de regime especial → parametrização fiscal (CFOPs, NCMs, CSTs, Bloco K) → rotina contábil/fiscal mensal.
+**Atuação da JMF:** diagnóstico de viabilidade → pleito de regime especial na SEF/SC → parametrização fiscal (CFOPs, NCMs, CSTs, Bloco K) → rotina contábil/fiscal mensal. Apontamento de produção e coleta de dados no chão de fábrica ficam com a equipe interna da indústria — nós garantimos que os relatórios sejam transmitidos com exatidão no SPED.
 
 </div>
 

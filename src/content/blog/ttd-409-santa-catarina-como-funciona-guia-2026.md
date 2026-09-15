@@ -77,7 +77,7 @@ Na prática:
 
 1. **Diagnóstico de viabilidade** — Análise do volume de importação, enquadramento fiscal (Lucro Real/Presumido) e simulação de economia
 2. **Constituição/adequação da empresa** — Trading ou filial em SC no regime correto, com capital social compatível
-3. **Habilitação no RADAR Siscomex** — Expressa, Limitada ou Ilimitada conforme volume projetado
+3. **Habilitação no RADAR Siscomex** — Expressa, Limitada ou Ilimitada conforme volume projetado (responsabilidade do despachante aduaneiro; a JMF organiza a capacidade financeira e documental da empresa para o pedido)
 4. **Pleito junto à SEF/SC** — Protocolar pedido com documentação completa (contrato social, balanço, certidões, garantia)
 5. **Parametrização fiscal** — CFOPs (3.101, 3.102), NCMs, CSTs, cálculo automatizado de II, IPI, PIS, COFINS, AFRMM, capatazia
 6. **Rotina mensal** — Apuração do crédito presumido, escrituração EFD-ICMS/IPI, DIME, DCIP, controle de fundos estaduais
@@ -88,13 +88,11 @@ Na prática:
 
 <div class="bg-[#fef3c7] border-l-4 border-[#f59e0b] p-6 my-8 rounded-r-xl">
 
-**35+ anos em Blumenau (40 km dos portos)** — conhecemos a dinâmica aduaneira e a fiscalização da SEF/SC como ninguém.
-
-**Casos reais:** importadoras de R$ 10M a R$ 500M/ano com economia comprovada de ICMS interestadual.
+**35+ anos em Blumenau (40 km dos portos)** — conhecemos a legislação fiscal catarinense e a rotina de fiscalização da SEF/SC como ninguém.
 
 **Atendimento 100% digital** para empresas de Itajaí, Navegantes, Joinville, Itapoá, São Francisco do Sul, Florianópolis e todo o Vale do Itajaí.
 
-**Stack completa:** pleito TTD + RADAR + parametrização NF-e + rotina contábil/fiscal mensal — tudo em um só lugar.
+**O que a JMF faz:** pleito e manutenção do TTD na SEF/SC + abertura da filial/trading + parametrização das alíquotas na NF-e de entrada + apuração mensal de DIME/DCIP/SPED. Desembaraço aduaneiro, habilitação de RADAR e logística portuária continuam a cargo do seu despachante aduaneiro — trabalhamos juntos.
 
 </div>
 

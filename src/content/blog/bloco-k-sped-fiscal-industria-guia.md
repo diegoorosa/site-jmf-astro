@@ -160,7 +160,7 @@ Para evitar multas e intimações da SEF/SC, siga este checklist mensal:
 
 <div class="bg-[#e0f7fa] border-l-4 border-cyan-500 p-6 my-8 rounded-r-xl">
 
-**JMF Contabilidade:** "A maioria das multas por Bloco K acontece porque a fábrica aponta produção no ERP contábil mas não alimenta o SPED com as perdas e fichas técnicas reais. O erro não está no cálculo do imposto, mas na **documentação da operação**. Nosso trabalho é garantir que o que o chão de fábrica produz está 100% reflejado nos registros fiscais — e o que não passou por produção, não entra no estoque declarado."
+**JMF Contabilidade:** "A maioria das multas por Bloco K acontece porque a fábrica aponta produção no ERP contábil mas não alimenta o SPED com as perdas e fichas técnicas reais. O erro não está no cálculo do imposto, mas na **documentação da operação**. Nosso trabalho é orientar os gestores fabris e o setor fiscal interno na correta parametrização do ERP e no cálculo das perdas normais e anormais, garantindo que os relatórios gerados pela indústria sejam transmitidos com exatidão no Bloco K. A coleta física dos dados de corte, fiação e tinturaria é responsabilidade da equipe de produção da fábrica."
 
 </div>
 
