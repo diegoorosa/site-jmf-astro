@@ -29,8 +29,8 @@ Outro benefício municipal real é a redução ou isenção do ITBI (Imposto sob
 
 Para indústrias, o Governo do Estado de Santa Catarina mantém três programas geridos pela Secretaria de Estado da Fazenda (SEF/SC), com foco em empresas que investem e geram emprego no estado:
 
-- **PRODEC** (Programa de Desenvolvimento da Empresa Catarinense): posterga o recolhimento de uma parcela do ICMS gerado por um novo projeto de implantação ou expansão industrial, funcionando como um financiamento do próprio imposto futuro para viabilizar o investimento.
-- **Pró-Emprego**: permite diferimento do ICMS na aquisição de insumos e bens para o processo produtivo, aliviando o caixa da empresa no momento do investimento.
+- **PRODEC** (Programa de Desenvolvimento da Empresa Catarinense): posterga o recolhimento de uma parcela do ICMS gerado por um novo projeto de implantação ou expansão industrial, funcionando como um financiamento do próprio imposto futuro para viabilizar o investimento. **É voltado exclusivamente a grandes projetos industriais** (investimentos de dezenas de milhões) e exige projetos econômicos multidisciplinares aprovados pela SDE/SEF — **não é acessível a empresas de serviços, comércios ou indústrias de pequeno/médio porte sem projeto estruturado de expansão relevante**.
+- **Pró-Emprego**: permite diferimento do ICMS na aquisição de insumos e bens para o processo produtivo, aliviando o caixa da empresa no momento do investimento. **Mesmo escopo do PRODEC: projetos industriais de grande porte** com geração relevante de empregos, analisados caso a caso pela SEF/SC.
 - **TTD 489** (Tratamento Tributário Diferenciado): amplia os limites de transferência de crédito de ICMS, condicionado à realização de investimentos no estado. Para operações de importação comercial, o TTD 409 catarinense também oferece diferimento de ICMS — veja o guia completo sobre [Importação e TTD em SC](/contabilidade-para-importacao-sc).
 
 Esses três programas são voltados a empresas industriais com projetos de investimento relevante (implantação, expansão ou modernização de planta) — não se aplicam a qualquer CNAE ou a qualquer porte de empresa. A análise de enquadramento e o pedido são feitos junto à SEF/SC, normalmente com apoio de assessoria especializada dado o volume de documentação técnica exigido.
@@ -48,10 +48,10 @@ O enquadramento real depende de três fatores:
 ## O que fazer agora
 
 1. **Verifique a alíquota de ISS vigente para o seu CNAE** no Código Tributário Municipal de Blumenau
-2. **Se você é indústria com plano de investimento**, avalie com seu contador se PRODEC, Pró-Emprego ou TTD 489 fazem sentido para o seu projeto
+2. **Confirme com o contador se o Simples Nacional ou o Lucro Presumido** oferecem melhor enquadramento para a sua atividade e volume de receita
 3. **Não tome decisão de enquadramento sem confirmar a lei específica** — peça ao seu contador para citar o número da lei/decreto antes de basear qualquer planejamento nisso
 
-> **Quer saber se sua empresa se enquadra em algum incentivo fiscal real disponível em Blumenau ou Santa Catarina?** A JMF Contabilidade analisa a situação fiscal completa e identifica oportunidades de economia legal, sempre com base na legislação vigente. [Fale com nossa equipe →](/fale-conosco)
+> **Quer verificar se sua empresa pode usufruir de alíquota reduzida de ISS em Blumenau, benefícios do Simples Nacional ou regimes fiscais adequados para o seu segmento?** A JMF analisa a situação fiscal completa do seu negócio com base na legislação vigente. [Fale com nossa equipe →](/fale-conosco)
 
 ---
 

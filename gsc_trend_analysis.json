@@ -1,0 +1,1131 @@
+{
+  "gerado": "2026-09-11",
+  "meses": [
+    {
+      "clicks": 22,
+      "impressions": 1918,
+      "ctr": 0.011470281543274244,
+      "avg_position": 8.873826903023984,
+      "periodo": "2026-08-15 a 2026-09-11"
+    },
+    {
+      "clicks": 20,
+      "impressions": 1336,
+      "ctr": 0.014970059880239521,
+      "avg_position": 8.83682634730539,
+      "periodo": "2026-07-18 a 2026-08-14"
+    },
+    {
+      "clicks": 12,
+      "impressions": 542,
+      "ctr": 0.02214022140221402,
+      "avg_position": 10.125461254612546,
+      "periodo": "2026-06-20 a 2026-07-17"
+    },
+    {
+      "clicks": 10,
+      "impressions": 589,
+      "ctr": 0.01697792869269949,
+      "avg_position": 5.901528013582343,
+      "periodo": "2026-05-23 a 2026-06-19"
+    },
+    {
+      "clicks": 8,
+      "impressions": 569,
+      "ctr": 0.014059753954305799,
+      "avg_position": 8.29701230228471,
+      "periodo": "2026-04-25 a 2026-05-22"
+    },
+    {
+      "clicks": 14,
+      "impressions": 466,
+      "ctr": 0.030042918454935622,
+      "avg_position": 6.023605150214593,
+      "periodo": "2026-03-28 a 2026-04-24"
+    }
+  ],
+  "queries_blumenau": {
+    "28d_recente": {
+      "periodo": "2026-08-15 a 2026-09-11",
+      "total": {
+        "clicks": 9,
+        "impressions": 608,
+        "ctr": 0.014802631578947368,
+        "avg_position": 6.088815789473684
+      },
+      "top": [
+        {
+          "query": "contabilidade blumenau",
+          "clicks": 1,
+          "impressions": 174,
+          "ctr": 0.0057,
+          "position": 5.1
+        },
+        {
+          "query": "contabilidade em blumenau",
+          "clicks": 4,
+          "impressions": 93,
+          "ctr": 0.043,
+          "position": 3.6
+        },
+        {
+          "query": "alvara blumenau",
+          "clicks": 0,
+          "impressions": 56,
+          "ctr": 0,
+          "position": 7.7
+        },
+        {
+          "query": "viabilidade blumenau",
+          "clicks": 1,
+          "impressions": 44,
+          "ctr": 0.0227,
+          "position": 7.9
+        },
+        {
+          "query": "contabilidades em blumenau",
+          "clicks": 2,
+          "impressions": 42,
+          "ctr": 0.0476,
+          "position": 5.0
+        },
+        {
+          "query": "visa blumenau",
+          "clicks": 0,
+          "impressions": 39,
+          "ctr": 0,
+          "position": 5.2
+        },
+        {
+          "query": "alvará sanitário blumenau",
+          "clicks": 0,
+          "impressions": 28,
+          "ctr": 0,
+          "position": 6.7
+        },
+        {
+          "query": "contador blumenau",
+          "clicks": 0,
+          "impressions": 23,
+          "ctr": 0,
+          "position": 7.5
+        },
+        {
+          "query": "contador em blumenau",
+          "clicks": 0,
+          "impressions": 20,
+          "ctr": 0,
+          "position": 6.1
+        },
+        {
+          "query": "alvará blumenau",
+          "clicks": 0,
+          "impressions": 19,
+          "ctr": 0,
+          "position": 5.9
+        },
+        {
+          "query": "alvara sanitario blumenau",
+          "clicks": 0,
+          "impressions": 17,
+          "ctr": 0,
+          "position": 7.1
+        },
+        {
+          "query": "alvará de funcionamento blumenau",
+          "clicks": 1,
+          "impressions": 13,
+          "ctr": 0.0769,
+          "position": 5
+        },
+        {
+          "query": "escritório de contabilidade blumenau",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 3.3
+        },
+        {
+          "query": "alvara autonomo blumenau",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 9.8
+        },
+        {
+          "query": "alvará de localização blumenau",
+          "clicks": 0,
+          "impressions": 5,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "query": "empresas blumenau",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 57.2
+        },
+        {
+          "query": "contabilidade digital blumenau",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 17
+        },
+        {
+          "query": "alvará prefeitura de blumenau",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 7
+        },
+        {
+          "query": "junta comercial blumenau",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 9
+        },
+        {
+          "query": "blumenau nua",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 39
+        },
+        {
+          "query": "blumenau sc",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "query": "blumenau, santa catarina",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        },
+        {
+          "query": "blumenau/sc",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "endereco fiscal blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 19
+        },
+        {
+          "query": "fatal modelo blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 3
+        }
+      ]
+    },
+    "28d_anterior": {
+      "periodo": "2026-07-18 a 2026-08-14",
+      "total": {
+        "clicks": 8,
+        "impressions": 429,
+        "ctr": 0.018648018648018648,
+        "avg_position": 5.403263403263403
+      },
+      "top": [
+        {
+          "query": "contabilidade blumenau",
+          "clicks": 5,
+          "impressions": 176,
+          "ctr": 0.0284,
+          "position": 4.8
+        },
+        {
+          "query": "contabilidade em blumenau",
+          "clicks": 1,
+          "impressions": 90,
+          "ctr": 0.0111,
+          "position": 4.8
+        },
+        {
+          "query": "contador blumenau",
+          "clicks": 0,
+          "impressions": 41,
+          "ctr": 0,
+          "position": 5.8
+        },
+        {
+          "query": "contabilidades em blumenau",
+          "clicks": 1,
+          "impressions": 33,
+          "ctr": 0.0303,
+          "position": 4.1
+        },
+        {
+          "query": "alvara blumenau",
+          "clicks": 0,
+          "impressions": 30,
+          "ctr": 0,
+          "position": 8.0
+        },
+        {
+          "query": "contador em blumenau",
+          "clicks": 1,
+          "impressions": 20,
+          "ctr": 0.05,
+          "position": 4.0
+        },
+        {
+          "query": "alvará blumenau",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 6.2
+        },
+        {
+          "query": "alvará de funcionamento blumenau",
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 5.1
+        },
+        {
+          "query": "escritório de contabilidade blumenau",
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 5.2
+        },
+        {
+          "query": "alvará de localização blumenau",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 5.7
+        },
+        {
+          "query": "consultoria blumenau",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 45
+        },
+        {
+          "query": "emitir nota fiscal mei blumenau",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "iss blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "prefeitura de blumenau nfse",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 23
+        }
+      ]
+    },
+    "28d_6meses_atras": {
+      "periodo": "2026-02-28 a 2026-03-27",
+      "total": {
+        "clicks": 12,
+        "impressions": 626,
+        "ctr": 0.019169329073482427,
+        "avg_position": 5.579872204472843
+      },
+      "top": [
+        {
+          "query": "contabilidade blumenau",
+          "clicks": 3,
+          "impressions": 228,
+          "ctr": 0.0132,
+          "position": 5.3
+        },
+        {
+          "query": "contabilidade em blumenau",
+          "clicks": 3,
+          "impressions": 116,
+          "ctr": 0.0259,
+          "position": 5.6
+        },
+        {
+          "query": "jmf contabilidade blumenau",
+          "clicks": 5,
+          "impressions": 78,
+          "ctr": 0.0641,
+          "position": 1.0
+        },
+        {
+          "query": "contador blumenau",
+          "clicks": 0,
+          "impressions": 74,
+          "ctr": 0,
+          "position": 5.5
+        },
+        {
+          "query": "contador em blumenau",
+          "clicks": 0,
+          "impressions": 55,
+          "ctr": 0,
+          "position": 4
+        },
+        {
+          "query": "contabilidades em blumenau",
+          "clicks": 1,
+          "impressions": 42,
+          "ctr": 0.0238,
+          "position": 3
+        },
+        {
+          "query": "escritório de contabilidade blumenau",
+          "clicks": 0,
+          "impressions": 16,
+          "ctr": 0,
+          "position": 6.8
+        },
+        {
+          "query": "empresas blumenau",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 80.8
+        },
+        {
+          "query": "contábeis blumenau",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 7.5
+        },
+        {
+          "query": "contabilidades blumenau",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "empresa blumenau",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 76.5
+        },
+        {
+          "query": "contabilidade digital blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 19
+        },
+        {
+          "query": "edificio itaçu blumenau",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 11
+        }
+      ]
+    }
+  },
+  "queries_contabilidade": {
+    "28d_recente": {
+      "periodo": "2026-08-15 a 2026-09-11",
+      "total": {
+        "clicks": 8,
+        "impressions": 315,
+        "ctr": 0.025396825396825397,
+        "avg_position": 11.542857142857143
+      },
+      "top": [
+        {
+          "query": "jmf contabilidade",
+          "clicks": 5,
+          "impressions": 78,
+          "ctr": 0.0641,
+          "position": 1.6
+        },
+        {
+          "query": "contabilidade",
+          "clicks": 0,
+          "impressions": 72,
+          "ctr": 0,
+          "position": 4.7
+        },
+        {
+          "query": "contabilidade pomerode",
+          "clicks": 1,
+          "impressions": 20,
+          "ctr": 0.05,
+          "position": 6.0
+        },
+        {
+          "query": "contabilidade em jandira",
+          "clicks": 0,
+          "impressions": 15,
+          "ctr": 0,
+          "position": 44.8
+        },
+        {
+          "query": "contabilidade para indústria têxtil em santa catarina",
+          "clicks": 0,
+          "impressions": 14,
+          "ctr": 0,
+          "position": 31.1
+        },
+        {
+          "query": "contabilidade timbo",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 10.3
+        },
+        {
+          "query": "contabilidade para área da saúde e clínicas médicas em santa catarina",
+          "clicks": 0,
+          "impressions": 10,
+          "ctr": 0,
+          "position": 26
+        },
+        {
+          "query": "contabilidade porto belo",
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 3.8
+        },
+        {
+          "query": "contabilidade gaspar",
+          "clicks": 1,
+          "impressions": 8,
+          "ctr": 0.125,
+          "position": 18.4
+        },
+        {
+          "query": "contabilidade em bombinhas",
+          "clicks": 0,
+          "impressions": 8,
+          "ctr": 0,
+          "position": 10.5
+        },
+        {
+          "query": "escritório de contabilidade",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 6
+        },
+        {
+          "query": "contabilidade em gaspar",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 19.2
+        },
+        {
+          "query": "contabilidade para indústria em florianópolis",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 58.8
+        },
+        {
+          "query": "contabilidade perto de mim",
+          "clicks": 0,
+          "impressions": 4,
+          "ctr": 0,
+          "position": 3.8
+        },
+        {
+          "query": "contabilidade lucro real florianópolis",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 8.3
+        },
+        {
+          "query": "contabilidade para indústria em santa catarina",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 22.3
+        },
+        {
+          "query": "contabilidade timbó",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 11
+        },
+        {
+          "query": "escritório de contabilidade perto de mim",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 6.7
+        },
+        {
+          "query": "contabilidade em timbo",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 12.5
+        },
+        {
+          "query": "contabilidade em timbó",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 8
+        }
+      ]
+    },
+    "28d_anterior": {
+      "periodo": "2026-07-18 a 2026-08-14",
+      "total": {
+        "clicks": 8,
+        "impressions": 152,
+        "ctr": 0.05263157894736842,
+        "avg_position": 13.769736842105264
+      },
+      "top": [
+        {
+          "query": "jmf contabilidade",
+          "clicks": 7,
+          "impressions": 57,
+          "ctr": 0.1228,
+          "position": 1.5
+        },
+        {
+          "query": "contabilidade",
+          "clicks": 0,
+          "impressions": 36,
+          "ctr": 0,
+          "position": 5.4
+        },
+        {
+          "query": "contabilidade para indústria têxtil em santa catarina",
+          "clicks": 0,
+          "impressions": 12,
+          "ctr": 0,
+          "position": 54.3
+        },
+        {
+          "query": "contabilidade em jandira",
+          "clicks": 0,
+          "impressions": 11,
+          "ctr": 0,
+          "position": 50.5
+        },
+        {
+          "query": "contabilidade gaspar",
+          "clicks": 0,
+          "impressions": 9,
+          "ctr": 0,
+          "position": 28.3
+        },
+        {
+          "query": "contabilidade em gaspar",
+          "clicks": 0,
+          "impressions": 6,
+          "ctr": 0,
+          "position": 18.5
+        },
+        {
+          "query": "contabilidade em indaial",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 7.7
+        },
+        {
+          "query": "jms contabilidade",
+          "clicks": 0,
+          "impressions": 3,
+          "ctr": 0,
+          "position": 26
+        },
+        {
+          "query": "contabilidade perto de mim",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "escritório de contabilidade",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "jordan contabilidade",
+          "clicks": 0,
+          "impressions": 2,
+          "ctr": 0,
+          "position": 32
+        },
+        {
+          "query": "contabilidade trabalhe conosco",
+          "clicks": 1,
+          "impressions": 1,
+          "ctr": 1,
+          "position": 4
+        },
+        {
+          "query": "auditoria de contabilidade",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "contabilidade especializada em transporte",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 12
+        },
+        {
+          "query": "escritório contabilidade perto de mim",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "escritório de contabilidade perto de mim",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "escritório de contabilidade piracicaba",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 2
+        },
+        {
+          "query": "jm contabilidade",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "mdf contabilidade",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 1
+        },
+        {
+          "query": "mf contabilidade",
+          "clicks": 0,
+          "impressions": 1,
+          "ctr": 0,
+          "position": 49
+        }
+      ]
+    }
+  },
+  "paginas": {
+    "28d_recente": {
+      "periodo": "2026-08-15 a 2026-09-11",
+      "total": {
+        "clicks": 160,
+        "impressions": 15049,
+        "ctr": 0.010631935676789155,
+        "avg_position": 7.030168117482889
+      },
+      "top": [
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/alvara-funcionamento-blumenau-guia",
+          "clicks": 27,
+          "impressions": 1970,
+          "ctr": 0.0137,
+          "position": 6.2
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/das-atrasado-simples-nacional-como-regularizar",
+          "clicks": 4,
+          "impressions": 1466,
+          "ctr": 0.0027,
+          "position": 8.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/desenquadramento-mei-retroativo-2026",
+          "clicks": 6,
+          "impressions": 1204,
+          "ctr": 0.005,
+          "position": 6.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/",
+          "clicks": 25,
+          "impressions": 1142,
+          "ctr": 0.0219,
+          "position": 5.2
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/retirada-de-socios",
+          "clicks": 9,
+          "impressions": 1138,
+          "ctr": 0.0079,
+          "position": 5.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026",
+          "clicks": 5,
+          "impressions": 910,
+          "ctr": 0.0055,
+          "position": 6.2
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/desenquadramento-mei-por-faturamento-2026",
+          "clicks": 3,
+          "impressions": 402,
+          "ctr": 0.0075,
+          "position": 7.2
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/fator-r-simples-nacional-como-calcular",
+          "clicks": 2,
+          "impressions": 355,
+          "ctr": 0.0056,
+          "position": 9.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/abertura-de-empresa-em-santa-catarina-passo-a-passo-2026",
+          "clicks": 3,
+          "impressions": 337,
+          "ctr": 0.0089,
+          "position": 7.9
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/desenquadramento-mei-excesso-receita-2026",
+          "clicks": 2,
+          "impressions": 325,
+          "ctr": 0.0062,
+          "position": 8.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/simulador-regime-tributario",
+          "clicks": 8,
+          "impressions": 266,
+          "ctr": 0.0301,
+          "position": 8.2
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/como-abrir-empresa-em-blumenau",
+          "clicks": 1,
+          "impressions": 262,
+          "ctr": 0.0038,
+          "position": 8.9
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/calendario-fiscal-2026",
+          "clicks": 2,
+          "impressions": 261,
+          "ctr": 0.0077,
+          "position": 6.4
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/abertura-empresa-sc",
+          "clicks": 0,
+          "impressions": 255,
+          "ctr": 0,
+          "position": 11.6
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/esocial-2026-o-que-mudou-e-o-que-esperar",
+          "clicks": 6,
+          "impressions": 233,
+          "ctr": 0.0258,
+          "position": 7.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao",
+          "clicks": 0,
+          "impressions": 230,
+          "ctr": 0,
+          "position": 8.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/quanto-custa-um-contador-o-que-voce-deveria-estar-pagando",
+          "clicks": 0,
+          "impressions": 215,
+          "ctr": 0,
+          "position": 8.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/nfs-e-blumenau-como-emitir",
+          "clicks": 2,
+          "impressions": 214,
+          "ctr": 0.0093,
+          "position": 7.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/notificacao-simples-nacional-termo-exclusao-2026",
+          "clicks": 10,
+          "impressions": 203,
+          "ctr": 0.0493,
+          "position": 5
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/fale-conosco",
+          "clicks": 0,
+          "impressions": 180,
+          "ctr": 0,
+          "position": 5.6
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/pro-labore-e-dividendos-2026",
+          "clicks": 0,
+          "impressions": 177,
+          "ctr": 0,
+          "position": 6.5
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/sobre",
+          "clicks": 0,
+          "impressions": 142,
+          "ctr": 0,
+          "position": 3.8
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria",
+          "clicks": 7,
+          "impressions": 141,
+          "ctr": 0.0496,
+          "position": 8.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/contabilidade-em-blumenau",
+          "clicks": 1,
+          "impressions": 127,
+          "ctr": 0.0079,
+          "position": 5.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/trabalhe-conosco",
+          "clicks": 3,
+          "impressions": 107,
+          "ctr": 0.028,
+          "position": 2.8
+        }
+      ]
+    },
+    "28d_anterior": {
+      "periodo": "2026-07-18 a 2026-08-14",
+      "total": {
+        "clicks": 78,
+        "impressions": 8214,
+        "ctr": 0.009495982468955442,
+        "avg_position": 6.789383978573167
+      },
+      "top": [
+        {
+          "page": "https://www.jmfcontabilidade.com.br/retirada-de-socios",
+          "clicks": 9,
+          "impressions": 1445,
+          "ctr": 0.0062,
+          "position": 5.4
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/",
+          "clicks": 33,
+          "impressions": 1096,
+          "ctr": 0.0301,
+          "position": 5.5
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/das-atrasado-simples-nacional-como-regularizar",
+          "clicks": 0,
+          "impressions": 954,
+          "ctr": 0,
+          "position": 9.3
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/alvara-funcionamento-blumenau-guia",
+          "clicks": 7,
+          "impressions": 699,
+          "ctr": 0.01,
+          "position": 6.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/quanto-custa-abrir-empresa-em-blumenau-custos-e-taxas-2026",
+          "clicks": 3,
+          "impressions": 617,
+          "ctr": 0.0049,
+          "position": 5.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/como-abrir-empresa-em-blumenau",
+          "clicks": 2,
+          "impressions": 374,
+          "ctr": 0.0053,
+          "position": 12.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/abertura-de-empresa-em-santa-catarina-passo-a-passo-2026",
+          "clicks": 2,
+          "impressions": 278,
+          "ctr": 0.0072,
+          "position": 7.3
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/nfs-e-blumenau-como-emitir",
+          "clicks": 5,
+          "impressions": 264,
+          "ctr": 0.0189,
+          "position": 6.9
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/desoneracao-da-folha-2026-o-que-muda-com-a-reoneracao",
+          "clicks": 0,
+          "impressions": 224,
+          "ctr": 0,
+          "position": 7.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/quanto-custa-um-contador-o-que-voce-deveria-estar-pagando",
+          "clicks": 0,
+          "impressions": 221,
+          "ctr": 0,
+          "position": 8.6
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/simples-nacional",
+          "clicks": 1,
+          "impressions": 184,
+          "ctr": 0.0054,
+          "position": 5.4
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/fale-conosco",
+          "clicks": 0,
+          "impressions": 173,
+          "ctr": 0,
+          "position": 5.3
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/contabilidade-para-pessoa-fisica",
+          "clicks": 4,
+          "impressions": 151,
+          "ctr": 0.0265,
+          "position": 6.8
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/distribuicao-de-lucros-2026-como-fazer-certo-e-pagar-menos-imposto",
+          "clicks": 2,
+          "impressions": 125,
+          "ctr": 0.016,
+          "position": 8.3
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/sobre",
+          "clicks": 0,
+          "impressions": 107,
+          "ctr": 0,
+          "position": 3.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/contabilidade-para-empresas",
+          "clicks": 0,
+          "impressions": 84,
+          "ctr": 0,
+          "position": 4.6
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/fator-r-simples-nacional-como-calcular",
+          "clicks": 0,
+          "impressions": 77,
+          "ctr": 0,
+          "position": 8.8
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/trabalhe-conosco",
+          "clicks": 3,
+          "impressions": 74,
+          "ctr": 0.0405,
+          "position": 3.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/abertura-de-empresa-blumenau-passo-a-passo-completo-2026",
+          "clicks": 0,
+          "impressions": 69,
+          "ctr": 0,
+          "position": 7.0
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/nota-fiscal-de-servicos-como-emitir-corretamente",
+          "clicks": 0,
+          "impressions": 68,
+          "ctr": 0,
+          "position": 8.7
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/gestao-contabil",
+          "clicks": 0,
+          "impressions": 66,
+          "ctr": 0,
+          "position": 2.9
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/abertura-de-empresa",
+          "clicks": 1,
+          "impressions": 55,
+          "ctr": 0.0182,
+          "position": 5.8
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/contabilidade-em-gaspar",
+          "clicks": 1,
+          "impressions": 54,
+          "ctr": 0.0185,
+          "position": 23.1
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/gestao-fiscal-e-tributaria",
+          "clicks": 1,
+          "impressions": 53,
+          "ctr": 0.0189,
+          "position": 7.8
+        },
+        {
+          "page": "https://www.jmfcontabilidade.com.br/blog/split-payment-reforma-tributaria-o-que-muda-para-sua-empresa",
+          "clicks": 1,
+          "impressions": 52,
+          "ctr": 0.0192,
+          "position": 9.5
+        }
+      ]
+    }
+  }
+}
