@@ -16,9 +16,9 @@ Neste artigo, explicamos como identificar débitos, quais são as opções de re
 Ter débitos em aberto com a Receita Federal ou com a Procuradoria Geral da Fazenda Nacional (PGFN) impede a empresa de:
 
 - Emitir **Certidão Negativa de Débitos (CND)** — exigida em licitações, financiamentos, contratos com o poder público e abertura de filiais
-- Participar de **programas de crédito** (BNDES, bancos com garantia governamental)
-- Realizar **operações de M&A** (fusão e aquisição) sem risco jurídico para o comprador
-- Manter a regularidade no **Simples Nacional** (pendências podem levar à exclusão automática)
+- Participar de **programas de crédito** (BNDES, PRONAMPE, bancos com garantia governamental)
+- Participar de **licitações públicas** municipais, estaduais e federais (exigem CND desde a fase de habilitação)
+- Manter a regularidade no **Simples Nacional** (pendências podem levar à exclusão automática) ou ter a CND bloqueada
 
 Além disso, débitos não negociados acumulam **multa de 75% a 150%** sobre o valor original, mais juros SELIC e correção monetária.
 
