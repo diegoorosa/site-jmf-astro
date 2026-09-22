@@ -27,7 +27,6 @@ const partners = [
   { href: "https://sspadvogados.net.br/", src: "/assets/images/ssp-175x111.webp", alt: "SSP Advogados", width: 175, height: 111 },
   { href: "https://www.facebook.com/pages/Blucão-Cia/146913135378117", src: "/assets/images/blucao-175x165.webp", alt: "Blucão e Cia", width: 175, height: 165 },
   { href: "https://www.facebook.com/knisscor/", src: "/assets/images/heloisa-175x175.webp", alt: "Kniss Corretora", width: 175, height: 175 },
-  { href: "https://www.instagram.com/dogfood505/", src: "/assets/images/ohdogfood-150x150.webp", alt: "Oh! Dog Food", width: 150, height: 150 },
   { href: "https://www.instagram.com/palmettoconservas/", src: "/assets/images/palmetto-1-150x112.webp", alt: "Palmetto Conservas", width: 150, height: 112 },
   { href: "https://www.instagram.com/divino_gelatto/", src: "/assets/images/divinogelatto.webp", alt: "Divino Gelatto", width: 808, height: 808 },
   { href: "https://www.linkedin.com/in/lucas-voltolini-60551240/", src: "/assets/images/voltolini.webp", alt: "Voltolini Consultoria de Compras", width: 500, height: 500 },
@@ -47,15 +46,15 @@ const partners = [
     </div>
   </div>
 
-  <div id="parceiros-viewport" class="relative max-w-3xl mx-auto overflow-hidden cursor-grab select-none">
+  <div id="parceiros-viewport" class="relative max-w-6xl mx-auto overflow-hidden cursor-grab select-none">
     <div id="parceiros-track" class="flex items-center gap-12 w-max">
       {[0, 1].map(() => partners.map(p => (
         p.href
-          ? <a href={p.href} target="_blank" rel="noopener" draggable="false" class="flex-shrink-0 flex items-center justify-center h-[120px]">
-              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" draggable="false" class="h-[120px] w-auto max-w-[250px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          ? <a href={p.href} target="_blank" rel="noopener" draggable="false" class="flex-shrink-0 flex items-center justify-center h-[150px]">
+              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" draggable="false" class="h-[150px] w-auto max-w-[300px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
             </a>
-          : <div class="flex-shrink-0 flex items-center justify-center h-[120px]">
-              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" draggable="false" class="h-[120px] w-auto max-w-[250px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
+          : <div class="flex-shrink-0 flex items-center justify-center h-[150px]">
+              <img src={p.src} alt={p.alt} width={p.width} height={p.height} loading="lazy" draggable="false" class="h-[150px] w-auto max-w-[300px] object-contain opacity-70 hover:opacity-100 transition-opacity" />
             </div>
       )))}
     </div>
