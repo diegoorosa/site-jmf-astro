@@ -242,6 +242,10 @@ async function main() {
   // Aplica a blindagem por código
   cleanMarkdown = sanitizeMarkdown(cleanMarkdown);
 
+  // Força pubDate correta — o Gemini inventa datas futuras e o filtro
+  // pubDate <= now do blog exclui o post do build (404 no site)
+  cleanMarkdown = cleanMarkdown.replace(/pubDate:\s*\d{4}-\d{2}-\d{2}/, `pubDate: ${getTodayBR()}`);
+
   const fmMatch = cleanMarkdown.match(/^---\n([\s\S]*?)\n---/);
   if (!fmMatch) throw new Error('Frontmatter inválido');
 
