@@ -1,7 +1,7 @@
 ---
 title: "Simples Híbrido em 2027: Guia Estratégico para Empresas"
 description: "Descubra como o modelo do Simples Híbrido vai orientar a escolha empresarial em 2027. Análise completa para empresas de Blumenau e Santa Catarina."
-pubDate: 2026-09-24
+pubDate: 2026-09-22
 author: "Fabricio Rosa, CRC SC-029833/O"
 image: "/assets/images/blog-simples-hibrido-2027.webp"
 imageAlt: "Empresário analisando planejamento tributário e simulações financeiras em escritório moderno em Blumenau."
