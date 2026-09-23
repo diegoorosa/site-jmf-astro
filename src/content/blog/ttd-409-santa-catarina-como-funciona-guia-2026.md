@@ -38,14 +38,14 @@ Quando a mercadoria é vendida para outro estado, a alíquota interestadual de I
 
 Os requisitos formais estão no **Decreto nº 2.870/1998** e na **IN SEF/SC nº 12/2024** (atualizada). Em resumo:
 
-✅ **Regime tributário:** Lucro Real ou Lucro Presumido  
+✅ **Regime tributário**: Empresas enquadradas no Lucro Presumido (ou Lucro Real pela legislação)  
 ✅ **Atividade:** Importação de mercadorias para comercialização ou industrialização  
 ✅ **Localização:** Estabelecimento em Santa Catarina (sede ou filial)  
 ✅ **Garantia:** Caução em dinheiro, seguro garantia ou fiança bancária (valor definido pela SEF/SC)  
 ✅ **Regularidade:** Certidão negativa de débitos estaduais (CND/SC)  
 ✅ **Obrigações acessórias:** Entrega pontual de DIME, DCIP e EFD-ICMS/IPI  
 
-❌ **Simples Nacional:** Não tem direito ao crédito presumido. A solução padrão é abrir uma **trading ou filial em Lucro Real/Presumido** exclusiva para operar o TTD.
+❌ **Simples Nacional:** Empresas no Simples não têm direito ao benefício. A solução padrão e mais utilizada é abrir uma filial ou empresa no Lucro Presumido em Santa Catarina exclusiva para operar as importações com o TTD..
 
 ---
 
@@ -75,8 +75,8 @@ Na prática:
 
 ## Passo a passo para pleitear o TTD 409
 
-1. **Diagnóstico de viabilidade** — Análise do volume de importação, enquadramento fiscal (Lucro Real/Presumido) e simulação de economia
-2. **Constituição/adequação da empresa** — Trading ou filial em SC no regime correto, com capital social compatível
+1. **Diagnóstico de viabilidade** — Análise do volume de importação e projeção das operações dentro do Lucro Presumido
+2. **Constituição da empresa ou filial** — Abertura da filial ou trading em SC enquadrada no Lucro Presumido, com capital social compatível
 3. **Habilitação no RADAR Siscomex** — Expressa, Limitada ou Ilimitada conforme volume projetado (responsabilidade do despachante aduaneiro; a JMF organiza a capacidade financeira e documental da empresa para o pedido)
 4. **Pleito junto à SEF/SC** — Protocolar pedido com documentação completa (contrato social, balanço, certidões, garantia)
 5. **Parametrização fiscal** — CFOPs (3.101, 3.102), NCMs, CSTs, cálculo automatizado de II, IPI, PIS, COFINS, AFRMM, capatazia
@@ -102,7 +102,7 @@ Na prática:
 
 Quer saber exatamente quanto sua operação economizaria com o TTD 409? A JMF faz a **simulação de viabilidade sem custo**:
 
-- [Fale com um especialista em TTD no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20uma%20an%C3%A1lise%20de%20viabilidade%20do%20TTD%20para%20minha%20importadora.)
+- [Fale com a JMF sobre abertura de filial em SC no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20avaliar%20a%20abertura%20de%20uma%20filial%20no%20Lucro%20Presumido%20com%20TTD%20409%20em%20SC.)
 - [Conheça nossa página completa de Contabilidade para Importação e TTD em SC](/contabilidade-para-importacao-sc)
 - [Veja também: TTD 410 em SC — Como Funciona o Crédito Presumido na Importação](/blog/ttd-410-sc-credito-presumido-importacao)
 
