@@ -120,7 +120,7 @@ Empresas que estruturarem a operação **agora** capturam 6 a 7 anos de economia
 
 A JMF cuida da inteligência tributária em SC: **pleito e manutenção do TTD 409/410 na SEF/SC + abertura da filial/trading + parametrização da NF-e de entrada + rotina mensal DIME/DCIP/EFD**. Desembaraço aduaneiro, habilitação no RADAR e logística portuária ficam a cargo do despachante aduaneiro de confiança do cliente — trabalhamos juntos para a operação fluir.
 
-- [Fale com um especialista em TTD no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20entender%20o%20cr%C3%A9dito%20presumido%20do%20TTD%20410%20para%20minha%20importadora.)
+- [Fale com a JMF sobre abertura de filial em SC no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20avaliar%20a%20abertura%20de%20uma%20filial%20no%20Lucro%20Presumido%20com%20TTD%20em%20SC.)
 - [Conheça nossa página completa de Contabilidade para Importação e TTD em SC](/contabilidade-para-importacao-sc)
 - [Leia também: TTD 409 em Santa Catarina — O Que É, Quem Tem Direito e Como Funciona](/blog/ttd-409-santa-catarina-como-funciona-guia-2026)
 
