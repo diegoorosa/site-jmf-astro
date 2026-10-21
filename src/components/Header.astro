@@ -20,9 +20,42 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Logo aura no hover — maior agora (4.5rem inline) */
-  .jmf-logo { transition: filter 0.3s ease, transform 0.3s ease; }
-  .jmf-logo:hover { filter: drop-shadow(0 0 14px rgba(103,232,249,0.65)); transform: scale(1.02); }
+  /* Logo container com suporte a vídeo sobreposto */
+  .jmf-logo-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    height: 4.5rem;
+    overflow: hidden;
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  .jmf-logo-wrap:hover {
+    filter: drop-shadow(0 0 14px rgba(103,232,249,0.65));
+    transform: scale(1.02);
+  }
+
+  .jmf-static-logo {
+    height: 4.5rem;
+    width: auto;
+    display: block;
+    transition: opacity 0.4s ease;
+  }
+
+  .jmf-video-logo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 6px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .jmf-video-logo.is-hidden {
+    opacity: 0;
+  }
 
   /* Links nav — pill ciano + underline animado */
   .jmf-nav-link {
@@ -31,7 +64,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     transition: color 0.25s ease, background 0.25s ease;
     border-radius: 10px;
   }
-  /* Pill sutil de fundo no hover */
   .jmf-nav-link::before {
     content: '';
     position: absolute;
@@ -43,7 +75,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     transition: opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
   }
-  /* Underline gradiente embaixo */
   .jmf-nav-link::after {
     content: '';
     position: absolute;
@@ -60,12 +91,12 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-nav-link:hover::before { opacity: 1; transform: scale(1); }
   .jmf-nav-link:hover::after { transform: scaleX(1); }
 
-  /* Dropdown toggle underline fixo mais discreto */
+  /* Dropdown toggle */
   .jmf-dd-btn { position: relative; }
   .jmf-dd-btn .chev { transition: transform 0.3s ease, color 0.25s ease; }
   .jmf-dd-btn[aria-expanded="true"] .chev { transform: rotate(180deg); color: #06B6D4; }
 
-  /* Dropdown panel — glass dark nivel top */
+  /* Dropdown panel */
   .jmf-dd {
     background: rgba(15,23,42,0.97);
     backdrop-filter: blur(16px) saturate(160%);
@@ -82,7 +113,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     border-radius: 2px;
   }
 
-  /* Item do dropdown — hover ciano elegante */
+  /* Item do dropdown */
   .jmf-dd-item {
     display: flex;
     align-items: center;
@@ -105,7 +136,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   }
   .jmf-dd-item:hover .ic { color: #67E8F9; transform: translateX(2px); }
 
-  /* CTA Área do Cliente — gradiente animado */
+  /* CTA Área do Cliente */
   .jmf-cta {
     position: relative;
     background: linear-gradient(120deg, #1e40af 0%, #0891b2 50%, #06B6D4 100%);
@@ -122,7 +153,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-cta .ic { transition: transform 0.25s ease; }
   .jmf-cta:hover .ic { transform: translateX(2px); }
 
-  /* Hamburger animado */
+  /* Hamburger */
   .jmf-burger span {
     display: block;
     width: 24px; height: 2px;
@@ -134,7 +165,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-burger.is-open span:nth-child(2) { opacity: 0; }
   .jmf-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Mobile drawer */
+  /* Drawer Mobile */
   .jmf-drawer-overlay {
     position: fixed; inset: 0;
     background: rgba(2,6,23,0.5);
@@ -177,13 +208,14 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo -->
-    <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo shrink-0">
+    <!-- Logo com Animação Condicional em Desktop -->
+    <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap shrink-0" id="jmfLogoAnchor">
       <img
+        id="jmfStaticLogo"
         src="/assets/images/jmf-contabilidade-jean-254x159.webp"
         alt="JMF Contabilidade"
         width="254" height="159"
-        style="height:4.5rem;width:auto;"
+        class="jmf-static-logo"
         loading="eager"
         fetchpriority="high"
       />
@@ -305,7 +337,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   </div>
 </nav>
 
-  <!-- Mobile drawer (fora do nav para z-index global) -->
+  <!-- Mobile drawer -->
   <div class="jmf-drawer-overlay lg:hidden" :class="open ? 'is-open' : ''" @click="open = false"></div>
   <aside class="jmf-drawer lg:hidden" :class="open ? 'is-open' : ''">
     <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
@@ -351,3 +383,50 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     <a href="https://www.sciweb.com.br/" target="_blank" rel="noopener noreferrer" class="text-cyan-300 font-semibold mt-2">Área do Cliente <i class="bi bi-box-arrow-in-right"></i></a>
   </aside>
 </div>
+
+<script is:inline>
+  (function () {
+    const STORAGE_KEY = 'jmf_logo_anim_done';
+    const VIDEO_PATH = '/assets/videos/logo-animada.mp4'; // Ajuste para o local real do seu arquivo mp4
+
+    // 1. Condição: Tela desktop (>= 1024px) e ainda não assistiu nesta sessão
+    const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
+    const hasSeen = sessionStorage.getItem(STORAGE_KEY);
+
+    if (!isDesktop || hasSeen) return;
+
+    const wrap = document.getElementById('jmfLogoAnchor');
+    const staticLogo = document.getElementById('jmfStaticLogo');
+    if (!wrap || !staticLogo) return;
+
+    // 2. Oculta temporariamente a imagem estática para a entrada do vídeo
+    staticLogo.style.opacity = '0';
+
+    // 3. Cria o elemento de vídeo sob demanda (0kb baixados no celular)
+    const video = document.createElement('video');
+    video.src = VIDEO_PATH;
+    video.autoplay = true;
+    video.muted = true;
+    video.playsInline = true;
+    video.className = 'jmf-video-logo';
+
+    // 4. Quando o vídeo terminar, remove suavemente e reexibe a logo estática
+    video.addEventListener('ended', function () {
+      video.classList.add('is-hidden');
+      staticLogo.style.opacity = '1';
+      sessionStorage.setItem(STORAGE_KEY, '1');
+
+      setTimeout(function () {
+        if (video.parentNode) video.parentNode.removeChild(video);
+      }, 550);
+    });
+
+    // Fallback: se por política do browser o autoplay falhar, volta a logo imediatamente
+    video.play().catch(function () {
+      staticLogo.style.opacity = '1';
+      if (video.parentNode) video.parentNode.removeChild(video);
+    });
+
+    wrap.appendChild(video);
+  })();
+</script>
