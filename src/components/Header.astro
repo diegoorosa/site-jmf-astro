@@ -20,12 +20,14 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Logo container com suporte a vídeo sobreposto */
+  /* Logo container com restrição rigorosa de tamanho para evitar estouro */
   .jmf-logo-wrap {
     position: relative;
     display: inline-flex;
     align-items: center;
     height: 4.5rem;
+    width: auto;
+    max-width: 250px;
     overflow: hidden;
     transition: filter 0.3s ease, transform 0.3s ease;
   }
@@ -37,17 +39,20 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-static-logo {
     height: 4.5rem;
     width: auto;
+    max-width: 100%;
     display: block;
+    object-fit: contain;
     transition: opacity 0.4s ease;
   }
 
   .jmf-video-logo {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    left: 0;
+    height: 4.5rem;
+    width: auto;
+    max-width: 100%;
     object-fit: contain;
-    border-radius: 6px;
     opacity: 1;
     transition: opacity 0.5s ease;
     z-index: 2;
@@ -208,7 +213,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo com Animação Condicional em Desktop -->
+    <!-- Logo com container rígido para conter o vídeo sem distorcer -->
     <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap shrink-0" id="jmfLogoAnchor">
       <img
         id="jmfStaticLogo"
@@ -387,9 +392,8 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 <script is:inline>
   (function () {
     const STORAGE_KEY = 'jmf_logo_anim_done';
-    const VIDEO_PATH = '/assets/videos/logo-animada.mp4'; // Ajuste para o local real do seu arquivo mp4
+    const VIDEO_PATH = '/assets/videos/logo-animada.mp4';
 
-    // 1. Condição: Tela desktop (>= 1024px) e ainda não assistiu nesta sessão
     const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     const hasSeen = sessionStorage.getItem(STORAGE_KEY);
 
@@ -399,10 +403,8 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     const staticLogo = document.getElementById('jmfStaticLogo');
     if (!wrap || !staticLogo) return;
 
-    // 2. Oculta temporariamente a imagem estática para a entrada do vídeo
     staticLogo.style.opacity = '0';
 
-    // 3. Cria o elemento de vídeo sob demanda (0kb baixados no celular)
     const video = document.createElement('video');
     video.src = VIDEO_PATH;
     video.autoplay = true;
@@ -410,7 +412,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     video.playsInline = true;
     video.className = 'jmf-video-logo';
 
-    // 4. Quando o vídeo terminar, remove suavemente e reexibe a logo estática
     video.addEventListener('ended', function () {
       video.classList.add('is-hidden');
       staticLogo.style.opacity = '1';
@@ -421,7 +422,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
       }, 550);
     });
 
-    // Fallback: se por política do browser o autoplay falhar, volta a logo imediatamente
     video.play().catch(function () {
       staticLogo.style.opacity = '1';
       if (video.parentNode) video.parentNode.removeChild(video);
