@@ -20,14 +20,14 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Container da Logo (Mantém a largura perfeita da imagem estática para a navbar não mexer) */
+  /* Container Geral da Logo (Tamanho exato da imagem estática para a navbar) */
   .jmf-logo-wrap {
     position: relative;
     display: inline-block;
     height: 4.5rem;
     width: 7.2rem;
     flex-shrink: 0;
-    overflow: hidden; /* Mantém a imagem estática limpa nos limites certos */
+    overflow: hidden;
     vertical-align: middle;
     transition: filter 0.3s ease, transform 0.3s ease;
   }
@@ -42,7 +42,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     top: 0;
     left: 0;
     height: 4.5rem;
-    width: 100%;
+    width: 7.2rem;
     object-fit: contain;
     object-position: left center;
     display: block;
@@ -53,17 +53,16 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     opacity: 1;
   }
 
-  /* Vídeo Animado (Estoura o overflow do pai de forma controlada para aparecer inteiro sem cortar) */
+  /* Vídeo Animado (Permitido expandir para a direita para mostrar o vídeo inteiro sem cortes) */
   .jmf-video-logo {
     position: absolute;
-    top: 50%;
+    top: 0;
     left: 0;
-    transform: translateY(-50%) scale(1.1); /* Escala ajustada para o vídeo aparecer completo */
-    transform-origin: left center;
-    height: 5.2rem; /* Levemente maior que a navbar para caber toda a largura do vídeo original */
-    width: auto;
+    height: 4.5rem;
+    width: 10.5rem; /* Alargado para caber todo o conteúdo do vídeo horizontal */
     max-width: none;
     object-fit: contain;
+    object-position: left center;
     display: block;
     opacity: 1;
     transition: opacity 0.6s ease-in-out;
@@ -222,7 +221,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo com o espaço reservado -->
+    <!-- Logo com o espaço reservado perfeitamente -->
     <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap" id="jmfLogoAnchor">
       <!-- Imagem Estática (Fundo) -->
       <img
@@ -234,7 +233,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Vídeo Animado (Frente com proporção horizontal livre) -->
+      <!-- Vídeo Animado (Frente com largura estendida para não cortar as pontas) -->
       <video
         id="jmfVideoLogo"
         class="jmf-video-logo"
