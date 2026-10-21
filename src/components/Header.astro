@@ -1,5 +1,5 @@
 ---
-const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%B5es.";
 ---
 
 <style>
@@ -20,12 +20,13 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Container da Logo com dimensões rígidas idênticas à imagem estática */
+  /* Container Fixo da Logo (Garante largura e altura exatas na grid) */
   .jmf-logo-wrap {
     position: relative;
     display: inline-block;
     height: 4.5rem;
-    width: auto;
+    width: 7.2rem; /* Largura fixa proporcional para desktop */
+    flex-shrink: 0;
     overflow: hidden;
     vertical-align: middle;
     transition: filter 0.3s ease, transform 0.3s ease;
@@ -36,11 +37,19 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   }
 
   .jmf-static-logo {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 4.5rem;
-    width: auto;
-    display: block;
+    width: 100%;
     object-fit: contain;
+    object-position: left center;
+    display: block;
+    opacity: 0;
     transition: opacity 0.6s ease-in-out;
+  }
+  .jmf-static-logo.is-visible {
+    opacity: 1;
   }
 
   .jmf-video-logo {
@@ -48,9 +57,10 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     top: 0;
     left: 0;
     height: 4.5rem;
-    width: auto;
-    display: block;
+    width: 100%;
     object-fit: contain;
+    object-position: left center;
+    display: block;
     opacity: 1;
     transition: opacity 0.6s ease-in-out;
     z-index: 2;
@@ -208,8 +218,9 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo com Proporção Exata -->
-    <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap shrink-0" id="jmfLogoAnchor">
+    <!-- Logo com o espaço reservado perfeitamente -->
+    <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap" id="jmfLogoAnchor">
+      <!-- Imagem Estática (Fundo) -->
       <img
         id="jmfStaticLogo"
         src="/assets/images/jmf-contabilidade-jean-254x159.webp"
@@ -219,6 +230,16 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
         loading="eager"
         fetchpriority="high"
       />
+      <!-- Vídeo Animado (Frente em Desktop se não viu ainda) -->
+      <video
+        id="jmfVideoLogo"
+        class="jmf-video-logo"
+        autoplay
+        muted
+        playsinline
+      >
+        <source src="/assets/videos/logo-animada.mp4" type="video/mp4" />
+      </video>
     </a>
 
     <!-- Desktop nav links -->
@@ -387,50 +408,41 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 <script is:inline>
   (function () {
     const STORAGE_KEY = 'jmf_logo_anim_done';
-    const VIDEO_PATH = '/assets/videos/logo-animada.mp4';
-
     const isDesktop = window.matchMedia('(min-width: 1024px)').matches;
     const hasSeen = sessionStorage.getItem(STORAGE_KEY);
 
-    if (!isDesktop || hasSeen) return;
-
-    const wrap = document.getElementById('jmfLogoAnchor');
+    const video = document.getElementById('jmfVideoLogo');
     const staticLogo = document.getElementById('jmfStaticLogo');
-    if (!wrap || !staticLogo) return;
 
-    // Garante que a logo estática começa invisível por baixo enquanto o vídeo roda
-    staticLogo.style.opacity = '0';
+    if (!video || !staticLogo) return;
 
-    const video = document.createElement('video');
-    video.src = VIDEO_PATH;
-    video.autoplay = true;
-    video.muted = true;
-    video.playsInline = true;
-    video.className = 'jmf-video-logo';
+    // Se for mobile ou já assistiu na sessão, remove o vídeo imediatamente e mostra a logo estática
+    if (!isDesktop || hasSeen) {
+      video.remove();
+      staticLogo.classList.add('is-visible');
+      return;
+    }
 
-    // Dispara a transição suave logo antes do vídeo terminar completamente
+    // Se é desktop e primeira vez na sessão:
+    // Monitora o finalzinho do vídeo para fazer o fade out perfeito sem cortes bruscos
     video.addEventListener('timeupdate', function () {
       if (video.duration && (video.duration - video.currentTime <= 0.6)) {
         if (!video.classList.contains('is-fading')) {
           video.classList.add('is-fading');
-          staticLogo.style.opacity = '1';
+          staticLogo.classList.add('is-visible');
         }
       }
     });
 
-    // Limpeza após o fim da animação
     video.addEventListener('ended', function () {
       sessionStorage.setItem(STORAGE_KEY, '1');
-      if (video.parentNode) {
-        video.parentNode.removeChild(video);
-      }
+      video.remove();
     });
 
+    // Fallback caso o navegador bloqueie autoplay por políticas de restrição
     video.play().catch(function () {
-      staticLogo.style.opacity = '1';
-      if (video.parentNode) video.parentNode.removeChild(video);
+      video.remove();
+      staticLogo.classList.add('is-visible');
     });
-
-    wrap.appendChild(video);
   })();
 </script>
