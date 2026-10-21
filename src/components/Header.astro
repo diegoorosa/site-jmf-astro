@@ -5,7 +5,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 <style>
   :root { --jmf-nav-c: #06B6D4; }
 
-  /* Nav base — transparente, vira blur+border no scroll */
+  /* Nav base */
   .jmf-nav {
     background: linear-gradient(180deg, rgba(15,23,42,0.94) 0%, rgba(2,6,23,0.88) 100%);
     backdrop-filter: saturate(180%) blur(18px);
@@ -20,15 +20,14 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Logo container com restrição rigorosa de tamanho para evitar estouro */
+  /* Container da Logo com dimensões rígidas idênticas à imagem estática */
   .jmf-logo-wrap {
     position: relative;
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
     height: 4.5rem;
     width: auto;
-    max-width: 250px;
     overflow: hidden;
+    vertical-align: middle;
     transition: filter 0.3s ease, transform 0.3s ease;
   }
   .jmf-logo-wrap:hover {
@@ -39,10 +38,9 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-static-logo {
     height: 4.5rem;
     width: auto;
-    max-width: 100%;
     display: block;
     object-fit: contain;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.6s ease-in-out;
   }
 
   .jmf-video-logo {
@@ -51,18 +49,18 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     left: 0;
     height: 4.5rem;
     width: auto;
-    max-width: 100%;
+    display: block;
     object-fit: contain;
     opacity: 1;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.6s ease-in-out;
     z-index: 2;
     pointer-events: none;
   }
-  .jmf-video-logo.is-hidden {
+  .jmf-video-logo.is-fading {
     opacity: 0;
   }
 
-  /* Links nav — pill ciano + underline animado */
+  /* Links nav */
   .jmf-nav-link {
     position: relative;
     color: rgba(226,232,240,0.88);
@@ -96,12 +94,11 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-nav-link:hover::before { opacity: 1; transform: scale(1); }
   .jmf-nav-link:hover::after { transform: scaleX(1); }
 
-  /* Dropdown toggle */
+  /* Dropdowns */
   .jmf-dd-btn { position: relative; }
   .jmf-dd-btn .chev { transition: transform 0.3s ease, color 0.25s ease; }
   .jmf-dd-btn[aria-expanded="true"] .chev { transform: rotate(180deg); color: #06B6D4; }
 
-  /* Dropdown panel */
   .jmf-dd {
     background: rgba(15,23,42,0.97);
     backdrop-filter: blur(16px) saturate(160%);
@@ -118,7 +115,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     border-radius: 2px;
   }
 
-  /* Item do dropdown */
   .jmf-dd-item {
     display: flex;
     align-items: center;
@@ -141,7 +137,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   }
   .jmf-dd-item:hover .ic { color: #67E8F9; transform: translateX(2px); }
 
-  /* CTA Área do Cliente */
+  /* CTA */
   .jmf-cta {
     position: relative;
     background: linear-gradient(120deg, #1e40af 0%, #0891b2 50%, #06B6D4 100%);
@@ -158,7 +154,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-cta .ic { transition: transform 0.25s ease; }
   .jmf-cta:hover .ic { transform: translateX(2px); }
 
-  /* Hamburger */
+  /* Burger & Drawer */
   .jmf-burger span {
     display: block;
     width: 24px; height: 2px;
@@ -170,7 +166,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
   .jmf-burger.is-open span:nth-child(2) { opacity: 0; }
   .jmf-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* Drawer Mobile */
   .jmf-drawer-overlay {
     position: fixed; inset: 0;
     background: rgba(2,6,23,0.5);
@@ -213,7 +208,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo com container rígido para conter o vídeo sem distorcer -->
+    <!-- Logo com Proporção Exata -->
     <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap shrink-0" id="jmfLogoAnchor">
       <img
         id="jmfStaticLogo"
@@ -403,6 +398,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     const staticLogo = document.getElementById('jmfStaticLogo');
     if (!wrap || !staticLogo) return;
 
+    // Garante que a logo estática começa invisível por baixo enquanto o vídeo roda
     staticLogo.style.opacity = '0';
 
     const video = document.createElement('video');
@@ -412,14 +408,22 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     video.playsInline = true;
     video.className = 'jmf-video-logo';
 
-    video.addEventListener('ended', function () {
-      video.classList.add('is-hidden');
-      staticLogo.style.opacity = '1';
-      sessionStorage.setItem(STORAGE_KEY, '1');
+    // Dispara a transição suave logo antes do vídeo terminar completamente
+    video.addEventListener('timeupdate', function () {
+      if (video.duration && (video.duration - video.currentTime <= 0.6)) {
+        if (!video.classList.contains('is-fading')) {
+          video.classList.add('is-fading');
+          staticLogo.style.opacity = '1';
+        }
+      }
+    });
 
-      setTimeout(function () {
-        if (video.parentNode) video.parentNode.removeChild(video);
-      }, 550);
+    // Limpeza após o fim da animação
+    video.addEventListener('ended', function () {
+      sessionStorage.setItem(STORAGE_KEY, '1');
+      if (video.parentNode) {
+        video.parentNode.removeChild(video);
+      }
     });
 
     video.play().catch(function () {
