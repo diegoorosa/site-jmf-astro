@@ -1,5 +1,5 @@
 ---
-const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%B5es.";
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
 ---
 
 <style>
@@ -20,12 +20,12 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Container Fixo da Logo (Garante largura e altura exatas na grid) */
+  /* Container da Logo */
   .jmf-logo-wrap {
     position: relative;
     display: inline-block;
     height: 4.5rem;
-    width: 7.2rem; /* Largura fixa proporcional para desktop */
+    width: 7.2rem;
     flex-shrink: 0;
     overflow: hidden;
     vertical-align: middle;
@@ -36,6 +36,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     transform: scale(1.02);
   }
 
+  /* Logo Estática (Mantém o tamanho original cravado) */
   .jmf-static-logo {
     position: absolute;
     top: 0;
@@ -52,6 +53,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     opacity: 1;
   }
 
+  /* Vídeo Animado (Com leve scale para alinhar perfeitamente com a imagem estática) */
   .jmf-video-logo {
     position: absolute;
     top: 0;
@@ -61,6 +63,8 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     object-fit: contain;
     object-position: left center;
     display: block;
+    transform: scale(1.18); /* Aumenta levemente apenas o vídeo sem mexer na imagem */
+    transform-origin: left center;
     opacity: 1;
     transition: opacity 0.6s ease-in-out;
     z-index: 2;
@@ -218,7 +222,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 >
   <div class="container mx-auto px-4 flex items-center justify-between gap-4">
 
-    <!-- Logo com o espaço reservado perfeitamente -->
+    <!-- Logo com o espaço reservado -->
     <a href="https://www.jmfcontabilidade.com.br" aria-label="JMF Contabilidade Blumenau" class="jmf-logo-wrap" id="jmfLogoAnchor">
       <!-- Imagem Estática (Fundo) -->
       <img
@@ -230,7 +234,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Vídeo Animado (Frente em Desktop se não viu ainda) -->
+      <!-- Vídeo Animado (Frente com scale ajustado) -->
       <video
         id="jmfVideoLogo"
         class="jmf-video-logo"
@@ -416,15 +420,12 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
 
     if (!video || !staticLogo) return;
 
-    // Se for mobile ou já assistiu na sessão, remove o vídeo imediatamente e mostra a logo estática
     if (!isDesktop || hasSeen) {
       video.remove();
       staticLogo.classList.add('is-visible');
       return;
     }
 
-    // Se é desktop e primeira vez na sessão:
-    // Monitora o finalzinho do vídeo para fazer o fade out perfeito sem cortes bruscos
     video.addEventListener('timeupdate', function () {
       if (video.duration && (video.duration - video.currentTime <= 0.6)) {
         if (!video.classList.contains('is-fading')) {
@@ -439,7 +440,6 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
       video.remove();
     });
 
-    // Fallback caso o navegador bloqueie autoplay por políticas de restrição
     video.play().catch(function () {
       video.remove();
       staticLogo.classList.add('is-visible');
