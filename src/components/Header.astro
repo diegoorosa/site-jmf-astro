@@ -1,5 +1,5 @@
 ---
-const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es.";
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%B5es.";
 ---
 
 <style>
@@ -20,14 +20,14 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     box-shadow: 0 12px 40px -16px rgba(2,6,23,0.7), 0 1px 0 rgba(103,232,249,0.14) inset;
   }
 
-  /* Container da Logo */
+  /* Container da Logo (Mantém a largura perfeita da imagem estática para a navbar não mexer) */
   .jmf-logo-wrap {
     position: relative;
     display: inline-block;
     height: 4.5rem;
     width: 7.2rem;
     flex-shrink: 0;
-    overflow: hidden;
+    overflow: hidden; /* Mantém a imagem estática limpa nos limites certos */
     vertical-align: middle;
     transition: filter 0.3s ease, transform 0.3s ease;
   }
@@ -36,7 +36,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     transform: scale(1.02);
   }
 
-  /* Logo Estática (Mantém o tamanho original cravado) */
+  /* Logo Estática */
   .jmf-static-logo {
     position: absolute;
     top: 0;
@@ -53,18 +53,18 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
     opacity: 1;
   }
 
-  /* Vídeo Animado (Com leve scale para alinhar perfeitamente com a imagem estática) */
+  /* Vídeo Animado (Estoura o overflow do pai de forma controlada para aparecer inteiro sem cortar) */
   .jmf-video-logo {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 0;
-    height: 4.5rem;
-    width: 100%;
-    object-fit: contain;
-    object-position: left center;
-    display: block;
-    transform: scale(1.18); /* Aumenta levemente apenas o vídeo sem mexer na imagem */
+    transform: translateY(-50%) scale(1.1); /* Escala ajustada para o vídeo aparecer completo */
     transform-origin: left center;
+    height: 5.2rem; /* Levemente maior que a navbar para caber toda a largura do vídeo original */
+    width: auto;
+    max-width: none;
+    object-fit: contain;
+    display: block;
     opacity: 1;
     transition: opacity 0.6s ease-in-out;
     z-index: 2;
@@ -234,7 +234,7 @@ const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20d
         loading="eager"
         fetchpriority="high"
       />
-      <!-- Vídeo Animado (Frente com scale ajustado) -->
+      <!-- Vídeo Animado (Frente com proporção horizontal livre) -->
       <video
         id="jmfVideoLogo"
         class="jmf-video-logo"
