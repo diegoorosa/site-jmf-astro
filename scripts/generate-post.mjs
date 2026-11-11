@@ -6,43 +6,200 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const BLOG_DIR = path.resolve(__dirname, '../src/content/blog');
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-const rssParser = new Parser({ timeout: 5000 });
+const API_KEY = process.env.GEMINI_API_KEY;
+const genAI = new GoogleGenerativeAI(API_KEY);
+const rssParser = new Parser({ timeout: 8000 });
 
 // FEEDS DE NOTÍCIAS OFICIAIS E CONTÁBEIS
 const RSS_FEEDS = [
   'https://www.portalcontnews.com.br/feed/',
   'https://www.contabeis.com.br/rss/noticias/',
   'https://www.jornalcontabil.com.br/feed/',
-  'https://noticias.cfc.org.br/feed/'
+  'https://cfc.org.br/feed/' // o domínio noticias.cfc.org.br foi desativado (ENOTFOUND)
 ];
 
-const MODELS = [
+/* ------------------------------------------------------------------ *
+ * CAMADA DE RESILIÊNCIA DO GEMINI
+ * O erro que derrubava o Action era 503 "high demand" em todos os
+ * modelos da lista, sem nenhuma nova tentativa. Agora:
+ *  1. a lista de modelos é descoberta na API (não fica presa a nomes fixos);
+ *  2. cada modelo é tentado várias vezes com backoff exponencial + jitter;
+ *  3. respeita o RetryInfo devolvido pelo Google;
+ *  4. modelo inexistente/depreciado é pulado, não derruba o job.
+ * ------------------------------------------------------------------ */
+
+const REQUEST_TIMEOUT_MS = Number(process.env.GEMINI_TIMEOUT_MS || 180000);
+const MAX_ATTEMPTS_PER_MODEL = Number(process.env.GEMINI_MAX_ATTEMPTS_PER_MODEL || 3);
+const BASE_BACKOFF_MS = Number(process.env.GEMINI_BASE_BACKOFF_MS || 4000);
+const MAX_BACKOFF_MS = Number(process.env.GEMINI_MAX_BACKOFF_MS || 30000);
+// Orçamento total por chamada: sem isso, 10 modelos × 3 tentativas × 30s
+// poderia estourar o timeout de 30 min do workflow.
+const TOTAL_BUDGET_MS = Number(process.env.GEMINI_TOTAL_BUDGET_MS || 8 * 60 * 1000);
+
+// Usados quando a descoberta via API falha. Aliases "latest" primeiro.
+const FALLBACK_MODELS = [
+  'gemini-flash-latest',
+  'gemini-flash-lite-latest',
   'gemini-3.6-flash',
   'gemini-3.5-flash',
-  'gemini-3.5-flash-lite'
+  'gemini-3.5-flash-lite',
+  'gemini-2.5-flash',
+  'gemini-2.5-flash-lite',
+  'gemini-2.0-flash'
 ];
 
-async function generateWithFallback(prompt) {
-  let lastError;
-  for (const modelName of MODELS) {
-    try {
-      console.log(`🤖 Tentando modelo: ${modelName}`);
-      const model = genAI.getGenerativeModel({ model: modelName });
-      const result = await model.generateContent(prompt);
-      console.log(`✅ Sucesso com ${modelName}`);
-      return result.response.text().trim();
-    } catch (err) {
-      lastError = err;
-      const msg = err.message || String(err);
-      console.warn(`⚠️ Falhou ${modelName}: ${msg.includes('503') ? '503 indisponível' : msg.slice(0, 100)}`);
-      if (!msg.includes('503') && !msg.includes('429') && !msg.includes('quota')) {
-        throw err;
+const TRANSIENT_STATUS = new Set([0, 429, 500, 502, 503, 504]);
+const SKIP_MODEL_STATUS = new Set([400, 404]);
+const FATAL_STATUS = new Set([401, 403]);
+
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+function statusOf(err) {
+  if (typeof err?.status === 'number') return err.status;
+  const match = String(err?.message || err).match(/\[(\d{3})\s/);
+  return match ? Number(match[1]) : 0;
+}
+
+// O Google devolve {"@type":".../google.rpc.RetryInfo","retryDelay":"17s"} no 503/429
+function retryDelayFromError(err, attempt) {
+  const details = err?.errorDetails;
+  if (Array.isArray(details)) {
+    for (const d of details) {
+      const raw = d?.retryDelay;
+      if (typeof raw === 'string') {
+        const secs = parseFloat(raw.replace(/s$/, ''));
+        if (Number.isFinite(secs) && secs > 0) return Math.min(secs * 1000, MAX_BACKOFF_MS);
       }
-      await new Promise(r => setTimeout(r, 1000));
     }
   }
-  throw lastError;
+  const base = BASE_BACKOFF_MS * 2 ** attempt;
+  const jitter = Math.floor(Math.random() * 1500);
+  return Math.min(base + jitter, MAX_BACKOFF_MS);
+}
+
+function versionRank(name) {
+  const m = name.match(/(\d+)(?:\.(\d+))?/);
+  if (!m) return 0;
+  return Number(m[1]) * 100 + Number(m[2] || 0);
+}
+
+async function discoverModels() {
+  if (!API_KEY) throw new Error('GEMINI_API_KEY ausente');
+  const res = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models?pageSize=200&key=${encodeURIComponent(API_KEY)}`,
+    { signal: AbortSignal.timeout(20000) }
+  );
+  if (!res.ok) throw new Error(`HTTP ${res.status} ao listar modelos`);
+  const data = await res.json();
+
+  const usable = (data.models || [])
+    .filter((m) => (m.supportedGenerationMethods || []).includes('generateContent'))
+    .map((m) => String(m.name || '').replace(/^models\//, ''))
+    .filter((n) => /flash/i.test(n))
+    .filter((n) => !/(embedding|tts|image|vision|live|audio|native|veo|imagen)/i.test(n));
+
+  const isUnstable = (n) => /(preview|exp|experimental)/i.test(n);
+  const byVersionDesc = (list) => [...new Set(list)].sort((a, b) => versionRank(b) - versionRank(a));
+
+  return [
+    ...byVersionDesc(usable.filter((n) => !isUnstable(n))),
+    ...byVersionDesc(usable.filter(isUnstable))
+  ];
+}
+
+let modelChainPromise = null;
+function getModelChain() {
+  if (modelChainPromise) return modelChainPromise;
+  modelChainPromise = (async () => {
+    const fromEnv = (process.env.GEMINI_MODELS || '')
+      .split(',')
+      .map((s) => s.trim())
+      .filter(Boolean);
+
+    let discovered = [];
+    try {
+      discovered = await discoverModels();
+      console.log(`🔎 Modelos disponíveis na API: ${discovered.slice(0, 6).join(', ')}${discovered.length > 6 ? '…' : ''}`);
+    } catch (err) {
+      console.warn(`⚠️ Não foi possível listar modelos (${err.message}). Usando lista fixa.`);
+    }
+
+    const chain = [...new Set([...fromEnv, ...discovered, ...FALLBACK_MODELS])];
+    console.log(`🤖 Cadeia de modelos: ${chain.join(' → ')}`);
+    return chain;
+  })();
+  return modelChainPromise;
+}
+
+async function generateWithFallback(prompt, label = 'geração') {
+  const models = await getModelChain();
+  const failures = [];
+  const deadline = Date.now() + TOTAL_BUDGET_MS;
+
+  for (const modelName of models) {
+    if (Date.now() > deadline) {
+      failures.push('orçamento de tempo esgotado antes de terminar a cadeia de modelos');
+      break;
+    }
+
+    for (let attempt = 0; attempt < MAX_ATTEMPTS_PER_MODEL; attempt++) {
+      try {
+        console.log(`🤖 [${label}] ${modelName} — tentativa ${attempt + 1}/${MAX_ATTEMPTS_PER_MODEL}`);
+        const model = genAI.getGenerativeModel({ model: modelName });
+        const result = await model.generateContent(prompt, { timeout: REQUEST_TIMEOUT_MS });
+        const text = (result.response.text() || '').trim();
+
+        if (!text) throw new Error('resposta vazia do modelo');
+
+        console.log(`✅ [${label}] sucesso com ${modelName}`);
+        return text;
+      } catch (err) {
+        const status = statusOf(err);
+        const msg = String(err?.message || err);
+        failures.push(`${modelName} [${status || 'sem status'}]: ${msg.slice(0, 140)}`);
+
+        if (FATAL_STATUS.has(status)) {
+          throw new Error(
+            `Credencial do Gemini rejeitada (${status}). Verifique o secret GEMINI_API_KEY. Detalhe: ${msg.slice(0, 200)}`
+          );
+        }
+
+        // Chave inválida/sem permissão às vezes volta como 400, não 401/403
+        if (/api key not valid|api_key_invalid|api key expired|permission denied|unauthenticated/i.test(msg)) {
+          throw new Error(`Credencial do Gemini inválida. Verifique/renove o secret GEMINI_API_KEY. Detalhe: ${msg.slice(0, 200)}`);
+        }
+
+        if (SKIP_MODEL_STATUS.has(status) || /not found|not supported|unsupported|invalid argument/i.test(msg)) {
+          console.warn(`⏭️  [${label}] ${modelName} indisponível (${status || 'sem status'}), pulando para o próximo modelo.`);
+          break;
+        }
+
+        if (!TRANSIENT_STATUS.has(status)) {
+          console.warn(`⚠️  [${label}] ${modelName} falhou (${status || 'erro inesperado'}), pulando para o próximo modelo.`);
+          break;
+        }
+
+        if (attempt === MAX_ATTEMPTS_PER_MODEL - 1) {
+          console.warn(`⚠️  [${label}] ${modelName} esgotou as ${MAX_ATTEMPTS_PER_MODEL} tentativas.`);
+          break;
+        }
+
+        const wait = Math.min(retryDelayFromError(err, attempt), Math.max(deadline - Date.now(), 0));
+        if (wait <= 0) {
+          console.warn(`⏱️  [${label}] orçamento de tempo esgotado, desistindo de ${modelName}.`);
+          break;
+        }
+        console.warn(
+          `⚠️  [${label}] ${modelName} ${status === 503 ? 'sobrecarregado (503)' : status || 'falha de rede'} — nova tentativa em ${Math.round(wait / 1000)}s.`
+        );
+        await sleep(wait);
+      }
+    }
+  }
+
+  throw new Error(
+    `Nenhum dos ${models.length} modelos do Gemini respondeu.\n  ${failures.slice(-8).join('\n  ')}`
+  );
 }
 
 async function fetchLatestNews() {
@@ -51,8 +208,20 @@ async function fetchLatestNews() {
 
   for (const feedUrl of RSS_FEEDS) {
     try {
-      const feed = await rssParser.parseURL(feedUrl);
-      feed.items.slice(0, 6).forEach(item => {
+      // Busca com fetch + parseString em vez de parseURL: o parseURL do
+      // rss-parser deixa sockets abertos e o processo nunca termina (job
+      // fica pendurado até o timeout de 30 min do workflow).
+      const res = await fetch(feedUrl, {
+        signal: AbortSignal.timeout(8000),
+        headers: {
+          'user-agent': 'Mozilla/5.0 (compatible; JMFCrawler/1.0; +https://www.jmfcontabilidade.com.br)',
+          accept: 'application/rss+xml, application/xml, text/xml;q=0.9, */*;q=0.8'
+        }
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+
+      const feed = await rssParser.parseString(await res.text());
+      feed.items.slice(0, 6).forEach((item) => {
         if (item.title) {
           newsItems.push({
             title: item.title,
@@ -61,6 +230,7 @@ async function fetchLatestNews() {
           });
         }
       });
+      console.log(`   ✔ ${feedUrl} (${feed.items.length} itens)`);
     } catch (err) {
       console.warn(`⚠️ Não foi possível ler feed ${feedUrl}: ${err.message}`);
     }
@@ -206,7 +376,15 @@ ARTIGO:
 ${rawMarkdown}`;
 
   console.log('🔍 Executando auditoria contábil e fiscal com Gemini...');
-  return await generateWithFallback(auditPrompt);
+  return await generateWithFallback(auditPrompt, 'auditoria');
+}
+
+// Remove cercas de código que o modelo às vezes coloca em volta do Markdown
+function stripFences(text) {
+  return String(text)
+    .replace(/^\s*```[a-z]*\s*\r?\n/i, '')
+    .replace(/\r?\n```\s*$/, '')
+    .trim();
 }
 
 // BLINDAGEM PROGRAMÁTICA: Limpa qualquer LaTeX residual ou número falso antes de gravar
@@ -233,11 +411,17 @@ async function main() {
   const prompt = buildPrompt(news);
 
   console.log('🤖 Gerando rascunho com base nas notícias...');
-  let markdown = await generateWithFallback(prompt);
-  markdown = markdown.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+  let markdown = stripFences(await generateWithFallback(prompt, 'rascunho'));
 
-  const auditedMarkdown = await auditPost(markdown);
-  let cleanMarkdown = auditedMarkdown.replace(/^```markdown\n/, '').replace(/\n```$/, '');
+  // A auditoria é um "extra": se o Gemini estiver instável, publica o rascunho
+  // em vez de perder o post inteiro (era mais uma chance de 503 derrubar o job).
+  let cleanMarkdown;
+  try {
+    cleanMarkdown = stripFences(await auditPost(markdown));
+  } catch (err) {
+    console.warn(`⚠️ Auditoria não concluída (${err.message}). Publicando o rascunho sem revisão automática.`);
+    cleanMarkdown = markdown;
+  }
 
   // Aplica a blindagem por código
   cleanMarkdown = sanitizeMarkdown(cleanMarkdown);
@@ -283,7 +467,13 @@ async function main() {
   }
 }
 
-main().catch(e => {
-  console.error('❌ Erro:', e.message);
-  process.exit(1);
-});
+main()
+  .then(() => {
+    // Rede de segurança: se algum handle ficar pendurado, encerra em 250ms
+    // em vez de deixar o job pendurado até o timeout do workflow.
+    setTimeout(() => process.exit(0), 250).unref();
+  })
+  .catch((e) => {
+    console.error('❌ Erro:', e.message);
+    process.exit(1);
+  });

@@ -97,21 +97,6 @@ jobs:
         run: |
           aws cloudfront create-invalidation --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
 
-      - name: Post to Google Meu Negocio
-        if: success()
-        env:
-          GMB_WEBHOOK_URL: ${{ secrets.GMB_WEBHOOK_URL }}
-          POST_TITLE: ${{ steps.generate-post.outputs.title }}
-          POST_SUMMARY: ${{ steps.generate-post.outputs.summary }}
-          POST_URL: ${{ steps.generate-post.outputs.url }}
-          POST_IMAGE: ${{ steps.fetch-image.outputs.image_original }}
-        run: |
-          if [ -z "$GMB_WEBHOOK_URL" ]; then
-            echo "❌ GMB_WEBHOOK_URL não configurado"
-            exit 1
-          fi
-          curl -sS -X POST "$GMB_WEBHOOK_URL" -H "Content-Type: application/json" -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}"
-
       - name: Commit and push new post
         if: success()
         run: |
@@ -124,3 +109,24 @@ jobs:
             git commit -m "chore: auto-post blog $(date +%F)"
             git push
           fi
+
+      # Roda por último e NUNCA derruba o job: antes, um webhook ausente
+      # (exit 1) impedia o commit do post que já tinha sido publicado.
+      - name: Post to Google Meu Negocio
+        if: success()
+        continue-on-error: true
+        env:
+          GMB_WEBHOOK_URL: ${{ secrets.GMB_WEBHOOK_URL }}
+          POST_TITLE: ${{ steps.generate-post.outputs.title }}
+          POST_SUMMARY: ${{ steps.generate-post.outputs.summary }}
+          POST_URL: ${{ steps.generate-post.outputs.url }}
+          POST_IMAGE: ${{ steps.fetch-image.outputs.image_original }}
+        run: |
+          if [ -z "$GMB_WEBHOOK_URL" ]; then
+            echo "::warning::GMB_WEBHOOK_URL não configurado — pulando post no Google Meu Negócio."
+            exit 0
+          fi
+          curl -sS --fail-with-body --max-time 30 -X POST "$GMB_WEBHOOK_URL" \
+            -H "Content-Type: application/json" \
+            -d "{\"title\":\"$POST_TITLE\",\"summary\":\"$POST_SUMMARY\",\"url\":\"$POST_URL\",\"image\":\"$POST_IMAGE\"}" \
+            || echo "::warning::Falha ao publicar no Google Meu Negócio (o post do blog já está no ar)."
