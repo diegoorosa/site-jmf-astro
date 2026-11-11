@@ -28,25 +28,32 @@ const RSS_FEEDS = [
  *  4. modelo inexistente/depreciado é pulado, não derruba o job.
  * ------------------------------------------------------------------ */
 
-const REQUEST_TIMEOUT_MS = Number(process.env.GEMINI_TIMEOUT_MS || 180000);
-const MAX_ATTEMPTS_PER_MODEL = Number(process.env.GEMINI_MAX_ATTEMPTS_PER_MODEL || 3);
+const REQUEST_TIMEOUT_MS = Number(process.env.GEMINI_TIMEOUT_MS || 120000);
+const PROBE_TIMEOUT_MS = Number(process.env.GEMINI_PROBE_TIMEOUT_MS || 40000);
+const PROBE_BATCH_SIZE = Number(process.env.GEMINI_PROBE_BATCH_SIZE || 5);
+const MAX_ATTEMPTS_PER_MODEL = Number(process.env.GEMINI_MAX_ATTEMPTS_PER_MODEL || 2);
 const BASE_BACKOFF_MS = Number(process.env.GEMINI_BASE_BACKOFF_MS || 4000);
 const MAX_BACKOFF_MS = Number(process.env.GEMINI_MAX_BACKOFF_MS || 30000);
-// Orçamento total por chamada: sem isso, 10 modelos × 3 tentativas × 30s
-// poderia estourar o timeout de 30 min do workflow.
+// Orçamento total por chamada: sem isso, 16 modelos × 2 tentativas × 2 min
+// estouraria o timeout de 30 min do workflow.
 const TOTAL_BUDGET_MS = Number(process.env.GEMINI_TOTAL_BUDGET_MS || 8 * 60 * 1000);
 
-// Usados quando a descoberta via API falha. Aliases "latest" primeiro.
-const FALLBACK_MODELS = [
-  'gemini-flash-latest',
-  'gemini-flash-lite-latest',
-  'gemini-3.6-flash',
-  'gemini-3.5-flash',
+// Ordem de preferência: modelos "lite" são os mais baratos e são os mais
+// indicados para gerar texto em volume (o blog roda 2x por semana).
+// Pode ser sobrescrito com GEMINI_MODELS="modelo-a,modelo-b".
+const PREFERRED_MODELS = [
   'gemini-3.5-flash-lite',
-  'gemini-2.5-flash',
+  'gemini-3.1-flash-lite',
+  'gemini-3.6-flash',
+  'gemini-3.8-flash',
+  'gemini-flash-lite-latest',
+  'gemini-flash-latest',
   'gemini-2.5-flash-lite',
-  'gemini-2.0-flash'
+  'gemini-2.5-flash'
 ];
+
+// Modelos que não geram texto corrido (vídeo, imagem, áudio, embedding).
+const NON_TEXT_MODEL = /(embedding|tts|image|vision|live|audio|native|veo|imagen|omni|banana|robotics|transcribe|deep-research|computer-use)/i;
 
 const TRANSIENT_STATUS = new Set([0, 429, 500, 502, 503, 504]);
 const SKIP_MODEL_STATUS = new Set([400, 404]);
@@ -96,7 +103,7 @@ async function discoverModels() {
     .filter((m) => (m.supportedGenerationMethods || []).includes('generateContent'))
     .map((m) => String(m.name || '').replace(/^models\//, ''))
     .filter((n) => /flash/i.test(n))
-    .filter((n) => !/(embedding|tts|image|vision|live|audio|native|veo|imagen)/i.test(n));
+    .filter((n) => !NON_TEXT_MODEL.test(n));
 
   const isUnstable = (n) => /(preview|exp|experimental)/i.test(n);
   const byVersionDesc = (list) => [...new Set(list)].sort((a, b) => versionRank(b) - versionRank(a));
@@ -119,20 +126,98 @@ function getModelChain() {
     let discovered = [];
     try {
       discovered = await discoverModels();
-      console.log(`🔎 Modelos disponíveis na API: ${discovered.slice(0, 6).join(', ')}${discovered.length > 6 ? '…' : ''}`);
+      console.log(`🔎 A API listou ${discovered.length} modelo(s) de texto: ${discovered.join(', ')}`);
     } catch (err) {
       console.warn(`⚠️ Não foi possível listar modelos (${err.message}). Usando lista fixa.`);
     }
 
-    const chain = [...new Set([...fromEnv, ...discovered, ...FALLBACK_MODELS])];
+    const preferred = fromEnv.length ? fromEnv : PREFERRED_MODELS;
+    const chain = [...new Set([...preferred, ...discovered, ...PREFERRED_MODELS])];
     console.log(`🤖 Cadeia de modelos: ${chain.join(' → ')}`);
     return chain;
   })();
   return modelChainPromise;
 }
 
+// Ping barato (16 tokens, 40s): descobre se o modelo responde ANTES de gastar
+// 2 minutos gerando um artigo inteiro num modelo morto/lento.
+async function probeModel(modelName) {
+  const model = genAI.getGenerativeModel({
+    model: modelName,
+    generationConfig: { maxOutputTokens: 16 }
+  });
+  await model.generateContent('Responda apenas: OK', { timeout: PROBE_TIMEOUT_MS });
+}
+
+let liveModelsPromise = null;
+function getLiveModels() {
+  if (liveModelsPromise) return liveModelsPromise;
+
+  liveModelsPromise = (async () => {
+    const chain = await getModelChain();
+    const alive = [];
+    const maybe = [];
+    const dead = [];
+
+    for (let i = 0; i < chain.length && alive.length < 3; i += PROBE_BATCH_SIZE) {
+      const batch = chain.slice(i, i + PROBE_BATCH_SIZE);
+      const results = await Promise.all(
+        batch.map(async (modelName) => {
+          try {
+            await probeModel(modelName);
+            return { modelName, ok: true };
+          } catch (err) {
+            return {
+              modelName,
+              ok: false,
+              status: statusOf(err),
+              msg: String(err?.message || err).slice(0, 140)
+            };
+          }
+        })
+      );
+
+      for (const r of results) {
+        if (r.ok) {
+          alive.push(r.modelName);
+          console.log(`🟢 ${r.modelName} respondeu ao teste`);
+          continue;
+        }
+
+        if (FATAL_STATUS.has(r.status) || /api key not valid|api_key_invalid|permission denied|unauthenticated/i.test(r.msg)) {
+          throw new Error(`Credencial do Gemini inválida. Verifique/renove o secret GEMINI_API_KEY. Detalhe: ${r.msg}`);
+        }
+
+        // 404/400 = modelo não existe mesmo. 429/503/timeout = existe, mas
+        // pode estar ocupado/lento agora: mantemos como reserva.
+        const inexistente = SKIP_MODEL_STATUS.has(r.status);
+        if (inexistente) {
+          dead.push(`${r.modelName} [${r.status}]`);
+          console.log(`🔴 ${r.modelName} não existe mais (${r.status})`);
+        } else if (maybe.length < 2) {
+          maybe.push(r.modelName);
+          console.log(`🟡 ${r.modelName} existe mas não respondeu agora (${r.status || 'timeout'}) — fica de reserva`);
+        }
+      }
+    }
+
+    const utilizaveis = [...alive, ...maybe];
+
+    if (!utilizaveis.length) {
+      throw new Error(
+        `Nenhum modelo do Gemini está utilizável.\n  descartados: ${dead.slice(-10).join(', ') || '(nenhum)'}`
+      );
+    }
+
+    console.log(`✅ Modelos utilizáveis: ${utilizaveis.join(', ')}`);
+    return utilizaveis;
+  })();
+
+  return liveModelsPromise;
+}
+
 async function generateWithFallback(prompt, label = 'geração') {
-  const models = await getModelChain();
+  const models = await getLiveModels();
   const failures = [];
   const deadline = Date.now() + TOTAL_BUDGET_MS;
 
@@ -198,7 +283,7 @@ async function generateWithFallback(prompt, label = 'geração') {
   }
 
   throw new Error(
-    `Nenhum dos ${models.length} modelos do Gemini respondeu.\n  ${failures.slice(-8).join('\n  ')}`
+    `Nenhum dos ${models.length} modelo(s) testado(s) conseguiu gerar o texto.\n  ${failures.slice(-8).join('\n  ')}`
   );
 }
 
