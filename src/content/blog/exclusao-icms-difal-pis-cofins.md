@@ -135,17 +135,11 @@ Esta complexidade reforça que a escolha do regime para o ano-calendário subseq
 
 ---
 
-## Conclusão: Ação estratégica imediata para sua empresa
+## Conclusão
 
-A decisão da Primeira Seção do STJ de retirar o ICMS-Difal da base de cálculo do PIS e da Cofins é um marco de segurança jurídica e justiça fiscal. Trata-se de uma oportunidade legítima para as empresas de Santa Catarina aliviarem o peso da carga tributária federal, otimizarem seus fluxos de caixa e recuperarem ativos financeiros que pertencem, por direito, ao caixa do próprio negócio.
+A decisão da Primeira Seção do STJ de retirar o ICMS-Difal da base de cálculo do PIS e da Cofins traz maior segurança jurídica nas operações interestaduais destinadas a consumidores finais. Como o tema envolve regras específicas de modulação de efeitos e parametrização de sistemas, é fundamental que empresas com alto volume de vendas interestaduais avaliem seus processos junto à sua assessoria contábil e jurídica.
 
-No entanto, o dinamismo do fisco exige precisão cirúrgica na apuração dos valores e no cumprimento dos ritos burocráticos exigidos pela Receita Federal. O menor deslize na retificação das obrigações acessórias ou no cálculo da Selic pode anular as vantagens financeiras e gerar passivos desnecessários.
-
-A JMF Contabilidade, estruturada em Blumenau/SC, possui corpo técnico especializado para realizar a auditoria de suas notas fiscais, recalcular as bases do PIS e da Cofins de forma automatizada e segura, e estruturar o plano de compensação tributária ideal para o perfil do seu empreendimento.
-
-Se a sua empresa realiza vendas para fora de Santa Catarina e recolhe o Difal, não perca tempo e garanta o resgate desses valores.
-
-[Falar com os especialistas da JMF Contabilidade](https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20falar%20com%20um%20especialista%20sobre%20a%20exclus%C3%A3o%20do%20ICMS-Difal%20do%20PIS%20e%20da%20Cofins.)
+> **Nota informativa:** Este artigo tem finalidade exclusivamente educativa. A JMF Contabilidade presta serviços de contabilidade mensal recorrente para empresas no Simples Nacional e no Lucro Presumido, não atuando com revisão tributária avulsa ou recuperação judicial de créditos no Lucro Real.
 
 ---
 
