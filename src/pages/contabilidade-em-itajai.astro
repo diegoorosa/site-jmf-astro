@@ -12,7 +12,7 @@ const localBusinessSchema = JSON.stringify({
   "@id": "https://www.jmfcontabilidade.com.br/contabilidade-em-itajai#localbusiness",
   "name": "JMF Contabilidade – Itajaí",
   "url": "https://www.jmfcontabilidade.com.br/contabilidade-em-itajai",
-  "description": "Contabilidade para empresas em Itajaí/SC: porto, comércio exterior, logística, indústria e serviços. Simples Nacional ou Lucro Presumido. Atendimento digital, 60km de Blumenau.",
+  "description": "Contabilidade digital para empresas em Itajaí/SC: prestadores de serviços, comércio e profissionais liberais no Simples Nacional ou Lucro Presumido. Estrutura de 35+ anos em Blumenau.",
   "telephone": "+55-47-3326-5123",
   "email": "contato@jmfcontabilidade.com.br",
   "priceRange": "$$",
@@ -50,31 +50,31 @@ const faqSchema = JSON.stringify({
       "name": "A JMF Contabilidade atende empresas em Itajaí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Atendemos empresas de Itajaí/SC 100% digital. Itajaí fica a 60km de Blumenau (1h10), polo portuário e logístico. Fechamento mensal, documentos e comunicação via WhatsApp, portal e videoconferência."
+        "text": "Sim. Atendemos empresas de serviços, comércio e profissionais liberais de Itajaí/SC de forma 100% digital. Toda a rotina mensal, envio de documentos, guias e suporte ocorrem via WhatsApp, portal do cliente, e-mail e videoconferência."
       }
     },
     {
       "@type": "Question",
-      "name": "Como funciona contabilidade para comércio exterior em Itajaí?",
+      "name": "Quais regimes tributários vocês atendem em Itajaí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Empresas de comex em Itajaí (importadores, exportadores, despachantes, trading) lidam com: Drawback, RECOF, RECOF-SPED, admissão temporária, Regime Aduaneiro Especial, ICMS na importação, PIS/COFINS-Importação. A JMF tem expertise em tributação de comércio exterior."
+        "text": "Nosso atendimento é focado em empresas enquadradas no Simples Nacional (incluindo planejamento do Fator R) e no Lucro Presumido, cuidando da abertura de CNPJ, troca de contador, apuração fiscal, folha de pagamento e contabilidade mensal."
       }
     },
     {
       "@type": "Question",
-      "name": "Itajaí tem incentivos para logística e porto?",
+      "name": "Como funciona a abertura de CNPJ ou troca de contador em Itajaí?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sim. Itajaí concentra o segundo maior porto do Brasil. Empresas de logística, armazenagem, terminais portuários e transportadoras podem acessar incentivos estaduais (PRODEC, TTD) e regimes aduaneiros especiais. A JMF assessora a estruturação tributária completa."
+        "text": "Realizamos todo o processo de abertura na JUCESC e na Prefeitura de Itajaí de forma digital, definindo os CNAEs e o regime tributário mais econômico. Para empresas já ativas, conduzimos a migração contábil sem interromper sua emissão de notas fiscais."
       }
     },
     {
       "@type": "Question",
-      "name": "Atendimento remoto para Itajaí como funciona?",
+      "name": "Como funciona a rotina mensal de atendimento digital?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "WhatsApp (47) 3326-5123, portal do cliente, e-mail, videoconferência. Para presença física, Blumenau a 60km (1h10 pela BR-101). Resposta no mesmo dia útil. Rotina mensal padrão: docs até dia 5, fechamento até dia 15, guias até dia 20."
+        "text": "Atendimento direto pelo WhatsApp (47) 3326-5123 com retorno no mesmo dia útil. Na rotina mensal, recebemos os documentos até o dia 5, realizamos o fechamento contábil e fiscal e disponibilizamos as guias e relatórios no prazo, além de suporte presencial em Blumenau (60km) quando necessário."
       }
     }
   ]
@@ -84,14 +84,14 @@ const schema = [localBusinessSchema, faqSchema];
 
 const serviceSchema = {
   serviceName: "Contabilidade em Itajaí",
-  description: "Contabilidade para empresas em Itajaí/SC: porto, comércio exterior, logística, indústria e serviços. Simples Nacional ou Lucro Presumido. Atendimento digital, 60km de Blumenau.",
+  description: "Contabilidade digital para empresas em Itajaí/SC: prestadores de serviços, comércio e profissionais liberais no Simples Nacional ou Lucro Presumido.",
   url: "https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
 };
 ---
 
 <Layout
   title="Contabilidade em Itajaí/SC | JMF Contabilidade"
-  description="Contabilidade para empresas em Itajaí/SC: porto, comércio exterior, logística, indústria.  Simples Nacional ou Lucro Presumido."
+  description="Contabilidade digital para empresas em Itajaí/SC: prestadores de serviços, comércio e profissionais liberais no Simples Nacional ou Lucro Presumido."
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-em-itajai"
   schema={schema}
@@ -102,7 +102,7 @@ const serviceSchema = {
 
   <HeroInterno
     title="Contabilidade para empresas em Itajaí"
-    subtitle="Polo portuário, comércio exterior, logística e indústria. Expertise em tributação de comex e regimes aduaneiros. 60km de Blumenau."
+    subtitle="Assessoria contábil, fiscal e trabalhista 100% digital para prestadores de serviços, comércio e profissionais liberais no Simples Nacional e Lucro Presumido."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Áreas de Atuação" },
@@ -116,42 +116,42 @@ const serviceSchema = {
 
   <section id="servicos" class="py-16 md:py-24">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Itajaí:<br/><span class="pp3-grad">porto, comex, logística e indústria</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Contabilidade em Itajaí:<br/><span class="pp3-grad">serviços, comércio e gestão mensal</span></h2>
 
       <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-        Itajaí abriga o segundo maior porto do Brasil e é um dos principais polos de comércio exterior, logística e indústria naval de Santa Catarina. Empresas da região operam com regimes aduaneiros especiais, tributação complexa de importação/exportação e incentivos estaduais específicos — exigem contabilidade com expertise técnica comprovada.
+        Itajaí é um dos municípios que mais crescem em Santa Catarina, impulsionado pelo setor de serviços, tecnologia, saúde, engenharia, construção e comércio local. Empresas e profissionais da cidade precisam de uma contabilidade ágil, organizada e que ajude a pagar o menor imposto dentro da lei.
       </p>
 
       <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-        A JMF Contabilidade atende importadores, exportadores, trading companies, despachantes, operadores logísticos, terminais portuários e indústrias de Itajaí com planejamento tributário especializado em comércio exterior e regimes especiais. Atendimento 100% digital, estrutura de 35+ anos em Blumenau (60km / 1h10).
+        A JMF Contabilidade atende empresas de Itajaí com processos 100% digitais e a solidez de mais de 35 anos de experiência no Vale do Itajaí (sede em Blumenau, a 60 km). Cuidamos da abertura do seu CNPJ, enquadramento no Simples Nacional ou Lucro Presumido, folha de pagamento e apuração mensal de impostos sem burocracia.
       </p>
 
       <div class="grid md:grid-cols-2 gap-6 mt-12">
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Tributação de Comércio Exterior</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura de Empresa e Regularização</h3>
           <p class="text-slate-600 leading-relaxed">
-            Drawback (isenção/suspensão), RECOF/RECOF-SPED, admissão temporária, entreposto aduaneiro. ICMS na importação, PIS/COFINS-Importação, II, IPI. Recuperação de créditos.
+            Constituição de CNPJ na JUCESC, inscrição municipal em Itajaí, alvarás de funcionamento e definição estratégica de CNAEs para iniciar sua operação com segurança.
           </p>
         </div>
 
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Logística e Transporte</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Planejamento Tributário (Simples e Presumido)</h3>
           <p class="text-slate-600 leading-relaxed">
-            Transportadoras, armazenagem, terminais: ICMS interestadual, DIFAL, substituição tributária, antecipação de ICMS, frete como base de cálculo. Regimes especiais de SC.
+            Análise comparativa entre Simples Nacional (incluindo cálculo mensal do Fator R a partir de 6%) e Lucro Presumido para garantir a menor carga tributária legal para sua atividade.
           </p>
         </div>
 
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Indústria Naval e Offshore</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Contabilidade e Fechamento Mensal</h3>
           <p class="text-slate-600 leading-relaxed">
-            Estaleiros, naval, offshore: Lucro Presumido, créditos de ICMS, PIS/COFINS não cumulativos, exclusão ICMS base PIS/COFINS, incentivos PRODEC/TTD.
+            Conciliação contábil, Balanço Patrimonial, DRE, apuração de DAS, ISS, PIS, COFINS, IRPJ, CSLL e entrega de todas as declarações acessórias no prazo.
           </p>
         </div>
 
         <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-          <h3 class="text-xl font-bold text-slate-900 mb-3">Fechamento Mensal Completo</h3>
+          <h3 class="text-xl font-bold text-slate-900 mb-3">Departamento Pessoal e Pró-Labore</h3>
           <p class="text-slate-600 leading-relaxed">
-            Escrituração fiscal, SPED Fiscal/Contribuições, ECD/ECF, DCTF, PER/DCOMP, obrigações aduaneiras (DI, DU-E, LI). Tudo no prazo, sem multas, com relatórios gerenciais.
+            Gestão completa da folha de pagamento, pró-labore dos sócios, admissões, férias, rescisões e transmissão rigorosa ao eSocial, DCTFWeb e FGTS Digital.
           </p>
         </div>
       </div>
@@ -160,34 +160,34 @@ const serviceSchema = {
 
   <section class="py-16 bg-slate-50">
     <div class="max-w-4xl mx-auto px-6">
-      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Itajaí — Comércio Exterior:<br/><span class="pp3-grad">particularidades tributárias</span></h2>
+      <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Itajaí — Serviços e Comércio:<br/><span class="pp3-grad">pontos de atenção na rotina fiscal</span></h2>
 
       <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-        Itajaí concentra operações com complexidade tributária única no estado:
+        Manter a empresa regular em Santa Catarina exige atenção aos detalhes fiscais estaduais e municipais:
       </p>
 
       <ul class="space-y-4 text-slate-600 text-lg">
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Regimes Aduaneiros Especiais:</strong> Drawback integrado (isenção + suspensão), RECOF-SPED (indústria), admissão temporária para feiras/manutenção. Exigem controle rigoroso de estoque e apuração de tributos suspensos.</span>
+          <span><strong>Fator R no Simples Nacional:</strong> profissionais de TI, saúde, engenharia, arquitetura e consultoria podem reduzir a alíquota inicial de 15,5% (Anexo V) para 6% (Anexo III) com o acompanhamento mensal da folha e pró-labore.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>ICMS na Importação:</strong> base de cálculo = valor aduaneiro + II + IPI + despesas. Crédito de ICMS depende da destinação da mercadoria (revenda, industrialização, uso/consumo).</span>
+          <span><strong>Emissão de NFS-e e ISS Municipal:</strong> parametrização correta dos códigos de serviço e alíquotas de ISS em Itajaí, evitando retenções indevidas e bitributação.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>PIS/COFINS-Importação:</strong> alíquotas 2,1% / 9,65% (não cumulativo) ou 0,65% / 4% (cumulativo). Crédito vinculado à receita de revenda/industrialização no mercado interno.</span>
+          <span><strong>Comércio Varejista e E-commerce em SC:</strong> controle de produtos monofásicos de PIS/COFINS no Simples Nacional para não pagar imposto duplicado no DAS, além de orientação sobre ICMS e DIFAL.</span>
         </li>
         <li class="flex items-start gap-3">
           <span class="text-blue-700 font-bold mt-1">•</span>
-          <span><strong>Incentivos PRODEC/TTD para logística:</strong> terminais, armazéns, transportadoras em Itajaí podem acessar redução de ICMS via programas estaduais.</span>
+          <span><strong>Distribuição de Lucros Isenta:</strong> escrituração contábil regular (Livro Diário e Balanço) para comprovar o lucro apurado e distribuir resultados aos sócios com segurança fiscal.</span>
         </li>
       </ul>
 
       <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
         <p class="text-slate-700 font-medium">
-          <strong class="text-blue-700">Dado real:</strong> Importador em Itajaí no Lucro Presumido paga PIS/COFINS-Importação (11,75%) sem direito a crédito integral se não houver receita de revenda no mercado interno. No Lucro Presumido, o crédito é pleno — mas a JMF atende apenas Simples Nacional, então o foco é estruturar a operação de comex para minimizar o custo da importação. A JMF simula o cenário ideal.
+          <strong class="text-blue-700">Escopo de atuação:</strong> Em Itajaí e região, a JMF Contabilidade atende empresas de serviços, comércio e profissionais liberais enquadrados no <strong>Simples Nacional</strong> e no <strong>Lucro Presumido</strong>. Não atuamos com regime de Lucro Real, despachos aduaneiros ou regimes especiais de comércio exterior (TTD/Drawback).
         </p>
       </div>
     </div>
@@ -199,16 +199,16 @@ const serviceSchema = {
 
       <div class="space-y-6 text-lg text-slate-600">
         <p>
-          <strong>100% Digital:</strong> WhatsApp (47) 3326-5123, portal, e-mail, videoconferência. Expertise em comex: envio de DI/DU-E, planilhas de Drawback, controles de RECOF via portal.
+          <strong>100% Digital:</strong> atendimento ágil pelo WhatsApp (47) 3326-5123, portal do cliente, e-mail e videoconferência, sem necessidade de deslocamento para resolver as rotinas do dia a dia.
         </p>
         <p>
-          <strong>Presencial quando quiser:</strong> Blumenau a 60km (1h10 pela BR-101). Sede: Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
+          <strong>Presencial quando quiser:</strong> nossa sede fica em Blumenau (60 km pela BR-101), na Rua Rodolfo Freygang, 15, Sala 506, Edifício Itaçú, Centro.
         </p>
         <p>
-          <strong>Rotina comex:</strong> Recebimento docs até dia 5, apuração tributos aduaneiros até dia 10, fechamento completo até dia 15, guias e relatórios até dia 20.
+          <strong>Rotina organizada:</strong> recebimento de documentos até o dia 5, fechamento contábil e fiscal até o dia 15 e envio antecipado das guias e relatórios mensais.
         </p>
         <p class="mt-4">
-          <strong>Sede e equipe completa em Blumenau:</strong> Nossa estrutura principal fica em <a href="/contabilidade-em-blumenau" class="text-blue-700 font-semibold hover:underline">Blumenau</a> — 35+ anos de experiência no Vale do Itajaí, atendimento presencial e digital para empresas de toda a região.
+          <strong>Sede e equipe completa em Blumenau:</strong> conheça também nossa estrutura principal em <a href="/contabilidade-em-blumenau" class="text-blue-700 font-semibold hover:underline">Blumenau</a> — mais de 35 anos de experiência no Vale do Itajaí.
         </p>
       </div>
     </div>
@@ -217,7 +217,7 @@ const serviceSchema = {
   <section id="formulario" class="py-16 md:py-24 bg-slate-50">
     <div class="max-w-4xl mx-auto px-6">
       <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Fale com a <span class="pp3-grad">JMF</span></h2>
-      <p class="text-lg text-slate-600 mb-8">Resposta no mesmo dia útil. Levantamento de obrigações pendentes sem custo. Simulação tributária para comex/logística gratuita.</p>
+      <p class="text-lg text-slate-600 mb-8">Retorno no mesmo dia útil. Solicite uma proposta para abrir sua empresa ou transferir a contabilidade do seu CNPJ em Itajaí.</p>
       <ContactForm />
     </div>
   </section>
