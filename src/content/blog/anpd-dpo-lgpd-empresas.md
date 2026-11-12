@@ -75,9 +75,9 @@ Enquanto a ANPD aperta o cerco sobre a governança de dados, o empresário catar
 
 Não espere a notificação da autoridade federal chegar ao seu endereço comercial. Conte com a expertise de quem entende a realidade do mercado de Blumenau e região.
 
-Entre em contato com nossa equipe e garanta a segurança jurídica, fiscal e contábil do seu negócio:
+Entre em contato com nossa equipe e garanta a segurança fiscal, trabalhista e contábil do seu negócio:
 
-[Falar com os especialistas da JMF Contabilidade](https://wa.me/554733265123?text=Olá%20JMF%20Contabilidade,%20gostaria%20de%20conversar%20sobre%20adequação%20à%20LGPD%20e%20gestão%20fiscal)
+[Falar com a equipe da JMF Contabilidade](https://wa.me/554733265123?text=Ol%C3%A1%20JMF%20Contabilidade%2C%20gostaria%20de%20conversar%20sobre%20a%20contabilidade%20e%20gest%C3%A3o%20trabalhista%20da%20minha%20empresa.)
 
 ---
 
