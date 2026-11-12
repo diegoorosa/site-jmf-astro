@@ -4,7 +4,7 @@ import HeroInterno from '../components/HeroInterno.astro';
 import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
-const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20empresa%20no%20segmento%20de%20[SEU%20SEGMENTO]%20e%20preciso%20de%20orienta%C3%A7%C3%A3o%20tribut%C3%A1ria%20especializada.";
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20uma%20empresa%20no%20segmento%20de%20[SEU%20SEGMENTO]%20e%20gostaria%20de%20uma%20proposta%20cont%C3%A1bil.";
 
 const localBusinessSchema = JSON.stringify({
   "@context": "https://schema.org",
@@ -19,7 +19,7 @@ const localBusinessSchema = JSON.stringify({
     "value": "SC-002550/O"
   },
   "url": "https://www.jmfcontabilidade.com.br/segmentos",
-  "description": "Contabilidade especializada para diferentes segmentos de negócios em Blumenau/SC. Equipe com expertise em varejo, indústria, serviços, construção, saúde, tecnologia e mais. Planejamento tributário personalizado conforme as especificidades do seu segmento.",
+  "description": "Contabilidade mensal para empresas de serviços, comércio, saúde, tecnologia, engenharia e pequenas indústrias no Simples Nacional e Lucro Presumido em Blumenau/SC.",
   "telephone": "+55-47-3326-5123",
   "email": "contato@jmfcontabilidade.com.br",
   "priceRange": "$$",
@@ -50,10 +50,10 @@ const localBusinessSchema = JSON.stringify({
     "name": "Serviços de Contabilidade por Segmento de Negócio",
     "itemListElement": [
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Varejo e Comércio" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Indústria e Manufatura" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Pequenas Indústrias e Confecções" } },
       { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Prestação de Serviços" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Construção e Imobiliário" } },
-      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Saúde e Bem-Estar" } }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Engenharia, Arquitetura e Construtoras" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Saúde e Clínicas Médicas" } }
     ]
   },
   "sameAs": [
@@ -94,42 +94,42 @@ const faqSchema = JSON.stringify({
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "Por que eu preciso de contabilidade especializada para o meu segmento de negócio?",
+      "name": "Por que eu preciso de contabilidade alinhada ao meu segmento de negócio?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Cada segmento de negócio possui especificidades tributárias, obrigações acessórias e oportunidades de economia fiscal únicas. A contabilidade genérica pode deixar de aproveitar benefícios específicos do seu setor ou até aplicar regras incorretamente. Nossa equipe possui expertise em diversos segmentos e entende as particularidades de cada um, garantindo conformidade total e maximização de benefícios fiscais disponíveis."
+        "text": "Cada atividade possui regras próprias de tributação, CNAEs, cálculo do Fator R no Simples Nacional e emissão de notas fiscais. Uma assessoria contábil que conhece as particularidades do seu setor evita impostos pagos a maior e mantém sua empresa regular."
       }
     },
     {
       "@type": "Question",
-      "name": "Quais segmentos de negócio a JMF Contabilidade atende com especialização?",
+      "name": "Quais segmentos de negócio a JMF Contabilidade atende?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Atendemos com especialização os seguintes segmentos: Varejo e Comércio, Indústria e Manufatura, Prestação de Serviços, Construção e Imobiliário, Saúde e Bem-Estar, Tecnologia e Startups, Agronegócio, Transporte e Logística, Entretenimento e Lazer, e Instituições de Ensino. Cada segmento possui uma equipe dedicada com conhecimento aprofundado das leis específicas, obrigações acessórias e oportunidades de planejamento tributário."
+        "text": "Atendemos empresas enquadradas no Simples Nacional e Lucro Presumido nos segmentos de Prestação de Serviços, Saúde e Clínicas Médicas, Tecnologia e TI, Varejo e Comércio, Engenharia, Arquitetura e Construtoras (com mão de obra terceirizada), Pequenas Indústrias e Confecções, e Transporte e Logística leve."
       }
     },
     {
       "@type": "Question",
-      "name": "Como a contabilidade especializada pode reduzir meus impostos?",
+      "name": "Como a contabilidade pode reduzir os impostos da minha empresa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A contabilidade especializada identifica oportunidades de economia fiscal específicas do seu segmento, como: incentivos fiscais setoriais, regimes tributários diferenciados, deduções permitidas por legislação setorial, e estratégias de planejamento tributário que respeitam as particularidades do seu negócio. Por exemplo: indústrias podem se beneficiar de créditos de ICMS, empresas de tecnologia podem aproveitar leis de inovação, e o segmento de saúde possui regras específicas para faturamento e tributação de serviços médicos."
+        "text": "Por meio do enquadramento correto entre Simples Nacional e Lucro Presumido, do acompanhamento mensal do Fator R (reduzindo a alíquota inicial de serviços de 15,5% para 6%), da segregação de produtos monofásicos de PIS/COFINS no comércio e da escrituração contábil regular para distribuição de lucros isenta."
       }
     },
     {
       "@type": "Question",
-      "name": "Qual a diferença entre contabilidade genérica e contabilidade especializada por segmento?",
+      "name": "Qual a diferença entre Simples Nacional e Lucro Presumido para esses segmentos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A contabilidade genérica aplica as regras tributárias de forma padronizada, sem considerar as especificidades de cada setor. Já a contabilidade especializada por segmento entende profundamente as leis específicas do seu segmento de negócio, incluindo: legislação setorial, incentivos fiscais específicos, obrigações acessórias particulares, e oportunidades de planejamento tributário que só existem dentro daquele contexto. Isso resulta em maior conformidade, menor risco fiscal e melhor aproveitamento de benefícios disponíveis."
+        "text": "O Simples Nacional unifica os impostos em uma única guia mensal (DAS) para empresas com faturamento até R$ 4,8 milhões/ano, sendo muito vantajoso para serviços que se enquadram no Fator R e pequenos comércios. Já o Lucro Presumido costuma ser indicado quando o faturamento supera os limites vantajosos do Simples ou em atividades específicas de serviços e construtoras."
       }
     },
     {
       "@type": "Question",
-      "name": "Como faço para saber se minha empresa se encaixa em algum segmento específico para contabilidade especializada?",
+      "name": "Como faço para saber qual o melhor enquadramento para a minha empresa?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Nossa equipe realiza uma análise gratuita do seu CNAE (Classificação Nacional de Atividades Econômicas) e da descrição detalhada das suas atividades para determinar em qual segmento sua empresa se encaixa melhor. Com base nessa análise, indicamos se há necessidade de abordagem especializada e quais seriam os benefícios específicos para o seu caso. Este serviço é oferecido gratuitamente durante a consulta inicial."
+        "text": "Nossa equipe analisa os CNAEs, o faturamento previsto e a folha de pagamento da sua empresa para indicar o melhor enquadramento entre Simples Nacional e Lucro Presumido antes da abertura do CNPJ ou durante a migração da contabilidade."
       }
     }
   ]
@@ -142,8 +142,8 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Contabilidade Especializada por Segmento de Negócio | JMF Contabi"
-  description="Contabilidade especializada para diferentes segmentos de negócios em Blumenau/SC. Equipe com expertise em varejo, indústria, serviços, construção, saúde, tecnologia"
+  title="Contabilidade por Segmento de Negócio em Blumenau | JMF Contabilidade"
+  description="Contabilidade mensal em Blumenau/SC para prestadores de serviços, saúde, tecnologia, comércio, engenharia e pequenas indústrias no Simples Nacional e Lucro Presumido."
   canonical="https://www.jmfcontabilidade.com.br/segmentos"
   ogUrl="https://www.jmfcontabilidade.com.br/segmentos"
   schema={schema}
@@ -153,14 +153,14 @@ const schema = JSON.stringify({
 
   <HeroInterno
     title="Contabilidade Especializada por Segmento"
-    subtitle="Expertise contábil especializada para o seu tipo de negócio — varejo, indústria, serviços, construção, saúde, tecnologia e mais, com planejamento tributário personalizado."
+    subtitle="Assessoria contábil, fiscal e trabalhista recorrente para empresas de serviços, saúde, tecnologia, comércio, engenharia e pequenas indústrias no Simples Nacional e Lucro Presumido."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Soluções" },
       { label: "Contabilidade por Segmento" }
     ]}
     ctas={[
-      { label: "Falar no WhatsApp", href: WA.replace('[SEU SEGMENTO]', 'seu segmento'), variant: "cta" },
+      { label: "Falar no WhatsApp", href: WA.replace('[SEU%20SEGMENTO]', 'seu%20segmento'), variant: "cta" },
       { label: "Ver como funciona", href: "#como-funciona", variant: "outline" }
     ]}
   />
@@ -174,13 +174,13 @@ const schema = JSON.stringify({
             Contabilidade que entende o seu<br/><span class="pp3-grad">negócio como ninguém</span>
           </h2>
           <p class="text-gray-600 text-lg leading-relaxed mb-4">
-            Cada segmento de negócio possui suas próprias regras tributárias, obrigações acessórias e oportunidades de economia fiscal. Na JMF Contabilidade, nossa equipe especializada compreende profundamente as especificidades do seu segmento, garantindo conformidade total e identificando estratégias de redução de custos que outros contadores genéricos simplesmente não veem.
+            Cada atividade econômica possui suas próprias regras de tributação, emissão de notas fiscais e obrigações acessórias. Na JMF Contabilidade, acompanhamos a rotina mensal da sua empresa com foco em segurança fiscal e economia dentro da lei.
           </p>
           <p class="text-gray-600 text-lg leading-relaxed mb-4">
-            Com mais de 35 anos de experiência atendendo diversos setores em Blumenau e Santa Catarina, desenvolvemos metodologias específicas para cada segmento, combinando conhecimento técnico profundo com tecnologia moderna para entregar resultados superiores.
+            Com mais de 35 anos de experiência atendendo empresas em Blumenau e Santa Catarina no Simples Nacional e Lucro Presumido, combinamos atendimento próximo com processos digitais ágeis para manter tudo em dia.
           </p>
           <div class="flex flex-wrap gap-3">
-            <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+            <a href={WA.replace('[SEU%20SEGMENTO]', 'seu%20segmento')} target="_blank" rel="noopener"
               class="px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
               Falar no WhatsApp
             </a>
@@ -205,50 +205,50 @@ const schema = JSON.stringify({
         <h2 class="text-3xl font-bold text-[#0f172a] mb-3">
           Como funciona a<br/><span class="pp3-grad">contabilidade por segmento</span>
         </h2>
-        <p class="text-gray-600 text-lg">Processo especializado para máximo resultado no seu segmento</p>
+        <p class="text-gray-600 text-lg">Processo organizado para manter sua empresa regular e pagar menos impostos</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">1</div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Análise do Segmento</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Análise da Atividade e CNAEs</h4>
           <p class="text-gray-600 text-sm">
-            Analisamos seu CNAE, descrição detalhada das atividades e características específicas do seu negócio para identificar o segmento exato e suas particularidades tributárias.
+            Analisamos seus CNAEs, atividades exercidas e estrutura de faturamento para identificar o enquadramento fiscal mais adequado.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">2</div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Planejamento Tributário Personalizado</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Enquadramento Tributário</h4>
           <p class="text-gray-600 text-sm">
-            Desenvolvemos estratégias de planejamento tributário específicas para o seu segmento, aproveitando incentivos setoriais, regimes diferenciados e oportunidades únicas de economia fiscal.
+            Comparamos Simples Nacional (incluindo cálculo mensal do Fator R) e Lucro Presumido para reduzir legalmente sua carga tributária.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">3</div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Especialistas do Seu Segmento</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Atendimento Direto</h4>
           <p class="text-gray-600 text-sm">
-            Nossa equipe possui especialistas dedicados a cada segmento de negócio, com conhecimento atualizado das leis específicas, obrigações acessórias e tendências do setor.
+            Contato ágil com nossa equipe contábil, fiscal e trabalhista para tirar dúvidas de emissão de notas, contratos e folha de pagamento.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">4</div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Obrigações Acessórias Específicas</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Obrigações Acessórias em Dia</h4>
           <p class="text-gray-600 text-sm">
-            Cumprimos rigorosamente todas as obrigações acessórias específicas do seu segmento, evitando multas e garantindo total conformidade com as exigências setoriais.
+            Cumprimos rigorosamente todas as entregas mensais e anuais (PGDAS-D, eSocial, DCTFWeb, EFD-Reinf, ECD/ECF) sem atrasos.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4">5</div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Relatórios Gerenciais Segmentais</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Contabilidade e Balanço Regular</h4>
           <p class="text-gray-600 text-sm">
-            Fornecemos relatórios gerenciais personalizados para o seu segmento, com indicadores chave de performance (KPIs) relevantes para o seu tipo de negócio e benchmarking com empresas similares.
+            Conciliação bancária via extratos, emissão de Balanço Patrimonial e DRE para distribuição de lucros isenta de IRPF aos sócios.
           </p>
         </div>
         <div class="bg-white rounded-xl p-6 shadow-sm border-2 border-[#1e40af]">
           <div class="w-12 h-12 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-lg font-bold mb-4"><i class="bi bi-check-lg"></i></div>
-          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Resultado Otimizado</h4>
+          <h4 class="text-lg font-semibold text-[#0f172a] mb-2">Tranquilidade para Crescer</h4>
           <p class="text-gray-600 text-sm">
-            Sua empresa terá uma contabilidade que não apenas cumpre todas as obrigações, mas que entende profundamente o seu negócio e contribui ativamente para seu crescimento e lucratividade.
+            Sua empresa opera com segurança fiscal, previsibilidade de caixa e suporte contábil confiável em Blumenau e Santa Catarina.
           </p>
         </div>
       </div>
@@ -259,84 +259,84 @@ const schema = JSON.stringify({
   <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-[#0f172a] mb-8 text-center">
-        Nossas Especializações por<br/><span class="pp3-grad">Segmento de Negócio</span>
+        Principais Segmentos<br/><span class="pp3-grad">Atendidos pela JMF</span>
       </h2>
       <p class="text-gray-600 text-lg text-center mb-12">
-        Expertise contábil desenvolvida especificamente para cada tipo de atividade econômica
+        Contabilidade recorrente no Simples Nacional e Lucro Presumido para cada perfil de negócio
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Varejo e Comércio -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-shop"></i>
           </div>
           <h3 class="font-bold text-[#0f172a] mb-3">Varejo e Comércio</h3>
           <p class="text-gray-600 text-sm">
-            Expertise em legislação do ICMS, substituição tributária, crédito de ICMS, obrigações do SPED Fiscal e EFD-Contribuições, além de estratégias específicas para lojas físicas e e-commerce.
+            Gestão fiscal de lojas físicas e e-commerce, segregação de produtos monofásicos de PIS/COFINS no Simples Nacional, ICMS-ST e fechamento mensal completo.
           </p>
         </div>
 
-        <!-- Indústria e Manufatura -->
+        <!-- Pequenas Indústrias e Confecções -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-buildings"></i>
           </div>
-          <h3 class="font-bold text-[#0f172a] mb-3">Indústria e Manufatura</h3>
+          <h3 class="font-bold text-[#0f172a] mb-3">Pequenas Indústrias e Confecções</h3>
           <p class="text-gray-600 text-sm">
-            Domínio em apuração de custos de produção, rateamento, créditos de ICMS, benefícios fiscais para indústrias (PRODEC, etc.), controle de estoque e obrigações acessórias industriais específicas.
+            Assessoria para pequenas fábricas, confecções e facções têxteis no Simples Nacional (Anexo II) e Lucro Presumido, emissão de NF-e e folha de pagamento.
           </p>
         </div>
 
         <!-- Prestação de Serviços -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-people"></i>
           </div>
           <h3 class="font-bold text-[#0f172a] mb-3">Prestação de Serviços</h3>
           <p class="text-gray-600 text-sm">
-            Especialização em ISS municipal, alíquotas por serviço, notas fiscais de serviço eletrônicas, controle de carga horária e estratégias específicas para consultorias, escritórios e agências.
+            Especialização em ISS municipal, emissão de NFS-e, acompanhamento mensal do Fator R (reduzindo a alíquota a partir de 6%) e pró-labore para consultorias, agências e escritórios.
           </p>
         </div>
 
-        <!-- Construção e Imobiliário -->
+        <!-- Engenharia, Arquitetura e Construtoras -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-house-door"></i>
           </div>
-          <h3 class="font-bold text-[#0f172a] mb-3">Construção e Imobiliário</h3>
+          <h3 class="font-bold text-[#0f172a] mb-3">Engenharia, Arquitetura e Construtoras</h3>
           <p class="text-gray-600 text-sm">
-            Conhecimento profundo em CUBO, regulamentação da construção civil, especificidades do ISS para construtoras, controle de obras, e obrigações acessórias do setor imobiliário e da construção.
+            Contabilidade mensal para escritórios de engenharia, arquitetura e construtoras no Lucro Presumido com mão de obra terceirizada, emissão de notas e planejamento pelo Fator R.
           </p>
         </div>
 
-        <!-- Saúde e Bem-Estar -->
+        <!-- Saúde e Clínicas Médicas -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-heart-pulse"></i>
           </div>
-          <h3 class="font-bold text-[#0f172a] mb-3">Saúde e Bem-Estar</h3>
+          <h3 class="font-bold text-[#0f172a] mb-3">Saúde e Clínicas Médicas</h3>
           <p class="text-gray-600 text-sm">
-            Expertise em tributação de serviços médicos, cooperativas de trabalho, legislação específica para clínicas, consultórios e serviços de saúde, além de obrigações da ANVISA quando aplicável.
+            Contabilidade para médicos, dentistas, psicólogos e clínicas em Blumenau: abertura de CNPJ médico, Fator R, equiparação hospitalar no Lucro Presumido, DMED e alvará VISA.
           </p>
         </div>
 
-        <!-- Tecnologia e Startups -->
+        <!-- Tecnologia e TI -->
         <div class="bg-[#f8fafc] rounded-xl p-6 text-center">
-          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4">
+          <div class="w-16 h-16 rounded-full bg-[#1e40af] text-white flex items-center justify-center text-2xl flex-shrink-0 mb-4 mx-auto">
             <i class="bi bi-laptop"></i>
           </div>
-          <h3 class="font-bold text-[#0f172a] mb-3">Tecnologia e Startups</h3>
+          <h3 class="font-bold text-[#0f172a] mb-3">Tecnologia e TI</h3>
           <p class="text-gray-600 text-sm">
-            Especialização em leis de incentivo à inovação, tratamento de propriedade intelectual, estratégias para empresas de tecnologia, startups e empresas de software, incluindo aspectos de investimento e rodadas de financiamento.
+            Assessoria para desenvolvedores, empresas de software, SaaS e agências digitais: enquadramento no Simples Nacional com Fator R, emissão de notas de serviço e exportação de serviços.
           </p>
         </div>
       </div>
 
       <div class="text-center mt-8">
-        <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+        <a href={WA.replace('[SEU%20SEGMENTO]', 'seu%20segmento')} target="_blank" rel="noopener"
           class="inline-block px-6 py-3 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors">
-          Quero especialização para o meu segmento
+          Solicitar proposta para o meu segmento
         </a>
       </div>
     </div>
@@ -346,49 +346,49 @@ const schema = JSON.stringify({
   <section class="py-16 bg-[#f8fafc]">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-[#0f172a] mb-8 text-center">
-        Benefícios da<br/><span class="pp3-grad">contabilidade especializada</span>
+        Benefícios da<br/><span class="pp3-grad">contabilidade alinhada ao seu negócio</span>
       </h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl p-6">
           <h3 class="font-bold text-[#0f172a] mb-4">Conformidade Total</h3>
           <p class="text-gray-600">
-            Eliminação de riscos fiscais através do cumprimento rigoroso de todas as obrigações específicas do seu segmento, evitando multas, autuações e problemas com as autoridades tributárias.
+            Cumprimento rigoroso das obrigações fiscais e trabalhistas da sua atividade, evitando multas e pendências cadastrais.
           </p>
         </div>
 
         <div class="bg-white rounded-xl p-6">
-          <h3 class="font-bold text-[#0f172a] mb-4">Economia Fiscal Real</h3>
+          <h3 class="font-bold text-[#0f172a] mb-4">Economia Fiscal Legal</h3>
           <p class="text-gray-600">
-            Aproveitamento máximo de incentivos fiscais setoriais, regimes tributários diferenciados e estratégias de planejamento específicas que reduzem legalmente sua carga tributária.
+            Enquadramento adequado entre Simples Nacional (Fator R) e Lucro Presumido e segregação correta de receitas para pagar o menor imposto dentro da lei.
           </p>
         </div>
 
         <div class="bg-white rounded-xl p-6">
-          <h3 class="font-bold text-[#0f172a] mb-4">Tomada de Decisão Melhor</h3>
+          <h3 class="font-bold text-[#0f172a] mb-4">Relatórios Contábeis Claros</h3>
           <p class="text-gray-600">
-            Relatórios gerenciais e indicadores específicos do seu segmento que fornecem insights valiosos para decisões estratégicas de crescimento, investimento e expansão do negócio.
+            Balancetes, DRE e Balanço Patrimonial atualizados para acompanhar a saúde financeira da empresa e comprovar rendimentos dos sócios.
           </p>
         </div>
 
         <div class="bg-white rounded-xl p-6">
-          <h3 class="font-bold text-[#0f172a] mb-4">Planejamento Estratégico</h3>
+          <h3 class="font-bold text-[#0f172a] mb-4">Suporte na Emissão de Notas</h3>
           <p class="text-gray-600">
-            Visão avançada das implicações tributárias de decisões de negócio, incluindo expansão, novos produtos, mudanças de estrutura e planejamento sucessório específico do seu segmento.
+            Orientação prática sobre códigos de serviço, CFOP, NCM e retenções na fonte antes de você emitir suas notas fiscais.
           </p>
         </div>
 
         <div class="bg-white rounded-xl p-6">
-          <h3 class="font-bold text-[#0f172a] mb-4">Redução de Trabalhos</h3>
+          <h3 class="font-bold text-[#0f172a] mb-4">Processos Digitais Ágeis</h3>
           <p class="text-gray-600">
-            Processos mais eficientes devido ao conhecimento prévio das especificidades do seu segmento, reduzindo tempo gasto em pesquisas e adaptações genéricas que não se aplicam ao seu caso.
+            Troca rápida de documentos e atendimento direto via WhatsApp e e-mail sem burocracia desnecessária.
           </p>
         </div>
 
         <div class="bg-white rounded-xl p-6">
-          <h3 class="font-bold text-[#0f172a] mb-4">Vantagem Competitiva</h3>
+          <h3 class="font-bold text-[#0f172a] mb-4">Tradição desde 1989</h3>
           <p class="text-gray-600">
-            Posicionamento estratégico frente a concorrentes que utilizam contabilidade genérica, permitindo que você aproveite oportunidades que outros simplesmente não enxergam ou não sabem como estruturar corretamente.
+            Mais de 35 anos de experiência no Vale do Itajaí oferecendo segurança e estabilidade para empresas da região.
           </p>
         </div>
       </div>
@@ -399,15 +399,15 @@ const schema = JSON.stringify({
   <section class="py-14 bg-[#0f172a]">
     <div class="container mx-auto px-4 text-center max-w-2xl">
       <h2 class="text-2xl font-bold text-white mb-3">
-        Seu segmento merece<br/><span class="pp3-grad-light">contabilidade que entende</span>
+        Sua empresa merece<br/><span class="pp3-grad-light">contabilidade que entende</span>
       </h2>
       <p class="text-white/70 mb-6">
-        Na JMF Contabilidade, cada segmento de negócio tem uma equipe especializada que conhece profundamente suas especificidades tributárias, obrigações acessórias e oportunidades de economia fiscal.
+        Converse com a equipe da JMF Contabilidade e veja como podemos cuidar da contabilidade mensal do seu negócio no Simples Nacional ou Lucro Presumido.
       </p>
-      <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener"
+      <a href={WA.replace('[SEU%20SEGMENTO]', 'seu%20segmento')} target="_blank" rel="noopener"
         class="inline-flex items-center gap-2 px-7 py-3.5 bg-[#25d366] hover:bg-[#22c55e] text-white font-bold rounded-xl transition-colors shadow-lg">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67-.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.82 11.82 0 00-3.48-8.413z"/></svg>
-        Fale com um Especialista
+        Falar com a Equipe da JMF
       </a>
     </div>
   </section>
@@ -423,10 +423,39 @@ const schema = JSON.stringify({
         <div class="lg:w-7/12">
           <h2 class="text-3xl font-bold text-[#0f172a] mb-8">
             Perguntas frequentes sobre<br />
-            <span class="pp3-grad">contabilidade especializada por segmento</span>
+            <span class="pp3-grad">contabilidade por segmento</span>
           </h2>
           <div class="space-y-3">
-            {/* FAQ items will be populated from the schema above */}
+            <details class="accordion-item">
+              <summary class="accordion-summary">Por que eu preciso de contabilidade alinhada ao meu segmento de negócio?</summary>
+              <div class="accordion-body">
+                <p>Cada atividade possui regras próprias de tributação, CNAEs, cálculo do Fator R no Simples Nacional e emissão de notas fiscais. Uma assessoria contábil que conhece as particularidades do seu setor evita impostos pagos a maior e mantém sua empresa regular.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Quais segmentos de negócio a JMF Contabilidade atende?</summary>
+              <div class="accordion-body">
+                <p>Atendemos empresas enquadradas no Simples Nacional e Lucro Presumido nos segmentos de Prestação de Serviços, Saúde e Clínicas Médicas, Tecnologia e TI, Varejo e Comércio, Engenharia, Arquitetura e Construtoras (com mão de obra terceirizada), Pequenas Indústrias e Confecções, e Transporte e Logística leve.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como a contabilidade pode reduzir os impostos da minha empresa?</summary>
+              <div class="accordion-body">
+                <p>Por meio do enquadramento correto entre Simples Nacional e Lucro Presumido, do acompanhamento mensal do Fator R (reduzindo a alíquota inicial de serviços de 15,5% para 6%), da segregação de produtos monofásicos de PIS/COFINS no comércio e da escrituração contábil regular para distribuição de lucros isenta.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Qual a diferença entre Simples Nacional e Lucro Presumido para esses segmentos?</summary>
+              <div class="accordion-body">
+                <p>O Simples Nacional unifica os impostos em uma única guia mensal (DAS) para empresas com faturamento até R$ 4,8 milhões/ano, sendo muito vantajoso para serviços que se enquadram no Fator R e pequenos comércios. Já o Lucro Presumido costuma ser indicado quando o faturamento supera os limites vantajosos do Simples ou em atividades específicas de serviços e construtoras.</p>
+              </div>
+            </details>
+            <details class="accordion-item">
+              <summary class="accordion-summary">Como faço para saber qual o melhor enquadramento para a minha empresa?</summary>
+              <div class="accordion-body">
+                <p>Nossa equipe analisa os CNAEs, o faturamento previsto e a folha de pagamento da sua empresa para indicar o melhor enquadramento entre Simples Nacional e Lucro Presumido antes da abertura do CNPJ ou durante a migração da contabilidade.</p>
+              </div>
+            </details>
           </div>
         </div>
       </div>
@@ -439,14 +468,14 @@ const schema = JSON.stringify({
       <div class="flex flex-col lg:flex-row gap-10">
         <div class="lg:w-5/12">
           <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">fazer a diferença no seu negócio!</span></h2>
-          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade, você encontrou o lugar certo. Entre em contato e marque uma consulta sem custo.</p>
+          <p class="text-gray-600 text-lg mb-6">Se você precisa de um parceiro estratégico em contabilidade para cuidar da rotina mensal da sua empresa no Simples Nacional ou Lucro Presumido, solicite uma proposta.</p>
           <div class="flex items-center gap-3 mb-4">
             <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
               <i class="bi bi-whatsapp text-white"></i>
             </div>
             <div>
               <p class="font-semibold text-[#0f172a] text-sm">WhatsApp</p>
-              <a href={WA.replace('[SEU SEGMENTO]', 'seu segmento')} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
+              <a href={WA.replace('[SEU%20SEGMENTO]', 'seu%20segmento')} target="_blank" rel="noopener" class="text-[#1e40af] font-semibold">(47) 3326-5123</a>
             </div>
           </div>
           <div class="flex items-center gap-3">
