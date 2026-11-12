@@ -4,8 +4,7 @@ import HeroInterno from '../components/HeroInterno.astro';
 import ContactForm from '../components/ContactForm.astro';
 import '../styles/pages-p2.css';
 
-const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20mais%20informa%C3%A7%C3%B5es%20sobre%20contabilidade%20para%20transportadoras.";
-const WAsim = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20quero%20uma%20simula%C3%A7%C3%A3o%20tribut%C3%A1ria%20gratuita%20para%20minha%20transportadora.";
+const WA = "https://wa.me/554733265123?text=Ol%C3%A1%2C%20conheci%20o%20site%20da%20JMF%20Contabilidade%20e%20quero%20uma%20proposta%20cont%C3%A1bil%20para%20minha%20transportadora.";
 
 const schema = JSON.stringify({
   "@context": "https://schema.org",
@@ -13,7 +12,7 @@ const schema = JSON.stringify({
     {
       "@type": ["AccountingService", "LocalBusiness"],
       "@id": "https://www.jmfcontabilidade.com.br/contabilidade-para-transportadoras#localbusiness",
-      "name": "JMF Contabilidade – Contabilidade para Transportadoras e Logística",
+      "name": "JMF Contabilidade – Contabilidade para Transportadoras",
       "legalName": "JMF Contabilidade Empresarial e Fiscal Ltda",
       "taxID": "81.335.895/0001-17",
       "identifier": {
@@ -23,7 +22,7 @@ const schema = JSON.stringify({
       },
       "url": "https://www.jmfcontabilidade.com.br/contabilidade-para-transportadoras",
       "image": "https://www.jmfcontabilidade.com.br/assets/images/JMF-Logo-Open-Graph.webp",
-      "description": "Contabilidade especializada para transportadoras de carga rodoviária, frotas próprias, operadores logísticos e terminais em Blumenau, Itajaí, Navegantes e Santa Catarina. Crédito presumido ICMS 20% frete interestadual, crédito efetivo diesel/ARLA/pneus, CT-e/MDF-e, RNTRC/ANTT, Simples Nacional vs Lucro Real.",
+      "description": "Contabilidade para pequenas transportadoras e empresas de transporte rodoviário de cargas no Simples Nacional e Lucro Presumido em Blumenau e Santa Catarina: CT-e, MDF-e, RNTRC e crédito presumido ICMS 20%.",
       "telephone": "+55-47-3326-5123",
       "email": "contato@jmfcontabilidade.com.br",
       "priceRange": "$$",
@@ -58,12 +57,11 @@ const schema = JSON.stringify({
         "@type": "OfferCatalog",
         "name": "Serviços de Contabilidade para Transportadoras",
         "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Contabilidade para Transportadoras no Simples Nacional e Lucro Presumido" } },
           { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crédito Presumido ICMS 20% Frete Interestadual (Convênio 106/96)" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crédito Efetivo ICMS Diesel, ARLA, Pneus e Peças (RICMS/SC Art. 31)" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Parametrização CT-e, MDF-e e CIOT" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Regularização RNTRC/ANTT e Cadastro de Frota" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Simples Nacional vs Lucro Real para Frotas (Análise de Viabilidade)" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Controle de Custos por Veículo e Rota (Gestão de Frota)" } }
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Orientação Fiscal para Emissão de CT-e, MDF-e e CIOT" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Abertura de Empresa e Regularização Cadastral (RNTRC/ANTT)" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Folha de Pagamento de Motoristas e eSocial" } }
         ]
       },
       "sameAs": [
@@ -100,12 +98,10 @@ const schema = JSON.stringify({
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "Qual a diferença entre Crédito Presumido 20% (Convênio 106/96) e Crédito Efetivo sobre diesel para transportadoras?", "acceptedAnswer": { "@type": "Answer", "text": "O Crédito Presumido (Convênio ICMS 106/96) dá 20% do valor do ICMS destacado na NF-e de frete interestadual como crédito, sem precisar comprovar insumos. O Crédito Efetivo (RICMS/SC Art. 31) permite apropriar o ICMS real pago na compra de diesel, ARLA, pneus, lubrificantes e peças — exige NF-e com placa do veículo e conciliação com CT-e emitido. No Simples Nacional só existe o Presumido; no Lucro Presumido/Real pode optar pelo Efetivo se for mais vantajoso." } },
-        { "@type": "Question", "name": "Transportadora no Simples Nacional pode usar o Crédito Presumido de 20% no frete interestadual?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Convênio ICMS 106/96 permite que optantes do Simples Nacional apropriem crédito presumido de 20% do ICMS destacado na NF-e de prestação de serviço de transporte interestadual de cargas. É a principal forma de recuperar ICMS no Simples, já que não há crédito de insumos (diesel, peças) nesse regime. A JMF parametriza o ERP para apurar corretamente esse crédito mês a mês." } },
-        { "@type": "Question", "name": "Como funciona a apropriação de crédito de ICMS do diesel (ARLA, pneus) no Lucro Presumido/Real?", "acceptedAnswer": { "@type": "Answer", "text": "No Lucro Presumido ou Real, a transportadora pode creditar o ICMS efetivamente pago na aquisição de combustível (diesel, ARLA), pneus, lubrificantes e peças de reposição. Exige: NF-e de entrada com destaque do ICMS, informação da placa do veículo no campo de informações complementares, e conciliação mensal entre notas de entrada de insumos × CT-es emitidos × quilometragem rodada. A JMF faz essa conciliação automatizada via ERP." } },
-        { "@type": "Question", "name": "O que é RNTRC e por que toda transportadora precisa estar regular?", "acceptedAnswer": { "@type": "Answer", "text": "RNTRC (Registro Nacional de Transportadores Rodoviários de Cargas) é o cadastro obrigatório na ANTT para quem presta serviço de transporte rodoviário de cargas. Sem RNTRC ativo, a empresa não pode emitir CT-e válido, fica sujeita a multas pesadas (R$ 550 a R$ 5.500 por veículo) e apreensão de veículos em fiscalização. A JMF cuida do cadastro inicial, renovações anuais, inclusão/exclusão de veículos e regularização de pendências junto à ANTT." } },
-        { "@type": "Question", "name": "Simples Nacional ou Lucro Real: qual regime compensa mais para frota própria de 10 a 20 caminhões?", "acceptedAnswer": { "@type": "Answer", "text": "Depende da margem e do volume de frete interestadual. Simples: alíquota única (Anexo III 6% a 19,5%) + crédito presumido 20% no interestadual — simples, mas sem crédito de diesel/peças. Lucro Real: IRPJ 15%+10% + CSLL 9% + PIS/COFINS não cumulativos (crédito 9,25% sobre insumos) + ICMS efetivo no diesel — costuma compensar quando a frota consome muito diesel e há volume interestadual relevante. A JMF simula os dois cenários com dados reais da sua frota antes de decidir." } },
-        { "@type": "Question", "name": "Vocês atendem transportadoras em Itajaí, Navegantes e região portuária?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. A JMF atende transportadoras, operadores de contêineres, terminais retroportuários e frotas próprias em toda a região: Blumenau, Itajaí (complexo portuário), Navegantes (aeroporto/porto), Joinville, Balneário Camboriú, Brusque, Gaspar, Indaial, Timbó e Pomerode. Conhecemos a dinâmica de exportação/importação via Porto de Itajaí e Navegantes, incluindo regimes aduaneiros especiais, drawback e logística integrada." } }
+        { "@type": "Question", "name": "Qual o melhor regime tributário para pequenas transportadoras?", "acceptedAnswer": { "@type": "Answer", "text": "Para pequenas transportadoras e empresas de entregas rápidas, o Simples Nacional (Anexo III) ou o Lucro Presumido costumam ser os regimes mais indicados pela simplicidade operacional e previsibilidade de tributos. A JMF avalia o perfil de fretes municipais, intermunicipais e interestaduais para definir o enquadramento mais econômico." } },
+        { "@type": "Question", "name": "Transportadora no Simples Nacional pode usar o Crédito Presumido de 20% no frete interestadual?", "acceptedAnswer": { "@type": "Answer", "text": "Sim. O Convênio ICMS 106/96 permite a apropriação do crédito presumido de 20% sobre o valor do ICMS devido na prestação de serviço de transporte interestadual de cargas. Orientamos a parametrização fiscal do emissor de CT-e para apurar esse benefício corretamente." } },
+        { "@type": "Question", "name": "Qual a diferença entre CT-e e NFS-e no transporte de cargas?", "acceptedAnswer": { "@type": "Answer", "text": "O transporte de cargas municipal (dentro da mesma cidade) é tributado pelo ISS e exige emissão de Nota Fiscal de Serviços Eletrônica (NFS-e). Já o transporte intermunicipal ou interestadual é tributado pelo ICMS e exige emissão de Conhecimento de Transporte Eletrônico (CT-e) e MDF-e." } },
+        { "@type": "Question", "name": "Vocês atendem transportadoras no Lucro Real ou auditoria de crédito de diesel?", "acceptedAnswer": { "@type": "Answer", "text": "Nosso foco de atendimento é voltado exclusivamente para transportadoras enquadradas no Simples Nacional e no Lucro Presumido. Não atuamos com regime de Lucro Real, apuração complexa de créditos efetivos sobre combustível/frota pesada ou regimes aduaneiros portuários." } }
       ]
     }
   ]
@@ -113,8 +109,8 @@ const schema = JSON.stringify({
 ---
 
 <Layout
-  title="Contabilidade para Transportadoras e Logística em Blumenau, Itajaí, Navegantes e SC | JMF Contabilidade"
-  description="Contabilidade especializada para transportadoras de carga rodoviária, frotas próprias e operadores logísticos: crédito ICMS diesel/ARLA 20%, CT-e/MDF-e, RNTRC/ANTT, Simples vs Lucro Real. Atendimento em Blumenau, Itajaí, Navegantes e SC."
+  title="Contabilidade para Transportadoras em Blumenau e SC | JMF Contabilidade"
+  description="Contabilidade mensal para pequenas transportadoras e empresas de frete no Simples Nacional e Lucro Presumido em Blumenau e SC: CT-e, MDF-e, RNTRC e folha de pagamento."
   canonical="https://www.jmfcontabilidade.com.br/contabilidade-para-transportadoras"
   ogUrl="https://www.jmfcontabilidade.com.br/contabilidade-para-transportadoras"
   schema={schema}
@@ -123,65 +119,65 @@ const schema = JSON.stringify({
 >
 
 <HeroInterno
-  title="Contabilidade para transportadoras e logística em SC"
-  subtitle="Frotas próprias, operadores de contêineres, terminais retroportuários: crédito presumido ICMS 20% no frete interestadual, crédito efetivo diesel/ARLA/pneus, CT-e/MDF-e, RNTRC/ANTT. Contabilidade que entende a operação rodoviária e portuária."
+  title="Contabilidade para transportadoras em Blumenau e SC"
+  subtitle="Assessoria contábil, fiscal e trabalhista para pequenas transportadoras e empresas de frete no Simples Nacional e Lucro Presumido: orientação em CT-e/MDF-e, crédito presumido de ICMS e folha de motoristas."
   breadcrumb={[
     { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
     { label: "Especialidades" },
     { label: "Contabilidade para Transportadoras" }
   ]}
   ctas={[
-    { label: "Falar no WhatsApp", href: WA, variant: "cta" },
-    { label: "Simular Tributação da Frota", href: "/simulador-regime-tributario", variant: "outline" }
+    { label: "Solicitar Proposta Contábil", href: WA, variant: "cta" },
+    { label: "Simular Regime Tributário", href: "/simulador-regime-tributario", variant: "outline" }
   ]}
 />
 
 <!-- Atualizado em -->
 <div class="bg-white border-b border-gray-100">
   <div class="container mx-auto px-4 py-2 text-right">
-    <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: agosto de 2026</span>
+    <span class="text-xs text-gray-400"><i class="bi bi-clock-history mr-1"></i>Atualizado em: novembro de 2026</span>
   </div>
 </div>
 
 <!-- Intro -->
 <section class="py-16 bg-white">
   <div class="container mx-auto px-4 max-w-4xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Contabilidade para transportadoras:<br/><span class="pp3-grad">por que a JMF</span></h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#0f172a] mb-6">Contabilidade para transportadoras:<br/><span class="pp3-grad">organização fiscal e trabalhista</span></h2>
 
     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-      Santa Catarina é um dos maiores corredores logísticos do Brasil. Blumenau, Itajaí (complexo portuário), Navegantes, Joinville e Balneário Camboriú concentram centenas de transportadoras de carga rodoviária, frotas próprias da indústria, operadores de contêineres e terminais retroportuários que movimentam a economia catarinense e o comércio exterior.
+      Empresas de transporte rodoviário de cargas, entregas rápidas e fretes regionais em Santa Catarina lidam diariamente com regras específicas de documentos fiscais (CT-e, MDF-e e NFS-e), além da gestão trabalhista de motoristas e ajudantes.
     </p>
 
     <p class="text-lg text-slate-600 mb-8 leading-relaxed">
-      A JMF Contabilidade atende o setor de transporte e logística com foco em três pilares que definem a rentabilidade da frota: <strong>recuperação máxima de ICMS</strong> (crédito presumido 20% no interestadual + crédito efetivo no diesel/ARLA/pneus), <strong>conformidade fiscal digital</strong> (CT-e, MDF-e, CIOT, RNTRC/ANTT automatizados) e <strong>escolha do regime tributário ideal</strong> (Simples Nacional vs Lucro Real com simulação de 12 meses). Tudo isso com 35+ anos de experiência e sede em Blumenau, no coração do Vale do Itajaí.
+      Com mais de 35 anos de atuação em Blumenau e no Vale do Itajaí, a <strong>JMF Contabilidade</strong> cuida da rotina contábil, fiscal e de departamento pessoal de transportadoras enquadradas no <strong>Simples Nacional</strong> e no <strong>Lucro Presumido</strong>, mantendo suas guias, declarações e obrigações em dia sem complicação.
     </p>
 
     <div class="grid md:grid-cols-2 gap-6 mt-12">
       <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-        <h3 class="text-xl font-bold text-slate-900 mb-3">Crédito ICMS: Presumido 20% + Efetivo no Diesel</h3>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Enquadramento Simples Nacional vs. Lucro Presumido</h3>
         <p class="text-slate-600 leading-relaxed">
-          No Simples: crédito presumido de 20% do ICMS do frete interestadual (Convênio 106/96). No Lucro Presumido/Real: crédito efetivo do ICMS pago no diesel, ARLA, pneus, lubrificantes e peças — com conciliação NF-e × CT-e × quilometragem.
+          Analisamos o perfil das suas rotas (municipais, intermunicipais e interestaduais) para definir o regime mais econômico entre o Simples Nacional (Anexo III) e o Lucro Presumido.
         </p>
       </div>
 
       <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-        <h3 class="text-xl font-bold text-slate-900 mb-3">CT-e, MDF-e, CIOT e RNTRC/ANTT Automatizados</h3>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Orientação Fiscal em CT-e, MDF-e e NFS-e</h3>
         <p class="text-slate-600 leading-relaxed">
-          Parametrização completa do emissor fiscal: CFOP de frete (5.932, 6.932, 5.353, 6.353), CST ICMS interestadual, geração de MDF-e para cada viagem, CIOT para pagamento de frete a terceiros, manutenção do RNTRC ativo na ANTT.
+          Suporte na parametrização de CFOPs e CSTs para fretes municipais (ISS) e intermunicipais/interestaduais (ICMS), além do aproveitamento do crédito presumido de 20% do Convênio ICMS 106/96.
         </p>
       </div>
 
       <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-        <h3 class="text-xl font-bold text-slate-900 mb-3">Simples Nacional vs Lucro Real: Simulação Real da Frota</h3>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Folha de Pagamento e eSocial de Motoristas</h3>
         <p class="text-slate-600 leading-relaxed">
-          Análise de viabilidade com dados da sua operação: faturamento por UF, consumo de diesel por veículo, quilometragem, fretes CIF/FOB, margem por rota. Projeção de 12 meses comparando carga tributária total, fluxo de caixa e exigências acessórias.
+          Cálculo correto de salários, horas extras, adicionais, diárias de viagem, pró-labore dos sócios e envio pontual de todas as obrigações trabalhistas no eSocial e FGTS Digital.
         </p>
       </div>
 
       <div class="bg-white border-2 border-slate-200 rounded-xl p-6 hover:border-blue-700 transition-all duration-300">
-        <h3 class="text-xl font-bold text-slate-900 mb-3">Gestão de Custos por Veículo e Rota</h3>
+        <h3 class="text-xl font-bold text-slate-900 mb-3">Abertura de CNPJ e Troca de Contador</h3>
         <p class="text-slate-600 leading-relaxed">
-          Contabilidade gerencial para frota: custo por km rodado, consumo médio por veículo, manutenção preventiva vs corretiva, depreciação acelerada (Lei do Bem para caminhões), controle de pneus (recapagem vs novo), rentabilidade por cliente e por rota.
+          Constituição da empresa na JUCESC com os CNAEs corretos de transporte rodoviário, apoio documental para cadastro no RNTRC/ANTT e migração contábil segura para empresas já ativas.
         </p>
       </div>
     </div>
@@ -191,50 +187,34 @@ const schema = JSON.stringify({
 <!-- Particularidades do setor transportes -->
 <section class="py-16 bg-slate-50">
   <div class="container mx-auto px-4 max-w-4xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Particularidades tributárias<br/><span class="pp3-grad">do transporte rodoviário de cargas</span></h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Pontos essenciais na rotina fiscal<br/><span class="pp3-grad">do transporte rodoviário</span></h2>
 
     <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-      Transportadoras têm dinâmica fiscal única que a contabilidade geral não cobre — e isso custa caro em ICMS não recuperado, multas de CT-e/MDF-e e regime tributário subótimo. Veja o que a JMF endereça especificamente para sua frota:
+      Evitar multas e pagamentos duplicados no setor de transportes depende de manter os procedimentos fiscais bem alinhados no dia a dia:
     </p>
 
     <ul class="space-y-4 text-slate-600 text-lg">
       <li class="flex items-start gap-3">
         <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>Crédito Presumido 20% no Frete Interestadual (Convênio ICMS 106/96):</strong> transportadoras no Simples Nacional ou Lucro Presumido podem apropriar 20% do ICMS destacado na NF-e de prestação de serviço de transporte interestadual (CFOP 6.932 / 6.353). É a principal recuperação de ICMS no Simples. Exige parametrização correta do CST (60 para Simples, 20/41 para Lucro Presumido/Real) e apuração mensal no Livro de Apuração do ICMS.</span>
+        <span><strong>Segregação entre ISS e ICMS:</strong> fretes iniciados e concluídos dentro do mesmo município recolhem ISS via NFS-e; fretes entre municípios diferentes ou para outros estados recolhem ICMS via CT-e.</span>
       </li>
       <li class="flex items-start gap-3">
         <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>Crédito Efetivo de ICMS sobre Diesel, ARLA, Pneus e Peças (RICMS/SC Art. 31):</strong> no Lucro Presumido ou Real, o ICMS pago na aquisição de insumos para a frota (diesel S10, ARLA 32, pneus novos/recapados, óleos lubrificantes, filtros, pastilhas de freio) gera crédito integral — <strong>desde que</strong> a NF-e de entrada contenha a placa do veículo no campo de informações complementares e haja conciliação mensal com os CT-es emitidos e a quilometragem rodada. A JMF automatiza essa conciliação via ERP.</span>
+        <span><strong>Crédito Presumido de 20% (Convênio ICMS 106/96):</strong> transportadoras optantes pelo Simples Nacional ou Lucro Presumido podem utilizar o crédito presumido de 20% sobre o ICMS devido nas prestações interestaduais.</span>
       </li>
       <li class="flex items-start gap-3">
         <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>CT-e (Conhecimento de Transporte Eletrônico) e MDF-e (Manifesto Eletrônico):</strong> emissão obrigatória para toda prestação de serviço de transporte. CFOP variam conforme modalidade: 5.932/6.932 (frete normal), 5.353/6.353 (redespacho), 5.202/6.202 (subcontratação). MDF-e obrigatório para cada viagem interestadual ou quando houver mais de um CT-e na mesma viagem. Erros de CFOP/CST geram multa de 5% a 20% do valor do documento.</span>
+        <span><strong>Emissão de MDF-e e CIOT:</strong> orientação sobre a obrigatoriedade do Manifesto Eletrônico de Documentos Fiscais nas operações intermunicipais/interestaduais e geração de CIOT na contratação de autônomos (TAC).</span>
       </li>
       <li class="flex items-start gap-3">
         <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>CIOT (Código Identificador da Operação de Transporte):</strong> obrigatório para pagamento de frete a transportador autônomo (TAC) ou empresa de pequeno porte (EPP). Deve ser gerado no sistema da ANTT (ou integrado via ERP) antes do pagamento. Multa por ausência: R$ 550 por operação. A JMF parametriza a geração automática no seu TMS/ERP.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>RNTRC/ANTT — Regularidade Obrigatória:</strong> cadastro e renovação anual no Registro Nacional de Transportadores Rodoviários de Cargas. Inclusão/exclusão de veículos, alteração de frota, comprovação de capacidade técnica (frota própria ou terceirizada), seguro RCTR-C e RCF-DC vigentes. Veículo sem RNTRC ativo = apreensão em fiscalização + multa de R$ 550 a R$ 5.500. A JMF monitora vencimentos e renovações.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>Simples Nacional vs Lucro Real para Frotas (Análise Quantitativa):</strong> Simples (Anexo III: 6% a 19,5% sobre RBT12) + crédito presumido 20% interestadual — sem crédito de insumos. Lucro Real: IRPJ 25% + CSLL 9% + PIS/COFINS não cumulativos (crédito 9,25% sobre diesel, peças, manutenção, seguros, aluguel de veículos) + ICMS efetivo nos insumos. Ponto de virada típico: frota > 8-10 caminhões com alto consumo de diesel e frete interestadual > 40% do faturamento. A JMF simula com seus números reais.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>Incentivos Portuários e Aduaneiros (Itajaí/Navegantes):</strong> para transportadoras que operam no complexo portuário: regimes aduaneiros especiais (drawback, entreposto aduaneiro, RECOF), ICMS diferido na importação de peças/equipamentos para frota (TTD 409/410), crédito presumido na saída de mercadorias importadas. A JMF assessora no pleito junto à SEF/SC e RFB.</span>
-      </li>
-      <li class="flex items-start gap-3">
-        <span class="text-blue-700 font-bold mt-1">•</span>
-        <span><strong>Depreciação Acelerada de Caminhões (Lei do Bem / Art. 312 RIR):</strong> caminhões, carretas, implementos rodoviários e equipamentos de movimentação de carga (empilhadeiras, reach stackers) têm direito a depreciação acelerada (taxa dobrada) no Lucro Real, reduzindo base de IRPJ/CSLL. Exige laudo de vida útil técnica e controle patrimonial rigoroso. A JMF estrutura o ativo imobilizado da frota para capturar 100% do benefício.</span>
+        <span><strong>Regularidade no RNTRC/ANTT:</strong> acompanhamento documental para manter o registro da empresa e da frota regular junto à Agência Nacional de Transportes Terrestres.</span>
       </li>
     </ul>
 
     <div class="mt-8 p-6 bg-white rounded-xl border-2 border-blue-200">
       <p class="text-slate-700 font-medium">
-        <strong class="text-blue-700">Dado real:</strong> Transportadora com frota de 12 caminhões, consumo médio de 2.500 L de diesel/mês por veículo, 60% do faturamento interestadual. No Simples: ~R$ 180k/ano de ICMS não recuperado (diesel/peças). No Lucro Real com crédito efetivo: recupera ~R$ 220k/ano de ICMS + ~R$ 150k/ano de PIS/COFINS sobre insumos. Diferença líquida a favor do Lucro Real: <strong>~R$ 370k/ano</strong>. A JMF faz essa conta com os dados da sua frota antes de você decidir.
+        <strong class="text-blue-700">Escopo de atuação:</strong> Nossa assessoria para transportadoras é dedicada a empresas enquadradas no <strong>Simples Nacional</strong> e no <strong>Lucro Presumido</strong>. Não atendemos operações no regime de Lucro Real, recuperação complexa de créditos efetivos sobre combustíveis/insumos ou regimes aduaneiros portuários.
       </p>
     </div>
   </div>
@@ -243,25 +223,22 @@ const schema = JSON.stringify({
 <!-- Como funciona -->
 <section class="py-16 md:py-24">
   <div class="max-w-4xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">o atendimento para transportadoras</span></h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6">Como funciona<br/><span class="pp3-grad">nosso atendimento mensal</span></h2>
 
     <div class="space-y-6 text-lg text-slate-600">
       <p>
-        <strong>1. Diagnóstico Logístico:</strong> WhatsApp (47) 3326-5123 ou formulário. Levantamento da frota (quantidade, tipo, idade, propriedade), rotas (interno SC, interestadual, exportação/importação via Itajaí/Navegantes), regime atual, consumo de diesel/ARLA/pneus por mês, CT-e/MDF-e emissor atual, situação RNTRC/ANTT. Sem custo.
+        <strong>1. Alinhamento Inicial:</strong> conversamos pelo WhatsApp (47) 3326-5123 ou videoconferência para entender o porte da sua operação, tipo de frete e regime tributário atual.
       </p>
       <p>
-        <strong>2. Análise de Viabilidade Tributária:</strong> simulação de 2 cenários principais (Simples Nacional com crédito presumido 20% vs Lucro Real com crédito efetivo diesel/peças + depreciação acelerada) com projeção de 12 meses. Inclui incentivos portuários (TTD 409/410, drawback) se aplicável. Identificação de gaps no CT-e, MDF-e, CIOT e RNTRC.
+        <strong>2. Enquadramento e Parametrização:</strong> verificamos a melhor opção entre Simples Nacional e Lucro Presumido e orientamos a configuração básica de CFOP e CST no seu emissor de CT-e/NFS-e.
       </p>
       <p>
-        <strong>3. Implantação Fiscal e Operacional:</strong> parametrização do ERP/TMS: CFOPs de frete (5.932, 6.932, 5.353, 6.353, 5.202, 6.202), CSTs ICMS (20, 41, 60, 90), NCMs de diesel/ARLA/pneus/peças, geração automática de MDF-e e CIOT, integração RNTRC/ANTT, plano de contas por centro de custo (veículo, rota, filial).
-      </p>
-      <p>
-        <strong>4. Rotina Mensal:</strong> fechamento contábil e fiscal, apuração ICMS (crédito presumido + efetivo), conciliação NF-e entrada (insumos) × CT-e saída × quilometragem, geração SPED Fiscal (EFD-ICMS/IPI), EFD-Contribuições, DCTFWeb, renovações RNTRC/ANTT, relatórios gerenciais (custo por km, consumo por veículo, rentabilidade por rota/cliente, Fator R se Simples) — tudo no prazo, com reunião de alinhamento mensal.
+        <strong>3. Rotina Mensal Sem Atrasos:</strong> recepção dos XMLs e documentos até o dia 5, fechamento fiscal e folha de pagamento, emissão das guias de impostos (DAS, ICMS, ISS, INSS e FGTS) e entrega das declarações acessórias no prazo.
       </p>
     </div>
 
     <p class="mt-8 text-lg text-slate-600 leading-relaxed">
-      Atendemos transportadoras e operadores logísticos em <strong>Blumenau</strong>, <strong>Itajaí (complexo portuário — 35km)</strong>, <strong>Navegantes (porto/aeroporto — 40km)</strong>, <strong>Joinville (55km)</strong>, <strong>Balneário Camboriú (45km)</strong>, <strong>Brusque (25km)</strong>, <strong>Gaspar (15km)</strong>, <strong>Indaial (20km)</strong>, <strong>Timbó (30km)</strong>, <strong>Pomerode (25km)</strong> — com a mesma qualidade, 100% digital quando preferir.
+      Atendemos transportadoras em <strong>Blumenau</strong>, <strong>Gaspar</strong>, <strong>Indaial</strong>, <strong>Timbó</strong>, <strong>Pomerode</strong>, <strong>Brusque</strong>, <strong>Itajaí</strong>, <strong>Navegantes</strong> e toda a região de Santa Catarina com atendimento digital ágil.
     </p>
   </div>
 </section>
@@ -269,13 +246,13 @@ const schema = JSON.stringify({
 <!-- CTA Dark -->
 <section class="bg-[#0f172a] py-16">
   <div class="container mx-auto px-4 text-center max-w-4xl">
-    <h2 class="text-3xl font-bold text-white mb-4">Tenha uma contabilidade<br/><span class="pp3-grad-light">que entende a operação da sua frota!</span></h2>
+    <h2 class="text-3xl font-bold text-white mb-4">Mantenha sua transportadora<br/><span class="pp3-grad-light">regular e com os impostos em dia</span></h2>
     <p class="text-white/80 text-lg leading-relaxed mb-8">
-      Com 35+ anos de experiência e atuação no corredor logístico de Santa Catarina (Blumenau, Itajaí, Navegantes, Porto de Itajaí), conhecemos as particularidades de frota própria, terceirizados, CT-e/MDF-e, RNTRC, crédito ICMS diesel e regimes aduaneiros portuários. Fale conosco e veja a diferença no seu planejamento tributário e na gestão de custos da frota.
+      Conte com a experiência de mais de 35 anos da JMF Contabilidade para cuidar da abertura, escrita fiscal, contabilidade e folha de pagamento da sua empresa de transporte no Simples Nacional ou Lucro Presumido.
     </p>
-    <a href={WAsim} target="_blank" rel="noopener noreferrer"
+    <a href={WA} target="_blank" rel="noopener noreferrer"
       class="inline-block px-8 py-4 bg-[#1e40af] text-white font-semibold rounded-lg hover:bg-[#1e3a8a] transition-colors text-lg">
-      <i class="bi bi-whatsapp mr-2"></i>Diagnóstico Tributário para Transportadora Gratuito
+      <i class="bi bi-whatsapp mr-2"></i>Falar com a Equipe da JMF Contabilidade
     </a>
   </div>
 </section>
@@ -295,39 +272,27 @@ const schema = JSON.stringify({
         </h2>
         <div class="space-y-3">
           <details class="accordion-item">
-            <summary class="accordion-summary">Qual a diferença entre Crédito Presumido 20% (Convênio 106/96) e Crédito Efetivo sobre diesel para transportadoras?</summary>
+            <summary class="accordion-summary">Qual o melhor regime tributário para pequenas transportadoras?</summary>
             <div class="accordion-body">
-              <p>O Crédito Presumido (Convênio ICMS 106/96) dá 20% do valor do ICMS destacado na NF-e de frete interestadual como crédito, sem precisar comprovar insumos. O Crédito Efetivo (RICMS/SC Art. 31) permite apropriar o ICMS real pago na compra de diesel, ARLA, pneus, lubrificantes e peças — exige NF-e com placa do veículo e conciliação com CT-e emitido. No Simples Nacional só existe o Presumido; no Lucro Presumido/Real pode optar pelo Efetivo se for mais vantajoso.</p>
+              <p>Para pequenas transportadoras e empresas de entregas rápidas, o Simples Nacional (Anexo III) ou o Lucro Presumido costumam ser os regimes mais indicados pela simplicidade operacional e previsibilidade de tributos. A JMF avalia o perfil de fretes municipais, intermunicipais e interestaduais para definir o enquadramento mais econômico.</p>
             </div>
           </details>
           <details class="accordion-item">
             <summary class="accordion-summary">Transportadora no Simples Nacional pode usar o Crédito Presumido de 20% no frete interestadual?</summary>
             <div class="accordion-body">
-              <p>Sim. O Convênio ICMS 106/96 permite que optantes do Simples Nacional apropriem crédito presumido de 20% do ICMS destacado na NF-e de prestação de serviço de transporte interestadual de cargas. É a principal forma de recuperar ICMS no Simples, já que não há crédito de insumos (diesel, peças) nesse regime. A JMF parametriza o ERP para apurar corretamente esse crédito mês a mês.</p>
+              <p>Sim. O Convênio ICMS 106/96 permite a apropriação do crédito presumido de 20% sobre o valor do ICMS devido na prestação de serviço de transporte interestadual de cargas. Orientamos a parametrização fiscal do emissor de CT-e para apurar esse benefício corretamente.</p>
             </div>
           </details>
           <details class="accordion-item">
-            <summary class="accordion-summary">Como funciona a apropriação de crédito de ICMS do diesel (ARLA, pneus) no Lucro Presumido/Real?</summary>
+            <summary class="accordion-summary">Qual a diferença entre CT-e e NFS-e no transporte de cargas?</summary>
             <div class="accordion-body">
-              <p>No Lucro Presumido ou Real, a transportadora pode creditar o ICMS efetivamente pago na aquisição de combustível (diesel, ARLA), pneus, lubrificantes e peças de reposição. Exige: NF-e de entrada com destaque do ICMS, informação da placa do veículo no campo de informações complementares, e conciliação mensal entre notas de entrada de insumos × CT-es emitidos × quilometragem rodada. A JMF faz essa conciliação automatizada via ERP.</p>
+              <p>O transporte de cargas municipal (dentro da mesma cidade) é tributado pelo ISS e exige emissão de Nota Fiscal de Serviços Eletrônica (NFS-e). Já o transporte intermunicipal ou interestadual é tributado pelo ICMS e exige emissão de Conhecimento de Transporte Eletrônico (CT-e) e MDF-e.</p>
             </div>
           </details>
           <details class="accordion-item">
-            <summary class="accordion-summary">O que é RNTRC e por que toda transportadora precisa estar regular?</summary>
+            <summary class="accordion-summary">Vocês atendem transportadoras no Lucro Real ou auditoria de crédito de diesel?</summary>
             <div class="accordion-body">
-              <p>RNTRC (Registro Nacional de Transportadores Rodoviários de Cargas) é o cadastro obrigatório na ANTT para quem presta serviço de transporte rodoviário de cargas. Sem RNTRC ativo, a empresa não pode emitir CT-e válido, fica sujeita a multas pesadas (R$ 550 a R$ 5.500 por veículo) e apreensão de veículos em fiscalização. A JMF cuida do cadastro inicial, renovações anuais, inclusão/exclusão de veículos e regularização de pendências junto à ANTT.</p>
-            </div>
-          </details>
-          <details class="accordion-item">
-            <summary class="accordion-summary">Simples Nacional ou Lucro Real: qual regime compensa mais para frota própria de 10 a 20 caminhões?</summary>
-            <div class="accordion-body">
-              <p>Depende da margem e do volume de frete interestadual. Simples: alíquota única (Anexo III 6% a 19,5%) + crédito presumido 20% no interestadual — simples, mas sem crédito de diesel/peças. Lucro Real: IRPJ 15%+10% + CSLL 9% + PIS/COFINS não cumulativos (crédito 9,25% sobre insumos) + ICMS efetivo no diesel — costuma compensar quando a frota consome muito diesel e há volume interestadual relevante. A JMF simula os dois cenários com dados reais da sua frota antes de decidir.</p>
-            </div>
-          </details>
-          <details class="accordion-item">
-            <summary class="accordion-summary">Vocês atendem transportadoras em Itajaí, Navegantes e região portuária?</summary>
-            <div class="accordion-body">
-              <p>Sim. A JMF atende transportadoras, operadores de contêineres, terminais retroportuários e frotas próprias em toda a região: Blumenau, Itajaí (complexo portuário), Navegantes (aeroporto/porto), Joinville, Balneário Camboriú, Brusque, Gaspar, Indaial, Timbó e Pomerode. Conhecemos a dinâmica de exportação/importação via Porto de Itajaí e Navegantes, incluindo regimes aduaneiros especiais, drawback e logística integrada.</p>
+              <p>Nosso foco de atendimento é voltado exclusivamente para transportadoras enquadradas no Simples Nacional e no Lucro Presumido. Não atuamos com regime de Lucro Real, apuração complexa de créditos efetivos sobre combustível/frota pesada ou regimes aduaneiros portuários.</p>
             </div>
           </details>
         </div>
@@ -339,22 +304,22 @@ const schema = JSON.stringify({
 <!-- Artigos relacionados -->
 <section class="py-10 bg-[#f8fafc] border-t border-gray-100">
   <div class="container mx-auto px-4 max-w-4xl">
-    <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Do blog da JMF</p>
+    <p class="text-sm font-semibold text-[#1e40af] uppercase tracking-wide mb-4">Conteúdos úteis da JMF</p>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <a href="/blog/credito-icms-diesel-transportadoras-santa-catarina-2026"
+      <a href="/regimes-tributarios"
         class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
-        <p class="text-xs text-gray-400 mb-1">ICMS Transporte</p>
-        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Crédito de ICMS do Diesel para Transportadoras em SC</p>
+        <p class="text-xs text-gray-400 mb-1">Enquadramento</p>
+        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Simples Nacional ou Lucro Presumido: qual regime escolher?</p>
       </a>
-      <a href="/contabilidade-para-transportadoras"
+      <a href="/simples-nacional"
         class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
-        <p class="text-xs text-gray-400 mb-1">CT-e / MDF-e</p>
-        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">CT-e e MDF-e: Como Evitar Multas e Manter a Frota Regular</p>
+        <p class="text-xs text-gray-400 mb-1">Tributação</p>
+        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Guia completo do Simples Nacional: tabelas, anexos e limites</p>
       </a>
-      <a href="/contabilidade-para-transportadoras"
+      <a href="/simulador-regime-tributario"
         class="bg-white rounded-xl border border-gray-100 p-4 hover:border-[#1e40af] hover:shadow-sm transition-all group">
-        <p class="text-xs text-gray-400 mb-1">Regime Tributário</p>
-        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Simples Nacional vs Lucro Real para Transportadora: Qual Compensa?</p>
+        <p class="text-xs text-gray-400 mb-1">Ferramenta</p>
+        <p class="font-semibold text-[#0f172a] text-sm group-hover:text-[#1e40af] leading-snug">Simulador de Regime Tributário Gratuito</p>
       </a>
     </div>
   </div>
@@ -365,8 +330,8 @@ const schema = JSON.stringify({
   <div class="container mx-auto px-4">
     <div class="flex flex-col lg:flex-row gap-10">
       <div class="lg:w-5/12">
-        <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e vamos juntos<br/><span class="pp3-grad">otimizar a tributação da sua frota!</span></h2>
-        <p class="text-gray-600 text-lg mb-6">Se você precisa de uma contabilidade que entende de crédito ICMS diesel/ARLA/pneus, CT-e/MDF-e, CIOT, RNTRC/ANTT, Simples vs Lucro Real para frotas e incentivos portuários em Itajaí/Navegantes, você encontrou o lugar certo. Entre em contato e marque um diagnóstico sem custo.</p>
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-4">Entre em contato e solicite<br/><span class="pp3-grad">uma proposta para sua transportadora!</span></h2>
+        <p class="text-gray-600 text-lg mb-6">Se você possui uma transportadora ou empresa de entregas no Simples Nacional ou Lucro Presumido e busca uma contabilidade ágil para cuidar da sua rotina fiscal e trabalhista mensal, fale com nossa equipe.</p>
         <div class="flex items-center gap-3 mb-4">
           <div class="w-10 h-10 rounded-full bg-[#1e40af] flex items-center justify-center flex-shrink-0">
             <i class="bi bi-whatsapp text-white"></i>
