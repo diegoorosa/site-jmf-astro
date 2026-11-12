@@ -23,7 +23,7 @@ A Constituição Federal de 1988 estabelece, em seu artigo 156, § 2º, inciso I
 
 A grande divergência interpretativa que perdurava nos tribunais e nas secretarias de finanças municipais dizia respeito ao alcance do trecho **"salvo se a atividade preponderante for imobiliária"**.
 
-### A Interpretação Histórica das Prefeituras Muncipais
+### A Interpretação Histórica das Prefeituras Municipais
 Historicamente, o fisco municipal aplicava uma interpretação extensiva da ressalva constitucional. Se o contrato social da empresa previsse atividades como a compra e venda de imóveis, aluguel, loteamento ou incorporação imobiliária, a prefeitura negava automaticamente a certidão de imunidade/não incidência do ITBI, exigindo o recolhimento imediato da alíquota municipal (que varia de 2% a 3% sobre o valor venal do imóvel).
 
 ### O Entendimento Pacificado pelo STF
@@ -190,26 +190,23 @@ Abaixo, listamos as principais armadilhas identificadas em fiscalizações de IT
 
 ## O Papel da JMF Contabilidade na Sua Estruturação Patrimonial
 
-Com sede em **Blumenau/SC** e atuação consolidada em todo o estado de Santa Catarina, a **JMF Contabilidade** combina excelência técnica, inteligência tributária e conhecimento profundo das peculiaridades do mercado local.
+Com sede em **Blumenau/SC**, a **JMF Contabilidade** oferece suporte contábil e societário para quem deseja organizar o patrimônio familiar através de uma holding patrimonial no regime do **Lucro Presumido**:
 
-Nossa equipe multidisciplinar oferece suporte completo para a sua empresa ou grupo familiar:
+* **Abertura e Constituição da Holding:** Registro do contrato social na Junta Comercial (JUCESC) e estruturação básica da empresa patrimonial para recebimento dos imóveis.
+* **Integralização de Imóveis no Capital Social:** Elaboração das cláusulas contratuais de integralização conforme os valores constantes na declaração de IRPF ou avaliação definida pelos sócios.
+* **Contabilidade Mensal e Apuração Fiscal:** Escrituração contábil regular (Livro Diário, Razão e DRE), apuração dos tributos no Lucro Presumido e acompanhamento das receitas operacionais.
 
-* **Estudo de Viabilidade Tributária:** Comparações numéricas detalhadas entre a manutenção de bens na pessoa física versus transferência para pessoas jurídicas no Lucro Presumido, Lucro Real ou Simples Nacional.
-* **Elaboração e Revisão Societária:** Redação estratégica de cláusulas de integralização de imóveis, proteção patrimonial e sucessão.
-* **Assessoria no Processo Administrativo de ITBI:** Condução completa dos requerimentos de imunidade e não incidência perante as Prefeituras de Blumenau e região.
-* **Acompanhamento Pós-Integralização:** Monitoramento das receitas operacionais e emissão de relatórios de apuração do teste de preponderância para blindagem fiscal absoluta.
+> **Importante:** Questões contenciosas, recursos administrativos ou medidas judiciais (como mandados de segurança) para reconhecimento de imunidade ou isenção de ITBI junto às prefeituras devem ser conduzidos por assessoria jurídica especializada.
 
 ---
 
-## Conclusão: Hora de Revisar o Planejamento Tributário da Sua Empresa
+## Conclusão
 
-A confirmação da imunidade de ITBI pelo Supremo Tribunal Federal consolida um ambiente de investimentos muito mais receptivo e econômico para quem busca empreender, construir ou proteger bens imóveis em Santa Catarina.
+A posição do Supremo Tribunal Federal sobre a imunidade de ITBI na integralização de capital reforça a importância de estruturar corretamente o contrato social e manter a escrituração contábil em dia ao transferir imóveis para uma pessoa jurídica.
 
-Se você possui imóveis retidos na Pessoa Física, planeja abrir uma holding patrimonial ou pretende reestruturar os ativos de sua empresa imobiliária ou industrial, o momento para agir é agora. O adiamento dessa decisão pode significar custos desnecessários com impostos que poderiam ser 100% evitados dentro da estrita legalidade.
+Se você pretende abrir uma holding patrimonial no Lucro Presumido e busca assessoria contábil para a constituição e rotina mensal da empresa em Santa Catarina, entre em contato com a nossa equipe:
 
-Está com dúvidas sobre como aplicar a imunidade do ITBI nos imóveis da sua empresa ou deseja fazer uma simulação de custos? Entre em contato direto com os nossos consultores especializados através dos nossos canais formais ou acesse nossa página de [fale conosco](/fale-conosco).
-
-[Falar com os especialistas da JMF Contabilidade](https://wa.me/554733265123?text=Ol%C3%A1%21%20Li%20o%20artigo%20sobre%20imunidade%20de%20ITBI%20e%20gostaria%20de%20orienta%C3%A7%C3%A3o%20especializada%20para%20minha%20empresa.)
+[Falar com a JMF Contabilidade no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20gostaria%20de%20informa%C3%A7%C3%B5es%20sobre%20abertura%20e%20contabilidade%20de%20holding%20patrimonial%20no%20Lucro%20Presumido.)
 
 ---
 
