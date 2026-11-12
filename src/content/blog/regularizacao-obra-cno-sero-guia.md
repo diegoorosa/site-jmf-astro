@@ -7,6 +7,12 @@ image: "/assets/images/blog-regularizacao-obra-cno-sero-guia.webp"
 imageAlt: "Documento de regularização de obra, alvará de construção e acesso ao portal CNO da Receita Federal"
 ---
 
+<div class="bg-slate-100 border-l-4 border-slate-500 p-5 my-6 rounded-r-xl text-sm">
+
+**Aviso Informativo:** Este artigo possui caráter estritamente educativo sobre a legislação federal vigente. **A JMF Contabilidade não presta serviços de regularização de obras (CNO/SERO), aferição previdenciária, RET ou contabilidade especializada para incorporação e construção civil.** Nosso foco de atuação é a contabilidade mensal recorrente para empresas prestadoras de serviços e comércio.
+
+</div>
+
 Toda construção, reforma, ampliação ou demolição civil no Brasil precisa de uma identificação fiscal própria perante a Receita Federal do Brasil. Desde que o antigo Cadastro Específico do INSS (CEI) foi descontinuado, o **CNO (Cadastro Nacional de Obras)** tornou-se a ferramenta central para monitorar as obrigações previdenciárias de qualquer canteiro de obras no país.
 
 Se você está iniciando uma obra ou recebeu uma notificação da Receita Federal referente ao alvará emitido pela Prefeitura, entender as regras do CNO é indispensável para não travar a emissão da CND e a averbação do imóvel no Registro de Imóveis.
@@ -44,7 +50,7 @@ A obrigação de inscrição no CNO recai sobre o responsável pela execução d
 O prazo oficial para inscrição da obra no CNO é de **até 30 dias contados do início efetivo das atividades de construção**.
 
 O que acontece se você não cadastrar dentro do prazo?
-- **Notificação Automática:** Com o cruzamento eletrônico contínuo (sistema E-obra), a Receita Federal recebe os alvarás emitidos pelas prefeituras (como ocorre em Blumenau e região) e notifica o titular para regularização voluntária.
+- **Notificação Automática:** Com o cruzamento eletrônico contínuo (sistema E-obra), a Receita Federal recebe os alvarás emitidos pelas prefeituras e notifica o titular para regularização voluntária.
 - **Multa de Ofício:** A inobservância do prazo pode gerar a emissão de auto de infração com multas punitivas de **75% a 225%** sobre as contribuições previdenciárias apuradas pela fiscalização.
 - **Impedimento no Habite-se:** Sem a certidão emitida a partir do CNO, o Cartório de Registro de Imóveis não realiza a averbação da edificação.
 
@@ -83,7 +89,6 @@ O CNO é a porta de entrada; o **SERO** é o processo de saída. Concluída a ob
 | **2. Durante a Execução** | Gestão de folha, notas fiscais e retenções de INSS | eSocial / EFD-Reinf |
 | **3. Conclusão / Habite-se** | Aferição indireta/direta no SERO e emissão da CND | SERO / DCTFWeb |
 
-
 1. **Aferição no SERO:** O sistema calcula a contribuição previdenciária devida (com base na folha real para empresas ou pela aferição indireta sobre o VAF/CUB).
 2. **Abatimentos e Deduções:** Podem ser informadas deduções legais para diminuir o imposto (como notas fiscais de concreto usinado, massa pronta, pré-moldados e retenções de notas de empreiteiras).
 3. **DCTFWeb e DARF:** É gerada a declaração de confissão de dívida e emitido o DARF correspondente (que pode ser pago à vista ou parcelado em até 60 vezes).
@@ -91,27 +96,11 @@ O CNO é a porta de entrada; o **SERO** é o processo de saída. Concluída a ob
 
 ---
 
-## Estrutura de Atendimento: Pessoa Jurídica vs. Pessoa Física
+<div class="bg-slate-100 border-l-4 border-slate-500 p-6 my-8 rounded-r-xl">
 
-Para garantir máxima excelência e agilidade técnica aos nossos clientes, a JMF Contabilidade organiza suas demandas de regularização de obras da seguinte maneira:
+**Precisa de suporte para regularizar uma obra ou apurar CNO/SERO?**
 
-### 🏢 Construtoras, Incorporadoras e Empresas (PJ)
-Nossa equipe contábil cuida do ciclo completo: estruturação de SPEs, acompanhamento de custos por obra, escrituração no eSocial, cruzamento no SERO e planejamento do Regime Especial de Tributação (RET a 4%) ou desoneração da folha.
-
-👉 **[Conheça nossa assessoria para Construção Civil](/contabilidade-para-construcao-civil)**
-
-### 🏠 Obras Residenciais Particulares (Pessoas Físicas)
-Para proprietários pessoas físicas que receberam notificações da Receita Federal ou precisam regularizar o INSS de suas residências para obtenção de Habite-se, direcionamos o atendimento para o nosso **parceiro credenciado especializado em aferição indireta e SERO**, assegurando um suporte dedicado com agilidade e total segurança técnica.
-
----
-
-<div class="bg-[#fef3c7] border-l-4 border-[#f59e0b] p-6 my-8 rounded-r-xl">
-
-**Tem dúvidas sobre o CNO ou precisa de suporte para regularizar uma obra?**
-
-Converse com nosso time de atendimento no WhatsApp para encaminharmos o seu caso para o especialista responsável.
-
-**[Falar com o Atendimento no WhatsApp](https://wa.me/554733265123?text=Ol%C3%A1%2C%20tenho%20d%C3%BAvidas%20sobre%20CNO%20e%20regulariza%C3%A7%C3%A3o%20de%20obra.)**
+Como a JMF Contabilidade atua exclusivamente com assessoria contábil recorrente para empresas de serviços e comércio, recomendamos buscar um profissional ou consultoria especializada em regularização previdenciária de obras civis para conduzir o processo junto à Receita Federal.
 
 </div>
 
