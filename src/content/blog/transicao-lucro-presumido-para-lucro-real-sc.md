@@ -1,6 +1,6 @@
 ---
 title: "Transição do Lucro Presumido para Lucro Real em SC: Guia Prático"
-description: "Descubra quando migrar do Lucro Presumido para o Lucro Real em Santa Catarina. Veja requisitos, cálculos e planejamento tributário. Fale conosco!"
+description: "Descubra quando migrar do Lucro Presumido para o Lucro Real em Santa Catarina. Veja requisitos, cálculos e regras de transição."
 pubDate: 2026-09-03
 author: "Diego Rosa, CRC SC-035810/O"
 image: "/assets/images/blog-transicao-lucro-presumido-para-lucro-real-sc.webp"
@@ -205,20 +205,11 @@ O risco fiscal não é determinado pelo regime tributário escolhido, mas sim pe
 
 ---
 
-## Como a JMF Contabilidade Pode Guiar a Sua Empresa nessa Transição
+## Conclusão
 
-A migração de regime tributário não deve ser fundamentada em achismos ou planilhas genéricas. Ela exige a experiência prática de quem domina as particularidades tributárias do estado de Santa Catarina e as especificidades dos setores produtivos do Vale do Itajaí.
+Avaliar as diferenças entre o Lucro Presumido e o Lucro Real exige atenção às margens de lucro, ao volume de despesas dedutíveis e às obrigações acessórias envolvidas em cada regime. Como a opção tributária é irretratável para todo o ano-calendário, essa análise deve ser feita sempre com antecedência no segundo semestre.
 
-Na JMF Contabilidade, acompanhamos seu negócio em cada etapa:
-
-1.  **Auditoria do Histórico Fiscal:** Analisamos os números dos últimos anos para identificar inconsistências e oportunidade de créditos não aproveitados;
-2.  **Simulações Multicenário:** Projetamos os custos tributários do seu negócio considerando variações no faturamento, custos de insumos e folha de pagamento;
-3.  **Adequação Operacional e Mapeamento de Processos:** Auxiliamos na parametrização do seu ERP e alinhamento dos setores financeiro, de compras e de RH;
-4.  **Acompanhamento Continuado:** Garantimos a entrega rigorosa do SPED (ECD, ECF, EFD Contribuições) sem sobressaltos com o fisco.
-
-Quer descobrir se o Lucro Real é o caminho certo para reduzir impostos e otimizar o caixa da sua empresa em 2026/2027? Entre em contato conosco e solicite uma análise tributária personalizada.
-
-👉 **[Fale agora com a equipe de especialistas da JMF Contabilidade](/fale-conosco)**
+> **Nota informativa:** Este artigo possui finalidade estritamente educativa. A **JMF Contabilidade** atua exclusivamente com assessoria contábil, fiscal e trabalhista recorrente para empresas enquadradas no **Simples Nacional** e no **Lucro Presumido**, não executando contabilidade ou apurações no regime do Lucro Real.
 
 ---
 
