@@ -9,7 +9,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": ["WebApplication", "Service"],
   "name": "Simulador Reforma Tributária — Simples Nacional Tradicional vs Híbrido (LC 214/2025)",
-  "description": "Descubra se a sua empresa deve manter o Simples Nacional Tradicional ou optar pelo Simples Híbrido na Reforma Tributária. Simule impacto de IBS/CBS, competitividade B2B e desembolso tributário.",
+  "description": "Simule o impacto do IBS e da CBS com base nas regras da LC 214/2025 e na estrutura da Calculadora de Tributos da Receita Federal (GitHub / Portaria Cotec 342/2026). Compare Simples Tradicional e Híbrido com reduções setoriais (0%, 30%, 60% e alíquota zero) para 2027 e 2033.",
   "url": "https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
@@ -39,19 +39,20 @@ const schema = JSON.stringify({
     "addressLocality": "Blumenau",
     "description": "Brasil — foco em Santa Catarina e região Sul"
   },
-  "serviceType": "Simulador tributário online para Reforma Tributária (Simples Tradicional vs Simples Híbrido)",
+  "serviceType": "Simulador tributário online para Reforma Tributária (Simples Tradicional vs Simples Híbrido) alinhado à LC 214/2025",
   "category": "FinanceApplication",
   "featureList": [
-    "Comparação entre Simples Nacional Tradicional (guia única) e Simples Híbrido (IBS/CBS por fora)",
-    "Análise de perda ou retenção de clientes B2B pela transferência de créditos tributários",
-    "Cálculo de alíquota efetiva e desembolso mensal projetado para 2027",
-    "Avaliação do impacto de créditos sobre compras e insumos tributados",
-    "Diagnóstico estratégico personalizado com recomendação prática para o seu CNPJ"
+    "Regras de cálculo alinhadas à LC 214/2025 e à Calculadora de Tributos da Receita Federal",
+    "Cálculo pelas faixas reais do Simples Nacional (LC 123/2006 — Anexos I, II, III e V)",
+    "Aplicação automática de reduções setoriais (0%, 30% profissões regulamentadas, 60% saúde/educação e alíquota zero cesta básica)",
+    "Simulação por etapa da transição: 2027 (início da CBS) e 2033 (regime pleno IBS + CBS)",
+    "Memória de cálculo auditável com CST, cClassTrib e fundamentação legal da LC 214/2025",
+    "Análise de competitividade B2B pela transferência de créditos tributários"
   ],
   "hasOutput": {
     "@type": "PropertyValue",
     "name": "Resultado do Simulador",
-    "description": "Modelo tributário recomendado, desembolso no Simples Tradicional, desembolso no Simples Híbrido, crédito transferido a clientes PJ e recomendação estratégica"
+    "description": "Modelo tributário recomendado, desembolso no Simples Tradicional, desembolso no Simples Híbrido, crédito transferido a clientes PJ e memória de cálculo legal"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -62,7 +63,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="Simulador Reforma Tributária — Simples Nacional Tradicional vs Híbrido | JMF Contabilidade"
-  description="Sua empresa deve recolher IBS e CBS dentro ou fora do DAS? Calcule a competitividade B2B e o impacto no caixa com o simulador da JMF Contabilidade."
+  description="Sua empresa deve recolher IBS e CBS dentro ou fora do DAS? Calcule com as reduções oficiais da LC 214/2025 e regras da Calculadora da Receita Federal."
   canonical="https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
   ogUrl="https://www.jmfcontabilidade.com.br/simulador-reforma-tributaria"
   schema={schema}
@@ -72,7 +73,7 @@ const schema = JSON.stringify({
 
 <HeroInterno
   title="Simulador Reforma Tributária"
-  subtitle="Descubra se a sua empresa deve continuar no Simples Tradicional ou migrar para o Simples Híbrido em 2027. Simule o impacto do IBS, da CBS e da transferência de créditos para clientes B2B."
+  subtitle="Descubra se a sua empresa deve continuar no Simples Tradicional ou migrar para o Simples Híbrido. Simule o impacto do IBS e da CBS com as reduções setoriais da LC 214/2025 e memória de cálculo no padrão da Receita Federal."
   breadcrumb={[
     { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
     { label: "Ferramentas" },
@@ -92,11 +93,11 @@ const schema = JSON.stringify({
       <div class="text-center mb-10">
         <div class="inline-flex items-center gap-2 bg-sky-50 text-sky-700 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-sky-100">
           <i class="bi bi-shield-check"></i>
-          Reforma Tributária • Lei Complementar 214/2025
+          LC 214/2025 • Base Calculadora de Tributos RFB (Código Aberto)
         </div>
-        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Simule seu regime para <span class="pp3-grad">2027</span></h2>
+        <h2 class="text-3xl font-bold text-[#0f172a] mb-3">Simule seu regime na <span class="pp3-grad">Reforma Tributária</span></h2>
         <p class="text-gray-500 text-lg max-w-2xl mx-auto">
-          Ajuste as variáveis do seu faturamento e do perfil dos seus clientes para saber se a sua empresa deve optar pelo Simples Híbrido ou permanecer no modelo tradicional.
+          Ajuste o faturamento, o enquadramento setorial e o perfil dos seus clientes para comparar o Simples Tradicional e o Simples Híbrido em 2027 e no regime pleno (2033).
         </p>
       </div>
 
@@ -109,6 +110,21 @@ const schema = JSON.stringify({
               <span class="w-8 h-8 bg-sky-600 text-white rounded-full flex items-center justify-center text-sm font-bold">1</span>
               Dados de Operação
             </h3>
+
+            <!-- Ano de Referência da Transição -->
+            <div class="mb-5">
+              <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="ano-transicao">
+                Cenário da transição (LC 214/2025)
+              </label>
+              <select
+                id="ano-transicao"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
+              >
+                <option value="2033" selected>2033 — Regime Pleno (CBS 8,8% + IBS 17,7% = 26,5% ref.)</option>
+                <option value="2027">2027 — Início da CBS (CBS 8,8% + IBS 0,1% = 8,9% ref.)</option>
+              </select>
+              <p class="mt-1 text-xs text-gray-400">Em 2027 entram a CBS cheia e o IBS teste (0,1%); em 2033 ICMS e ISS são totalmente substituídos.</p>
+            </div>
 
             <!-- Faturamento Médio Mensal -->
             <div class="mb-5">
@@ -126,24 +142,37 @@ const schema = JSON.stringify({
                   autocomplete="off"
                 />
               </div>
-              <p class="mt-1 text-xs text-gray-400">Total médio de notas fiscais emitidas no mês</p>
+              <p id="rbt12-info" class="mt-1 text-xs text-gray-400">RBT12 estimado: R$ 600.000,00 (usado na faixa real do Simples Nacional)</p>
             </div>
 
-            <!-- Segmento / Atividade -->
+            <!-- Segmento / Enquadramento LC 214/2025 -->
             <div class="mb-5">
               <label class="block text-sm font-semibold text-[#0f172a] mb-1.5" for="atividade">
-                Atividade principal da empresa
+                Atividade e enquadramento LC 214/2025
               </label>
               <select
                 id="atividade"
-                class="w-full px-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-base focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl text-[#0f172a] font-semibold text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-all bg-white"
               >
-                <option value="comercio" selected>Comércio / Revenda (Anexo I)</option>
-                <option value="industria">Indústria / Fabricação (Anexo II)</option>
-                <option value="servicos_geral">Prestação de Serviços em Geral (Anexo III)</option>
-                <option value="servicos_tecnicos">Serviços Técnicos / Profissionais (Anexo V)</option>
+                <optgroup label="Tributação Integral (CST 000 — 0% redução)">
+                  <option value="comercio_geral" selected>Comércio / Revenda em Geral (Anexo I)</option>
+                  <option value="industria_geral">Indústria / Fabricação em Geral (Anexo II)</option>
+                  <option value="servicos_geral">Serviços em Geral — TI, Manutenção, Agências (Anexo III)</option>
+                </optgroup>
+                <optgroup label="Redução de 30% — Art. 127 LC 214/2025 (CST 200)">
+                  <option value="profissoes_reg">Profissões Regulamentadas — Eng., Arq., Advoc., Contab. (Anexo V)</option>
+                  <option value="profissoes_reg_a3">Profissões Regulamentadas com Fator R ≥ 28% (Anexo III)</option>
+                </optgroup>
+                <optgroup label="Redução de 60% — Arts. 128 a 138 LC 214/2025 (CST 200)">
+                  <option value="saude_educacao_a3">Saúde e Educação — Clínicas, Médicos, Ensino (Anexo III)</option>
+                  <option value="saude_educacao_a5">Saúde / Clínicas sem Fator R (Anexo V)</option>
+                  <option value="comercio_red60">Comércio — Alimentos, Saúde ou Agro com Redução 60% (Anexo I)</option>
+                </optgroup>
+                <optgroup label="Alíquota Zero — Art. 125 LC 214/2025 (CST 200)">
+                  <option value="cesta_basica">Comércio — Cesta Básica Nacional de Alimentos (0% — Anexo I)</option>
+                </optgroup>
               </select>
-              <p class="mt-1 text-xs text-gray-400">Determina a alíquota básica de tributos federais e subnacionais</p>
+              <p class="mt-1 text-xs text-gray-400">Define a faixa real da LC 123/2006 e o redutor oficial de IBS/CBS</p>
             </div>
 
             <!-- Perfil B2B -->
@@ -189,33 +218,44 @@ const schema = JSON.stringify({
                 <span>0% (Quase sem compras / Folha pura)</span>
                 <span>80% (Alto volume de compras)</span>
               </div>
-              <p class="mt-1.5 text-xs text-gray-400">Itens comprados de fornecedores que tributam IBS e CBS integralmente</p>
+              <p class="mt-1.5 text-xs text-gray-400">Compras de fornecedores no regime regular (geram crédito integral de CBS/IBS no Híbrido)</p>
             </div>
           </div>
 
           <div class="bg-sky-50 border border-sky-100 rounded-xl p-4 text-sm text-sky-900">
             <i class="bi bi-info-circle mr-1.5"></i>
-            <strong>Regra da LC 214/2025:</strong> No Simples Híbrido, o IRPJ, CSLL e CPP continuam na guia do Simples, mas o IBS e a CBS são apurados pelo regime geral (débito × crédito).
+            <strong>Regra da LC 214/2025 (Art. 41):</strong> No Simples Híbrido, IRPJ, CSLL e CPP continuam no DAS reduzido, enquanto IBS e CBS são apurados por fora no regime não cumulativo (débito × crédito).
           </div>
         </div>
 
         <!-- PAINEL DE RESULTADOS -->
         <div id="resultado-container" class="rounded-2xl border border-gray-200 bg-gray-50/50 p-8 flex flex-col justify-between shadow-sm">
           <div>
-            <h3 class="font-bold text-[#0f172a] text-lg mb-6 flex items-center gap-2">
-              <span class="w-8 h-8 bg-sky-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
-              Comparativo de Cenários para 2027
-            </h3>
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+              <h3 class="font-bold text-[#0f172a] text-lg flex items-center gap-2">
+                <span class="w-8 h-8 bg-sky-600 text-white rounded-full flex items-center justify-center text-sm font-bold">2</span>
+                <span id="titulo-cenario">Comparativo de Cenários (2033)</span>
+              </h3>
+              <span id="badge-cst" class="text-xs font-bold px-3 py-1 rounded-full bg-sky-100 text-sky-800 border border-sky-200">
+                CST 000 • 0% redução
+              </span>
+            </div>
+
+            <!-- ALERTA LIMITE SIMPLES -->
+            <div id="alerta-limite" class="hidden mb-4 bg-red-50 border border-red-200 text-red-800 rounded-xl p-3 text-xs">
+              <i class="bi bi-exclamation-triangle-fill mr-1"></i>
+              Faturamento anual estimado acima de <strong>R$ 4.800.000,00</strong> (limite do Simples Nacional). A empresa precisará operar no Lucro Presumido ou Lucro Real.
+            </div>
 
             <!-- CARDS DE CENÁRIOS -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-5">
 
               <!-- Simples Tradicional -->
               <div id="card-tradicional" class="bg-white rounded-xl p-5 border-2 border-gray-200 transition-all duration-300 relative">
                 <p class="text-xs font-bold tracking-wide text-gray-500 mb-1">SIMPLES TRADICIONAL</p>
                 <p id="trad-valor" class="text-2xl font-black text-[#0f172a] leading-tight">R$ 0,00</p>
-                <p id="trad-aliquota" class="text-xs text-gray-500 mt-1">Alíquota efetiva: 0,0%</p>
-                
+                <p id="trad-aliquota" class="text-xs text-gray-500 mt-1">Alíquota efetiva: 0,00%</p>
+
                 <div class="mt-4 pt-3 border-t border-dashed border-gray-200 space-y-1 text-xs">
                   <div class="flex justify-between">
                     <span class="text-gray-500">Guia mensal:</span>
@@ -223,7 +263,7 @@ const schema = JSON.stringify({
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-500">Crédito p/ cliente PJ:</span>
-                    <strong id="trad-credito" class="text-amber-600">Reduzido (~2,8%)</strong>
+                    <strong id="trad-credito" class="text-amber-600">Reduzido (~0,0%)</strong>
                   </div>
                 </div>
               </div>
@@ -232,16 +272,16 @@ const schema = JSON.stringify({
               <div id="card-hibrido" class="bg-white rounded-xl p-5 border-2 border-gray-200 transition-all duration-300 relative">
                 <p class="text-xs font-bold tracking-wide text-gray-500 mb-1">SIMPLES HÍBRIDO</p>
                 <p id="hib-valor" class="text-2xl font-black text-[#0f172a] leading-tight">R$ 0,00</p>
-                <p id="hib-aliquota" class="text-xs text-gray-500 mt-1">Alíquota efetiva: 0,0%</p>
+                <p id="hib-aliquota" class="text-xs text-gray-500 mt-1">Alíquota efetiva: 0,00%</p>
 
                 <div class="mt-4 pt-3 border-t border-dashed border-gray-200 space-y-1 text-xs">
                   <div class="flex justify-between">
                     <span class="text-gray-500">Apuração IBS/CBS:</span>
-                    <strong class="text-gray-700">Por Fora (Débito/Crédito)</strong>
+                    <strong class="text-gray-700">Por Fora (Déb./Créd.)</strong>
                   </div>
                   <div class="flex justify-between">
                     <span class="text-gray-500">Crédito p/ cliente PJ:</span>
-                    <strong class="text-green-600">Integral (26,5%)</strong>
+                    <strong id="hib-credito" class="text-green-600">Integral (26,5%)</strong>
                   </div>
                 </div>
               </div>
@@ -249,7 +289,7 @@ const schema = JSON.stringify({
             </div>
 
             <!-- DIAGNÓSTICO E VEREDITO -->
-            <div id="veredito-box" class="rounded-xl p-5 mb-6 bg-white border transition-all duration-300 shadow-sm">
+            <div id="veredito-box" class="rounded-xl p-5 mb-5 bg-white border transition-all duration-300 shadow-sm">
               <div class="flex items-start gap-3">
                 <span id="veredito-icon" class="text-2xl flex-shrink-0 mt-0.5">💡</span>
                 <div>
@@ -260,6 +300,31 @@ const schema = JSON.stringify({
                 </div>
               </div>
             </div>
+
+            <!-- MEMÓRIA DE CÁLCULO OFICIAL (PADRÃO CALCULADORA RFB) -->
+            <details class="bg-white border border-gray-200 rounded-xl p-4 mb-5 group" open>
+              <summary class="cursor-pointer font-bold text-xs uppercase tracking-wide text-[#0f172a] flex items-center justify-between list-none">
+                <span class="flex items-center gap-2">
+                  <i class="bi bi-file-earmark-code text-sky-600 text-sm"></i>
+                  Memória de Cálculo e Base Legal (Padrão RFB)
+                </span>
+                <i class="bi bi-chevron-down text-gray-400 transition-transform group-open:rotate-180"></i>
+              </summary>
+              <div class="mt-3 pt-3 border-t border-gray-100 text-xs space-y-2 text-gray-600">
+                <div class="grid grid-cols-2 gap-2">
+                  <div class="bg-gray-50 rounded-lg p-2.5">
+                    <span class="block text-[11px] text-gray-400">Classificação RFB</span>
+                    <strong id="mem-cst" class="text-[#0f172a]">—</strong>
+                  </div>
+                  <div class="bg-gray-50 rounded-lg p-2.5">
+                    <span class="block text-[11px] text-gray-400">Alíquota IBS/CBS (Por Fora)</span>
+                    <strong id="mem-aliq-efetiva" class="text-[#0f172a]">—</strong>
+                  </div>
+                </div>
+                <div class="space-y-1 pt-1" id="mem-passos"></div>
+                <div class="bg-sky-50/70 border border-sky-100 rounded-lg p-2.5 text-[11px] text-sky-900" id="mem-base-legal"></div>
+              </div>
+            </details>
           </div>
 
           <div>
@@ -272,11 +337,11 @@ const schema = JSON.stringify({
               class="flex items-center justify-center gap-2 w-full text-center px-6 py-4 bg-[#25d366] text-white font-bold rounded-xl hover:bg-[#1eb956] transition-colors shadow-sm text-sm"
             >
               <i class="bi bi-whatsapp text-lg"></i>
-              Validar diagnóstico para 2027 com a JMF
+              Validar diagnóstico com a JMF
             </a>
 
             <p class="text-center text-xs text-gray-400 mt-3">
-              Simulação estimada com alíquota de referência de 26,5% para IBS/CBS. A decisão formal exige auditoria da carteira de fornecedores.
+              Alíquotas de referência da LC 214/2025 (CBS 8,8% + IBS 17,7% no regime pleno) com cálculo por fora (Art. 12). Decisão formal exige auditoria de NCM/NBS e fornecedores.
             </p>
           </div>
         </div>
@@ -292,7 +357,7 @@ const schema = JSON.stringify({
   <div class="container mx-auto px-4 max-w-4xl">
     <h2 class="text-3xl font-bold text-[#0f172a] mb-4 text-center">Entenda o impacto da <span class="pp3-grad">Reforma no Simples</span></h2>
     <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">
-      A partir de 2027, as empresas do Simples Nacional não serão obrigadas a sair do regime, mas terão que escolher entre duas formas de recolhimento:
+      A partir de 2027, as empresas do Simples Nacional não serão obrigadas a sair do regime, mas poderão exercer a opção semestral entre duas formas de recolhimento:
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
@@ -303,7 +368,7 @@ const schema = JSON.stringify({
           Tudo continua unificado na guia do DAS. É ideal para empresas focadas no <strong>Consumidor Final (B2C)</strong>, pois mantém a simplicidade e a carga tributária menor de desembolso direto.
         </p>
         <div class="bg-amber-50 rounded-lg p-3 text-xs text-amber-800">
-          <strong>Atenção:</strong> Seus clientes que são empresas (PJ) só receberão crédito correspondente à fatia de IBS/CBS do seu DAS (~2% a 4%), o que pode torná-lo menos competitivo.
+          <strong>Atenção:</strong> Seus clientes PJ só aproveitam crédito proporcional à fatia de IBS/CBS efetivamente recolhida dentro do seu DAS, o que pode gerar pressão por desconto em vendas B2B.
         </div>
       </div>
 
@@ -311,144 +376,411 @@ const schema = JSON.stringify({
         <div class="w-10 h-10 bg-green-100 text-green-800 rounded-xl flex items-center justify-center text-xl mb-4 font-bold">2</div>
         <h3 class="text-lg font-bold text-[#0f172a] mb-2">Simples Híbrido (Crédito Integral)</h3>
         <p class="text-sm text-gray-600 leading-relaxed mb-4">
-          A empresa paga o DAS reduzido (IRPJ, CSLL e CPP) e apura o IBS e a CBS por fora no regime de débitos e créditos. É essencial para quem vende no <strong>mercado corporativo (B2B)</strong>.
+          A empresa paga o DAS reduzido (IRPJ, CSLL e CPP) e apura o IBS e a CBS por fora no regime de débitos e créditos, aproveitando as reduções setoriais da LC 214/2025 (30%, 60% ou alíquota zero).
         </p>
         <div class="bg-green-50 rounded-lg p-3 text-xs text-green-800">
-          <strong>Vantagem:</strong> Seus clientes PJ aproveitam o crédito integral de 26,5% na nota fiscal, mantendo sua empresa competitiva frente aos grandes concorrentes.
+          <strong>Vantagem:</strong> Seus clientes PJ aproveitam o crédito integral destacado na nota fiscal, mantendo sua empresa competitiva frente a fornecedores do Lucro Presumido e Lucro Real.
         </div>
+      </div>
+    </div>
+
+    <!-- TABELA DE REDUÇÕES OFICIAIS -->
+    <div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+      <div class="bg-[#0f172a] px-6 py-4">
+        <h3 class="text-white font-bold">Reduções de Alíquota na LC 214/2025 (Base Calculadora RFB)</h3>
+        <p class="text-white/60 text-xs mt-0.5">Alíquotas de referência aplicadas por fora (CBS 8,8% + IBS 17,7% = 26,5% em 2033)</p>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="bg-gray-50 border-b border-gray-100">
+              <th class="p-3 text-left font-semibold text-gray-700">Enquadramento</th>
+              <th class="p-3 text-center font-semibold text-gray-700">CST / Base Legal</th>
+              <th class="p-3 text-center font-semibold text-gray-700">Redução</th>
+              <th class="p-3 text-center font-semibold text-gray-700">Ref. 2027</th>
+              <th class="p-3 text-center font-semibold text-gray-700">Ref. 2033</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-100 text-xs md:text-sm">
+            <tr>
+              <td class="p-3 text-gray-700 font-medium">Regra Geral (Comércio, Indústria, Serviços gerais)</td>
+              <td class="p-3 text-center text-gray-500">CST 000 • Art. 14</td>
+              <td class="p-3 text-center font-semibold text-[#0f172a]">0%</td>
+              <td class="p-3 text-center text-gray-700">8,90%</td>
+              <td class="p-3 text-center font-bold text-[#0f172a]">26,50%</td>
+            </tr>
+            <tr class="bg-gray-50/50">
+              <td class="p-3 text-gray-700 font-medium">Profissões Regulamentadas (Eng., Arq., Advoc., Contab.)</td>
+              <td class="p-3 text-center text-gray-500">CST 200 • Art. 127</td>
+              <td class="p-3 text-center font-semibold text-sky-700">30%</td>
+              <td class="p-3 text-center text-gray-700">6,23%</td>
+              <td class="p-3 text-center font-bold text-sky-700">18,55%</td>
+            </tr>
+            <tr>
+              <td class="p-3 text-gray-700 font-medium">Saúde, Educação, Transporte Coletivo, Alimentos/Agro</td>
+              <td class="p-3 text-center text-gray-500">CST 200 • Arts. 128–138</td>
+              <td class="p-3 text-center font-semibold text-green-700">60%</td>
+              <td class="p-3 text-center text-gray-700">3,56%</td>
+              <td class="p-3 text-center font-bold text-green-700">10,60%</td>
+            </tr>
+            <tr class="bg-gray-50/50">
+              <td class="p-3 text-gray-700 font-medium">Cesta Básica Nacional de Alimentos</td>
+              <td class="p-3 text-center text-gray-500">CST 200 • Art. 125</td>
+              <td class="p-3 text-center font-semibold text-emerald-700">100%</td>
+              <td class="p-3 text-center text-gray-700">0,00%</td>
+              <td class="p-3 text-center font-bold text-emerald-700">0,00%</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-// ────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────
 // SIMULADOR REFORMA TRIBUTÁRIA — JMF Contabilidade
-// Simples Nacional Tradicional vs Simples Híbrido (LC 214/2025)
-// ────────────────────────────────────────────────────────
+// Base: LC 214/2025 + LC 123/2006 (CGSN 140/2018) + Estrutura da
+// Calculadora de Tributos da Receita Federal (GitHub / Portaria Cotec 342/2026)
+// ─────────────────────────────────────────────────────────────────────────
 
-const ALIQUOTAS_SETORIAIS = {
-  comercio: { baseDas: 0.085, parcelaIbsCbs: 0.34, dasReduzido: 0.056 },
-  industria: { baseDas: 0.095, parcelaIbsCbs: 0.36, dasReduzido: 0.061 },
-  servicos_geral: { baseDas: 0.105, parcelaIbsCbs: 0.32, dasReduzido: 0.071 },
-  servicos_tecnicos: { baseDas: 0.155, parcelaIbsCbs: 0.28, dasReduzido: 0.111 }
+interface FaixaSN {
+  limite: number;
+  nominal: number;
+  deducao: number;
+  // Parcela de repartição dentro do DAS (LC 123/2006):
+  // percPisCofins: substituído pela CBS a partir de 2027
+  // percIcmsIss:   substituído pelo IBS até 2033
+  percPisCofins: number;
+  percIcmsIss: number;
+}
+
+const ANEXOS_SN: Record<string, { nome: string; faixas: FaixaSN[] }> = {
+  anexo1: {
+    nome: "Anexo I (Comércio)",
+    faixas: [
+      { limite: 180000,  nominal: 0.04,  deducao: 0,      percPisCofins: 0.1550, percIcmsIss: 0.3400 },
+      { limite: 360000,  nominal: 0.073, deducao: 5940,   percPisCofins: 0.1550, percIcmsIss: 0.3400 },
+      { limite: 720000,  nominal: 0.095, deducao: 13860,  percPisCofins: 0.1550, percIcmsIss: 0.3350 },
+      { limite: 1800000, nominal: 0.107, deducao: 22500,  percPisCofins: 0.1550, percIcmsIss: 0.3350 },
+      { limite: 3600000, nominal: 0.143, deducao: 87300,  percPisCofins: 0.1550, percIcmsIss: 0.3350 },
+      { limite: 4800000, nominal: 0.19,  deducao: 378000, percPisCofins: 0.2280, percIcmsIss: 0.0000 },
+    ],
+  },
+  anexo2: {
+    nome: "Anexo II (Indústria)",
+    faixas: [
+      { limite: 180000,  nominal: 0.045, deducao: 0,      percPisCofins: 0.1426, percIcmsIss: 0.3200 },
+      { limite: 360000,  nominal: 0.078, deducao: 5940,   percPisCofins: 0.1426, percIcmsIss: 0.3200 },
+      { limite: 720000,  nominal: 0.10,  deducao: 13860,  percPisCofins: 0.1426, percIcmsIss: 0.3200 },
+      { limite: 1800000, nominal: 0.112, deducao: 22500,  percPisCofins: 0.1426, percIcmsIss: 0.3200 },
+      { limite: 3600000, nominal: 0.147, deducao: 85500,  percPisCofins: 0.1426, percIcmsIss: 0.3200 },
+      { limite: 4800000, nominal: 0.30,  deducao: 720000, percPisCofins: 0.2100, percIcmsIss: 0.0000 },
+    ],
+  },
+  anexo3: {
+    nome: "Anexo III (Serviços)",
+    faixas: [
+      { limite: 180000,  nominal: 0.06,  deducao: 0,      percPisCofins: 0.1560, percIcmsIss: 0.3350 },
+      { limite: 360000,  nominal: 0.112, deducao: 9360,   percPisCofins: 0.1720, percIcmsIss: 0.3200 },
+      { limite: 720000,  nominal: 0.135, deducao: 17640,  percPisCofins: 0.1679, percIcmsIss: 0.3250 },
+      { limite: 1800000, nominal: 0.16,  deducao: 35640,  percPisCofins: 0.1679, percIcmsIss: 0.3250 },
+      { limite: 3600000, nominal: 0.21,  deducao: 125640, percPisCofins: 0.1579, percIcmsIss: 0.3350 },
+      { limite: 4800000, nominal: 0.33,  deducao: 648000, percPisCofins: 0.1995, percIcmsIss: 0.0000 },
+    ],
+  },
+  anexo5: {
+    nome: "Anexo V (Serviços Intelectuais)",
+    faixas: [
+      { limite: 180000,  nominal: 0.155, deducao: 0,      percPisCofins: 0.1760, percIcmsIss: 0.1400 },
+      { limite: 360000,  nominal: 0.18,  deducao: 4500,   percPisCofins: 0.1760, percIcmsIss: 0.1700 },
+      { limite: 720000,  nominal: 0.195, deducao: 9900,   percPisCofins: 0.1860, percIcmsIss: 0.1900 },
+      { limite: 1800000, nominal: 0.205, deducao: 17100,  percPisCofins: 0.1860, percIcmsIss: 0.2100 },
+      { limite: 3600000, nominal: 0.23,  deducao: 62100,  percPisCofins: 0.1760, percIcmsIss: 0.2350 },
+      { limite: 4800000, nominal: 0.305, deducao: 540000, percPisCofins: 0.2050, percIcmsIss: 0.0000 },
+    ],
+  },
 };
 
-const ALIQUOTA_PADRAO_REFORMA = 0.265; // 26,5% alíquota de referência IBS/CBS
+interface RegraReforma {
+  anexo: string;
+  reducao: number; // 0, 0.30, 0.60, 1.00
+  cst: string;
+  cClassTrib: string;
+  descricaoRegra: string;
+  baseLegal: string;
+}
 
-function parseBRL(str) {
+const REGRAS_ATIVIDADE: Record<string, RegraReforma> = {
+  comercio_geral: {
+    anexo: "anexo1",
+    reducao: 0,
+    cst: "000",
+    cClassTrib: "000001 — Tributação Integral",
+    descricaoRegra: "Tributação integral sem redução setorial",
+    baseLegal: "LC 214/2025, Arts. 12, 14 e 41; LC 123/2006 (Anexo I).",
+  },
+  industria_geral: {
+    anexo: "anexo2",
+    reducao: 0,
+    cst: "000",
+    cClassTrib: "000001 — Tributação Integral",
+    descricaoRegra: "Tributação integral sem redução setorial",
+    baseLegal: "LC 214/2025, Arts. 12, 14 e 41; LC 123/2006 (Anexo II).",
+  },
+  servicos_geral: {
+    anexo: "anexo3",
+    reducao: 0,
+    cst: "000",
+    cClassTrib: "000001 — Tributação Integral",
+    descricaoRegra: "Tributação integral sem redução setorial",
+    baseLegal: "LC 214/2025, Arts. 12, 14 e 41; LC 123/2006 (Anexo III).",
+  },
+  profissoes_reg: {
+    anexo: "anexo5",
+    reducao: 0.30,
+    cst: "200",
+    cClassTrib: "200030 — Redução de 30% (Profissões Regulamentadas)",
+    descricaoRegra: "Redução de 30% nas alíquotas de CBS e IBS",
+    baseLegal: "LC 214/2025, Art. 127 (profissões intelectuais com conselho de classe) e Art. 41; LC 123/2006 (Anexo V).",
+  },
+  profissoes_reg_a3: {
+    anexo: "anexo3",
+    reducao: 0.30,
+    cst: "200",
+    cClassTrib: "200030 — Redução de 30% (Profissões Regulamentadas)",
+    descricaoRegra: "Redução de 30% nas alíquotas de CBS e IBS",
+    baseLegal: "LC 214/2025, Art. 127 e Art. 41; LC 123/2006 (Anexo III via Fator R ≥ 28%).",
+  },
+  saude_educacao_a3: {
+    anexo: "anexo3",
+    reducao: 0.60,
+    cst: "200",
+    cClassTrib: "200060 — Redução de 60% (Saúde / Educação)",
+    descricaoRegra: "Redução de 60% nas alíquotas de CBS e IBS",
+    baseLegal: "LC 214/2025, Arts. 128 a 131 (serviços de saúde e educação) e Art. 41; LC 123/2006 (Anexo III).",
+  },
+  saude_educacao_a5: {
+    anexo: "anexo5",
+    reducao: 0.60,
+    cst: "200",
+    cClassTrib: "200060 — Redução de 60% (Saúde / Educação)",
+    descricaoRegra: "Redução de 60% nas alíquotas de CBS e IBS",
+    baseLegal: "LC 214/2025, Arts. 128 a 131 (serviços de saúde) e Art. 41; LC 123/2006 (Anexo V).",
+  },
+  comercio_red60: {
+    anexo: "anexo1",
+    reducao: 0.60,
+    cst: "200",
+    cClassTrib: "200060 — Redução de 60% (Alimentos / Saúde / Agro)",
+    descricaoRegra: "Redução de 60% nas alíquotas de CBS e IBS",
+    baseLegal: "LC 214/2025, Arts. 132 a 138 (bens com redução de 60%) e Art. 41; LC 123/2006 (Anexo I).",
+  },
+  cesta_basica: {
+    anexo: "anexo1",
+    reducao: 1.00,
+    cst: "200",
+    cClassTrib: "200001 — Alíquota Zero (Cesta Básica Nacional)",
+    descricaoRegra: "Redução de 100% (Alíquota Zero na saída)",
+    baseLegal: "LC 214/2025, Art. 125 e Anexo I (Cesta Básica Nacional de Alimentos) e Art. 41; LC 123/2006 (Anexo I).",
+  },
+};
+
+// Parâmetros de transição da LC 214/2025 (Alíquotas de referência)
+const TRANSICAO: Record<string, { label: string; cbsRef: number; ibsRef: number; substituiIcmsIss: boolean }> = {
+  "2027": { label: "2027 — Início da CBS", cbsRef: 0.088, ibsRef: 0.001, substituiIcmsIss: false },
+  "2033": { label: "2033 — Regime Pleno",  cbsRef: 0.088, ibsRef: 0.177, substituiIcmsIss: true },
+};
+
+function parseBRL(str: string): number {
   if (!str) return 0;
   const cleaned = str.replace(/\D/g, '');
   return cleaned ? parseFloat(cleaned) / 100 : 0;
 }
 
-function formatBRL(val) {
+function formatBRL(val: number): string {
   return val.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 }
 
-function applyCurrencyMask(input) {
+function formatPerc(val: number, dec = 2): string {
+  return (val * 100).toFixed(dec).replace('.', ',') + '%';
+}
+
+function applyCurrencyMask(input: HTMLInputElement) {
   let v = input.value.replace(/\D/g, '');
   if (v === '') { input.value = ''; return; }
   const num = parseInt(v, 10) / 100;
   input.value = num.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-function calcular() {
-  const faturamento = parseBRL(document.getElementById('faturamento').value);
-  const atividade = document.getElementById('atividade').value;
-  const percB2B = parseFloat(document.getElementById('range-b2b').value) / 100;
-  const percInsumos = parseFloat(document.getElementById('range-insumos').value) / 100;
+function obterFaixaSN(rbt12: number, faixas: FaixaSN[]): { aliquotaEfetiva: number; faixa: FaixaSN; numFaixa: number } {
+  const idx = faixas.findIndex(f => rbt12 <= f.limite);
+  const faixaIndex = idx === -1 ? faixas.length - 1 : idx;
+  const faixa = faixas[faixaIndex];
+  const rbtCalculo = Math.min(rbt12, 4800000);
+  const aliquotaEfetiva = rbtCalculo > 0 ? (rbtCalculo * faixa.nominal - faixa.deducao) / rbtCalculo : faixa.nominal;
+  return { aliquotaEfetiva, faixa, numFaixa: faixaIndex + 1 };
+}
 
-  // Elementos de UI
-  const labelB2B = document.getElementById('label-b2b');
-  const labelInsumos = document.getElementById('label-insumos');
-  labelB2B.textContent = `${(percB2B * 100).toFixed(0)}% B2B`;
-  labelInsumos.textContent = `${(percInsumos * 100).toFixed(0)}% da receita`;
+function calcular() {
+  const faturamento = parseBRL((document.getElementById('faturamento') as HTMLInputElement).value);
+  const atividade = (document.getElementById('atividade') as HTMLSelectElement).value;
+  const ano = (document.getElementById('ano-transicao') as HTMLSelectElement).value;
+  const percB2B = parseFloat((document.getElementById('range-b2b') as HTMLInputElement).value) / 100;
+  const percInsumos = parseFloat((document.getElementById('range-insumos') as HTMLInputElement).value) / 100;
+
+  // Labels dinâmicos
+  document.getElementById('label-b2b')!.textContent = `${(percB2B * 100).toFixed(0)}% B2B`;
+  document.getElementById('label-insumos')!.textContent = `${(percInsumos * 100).toFixed(0)}% da receita`;
 
   if (faturamento <= 0) return;
 
-  const regra = ALIQUOTAS_SETORIAIS[atividade];
+  const rbt12 = faturamento * 12;
+  document.getElementById('rbt12-info')!.textContent = `RBT12 estimado: ${formatBRL(rbt12)} (faixa real da LC 123/2006)`;
 
-  // 1. Cálculo Simples Tradicional
-  const impostoTradicional = faturamento * regra.baseDas;
-  const aliqEfetivaTrad = (impostoTradicional / faturamento) * 100;
-  const creditoTransferidoTrad = regra.baseDas * regra.parcelaIbsCbs * 100;
+  const alertaLimite = document.getElementById('alerta-limite')!;
+  if (rbt12 > 4800000) {
+    alertaLimite.classList.remove('hidden');
+  } else {
+    alertaLimite.classList.add('hidden');
+  }
 
-  // 2. Cálculo Simples Híbrido
-  const dasReduzido = faturamento * regra.dasReduzido;
-  const debitoIbsCbs = faturamento * ALIQUOTA_PADRAO_REFORMA;
-  const creditoIbsCbs = (faturamento * percInsumos) * ALIQUOTA_PADRAO_REFORMA;
-  const ibsCbsLiquido = Math.max(0, debitoIbsCbs - creditoIbsCbs);
+  const regra = REGRAS_ATIVIDADE[atividade];
+  const anexoData = ANEXOS_SN[regra.anexo];
+  const transicao = TRANSICAO[ano];
+
+  // 1. Simples Nacional Tradicional (faixa real da LC 123/2006)
+  const { aliquotaEfetiva: aliqSN, faixa, numFaixa } = obterFaixaSN(rbt12, anexoData.faixas);
+  const impostoTradicional = faturamento * aliqSN;
+
+  // Parcela do DAS correspondente aos tributos sobre consumo substituídos no ano escolhido
+  const parcelaSubstituida = transicao.substituiIcmsIss
+    ? (faixa.percPisCofins + faixa.percIcmsIss)
+    : faixa.percPisCofins;
+
+  // Crédito que o cliente PJ aproveita ao comprar do Simples Tradicional
+  const creditoTransferidoTrad = aliqSN * parcelaSubstituida;
+
+  // 2. Simples Híbrido (Art. 41 da LC 214/2025)
+  // DAS reduzido: remove a fatia de PIS/COFINS (em 2027) ou PIS/COFINS + ICMS/ISS (em 2033)
+  const aliqDasReduzido = aliqSN * (1 - parcelaSubstituida);
+  const dasReduzido = faturamento * aliqDasReduzido;
+
+  // Alíquotas CBS/IBS aplicadas por fora com a redução oficial da LC 214/2025
+  const aliqRefTotal = transicao.cbsRef + transicao.ibsRef;
+  const fatorReducao = 1 - regra.reducao;
+  const aliqCbsEfetiva = transicao.cbsRef * fatorReducao;
+  const aliqIbsEfetiva = transicao.ibsRef * fatorReducao;
+  const aliqIbsCbsEfetiva = aliqRefTotal * fatorReducao;
+
+  // Débito na saída (por fora) e Crédito nas entradas (insumos tributados na alíquota padrão de referência)
+  const debitoIbsCbs = faturamento * aliqIbsCbsEfetiva;
+  const creditoInsumos = (faturamento * percInsumos) * aliqRefTotal;
+  const ibsCbsLiquido = Math.max(0, debitoIbsCbs - creditoInsumos);
+  const saldoCredor = Math.max(0, creditoInsumos - debitoIbsCbs);
+
   const impostoHibridoTotal = dasReduzido + ibsCbsLiquido;
-  const aliqEfetivaHib = (impostoHibridoTotal / faturamento) * 100;
+  const aliqEfetivaHib = impostoHibridoTotal / faturamento;
+
+  // Atualização do cabeçalho e badges
+  document.getElementById('titulo-cenario')!.textContent = `Comparativo (${transicao.label})`;
+  document.getElementById('badge-cst')!.textContent = `CST ${regra.cst} • Redução ${(regra.reducao * 100).toFixed(0)}%`;
 
   // Atualização dos Cards
-  document.getElementById('trad-valor').textContent = formatBRL(impostoTradicional);
-  document.getElementById('trad-aliquota').textContent = `Alíquota efetiva: ${aliqEfetivaTrad.toFixed(1)}%`;
-  document.getElementById('trad-credito').textContent = `Reduzido (~${creditoTransferidoTrad.toFixed(1)}%)`;
+  document.getElementById('trad-valor')!.textContent = formatBRL(impostoTradicional);
+  document.getElementById('trad-aliquota')!.textContent = `Alíquota efetiva: ${formatPerc(aliqSN)} (${anexoData.nome}, Faixa ${numFaixa})`;
+  document.getElementById('trad-credito')!.textContent = `Reduzido (${formatPerc(creditoTransferidoTrad)})`;
 
-  document.getElementById('hib-valor').textContent = formatBRL(impostoHibridoTotal);
-  document.getElementById('hib-aliquota').textContent = `Alíquota efetiva: ${aliqEfetivaHib.toFixed(1)}%`;
+  document.getElementById('hib-valor')!.textContent = formatBRL(impostoHibridoTotal);
+  document.getElementById('hib-aliquota')!.textContent = `Alíquota efetiva: ${formatPerc(aliqEfetivaHib)}`;
+  document.getElementById('hib-credito')!.textContent = regra.reducao === 1
+    ? 'Alíquota Zero (0,00%)'
+    : `Integral (${formatPerc(aliqIbsCbsEfetiva)})`;
+
+  // Memória de Cálculo (padrão Calculadora RFB)
+  document.getElementById('mem-cst')!.textContent = regra.cClassTrib;
+  document.getElementById('mem-aliq-efetiva')!.textContent = `${formatPerc(aliqIbsCbsEfetiva)} (CBS ${formatPerc(aliqCbsEfetiva)} + IBS ${formatPerc(aliqIbsEfetiva)})`;
+
+  const passos = [
+    `<strong>1. Simples Tradicional:</strong> ${formatBRL(faturamento)} × ${formatPerc(aliqSN)} (Faixa ${numFaixa} do ${anexoData.nome}) = <strong>${formatBRL(impostoTradicional)}</strong>`,
+    `<strong>2. DAS Reduzido (Híbrido):</strong> remove ${(parcelaSubstituida * 100).toFixed(1)}% do DAS → ${formatBRL(faturamento)} × ${formatPerc(aliqDasReduzido)} = <strong>${formatBRL(dasReduzido)}</strong>`,
+    `<strong>3. Débito CBS/IBS (saída):</strong> ${formatBRL(faturamento)} × ${formatPerc(aliqIbsCbsEfetiva)} = <strong>${formatBRL(debitoIbsCbs)}</strong>`,
+    `<strong>4. Crédito CBS/IBS (insumos):</strong> ${formatBRL(faturamento * percInsumos)} × ${formatPerc(aliqRefTotal)} = <strong>${formatBRL(creditoInsumos)}</strong>`,
+    `<strong>5. CBS/IBS Líquido a recolher:</strong> <strong>${formatBRL(ibsCbsLiquido)}</strong>` + (saldoCredor > 0 ? ` <span class="text-emerald-700 font-semibold">(+ saldo credor de ${formatBRL(saldoCredor)}/mês)</span>` : ''),
+    `<strong>6. Total Simples Híbrido:</strong> ${formatBRL(dasReduzido)} + ${formatBRL(ibsCbsLiquido)} = <strong>${formatBRL(impostoHibridoTotal)}</strong>`,
+  ];
+  document.getElementById('mem-passos')!.innerHTML = passos.map(p => `<div>${p}</div>`).join('');
+  document.getElementById('mem-base-legal')!.innerHTML = `<strong>Fundamentação Legal:</strong> ${regra.baseLegal}`;
 
   // Destaques e Veredito
-  const cardTrad = document.getElementById('card-tradicional');
-  const cardHib = document.getElementById('card-hibrido');
-  const vIcon = document.getElementById('veredito-icon');
-  const vTitulo = document.getElementById('veredito-titulo');
-  const vDesc = document.getElementById('veredito-desc');
-  const btnWA = document.getElementById('btn-whatsapp');
+  const cardTrad = document.getElementById('card-tradicional')!;
+  const cardHib = document.getElementById('card-hibrido')!;
+  const vIcon = document.getElementById('veredito-icon')!;
+  const vTitulo = document.getElementById('veredito-titulo')!;
+  const vDesc = document.getElementById('veredito-desc')!;
+  const btnWA = document.getElementById('btn-whatsapp') as HTMLAnchorElement;
 
   cardTrad.className = "bg-white rounded-xl p-5 border-2 border-gray-200 transition-all duration-300 relative";
   cardHib.className = "bg-white rounded-xl p-5 border-2 border-gray-200 transition-all duration-300 relative";
 
   let waTexto = "";
+  const diferenca = impostoHibridoTotal - impostoTradicional;
 
-  if (percB2B >= 0.50 && percInsumos >= 0.30) {
-    // Perfil B2B com insumos: Híbrido é essencial
+  if (regra.reducao === 1.0) {
+    // Alíquota Zero (Cesta Básica)
+    cardHib.className = "bg-emerald-50/60 rounded-xl p-5 border-2 border-emerald-500 shadow-sm relative transition-all duration-300";
+    vIcon.textContent = "🛒";
+    vTitulo.textContent = "Destaque Cesta Básica: Avalie o Simples Híbrido";
+    vTitulo.className = "font-bold text-base mb-1 text-emerald-800";
+    vDesc.innerHTML = `Com <strong>alíquota zero (Art. 125 da LC 214/2025)</strong> na saída, o Simples Híbrido reduz seu DAS em <strong>${formatBRL(impostoTradicional - impostoHibridoTotal)}/mês</strong>` +
+      (saldoCredor > 0 ? ` e ainda pode gerar saldo credor de <strong>${formatBRL(saldoCredor)}/mês</strong> sobre insumos tributados (sujeito a auditoria de NCM).` : `.`);
+    waTexto = `Olá! Simulei a Reforma Tributária (${ano}) no site da JMF para Cesta Básica (${formatBRL(faturamento)}/mês) e quero validar o Simples Híbrido.`;
+  } else if (impostoHibridoTotal <= impostoTradicional) {
+    // Híbrido já é mais barato no caixa
     cardHib.className = "bg-green-50/50 rounded-xl p-5 border-2 border-green-500 shadow-sm relative transition-all duration-300";
     vIcon.textContent = "🏆";
     vTitulo.textContent = "Recomendação Estratégica: Simples Híbrido";
     vTitulo.className = "font-bold text-base mb-1 text-green-800";
-    vDesc.innerHTML = `Com <strong>${(percB2B * 100).toFixed(0)}% do faturamento em vendas corporativas (B2B)</strong>, optar pelo modelo híbrido garante que seus clientes recebam o crédito fiscal de <strong>26,5%</strong>. Se mantiver o Simples tradicional, seus clientes só creditam ~${creditoTransferidoTrad.toFixed(1)}%, pressionando seus preços para baixo.`;
-    waTexto = `Olá! Simulei a Reforma Tributária no site da JMF. Meu negócio fatura ${formatBRL(faturamento)} com ${(percB2B * 100).toFixed(0)}% B2B e o simulador indicou o Simples Híbrido. Quero validar meu enquadramento.`;
+    vDesc.innerHTML = `Além de entregar crédito integral de <strong>${formatPerc(aliqIbsCbsEfetiva)}</strong> para clientes PJ, o Simples Híbrido já gera economia direta de <strong>${formatBRL(Math.abs(diferenca))}/mês</strong> no caixa graças à redução setorial e aos créditos sobre insumos.`;
+    waTexto = `Olá! Simulei a Reforma Tributária (${ano}) na JMF. Meu faturamento é ${formatBRL(faturamento)}/mês e o Simples Híbrido ficou mais vantajoso (${formatBRL(impostoHibridoTotal)} vs ${formatBRL(impostoTradicional)}). Quero validar.`;
+  } else if (percB2B >= 0.50) {
+    // Perfil fortemente B2B: vale avaliar Híbrido pela competitividade comercial
+    cardHib.className = "bg-green-50/50 rounded-xl p-5 border-2 border-green-500 shadow-sm relative transition-all duration-300";
+    vIcon.textContent = "🏆";
+    vTitulo.textContent = "Recomendação Estratégica: Simples Híbrido (Foco B2B)";
+    vTitulo.className = "font-bold text-base mb-1 text-green-800";
+    vDesc.innerHTML = `Com <strong>${(percB2B * 100).toFixed(0)}% das vendas para empresas (B2B)</strong>, o Simples Híbrido transfere crédito integral de <strong>${formatPerc(aliqIbsCbsEfetiva)}</strong> (contra apenas ${formatPerc(creditoTransferidoTrad)} no Tradicional). Embora o desembolso bruto seja ${formatBRL(diferenca)}/mês maior, o imposto é destacado por fora e preserva sua margem nas negociações PJ.`;
+    waTexto = `Olá! Simulei a Reforma Tributária (${ano}) no site da JMF. Faturo ${formatBRL(faturamento)}/mês com ${(percB2B * 100).toFixed(0)}% B2B e o simulador indicou o Simples Híbrido. Quero validar meu enquadramento.`;
   } else if (percB2B < 0.35) {
-    // Foco B2C: Tradicional é mais barato
+    // Foco B2C: Tradicional vence
     cardTrad.className = "bg-sky-50/50 rounded-xl p-5 border-2 border-sky-500 shadow-sm relative transition-all duration-300";
     vIcon.textContent = "💰";
     vTitulo.textContent = "Recomendação Estratégica: Simples Tradicional";
     vTitulo.className = "font-bold text-base mb-1 text-sky-800";
-    const economia = impostoHibridoTotal - impostoTradicional;
-    vDesc.innerHTML = `Como a maior parte das suas vendas é para o <strong>consumidor final (B2C)</strong>, o cliente não precisa de crédito de impostos. O Simples Tradicional preserva a simplicidade da guia única e economiza <strong>${formatBRL(economia)}/mês</strong> em relação ao modelo híbrido.`;
-    waTexto = `Olá! Simulei a Reforma Tributária no site da JMF. Meu negócio fatura ${formatBRL(faturamento)} no Simples Tradicional e quero orientações sobre o planejamento para 2027.`;
+    vDesc.innerHTML = `Como a maior parte das vendas vai para o <strong>consumidor final (B2C)</strong>, o cliente não aproveita crédito tributário. O Simples Tradicional mantém a guia única e economiza <strong>${formatBRL(diferenca)}/mês</strong> em relação ao Híbrido.`;
+    waTexto = `Olá! Simulei a Reforma Tributária (${ano}) no site da JMF (${formatBRL(faturamento)}/mês, foco B2C) e o resultado indicou Simples Tradicional. Quero planejar a transição.`;
   } else {
-    // Zona mista de decisão
-    if (impostoTradicional <= impostoHibridoTotal) {
-      cardTrad.className = "bg-amber-50/50 rounded-xl p-5 border-2 border-amber-500 shadow-sm relative transition-all duration-300";
-      vIcon.textContent = "⚖️";
-      vTitulo.textContent = "Cenário de Equilíbrio: Simples Tradicional";
-      vTitulo.className = "font-bold text-base mb-1 text-amber-800";
-      vDesc.innerHTML = `O Simples Tradicional gera menor desembolso direto de caixa (${formatBRL(impostoHibridoTotal - impostoTradicional)}/mês a menos). Avalie junto à contabilidade se seus compradores PJ exigem crédito tributário cheio.`;
-    } else {
-      cardHib.className = "bg-green-50/50 rounded-xl p-5 border-2 border-green-500 shadow-sm relative transition-all duration-300";
-      vIcon.textContent = "⚖️";
-      vTitulo.textContent = "Cenário de Equilíbrio: Simples Híbrido";
-      vTitulo.className = "font-bold text-base mb-1 text-green-800";
-      vDesc.innerHTML = `Pelo volume de insumos tributados que você adquire, o Simples Híbrido já empata ou supera o Simples tradicional, entregando o diferencial competitivo do crédito integral nas vendas.`;
-    }
-    waTexto = `Olá! Fiz a simulação da Reforma Tributária na JMF e meu perfil ficou equilibrado entre Simples Tradicional e Híbrido (${formatBRL(faturamento)}/mês). Gostaria de agendar uma análise.`;
+    // Zona mista (35% a 49% B2B)
+    cardTrad.className = "bg-amber-50/50 rounded-xl p-5 border-2 border-amber-500 shadow-sm relative transition-all duration-300";
+    vIcon.textContent = "⚖️";
+    vTitulo.textContent = "Zona de Decisão: Avalie Carteira de Clientes";
+    vTitulo.className = "font-bold text-base mb-1 text-amber-800";
+    vDesc.innerHTML = `O Simples Tradicional gera desembolso <strong>${formatBRL(diferenca)}/mês menor</strong>, mas entrega crédito de apenas ${formatPerc(creditoTransferidoTrad)} aos clientes PJ (vs ${formatPerc(aliqIbsCbsEfetiva)} no Híbrido). Vale auditar os principais contratos B2B antes da opção semestral.`;
+    waTexto = `Olá! Fiz a simulação da Reforma Tributária (${ano}) na JMF (${formatBRL(faturamento)}/mês) e fiquei na zona mista entre Simples Tradicional e Híbrido. Gostaria de uma análise.`;
   }
 
   btnWA.href = `https://wa.me/554733265123?text=${encodeURIComponent(waTexto)}`;
 }
 
 // Event Listeners
-document.getElementById('faturamento').addEventListener('input', (e) => {
-  applyCurrencyMask(e.target);
+document.getElementById('faturamento')!.addEventListener('input', (e) => {
+  applyCurrencyMask(e.target as HTMLInputElement);
   calcular();
 });
-document.getElementById('atividade').addEventListener('change', calcular);
-document.getElementById('range-b2b').addEventListener('input', calcular);
-document.getElementById('range-insumos').addEventListener('input', calcular);
+document.getElementById('atividade')!.addEventListener('change', calcular);
+document.getElementById('ano-transicao')!.addEventListener('change', calcular);
+document.getElementById('range-b2b')!.addEventListener('input', calcular);
+document.getElementById('range-insumos')!.addEventListener('input', calcular);
 
 // Execução inicial
 calcular();

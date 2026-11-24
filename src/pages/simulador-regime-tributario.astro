@@ -9,7 +9,7 @@ const schema = JSON.stringify({
   "@context": "https://schema.org",
   "@type": ["WebApplication", "Service"],
   "name": "Simulador de Regime Tributário 2026 — Simples Nacional vs Lucro Presumido",
-  "description": "Compare Simples Nacional e Lucro Presumido 2026: simule impostos com base no faturamento, atividade (CNAE), folha de pagamento e margem de lucro. Descubra qual regime paga menos impostos. Ferramenta gratuita com cálculo de Fator R automático.",
+  "description": "Compare Simples Nacional e Lucro Presumido 2026: simule impostos com base no faturamento, atividade (CNAE), folha de pagamento e margem de lucro, já com projeção do impacto da Reforma Tributária (CBS/IBS — LC 214/2025).",
   "url": "https://www.jmfcontabilidade.com.br/simulador-regime-tributario",
   "applicationCategory": "FinanceApplication",
   "operatingSystem": "Web Browser",
@@ -39,24 +39,21 @@ const schema = JSON.stringify({
     "addressLocality": "Blumenau",
     "description": "Brasil — regras federais válidas nacionalmente; ISS e ICMS variam por município/estado"
   },
-  "serviceType": "Simulador comparativo de regimes tributários (Simples Nacional vs Lucro Presumido) com Fator R automático",
+  "serviceType": "Simulador comparativo de regimes tributários (Simples Nacional vs Lucro Presumido) com Fator R automático e projeção LC 214/2025",
   "category": "FinanceApplication",
   "featureList": [
-    "Seleção de 10 tipos de atividade (Comércio, Serviços Anexo III/V (Fator R), Indústria, Transporte)",
+    "Seleção de 9 tipos de atividade (Comércio, Serviços Anexo III/V (Fator R), Indústria, Transporte)",
     "Cálculo automático do Fator R para serviços (migração Anexo V → III quando ≥ 28%)",
-    "Simples Nacional: 8 anexos com tabelas CGSN 140/2018 atualizadas 2026",
+    "Simples Nacional: tabelas CGSN 140/2018 atualizadas 2026",
     "Lucro Presumido: IRPJ/CSLL sobre presunção + PIS/COFINS cumulativos + INSS patronal 20%",
     "Adicional de 10% no IRPJ para lucro presumido acima de R$ 240k/ano",
-    "Comparação lado a lado: alíquota efetiva, DAS mensal, total anual",
-    "Detalhamento item a item dos impostos no Lucro Presumido",
-    "Cálculo de economia potencial anual entre regimes",
-    "Indicador visual do regime mais vantajoso com badge",
-    "Lista de observações importantes (ISS municipal, benefícios fiscais, lucros isentos, compliance)"
+    "Projeção Reforma Tributária (LC 214/2025 — Base Calculadora RFB) para 2027 e 2033 no Lucro Presumido",
+    "Comparação lado a lado: alíquota efetiva, DAS mensal, total anual e economia potencial"
   ],
   "hasOutput": {
     "@type": "PropertyValue",
     "name": "Resultado da simulação",
-    "description": "Regime recomendado, alíquotas efetivas, impostos mensais/anuais por regime, economia potencial, detalhamento LP"
+    "description": "Regime recomendado, alíquotas efetivas, impostos mensais/anuais por regime, economia potencial, detalhamento LP e projeção CBS/IBS"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -67,7 +64,7 @@ const schema = JSON.stringify({
 
 <Layout
   title="Simulador de Regime Tributário 2026: Simples ou Lucro Presumido | JMF"
-  description="Compare Simples Nacional e Lucro Presumido 2026: simule impostos com base no seu faturamento, atividade e folha. Descubra qual regime paga menos. Gratuito."
+  description="Compare Simples Nacional e Lucro Presumido 2026 com cálculo de Fator R e projeção da Reforma Tributária (CBS/IBS — LC 214/2025). Gratuito."
   canonical="https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
   ogUrl="https://www.jmfcontabilidade.com.br/simulador-regime-tributario"
   schema={schema}
@@ -77,7 +74,7 @@ const schema = JSON.stringify({
 
   <HeroInterno
     title="Simulador de Regime Tributário 2026"
-    subtitle="Compare Simples Nacional e Lucro Presumido com base no faturamento, atividade (CNAE), folha de pagamento e margem de lucro — descubra qual regime paga menos impostos."
+    subtitle="Compare Simples Nacional e Lucro Presumido com base no faturamento, atividade (CNAE), folha de pagamento e margem de lucro — já com alerta de transição para a Reforma Tributária (LC 214/2025)."
     breadcrumb={[
       { label: "Início", href: "https://www.jmfcontabilidade.com.br" },
       { label: "Ferramentas" },
@@ -144,9 +141,9 @@ const schema = JSON.stringify({
                 </optgroup>
                 <optgroup label="Serviços">
                   <option value="servicos_anexo3">Serviços — Anexo III (TI, academias, manutenção)</option>
-                  <option value="servicos_anexo5">Serviços — Anexo V (consultoria, engenharia, publicidade)</option>
-                  <option value="servicos_anexo6">Serviços Intelectuais e Saúde (Anexo V / Fator R)</option>
-                  <option value="servicos_32">Serviços — Lucro Presumido 32% (consultoria, corretagem)</option>
+                  <option value="servicos_anexo5">Serviços — Anexo V (engenharia, arquitetura, publicidade)</option>
+                  <option value="servicos_anexo6">Serviços de Saúde (Clínicas, Medicina, Odonto — Fator R)</option>
+                  <option value="servicos_32">Serviços — Lucro Presumido 32% (consultoria, advocacia, contab.)</option>
                 </optgroup>
                 <optgroup label="Indústria">
                   <option value="industria">Indústria / Fabricação</option>
@@ -282,8 +279,8 @@ const schema = JSON.stringify({
 
           <!-- Economia anual -->
           <div id="economia-box" class="bg-[#0f172a] rounded-2xl p-6 mb-6 text-white text-center hidden">
-            <p class="text-sm font-semibold text-white/70 mb-1">Economia potencial ao ano</p>
-            <p class="text-4xl font-black text-[#1e40af]" id="economia-valor">—</p>
+            <p class="text-sm font-semibold text-white/70 mb-1">Economia potencial ao ano (2026)</p>
+            <p class="text-4xl font-black text-[#60a5fa]" id="economia-valor">—</p>
             <p class="text-sm text-white/60 mt-1" id="economia-desc"></p>
           </div>
 
@@ -291,9 +288,46 @@ const schema = JSON.stringify({
           <div id="detalhe-lp" class="bg-white rounded-2xl border border-gray-100 p-6 mb-6 shadow-sm hidden">
             <h4 class="font-bold text-[#0f172a] mb-4 flex items-center gap-2">
               <i class="bi bi-list-check text-[#1e40af]"></i>
-              Detalhamento — Lucro Presumido
+              Detalhamento — Lucro Presumido (2026)
             </h4>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-3" id="lp-detalhes-grid"></div>
+          </div>
+
+          <!-- PROJEÇÃO REFORMA TRIBUTÁRIA NO LUCRO PRESUMIDO (LC 214/2025 — BASE CALCULADORA RFB) -->
+          <div id="projecao-reforma" class="bg-gradient-to-br from-sky-50 to-white rounded-2xl border border-sky-200 p-6 mb-6 shadow-sm hidden">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <h4 class="font-bold text-[#0f172a] flex items-center gap-2">
+                <i class="bi bi-shield-check text-sky-600"></i>
+                Alerta Reforma Tributária no Lucro Presumido (LC 214/2025)
+              </h4>
+              <span id="ref-badge-regra" class="text-xs font-bold px-2.5 py-1 rounded-full bg-sky-100 text-sky-800"></span>
+            </div>
+            <p class="text-xs text-gray-600 mb-4" id="ref-resumo"></p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-4">
+              <div class="bg-white border border-gray-200 rounded-xl p-4">
+                <p class="text-[11px] font-bold uppercase text-gray-400 mb-1">2026 (Atual — Cumulativo)</p>
+                <p class="text-lg font-black text-[#0f172a]" id="ref-2026-val">—</p>
+                <p class="text-xs text-gray-500 mt-0.5">PIS (0,65%) + COFINS (3,00%) = 3,65%</p>
+              </div>
+              <div class="bg-white border border-sky-200 rounded-xl p-4">
+                <p class="text-[11px] font-bold uppercase text-sky-700 mb-1">2027 (Início da CBS)</p>
+                <p class="text-lg font-black text-sky-700" id="ref-2027-val">—</p>
+                <p class="text-xs text-gray-500 mt-0.5" id="ref-2027-aliq">—</p>
+              </div>
+              <div class="bg-white border border-amber-200 rounded-xl p-4">
+                <p class="text-[11px] font-bold uppercase text-amber-700 mb-1">2033 (Regime Pleno)</p>
+                <p class="text-lg font-black text-amber-700" id="ref-2033-val">—</p>
+                <p class="text-xs text-gray-500 mt-0.5" id="ref-2033-aliq">—</p>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-3 border-t border-sky-100 text-xs text-gray-600">
+              <span id="ref-base-legal"></span>
+              <a href="/simulador-reforma-tributaria" class="inline-flex items-center gap-1 font-bold text-[#1e40af] hover:underline whitespace-nowrap">
+                Simular Simples Tradicional vs Híbrido <i class="bi bi-arrow-right"></i>
+              </a>
+            </div>
           </div>
 
           <!-- Observações importantes -->
@@ -392,9 +426,9 @@ const schema = JSON.stringify({
             <h3 class="font-bold text-[#0f172a] text-lg mb-3">Lucro Presumido</h3>
             <ul class="text-sm text-gray-700 space-y-2">
               <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>IRPJ e CSLL incidem sobre percentual presumido do faturamento</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>PIS 0,65% + COFINS 3% (cumulativo)</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>PIS 0,65% + COFINS 3% (em 2027 entram CBS/IBS não cumulativos)</li>
               <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>INSS patronal separado (20% sobre folha)</li>
-              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>Sem limite de faturamento (exceto Lucro Real)</li>
+              <li class="flex gap-2"><i class="bi bi-check-circle-fill text-[#f97316] flex-shrink-0 mt-0.5"></i>Sem limite de faturamento (até R$ 78 milhões/ano)</li>
               <li class="flex gap-2"><i class="bi bi-info-circle-fill text-amber-500 flex-shrink-0 mt-0.5"></i>Mais obrigações acessórias: ECD, ECF, SPED</li>
             </ul>
             <div class="mt-4 p-3 bg-orange-50 rounded-lg text-xs text-[#f97316] font-medium">
@@ -441,7 +475,7 @@ const schema = JSON.stringify({
               </tbody>
             </table>
           </div>
-          <p class="text-xs text-gray-400 p-3 border-t border-gray-50">IRPJ alíquota: 15% + adicional 10% sobre IRPJ que exceder R$ 60.000/trimestre. CSLL alíquota: 9%.</p>
+          <p class="text-xs text-gray-400 p-3 border-t border-gray-50">IRPJ alíquota: 15% + adicional 10% sobre o lucro presumido que exceder R$ 60.000/trimestre. CSLL alíquota: 9%.</p>
         </div>
       </div>
     </div>
@@ -469,9 +503,9 @@ const schema = JSON.stringify({
   // SIMULADOR DE REGIME TRIBUTÁRIO 2026 — JMF Contabilidade
   // Simples Nacional: tabelas CGSN 140/2018 (Anexos I-V)
   // Lucro Presumido: RIR/2018, Lei 9.249/95, Lei 9.718/98
+  // Projeção Reforma: LC 214/2025 (Base Calculadora RFB)
   // ─────────────────────────────────────────────────────────────────
 
-  // ── TABELAS SIMPLES NACIONAL 2026 ─────────────────────────────────
   const TABELAS_SN: Record<string, {
     nome: string;
     faixas: { limite: number; nominal: number; deducao: number }[];
@@ -531,7 +565,7 @@ const schema = JSON.stringify({
       impostos: "IRPJ, CSLL, PIS, COFINS, CPP, ISS",
     },
     servicos_anexo6: {
-      nome: "Serviços — Anexo V (saúde/advocacia/contab.)",
+      nome: "Serviços de Saúde — Anexo V (Fator R)",
       tipo: "servicos",
       faixas: [
         { limite: 180000,   nominal: 0.155, deducao: 0 },
@@ -544,7 +578,7 @@ const schema = JSON.stringify({
       impostos: "IRPJ, CSLL, PIS, COFINS, CPP, ISS",
     },
     servicos_32: {
-      nome: "Serviços — Anexo V (consultoria)",
+      nome: "Serviços — Anexo V (consultoria/prof. reg.)",
       tipo: "servicos",
       faixas: [
         { limite: 180000,   nominal: 0.155, deducao: 0 },
@@ -597,17 +631,23 @@ const schema = JSON.stringify({
     },
   };
 
-  // ── PARÂMETROS LP ─────────────────────────────────────────────────
-  const LP_PARAMS: Record<string, { irpjPresuncao: number; csllPresuncao: number }> = {
-    comercio_varejo:        { irpjPresuncao: 0.08, csllPresuncao: 0.12 },
-    comercio_atacado:       { irpjPresuncao: 0.08, csllPresuncao: 0.12 },
-    servicos_anexo3:        { irpjPresuncao: 0.32, csllPresuncao: 0.32 },
-    servicos_anexo5:        { irpjPresuncao: 0.32, csllPresuncao: 0.32 },
-    servicos_anexo6:        { irpjPresuncao: 0.32, csllPresuncao: 0.32 },
-    servicos_32:            { irpjPresuncao: 0.32, csllPresuncao: 0.32 },
-    industria:              { irpjPresuncao: 0.08, csllPresuncao: 0.12 },
-    transporte_cargas:      { irpjPresuncao: 0.08, csllPresuncao: 0.12 },
-    transporte_passageiros: { irpjPresuncao: 0.16, csllPresuncao: 0.12 },
+  // ── PARÂMETROS LP + REFORMA TRIBUTÁRIA (LC 214/2025) ──────────────
+  const LP_PARAMS: Record<string, {
+    irpjPresuncao: number;
+    csllPresuncao: number;
+    reducaoLC214: number;
+    cstLabel: string;
+    baseLegalLC214: string;
+  }> = {
+    comercio_varejo:        { irpjPresuncao: 0.08, csllPresuncao: 0.12, reducaoLC214: 0.00, cstLabel: "CST 000 • 0% redução", baseLegalLC214: "LC 214/2025, Art. 14 (regra geral; itens de cesta básica/saúde têm redução específica)." },
+    comercio_atacado:       { irpjPresuncao: 0.08, csllPresuncao: 0.12, reducaoLC214: 0.00, cstLabel: "CST 000 • 0% redução", baseLegalLC214: "LC 214/2025, Art. 14 (regra geral; créditos sobre estoque/compras abatem o débito)." },
+    servicos_anexo3:        { irpjPresuncao: 0.32, csllPresuncao: 0.32, reducaoLC214: 0.00, cstLabel: "CST 000 • 0% redução", baseLegalLC214: "LC 214/2025, Art. 14 (serviços em geral sem redução setorial; atenção ao baixo volume de créditos)." },
+    servicos_anexo5:        { irpjPresuncao: 0.32, csllPresuncao: 0.32, reducaoLC214: 0.30, cstLabel: "CST 200 • Redução 30%", baseLegalLC214: "LC 214/2025, Art. 127 (profissões regulamentadas por conselho têm redução de 30% na CBS/IBS)." },
+    servicos_anexo6:        { irpjPresuncao: 0.32, csllPresuncao: 0.32, reducaoLC214: 0.60, cstLabel: "CST 200 • Redução 60%", baseLegalLC214: "LC 214/2025, Arts. 128 a 131 (serviços de saúde possuem redução de 60% na CBS/IBS)." },
+    servicos_32:            { irpjPresuncao: 0.32, csllPresuncao: 0.32, reducaoLC214: 0.30, cstLabel: "CST 200 • Redução 30%", baseLegalLC214: "LC 214/2025, Art. 127 (profissões regulamentadas; atividades não regulamentadas seguem CST 000)." },
+    industria:              { irpjPresuncao: 0.08, csllPresuncao: 0.12, reducaoLC214: 0.00, cstLabel: "CST 000 • 0% redução", baseLegalLC214: "LC 214/2025, Art. 14 (não cumulatividade plena permite crédito sobre matérias-primas, energia e máquinas)." },
+    transporte_cargas:      { irpjPresuncao: 0.08, csllPresuncao: 0.12, reducaoLC214: 0.00, cstLabel: "CST 000 • 0% redução", baseLegalLC214: "LC 214/2025, Art. 14 (créditos sobre combustível, manutenção e frota reduzem o imposto líquido)." },
+    transporte_passageiros: { irpjPresuncao: 0.16, csllPresuncao: 0.12, reducaoLC214: 0.60, cstLabel: "CST 200 • Redução 60%", baseLegalLC214: "LC 214/2025, Art. 136 (transporte coletivo rodoviário/ferroviário/hidroviário de passageiros)." },
   };
 
   // ── HELPERS ───────────────────────────────────────────────────────
@@ -637,36 +677,42 @@ const schema = JSON.stringify({
     return (rbt12 * faixa.nominal - faixa.deducao) / rbt12;
   }
 
-  // Fator R: se atividade é serviço e folha >= 28% da receita → usa Anexo III em vez de V
   function aplicarFatorR(atividade: string, folhaAnual: number, receita: number): string {
     if (!["servicos_anexo5", "servicos_32", "servicos_anexo6"].includes(atividade)) return atividade;
     const fatorR = receita > 0 ? folhaAnual / receita : 0;
-    if (fatorR >= 0.28) return "servicos_anexo3"; // migra para Anexo III
+    if (fatorR >= 0.28) return "servicos_anexo3";
     return atividade;
   }
 
-  // LP: IRPJ + CSLL + PIS (0,65%) + COFINS (3%)
-  function calcLP(receita: number, folhaAnual: number, atividade: string): {
-    total: number; irpj: number; csll: number; pis: number; cofins: number; inss: number; aliquotaEfetiva: number;
-    presuncaoIRPJ: number; presuncaoCSLL: number;
-  } {
-    const params = LP_PARAMS[atividade] || { irpjPresuncao: 0.32, csllPresuncao: 0.32 };
+  function calcLP(receita: number, folhaAnual: number, atividade: string) {
+    const params = LP_PARAMS[atividade] || LP_PARAMS.servicos_32;
     const baseIRPJ  = receita * params.irpjPresuncao;
     const baseCSLL  = receita * params.csllPresuncao;
-    const irpj  = baseIRPJ  * 0.15; // 15% + adicional 10% sobre o que exceder 240k/ano
+    const irpj  = baseIRPJ  * 0.15;
     const adicionalIRPJ = Math.max(0, baseIRPJ - 240000) * 0.10;
     const csll  = baseCSLL  * 0.09;
     const pis   = receita   * 0.0065;
     const cofins = receita  * 0.03;
-    const inss  = folhaAnual * 0.20; // 20% patronal
+    const inss  = folhaAnual * 0.20;
     const total = irpj + adicionalIRPJ + csll + pis + cofins + inss;
     const aliquotaEfetiva = receita > 0 ? total / receita : 0;
-    return { total, irpj: irpj + adicionalIRPJ, csll, pis, cofins, inss, aliquotaEfetiva, presuncaoIRPJ: params.irpjPresuncao * 100, presuncaoCSLL: params.csllPresuncao * 100 };
+    return {
+      total,
+      irpj: irpj + adicionalIRPJ,
+      csll,
+      pis,
+      cofins,
+      inss,
+      aliquotaEfetiva,
+      presuncaoIRPJ: params.irpjPresuncao * 100,
+      presuncaoCSLL: params.csllPresuncao * 100,
+      params,
+    };
   }
 
   // ── RENDERIZAR RESULTADO ─────────────────────────────────────────
   function simular() {
-    const fatBruto   = parseBRL((document.getElementById("faturamento") as HTMLInputElement).value);
+    const fatBruto    = parseBRL((document.getElementById("faturamento") as HTMLInputElement).value);
     const atividadeId = (document.getElementById("atividade") as HTMLSelectElement).value;
     const folhaMensal = parseBRL((document.getElementById("folha") as HTMLInputElement).value);
     const margemPerc  = parseFloat((document.getElementById("margem") as HTMLInputElement).value) || 0;
@@ -680,23 +726,18 @@ const schema = JSON.stringify({
 
     const folhaAnual = folhaMensal * 12;
 
-    // Fator R: determina o anexo correto para serviços
     const atividadeReal = aplicarFatorR(atividadeId, folhaAnual, fatBruto);
     const tabelaSN = TABELAS_SN[atividadeReal] || TABELAS_SN[atividadeId];
     const fatorR = folhaAnual > 0 && fatBruto > 0 ? folhaAnual / fatBruto : 0;
 
-    // Cálculo SN
     const aliquotaSN  = calcAliquotaSN(fatBruto, tabelaSN.faixas);
     const totalSN     = fatBruto * aliquotaSN;
 
-    // Cálculo LP
     const resLP = calcLP(fatBruto, folhaAnual, atividadeId);
 
-    // Diferença
     const diff = resLP.total - totalSN;
     const snMelhor = diff > 0;
 
-    // ── Preencher UI ──
     document.getElementById("resultado")!.classList.remove("hidden");
 
     // Header
@@ -707,13 +748,15 @@ const schema = JSON.stringify({
 
     if (Math.abs(diff) < fatBruto * 0.005) {
       header.className = "rounded-2xl p-6 mb-6 text-center bg-gray-100";
-      labelEl.textContent = "Resultado da simulação";
+      labelEl.textContent = "Resultado da simulação (2026)";
+      labelEl.className = "text-sm font-semibold text-gray-500 mb-1";
       tituloEl.textContent = "Regimes equivalentes";
       tituloEl.className = "text-2xl font-black mb-1 text-gray-700";
       subtituloEl.textContent = "A diferença é menor que 0,5% do faturamento. Outros fatores (obrigações acessórias, complexidade) devem decidir.";
+      subtituloEl.className = "text-sm text-gray-600";
     } else if (snMelhor) {
       header.className = "rounded-2xl p-6 mb-6 text-center bg-[#1e40af]";
-      labelEl.textContent = "Para esta simulação, o regime mais vantajoso é";
+      labelEl.textContent = "Para 2026, o regime mais vantajoso é";
       tituloEl.textContent = "Simples Nacional";
       tituloEl.className = "text-2xl font-black mb-1 text-white";
       subtituloEl.textContent = `Economia potencial de ${toBRL(diff)} por ano em relação ao Lucro Presumido`;
@@ -721,7 +764,7 @@ const schema = JSON.stringify({
       labelEl.className = "text-sm font-semibold text-white/70 mb-1";
     } else {
       header.className = "rounded-2xl p-6 mb-6 text-center bg-[#f97316]";
-      labelEl.textContent = "Para esta simulação, o regime mais vantajoso é";
+      labelEl.textContent = "Para 2026, o regime mais vantajoso é";
       tituloEl.textContent = "Lucro Presumido";
       tituloEl.className = "text-2xl font-black mb-1 text-white";
       subtituloEl.textContent = `Economia potencial de ${toBRL(Math.abs(diff))} por ano em relação ao Simples Nacional`;
@@ -801,6 +844,26 @@ const schema = JSON.stringify({
     `).join("");
     detalheLP.classList.remove("hidden");
 
+    // Projeção Reforma Tributária no LP (LC 214/2025)
+    const projBox = document.getElementById("projecao-reforma")!;
+    const fatorRed = 1 - resLP.params.reducaoLC214;
+    const pisCofinsAtual = resLP.pis + resLP.cofins;
+    const aliq2027 = (0.088 + 0.001) * fatorRed; // CBS 8,8% + IBS 0,1%
+    const aliq2033 = (0.088 + 0.177) * fatorRed; // CBS 8,8% + IBS 17,7% = 26,5%
+    const debito2027 = fatBruto * aliq2027;
+    const debito2033 = fatBruto * aliq2033;
+
+    document.getElementById("ref-badge-regra")!.textContent = resLP.params.cstLabel;
+    document.getElementById("ref-resumo")!.textContent =
+      `A partir de 2027, PIS e COFINS cumulativos (3,65%) serão extintos no Lucro Presumido e substituídos pela CBS (não cumulativa). Abaixo está o débito bruto anual na saída (antes de descontar créditos de compras/despesas tributadas):`;
+    document.getElementById("ref-2026-val")!.textContent = `${toBRL(pisCofinsAtual)}/ano`;
+    document.getElementById("ref-2027-val")!.textContent = `${toBRL(debito2027)}/ano`;
+    document.getElementById("ref-2027-aliq")!.textContent = `Alíquota bruta CBS+IBS: ${toPerc(aliq2027)} (antes de créditos)`;
+    document.getElementById("ref-2033-val")!.textContent = `${toBRL(debito2033)}/ano`;
+    document.getElementById("ref-2033-aliq")!.textContent = `Alíquota bruta CBS+IBS: ${toPerc(aliq2033)} (substitui PIS/COFINS/ICMS/ISS)`;
+    document.getElementById("ref-base-legal")!.innerHTML = `<strong>Base legal:</strong> ${resLP.params.baseLegalLC214}`;
+    projBox.classList.remove("hidden");
+
     // Economia
     const econBox = document.getElementById("economia-box")!;
     const econValor = document.getElementById("economia-valor")!;
@@ -809,8 +872,8 @@ const schema = JSON.stringify({
       econBox.classList.remove("hidden");
       econValor.textContent = toBRL(Math.abs(diff));
       econDesc.textContent = snMelhor
-        ? "ao ano em favor do Simples Nacional (impostos a menos)"
-        : "ao ano em favor do Lucro Presumido (impostos a menos)";
+        ? "ao ano em favor do Simples Nacional (impostos a menos em 2026)"
+        : "ao ano em favor do Lucro Presumido (impostos a menos em 2026)";
     } else {
       econBox.classList.add("hidden");
     }
@@ -818,10 +881,10 @@ const schema = JSON.stringify({
     // Observações
     const obs = document.getElementById("obs-lista")!;
     const itensObs = [
-      "ISS municipal (alíquota varia de 2% a 5% conforme município e serviço)",
+      "ISS municipal (alíquota varia de 2% a 5% conforme município e serviço) e ICMS estadual em 2026",
       "INSS sobre pró-labore dos sócios (11% ou 20% conforme plano)",
       "Benefícios fiscais estaduais (redução de ICMS, créditos acumulados)",
-      "Distribuição de lucros isenta de IR — pode mudar a lógica financeira",
+      "Créditos de CBS/IBS sobre compras e despesas tributadas a partir de 2027 (reduzem o valor bruto projetado)",
       "Custo de compliance: LP exige ECD, ECF e SPED (mais obrigações acessórias)",
     ];
     if (margemPerc > 0) {
